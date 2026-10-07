@@ -30,9 +30,9 @@ footer{margin-top:2.5em;border-top:1px solid #ddd;padding-top:.6em;color:#888;fo
     if (!window.katex) return false;
     document.querySelectorAll('code').forEach(function(c){
       var t = c.textContent;
-      if (t.indexOf('@@M@@') !== 0 || t.slice(-3) !== '@@') return;
+      if (t.indexOf('@@M@@') !== 0 || t.slice(-2) !== '@@') return;
       var isD = t.indexOf('@@M@@D') === 0;
-      var tex = isD ? t.slice(6, -3) : t.slice(5, -3);
+      var tex = isD ? t.slice(6, -2) : t.slice(5, -2);
       var el = document.createElement(isD ? 'div' : 'span');
       try { katex.render(tex, el, {throwOnError: false, displayMode: isD}); }
       catch(e) { el.textContent = tex; }
