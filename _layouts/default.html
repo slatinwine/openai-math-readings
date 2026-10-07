@@ -24,22 +24,27 @@ footer{margin-top:2.5em;border-top:1px solid #ddd;padding-top:.6em;color:#888;fo
 {{ content }}
 {% if page.source %}<footer>原文手稿：<a href="{{ page.source }}">openai/math · {{ page.pdfname }}</a>（Apache-2.0）</footer>{% endif %}
 <script>
-document.addEventListener("DOMContentLoaded", function(){
-  if (!window.katex) return;
-  document.querySelectorAll('code').forEach(function(c){
-    var t = c.textContent, dm = null;
-    if (t.indexOf('@@M@@D') === 0 && t.slice(-3) === '@@') dm = t.slice(6, -3);
-    else if (t.indexOf('@@M@@') === 0 && t.slice(-3) === '@@') dm = t.slice(5, -3);
-    else return;
-    var isDisplay = t.indexOf('@@M@@D') === 0;
-    var el = document.createElement(isDisplay ? 'div' : 'span');
-    try { katex.render(dm, el, {throwOnError: false, displayMode: isDisplay}); }
-    catch(e) { el.textContent = dm; }
-    var w = document.createElement(isDisplay ? 'div' : 'span');
-    w.appendChild(el);
-    c.parentNode.replaceChild(w, c);
-  });
-});
+(function(){
+  var tries = 0;
+  function rm(){
+    if (!window.katex) return false;
+    document.querySelectorAll('code').forEach(function(c){
+      var t = c.textContent;
+      if (t.indexOf('@@M@@') !== 0 || t.slice(-3) !== '@@') return;
+      var isD = t.indexOf('@@M@@D') === 0;
+      var tex = isD ? t.slice(6, -3) : t.slice(5, -3);
+      var el = document.createElement(isD ? 'div' : 'span');
+      try { katex.render(tex, el, {throwOnError: false, displayMode: isD}); }
+      catch(e) { el.textContent = tex; }
+      c.parentNode.replaceChild(el, c);
+    });
+    return true;
+  }
+  window.__mathKatex = 'armed';
+  if (!rm()) {
+    var iv = setInterval(function(){ if (rm() || ++tries > 100) clearInterval(iv); }, 200);
+  }
+})();
 </script>
 </body>
 </html>
