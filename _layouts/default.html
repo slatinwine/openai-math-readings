@@ -26,15 +26,18 @@ footer{margin-top:2.5em;border-top:1px solid #ddd;padding-top:.6em;color:#888;fo
 <script>
 document.addEventListener("DOMContentLoaded", function(){
   if (!window.katex) return;
-  document.querySelectorAll('script[type="math/tex"]').forEach(function(s){
-    var sp = document.createElement('span');
-    try { katex.render(s.textContent, sp, {throwOnError: false}); } catch(e){ sp.textContent = s.textContent; }
-    s.parentNode.replaceChild(sp, s);
-  });
-  document.querySelectorAll('script[type="math/tex; mode=display"]').forEach(function(s){
-    var d = document.createElement('div');
-    try { katex.render(s.textContent, d, {throwOnError: false, displayMode: true}); } catch(e){ d.textContent = s.textContent; }
-    s.parentNode.replaceChild(d, s);
+  document.querySelectorAll('code').forEach(function(c){
+    var t = c.textContent, dm = null;
+    if (t.indexOf('@@M@@D') === 0 && t.slice(-3) === '@@') dm = t.slice(6, -3);
+    else if (t.indexOf('@@M@@') === 0 && t.slice(-3) === '@@') dm = t.slice(5, -3);
+    else return;
+    var isDisplay = t.indexOf('@@M@@D') === 0;
+    var el = document.createElement(isDisplay ? 'div' : 'span');
+    try { katex.render(dm, el, {throwOnError: false, displayMode: isDisplay}); }
+    catch(e) { el.textContent = dm; }
+    var w = document.createElement(isDisplay ? 'div' : 'span');
+    w.appendChild(el);
+    c.parentNode.replaceChild(w, c);
   });
 });
 </script>

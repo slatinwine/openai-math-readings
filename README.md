@@ -1,3 +1,7 @@
+---
+published: false
+---
+
 # OpenAI 数学证明合集 · 722 篇中文解读
 
 [github.com/openai/math](https://github.com/openai/math)（OpenAI 2026-10-06 发布：内部前沿模型产出的数学证明/反例手稿）的中文逐篇解读。

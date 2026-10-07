@@ -23,27 +23,27 @@ pdfname: ""
 
 ## 主要结果
 
-位势类（Assumption 2.1）：径向 \(\Phi(q)=\phi(|q|)\)，\(|q|\ge1\) 时为零，\(C^2\) 且允许在原点有排斥奇点 \(\Phi(q)\to+\infty\)；唯一的符号条件是 Ruelle 意义下的热力学稳定性（thermodynamic stability）：任意有限组态满足 \(\sum_{i<j}\Phi(q_i-q_j)\ge-B|R|\)。吸引势阱因此是允许的。
+位势类（Assumption 2.1）：径向 `@@M@@\Phi(q)=\phi(|q|)@@`，`@@M@@|q|\ge1@@` 时为零，`@@M@@C^2@@` 且允许在原点有排斥奇点 `@@M@@\Phi(q)\to+\infty@@`；唯一的符号条件是 Ruelle 意义下的热力学稳定性（thermodynamic stability）：任意有限组态满足 `@@M@@\sum_{i<j}\Phi(q_i-q_j)\ge-B|R|@@`。吸引势阱因此是允许的。
 
-初始律：活动度（activity）\(\mu_\varepsilon=\varepsilon^{-2}\) 的巨正则（grand-canonical）乘积密度 \(f_0\)，条件化于两两初始排斥（pair exclusion）\(|x_i-x_j|>\varepsilon\)，配以精确的巨正则归一化。此后粒子严格按牛顿方程演化，同时相互作用、再碰撞（recollision）与动力学形成的团簇全部保留。
+初始律：活动度（activity）`@@M@@\mu_\varepsilon=\varepsilon^{-2}@@` 的巨正则（grand-canonical）乘积密度 `@@M@@f_0@@`，条件化于两两初始排斥（pair exclusion）`@@M@@|x_i-x_j|>\varepsilon@@`，配以精确的巨正则归一化。此后粒子严格按牛顿方程演化，同时相互作用、再碰撞（recollision）与动力学形成的团簇全部保留。
 
-定理 A：设 \(f_0\) 为 \(C^1\) 概率密度，满足空间可求和的高斯型界 \(\|f_0\|_{\mathrm{Bol},2\beta}+\|\nabla_x f_0\|_{\mathrm{Bol},2\beta}<\infty\)；设 \(T\) 是玻尔兹曼方程 \((\partial_t+v\cdot\nabla_x)f=Q_\Phi(f,f)\) 的经典解保持一致高斯界 \(\sup_{0\le t\le T,x,v}e^{2\beta|v|^2}f<\infty\) 的任意有限区间。则对每个固定整数 \(s\ge1\)，缩放阶乘密度（scaled factorial density）\(F_s^\varepsilon(t)\) 满足
+定理 A：设 `@@M@@f_0@@` 为 `@@M@@C^1@@` 概率密度，满足空间可求和的高斯型界 `@@M@@\|f_0\|_{\mathrm{Bol},2\beta}+\|\nabla_x f_0\|_{\mathrm{Bol},2\beta}<\infty@@`；设 `@@M@@T@@` 是玻尔兹曼方程 `@@M@@(\partial_t+v\cdot\nabla_x)f=Q_\Phi(f,f)@@` 的经典解保持一致高斯界 `@@M@@\sup_{0\le t\le T,x,v}e^{2\beta|v|^2}f<\infty@@` 的任意有限区间。则对每个固定整数 `@@M@@s\ge1@@`，缩放阶乘密度（scaled factorial density）`@@M@@F_s^\varepsilon(t)@@` 满足
 
-\[\lim_{\varepsilon\downarrow0}\;\sup_{0\le t\le T}\bigl\|F_s^\varepsilon(t)-f(t)^{\otimes s}\bigr\|_{L^1}=0.\]
+`@@M@@D\lim_{\varepsilon\downarrow0}\;\sup_{0\le t\le T}\bigl\|F_s^\varepsilon(t)-f(t)^{\otimes s}\bigr\|_{L^1}=0.@@`
 
 推论 B 给出经验观测量的相应一致概率收敛。定理不设小数据或近平衡假设，允许长散射延迟与散射映射非单射，且不要求微分散射截面（differential scattering cross-section）全局单值或有界。
 
 ## 证明思路
 
-整体框架是把 \([0,T]\) 切成 \(L\) 个长 \(b=T/L\) 的宏观层，每层再细分为精细网格；细网格上做"整分量展开"，粗层上用已知的玻尔兹曼解做中心化（centering）。
+整体框架是把 `@@M@@[0,T]@@` 切成 `@@M@@L@@` 个长 `@@M@@b=T/L@@` 的宏观层，每层再细分为精细网格；细网格上做"整分量展开"，粗层上用已知的玻尔兹曼解做中心化（centering）。
 
 第一步是精确的整分量恒等式。每次切割不按单个碰撞而按整组瞬时相互作用分量（whole interaction components）分组，经有限步容斥（inclusion–exclusion）把每个系数表示为独立子系统流与接触指示量的组合。关键在于整组保留势能——团簇内部无论发生多少次相遇，其哈密顿量都完整在场，供后续能量估计使用。中心化只作用于孤立的"单例槽"，其抵消要求分离每一条被显示的轨迹，包括带符号项中已脱离的轨迹。
 
-第二步是跨层统一的能量预算。每个形式粒子寿命独立地"进场一次、离场一次"；把稳定性用于完整离开的分量，得到贯穿全部历史的一份额定高斯能量账。含 \(p\) 个标签、\(h_0\) 个顶部根（top roots，即向后历史的起始标签）的历史，被反复携带的速度最多付出 \(L^{p/2}\)，而时间因子贡献 \((T/L)^{p-h_0}\)，合并后的基数为 \(CT/\sqrt L\)——取固定的 \(L\) 足够大即可压小。这正是冲破单一碰撞树级数收敛区间的机制。
+第二步是跨层统一的能量预算。每个形式粒子寿命独立地"进场一次、离场一次"；把稳定性用于完整离开的分量，得到贯穿全部历史的一份额定高斯能量账。含 `@@M@@p@@` 个标签、`@@M@@h_0@@` 个顶部根（top roots，即向后历史的起始标签）的历史，被反复携带的速度最多付出 `@@M@@L^{p/2}@@`，而时间因子贡献 `@@M@@(T/L)^{p-h_0}@@`，合并后的基数为 `@@M@@CT/\sqrt L@@`——取固定的 `@@M@@L@@` 足够大即可压小。这正是冲破单一碰撞树级数收敛区间的机制。
 
 第三步是缺陷的因果暴露（causal exposure）估计。先在细胞端点积分全部位置与速度，压掉拥挤群组与一格多次添加的历史；剩下的历史可表示为树。若多余接触影响正比例的粒子寿命，计数论证会选出许多互不相交的有界尺寸树，其新鲜散射参数对与这些参数独立的路径接触给出小角度集。要把小因子连乘起来，一次真实散射的两个输出都必须保持隐藏，而虚拟交叉只需隐藏新增的枝——这一区分（论文图 1）是测度估计的核心。
 
-最后收尾（closure）：数值截断从最后一层向前选取，实际过程的事件估计从第一层向后证明，且不借助任何传播混沌（propagation of chaos）断言去界定停止事件；槽位熵引理与能量引理合并给出 \((Cb\sqrt L)^p\) 型的总量界，逐层完成定理 A 的证明。
+最后收尾（closure）：数值截断从最后一层向前选取，实际过程的事件估计从第一层向后证明，且不借助任何传播混沌（propagation of chaos）断言去界定停止事件；槽位熵引理与能量引理合并给出 `@@M@@(Cb\sqrt L)^p@@` 型的总量界，逐层完成定理 A 的证明。
 
 ## 可信度与备注
 

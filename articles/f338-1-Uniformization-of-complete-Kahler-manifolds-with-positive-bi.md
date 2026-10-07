@@ -15,27 +15,27 @@ pdfname: ""
 
 ## 一句话结论
 
-证明了丘成桐 1982 年提出的单值化（uniformization）猜想：全纯双截曲率逐点严格为正的完备非紧 Kähler 流形必双全纯同构于复欧氏空间 \(\C^n\)；证明不要求任何曲率上下界、体积增长或拓扑假设，对所有复维数成立。
+证明了丘成桐 1982 年提出的单值化（uniformization）猜想：全纯双截曲率逐点严格为正的完备非紧 Kähler 流形必双全纯同构于复欧氏空间 `@@M@@\C^n@@`；证明不要求任何曲率上下界、体积增长或拓扑假设，对所有复维数成立。
 
 ## 问题背景
 
-单复变有经典原型：正高斯曲率的完备非紧 Riemann 面共形等价于复平面（Cohn-Vossen、Blanc–Fiala–Huber 定理）；紧方向有 Mori 与 Siu–Yau 解决的 Frankel 猜想——正双截曲率刻画复射影空间。丘成桐 1982 年问题综述提出非紧类比：完备非紧（complete noncompact）、全纯双截曲率（holomorphic bisectional curvature）严格为正的 Kähler 流形，是否必双全纯同构于 \(\C^n\)？此后进展均需附加假设：Chau–Tam（有界曲率）、Liu 与 Lee–Tam（去曲率上界）都保留极大体积增长；Datar–Pingali–Seshadri 与 Wu 等只在复曲面或强 Stein、无穷远单连通等条件下得到结论。困难有二：初始曲率可无界、区域可坍缩，有界曲率流定理无法直接启用；且收缩坐标卡一般只能把流形映成 \(\C^n\) 中真域，满射性缺少抓手。
+单复变有经典原型：正高斯曲率的完备非紧 Riemann 面共形等价于复平面（Cohn-Vossen、Blanc–Fiala–Huber 定理）；紧方向有 Mori 与 Siu–Yau 解决的 Frankel 猜想——正双截曲率刻画复射影空间。丘成桐 1982 年问题综述提出非紧类比：完备非紧（complete noncompact）、全纯双截曲率（holomorphic bisectional curvature）严格为正的 Kähler 流形，是否必双全纯同构于 `@@M@@\C^n@@`？此后进展均需附加假设：Chau–Tam（有界曲率）、Liu 与 Lee–Tam（去曲率上界）都保留极大体积增长；Datar–Pingali–Seshadri 与 Wu 等只在复曲面或强 Stein、无穷远单连通等条件下得到结论。困难有二：初始曲率可无界、区域可坍缩，有界曲率流定理无法直接启用；且收缩坐标卡一般只能把流形映成 `@@M@@\C^n@@` 中真域，满射性缺少抓手。
 
 ## 主要结果
 
-**定理（主定理）**：设 \(M\) 是 \(n\ge 1\) 维连通非紧复流形，其上存在光滑完备 Kähler 度量，双截曲率逐点严格为正——即对任意实单位切向量 \(u,v\) 有 \(\Rm(u,v,v,u)+\Rm(u,Jv,Jv,u)>0\)，等价于切丛的 Griffiths 严格正性——则 \(M\) 双全纯同构（biholomorphic）于 \(\C^n\)。
+**定理（主定理）**：设 `@@M@@M@@` 是 `@@M@@n\ge 1@@` 维连通非紧复流形，其上存在光滑完备 Kähler 度量，双截曲率逐点严格为正——即对任意实单位切向量 `@@M@@u,v@@` 有 `@@M@@\Rm(u,v,v,u)+\Rm(u,Jv,Jv,u)>0@@`，等价于切丛的 Griffiths 严格正性——则 `@@M@@M@@` 双全纯同构（biholomorphic）于 `@@M@@\C^n@@`。
 
-值得强调三点：正性假设只是逐点的，既无一致正下界也无曲率上界；不添加体积增长、非坍缩、Ricci 压缩（pinching）或拓扑假设；结论识别整个复流形，故 \(M\) 是 Stein 流形且可缩，但不断言原度量本身是欧氏度量。
+值得强调三点：正性假设只是逐点的，既无一致正下界也无曲率上界；不添加体积增长、非坍缩、Ricci 压缩（pinching）或拓扑假设；结论识别整个复流形，故 `@@M@@M@@` 是 Stein 流形且可缩，但不断言原度量本身是欧氏度量。
 
 ## 证明思路
 
-证明分四段，共用三个时钟：物理时间 \(t\)（Kähler–Ricci 流）、对数时间 \(\tau=\log t\)（联合次调和性与 Harnack 估计）、体积时钟 \(s=\rho(o,t)\)（图卡收缩），\(\rho=\log(\det g/\det h_t)\ge0\) 为体积损失。
+证明分四段，共用三个时钟：物理时间 `@@M@@t@@`（Kähler–Ricci 流）、对数时间 `@@M@@\tau=\log t@@`（联合次调和性与 Harnack 估计）、体积时钟 `@@M@@s=\rho(o,t)@@`（图卡收缩），`@@M@@\rho=\log(\det g/\det h_t)\ge0@@` 为体积损失。
 
-先攻克"初始曲率无界"：在穷竭域上把 \(g\) 共形完备化为 Hermitian 度量跑 Chern–Ricci 流，经最大值原理、变换 Hessian 型抛物估计与对角抽取，把 \(0<h_t\le g\)、\(\rho\ge0\) 以及配以可积权 \(\chi=u^{-k}e^{-AH/u^2}\) 的粘性（viscosity）标量比较传入极限，得整体流 \(h_t=g-t\Ric(g)+\dd U\)；次序关键：标量比较先于完备性。
+先攻克"初始曲率无界"：在穷竭域上把 `@@M@@g@@` 共形完备化为 Hermitian 度量跑 Chern–Ricci 流，经最大值原理、变换 Hessian 型抛物估计与对角抽取，把 `@@M@@0<h_t\le g@@`、`@@M@@\rho\ge0@@` 以及配以可积权 `@@M@@\chi=u^{-k}e^{-AH/u^2}@@` 的粘性（viscosity）标量比较传入极限，得整体流 `@@M@@h_t=g-t\Ric(g)+\dd U@@`；次序关键：标量比较先于完备性。
 
-再把曲率运算搬上全纯余切丛：对对偶范数 \(N=|\xi|^2_{h_t^{-1}}\) 取全纯圆盘边界平均的下包络 \(v\)（Poletsky–Rosay 构造），夹在 \(N(\cdot,0)\le v\le N\)。由典则辛双向量（symplectic bivector）的恒等式 \(\partial_tN=p(\dd_YN)\)、圆盘紧性（边界紧＋面积有界⇒像紧）与 Wiener–Masani 因子分解，变形引理给出 \(v\) 的粘性不等式；逐纤维优化 Hermitian 椭球把它化为已证的标量比较，故 \(v=N\)，即 \(N(x,\xi,e^{w+\bar w})\) 关于空间与对数时间联合多次调和（plurisubharmonic），矩阵与标量 Harnack 不等式随之导出。
+再把曲率运算搬上全纯余切丛：对对偶范数 `@@M@@N=|\xi|^2_{h_t^{-1}}@@` 取全纯圆盘边界平均的下包络 `@@M@@v@@`（Poletsky–Rosay 构造），夹在 `@@M@@N(\cdot,0)\le v\le N@@`。由典则辛双向量（symplectic bivector）的恒等式 `@@M@@\partial_tN=p(\dd_YN)@@`、圆盘紧性（边界紧＋面积有界⇒像紧）与 Wiener–Masani 因子分解，变形引理给出 `@@M@@v@@` 的粘性不等式；逐纤维优化 Hermitian 椭球把它化为已证的标量比较，故 `@@M@@v=N@@`，即 `@@M@@N(x,\xi,e^{w+\bar w})@@` 关于空间与对数时间联合多次调和（plurisubharmonic），矩阵与标量 Harnack 不等式随之导出。
 
-最后装配坐标：过渡映射满足体积恒等式 \(|\det F'_{s,u}(0)|=e^{-(u-s)/2}\)，静态畸变引理（最大奇异长被最小者的固定幂控制，依靠 Hörmander \(L^2\) 延拓）保证体积损失逼出逐方向收缩；Ricci 夹紧窗口内 Harnack 取等，迫使极限标量曲率实严格凹，其梯度流指数压缩环路而得单连通（simply connected）；多次调和 Liouville 定理统一收缩指数为 \(\sigma\)。再用 Andersén 无散度剪切把归一化体积 Jet 实现为常数 Jacobian 的多项式自同构（polynomial automorphism）\(G_k\)，与真实过渡 Jet 共轭；"坏窗口"的次数损失记入 \(q=ds/d\tau\) 的增长账目，换来子列界 \(\deg G_{0,k}\le Ds_k\)。修正逆图卡的逆向迭代收敛为单射全纯映射 \(\Psi:M\to\C^n\)；若像域中心球最大半径 \(R_*<\infty\)，多项式增长估计与"前进小性"\(\sup_K|G_{0,k}|\le e^{-(\sigma/2)s_k}\) 连同逆球包含即得矛盾，故 \(\Omega=\C^n\)。
+最后装配坐标：过渡映射满足体积恒等式 `@@M@@|\det F'_{s,u}(0)|=e^{-(u-s)/2}@@`，静态畸变引理（最大奇异长被最小者的固定幂控制，依靠 Hörmander `@@M@@L^2@@` 延拓）保证体积损失逼出逐方向收缩；Ricci 夹紧窗口内 Harnack 取等，迫使极限标量曲率实严格凹，其梯度流指数压缩环路而得单连通（simply connected）；多次调和 Liouville 定理统一收缩指数为 `@@M@@\sigma@@`。再用 Andersén 无散度剪切把归一化体积 Jet 实现为常数 Jacobian 的多项式自同构（polynomial automorphism）`@@M@@G_k@@`，与真实过渡 Jet 共轭；"坏窗口"的次数损失记入 `@@M@@q=ds/d\tau@@` 的增长账目，换来子列界 `@@M@@\deg G_{0,k}\le Ds_k@@`。修正逆图卡的逆向迭代收敛为单射全纯映射 `@@M@@\Psi:M\to\C^n@@`；若像域中心球最大半径 `@@M@@R_*<\infty@@`，多项式增长估计与"前进小性"`@@M@@\sup_K|G_{0,k}|\le e^{-(\sigma/2)s_k}@@` 连同逆球包含即得矛盾，故 `@@M@@\Omega=\C^n@@`。
 
 ## 可信度与备注
 
