@@ -1,0 +1,50 @@
+---
+layout: default
+title: "Goldfeld's analytic density conjecture and the 2-converse for elliptic curves"
+family: "006"
+discipline: "Number theory"
+formalized: false
+source: null
+pdfname: ""
+---
+
+{% raw %}
+# 解读 | Goldfeld's analytic density conjecture and the 2-converse for elliptic curves
+
+> 结果族 006：Goldfeld's conjecture: densities and mean analytic rank　·　学科：Number theory　·　验证状态：暂无形式化证明，请以社区核验为准
+
+## 一句话结论
+
+对 \(\mathbb{Q}\) 上任意椭圆曲线 \(E\)，本文证明 Goldfeld 解析密度猜想：二次扭曲中解析秩 0 与 1 各占密度 \(1/2\)；并证明低余秩 2-逆定理：\(2^\infty\)-Selmer 余秩为 0 或 1 时它就等于解析秩与 Mordell–Weil 秩且 \(\Sha\) 有限，全程不假设 BSD。
+
+## 问题背景
+
+设 \(E/\mathbb{Q}\) 为椭圆曲线，\(a(E)=\operatorname{ord}_{s=1}L(E,s)\) 为解析秩，\(r(E)\) 为有理点群 \(E(\mathbb{Q})\) 的秩。BSD 猜想断言二者相等，并预测 Tate–Shafarevich 群（Tate–Shafarevich group）\(\Sha(E/\mathbb{Q})\) 有限。Goldfeld 在 1979 年进一步提出：在 \(E\) 的二次扭曲（quadratic twist）族 \(\{E^{(d)}\}\) 中，解析秩的平均应趋于 \(1/2\)，等价说法是秩 0 与秩 1 各占一半（其原始形式按二次域判别式参数化，本文采用带符号无平方因子参数按绝对值排序的约定）。Gross–Zagier 与 Kolyvagin 的经典工作给出"正方向"：\(a(E)\le 1\) 时秩相等、\(\Sha\) 有限；但反方向——从 Selmer 群（Selmer group）信息推出解析非消失——此前只在好普通素数、剩余表示不可约等条件下有结果（Skinner–Urban、Skinner、Wei Zhang、Burungale–Castella–Skinner 等，且基本不覆盖 \(p=2\)）。密度方面，James、Vatsal（\(X_0(19)\)）、Kriz–Li（有理 3-同源曲线）等只在特殊族得到正比例，一般曲线连正比例都未知。Smith 2025 证明了对每条有理椭圆曲线 \(2^\infty\)-Selmer 余秩 0 与 1 各占密度 \(1/2\)，但其解析推论需要假设 BSD——本文补上的正是从 Selmer 统计到解析结论这一缺失环节。
+
+## 主要结果
+
+**定理 A（低余秩 2-逆定理）**：若 \(c_2(E)=\operatorname{corank}_{\mathbb{Z}_2}\Sel_{2^\infty}(E/\mathbb{Q})\in\{0,1\}\)，则
+\[a(E)=r(E)=c_2(E),\qquad \Sha(E/\mathbb{Q})\ \text{有限}.\]
+对约化类型、复乘、有理挠点与有理同源均无任何限制。
+
+**定理 B（Goldfeld 解析密度猜想）**：对每条 \(E/\mathbb{Q}\) 与 \(j\in\{0,1\}\)，
+\[\lim_{X\to\infty}\frac{\#\{d\in\mathcal{D}(X):a(E^{(d)})=j\}}{\#\mathcal{D}(X)}=\frac12,\]
+其中 \(\mathcal{D}(X)\) 是 \(0<|d|\le X\) 的无平方因子整数，正负参数合起来按绝对值计数。由此解析秩 \(\ge 2\) 的扭曲密度为零；且对密度 1 的参数 \(d\)，\(E^{(d)}\) 的解析秩与代数秩相等、整个 \(\Sha\) 有限。
+
+**推论（有限判据）**：若 \(d_2(E)=\dim_{\mathbb{F}_2}\Sel_2(E/\mathbb{Q})-\dim_{\mathbb{F}_2}E(\mathbb{Q})[2]\in\{0,1\}\)，则一次有限 2-descent 即可同时认证解析秩与整个 \(2\)-部分 \(\Sha\) 的消失；其证明用交错 Cassels–Tate 配对（Cassels–Tate pairing）从 \(d_2\) 过渡到完整余秩。
+
+## 证明思路
+
+论文的主体是逐点逆定理（定理 A）；定理 B 由它与 Smith 的余秩分布复合而得。固定 \(E\)，作者构造有限的"二元立方族"扭曲参数
+\[h_x=\prod_{q\in\mathcal{Q}}(q^*)^{\lambda_q(x)},\qquad q^*=(-1/q)\,q,\qquad x\in\mathbb{F}_2^b,\]
+其中 \(\mathcal{Q}\) 是一组互异的好奇素数，\(\lambda_q\) 为线性型，\(x=0\) 处参数为 \(1\)，且所有顶点在每个固定坏位置有相同的局部扭曲类。目标是让每个非零顶点的解析阶恰为 \(c_2(E)\)，并配一个标量"行列式坐标"：它在这些顶点处有非零的中心特殊化、且 \(2\)-adic 赋值一致有界；最后用有界整插值把非消失传回缺失的顶点 \(0\)，即曲线 \(E\) 本身。
+
+插值类按余秩分两种。\(c_2=0\) 时用 Beilinson–Kato 类，其中心特殊化探测 \(L(E,1)\)；工具是 \(\mathbb{Q}\) 的实分圆 \(\mathbb{Z}_2\)-扩张上的 Iwasawa 上同调，其中"正复形"挖去实上链但保留连通映射给出的不变线，再与 Kato 的 zeta 类合成行列式坐标。\(c_2=1\) 时用虚二次域 \(K=\mathbb{Q}(\sqrt{k})\) 上的 Heegner 类，其高度探测导数 \([L(E,s)L(E^{(k)},s)]'_{s=1}\)（依赖环类的显式 Gross–Zagier 公式）；先选定解析非消失的伴侣 \(E^{(k)}\)，使 \(K\) 上的 Selmer 余秩恰为 \(1\)，并在 \(2\) 与所有坏素数处保持整 Kummer 条件。
+
+真正的难点在于构造这些族。偶符号系数由 Waldspurger 公式给出，奇符号由 genus Heegner 和的约化给出加权三元 theta 系数；先证一致下界，再取"最小正规赋值"完成归一化，权 \(2\) 的 Hecke 迹把这些系数检测转化为素数有限组态上的收缩与删除规则。剩余表示 \(E[2]\) 分两种穷举情形处理。可约时（即有有理 2-挠点），用图（graph）编码辅助素数之间规定的二次剩余符号，使两个独立的系数检测在每个非零顶点同时取单位值，奇情形先把伴侣域固定、再让维数增长。不可约时，局部 Selmer 方程给出 \(\mathbb{F}_2\) 上的矩阵，减去由有限局部类型确定的修正项后矩阵变为对称，其零化度给出 Selmer 维数的下界；把组态分块并令块间矩阵为零，则一个非零系数检测即可界定矩阵核、从而界定奇异块的个数。取奇异块数极大的组态，经 Ramsey 型"饱和论证"在每个非零二元顶点安排出单位检测；一条交错矩阵修补引理（证明形如 \(\begin{psmallmatrix}D&N\\N&N+H\end{psmallmatrix}\) 的分块矩阵可逆）再给出素数个数与 Selmer 长度一致有界的伴侣 \(k\)。此外，整插值代数通过一个有界复形清除分母，使所需同余精度与新素数个数无关。最后，密度定理由逐点逆定理与 Smith 2025 的余秩分布复合，并处理从整数参数到无平方因子参数的过渡。
+
+## 可信度与备注
+
+本文为 OpenAI 手稿，主结果暂无形式化证明；按官方声明，未经形式化的结果可能有问题，请以社区核验为准。族内姊妹篇互相支撑：另一篇平均解析秩论文证明密度零的高秩尾巴不拖累秩加权平均，与本文合成平均解析秩 \(1/2\)；后续的全素数 \(p\) 推广与 \(2\)-部分 BSD 精确公式两篇均以本文的逆定理与密度结论为输入。证明依赖大量一致 \(2\)-adic 估计与超滤取极限的构造，技术性极强，独立核验尚需时间。
+
+{% endraw %}

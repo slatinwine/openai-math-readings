@@ -1,0 +1,46 @@
+---
+layout: default
+title: "Positive lower density of large prime gaps"
+family: "026"
+discipline: "Number theory"
+formalized: false
+source: null
+pdfname: ""
+---
+
+{% raw %}
+# 解读 | Positive lower density of large prime gaps
+
+> 结果族 026：Positive lower density of large prime gaps　·　学科：Number theory　·　验证状态：暂无形式化证明，请以社区核验为准
+
+## 一句话结论
+
+论文证明：对任意固定 \(C>0\)，都存在 \(c(C)>0\)，使得每个足够大的前 \(N\) 个素数里，相邻间隔 \(p_{n+1}-p_n>C\log p_n\) 者至少占比例 \(c(C)\)；由此 \(p_n/n\) 递增的指标具有正下密度，肯定回答了 Erdős–Prachar 1962 年的问题。
+
+## 问题背景
+
+记 \(p_n\) 为第 \(n\) 个素数，\(d_n=p_{n+1}-p_n\)。素数定理说明 \(p\) 附近的平均间隔约为 \(\log p\)；Westzynthius 早已证明 \(d_n/\log p_n\) 无界，Erdős–Rankin 以及 Ford–Green–Konyagin–Tao、Maynard 又不断推高"最大间隔"的下界。但这些结果只描述极端大的间隔，并不能推出"正比例"的间隔超过平均值的固定倍数。频率问题真正的难点在于：数"无素数区间"与数"素数间隔"是两种计数——一条很长的间隔内部含有大量无素数短区间的起点，空区间占正比例完全可能只由稀疏的超长间隔撑起来。Bazzanella–Languasco–Zaccagnini 2010 年的定理 5 只在阈值低于 \(2/3.454\approx0.579\) 时给出正比例；Tao 2019 年的空区间论证同样指出，从"区间测度"过渡到"间隔计数"需要额外控制；Gallagher 式的 Poisson 统计则依赖更强的均匀素数组假设，属于条件结果。1962 年 Erdős 与 Prachar 进一步问：使 \(p_n/n\) 递增的指标集是否有正的下渐近密度（lower asymptotic density）？
+
+## 主要结果
+
+**主定理（Theorem 1.1）**：对每个固定实数 \(C>0\)，存在常数 \(c(C)>0\) 与 \(N_0(C)\)，使得对每个整数 \(N\ge N_0(C)\) 都有
+\[\#\{1\le n\le N:\ p_{n+1}-p_n>C\log p_n\}\ge c(C)N.\]
+注意这里是"寻常"下密度（ordinary lower density）：估计对**每个**足够大的初始段一致成立，而非只沿某个子列成立；比例常数可以依赖 \(C\)。
+
+**推论（Corollary 1.2）**：集合 \(\{n\ge1:\ p_n/n<p_{n+1}/(n+1)\}\) 具有正下渐近密度。证明只有几行：该不等式等价于 \(d_n>p_n/n\)，而素数定理给出 \(p_n/n\sim\log p_n\)，故取 \(C=2\) 应用主定理、丢弃有限多个例外指标即可。这肯定地回答了 Erdős–Prachar 问题。
+
+## 证明思路
+
+整个证明分两幕：先造权重，再把权重换算成间隔计数。固定 \(\lambda>\max\{C,1\}\)，令 \(h=\lfloor\lambda\log X\rfloor\)，在 \(X<m\le2X\) 上取平均，给每个起点配两个相邻区间：前块 \(J=\{1,\dots,h\}\)、后块 \(I=\{h+1,\dots,2h\}\)，理想事件是"\(J\) 中有素数、\(I\) 中没有"。此时 \(J\) 中最后一个素数 \(p(m)\) 的后继素数超出 \(m+2h\)，故它开启一条长于 \(h\) 的间隔；而每个素数至多被 \(h\) 个起点选中（必须 \(p-h\le m<p\)），这一有界重数（multiplicity）正是把区间构造折算为间隔计数的关键：\(\delta X\) 个好起点至少给出 \(\delta X/h\) 条长间隔（Lemma 2.2）。
+
+支撑换算的是权重命题（Proposition 2.1）：构造 \(W_X(m)\ge0\)，使其平均质量趋于 1；在 \(J\) 检测到的加权素数质量 \(\mathbb E(W_XV_J)\to\lambda\)（其中 \(V_J=\frac1L\sum_{b\in J}\vartheta(m+b)\)，\(\vartheta\) 为带 \(\log\) 权的素数指示函数）；在 \(I\) 的素数质量却可压至任意小的 \(\varepsilon\)；另有两条二阶矩界，防止加权质量挤在过少的素数或过少的起点上。随后两次 Cauchy–Schwarz 先给出至少 \(\delta X\) 个普通好起点，再经重数引理换成间隔，最后取 \(X=\lfloor p_N/3\rfloor\) 保证全部指标不超过 \(N\)，得 \(c(C)=\delta/(4\lambda)\)。
+
+权重的构造是全文核心（谱系上承 Goldston–Yıldırım 的除数和相关法与 Maynard 的多维筛）：取光滑除数和的带符号和 \(Z\)——对位移整数 \(m+b\) 的因子求和，带 Möbius 函数 \(\mu\) 与紧支集光滑测试函数——权重即 \(Z^2/w\)。关键机制有二。其一，当素数标记落在 \(I\) 的位移 \(a\) 上时，支撑截断 \(\tau=1/8\) 迫使该坐标的因子只能取 1，删去 \(a\) 得到精确恒等式，效果是把第 \(j\) 维测试函数替换为 \(f_j+Tf_{j+1}\)：相邻维数由此耦合，"压低 \(I\) 的素数质量"等价于让相邻层的函数几乎对消。其二，检测界常数 \(C_*=\lambda+\lambda^2c_G^2\) 与维数 \(k\) 及函数族无关，故可先把 \(\varepsilon\) 压得足够小再进入计数。对消的具体实现（Proposition 4.2）：用近似 \(1/u\) 的伸缩轮廓 \(g\) 把一阶矩做得任意小，令 \(Q_j=k^{j/2}\prod_i g(kt_i)\)，在最高 \(r=\lfloor\sqrt k\rfloor\) 层取交错符号 \((−1)^jQ_j/\sqrt{\alpha_j}\)，相邻层相消至因子 \(1-\sqrt{(j+1)/k}\)，最终 \(w\to1\)、\(v\to0\)。参数顺序至关重要：先让辅助参数 \(k\to\infty\) 选定一个有限族，再让 \(X\to\infty\)，从而完全避开对 \(k\) 一致的除数和渐近公式。
+
+解析基础是允许任意重合模式与一个素数标记的混合矩公式：经 Bombieri–Vinogradov 定理与 Euler 积的 Fourier 求值，主项分离为奇异级数（singular series）\(\mathfrak S(\mathcal H)\) 乘以由重合模式决定的常数；完全混合偏导在坐标面上消失，正因如此 \(Z^2\) 展开中不相配的子集自动消去，只剩平方范数。再配合 Gallagher 型的奇异级数方框平均，全部估计得以闭合。
+
+## 可信度与备注
+
+本篇暂无形式化证明，请以社区核验为准；论文署名 OpenAI，标注日期 2026 年 9 月 25 日，而 OpenAI 官方声明"未经形式化的结果可能有问题"。结果族 026 宣称的核心结论即本篇的主定理与推论；本批任务仅含这一篇手稿，其内部呈"权重命题—矩恒等式—维数对消—混合矩公式"的分层结构逐环咬合（Proposition 2.1 依赖 3.1 与 4.2，3.1 依赖 5.1）。核验时第 5 节的混合矩公式与奇异级数平均是技术负担最重、最值得先行复查的环节。
+
+{% endraw %}

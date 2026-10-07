@@ -1,0 +1,42 @@
+---
+layout: default
+title: "The higher-dimensional Erdős distinct-distances conjecture"
+family: "166"
+discipline: "Combinatorics"
+formalized: false
+source: null
+pdfname: ""
+---
+
+{% raw %}
+# 解读 | The higher-dimensional Erdős distinct-distances conjecture
+
+> 结果族 166：The higher-dimensional Erdős distinct-distances conjecture　·　学科：Combinatorics　·　验证状态：暂无形式化证明，请以社区核验为准
+
+## 一句话结论
+
+对每个固定维数 \(d\ge3\)，\(\mathbb R^d\) 中任意 \(n\ge2\) 个不同点至少决定 \(c_d n^{2/d}\) 个不同距离，\(c_d>0\) 只依赖 \(d\)。幂次与整数格例子一致而达最优，由此正面解决高维 Erdős 不同距离猜想。
+
+## 问题背景
+
+不同距离问题（distinct-distances problem）由 Erdős 于 1946 年提出：\(n\) 个点两两距离的总数最少能有多少？平面方格构造只给出 \(O(n/\sqrt{\log n})\) 个距离，Guth–Katz 证明了阶匹配的 \(\Omega(n/\log n)\) 下界；而 \(d\ge3\) 时的猜想是常数倍的 \(n^{2/d}\)。此前最好的结果沿两条线：Solymosi–Vu 的递推不等式，以及 Tidor–Yu–Zakharov（2026）的三维界 \(n^{2/3-o(1)}\)——代入递推得四维 \(n^{8/17-o(1)}\)、五维 \(n^{3/8-o(1)}\)，指数全都低于 \(2/d\)。更本质的困难是：\(n^{2/d-o(1)}\) 型下界推不出常数因子，因为比值可能以任意慢的速度衰减，证明必须一次性排除所有反例序列。历史上 Aksoy Yazici 曾宣布解决该猜想，后因证明有误自行撤稿，可见此问题极易出错。
+
+## 主要结果
+
+记 \(\Delta(P)=\{|p-q|:p,q\in P,\ p\ne q\}\)。主定理（introduction.tex 第 19–26 行）：对每个整数 \(d\ge3\) 存在 \(c_d>0\)，使任意 \(n\ge2\) 个不同点的有限集 \(P\subset\mathbb R^d\) 满足 \(|\Delta(P)|\ge c_d n^{2/d}\)，对点的位置、间距与集中程度不作任何假设。指数 \(2/d\) 最优：整数格 \(\{1,\ldots,t\}^d\) 有 \(t^d\) 个点，其平方距离是 \(1\) 到 \(d(t-1)^2\) 之间的整数，故仅 \(O(t^2)=O(n^{2/d})\) 个距离。平面情形因方格给出 \(O(n/\sqrt{\log n})\)，猜想阶与此不同，不属本文范围。
+
+## 证明思路
+
+全文用反证法：取定理失效的最小维数 \(d\ge3\)，则有序列 \(N=|P|\to\infty\) 使 \(M=1+|\Delta(P)|=o(A)\)，其中 \(B=N^{1/d}\)、\(A=B^2\)；由低维归纳与附录自给的平面 Guth–Katz 型界，先封顶每个真仿射平坦上的点数。
+
+第一步做对称的方向选取：在每个中心 \(p\) 处，让次数 \(\lfloor A\rfloor\) 的齐次多项式能在选中的位移方向 \(\pi_p(q)=[q-p]\) 上任意指定取值（等价于赋值向量线性无关）。唯一实质障碍是"稀疏锥"（sparse cones）：给每点配一族总次数 \(o(N/A)\) 的投影曲线，覆盖几乎全体点对。论文用多尺度"尺度剖面"（scale profile）将其排除——在 \([Be^{-s},Be^s]\) 的多个对数宽度窗口内记录 \(d\) 次真超曲面切割的切割时刻，得到平衡剖面（\(\sum_i b_i=0\)，\(b_1<0<b_d\) 等），再用 Chardin–Philippon 型 Hilbert 函数（Hilbert function）下界给出每个正密度子集的多项式限制秩下界，与锥覆盖迫使的秩上界冲突；割线几何（secant geometry）与终端曲线的先期删除控制径向投影合并造成的损失，两个端点情形则用直接的投影像比较处理。
+
+第二步把等距化为平坦相交：取 \(P\) 的通用旋转副本 \(Q\)，当 \(|p-p'|=|q-q'|\) 且两端点对均被选中时连边，Cauchy–Schwarz 给出 \(\Omega(N^4/M)\) 条边。每个点对对应斜形式空间中一个 \(s_0=d(d-1)/2\) 维仿射平坦 \(F_{p,q}\)，插值性保证邻居平坦两两不同且有 \(O(A)\) 次分离子（separator）。\(d=3\) 时还需"富运动定理"（\(\sum_g k_g^2\le K N^4/A\)，两种定向都计入）删除单个刚性运动（rigid motion）匹配过多的边，其证明综合了 Szemerédi–Trotter、Beck 二分法与六维空间中关于分裂二次型的多项式降次论证。
+
+最后一步只做一次随机采样：全局集中性加 Hilbert 下界给出全体保留平坦在次数 \(\lfloor A\rfloor\) 的总秩至少 \(c_4 mA^{s_0}\)，而以小固定概率采样的子族秩严格更小，同时每个顶点仍保有 \(\gg A^{d-1}\) 个采样邻居。于是存在次数 \(\le A\) 的多项式，在所有采样平坦上为零、却在某个保留平坦 \(F\) 上不恒为零；其限制零化超过 \(C A^{d-1}\) 个两两不同的邻居平坦，与局部集中性（次数 \(\le A\) 的多项式至多含 \(O(A^{d-1})\) 个邻居平坦）矛盾。所有常数沿序列一致，这正是常数因子的来源。
+
+## 可信度与备注
+
+本文暂无形式化证明，请以社区核验为准。结果族 166 目前仅此一篇手稿，无姊妹篇互证；其依赖的平面基例与集中性、经典关联工具均在附录内自给并逐处标明与 Szemerédi–Trotter、Beck、Elekes–Sharir、Guth–Katz 及 Tidor–Yu–Zakharov 工作的关系，作者还如实记录了前人撤稿的教训。按 OpenAI 官方声明，未经形式化的结果可能有问题。
+
+{% endraw %}

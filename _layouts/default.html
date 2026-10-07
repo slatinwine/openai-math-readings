@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{ page.title | default: site.title }}</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+<style>
+body{font-family:"Segoe UI","Microsoft YaHei",sans-serif;max-width:52em;margin:0 auto;padding:1em 1.4em;line-height:1.75;color:#1c1e21}
+nav{border-bottom:1px solid #ddd;padding:.4em 0;margin-bottom:1.2em;font-size:.95em}
+nav a{margin-right:1.2em;text-decoration:none;color:#0b5fff}
+h1{font-size:1.45em;line-height:1.4}
+h2{font-size:1.18em;border-left:4px solid #0b5fff;padding-left:.5em;margin-top:1.6em}
+blockquote{border-left:4px solid #c8d3e8;margin:0;padding:.2em 1em;color:#444;background:#f6f8fb}
+table{border-collapse:collapse}th,td{border:1px solid #ccc;padding:.3em .6em}
+code{background:#f4f4f6;padding:.1em .3em;border-radius:3px}
+.meta{color:#666;font-size:.9em}
+footer{margin-top:2.5em;border-top:1px solid #ddd;padding-top:.6em;color:#888;font-size:.85em}
+</style>
+</head>
+<body>
+<nav><a href="/index.html">首页·总览</a><a href="/catalog.html">722 篇总目录</a><a href="https://github.com/slatinwine/openai-math-readings">GitHub 仓库</a></nav>
+{{ content }}
+{% if page.source %}<footer>原文手稿：<a href="{{ page.source }}">openai/math · {{ page.pdfname }}</a>（Apache-2.0）</footer>{% endif %}
+<script>
+document.addEventListener("DOMContentLoaded", function(){
+  if (!window.katex) return;
+  document.querySelectorAll('script[type="math/tex"]').forEach(function(s){
+    var sp = document.createElement('span');
+    try { katex.render(s.textContent, sp, {throwOnError: false}); } catch(e){ sp.textContent = s.textContent; }
+    s.parentNode.replaceChild(sp, s);
+  });
+  document.querySelectorAll('script[type="math/tex; mode=display"]').forEach(function(s){
+    var d = document.createElement('div');
+    try { katex.render(s.textContent, d, {throwOnError: false, displayMode: true}); } catch(e){ d.textContent = s.textContent; }
+    s.parentNode.replaceChild(d, s);
+  });
+});
+</script>
+</body>
+</html>

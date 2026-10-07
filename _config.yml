@@ -1,0 +1,5 @@
+title: OpenAI 数学证明合集 · 722 篇中文解读
+description: github.com/openai/math 仓库 722 篇 AI 证明手稿的中文逐篇解读（OpenAI 2026-10-06 发布）
+permalink: "/:path/:basename.html"
+kramdown:
+  math_engine: mathjax

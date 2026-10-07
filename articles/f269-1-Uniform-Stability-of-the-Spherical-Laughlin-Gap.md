@@ -1,0 +1,36 @@
+---
+layout: default
+title: "Uniform Stability of the Spherical Laughlin Gap"
+family: "269"
+discipline: "Mathematical physics"
+formalized: false
+source: null
+pdfname: ""
+---
+
+{% raw %}
+# 解读 | Uniform Stability of the Spherical Laughlin Gap
+
+> 结果族 269：Uniform Laughlin gap and stability under bounded scalar disorder　·　学科：Mathematical physics　·　验证状态：暂无形式化证明，请以社区核验为准
+
+## 一句话结论
+
+证明球面上 1/3 填充的费米 Laughlin \(V_1\) 哈密顿量在弱有界标量无序势下仍保有唯一基态与一致谱隙，且谱隙与无序阈值对所有充分大的粒子数、一切归一化势剖面一致成立。
+
+## 问题背景
+
+Laughlin 波函数描述分数量子霍尔效应（fractional quantum Hall effect）中 1/3 填充的强关联基态。在 Haldane 的球面几何中，每个电子对若处于相对角动量（relative angular momentum）1，就被投影算子 \(P_{ij}^{(1)}\) 惩罚能量一，三次 Laughlin 多项式是其唯一零模。无微扰时的谱隙已由同族姊妹篇证明，但物理上更关键的是稳定性：真实样品总有杂质与外场，这层间隙能否在弱无序下存活？困难在于扰动的广延性——\(V_{N,q}(\varphi)=\sum_{i=1}^NT_q(\varphi)^{(i)}\) 的范数可随粒子数增长到 \(N\) 阶，朴素微扰论给出的无序区间随系统增大而塌缩为零；而格点上的著名稳定性定理（Bravyi–Hastings–Michalakis、Michalakis–Zwolak）依赖局域拓扑序等额外结构，无法直接移植到这个连续投影子模型。本文为球面最低朗道能级补齐了所需的局域控制。
+
+## 主要结果
+
+设 \(q=3(N-1)\)，半径 \(\sqrt{q/2}\) 的球面携带 \(q\) 个磁通量子，\(U_q\) 是最低朗道能级（lowest Landau level）。无微扰哈密顿量为 \(H_{N,q}=\sum_{i<j}P_{ij}^{(1)}\)，每对系数为一。对实有界可测势 \(\varphi\)（\(\|\varphi\|_\infty\le1\)），经最低能级投影得到 Toeplitz 算子（Toeplitz operator）\(T_q(\varphi)=(\Pi_qM_\varphi\Pi_q)|_{U_q}\)，并组成多体扰动 \(V_{N,q}(\varphi)\)。主定理（一致标量无序稳定性）断言：存在常数 \(\lambda_*>0\)、\(\Delta_*>0\) 与 \(N_*\)，使得对一切 \(N\ge N_*\)、一切满足 \(\|\varphi\|_\infty\le1\) 的实势、一切 \(|\lambda|\le\lambda_*\)，微扰哈密顿量 \(H_{N,q}+\lambda V_{N,q}(\varphi)\) 的最低两个本征值（计重数）之差不小于 \(\Delta_*\)，特别地基态唯一。势可以随系统尺寸变化且无需任何对称性；常数只以存在性方式给出，证明不优化阈值。
+
+## 证明思路
+
+核心策略是不用整体范数控制扰动，而是把中心化的局域项与相互作用能量比较，这依赖两条新估计。第一条是零模（zero mode）空间中的局域观测量估计：对由一致局域化的中性（保粒子数）项组成的相互作用 \(W\)，有 \(|\langle\psi,W\psi\rangle-\langle\Omega,W\Omega\rangle|\le C_W(N-n)\)，其中 \(\psi\) 属于 \(n\) 粒子零模空间，\(\Omega\) 是填满的 Laughlin 向量，常数对磁通一致，且对电子亏损的线性依赖至关重要。证明从一个磁极"读出"零模：末轨道为空则退掉一个磁通并记录一个旗标（flag），否则缩并掉一个电子并退掉三个磁通；旗标数即准空穴度（quasihole degree）\(h=q+3-3n\)，在填充磁通处恰为电子亏损的三倍。在极点钉住零点（flux pinning）实现磁通变化，一致 Fock 谱隙沿该形变存活，给出局域酉输运；再沿分支选择的历史加权、旋转平均，即得上述估计。第二条是局域能量下降（local energy descent）：在整个 Fock 空间上构造快速局域的粒子损失算子 \(J_y\)，满足 \(\int J_y^*J_y\,dy=H_q\)、\(\int J_y^*H_qJ_y\,dy\le H_q^2-cH_q\)，每次跳跃移除二至固定多个粒子；构造先用 \(B_0(g)\) 在一点移除一对电子，再用保迹信道部分清空固定邻域，剩余对关联的账单由"保留四体块"支付——这正是对姊妹篇四体比较的强化版 \(H_q^2\ge c_0H_q+\mathcal L_4(W_4R_q^{\mathrm{hi}}W_4^*)\)。相应的 Lindblad 演化使相互作用能指数衰减、期望粒子损失受初始能量控制，并使算子 \(G=H_q+\mu(N-\mathcal N)\) 同时支配能量与粒子数的亏损或过剩。最后闭合成扰动论证：凡湮灭 \(\Omega\) 的中性厄米局域项之和满足相对形式界 \(\pm\sum_xA_x\le CG\)，证明归结为最优常数 \(K\) 的二次不等式 \(K\le C+C\sqrt K\)，其两处输入正是前两条估计。随后谱输运（quasiadiabatic 延拓的精确谱流形式）用光滑频率滤波 \(F\)（\(|\omega|\ge g_0/2\) 时取 \(-1/\omega\)、\(|\omega|\le g_0/4\) 时取零）构造酉 \(U(s)\)，使拉回哈密顿量的导数逐项中心化而落入该适用类。在 \(N\) 粒子扇区上 \(G=H\)，积分得 \(U(s)^*H_sU(s)-E_0(s)I\ge(1-C|s|)H\)，再用谱隙自举（bootstrap）把结论延伸到整个区间 \([-\lambda_*,\lambda_*]\)，取 \(\Delta_*=g_0/2\)（\(g_0=1/25\)）完成证明。
+
+## 可信度与备注
+
+本文暂无形式化证明。它的无微扰基石——一致 Fock 空间谱隙（至少 \(1/25\)）——正是姊妹篇《A Fock-space inequality and the Laughlin spectral gap》，该篇主结果已 Lean 形式化；本文还复现并把其中的四体比较强化为"保留块"版本，为能量损失构造提供燃料。两篇互相咬合构成完整证明栈，但本文自身仍待核验：按 OpenAI 官方声明，未经形式化的结果可能有问题，请以社区核验为准。
+
+{% endraw %}

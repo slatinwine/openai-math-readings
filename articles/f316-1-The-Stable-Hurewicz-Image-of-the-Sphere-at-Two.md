@@ -1,0 +1,46 @@
+---
+layout: default
+title: "The Stable Hurewicz Image of the Sphere at Two"
+family: "316"
+discipline: "Topology"
+formalized: false
+source: null
+pdfname: ""
+---
+
+{% raw %}
+# 解读 | The Stable Hurewicz Image of the Sphere at Two
+
+> 结果族 316：Curtis's conjecture　·　学科：Topology　·　验证状态：暂无形式化证明，请以社区核验为准
+
+## 一句话结论
+
+证明了悬置半个世纪的 Curtis 猜想：球面稳定同伦群到 \(QS^0\) 模 2 同调的正维 Hurewicz 像，恰由 Hopf 不变量一类 \(\eta,\nu,\sigma\) 与存在的 Kervaire 不变量一类 \(\theta_j\) 的像张成，并推出 Eccles 猜想对所有球面成立。
+
+## 问题背景
+
+对 \(d>0\)，稳定同伦群 \(\pi_d^S\) 等同于 \(\pi_d(Q_0S^0)\)，其中 \(Q_0S^0\) 是 \(QS^0=\operatorname*{colim}_r\Omega^rS^r\) 的基点分量，于是有模 2 Hurewicz 同态 \(h_d:\pi_d^S\to H_d(Q_0S^0;\F_2)\)。目标同调由 Dyer–Lashof 运算给出完整的代数描述，但"哪些同调类能被球面映射实现"始终是难题：球面类必然本原（primitive）且被正 Steenrod 运算消灭，可这些必要条件并不充分。Curtis 1975 年研究 Dyer–Lashof 代数与 \(\lambda\) 代数时给出了猜想的答案及一个证明；后来 Wellington 发现证明有漏洞（记录于 May 1977 年著作脚注），此后五十年悬而未决。猜想的答案由两大经典族拼成：Adams 定理刻画的 Hopf 不变量一类（Hopf-invariant-one classes）\(\eta,\nu,\sigma\)，以及对应装配流形 Arf 不变量为 1 的 Kervaire 不变量一类（Kervaire-invariant-one classes）\(\theta_j\)。
+
+## 主要结果
+
+**定理（Curtis 猜想）**：\(\bigoplus_{d>0}h_d\) 的像在 \(\F_2\) 上由下列元素的 Hurewicz 像张成——次数 \(1,3,7\) 的 \(\eta,\nu,\sigma\)，以及凡在次数 \(2^{j+1}-2\)（\(j\ge1\)）存在的 \(\theta_j\)。定理不额外断言任何 \(\theta_j\) 的存在。
+
+**推论 1（Eccles 猜想对球面成立）**：对每个 \(n>0\)，\(H_*(QS^n;\F_2)\) 中的非零球面类（spherical class）只能是底部类 \(e_n\)，或形如 \(\sigma_*^n h_d(\alpha)\)，\(\alpha\in\{\eta,\nu,\sigma\}\)——Kervaire 像是平方，被第一次同调悬挂消灭。
+
+**推论 2（正维像有限）**：\(h_d=0\)，除非 \(d\in\{1,2,3,6,7,14,30,62,126\}\)；正维像在 \(126\) 以上消失。此推论将定理与 Hill–Hopkins–Ravenel 的"\(\theta_j\) 仅可能 \(j\le6\)"结合；而 \(126\) 维的存在性是 Lin–Wang–Xu 2025 年预印本中独立于本文的结果。
+
+## 证明思路
+
+整个证明围绕"最后一次非零同调悬挂（homology suspension）"组织。先把 \(\alpha\in\pi_d^S\) 用 \(f_0:S^d\to Q_0S^0\) 表示，取逐次伴随 \(f_j:S^{d+j}\to QS^j\) 并记 \(z_j=h(f_j)\)；自由无穷环空间同调的维数界保证 \(j>d\) 时 \(z_j=0\)，故存在最大的 \(e\) 使 \(z_e\ne0\)。
+
+再证 \(z_e\) 必为平方且根仍可悬挂。同调悬挂的核恰为可分解元（decomposables），而多项式 Hopf 代数中可分解的本原元必为平方，其根仍本原、仍被 Steenrod 代数消灭，故 \(z_e=w^2\)。当 \(e\ge1\) 时，上一层球面类经"地板单项式"的奇偶性分析迫使 \(|w|\) 为奇数，奇数次类不是平方，故 \(\sigma_*w\ne0\)；当 \(e=0\) 时需单独排除四次幂——作者用有限权投影、谱配对诱导的块配对（block pairing）与"三重块幂零性"，再借整系数 Pontryagin 类的提升经 Bockstein 与 Adem 关系导出矛盾。
+
+接着把平方送入映射锥（mapping cone）：下一层伴随的锥把 \(w^2\) 转化为非零的 Steenrod 模扩张，等价地得到 \(I\otimes_A M_k(n)\) 中的非零张量 \(\Sq^m\otimes v\)。此处关键代数输入是权分解：权 \(2^k\) 的本原元对偶于迪克森代数（Dickson algebra）理想 \(M_k(n)=\Sigma^nd_0^nD_k\)（\(D_k=\F_2[d_0,\dots,d_{k-1}]\)），悬挂的对偶恰是理想包含 \(d_0^{n+1}D_k\hookrightarrow d_0^nD_k\)，检测泛函因此从上一层限制而来。
+
+最后用代数障碍引理收网：若该张量非零且泛函确实提升，则 \(m\) 必为 2 的幂且 \(n=k=1\)。其证明先用 Milnor 本原元 \(q_i=d_0\,\partial/\partial d_{i+1}\) 算出外代数上不变量的单项式基，再用 Cartier 减半（\(d\mapsto(d-k)/2\)）迭代取半并守住 \(d_0\) 指数下界，配合偶次数 Tor 的单射性排除一切例外。在正终端层，障碍迫使只剩底部权，得 \(m=n=e+1\) 且稳定双胞腔余纤维中 \(\Sq^n\ne0\)，即 Hopf 不变量一检测，由 Adams 定理得 \(d\in\{1,3,7\}\)；在零终端层，障碍迫使根的首权（leading weight）为 \(2\)、\(m=2^j\)，于是 \(d=2m-2=2^{j+1}-2\)，原类首权为 4；Kuhn 提升定理结合截断权的导出幂零性给出 Adams 滤余（Adams filtration）至多 2，而该处 Adams 谱序列只剩 \(\F_2\{h_j^2\}\)，Browder 定理即给出 Kervaire 不变量一。Hopf 与 Kervaire 检测不变量均可加：减去该次数的既定代表元后，余类若仍有非零像就会被逼出矛盾，故像恰由这些代表元的像张成。
+
+## 可信度与备注
+
+本文主结果暂无 Lean 形式化证明，验证状态以社区核验为准；本结果族在本批任务中仅此一篇，论文内部"主定理 ⇒ Eccles 推论 ⇒ 有限像推论"环环相扣，并大量倚重经典外部结果（Adams、Browder、Serre 有限性、Hill–Hopkins–Ravenel、Kuhn 提升定理、Lin–Wang–Xu 的 \(\theta_6\) 存在性），推理链条较长，宜整体审阅。按 OpenAI 官方声明，未经形式化的结果可能有问题。
+
+{% endraw %}

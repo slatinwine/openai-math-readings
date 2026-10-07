@@ -1,0 +1,42 @@
+---
+layout: default
+title: "Failure of rational injectivity for maximal coarse assembly"
+family: "307"
+discipline: "Topology"
+formalized: false
+source: null
+pdfname: ""
+---
+
+{% raw %}
+# 解读 | Failure of rational injectivity for maximal coarse assembly
+
+> 结果族 307：Failure of rational injectivity for maximal coarse assembly　·　学科：Topology　·　验证状态：暂无形式化证明，请以社区核验为准
+
+## 一句话结论
+
+本文构造了一致离散、有界几何的有限图粗不交并，其一度粗 K-同调中存在无限阶类，在极大 Roe 代数的粗装配映射下映为零——即使换用最"宽松"的极大目标代数，粗装配的有理单射性仍然失效。
+
+## 问题背景
+
+粗几何（coarse geometry）研究度量空间只看大尺度时的形态。Roe 的粗指标理论（coarse index theory）把空间在有界尺度内可见的拓扑编码为粗 K-同调（coarse K-homology）：对一致离散、有界几何（bounded geometry）的空间 \(Z\) 取 Rips 复形（Rips complex）\(P_r(Z)\)，再沿尺度取直极限（direct limit）\(\KX_q(Z)=\varinjlim_r\KK_q(C_0(P_r(Z)),\C)\)。装配映射（assembly map）\(\mu\) 把这样的类送到 Roe 代数的 K-理论，即类的解析指标（analytic index）；本文的目标是极大 Roe 代数（maximal Roe algebra）\(C^*_{\max}(Z)\)——有限传播、局部紧算子代数 \(\C[Z]\) 的泛 C*-完备化。粗 Novikov 型问题问：非挠（non-torsion）拓扑类的指标能否为零？此前的正结果都需要嵌入型假设：Yu 对有限渐近维数、以及可粗嵌入希尔伯特空间的空间证明同构；Špakula–Willett 证明粗可嵌入希尔伯特空间时极大与约化 K-理论同构；Chen–Wang–Yu 等处理纤维化粗嵌入。已有的核类反例（Yu；Dranishnikov–Ferry–Weinberger）或无有界几何，或其类在粗化下消失；Higson–Lafforgue–Skandalis 的反例或属群论装配、或为非满射。本文给出首个把三件事同时做到的反例：有界几何的图并、无限阶核类、极大目标。
+
+## 主要结果
+
+主定理：存在顶点度一致有界的有限连通图族 \((X_j)_{j\geq1}\)、其粗不交并（coarse disjoint union）\(X=\bigsqcup_jX_j\)，以及无限阶类 \(\alpha\in\KX_1(X)\)，使得
+\[\mu_X^{\max}(\alpha)=0\in K_1(C^*_{\max}(X)).\]
+由于 \(\alpha\) 非挠，\(\alpha\otimes1\) 是有理化装配映射的非零核元素，故 \(\mu_X^{\max}\otimes\Q\) 不单射。构造概要：基图为三维离散环面 \(B_j=(\Z/l_j\Z)^3\)，边长 \(l_j=100(j+1)\)；在每个基点上放同余商（congruence quotient）\(Q_k\)——\(\SL_3(\Z)\) 模 \(2^k\) 约化的像——作纤维。中段（高度 \(|t|\le j\)）纤维固定为 \(Q_{2j}\)，形成长的乘积领（central collar）；向两端每次降低一级，直至平凡商，两端各为 \(B_j\) 的等距拷贝。逐级约化使顶点度有公共界 \(|S|+6+2^{10}\)，尽管中段纤维基数随 \(j\) 急剧增长；各分量之间用长 \(100+j^2\) 的辅助边连成粗不交并。
+
+## 证明思路
+
+全证明分三步：先在拓扑侧证明类非挠，再在极大范数中构造转移（transfer），最后"滑动"证明两端指标相等，合并即得指标为零。
+
+拓扑侧的核心是一个 2-进整除计算。扭转元 \(U_j=1+2^jE_{12}\) 与 \(V_j=1+2^jE_{23}\) 的换位子是 \(1+2^{2j}E_{13}\)：在 \(Q_{2j}\) 中交换而在 \(Q_{3j}\) 中可见。在连续环面上取线丛（line bundle）\(\mathcal L_j\) 使 \(c_1(\mathcal L_j)=u_1\smile u_2\)，令 \(\theta_j=([\mathcal L_j]-1)e_3\in K^1\)，它与对偶同调类 \(\tau_j\) 的配对为 1；定义 \(\alpha=(i_+)_*\beta-(i_-)_*\beta\)。把边缘运输从 \(Q_{2j}\) 提升到 \(Q_{3j}\)：核 \(N\) 中元素形如 \(1+m^2D\)（\(m=2^j\)），分量 \(D_{13}\) 给出同态 \(d:N\to\Z/m\Z\)，且 \(d(C)=1\)；比较三角形上两条运输路径得 \(n_{02}=C^{a_{01}b_{12}}n_{01}n_{12}\)，即上积 \(a\smile b\) 模 \(m\) 是上边缘（coboundary），故拉回线丛存在 \(2^j\) 次根。再由 Rips 复形维数的一致界 \(D_r\) 与二项式系数的 2-进赋值，把这个根转化为 \(K^1\) 中被 \(2^{j-\lfloor\log_2D_r\rfloor}\) 整除的元素；Mayer–Vietoris 把 \(P_r(X_j)\) 分成上下两半、其交经中央领映到 \(P_r(Y_j)\)，于是若 \(n\alpha\) 在尺度 \(r\) 消失，配对值 \(n\) 就必须被随 \(j\) 增长的 2 的幂整除，取 \(j\) 足够大即矛盾。
+
+解析侧必须在极大完备化中重做全部算子论证，两块基石是范数控制：固定传播时极大范数与算子范数等价；有限顶点支撑的算子两范数相等，其闭包是紧算子理想。转移用 Kazhdan 性质 T（property (T)）：纤维常数向量的平均给出等距 \(V\)，\(\SL_3(\Z)\) 的谱隙使惰性平均幂 \((1-\Delta/2)^n\) 在极大群范数中收敛到不变向量上的投影 \(P\)；水平运输提升 \(L(T)_{uv}=O_{uv}\otimes T_{uv}\) 的乘法缺陷具有限支撑且被 \(P\) 消灭，故 \(\Phi(T)=PL(T)\) 是 \(*\)-同态，且 \((f_A\Phi)_*=\id\)，即投影诱导的 \(K_1\) 映射是满射。最后滑动：在 \(X_j\) 的每个高度各放一份算子得堆叠 \(S_0\)，与上移一格的堆叠 \(S_1\) 比较；模去紧算子后两者都是 \(*\)-同态，在加倍模中用旋转等距 \(W_\lambda\) 连续连接，公共的内部副本相消，端点分别只剩两端的贡献，而 \(K_1(\mathcal K)=0\) 使商映射在 \(K_1\) 上单射，故 \((i_{+,A}f_A)_*=(i_{-,A}f_A)_*\)。自然性立即给出 \(\mu_X^{\max}(\alpha)=0\)。
+
+## 可信度与备注
+
+本文暂无形式化证明，请以社区核验为准；OpenAI 官方声明"未经形式化的结果可能有问题"。它与同族姊妹篇《A counterexample to the coarse Novikov conjecture》互相支撑：姊妹篇针对约化 Roe 代数推翻有理粗 Novikov 猜想，本文把同一思想（同余纤维 + 性质 T 平均）加强到极大目标——由于极大到约化有典范商映射，极大指标为零自动蕴含约化指标为零，反之不然，故转移与滑动都必须在泛范数中独立完成，这正是本文的技术增量。论文对范数控制与 Kazhdan 投影收敛等步骤给出完整证明；个别同余计算的细节技术性较强，此处从略。
+
+{% endraw %}

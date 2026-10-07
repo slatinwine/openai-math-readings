@@ -1,0 +1,44 @@
+---
+layout: default
+title: "Entropy equality and local symmetry in negative curvature"
+family: "339"
+discipline: "Differential geometry"
+formalized: false
+source: null
+pdfname: ""
+---
+
+{% raw %}
+# 解读 | Entropy equality and local symmetry in negative curvature
+
+> 结果族 339：Katok's entropy rigidity conjecture　·　学科：Differential geometry　·　验证状态：暂无形式化证明，请以社区核验为准
+
+## 一句话结论
+
+本文完全证明了 Katok 熵刚性猜想：对维数至少为三、截面曲率严格负的闭连通黎曼流形，规范化 Liouville 测度对测地流取得最大熵当且仅当度规局部对称，即万有覆盖为任意尺度的秩一对称空间。
+
+## 问题背景
+
+测地流（geodesic flow）有两种熵：拓扑熵（topological entropy）\(h_{\mathrm{top}}\) 计数轨道的指数增长，Liouville 熵 \(h_{m_L}\) 是度规自带不变测度所见的熵；变分原理（variational principle）保证后者不超过前者。Katok 于 1982 年提出猜想：负曲率下等号成立应刻画局部对称度规，并证明了曲面情形与高维共形类（conformal class）内的刚性。此后进展皆属局部：Flaminio 证明实双曲度规处熵缺口（entropy gap）二阶变分为正，但其定理 C 给出 Liouville 熵 Hessian 不定的实双曲三流形，说明曲面策略在高维失效；Humbert 也只在固定实、复双曲度规的小 \(C^N\) 邻域内得到刚性。一般高维的根本障碍在于：稳定、不稳定分布 \(E^s,E^u\) 的各叶自身光滑，却未必随叶横向光滑变化，而传统刚性方法正需要这种横截正则性。
+
+## 主要结果
+
+设 \((M^n,g)\) 为闭连通光滑黎曼流形，\(n\ge3\)，截面曲率（sectional curvature）严格负；\(SM\) 为单位切丛，\(\phi_t\) 为单位速测地流，\(m_L\) 为规范化 Liouville 测度。主定理断言 \(h_{m_L}(\phi_1)=h_{\mathrm{top}}(\phi_1)\) 当且仅当 \(\nabla^gR_g=0\)，即 Liouville 测度成为最大熵测度恰好对应曲率张量平行、度规局部对称（locally symmetric）。等价地，万有覆盖是非紧型秩一对称空间（rank-one symmetric space）的整体缩放，涵盖实、复、四元数与 Cayley 双曲型——局部对称不必是常曲率。定理还把两种自然不变概率分开：度规不局部对称时，唯一最大熵概率与 \(m_L\) 互相奇异（mutually singular）。
+
+## 证明思路
+
+核心策略是证明：熵等式恰好逼出 \(E^s,E^u\) 缺失的横截光滑性。
+
+先由熵等式换取输运数据：设 \(U\) 为不稳定 Riccati 张量，\(J=\tr U\) 为不稳定体积膨胀率；熵公式与 Livšic 上同调给出 \(J=h+XF\)，据此构造分别零化 \(E^u,E^s\) 的余法体积形式 \(u,w\)，流输运下乘 \(e^{-ht}\) 与 \(e^{ht}\)，但只在叶片上光滑。
+
+再用叶的 jet 造形式场：把不稳定叶与余法密度在稳定轴交叉处的有限泰勒记录编码进状态空间，叶扩张而记录压缩。非平稳正规形式给出多项式模型，取实际状态集的 Zariski 闭包，从解集提取"替代"余法余向量的仿射族，其全环境泰勒系数沿两叶光滑且协调；只用有限权截断，不假设级数收敛。
+
+继而读出代数后果：保持接触形式与两仿射族的形式向量场构成李代数，其中含 Lyapunov 伸缩算子，熵乘数给出迹恒等式；结合 Cartan–Guillemin 结构理论与正性论证得二分法——对称代数有限维时给出值恰为 \(E^s,E^u\) 的形式场，无限维时给出由形式平坦仿射联络连接的稳定、不稳定方向。
+
+最后量化实现：无限维情形沿完备真稳定射线采样，极限产生混合稳定–不稳定矩形，被无穷远端点几何排除；有限维情形以 Busemann 端点标签 \(q\) 标记弱不稳定叶，插值估计使有限截断逼近在各阶 \(C^j\) 收敛，\(q\) 便光滑；叶全纯（holonomy）绝对连续性的体积比较迫使 \(q\) 为淹没，于是 \(E^u=(\ker dq)\cap\ker\alpha\) 光滑，翻转得 \(E^s\)。收尾调用经典一步：Benoist–Foulon–Labourie 给出到对称测地流的光滑共轭，配合 Besson–Courtois–Gallot 最小熵刚性推出度规相似于对称度规。反向蕴含直接：局部对称时 \(U(v)=\sqrt{-R_v}\) 使 \(J\) 为常数，变分原理立得等式。
+
+## 可信度与备注
+
+本文暂无形式化证明，主结果有待社区核验。论证建立在 Livšic 上同调、Benoist–Foulon–Labourie 共轭、Besson–Courtois–Gallot 最小熵刚性等经典结果之上，新贡献是从熵等式逼出 \(E^s,E^u\) 整体光滑的四段构造。本批结果族仅此一篇手稿，各环节互相衔接、自成一体，整体覆盖 Flaminio 与 Humbert 的局部刚性结果。按 OpenAI 官方声明，未经形式化的结果可能有问题，宜审慎。
+
+{% endraw %}

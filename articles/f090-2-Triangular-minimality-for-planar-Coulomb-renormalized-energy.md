@@ -1,0 +1,56 @@
+---
+layout: default
+title: "Triangular minimality for planar Coulomb renormalized energy"
+family: "090"
+discipline: "Convex and metric geometry"
+formalized: false
+source: null
+pdfname: ""
+---
+
+{% raw %}
+# 解读 | Triangular minimality for planar Coulomb renormalized energy
+
+> 结果族 090：Triangular-lattice optimality, long-range Riesz and Coulomb energies, and spherical logarithmic energy　·　学科：Convex and metric geometry　·　验证状态：暂无形式化证明，请以社区核验为准
+
+## 一句话结论
+
+证明 Sandier–Serfaty 猜想：在单位均匀背景的二维库仑（对数）重整化能量中，协体积为一的三角形格子的周期场达到最小，任何容许无旋场的能量都不低于它；结合 Bétermin–Sandier 渐近公式，还确定了球面对数能量最优值的线性项常数，解决 Brauchart–Hardin–Saff 猜想的二维情形。
+
+## 问题背景
+
+二维库仑相互作用是对数式的：无穷多个等量点电荷配上均匀中和背景（jellium"凝胶"模型），总静电能发散。Sandier 与 Serfaty 在研究 Ginzburg–Landau 涡旋（第二类超导体中的 Abrikosov 格子）时定义了重整化能量（renormalized energy）\(W(E)\)：在每个电荷处减去对数自能，再取单位面积能量的上极限。他们猜想密度一时其最小子恰为三角形格子（triangular lattice，即 Abrikosov 格子）；此前数值证据充分、也只在周期构型内做过严格比较，一般证明缺失。另一条战线是球面 \(S^2\) 上 \(n\) 点对数能量（Thomson 问题的对数版本）最小值的渐近展开（asymptotic expansion）：Brauchart–Hardin–Saff（2012）猜想其线性项系数；Bétermin–Sandier（2018）证明该系数等于一个显式常数，当且仅当三角形格子最小化上述平面重整化能量。两条线在此汇合：证明前者即同时解决后者。
+
+## 主要结果
+
+记 \(\Lambda_\triangle=\sqrt{2/\sqrt3}\,\bigl(\Z(1,0)+\Z(\tfrac12,\tfrac{\sqrt3}{2})\bigr)\) 为协体积（covolume）为一的三角形格子，\(E_\triangle\) 为其周期位势的梯度场。容许类 \(\mathcal A_1\) 由满足 \(\operatorname{div}E=2\pi(\nu_\Lambda-1)\)、\(\curl E=0\) 且电荷计数有二次增长界的无旋场组成。
+
+**定理 1（全平面）**：对每个容许场 \(W(E)\ge W(E_\triangle)\)，且下确界被 \(E_\triangle\) 实现；对竞争者不加任何分离性、周期性或胞腔有界性假设，也排除 \(W(E)=-\infty\)。
+
+**定理 2（方环面）**：在方环面（square torus）\(T_n=\R^2/(\sqrt n\,\Z^2)\) 上，任意 \(n\) 个不同点的格林函数（Green function）位势能量满足 \(\mathcal W_n(h)\ge n\,W(E_\triangle)\)。
+
+**推论（球面对数能量）**：令 \(E_{\log}(n)\) 为 \(S^2\) 上 \(n\) 点有序对（ordered pairs）对数能量和的最小值，则
+
+\[E_{\log}(n)=\Bigl(\tfrac12-\log2\Bigr)n^2-\tfrac n2\log n+C_{\mathrm{BHS}}\,n+o(n),\qquad C_{\mathrm{BHS}}=2\log2+\tfrac12\log\tfrac23+3\log\frac{\sqrt\pi}{\Gamma(1/3)}.\]
+
+这证明了 Brauchart–Hardin–Saff 猜想的 \(d=2\) 情形。
+
+## 证明思路
+
+证明分四步：全平面化归、有限环面几何、对偶校准恒等式、计算机验证的标量不等式。
+
+先做化归。利用 Sandier–Serfaty 的周期逼近定理，把对任意全平面场的下界化为方环面上的一致下界；关键在核对两套归一化的换算（差 \(2\pi\) 因子与 \(\tfrac14\log(2\pi)\) 修正），并处理固定宽度的方形截断：借助质量转移方法（mass-displacement method）与 Struwe 型 \(L^r\) 估计控制边界带误差，并由此推出电荷密度渐近为一。
+
+再做有限环面几何。环面上极小构型存在；用带屏蔽项的位势（在半径 \(r_\ast=1/\sqrt\pi\)、面积恰为一的圆盘外消失）配合极小值原理（minimum principle）证明极小构型中任两点距离至少 \(r_\ast\)。分离性只用于极小构型——其他构型由极小性自动继承下界，这就是主定理无需分离假设的原因。于是各点 Voronoi 胞腔（Voronoi cell）为凸多边形，Euler 计数给出平均每点至多六个面—边扇区（sector），且全部扇区面积之和为 \(n\)、角度之和为 \(2\pi n\)。
+
+核心是构造拼合的对偶试验位势（trial potential）。用同一组径向函数 \(B,D_i\) 在每个扇区写出 \(H\)，它在相邻胞腔共享的 Voronoi 边与顶点射线上的迹自动匹配，在每个电荷附近 \(H=-\log r+O(r^2)\) 且常数项为零。由此得到精确恒等式 \(\mathcal W_n(h)=\sum_S J(S)+\tfrac12\int|\nabla(h-H)|^2\ge\sum_S J(S)\)，把无穷维变分问题化为逐扇区的标量泛函估计，对偶项中匹配的对数奇性恰好消去、只剩非负平方。径向函数取自三角形格林函数的展开（\(z^{6m}\) 模式，系数为格点和），使 \(H\) 在正六边形内恰为 \(h_\triangle-C_\triangle\)；选常数 \(\lambda,\mu\) 使校准后的原函数 \(g_d(x)\) 在正扇区代表点 \((p,x_0)\) 处驻定，并令 \(K=2g_p(x_0)<0\)。在单点三角形环面上六片扇区全部正则且 \(\nabla H=\nabla h_\triangle\)，非负项消失，得精确等式 \(6K+\lambda+2\pi\mu=W(E_\triangle)\)。
+
+难点在垂足落在边外的符号扇区（端点角可为负）。论文用两个标量不等式绕过：\(2g_d(x)\ge K\) 与导数核 \(G\) 的负部积分 \(\le -K\)，二者合成 \(J(S)\ge K+\lambda A(S)+\mu\theta(S)\) 对一切扇区成立。对至多 \(6n\) 片扇区求和并用面积、角度恒等式，得 \(\mathcal W_n(h)\ge n(6K+\lambda+2\pi\mu)=nW(E_\triangle)\)。
+
+最后，两个标量不等式由严格区间算术（interval arithmetic）验证：整数区间分母 \(2^{144}\)、三阶导数区间 jet、保留 38 个模式、被略模式用可求和解析尾界覆盖，中点求积与插值误差显式加回；在包含驻点的小矩形上验证海塞矩阵（Hessian）正定，凸性加驻定性给出该矩形上的最小值。程序 certificate.cpp 的一次完整受护运行记录于 verification/README.md。定理 2 与化归命题合并即得定理 1，再经 Bétermin–Sandier 的等价定理得球面常数。
+
+## 可信度与备注
+
+本篇主结果暂无形式化证明；标量不等式依赖区间算术程序的一次记录运行，论文明确区分程序输出与源码—公式对应关系的数学论证，后者仍需人工核验。论文不分类所有达到最小能量的构型，不含唯一性或缺陷排除断言，也不构造球面近似最优点集或给出算法。结果族 090 的姊妹篇（三角形格子对完全单调位势的普遍最优性、长程 Riesz 能量 \(`0\lt s\lt 2`\) 等）与本文方法各自独立而结论互相印证，共同支撑三角形格子是二维最优点阵的图景。OpenAI 官方声明：未经形式化的结果可能有问题，请以社区核验为准。
+
+{% endraw %}

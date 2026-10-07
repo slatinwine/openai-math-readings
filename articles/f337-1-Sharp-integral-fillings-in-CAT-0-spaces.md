@@ -1,0 +1,46 @@
+---
+layout: default
+title: "Sharp integral fillings in CAT(0) spaces"
+family: "337"
+discipline: "Differential geometry"
+formalized: false
+source: null
+pdfname: ""
+---
+
+{% raw %}
+# 解读 | Sharp integral fillings in CAT(0) spaces
+
+> 结果族 337：Sharp Cartan–Hadamard isoperimetry and rigidity　·　学科：Differential geometry　·　验证状态：暂无形式化证明，请以社区核验为准
+
+## 一句话结论
+
+论文证明：任意真 CAT(0) 空间中，每个紧支撑的积分 \(n\)-圈（\(n\ge2\)）都拥有满足锐欧氏质量界的紧支撑积分填充，\(\mathbf M(S)\le\mathbf M(T)^{(n+1)/n}/\bigl((n+1)^{(n+1)/n}\omega_{n+1}^{1/n}\bigr)\)；由此得到维数 \(\ge3\) 的欧氏 Cartan–Hadamard 等周猜想。
+
+## 问题背景
+
+欧氏等周不等式的流论版本问：一个"圈"（无边界的积分流，integral current）能否被一个填充（filling）以受控质量界定住？Almgren（1986）在欧氏空间中对任意维数、余维与整数重数证明了锐等周不等式。CAT(0) 空间是测地三角形距离不超过其欧氏比较三角形的测地度量空间，即"曲率非正"的度量推广；真（proper）指闭球皆紧。要在没有光滑结构的空间里谈论流，需要 Ambrosio–Kirchheim 的度量积分流理论（配合 Kirchheim 度量微分定理提供局部欧氏图表几何）。Wenger（2005）在完备 CAT(0) 空间中证明了具欧氏指数的等周不等式，但常数依赖圈的维数、并非最优；二维有 Reshetnyak 优超定理与 Schulze 的锐比较。能否在任意真 CAT(0) 空间中取到普适的锐欧氏常数，是 Gromov 填充几何纲领中的公开问题。由于完备单连通非正曲率流形正是 CAT(0) 空间，肯定回答直接给出这类流形上的锐欧氏等周不等式。
+
+## 主要结果
+
+**定理（锐积分填充）**：\(X\) 为真 CAT(0) 空间，\(n\ge2\)。每个紧支撑积分流 \(T\in\mathbf I_n(X)\) 若 \(\partial T=0\)，则存在紧支撑 \(S\in\mathbf I_{n+1}(X)\) 使
+\[\partial S=T,\qquad \mathbf M(S)\le c_n\,\mathbf M(T)^{(n+1)/n}=\frac{\mathbf M(T)^{(n+1)/n}}{(n+1)^{(n+1)/n}\omega_{n+1}^{1/n}}.\]
+对 \(X\) 的维数与流的整数重数没有任何限制；系数最优，欧氏球面达到（如 \(c_2=1/(6\sqrt\pi)\)，\(c_3=(128\pi^2)^{-1/3}\)）。
+
+**推论（Cartan–Hadamard 等周）**：维数 \(d\ge3\) 的 Cartan–Hadamard 流形上，每个有界光滑域满足 \(\operatorname{area}(\partial\Omega)\ge d\omega_d^{1/d}\operatorname{vol}(\Omega)^{(d-1)/d}\)；相对紧有限周长集同样成立（以环境周长代替面积）。约化用到紧支撑最高维填充的唯一性；二维为经典情形，故对所有 \(d\ge2\) 成立。
+
+## 证明思路
+
+证明对圈维数 \(n\) 归纳，二维直接奠基。先把紧支撑圈关进闭凸球，归结为紧 CAT(0) 空间 \(Y\)；设锐界失效，取 \(c>c_n\)，紧性与填充收敛给出最大化 \(V(B)-c\mathbf M(B)^{(n+1)/n}\) 的非零极值圈 \(A\)，其中 \(V\) 是最小填充质量；再对度量作常值缩放，使其质量 \(m=\mathbf M(A)<s_n\)。此后全部工作是推翻这个"小质量极值圈"。
+
+第一步是径向变分：从固定中心 \(y\) 沿测地线把 \(A\) 向内推。CAT(0) 三角比较把变形控制为时间与图表变量的二次型，其行列式保留因子 \(\sqrt{1-|Dr|^2}\)——在光滑欧氏模型中它正是径向单位方向的横向分量；论证全程不需要法丛。\(n=2\) 时，逆平方截断与欧氏下密度逼迫 \(m\ge4\pi=s_2\)，与 \(m<s_2\) 矛盾，完成奠基。
+
+\(n>2\) 时，归纳假设用来填充 \(A\) 的小限制（切片）的边界，将其替换为填充后得到几乎欧氏的小集合周长估计，经内蕴上面积公式（coarea）与重排化为一条临界 Sobolev 不等式，其锐系数即经典 Aubin–Talenti 常数，径向形式由 Cordero-Erausquin–Nazaret–Villani 的质量输运方法证明。接着在 \(L^2(\mu)\)（\(\mu=\|A\|\) 为质量测度）中闭包图表梯度：先整体投影带权流、再在总变差意义下分离图表以获得紧性；几乎锐不等式加 Brézis–Lieb 分裂产出非负极小化子 \(v\)（\(\beta=1/(n-2)\)，\(p=2n/(n-2)\)），并归一化使 \(0<W:=\int v^p\,d\mu<s_n\)。
+
+收官是弦论证：考察带权弦 \(v(y)^\beta d(y,x)v(x)^\beta\) 与概率测度 \(d\nu=v^p\,d\mu/W\)。径向变分与极小化子方程控制弦分布的一个标量变换，欧氏切密度进而给出其对 \(\nu\)-几乎处处中心的平方均值上界 \(2(W/s_n)^{2/n}<2\)（复合测试在 \(v=0\) 处仍可微，即使 \(\beta<1\)，不预设 \(v^\beta\) 的 Sobolev 正则性）。另一面，对有限测度 \(v^{p+2\beta}\mu\) 取重心，并用 Sturm 的 CAT(0) 方差不等式，同一平方弦按 \(\nu\) 平均后被顶到 \(\ge2\)。于是 \(2\le\int L_y\,d\nu(y)<2\)，矛盾完成归纳；填充由下确界的可达性给出，支撑自动紧，最后经紧化引理转移到一般真 CAT(0) 空间。
+
+## 可信度与备注
+
+本文主结果暂无形式化证明。同族姊妹篇《Generalized Cartan–Hadamard isoperimetry and Euclidean equality rigidity》以受限轮廓加超曲面 Sobolev 不等式的光滑方法，独立证明了全维数、任意 \(\kappa\le0\) 的广义比较与欧氏取等刚性；本文则从奇异的度量空间一侧、以积分流归纳法达到欧氏结论（维数 \(\ge3\)），两文方法独立而结论交叠，互为印证。按 OpenAI 官方声明，未经形式化的结果可能有问题，请以社区核验为准。
+
+{% endraw %}

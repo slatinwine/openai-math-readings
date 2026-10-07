@@ -1,0 +1,46 @@
+---
+layout: default
+title: "Critical bond and site percolation on the cubic lattice"
+family: "213"
+discipline: "Probability and statistical mechanics"
+formalized: true
+source: null
+pdfname: ""
+---
+
+{% raw %}
+# 解读 | Critical bond and site percolation on the cubic lattice
+
+> 结果族 213：Critical percolation on every quasi-transitive graph　·　学科：Probability and statistical mechanics　·　验证状态：主结果已 Lean 形式化
+
+## 一句话结论
+
+证明 \(\mathbb{Z}^3\) 上最近邻 Bernoulli 键渗流与点渗流在临界参数 \(p_c\) 处几乎必然均无无穷开簇，补上悬置多年的中间维度缺口，并得 \(\theta(p)\) 在 \(p_c\) 处连续。
+
+## 问题背景
+
+渗流模型由 Broadbent 与 Hammersley（1957）引入：每条边（键模型）或每个顶点（点模型）独立地以概率 \(p\) 开放，问何时出现无穷开簇。临界参数 \(p_c\) 把有无无穷簇的区域分开，而"恰在 \(p_c\) 处是否存在无穷簇"是最基本的问题之一。二维已由 Harris（1960）、Kesten（1980）与 Russo（1981）解决；高维 \(d\ge 11\) 由花边展开（lace expansion）覆盖（Hara–Slade，Fitzner–van der Hofstad；点模型见 Heydenreich–Matzke）。中间维度——尤其是物理上最重要的 \(d=3\)——既没有平面自对偶几何可用，花边展开又失效，长期缺乏抓手。Benjamini 与 Schramm（1996）把问题推广为拟传递图上的临界性猜想，本结果族正冲它而去。此前 Duminil-Copin–Sidoravicius–Tassion 证明了板层（slab）上的临界熄灭，且板层阈值收敛于整格点阈值，但这并不自动给出整格点在临界处的结论——跨越这最后一步正是本文的任务。
+
+## 主要结果
+
+主定理（Theorem 1.2）：对 \(\mathbb{Z}^3\) 上最近邻 Bernoulli 键渗流，键临界参数处几乎必然无无穷开簇；点渗流（site percolation）在点临界参数处同样成立。记 \(\theta(p)=\mathbb{P}_p(0\text{ 属于无穷开簇})\)，定理蕴含 \(p\downarrow p_c\) 时 \(\theta(p)\to 0\)，即渗流函数在临界点连续。
+
+论文的发动机是一条有限比较不等式——联合连接比较（joint connection comparison）：在允许各超边（hyperedge）开概率不同的独立有限超图上，对节点 \(o\)、非空节点集 \(A\) 与目标集 \(T\)，
+\[\mathbb{P}(o\leftrightarrow A,\ o\leftrightarrow T)\ \ge\ \mathbb{P}(o\leftrightarrow A)\min_{a\in A}\mathbb{P}(a\leftrightarrow T),\]
+其中开超边同时连接其所有节点。取 \(T\) 为单点并放大左端事件，即得 Kozma–Nitzan 的乘法粘合不等式（Conjecture 1，2024）。由它做减法得"失败比较"：若中继集 \(A\) 中每点都以概率 \(\ge 1-b\) 连到目标 \(T\)，则 \(\mathbb{P}(o\leftrightarrow A,\ o\not\leftrightarrow T)\le b\)；且这批结论在任意一批位被固定后依旧成立，因而可在探索过程中反复调用。点渗流经关联构造（每个顶点及其关联边合成一个超边）化为超图情形，只需额外处理"零长路径的自连接要求端点开放"这一约定差异。
+
+## 证明思路
+
+反证：设 \(p_c\) 处有无穷簇。先证它几乎必然存在（改有限个位不会消灭无穷连通成分，配合 0-1 律，不用唯一性），于是大种子盒 \(\Lambda_m\) 以趋于 1 的概率接触它；再用 Harris 正结合不等式，把"连到立方体整个边界"摊到 24 个四分之一面（quarter-face）上：在 \(p_c\) 下每个面被连接的概率 \(>1-\gamma/2\)。此处次序关键：所有尺度先在 \(p_c\) 处选定；相关事件只依赖有限个位、概率是参数的多项式，故随后可一次性取某个 \(q<p_c\)，让三个半径 \(2r,2r+1,10r\) 上的 24 个面估计同时保持裕度——这正是绕开"板层有临界熄灭但整格点没有"这一经典障碍的办法。
+
+有限不等式的证明：把每个簇按"第一个被列出的顶点"分解，得到条件连接向量排成的单位下三角矩阵 \(H\)；对递增簇泛函 \(F\) 递减归纳证明 \(v_k^F-\mu_k(F)h_k\) 落在后面各列生成的非负锥中。归纳步靠两件事：删除残差 \(R_F\) 的非负性与递增性，以及"交替条件簇重采样"马氏链（van den Berg–Håggström–Kahn 的技巧）：每次转移至少以概率 \(a=\prod_{e\ni s}(1-p_e)>0\) 命中孤立点，故函数振荡以 \((1-a)^t\) 几何衰减，\(P^tF\) 一致收敛于均值；闭锥取极限完成归纳，再由 \(H^{-1}=I-\Gamma\) 的非负权重读出最后一行即得不等式。
+
+接着是新鲜区域扩展引理：在内部位仍是独立参数 \(q\) 的长方体 \(D\) 内，若外部源 \(o\) 连到内盒 \(B\)，则以概率 \(\ge 1-\eta\) 同时连到目标 \(T\)。机制是壳层论证先锁定接触点足够多的确定层；外部位 \(\zeta\) 从中选出 \(K\) 个相距 \(>4m+2\) 的入口并各配独立开种子盒，Chebyshev 控制成功数；中继质量 \(g_y=\mathbb{P}(v_y\leftrightarrow T\mid\xi)\) 只用内部位 \(\xi\) 定义，Harris 不等式保证好中继居多；最后固定 \(\xi\)，调用失败比较收尾。
+
+几何传送用 13 步初等移动（3 次收缩加 10 次平移，末步长 \(2r+1\) 适配粗格间距 \(20r+1\)）把连接从粗立方体内盒递到相邻内盒，失败 \(\le 13\eta\)，不要求 13 个事件独立。最终在粗格 \(\mathbb{Z}^2\) 上做自适应广度优先探索：为每个待处理立方体保存条件连接承诺 \(>1-\delta\)，新鲜性引理保证未揭示位始终是独立参数 \(q\) 的乘积律，故每个立方体被判"坏"的条件概率 \(<f\)。若好集合有限，其对偶边界含长 \(n\) 的简单圈（候选至多 \(2n3^n\) 个），可匹配出 \(n/7\) 条端点不交的交叉边，每条边的外侧端点必坏，概率 \(\le (2f)^{n/7}\)；级数求和 \(<1\)，故以正概率好集合无穷，从而在 \(q<p_c\) 处出现无穷开簇，矛盾。全程不假设无穷簇唯一性，也不假设成功立方体相互独立；键、点两模型沿同一条主线走完。
+
+## 可信度与备注
+
+依据任务元数据，本文主结果已 Lean 形式化；引言亦援引 Leder 的 Lean 形式化报告（\(\mathbb{Z}^d\) 各维键渗流的临界熄灭），其"首次接触比较 (GEN)"直接蕴含本文的有限联合不等式。同族姊妹篇对一般拟传递图证明了键渗流的临界熄灭，独立蕴含本文的键结论；本文则额外覆盖点渗流，并给出完全自足的立方格论证（含比较不等式、中继几何与探索估计的完整细节）。按 OpenAI 官方声明，未经形式化的结果可能有问题；已形式化的部分以形式化仓库为准。
+
+{% endraw %}

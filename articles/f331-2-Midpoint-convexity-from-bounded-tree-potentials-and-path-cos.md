@@ -1,0 +1,31 @@
+---
+layout: default
+title: "Midpoint convexity from bounded tree potentials and path costs"
+family: "331"
+discipline: "Functional analysis"
+formalized: true
+source: null
+pdfname: ""
+---
+
+{% raw %}
+# 解读 | Midpoint convexity from bounded tree potentials and path costs
+
+> 结果族 331：Reflexive midpoint convexity and diamond distortion　·　学科：Functional analysis　·　验证状态：主结果已 Lean 形式化
+
+## 一句话结论
+本文用可数分支树上的有界位势（bounded tree potential）显式构造出多个 Banach 空间：它们的平均渐近中点模满足 \(\widehat\delta(t)\ge\sqrt{1+t^2/4}-1\)，却都不容许任何等价的渐近一致凸范数；其中二次路径空间与线段起点空间还是自反的，把 Baudier 的 AMUC/AUC 分离现象推进到自反空间。
+
+## 问题背景
+渐近中点一致凸（AMUC）是否在再赋范意义下等价于渐近一致凸（AUC），是 Dilworth–Kutzarova–Randrianarivony–Revalski–Zhivkov（2016）提出的公开问题。Baudier 等人 2017 年证明：对具无条件渐近结构的可分自反空间二者等价，于是"无结构假设的自反反例"长期悬置（Perreau 2021 年仍记录为开放）。Baudier 2026 年借 Kadets–Werner 的 Daugavet 例子给出一般否定回答，但那个例子具 Schur 性质、非自反。卡在何处：如何在自反空间里同时实现"中点有增益"与"一切等价范数都非 AUC"这两件方向相反的事。本文的切入点是把两种效应都归结为树上路径的标量约束：路径和有界既挡住单侧凸性，系数的二次预算又允许中点两侧配对增益。
+
+## 主要结果
+设 \(T=\mathbb N^{<\omega}\) 为可数分支树，系数族 \(f\) 的位势为 \(P_f(s)=\sum_{u\preceq s}f_u\)。取测试集 \(K\)：要求 \(|P_f(s)|\le1\)，再附加四种二次约束之一——兄弟组约束（\(K_{\rm s},K_{\rm p}\)，后者含根坐标）、有限反链约束（\(K_{\rm a}\)，antichain）或全局 \(\ell_2\) 约束（\(K_{\rm g}\)）。范数取 \(\|x\|_K=\sup_{f\in K}\sum f_sx_s\)，完备化得 \(X_K\)。定理证明：四个空间都是可分无限维实 Banach 空间，且对 \(0<t<1\) 一致满足 \(\widehat\delta(t)\ge\sqrt{1+t^2/4}-1\ (\ge t^2/16)\)，同时任何一个都不容许等价 AUC 范数。在有限高树 \(T_n=\mathbb N^{\le n}\) 上，全局约束模型满足精确恒等式 \(L_n(x)=\inf_{x=h+B_n\mu}(\|h\|_2+\|\mu\|_1)\)——即"Hilbert 向量与根路径的最小可加成本"；高度一时恰为 Dilworth 等人的 \(\ell_2\) 反例。把成本换成欧氏组合得到二次路径空间 \(X_{\rm q}\)，把根路径换成任意起点的线段并按起点计费得到线段起点空间 \(X_S\)：二者都自反、每点半径处最大渐近中点模为正、且无等价 AUC 范数。
+
+## 证明思路
+中点下界的核心是"成对向内测试"。难点在于：支撑在有限初始集 \(D\) 内的中心 \(x\) 的赋范测试 \(f\)，其位势可能已经顶在区间 \([-1,1]\) 的边界上，任意的尾部扰动 \(g\) 会把位势推出区间。解决办法是把尾部测试在每个 \(T\setminus D\) 分量上的相对位势 \(R(s)\) 按头部继承值 \(c=P_f(r)\) 的内侧拆成两个正部 \(U,V\)：\(U-V=R\) 且都指向区间内部。取符号正部是 1-Lipschitz 的，故新系数逐点被 \(|g_s|\) 控制，二次约束自动保留；位势界为 2，除以 2 后仍是合法测试。关键一步是验证 \(af+\theta u\) 与 \(af+\theta v\)（\(a=\sqrt{1-\theta^2}\)）都属于 \(K\)：头部与尾部支撑不相交，任一二次组的预算按勾股式合成 \(a^2+\theta^2=1\)，而位势因"向内"而被夹在 \([-1,1]\) 中。把这两个测试分别作用于 \(x+ty\) 与 \(x-ty\) 再相加，即得平均 \(\ge a\|x\|_K+\frac{t\theta}{2}g(y)\)，对 \(g\) 取上确界后选 \(\theta=t/\sqrt{4+t^2}\) 便得 \(\sqrt{1+t^2/4}\)。配对的好处是无需预先挑端点：对一侧不利的尾部位势恰好为另一侧提供向内测试。排除 AUC 再赋范用的是"有界弱零树"引理：若空间含有一致有界的树 \((p_s)\)（\(m\le\|p_s\|\le M\)）且子增量 \(d_{s,n}=p_{s^\frown n}-p_s\) 弱零、范数 \(\ge c\)，则任何等价范数的单侧模在 \(t_0=\alpha c/(2\beta M)\) 处为零——否则沿树逐层选子节点，凸性迫使范数每步乘 \((1+\gamma/2)\)，有限层后突破一致上界。四个模型里路径向量 \(p_s=\sum_{u\preceq s}e_u\) 由位势条件归一，兄弟 \(\ell_2\) 约束使子增量弱零且范数为 1，引理以 \(m=M=c=1\) 生效。自反模型 \(X_{\rm q},X_S\) 的范数等价于 Hilbert 范数故自反；其AMUC靠对偶空间的截断、停止与匹配论证（如尾部估计 \(\|Q_Ay\|\le 8\sqrt{R^2-\|x\|^2}\)、线段空间中 \(\|Q_Ey\|_{\rm I}\le(\sqrt2+\sqrt6)\sqrt{1-\|x\|_{\rm I}}\)），AUC 排除则复用同一弱零树机制。
+
+## 可信度与备注
+论文声明主结果已有 Lean 形式化证明。作为结果族 331 的构造主干，它与本族另两篇互补：Daugavet 子空间一篇算出精确模曲线，独立乘积一篇给出 \(L^1\) 内的随机实现，本文则贡献显式树模型与自反反例，三者共同支撑"中点一致凸不迫使 AUC 可再赋范，即使在自反世界"。按 OpenAI 官方声明，未经形式化的结果可能有问题；本篇虽已形式化，文中诸多数值常数（如 \(1/64\)、\(495\)、\(252\)）仍以原文与社区核验为准。
+
+{% endraw %}

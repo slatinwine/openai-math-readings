@@ -1,0 +1,48 @@
+---
+layout: default
+title: "A Three-Dimensional Counterexample to Integer-Degree Harmonic Dimension Comparison"
+family: "361"
+discipline: "Differential geometry"
+formalized: false
+source: null
+pdfname: ""
+---
+
+{% raw %}
+# 解读 | A Three-Dimensional Counterexample to Integer-Degree Harmonic Dimension Comparison
+
+> 结果族 361：Failure of integer-degree harmonic dimension comparison　·　学科：Differential geometry　·　验证状态：暂无形式化证明，请以社区核验为准
+
+## 一句话结论
+
+对任意体积比 \(4/9<v<1\) 与倍数 \(1<c<9v/4\)，所有充分大的整数 \(k\) 都允许 \(\mathbb R^3\) 上一个 \(\operatorname{Ric}\geq 0\) 的完备光滑度量，使增长不超过 \(k\) 的调和函数至少有 \(c(k+1)^2\) 个，超过欧氏计数 \((k+1)^2\)——在三维否定丘成桐整数阶维数比较。
+
+## 问题背景
+
+对里奇曲率非负（nonnegative Ricci curvature）的完备流形，丘成桐（Yau）问：增长不超过整数 \(k\) 的调和函数空间维数 \(h_k\) 是否总不超过欧氏值？在 \(\mathbb R^3\) 上欧氏计数为 \(h_k=\sum_{l=0}^k(2l+1)=(k+1)^2\)。此前三维的肯定结果都带附加假设：Cai–Lai 需要局部共形平坦；Lin–Wang–Xu 证明了非负截面曲率加正渐近体积比下的三维整数界；Huang 的谱计数公式需要唯一的无穷远切锥（tangent cone at infinity）；Xu 的三球定理则要求比较指数避开锥谱并集。Donnelly 的反例只落在 1 与 2 之间的非整数次数；本族姊妹篇虽在偶数维 \(n\geq 8\) 给出整数反例，但三维谱结构完全不同，需要新方法。本文证明：在纯 Ricci 假设下，三维的整数比较也失败。
+
+## 主要结果
+
+**主定理**：对每个 \(v\in(4/9,1)\) 与 \(c\in(1,9v/4)\)，存在阈值 \(k_0(v,c)\)，使得每个整数 \(k\geq k_0\) 都有 \(\mathbb R^3\) 上完备光滑度量 \(g_k\)，在原点附近欧氏、\(\operatorname{Ric}_{g_k}\geq0\)（紧集外严格为正）、渐近体积比（asymptotic volume ratio）\(\operatorname{AVR}(g_k)=v\)，且
+
+\[h_k(\mathbb R^3,g_k)\geq c(k+1)^2>(k+1)^2=h_k(\mathbb R^3,g_{\mathrm E}).\]
+
+该度量在无穷远处有不可数多个两两非等距的切锥，且存在趋于无穷的点列，其含径向方向的截面曲率（sectional curvature）为负——因此 Lin–Wang–Xu 的截面曲率假设确实不被满足。度量可随 \(k\) 而变。**推论**：对每个 \(\varepsilon>0\) 与 \(1<c<9/4\)，这些度量可取到与欧氏度量全局 \((1+\epsilon)\)-双 Lipschitz（bi-Lipschitz）逼近，体积比可任意接近 1——超出因子可以在度量"几乎欧氏"时发生。
+
+## 证明思路
+
+度量写成 \(g=dr^2+f(r)^2H_z(\log r)\)：角度量是球面 \(S^2\) 上一族保持面积形式的度量的路径（用 Moser 体积形式方法取坐标），相位以速度 \(\eta(t)=t^{-3/4}\) 缓慢推进，径向因子满足 \(f(r)/r\to a=\sqrt v\)。关键在于为什么必须"动"：本文每个极限 link 的 Gauss 曲率都大于 1，满足 Lin–Wang–Xu 的固定球面特征值比较，所以任何冻结的 link 都不可能有太多低频；出路是让同一个调和函数在不同半径遇到不同频率，用时间平均换空间。
+
+先做角向程序。构造近圆的周期路径，其低谱除有限个"线性分裂的二重交叉"（isolated linearly split double crossing）外都单重。在交叉处有两种跟随方式：按大小重排，或让光滑特征线（eigenline）穿过相等点——后者恰好交换两个相邻位置。把一串交换串联，就把一条长能带在前 \(p=(M+1)^2\) 个位置（\(M=\lfloor\vartheta k\rfloor\)，\(\sqrt c<\vartheta<3a/2\)）里循环。能带从 \(L=\lfloor\sqrt k\rfloor\) 之上开始；在一个标签周期内每条线遍历能带的所有位置，直接计数给出平均频率渐近 \(2\vartheta k/3\)，乘以径向因子 \(a^{-1}\) 后由 \(2\vartheta\sqrt{C_*}/(3a)<1\) 保证均值严格小于 \(k\)。角向的存在性依赖共形一阶变差在二维特征空间上给出两个迹自由方向（基于 Colin de Verdière 与 Greilhuber–Kepplinger 的对称平方乘法性质）、对一切多重 stratum 的避开论证，以及"保持指定二重的变差必分裂其余特征值"（否则两特征函数有公共节点域，与特征值不同矛盾）。
+
+再把程序几何实现。凹形径向尾巴 \(f''\sim-(C/r)(\log r)^{-3/2}\) 提供约 \(\eta^2\) 阶的正径向 Ricci；混合块约 \(\eta\)，但因切向块有固定正下界 \(r^2\operatorname{Ric}^T\geq\tau I\)，Schur 补中的损失是二次的，取足够大的 \(C\) 即可一致保证 \(\operatorname{Ric}\geq 0\)。体积比恒为 \(a^2=v\)，与控制序列无关。
+
+然后是精确调和延拓。整球 Dirichlet 内传映射（把外球边值映为整球调和延拓在内球的迹）保正、保均值、\(L^2\) 压缩；两套"冻结"估计分别把前 \(p\) 个模与高模尾部分离、并在有限移动框架上探测每个交叉控制的一阶符号效应。外部谱隙给出前 \(p\) 模之上范数 \(O(\delta_j)\) 的不变图（invariant graph），诱导的外传矩阵为 \(A_j=\operatorname{diag}(\alpha_i(j))+O(\delta_j)\)，而交叉控制以固定符号改变相应非对角元。要使不变线精确跟随延续特征线，就解一族标量递推：在交叉两侧分别前向、后向稳定传播，其在切口处的失配 \(D_\nu\) 是正权和，且控制取 \(z_\nu=\pm1\) 时符号相反；有限维 Brouwer 不动点加对角极限同时选定全部控制，使所有失配为零。
+
+最后把循环变成增长：所造 \(p\) 条线的对数增长等于所选锥频率的积分，相位平均（分部积分）给出严格小于 \(k\) 的指数，\(L^2\) 到上确界的内部椭圆估计再把球面界转为逐点增长界，得到 \(p\geq c(k+1)^2\) 个独立的整体调和函数。
+
+## 可信度与备注
+
+任务数据标注本篇暂无形式化证明。同族姊妹篇（偶数维 Berger-link 版本，主结果已 Lean 形式化）证明了同构想的可行性，但本文明确声明其证明不使用姊妹篇任何定理：三维角向特征空间本身在动，必须额外控制向无穷多个高阶模的泄漏，技术路线独立。按 OpenAI 官方声明，未经形式化的结果可能存在问题；本篇结论宜以社区核验为准，其与姊妹篇在族内互为印证而非逻辑依赖。
+
+{% endraw %}

@@ -1,0 +1,31 @@
+---
+layout: default
+title: "The exact reconstruction threshold for the three-state symmetric channel"
+family: "229"
+discipline: "Probability and statistical mechanics"
+formalized: false
+source: null
+pdfname: ""
+---
+
+{% raw %}
+# 解读 | The exact reconstruction threshold for the three-state symmetric channel
+
+> 结果族 229：Exact three- and four-state reconstruction thresholds and four-state tree capacity　·　学科：Probability and statistical mechanics　·　验证状态：暂无形式化证明，请以社区核验为准
+
+## 一句话结论
+证明对称三态广播通道在一切 \(b\ge2\) 正则树与均值 \(d>1\) 的观测泊松树上重构当且仅当 \(d\lambda^2>1\)、等号处不重构（两种符号均成立），并据树到图转移推出三社区稀疏随机块模型的精确弱恢复阈值 \((a-b)^2>3(a+2b)\)。
+
+## 问题背景
+三态对称通道的重构阈值是否与 Kesten–Stigum 条件 \(d\lambda^2>1\) 重合，自 Mézard–Montanari（2006）提出猜想、Sly（2011）证明大度数正则树情形以来悬而未决；Mossel–Sly–Sohn（2025）证得大平均度泊松树情形，小度数（尤其负参数与三着色端点 \(\lambda=-1/2\)）一直缺失。由于 Sly 已证 \(q\ge5\) 态时谱判据失效，三态的必要性必须超出二阶矩框架。此外，观测泊松树上的结论经既有的树到图转移定理可直接决定稀疏随机块模型（stochastic block model）的信息论与算法阈值，这赋予该问题超越树模型的分量。
+
+## 主要结果
+通道 \(K_\lambda\)：对角元 \((1+2\lambda)/3\)、非对角元 \((1-\lambda)/3\)，\(-\frac12\le\lambda\le1\)。主定理：对每个整数 \(b\ge2\) 与每个实数 \(d>1\)，重构当且仅当 \(d\lambda^2>1\)（正则模型取 \(d=b\)），且一切容许等号 \(d\lambda^2=1\) 处不重构。正参数阈值为 \(\lambda=d^{-1/2}\)；负参数当且仅当 \(d>4\) 且 \(-\frac12\le\lambda<-d^{-1/2}\) 时重构；特别地三着色通道 \(\lambda=-\frac12\) 在分支数 4 处不可重构。推论（三社区 SBM）：社区内/间连接率 \(a,b>0\)、平均度 \((a+2b)/3>1\) 时，弱恢复（weak recovery）可行当且仅当 \((a-b)^2>3(a+2b)\)；严格不等号时有 \(O(n\log n)\) 时间算法，等号及以下信息论不可能。
+
+## 证明思路
+先把后验向量嵌入复平面：\(\zeta=p_1+\omega p_2+\omega^2p_3\)（\(\omega=e^{2\pi i/3}\)），用不变量 \(x=|\zeta|^2\)、\(y=\Re(\zeta^3)\) 工作；不重构等价于极限不动点处 \(\E x=0\)。阈值以上由线性估计量重构，通道与后代稀疏化把其余参数归约到临界等号与分支 4 的着色情形。正参数等号处：构造熵泛函 \(F=3I-2J+\frac45B\)，其中 \(J\) 的可加恒等式是 Formentin–Külske 对称化熵递推的对称通道形式，\(B\) 是中心化对数二次修正。一方面证明恒等式 \(\E(F-dF_e)=-3H+\frac85\alpha(\E J)^2\)，其中 \(H\) 是合并分支生成的相关性（非负相对熵）；另一方面证明径向亏损不等式 \(F(m)-\lambda^{-2}F(1+\lambda v)\ge\frac{1-\lambda^2}{2}x^2\)，由径向求导与多项式符号分解解析证得。在 \(d=\lambda^{-2}\) 时两式合并得 \(\frac{1-\lambda^2}{2}\nu+3H\le\frac85\alpha(\E J)^2\)；再用矩估计 \(0\le\E J\le\mu-\lambda q\nu\) 与投影下界给出的 \(H\) 下界与之矛盾，分三个 \(\lambda\) 区间（含仅泊松模型可达的 \(\frac1{\sqrt2}<\lambda<1\)）逐一排除非均匀不动点。负参数：先证一致性缺口——负等号处任何非均匀对称不动点满足 \(\mu=\E x>1/20\)，证明靠 \(x,y,x^2\) 的两两不等式做矩自助（bootstrap），而不等式由十四个整系数多项式的系数非负性认证；远离着色通道的剩余不动点由加权对数恒等式排除；着色端点附近则用 Bhatnagar–Maneva 式有限实验上界：把后验律放到 \(H=72\) 网格的 469 个置换轨道上，用重心加细与纯后验补全（截断向下取整、以完全信息消息补足后代尾部）构造支配真实验的上递推，纯整数算术验证在第 162 层（正则着色）或第 99–104 层（泊松分箱）使上实验 \(\E x<1/20\)，与缺口结合逼出均匀极限。全部十进制常数是精确有理数，无任何模拟进入判定。
+
+## 可信度与备注
+本文与同族两篇四态论文合成"三、四态精确重构阈值"的完整图景：四态篇处理铁磁 Potts 并提供容量篇所需的封闭后验律类，本文独立处理对称三态（含反铁磁符号与着色端点），技术路线同为"后验律递推 + 严格多项式证书"。主结果暂无形式化证明；负参数与着色部分的证明是计算机辅助的（精确整数算术），SBM 推论还引用 Mossel–Sly–Sohn 的树到图转移定理与 Abbe–Sandon 算法，请以社区核验为准。OpenAI 官方声明：未经形式化的结果可能有问题。
+
+{% endraw %}

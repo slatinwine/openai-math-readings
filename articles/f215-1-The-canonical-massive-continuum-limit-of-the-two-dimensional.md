@@ -1,0 +1,36 @@
+---
+layout: default
+title: "The canonical massive continuum limit of the two-dimensional O(3) model"
+family: "215"
+discipline: "Probability and statistical mechanics"
+formalized: false
+source: null
+pdfname: ""
+---
+
+{% raw %}
+# 解读 | The canonical massive continuum limit of the two-dimensional O(3) model
+
+> 结果族 215：Canonical \(O(3)\) continuum limit and exact \(O(4)\) mass asymptotics　·　学科：Probability and statistical mechanics　·　验证状态：暂无形式化证明，请以社区核验为准
+
+## 一句话结论
+
+为二维近邻 \(O(3)\) 模型构造出正则的相互作用连续统极限：裸耦合 \(\beta\to\infty\) 时，经磁化率与二阶矩关联长度归一化的场无需抽取子列即收敛，极限满足 Osterwalder–Schrader 公理、连通四点函数非零，重构的量子场论有唯一真空与正质量隙。
+
+## 问题背景
+
+非线性 \(\sigma\) 模型（nonlinear sigma model）问的是：约束在弯曲紧致目标流形上的场，能否在远大于格距的尺度上生出相对论性量子场论。目标取球面 \(S^2\)、最近邻相互作用、无外场无拓扑项，便是最基本的二维 \(O(3)\) 格点模型。Mermin–Wagner 定理排除自发磁化，McBryan–Spencer 的复旋转法只给幂律上界，分不清幂律与指数衰减；Polyakov 的重整化群机制与 Brézin–Zinn-Justin 的近二维展开则预言弱耦合下关联长度指数增长。可积场论一方，Zamolodchikov 因子化散射与 Hasenfratz–Maggiore–Niedermayer 精确质量公式早已给出连续统理论的完整图像，但那是"如果极限存在它长什么样"。严格构造长期卡在：Gawędzki–Kupiainen 只做出层级模型（hierarchical model），Kupiainen 与 Kopper 的大 \(N\) 结果落不到固定的 \(N=3\)；而固定格距的质量估计回答不了"隙作用在哪个极限场上"——必须先把场本身构造出来。
+
+## 主要结果
+
+论文分两层。定理 1.1（正则连续统极限）：记单分量关联 \(C_\beta(x)\)、磁化率（susceptibility）\(\chi_\beta=\sum_x C_\beta(x)\)、二阶矩关联长度 \(\xi_\beta^2=\frac{1}{4\chi_\beta}\sum_x|x|^2C_\beta(x)\)，则 \(\xi_\beta\to\infty\)，且归一化场 \(\Psi_\beta(f)=\frac{1}{\xi_\beta\sqrt{\chi_\beta}}\sum_x f(x/\xi_\beta)\cdot q_x\) 当 \(\beta\) 沿全部正实数趋于 \(\infty\) 时（不选子列）联合依分布与各阶矩收敛到同一极限层级；极限的磁化率与二阶矩长度恰为 \(1\)。定理 1.2（固定尺度构造与物理性质）：沿 \(\beta_N=H+\frac{\log L}{2\pi}N+O(\log N)\)、格距 \(a_N=L^{-N}\) 的射击（shooting）轨迹，极限 Schwinger 分布欧氏不变、内部 \(O(3)\) 不变、反射正、聚类，经 Osterwalder–Schrader 重构（reconstruction）得到 \(1+1\) 维局部幺正相对论理论；哈密顿量满足 \(H_{\mathrm{phys}}|_{\Omega^\perp}\ge m\,\Id\)（\(m>0\)，全谱隙）；且时间支撑严格分离的测试上连通四点分布非零——极限场不满足 Wick 因子化（Wick factorization），是非高斯的相互作用理论，真空补空间非零。
+
+## 证明思路
+
+骨架是"先在固定物理尺度构造，再证一切发散耦合给出同一极限"。先做精确阻塞（exact blocking）：把格子分成方块，每块用归一化平均核留下一个 \(S^2\) 自旋、积掉细自旋，配分函数严格不变；把源（sources）连同其衍生的修正逐层携带，每步线性项系数归一为一，累积场归一化 \(B_N=\prod_j c_{j,N}^{-1}\)。再用四个新估计把粗糙的大距离控制与固定尺度的精确比较接通。其一，混合长度预估计 \(X(\beta)=Ce^{(4\pi-\eta)\beta}\)，严格节省来自第一个粗瓦片的横向涨落，且对切割与弱键一致。其二，空间反演加切向反射把抽出动能耦合后的余项收缩到每步接近 \(L^{-2}\)，反演恰好抵消下一个空间交叉项，使比较盒增大时误差密度仍趋于零。其三，积分比较控制大梯度区域的"气体"：用小梯度自旋填充选定区域、保留正密度、以梯度能量支付填充熵，只损失一个体积因子——三者合力把有限盒指数衰减判据从一个参考截断转移到所有更细截断，转移算子判据给出共同的物理衰减率。其四，独立局部源穿过精确变换，线性响应定义 \(B_N\)，而四阶累积量在终端块尺度可直接算出：内部 \(O(3)\) 不变性给出 \(\mathbb E[X_iX_j]=\frac13+o(1)\)、\(\mathbb E\prod_iX_i=\frac15+o(1)\)，四阶累积量 \(=\frac15-3(\frac13)^2=-\frac{2}{15}\neq0\)，相互作用在极限中存活。旋转不变性由两个反射倾斜的首次阻塞经公共粗框架比较获得，其旋转角是 \(\pi\) 的无理倍数，配合连续性升级为完全欧氏不变。最后把归一化内在化：任意大 \(\beta\) 写成整数深度参考耦合加有界实偏移，可和的敏感性引理证明同修正偏移的轨迹在每个粗尺度一致；倾斜步又引入与二进因子 \(L\) 乘法无关的长度因子 \(5\)，两个不可公度的偏移周期加连续性把剩余偏移依赖全部消去——同一套阻塞几何同时服务了欧氏对称与正则唯一性。
+
+## 可信度与备注
+
+本篇是族内地基：姊妹篇"孤立粒子极点"直接以本文构造的场与均匀有限体积估计为输入，"O(4) 精确质量渐近"改编了本文第 7 节的积分比较。技术起点借用了族内 \(O(4)\) 工作的角积分与精确阻塞，但论文明确声明不移植 \(O(4)\) 质量定理——目标维数不同导致流恒等式、高斯归一化与耦合漂移系数全部改变，各节直接重做。按任务标注，本篇主结果暂无 Lean 形式化证明；OpenAI 官方声明未经形式化的结果可能有问题，请以社区核验为准。
+
+{% endraw %}

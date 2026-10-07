@@ -1,0 +1,36 @@
+---
+layout: default
+title: "Anticanonical nonvanishing from smooth semipositivity"
+family: "068"
+discipline: "Algebraic and complex geometry"
+formalized: false
+source: null
+pdfname: ""
+---
+
+{% raw %}
+# 解读 | Anticanonical nonvanishing from smooth semipositivity
+
+> 结果族 068：Anticanonical nonvanishing in every dimension　·　学科：Algebraic and complex geometry　·　验证状态：暂无形式化证明，请以社区核验为准
+
+## 一句话结论
+
+证明了丘成桐 1994 年提出的反典范非消没问题：光滑连通射影复簇 \(X\) 上若 \(-K_X\) 容许曲率半正的光滑 Hermitian 度量，则存在正整数 \(m\) 使 \(H^0(X,-mK_X)\ne0\)，且对任意维数一致成立。
+
+## 问题背景
+
+对光滑射影复簇 \(X\)，反典范线丛（anticanonical line bundle）\(-K_X=\det T_X\) 是切丛的最高外幂。若它带有 Chern 曲率为非负实 \((1,1)\)-形式的光滑 Hermitian 度量，则其数值类必为 nef（数值有效）。丘成桐在 1994 年问题集（Problem 75）中问：这是否迫使 \(-K_X\) 的某正倍数线性等价于有效除子？"正幂"不可省略：复 Enriques 曲面 \(E\) 与 \(\mathbb P^1\) 的乘积上，反典范线丛由平坦度量与 Fubini–Study 度量给出光滑半正度量，却没有一次幂截面，只有平方才有。此前卡在哪里：Demailly–Peternell–Schneider 与 Campana–Demailly–Peternell 的结构定理虽把万有覆盖分解为平坦、紧 Ricci 平坦与剩余因子，但剩余因子上残留的牌变换（deck transformation）作用——一个紧环面——可能阻碍截面下降；已知代数方法（LMPTX 2023 的数值有效性、Müller 2025 的三维非消没）都需要附加假设。
+
+## 主要结果
+
+主定理（Theorem 1.1）：设 \(X\) 是光滑连通射影复簇，\(-K_X\) 有半正曲率的光滑 Hermitian 度量，则存在整数 \(m>0\) 使 \(H^0(X,-mK_X)\ne0\)。技术核心是有限体积定理（Theorem 1.2）：若 \(Z\) 无正度全纯形式，\(D\ge0\) 为整除子，\(J=-K_Z+D\) 带半正奇异度量且 \(\int_Z|s_D|_{h_J}^2<\infty\)，线丛 \(L\) 带局部有界权重的半正奇异度量，则存在 \(a>0\)、\(b\ge0\) 使 \(H^0(Z,aL+bD)\ne0\)。另有自然不变版本（Theorem 7.2）：紧环面 \(T\) 以微分诱导的自然线性化（natural linearization）作用时，可取到 \(T\)-不变的截面 \(H^0(Z,mL)^T\ne0\)。
+
+## 证明思路
+
+证明分四步。先做几何约化：Yau 的指定 Ricci 定理把给定半正曲率实现为某 Kähler 度量的 Ricci 形式，DPS/CDP 结构定理随即给出万有覆盖的等距乘积分解 \(\widetilde X=\mathbb C^a\times F\times Z\)，其中 \(F\) 紧 Ricci 平坦且典则丛有不变平行框架，\(Z\) 有理连通、无正度全纯形式；Bochner 论证与 Bieberbach 定理把有限指标后的牌作用压缩成紧环面 \(T\)，其 Zariski 闭包是代数环面 \(G\)，且 \(T\)-不变截面就是 \(G\)-不变截面。再在 \(Z\) 上构造 \(T\)-不变反典范截面——这是全文核心，靠对维数归纳的有限体积定理完成：反设结论失败，则 \(L+D\) 伪有效而不 big，由可移动锥（movable cone）对偶性找到非零可移动曲线类 \(\alpha\) 使 \(L\cdot\alpha=D\cdot\alpha=0\)；可移动斜率（slope）理论控制余切张量的最小斜率，配合带乘子理想子（multiplier ideal）的 Hard Lefschetz 定理产生无界序列截面 \(s_i\in H^0(Z,M+m_iL)\)，\(m_i\to\infty\)，其中 \(M\) 是某个固定的余切行列式线丛且 \(M\cdot\alpha\le0\)。然后在所有非空完全线性系 \(|uL+vM+wD|\) 中取像维数极大者，得到严格更小的光滑射影基 \(S\)，并证明任意两截面之比落在函数域 \(\mathbb C(S)\) 中；插值恒等式 \(s_i^k s_1^{m_i-m_2}/s_2^{m_i-m_1}\in\mathbb C(S)\) 进而消去水平极点，得无水平极点的有理截面 \(\rho\)。接着是迁移（transfer）步骤：在正规等维模型上取除子阶数的最小值把 \(\rho\) 规范化为正则截面 \(e\)，在光滑消解上沿纤维对 \(e^j\) 积分——Berndtsson–Păun 的相对 Bergman 度量（relative Bergman metric）半正性保证各阶矩的权是多重次调和的；零阶矩给出基上 \(-K_S+D_S\) 的半正有限体积度量，高阶矩除以 \(j\) 取上包络给出线丛 \(A\) 的两侧局部有界半正度量，而 \(D_S\) 只支在"坏"素除子上，保证基上截面乘 \(e\) 后能提升回 \(Z\) 且极点可控，与归纳假设矛盾完成归纳。环面不变版本把奇异系数的 Bergman 定理换成 Berndtsson 的光滑直像半正性：紧环面上平均是到不变线的正交全纯投影，不变线因此获得半正商度量；Rosenlicht 有理商上稠密轨道给出不变伴随秩一。最后把 \(Z\) 上不变截面与 \(\mathbb C^a\)、\(F\) 的不变典则框架相乘，下降到有限 étale 覆盖，再用有限 étale 范数（norm）得到 \(X\) 上 \(K_X^{-m\deg\nu}\) 的非零截面。
+
+## 可信度与备注
+
+本文暂无形式化证明，请以社区核验为准。同族第二篇手稿从不变 Euler 特征多项式与扭曲微分形式的转换给出主定理的另一条独立路线，第三篇把结论推进到 klt 对上的局部有界度量判据，三篇互相印证核心结论。按 OpenAI 官方声明，未经形式化的结果可能有问题。
+
+{% endraw %}

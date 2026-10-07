@@ -1,0 +1,44 @@
+---
+layout: default
+title: "Continuum Coulomb hardness with binary nuclear charges"
+family: "275"
+discipline: "Mathematical physics"
+formalized: false
+source: null
+pdfname: ""
+---
+
+{% raw %}
+# 解读 | Continuum Coulomb hardness with binary nuclear charges
+
+> 结果族 275：QMA-hardness of continuum Coulomb energy　·　学科：Mathematical physics　·　验证状态：暂无形式化证明，请以社区核验为准
+
+## 一句话结论
+
+本文证明：在三维空间逼近分子电子的库仑能谱下确界（spectral infimum）\(E_0\) 是 QMA 难的，即使原子核位于互异有理位置、电子数按一元编码、精度只要求 \(L^{-1}\)。归约是确定性多项式时间的，输出的核电荷可以指数大（二进制编码下位长仍多项式），阈隙至少 1。这补上了有限轨道基结果留下已久的"全连续空间"缺口。
+
+## 问题背景
+
+分子基态能量本质上有多难算？复杂性理论早有拼图：Liu–Christandl–Verstraete（2007）证明有限模 \(N\)-可表示性问题 QMA 完全；Schuch–Verstraete（2009）证明带局部磁场的 Hubbard 模型 QMA 完全，并用人工设计的标量与自旋相关势场给出连续实现；O'Gorman 等（2022）证明在输入中"给定有限轨道基"的前提下电子结构 QMA 完全。但真实分子的外场只能由正点电荷核生成，而投影到轨道基只给出变分上界 \(\inf\Spec H\le\min\Spec(PHP)\)——它无法把 NO 实例的下界传递给全算子 \(H\)。要证明连续情形的硬度，必须同时排除一切被省略连续态的更低能量，这正是 O'Gorman 等人在其文第 V 节明确提出的未决问题。
+
+## 主要结果
+
+定理 1（主定理）：考虑原子单位下的电子哈密顿量
+
+\[H(R,Z,N)=-\frac12\sum_{\ell=1}^N\Delta_{x_\ell}-\sum_{\ell=1}^N\sum_{\alpha=1}^M\frac{Z_\alpha}{|x_\ell-R_\alpha|}+\sum_{\ell<k}\frac1{|x_\ell-x_k|}\]
+
+作用于含自旋的全反对称连续空间 \(\bigwedge^N L^2(\R^3;\C^2)\)（极小化遍及所有自旋扇区，不提供轨道基、磁场或额外外势）。输入为互异有理位置 \(R_\alpha\in\Q^3\)、二进制编码的正整数电荷 \(Z_\alpha\)、一元编码的电子数 \(N\) 与有理阈值 \(a<b\)（\(b-a\ge L^{-1}\)）。判定 \(E_0=\inf\Spec H\) 满足 YES（\(E_0\le a\)）还是 NO（\(E_0\ge b\)）的承诺问题（promise problem），在确定性经典多项式时间多一归约下是 QMA 难的；归约还可输出阈隙 \(b-a\ge1\) 的实例。文中不主张该问题属于 QMA，也不施加电中性、固定元素或核间距承诺。
+
+## 证明思路
+
+归约先从 Cubitt–Montanaro–Piddock 的方晶格海森堡模型（Heisenberg model）QMA 完全源问题出发（带符号有理权重、空间稀疏、权重多项式有界）；再用 Piddock–Montanaro 单态介导子（singlet mediator）把带符号键换成全正键——每条源边配一对强束缚的辅助自旋，弱耦合经二阶微扰（Schrieffer–Wolff 型，文中证明显式误差 \(27V^3/\sqrt\Delta\)）在单态子空间还原原符号的交换；接着把正交换实现为半满排斥 Hubbard 模型的超交换（superexchange，Anderson 1959）：一次跳跃必造成一个双占位与一个空位，激发能恰为 \(U\)，二阶效应给出 \(\frac{t^2}{U}(h^s_{ij}-I)\)，其中同位排斥 \(U=\iint\phi^2\phi^2/|y-y'|\,dy\,dy'=\frac58\) 由氢轨道 \(\phi=\pi^{-1/2}e^{-|y|}\) 精确积出。各异的跳跃强度由"接触几何"实现：所有位点放在 \(\Q(\sqrt3)^3\) 中，使任两位点距离恰为 1（接触）或至少 \(\sqrt2\)；关键引理给出接触长度方程组的显式线性右逆（位移范数 \(\le 6m\max|d_{ij}|\)），即微小位移可彼此独立地一阶调节每条键长，且无绕格回路的相容性条件。
+
+连续实现取尺度 \(Z_*\asymp e^D\)（\(D\) 为源尺寸的固定多项式）。在伸缩坐标 \(y=Z_*x\) 下，每格点放一个电荷近 \(Z_*\) 的主核与一个弱次核，孤立井基态接近氢轨道；次核位移 \(\rho_i\in[1,4]\) 单调调节井能，经压缩映射把所有井调到 \(-1/2\)，误差 \(e^{-1.01D}\)。难点是跳跃幅度仅 \(e^{-D}\) 量级，绝对精度无意义：作者证明相对尾部估计 \(\psi_i(y)=\pi^{-1/2}e^{-r_i+F_i(y)}(1+O(\varepsilon_{\rm rel}))\)（\(F_i\) 为封顶远程场的射线原函数），把跳跃化为显式正积分 \(T_{ij}\)，并满足位移定律 \(T_{ij}(X)/T_{ij}(X^0)=e^{-u_{ij}\cdot(s_j-s_i)}(1+O(\cdot))\)——位移按对数规律设定跳跃。配套的认证谕示用分级多项式 Ritz 空间（Melenk–Babuška 型单位分解）以指数精度包络单井特征值：矩阵为精确有理数、条件数由 Hadamard 行列式界控制、库仑核经一致收敛二项级数计算、特征值用精确惯性计数二分，位复杂度对 \(D,m,B\) 均多项式。
+
+最后做全态排除：正交化轨域模式上的单粒子矩阵以误差 \(\delta_1\) 逼近 Hubbard 跳跃矩阵；IMS 局部化（Simon）在整个单粒子补空间给出固定隙；维数无关的费米 Hardy 估计控制电子间排斥；对补空间配方（square completion）使耦合以二次方进入能量，泄漏仅 \(e^{-1.2D}\)；压缩库仑作用与 \(U\sum_i n_{i\uparrow}n_{i\downarrow}\) 之差 \(O(m^5/D)\)。收尾取 \(D=A(n+2)^K\)、\(Z_*=\lfloor\sum_{j\le4D}D^j/j!\rfloor\)（截断指数级数，避免与超越数精确比较），经仿射阈值映射同时保持 YES 与 NO，输出阈隙恰 \(\frac12Z_*\alpha\delta_s\ge1\)。
+
+## 可信度与备注
+
+本文与姊妹篇（单位核电荷版）同日出稿：二者共享同一源问题与"单态介导子＋超交换＋接触布局"的有限框架，但连续实现完全不同——姊妹篇用连续电荷密度与多项式尺度，本文用指数大电荷与指数精度认证计算；两文互不引用对方定理，从两条路线独立印证同一结论（单位电荷版蕴含更大的二进制电荷输入类的硬度）。据任务元信息，本篇主结果尚无 Lean 形式化证明；OpenAI 官方声明"未经形式化的结果可能有问题"，请以社区核验为准。
+
+{% endraw %}
