@@ -29,7 +29,7 @@ pdfname: ""
 
 最简单的箭图只有一个顶点、一条自环，相应的 Nakajima 簇是平面上 n 个点的 Hilbert 概形——正是 Hikita 2017 年提出猜想时验证的原型。定理的结论一行写完：
 
-`@@M@@H_F^*(X;\C)\ \cong\ \C[Y_{\mathfrak f}^{\nu}]@@`
+`@@M@@H_F^*(X;\mathbb{C})\ \cong\ \mathbb{C}[Y_{\mathfrak f}^{\nu}]@@`
 
 <div>
 
@@ -73,13 +73,13 @@ pdfname: ""
 
 ## 主要结果
 
-设 `@@M@@Q@@` 为任意有限箭图，允许环 (loop) 与重边 (multiple arrows)。取规范群 `@@M@@G=\prod_i\GL(V_i)@@`、与之交换的 flavor 环面 `@@M@@F@@`，以及正则稳定特征 `@@M@@\nu@@`（半稳定点皆稳定且 `@@M@@G@@` 自由作用）。Higgs 侧是 Nakajima 簇 `@@M@@X=\mu^{-1}(0)^{\nu\text{-stable}}/G@@`，允许为空；Coulomb 侧是 BFN 三元组空间的 flavor 形变卷积代数 `@@M@@A_F@@`，`@@M@@Y_{\mathfrak f}=\Spec A_F@@`，特征 `@@M@@\nu@@` 给出拓扑环面 `@@M@@T_{\mathrm{top}}@@` 的余特征，不动点坐标环为 `@@M@@\C[Y_{\mathfrak f}^{\nu}]=A_F/\langle(A_F)_m:m\ne0\rangle@@`。共同系数环 `@@M@@R=H^*_{G\times F}(\mathrm{pt};\C)@@`，两侧分别有 Kirwan 映射与 Coulomb 系数映射。主定理断言：两个系数映射都满射且核相同，从而有典范分次 `@@M@@R@@`-代数同构
-`@@M@@DH_F^*(X;\C)\ \cong\ \C[Y_{\mathfrak f}^{\nu}].@@`
+设 `@@M@@Q@@` 为任意有限箭图，允许环 (loop) 与重边 (multiple arrows)。取规范群 `@@M@@G=\prod_i\GL(V_i)@@`、与之交换的 flavor 环面 `@@M@@F@@`，以及正则稳定特征 `@@M@@\nu@@`（半稳定点皆稳定且 `@@M@@G@@` 自由作用）。Higgs 侧是 Nakajima 簇 `@@M@@X=\mu^{-1}(0)^{\nu\text{-stable}}/G@@`，允许为空；Coulomb 侧是 BFN 三元组空间的 flavor 形变卷积代数 `@@M@@A_F@@`，`@@M@@Y_{\mathfrak f}=\Spec A_F@@`，特征 `@@M@@\nu@@` 给出拓扑环面 `@@M@@T_{\mathrm{top}}@@` 的余特征，不动点坐标环为 `@@M@@\mathbb{C}[Y_{\mathfrak f}^{\nu}]=A_F/\langle(A_F)_m:m\ne0\rangle@@`。共同系数环 `@@M@@R=H^*_{G\times F}(\mathrm{pt};\mathbb{C})@@`，两侧分别有 Kirwan 映射与 Coulomb 系数映射。主定理断言：两个系数映射都满射且核相同，从而有典范分次 `@@M@@R@@`-代数同构
+`@@M@@DH_F^*(X;\mathbb{C})\ \cong\ \mathbb{C}[Y_{\mathfrak f}^{\nu}].@@`
 两个分次分别是上同调次数与 BFN 同调次数；商环不做约化、幂零元完整保留，空簇对应零环。
 
 ## 证明思路
 
-整体采用"中间会师"策略：先证 `@@M@@B_F\cong H_F^*(X)@@`，其中 `@@M@@B_F@@` 是全拓扑环面 `@@M@@T_{\mathrm{top}}@@` 的不动商；再独立地证 `@@M@@\C[Y_{\mathfrak f}^{\nu}]\cong B_F@@`。两侧系数映射的满射性由两块已知输入保证：Weekes 的 minuscule 生成定理配合 BFN 阿贝尔化的显式 Laurent 公式给出 `@@M@@R\twoheadrightarrow B_F@@`，McGerty–Nevins 的 Kirwan 满射给出 `@@M@@R\twoheadrightarrow H_F^*(X)@@`，因此核心是比较两个核。
+整体采用"中间会师"策略：先证 `@@M@@B_F\cong H_F^*(X)@@`，其中 `@@M@@B_F@@` 是全拓扑环面 `@@M@@T_{\mathrm{top}}@@` 的不动商；再独立地证 `@@M@@\mathbb{C}[Y_{\mathfrak f}^{\nu}]\cong B_F@@`。两侧系数映射的满射性由两块已知输入保证：Weekes 的 minuscule 生成定理配合 BFN 阿贝尔化的显式 Laurent 公式给出 `@@M@@R\twoheadrightarrow B_F@@`，McGerty–Nevins 的 Kirwan 满射给出 `@@M@@R\twoheadrightarrow H_F^*(X)@@`，因此核心是比较两个核。
 
 第一步证包含 `@@M@@I_{\mathrm{top}}\subseteq I_H@@`。把 `@@M@@B_F@@` 中的系数关系展开为"中性词"——总拓扑荷为零、长度为正的 minuscule 生成元乘积；先在有限维格链对应 (correspondence) 的 Borel–Moore 同调 (Borel–Moore homology) 中实现每个词，再做稳定对 (stable pair) 检验：稳定特征给每个修改一个加性次数，中性词经重排后首个非平凡修改的次数非正，被稳定性排除，于是该关系在上同调中湮灭，得到满射 `@@M@@B_F\twoheadrightarrow H_F^*(X)@@`。
 

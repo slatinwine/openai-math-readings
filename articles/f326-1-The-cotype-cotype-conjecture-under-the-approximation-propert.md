@@ -79,7 +79,7 @@ Banach 空间的几何可用随机符号和的尺度刻画：`@@M@@Y@@` 有 Rade
 
 ## 主要结果
 
-主定理：设 `@@M@@X@@` 为非零实 Banach 空间且具有普通 AP，则 `@@M@@X@@` 是 `@@M@@K@@`-凸的当且仅当存在可以不同的 `@@M@@q,r\in[2,\infty)@@` 使 `@@M@@C_q(X)<\infty@@` 且 `@@M@@C_r(X^*)<\infty@@`；其中正向蕴含对一切实 Banach 空间成立，不需要 AP。定理还是一致的：固定 `@@M@@q,r@@` 与余型常数 `@@M@@C,D@@` 后，`@@M@@K(X)@@` 有仅依赖这组数据的上界 `@@M@@\kappa(q,r,C,D)@@`。由此推出两个应用。其一（度量熵对偶，metric entropy duality）：若 `@@M@@\R^n@@` 中原点对称凸体 `@@M@@K@@`、`@@M@@L@@` 之一所定的赋范空间满足上述双侧余型界，则覆盖数（covering number）满足 `@@M@@\frac1b\log N(L^\circ,atK^\circ)\le\log N(K,tL)\le b\log N(L^\circ,a^{-1}tK^\circ)@@`，常数 `@@M@@a,b@@` 与维数无关——这给出一大类凸体上常数无维数依赖的熵对偶。其二（Grothendieck 对，Grothendieck pair）：若对每个 `@@M@@A:E_m\to E_n^*@@`，张量积 `@@M@@A\otimes\Id_F@@` 从单射张量范数到射影张量范数的范数一致不超过 `@@M@@C\|A\|@@`，且 `@@M@@F@@` 无限维并具有 AP，则同一估计对 `@@M@@\ell_2@@` 代替 `@@M@@F@@` 也成立，即 Pisier 猜想在 AP 下成立。
+主定理：设 `@@M@@X@@` 为非零实 Banach 空间且具有普通 AP，则 `@@M@@X@@` 是 `@@M@@K@@`-凸的当且仅当存在可以不同的 `@@M@@q,r\in[2,\infty)@@` 使 `@@M@@C_q(X)<\infty@@` 且 `@@M@@C_r(X^*)<\infty@@`；其中正向蕴含对一切实 Banach 空间成立，不需要 AP。定理还是一致的：固定 `@@M@@q,r@@` 与余型常数 `@@M@@C,D@@` 后，`@@M@@K(X)@@` 有仅依赖这组数据的上界 `@@M@@\kappa(q,r,C,D)@@`。由此推出两个应用。其一（度量熵对偶，metric entropy duality）：若 `@@M@@\mathbb{R}^n@@` 中原点对称凸体 `@@M@@K@@`、`@@M@@L@@` 之一所定的赋范空间满足上述双侧余型界，则覆盖数（covering number）满足 `@@M@@\frac1b\log N(L^\circ,atK^\circ)\le\log N(K,tL)\le b\log N(L^\circ,a^{-1}tK^\circ)@@`，常数 `@@M@@a,b@@` 与维数无关——这给出一大类凸体上常数无维数依赖的熵对偶。其二（Grothendieck 对，Grothendieck pair）：若对每个 `@@M@@A:E_m\to E_n^*@@`，张量积 `@@M@@A\otimes\Id_F@@` 从单射张量范数到射影张量范数的范数一致不超过 `@@M@@C\|A\|@@`，且 `@@M@@F@@` 无限维并具有 AP，则同一估计对 `@@M@@\ell_2@@` 代替 `@@M@@F@@` 也成立，即 Pisier 猜想在 AP 下成立。
 
 ## 证明思路
 

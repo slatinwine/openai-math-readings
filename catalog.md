@@ -20,8 +20,8 @@ Proves Milne's rationality conjecture for abelian varieties over \overline{\math
 
 Proves the full Birch–Swinnerton-Dyer leading-term formula for every elliptic curve over ℚ whose ful…
 
-- [Exact Birch–Swinnerton-Dyer Formula from Low Selmer Corank](articles/f002-1-Exact-Birch-Swinnerton-Dyer-Formula-from-Low-Selmer-Corank.html) ｜ ⏳ 未形式化 ｜ 对 `@@M@@\Q@@` 上任意椭圆曲线，只要某个素数 `@@M@@q@@` 处的全 `@@M@@q@@`-幂 Selmer 群余秩为 `@@M@@0@@` 或 `@@M@@1@@`，就证明了解析秩与 Mordell–Weil 秩都等于该余秩、Tate–Shafarevich 群有限，且含全部素因子的完全 
-- [The Selmer converse for elliptic curves at every prime](articles/f002-1-The-Selmer-converse-for-elliptic-curves-at-every-prime.html) ｜ ⏳ 未形式化 ｜ 对 `@@M@@\Q@@` 上任意椭圆曲线与任意素数 `@@M@@p@@`：只要全 `@@M@@p@@` 幂 Selmer 群的 `@@M@@\Z_p@@`-余秩为 `@@M@@0@@` 或 `@@M@@1@@`，则 `@@M@@L@@`-函数的解析秩与 Mordell–Weil 秩都恰等于它，且整个 Tate–Shafarevich 
+- [Exact Birch–Swinnerton-Dyer Formula from Low Selmer Corank](articles/f002-1-Exact-Birch-Swinnerton-Dyer-Formula-from-Low-Selmer-Corank.html) ｜ ⏳ 未形式化 ｜ 对 `@@M@@\mathbb{Q}@@` 上任意椭圆曲线，只要某个素数 `@@M@@q@@` 处的全 `@@M@@q@@`-幂 Selmer 群余秩为 `@@M@@0@@` 或 `@@M@@1@@`，就证明了解析秩与 Mordell–Weil 秩都等于该余秩、Tate–Shafarevich 群有限，且含全部素因子的完全 
+- [The Selmer converse for elliptic curves at every prime](articles/f002-1-The-Selmer-converse-for-elliptic-curves-at-every-prime.html) ｜ ⏳ 未形式化 ｜ 对 `@@M@@\mathbb{Q}@@` 上任意椭圆曲线与任意素数 `@@M@@p@@`：只要全 `@@M@@p@@` 幂 Selmer 群的 `@@M@@\mathbb{Z}_p@@`-余秩为 `@@M@@0@@` 或 `@@M@@1@@`，则 `@@M@@L@@`-函数的解析秩与 Mordell–Weil 秩都恰等于它，且整个 Tate–Shafarevich 
 - [The two-primary Birch–Swinnerton-Dyer formula in Selmer corank at most one](articles/f002-1-The-two-primary-Birch-Swinnerton-Dyer-formula-in-Selmer-cora.html) ｜ ⏳ 未形式化 ｜ 对每条 `@@M@@2@@`-幂 Selmer 群 `@@M@@\mathbb{Z}_2@@`-余秩 `@@M@@s_2(E)\le 1@@` 的有理椭圆曲线，本文证明代数秩、解析秩与 Selmer 余秩三者相等，Tate–Shafarevich 群有限，且 BSD 首项公式的 $
 
 ### 003 · The quasi-Riemann hypothesis
@@ -127,7 +127,7 @@ Proves the abelian Zilber–Pink conjecture over \overline{\mathbb Q}: every irr
 
 - [The abelian Zilber–Pink conjecture](articles/f016-1-The-Abelian-Zilber-Pink-Conjecture.html) ｜ ⏳ 未形式化 ｜ 论文在 `@@M@@\overline{\mathbb Q}@@` 上证明了完整的阿贝尔簇（abelian variety）版 Zilber–Pink 猜想：任意子簇 `@@M@@X@@` 相对其最小包含的特殊子簇只有有限多个极大非典型子簇，即"不大可能交点"不会太多
 - [The E×CM component of Zilber–Pink for curves in A2](articles/f016-1-The-E-times-CM-Component-of-Zilber-Pink-for-Curves-in-A2.html) ｜ ⏳ 未形式化 ｜ 本文无条件证明了 Siegel 三维丛 `@@M@@\mathcal A_2@@` 中 Zilber–Pink 猜想的 `@@M@@E\times@@`CM 分量：Hodge 一般的代数曲线上，对应阿贝尔曲面同源于"至少一个因子带复乘的椭圆曲线乘积"的点只有有限多个，
-- [Quaternionic division points on curves in the Siegel threefold](articles/f016-1-Quaternionic-Division-Points-on-Curves-in-the-Siegel-Threefo.html) ｜ ⏳ 未形式化 ｜ 证明了 Siegel 三重态 `@@M@@\mathcal A_2@@` 中任何 Hodge 一般代数曲线上，全几何自同态代数恰为 `@@M@@\Q@@` 上不定四元数除代数的点只有有限多个——Zilber–Pink 猜想在 `@@M@@\mathcal A_2@@` 曲线情形的四
+- [Quaternionic division points on curves in the Siegel threefold](articles/f016-1-Quaternionic-Division-Points-on-Curves-in-the-Siegel-Threefo.html) ｜ ⏳ 未形式化 ｜ 证明了 Siegel 三重态 `@@M@@\mathcal A_2@@` 中任何 Hodge 一般代数曲线上，全几何自同态代数恰为 `@@M@@\mathbb{Q}@@` 上不定四元数除代数的点只有有限多个——Zilber–Pink 猜想在 `@@M@@\mathcal A_2@@` 曲线情形的四
 - [Elliptic squares and Zilber–Pink for curves in A2](articles/f016-2-Elliptic-Squares-and-Zilber-Pink-for-Curves-in-A2.html) ｜ ⏳ 未形式化 ｜ 证明了 `@@M@@\mathcal A_2@@`（主极化阿贝尔曲面模空间）中任何 Hodge-通有代数曲线上，阿贝尔曲面同源于非 CM 椭圆曲线平方 `@@M@@E^2@@` 的点只有有限多个；与两篇姊妹篇合并，无条件解决了 `@@M@@\mathcal A_2@@` 中曲线情形
 
 ### 017 · The irrationality exponent of <i>π</i> is 2
@@ -265,7 +265,7 @@ Using logarithmic Iitaka subadditivity, proves log abundance in every dimension 
 - [Relative denominators and effective systems for log Calabi-Yau fibrations](articles/f034-4-Relative-denominators-and-effective-systems-for-log-Calabi-Y.html) ｜ ⏳ 未形式化 ｜ 在维数至多四、边界系数取自固定有限有理集时，证明 log Calabi–Yau 纤维化的模性 b-除子有一致 Cartier 分母与一致平凡化次数；当底除子大时，一致的取整伴随系的截面比生成整个底函数域。
 - [Arithmetic Stein-degree bounds for log Calabi–Yau pairs](articles/f034-4-Arithmetic-Stein-degree-bounds-for-log-Calabi-Yau-pairs.html) ｜ ⏳ 未形式化 ｜ 证明 Birkar 的 Stein 度猜想（收缩到点情形）对普通 `@@M@@\mathbb Q@@`-对成立：特征零域上射影 log Calabi–Yau 对中，系数不小于 `@@M@@t@@` 的边界素分量在底域上的常量域次数被仅依赖维数与 `@@M@@t@@` 的整数 $N(
 - [Uniform effective log Iitaka fibrations for fourfolds](articles/f034-5-Uniform-effective-log-Iitaka-fibrations-for-fourfolds.html) ｜ ⏳ 未形式化 ｜ 证明了四维有效 log Iitaka 猜想的有限有理系数情形：对系数取自固定有限集 `@@M@@\Phi@@` 的射影 log canonical 四维组 `@@M@@(X,\Delta)@@`，存在仅依赖 `@@M@@\Phi@@` 的统一次数 `@@M@@m@@`，使完备取整线性系 $|\l
-- [Abundance after nonvanishing for compact Kähler fourfolds](articles/f034-5-Abundance-after-nonvanishing-for-compact-Kahler-fourfolds.html) ｜ ⏳ 未形式化 ｜ 在紧 Kähler 四维组上证明了"非消失后的丰度"（abundance after nonvanishing）：klt 组 `@@M@@(X,\Delta)@@` 的实际 `@@M@@\Q@@`-Cartier 伴随 `@@M@@K_X+\Delta@@` 只要解析 nef，且某
+- [Abundance after nonvanishing for compact Kähler fourfolds](articles/f034-5-Abundance-after-nonvanishing-for-compact-Kahler-fourfolds.html) ｜ ⏳ 未形式化 ｜ 在紧 Kähler 四维组上证明了"非消失后的丰度"（abundance after nonvanishing）：klt 组 `@@M@@(X,\Delta)@@` 的实际 `@@M@@\mathbb{Q}@@`-Cartier 伴随 `@@M@@K_X+\Delta@@` 只要解析 nef，且某
 
 ### 035 · Log-canonical threefold abundance in numerical dimension one
 
@@ -406,7 +406,7 @@ Proves termination of every existing generalized log canonical flip sequence on 
 
 - [Termination of generalized log canonical flips on compact Kähler fourfolds](articles/f056-1-Termination-of-generalized-log-canonical-flips-on-compact-Ka.html) ｜ ⏳ 未形式化 ｜ 证明了紧 Kähler 四重折叠上任何广义 log canonical 翻转序列必在有限步内终止（每步为具规定丰富符号的射影小双有理图），无需缩放规则或伪有效性假设，补上了非射影复几何四维极小模型纲领的关键缺口。
 - [Termination of generalized-canonical flips on compact Kähler fourfolds](articles/f056-1-Termination-of-generalized-canonical-flips-on-compact-Kahler.html) ｜ ⏳ 未形式化 ｜ 证明了紧 Kähler 四重折叠上广义典范翻转序列必终止：边界系数小于一、允许例外对数差异等于一、每步为具相反丰富符号的射影小双有理图，且不需要伪有效性或缩放规则假设，把四维终止性推广到了非射影复几何的广义配对情形。
-- [Termination for projective log canonical fourfolds with rational boundary](articles/f056-1-Termination-for-projective-log-canonical-fourfolds-with-rati.html) ｜ ⏳ 未形式化 ｜ 证明了特征零代数闭域上带有效有理边界的射影 log canonical 四重折叠的任意"许可"极小模型纲领必终止：允许任意负极端射线选择与混合双有理步骤，不假设 `@@M@@\Q@@`-因子化或伪有效性，且每条负射线都有所需的收缩与正模型。
+- [Termination for projective log canonical fourfolds with rational boundary](articles/f056-1-Termination-for-projective-log-canonical-fourfolds-with-rati.html) ｜ ⏳ 未形式化 ｜ 证明了特征零代数闭域上带有效有理边界的射影 log canonical 四重折叠的任意"许可"极小模型纲领必终止：允许任意负极端射线选择与混合双有理步骤，不假设 `@@M@@\mathbb{Q}@@`-因子化或伪有效性，且每条负射线都有所需的收缩与正模型。
 - [Finite ordinary minimal model programs on compact Kähler fourfolds](articles/f056-2-Finite-ordinary-minimal-model-programs-on-compact-Kahler-fou.html) ｜ ⏳ 未形式化 ｜ 证明了紧 Kähler 四维 klt 配对上任何极大普通负射线极小模型程序都终止：伴随除子 `@@M@@K_X+\Delta@@` 伪有效时终于 nef 模型，否则终于射影 Mori 纤维空间。四维 MMP 的终止性由此从"射影且伴随除子有效"的特殊情形
 - [Finite ordinary minimal model programs on compact Kähler fourfolds](articles/f056-2-Finite-ordinary-minimal-model-programs-on-compact-Kahler-fou.html) ｜ ⏳ 未形式化 ｜ 证明了紧 Kähler 四维 klt 配对上任何极大普通负射线极小模型程序都终止：伴随除子 `@@M@@K_X+\Delta@@` 伪有效时终于 nef 模型，否则终于射影 Mori 纤维空间。四维 MMP 的终止性由此从"射影且伴随除子有效"的特殊情形
 
@@ -430,7 +430,7 @@ Proves the Kollár–Pardon conjecture: the semialgebraic universal covers of co
 Disproves Zariski's multiplicity conjecture by constructing reduced holomorphic hypersurface germs t…
 
 - [Ambiently homeomorphic isolated hypersurfaces of multiplicities two and three](articles/f059-1-Ambiently-homeomorphic-isolated-hypersurfaces-of-multiplicit.html) ｜ ⏳ 未形式化 ｜ 构造出两个约化、加权齐次、带孤立临界点的超曲面芽，可由环境空间（ambient space）的同胚相互变换，重数却是 2 与 3——这否定了 Zariski 重数猜想的嵌入拓扑版本，并连带否定 Arnold 余秩问题与拓扑右等价重数猜想。
-- [Ambiently homeomorphic isolated hypersurface germs in ℂ⁴ with multiplicities four and five](articles/f059-1-Ambiently-homeomorphic-isolated-hypersurface-germs-in-C4-wit.html) ｜ ⏳ 未形式化 ｜ 在四个复变量中构造出两个约化的收敛全纯函数芽：原点都是孤立临界点，零集芽可由环境空间（ambient space）的同胚互变，重数却分别是 4 与 5——在最经典的环境维数 `@@M@@\C^4@@` 中给 Zariski 重数问题以否定答案。
+- [Ambiently homeomorphic isolated hypersurface germs in ℂ⁴ with multiplicities four and five](articles/f059-1-Ambiently-homeomorphic-isolated-hypersurface-germs-in-C4-wit.html) ｜ ⏳ 未形式化 ｜ 在四个复变量中构造出两个约化的收敛全纯函数芽：原点都是孤立临界点，零集芽可由环境空间（ambient space）的同胚互变，重数却分别是 4 与 5——在最经典的环境维数 `@@M@@\mathbb{C}^4@@` 中给 Zariski 重数问题以否定答案。
 
 ### 060 · The Global Spherical Shell conjecture
 
@@ -997,7 +997,7 @@ Resolves the uniform boundedness assertion in Hilbert's sixteenth problem: the n
 
 Resolves the probability-preserving form of Banach's simple Lebesgue-spectrum problem within smooth …
 
-- [A smooth three-torus diffeomorphism with simple Lebesgue spectrum](articles/f144-1-A-smooth-three-torus-diffeomorphism-with-simple-Lebesgue-spe.html) ｜ ⏳ 未形式化 ｜ 本文在三维环面 `@@M@@\T^3@@` 上构造出保持标准体积的 `@@M@@C^\infty@@` 微分同胚（diffeomorphism）`@@M@@T@@` 及实观测函数 `@@M@@f@@`，使 `@@M@@\{f\circ T^n\}_{n\in\Z}@@` 恰为均值零空间 `@@M@@L^2_0@@` 的标准
+- [A smooth three-torus diffeomorphism with simple Lebesgue spectrum](articles/f144-1-A-smooth-three-torus-diffeomorphism-with-simple-Lebesgue-spe.html) ｜ ⏳ 未形式化 ｜ 本文在三维环面 `@@M@@\T^3@@` 上构造出保持标准体积的 `@@M@@C^\infty@@` 微分同胚（diffeomorphism）`@@M@@T@@` 及实观测函数 `@@M@@f@@`，使 `@@M@@\{f\circ T^n\}_{n\in\mathbb{Z}}@@` 恰为均值零空间 `@@M@@L^2_0@@` 的标准
 
 ### 145 · Rokhlin’s multiple-mixing problem
 
@@ -1071,7 +1071,7 @@ Proves almost-everywhere convergence of consecutive multiple ergodic averages of
 
 Constructs a finite translational tile in ℤ<sup>3</sup> that tiles space but admits no fully periodi…
 
-- [A translational tile with no fully periodic tiling in dimension three](articles/f155-1-A-translational-tile-with-no-fully-periodic-tiling-in-dimens.html) ｜ ✅ 已形式化 ｜ 本文在 `@@M@@\Z^3@@` 中构造出一块有限平移瓷砖（translational tile）`@@M@@T@@`：它能铺满 `@@M@@\Z^3@@`，却没有任何全周期铺法；其单位立方体加厚在 `@@M@@\R^3@@` 中同样如此，即便允许任意实数平移向量。周期铺砌猜想由此在最小可能的
+- [A translational tile with no fully periodic tiling in dimension three](articles/f155-1-A-translational-tile-with-no-fully-periodic-tiling-in-dimens.html) ｜ ✅ 已形式化 ｜ 本文在 `@@M@@\mathbb{Z}^3@@` 中构造出一块有限平移瓷砖（translational tile）`@@M@@T@@`：它能铺满 `@@M@@\mathbb{Z}^3@@`，却没有任何全周期铺法；其单位立方体加厚在 `@@M@@\mathbb{R}^3@@` 中同样如此，即便允许任意实数平移向量。周期铺砌猜想由此在最小可能的
 
 ### 156 · Borsuk's conjecture fails in dimension nine
 
@@ -1091,7 +1091,7 @@ Disproves Hadwiger's conjecture even for fractional coloring: arbitrarily large 
 
 Proves that every five-coloring of the Euclidean plane has a monochromatic pair at distance one, wit…
 
-- [The Euclidean plane is not five-colorable](articles/f158-1-The-Euclidean-plane-is-not-five-colorable.html) ｜ ✅ 已形式化 ｜ 本文无条件证明：欧氏平面的任意五染色必有距离恰为 1 的同色点对，无须对颜色类做任何可测性或正则性假设；于是平面色数 `@@M@@\chi(\R^2)@@` 只能是 6 或 7，Hadwiger–Nelson 问题的下界七十多年来首次从 5 跃升至 6。
+- [The Euclidean plane is not five-colorable](articles/f158-1-The-Euclidean-plane-is-not-five-colorable.html) ｜ ✅ 已形式化 ｜ 本文无条件证明：欧氏平面的任意五染色必有距离恰为 1 的同色点对，无须对颜色类做任何可测性或正则性假设；于是平面色数 `@@M@@\chi(\mathbb{R}^2)@@` 只能是 6 或 7，Hadwiger–Nelson 问题的下界七十多年来首次从 5 跃升至 6。
 
 ### 159 · Erdős’s reciprocal-sum conjecture and quasipolynomial Szemerédi bounds
 
@@ -1355,7 +1355,7 @@ Constructs finite-dimensional algebras over a characteristic-two rational-functi
 Proves the Eisenbud–Green–Harris and lex-plus-powers conjectures over every characteristic-zero fiel…
 
 - [The Artinian Lex-Plus-Powers Betti Theorem](articles/f200-1-The-Artinian-Lex-Plus-Powers-Betti-Theorem.html) ｜ ⏳ 未形式化 ｜ 在任意特征为零的域上证明了 Eisenbud–Green–Harris 与 lex-plus-powers 猜想：包含正则序列（任意长度、次数 `@@M@@\ge 2@@`）的齐次理想，其 Hilbert 函数被对应的 lex-plus-powers 理
-- [Commuting Division-Coefficient Forms and the Artinian Eisenbud--Green--Harris Conjecture](articles/f200-1-Commuting-Division-Coefficient-Forms-and-the-Artinian-Eisenb.html) ｜ ⏳ 未形式化 ｜ 在 `@@M@@\C@@` 上构造性地证明了 Artinian 情形的 Eisenbud–Green–Harris 猜想：任何包含正则序列（次数 `@@M@@\ge2@@`、任意长度）的齐次理想，都与某个含相应纯幂的单项式理想有相同的 Hilbert 函数，并经归约推
+- [Commuting Division-Coefficient Forms and the Artinian Eisenbud--Green--Harris Conjecture](articles/f200-1-Commuting-Division-Coefficient-Forms-and-the-Artinian-Eisenb.html) ｜ ⏳ 未形式化 ｜ 在 `@@M@@\mathbb{C}@@` 上构造性地证明了 Artinian 情形的 Eisenbud–Green–Harris 猜想：任何包含正则序列（次数 `@@M@@\ge2@@`、任意长度）的齐次理想，都与某个含相应纯幂的单项式理想有相同的 Hilbert 函数，并经归约推
 
 ### 201 · A counterexample to Kurosh’s division-ring problem
 
@@ -1442,7 +1442,7 @@ Critical Fortuin–Kasteleyn planar maps converge to Liouville quantum gravity s
 Proves that planar first-passage percolation has no doubly infinite geodesic for iid nonnegative non…
 
 - [No bigeodesics in planar first-passage percolation](articles/f212-1-No-bigeodesics-in-planar-first-passage-percolation.html) ｜ ⏳ 未形式化 ｜ 在边权独立同分布、非负、无原子且四条独立边权最小值二阶矩有限的条件下，证明了平面首达渗流几乎必然不存在任何双无穷测地线，一举解决该条件下的平面无测地线猜想，且完全不需要极限形状的正则性假设。
-- [Strict convexity and differentiability of the planar exponential first-passage limit shape](articles/f212-1-Strict-convexity-and-differentiability-of-the-planar-exponen.html) ｜ ✅ 已形式化 ｜ 证明了 `@@M@@\Z^2@@` 上独立指数边权首达渗流的极限形状严格凸且边界为 `@@M@@C^1@@` 曲线，并把可微性推广到一切形状、速率均为正的 Gamma 边权，解决平面指数模型的严格凸性与可微性两大猜想。
+- [Strict convexity and differentiability of the planar exponential first-passage limit shape](articles/f212-1-Strict-convexity-and-differentiability-of-the-planar-exponen.html) ｜ ✅ 已形式化 ｜ 证明了 `@@M@@\mathbb{Z}^2@@` 上独立指数边权首达渗流的极限形状严格凸且边界为 `@@M@@C^1@@` 曲线，并把可微性推广到一切形状、速率均为正的 Gamma 边权，解决平面指数模型的严格凸性与可微性两大猜想。
 
 ### 213 · Critical percolation on every quasi-transitive graph
 
@@ -1871,7 +1871,7 @@ Proves an entropy area law for unique ground states of finite-range Hamiltonians
 
 Proves N(6)=3, resolving Zauner's dimension-six mutually unbiased bases conjecture: three such b…
 
-- [The maximum number of mutually unbiased bases in dimension six](articles/f266-1-The-maximum-number-of-mutually-unbiased-bases-in-dimension-s.html) ｜ ⏳ 未形式化 ｜ 本文证明 `@@M@@\C^6@@` 中两两无偏的正交基最多只有 3 个，即 `@@M@@N(6)=3@@`，解决了 Zauner 提出三十余年的六维 MUB 猜想：下界来自 `@@M@@\C^2\otimes\C^3@@` 的张量积构造，上界则由一次完整的认证计算排除 4 个基的
+- [The maximum number of mutually unbiased bases in dimension six](articles/f266-1-The-maximum-number-of-mutually-unbiased-bases-in-dimension-s.html) ｜ ⏳ 未形式化 ｜ 本文证明 `@@M@@\mathbb{C}^6@@` 中两两无偏的正交基最多只有 3 个，即 `@@M@@N(6)=3@@`，解决了 Zauner 提出三十余年的六维 MUB 猜想：下界来自 `@@M@@\mathbb{C}^2\otimes\mathbb{C}^3@@` 的张量积构造，上界则由一次完整的认证计算排除 4 个基的
 - [Exact Fourier certificates for complex Hadamard matrices of order six](articles/f266-1-Exact-Fourier-certificates-for-complex-Hadamard-matrices-of-.html) ｜ ⏳ 未形式化 ｜ 本文证明 Matolcsi–Ruzsa–Weiner 的 Fourier 消没猜想：除 Tao 三次矩阵等价类外，一切 6 阶复 Hadamard 矩阵在电荷 `@@M@@\alpha=(1,1,1,-1,-1,-1)@@` 的所有置换下特征和为零；并用
 
 ### 267 · Positive-temperature Bose–Einstein condensation and exact quantum depletion
@@ -2357,7 +2357,7 @@ Proves generalized Cartan–Hadamard isoperimetry in every dimension: in a compl
 
 Proves Yau's uniformization conjecture: every complete connected noncompact Kähler manifold with str…
 
-- [Uniformization of complete Kähler manifolds with positive bisectional curvature](articles/f338-1-Uniformization-of-complete-Kahler-manifolds-with-positive-bi.html) ｜ ⏳ 未形式化 ｜ 证明了丘成桐 1982 年提出的单值化（uniformization）猜想：全纯双截曲率逐点严格为正的完备非紧 Kähler 流形必双全纯同构于复欧氏空间 `@@M@@\C^n@@`；证明不要求任何曲率上下界、体积增长或拓扑假设，对所有复维数成立。
+- [Uniformization of complete Kähler manifolds with positive bisectional curvature](articles/f338-1-Uniformization-of-complete-Kahler-manifolds-with-positive-bi.html) ｜ ⏳ 未形式化 ｜ 证明了丘成桐 1982 年提出的单值化（uniformization）猜想：全纯双截曲率逐点严格为正的完备非紧 Kähler 流形必双全纯同构于复欧氏空间 `@@M@@\mathbb{C}^n@@`；证明不要求任何曲率上下界、体积增长或拓扑假设，对所有复维数成立。
 
 ### 339 · Katok's entropy rigidity conjecture
 
@@ -2458,7 +2458,7 @@ Disproves Chen's smooth long-time existence conjecture for Calabi flow by constr
 
 Proves that every smooth locally uniformly convex affine-maximal graph of dimension three through ni…
 
-- [A Smooth Nonquadratic Entire Affine Maximal Graph in Dimension Ten](articles/f353-1-Smooth-Nonquadratic-Affine-Maximal-Graph-in-Dimension-Ten.html) ｜ ⏳ 未形式化 ｜ 论文在十维构造了一个光滑、整定义于 `@@M@@\R^{10}@@`、Hessian 逐点正定且满足经典仿射极值方程 (affine maximal equation) 的非二次函数，推翻"整图仿射 Bernstein 断言"在十维的成立，与姊妹篇一起把
+- [A Smooth Nonquadratic Entire Affine Maximal Graph in Dimension Ten](articles/f353-1-Smooth-Nonquadratic-Affine-Maximal-Graph-in-Dimension-Ten.html) ｜ ⏳ 未形式化 ｜ 论文在十维构造了一个光滑、整定义于 `@@M@@\mathbb{R}^{10}@@`、Hessian 逐点正定且满足经典仿射极值方程 (affine maximal equation) 的非二次函数，推翻"整图仿射 Bernstein 断言"在十维的成立，与姊妹篇一起把
 - [The affine Bernstein theorem in dimensions three through nine](articles/f353-1-The-affine-Bernstein-theorem-in-dimensions-three-through-nin.html) ｜ ⏳ 未形式化 ｜ 论文证明当 `@@M@@3\le n\le9@@` 时，诱导欧氏度量完备的光滑局部一致凸仿射极值图必为椭圆抛物面——定义域必是全空间、函数必是正定二次多项式；仿射完备 (affine-complete) 的经典仿射极大浸入超曲面亦得同样结论。配合姊妹篇的
 
 ### 354 · The isoperimetric profile of the cubic three-torus
@@ -2496,7 +2496,7 @@ Constructs a closed connected orientable smooth three-manifold that admits a met
 
 Constructs a contractible domain in ℂ<sup>3</sup> with a complete negatively pinched Kähler metric b…
 
-- [A negatively pinched Kähler threefold without bounded holomorphic coordinates](articles/f359-1-A-negatively-pinched-Kahler-threefold-without-bounded-holomo.html) ｜ ✅ 已形式化 ｜ 在 `@@M@@\C^3@@` 中构造出可缩区域 (contractible domain)，配上完备 Kähler 度量后其实截面曲率 (sectional curvature) 被两个负常数上下夹紧，却不存在 Jacobi 行列式处处非零的有界全纯映
+- [A negatively pinched Kähler threefold without bounded holomorphic coordinates](articles/f359-1-A-negatively-pinched-Kahler-threefold-without-bounded-holomo.html) ｜ ✅ 已形式化 ｜ 在 `@@M@@\mathbb{C}^3@@` 中构造出可缩区域 (contractible domain)，配上完备 Kähler 度量后其实截面曲率 (sectional curvature) 被两个负常数上下夹紧，却不存在 Jacobi 行列式处处非零的有界全纯映
 - [One-sided negative sectional curvature and the holomorphic Liouville property](articles/f359-1-One-sided-negative-sectional-curvature-and-the-holomorphic-L.html) ｜ ⏳ 未形式化 ｜ 在某个充分大的有限复维数 `@@M@@m@@` 下，构造出与 `@@M@@\mathbb R^{2m}@@` 微分同胚、带完备 Kähler 度量且截面曲率处处不超过 `@@M@@-1@@` 的区域，其有界全纯函数却只有常数——"一致负上界曲率必逼出非常数有界全纯函数"的单侧问题被
 
 ### 360 · Weak MTW curvature gives convexity and regular optimal transport

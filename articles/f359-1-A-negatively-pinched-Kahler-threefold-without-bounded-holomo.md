@@ -45,7 +45,7 @@ pdfname: ""
 
 ## 一句话结论
 
-在 `@@M@@\C^3@@` 中构造出可缩区域 (contractible domain)，配上完备 Kähler 度量后其实截面曲率 (sectional curvature) 被两个负常数上下夹紧，却不存在 Jacobi 行列式处处非零的有界全纯映射——"负夹紧 Kähler 流形必双全纯于有界域"的单值化问题由此得到否定回答。
+在 `@@M@@\mathbb{C}^3@@` 中构造出可缩区域 (contractible domain)，配上完备 Kähler 度量后其实截面曲率 (sectional curvature) 被两个负常数上下夹紧，却不存在 Jacobi 行列式处处非零的有界全纯映射——"负夹紧 Kähler 流形必双全纯于有界域"的单值化问题由此得到否定回答。
 
 ## 问题背景
 
@@ -53,11 +53,11 @@ pdfname: ""
 
 ## 主要结果
 
-主定理：存在可缩区域 `@@M@@M\subset\C^3@@` 与光滑完备 Kähler 度量 `@@M@@g@@`，及有限常数 `@@M@@0<A\le B@@`，使得对每点、每个实二维平面 `@@M@@\sigma@@` 均有 `@@M@@-B\le K_g(\sigma)\le -A<0@@`；并且不存在 Jacobi 行列式处处非零的有界全纯映射 `@@M@@F:M\to\C^3@@`。特别地，`@@M@@M@@` 不与 `@@M@@\C^3@@` 中任何有界域 (bounded domain) 双全纯。值得注意：`@@M@@M@@` 本身是 Stein 流形——构造自带严格多次调和 (plurisubharmonic) 穷竭函数，由 Grauert 对 Levi 问题的解即得；且基坐标 `@@M@@z_1,z_2@@` 就是非常数有界全纯函数。因此受阻的既非全纯凸性 (holomorphic convexity)，也非有界全纯函数的存在性，而恰恰是"三个微分处处线性无关的有界坐标"。
+主定理：存在可缩区域 `@@M@@M\subset\mathbb{C}^3@@` 与光滑完备 Kähler 度量 `@@M@@g@@`，及有限常数 `@@M@@0<A\le B@@`，使得对每点、每个实二维平面 `@@M@@\sigma@@` 均有 `@@M@@-B\le K_g(\sigma)\le -A<0@@`；并且不存在 Jacobi 行列式处处非零的有界全纯映射 `@@M@@F:M\to\mathbb{C}^3@@`。特别地，`@@M@@M@@` 不与 `@@M@@\mathbb{C}^3@@` 中任何有界域 (bounded domain) 双全纯。值得注意：`@@M@@M@@` 本身是 Stein 流形——构造自带严格多次调和 (plurisubharmonic) 穷竭函数，由 Grauert 对 Levi 问题的解即得；且基坐标 `@@M@@z_1,z_2@@` 就是非常数有界全纯函数。因此受阻的既非全纯凸性 (holomorphic convexity)，也非有界全纯函数的存在性，而恰恰是"三个微分处处线性无关的有界坐标"。
 
 ## 证明思路
 
-总体策略是几何与分析分治。区域取单位球 `@@M@@\B\subset\C^2@@` 上的哈托格斯域 (Hartogs domain)：`@@M@@M_\phi=\{(z,w)\in\B\times\C:e^{\phi(z)}|w|^2<1\}@@`，即 `@@M@@z@@` 上方圆盘半径为 `@@M@@e^{-\phi(z)/2}@@`；度量取位势 `@@M@@\lambda\psi-\log(1-e^{\phi}|w|^2)@@`（其中 `@@M@@\psi=-\log(1-|z|^2)@@`）的复 Hessian (complex Hessian)，属于 Calabi 型圆不变构造。证明只依赖两个输入。分析输入：造光滑实函数 `@@M@@\phi@@`，使其复 Hessian 两侧有界、在中心化球坐标下各分量导数有界（不假定该度量的曲率符号），且不存在全纯函数 `@@M@@H@@` 满足 `@@M@@\operatorname{Re}H\le C_H+4\log\frac1{1-|z|}+\phi@@`。几何输入：满足这些界的 `@@M@@\phi@@`，只要基参数 `@@M@@\lambda@@` 足够大，`@@M@@M_\phi@@` 可缩、度量完备且截面曲率一致负。
+总体策略是几何与分析分治。区域取单位球 `@@M@@\B\subset\mathbb{C}^2@@` 上的哈托格斯域 (Hartogs domain)：`@@M@@M_\phi=\{(z,w)\in\B\times\mathbb{C}:e^{\phi(z)}|w|^2<1\}@@`，即 `@@M@@z@@` 上方圆盘半径为 `@@M@@e^{-\phi(z)/2}@@`；度量取位势 `@@M@@\lambda\psi-\log(1-e^{\phi}|w|^2)@@`（其中 `@@M@@\psi=-\log(1-|z|^2)@@`）的复 Hessian (complex Hessian)，属于 Calabi 型圆不变构造。证明只依赖两个输入。分析输入：造光滑实函数 `@@M@@\phi@@`，使其复 Hessian 两侧有界、在中心化球坐标下各分量导数有界（不假定该度量的曲率符号），且不存在全纯函数 `@@M@@H@@` 满足 `@@M@@\operatorname{Re}H\le C_H+4\log\frac1{1-|z|}+\phi@@`。几何输入：满足这些界的 `@@M@@\phi@@`，只要基参数 `@@M@@\lambda@@` 足够大，`@@M@@M_\phi@@` 可缩、度量完备且截面曲率一致负。
 
 先看阻碍如何闭合：若有界全纯 `@@M@@F@@` 的 Jacobi 行列式处处非零，其限制在零截面上的行列式 `@@M@@d@@` 是 `@@M@@\B@@` 上无零点的全纯函数；`@@M@@\B@@` 单连通，故 `@@M@@d@@` 有整体全纯对数。对基方向圆盘与纤维圆盘分别用 Cauchy 估计，得 `@@M@@\log|d|^2\le C+4\log\frac1{1-|z|}+\phi@@`，恰好撞上 `@@M@@\phi@@` 所禁止的全纯实部上界，矛盾——有界全纯坐标因此不可能存在。
 

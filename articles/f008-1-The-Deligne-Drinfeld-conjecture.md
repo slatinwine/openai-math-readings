@@ -27,7 +27,7 @@ pdfname: ""
 
 **看个具体例子**
 
-定理给出同构 `@@M@@\Lie_{\Q}\langle e_3,e_5,e_7,\ldots\rangle\cong(W,\{,\})@@`，每个奇权一个生成元 `@@M@@\sigma_{2k+1}@@`。括号让权重相加：`@@M@@\{\sigma_3,\sigma_5\}@@` 落在权重 `@@M@@3+5=8@@`，而 `@@M@@\{\sigma_3,\sigma_3\}=0@@`。生成元真实存在来自显式构造：其深度一分量 `@@M@@[x^{n-1}y]@@` 的系数在奇权 `@@M@@n@@` 处等于 `@@M@@2\lambda^n\zeta(n)\neq0@@`——例如权重 3 处是 `@@M@@2\lambda^3\zeta(3)@@`（`@@M@@\zeta(3)\approx1.202@@`），一个不折不扣的非零数。
+定理给出同构 `@@M@@\Lie_{\mathbb{Q}}\langle e_3,e_5,e_7,\ldots\rangle\cong(W,\{,\})@@`，每个奇权一个生成元 `@@M@@\sigma_{2k+1}@@`。括号让权重相加：`@@M@@\{\sigma_3,\sigma_5\}@@` 落在权重 `@@M@@3+5=8@@`，而 `@@M@@\{\sigma_3,\sigma_3\}=0@@`。生成元真实存在来自显式构造：其深度一分量 `@@M@@[x^{n-1}y]@@` 的系数在奇权 `@@M@@n@@` 处等于 `@@M@@2\lambda^n\zeta(n)\neq0@@`——例如权重 3 处是 `@@M@@2\lambda^3\zeta(3)@@`（`@@M@@\zeta(3)\approx1.202@@`），一个不折不扣的非零数。
 
 <div>
 
@@ -47,7 +47,7 @@ pdfname: ""
 
 ## 问题背景
 
-Grothendieck–Teichmüller 李代数记录"带括号辫子"（parenthesized braids）的结合与换位约束的无穷小对称。它在二元自由李代数 `@@M@@L=\Lie_{\Q}\langle x,y\rangle@@`（按字数分次，称为权重 weight）上由三条方程定义：反对称（antisymmetry）、三词关系（three-term relation）与 `@@M@@\mathfrak t_4@@` 中的五边形关系（pentagon）。方程极短，却对所有权重同时施压。Deligne 在三刺直线基本群的动机研究中、Drinfeld 在 associator 论文中提出猜想：解空间应恰好是每个奇权重（`@@M@@\ge3@@`）一个生成元的自由李代数。此前只知"半边"：奇权元素的存在性归于 Ihara，Drinfeld 给出 associator 证明；Brown 借混泰特动机（mixed Tate motives）给出一个自由李子代数；Willwacher 证明 `@@M@@x^{2k}y@@` 系数非零的奇权解族必自由。缺口是"没有额外解"的全权重维数上界，此前仅靠 Naef–Willwacher 对线性化 Kashiwara–Vergne 代数的计算验证到权重 29。
+Grothendieck–Teichmüller 李代数记录"带括号辫子"（parenthesized braids）的结合与换位约束的无穷小对称。它在二元自由李代数 `@@M@@L=\Lie_{\mathbb{Q}}\langle x,y\rangle@@`（按字数分次，称为权重 weight）上由三条方程定义：反对称（antisymmetry）、三词关系（three-term relation）与 `@@M@@\mathfrak t_4@@` 中的五边形关系（pentagon）。方程极短，却对所有权重同时施压。Deligne 在三刺直线基本群的动机研究中、Drinfeld 在 associator 论文中提出猜想：解空间应恰好是每个奇权重（`@@M@@\ge3@@`）一个生成元的自由李代数。此前只知"半边"：奇权元素的存在性归于 Ihara，Drinfeld 给出 associator 证明；Brown 借混泰特动机（mixed Tate motives）给出一个自由李子代数；Willwacher 证明 `@@M@@x^{2k}y@@` 系数非零的奇权解族必自由。缺口是"没有额外解"的全权重维数上界，此前仅靠 Naef–Willwacher 对线性化 Kashiwara–Vergne 代数的计算验证到权重 29。
 
 ## 主要结果
 
@@ -60,7 +60,7 @@ Grothendieck–Teichmüller 李代数记录"带括号辫子"（parenthesized bra
 `@@M@@D\{\psi,\phi\}=D_\psi(\phi)-D_\phi(\psi)+[\psi,\phi].@@`
 
 **定理（主结果）**：存在齐次元素 `@@M@@\sigma_{2k+1}\in W_{2k+1}@@`（`@@M@@k\ge1@@`），使 `@@M@@e_{2k+1}\mapsto\sigma_{2k+1}@@` 给出分次李代数同构
-`@@M@@D\Lie_{\Q}\langle e_3,e_5,e_7,\ldots\rangle\ \cong\ (W,\{\,,\,\}),@@`
+`@@M@@D\Lie_{\mathbb{Q}}\langle e_3,e_5,e_7,\ldots\rangle\ \cong\ (W,\{\,,\,\}),@@`
 且按权重完备化后是连续分次同构。生成元不典范；"`@@M@@W@@` 在 Ihara 括号下封闭"是证明的结论而非假设。结合 Willwacher 的同构，立得图复形（graph complex）的零阶上同调 `@@M@@H^0(\mathrm{GC}_2)@@` 等于该自由李代数的权重完备化。
 
 ## 证明思路
@@ -75,7 +75,7 @@ Grothendieck–Teichmüller 李代数记录"带括号辫子"（parenthesized bra
 
 下界靠构造。在括号弦范畴上，相容导子在重接箭头上的取值自动落入 `@@M@@W@@`，其像 `@@M@@V@@` 在 Ihara 括号下封闭；正则化和乐（regularized holonomy）给出自同构 `@@M@@S=H_-H_+^{-1}@@`，`@@M@@\delta=\log S@@` 的齐次分量提供有理值。对实重接路径比较两种传输规则得 `@@M@@\delta(\alpha)\equiv\Phi(-x,-y)-\Phi(x,y)\pmod{J^2}@@`，而 `@@M@@[x^{n-1}y]\Phi=-\lambda^n\sum_{q\ge1}q^{-n}@@` 是正项收敛级数，奇权重时值 `@@M@@2\lambda^n\zeta(n)\neq0@@`——只用正性，不诉诸算术独立性。
 
-最后夹逼：在 `@@M@@\Z_{(2)}@@` 饱和格上逐权重归纳，已选生成元的 Hall 字约化后线性无关，而 Ihara 括号使深度（depth）相加、长字无深度一分量，新造的深度一值独立于它们；每个权重达到 `@@M@@d_n@@`，单满同时到手，完备化按权重连续延拓。
+最后夹逼：在 `@@M@@\mathbb{Z}_{(2)}@@` 饱和格上逐权重归纳，已选生成元的 Hall 字约化后线性无关，而 Ihara 括号使深度（depth）相加、长字无深度一分量，新造的深度一值独立于它们；每个权重达到 `@@M@@d_n@@`，单满同时到手，完备化按权重连续延拓。
 
 ## 可信度与备注
 

@@ -53,7 +53,7 @@ pdfname: ""
 
 ## 主要结果
 
-在偶数边长 `@@M@@L@@` 的环面 `@@M@@\Lambda_L=(\Z/L\Z)^3@@` 上取近邻各向同性哈密顿量 `@@M@@H_{S,L}=-\sum_{\{x,y\}}\sum_{a=1}^3S_x^aS_y^a@@`，总自旋分量 `@@M@@M_L^a=\sum_xS_x^a@@`，Gibbs 期望 `@@M@@\langle\cdot\rangle_{\beta,L}@@`；压强 `@@M@@p_{S,\beta}(h)@@` 与 `@@M@@m_{S,\beta}=p'_{S,\beta}(0+)@@` 同前两篇。**定理（球面磁化律，spherical magnetization law）**：对每个固定 `@@M@@S\in\{\tfrac12,1,\tfrac32,\ldots\}@@` 存在 `@@M@@\beta_0(S)@@`，使得每个固定 `@@M@@\beta\ge\beta_0(S)@@` 都有 `@@M@@m=m_{S,\beta}>0@@`，且对一切 `@@M@@t\in\R^3@@`
+在偶数边长 `@@M@@L@@` 的环面 `@@M@@\Lambda_L=(\mathbb{Z}/L\mathbb{Z})^3@@` 上取近邻各向同性哈密顿量 `@@M@@H_{S,L}=-\sum_{\{x,y\}}\sum_{a=1}^3S_x^aS_y^a@@`，总自旋分量 `@@M@@M_L^a=\sum_xS_x^a@@`，Gibbs 期望 `@@M@@\langle\cdot\rangle_{\beta,L}@@`；压强 `@@M@@p_{S,\beta}(h)@@` 与 `@@M@@m_{S,\beta}=p'_{S,\beta}(0+)@@` 同前两篇。**定理（球面磁化律，spherical magnetization law）**：对每个固定 `@@M@@S\in\{\tfrac12,1,\tfrac32,\ldots\}@@` 存在 `@@M@@\beta_0(S)@@`，使得每个固定 `@@M@@\beta\ge\beta_0(S)@@` 都有 `@@M@@m=m_{S,\beta}>0@@`，且对一切 `@@M@@t\in\mathbb{R}^3@@`
 `@@M@@D\lim_{\substack{L\to\infty\\L\text{ 偶}}}\Bigl\langle\exp\Bigl(\frac1V\sum_{a=1}^3t_aM_L^a\Bigr)\Bigr\rangle_{\beta,L}=\frac1{4\pi}\int_{\mathbb S^2}e^{mt\cdot n}\,d\sigma(n)=\frac{\sinh(m|t|)}{m|t|}.@@`
 同时二阶矩收敛 `@@M@@\lim_{L\to\infty}\frac1{V^2}\sum_{x,y}\langle\boldsymbol S_x\cdot\boldsymbol S_y\rangle_{\beta,L}=m^2@@`。陈述只使用自旋分量的自伴线性组合，回避了对不对易可观测量（noncommuting observables）的联合测量；自旋与正温度在整个体积极限中固定不动。
 

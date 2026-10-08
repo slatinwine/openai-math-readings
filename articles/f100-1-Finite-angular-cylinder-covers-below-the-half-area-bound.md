@@ -19,7 +19,7 @@ pdfname: ""
 
 **关键词卡片**
 
-- 圆柱覆盖（cylinder covering）：形如 `@@M@@B+\R u@@` 的无限长管子，底面 `@@M@@B@@` 位于与轴垂直的平面内。
+- 圆柱覆盖（cylinder covering）：形如 `@@M@@B+\mathbb{R} u@@` 的无限长管子，底面 `@@M@@B@@` 位于与轴垂直的平面内。
 - 最小正交投影面积（minimal orthogonal projection area）：凸体在所有方向的影子中最小的一块。
 - 角度扇区（angular sector）：把三角底面细分的窄扇形，每个配自己的微倾轴线。
 - 仿射不变性（affine invariance）：方向化成本比在线性变换下不变，反例自动推广到一切四面体。
@@ -63,7 +63,7 @@ pdfname: ""
 
 ## 问题背景
 
-这个问题是 Tarski 木板问题（plank problem）的圆柱类比。Bang 在 1951 年证明凸体的有限木板覆盖的总宽度不小于其最小宽度，Ball 又对中心对称体给出按方向归一化的精化。在三维中把木板换成圆柱 `@@M@@C=B+\R u@@`（底面 `@@M@@B@@` 位于与轴垂直的平面内），Bezdek 与 Bezdek–Litvak 记录了归于 Bang 的问题：任何有限圆柱覆盖是否总有 `@@M@@\sum_i|B_i|\ge\tfrac12 A_{\min}(K)@@`？正四面体的两圆柱覆盖（两轴平行于一对对棱）恰好取等，暗示 `@@M@@\tfrac12@@` 可能是最优常数。Bezdek–Litvak 证明了方向化下界 `@@M@@\mathcal R\ge\tfrac13@@`（椭球体则 `@@M@@\ge1@@`），Bezdek–Khan 进一步提出 `@@M@@\mathcal R\ge\tfrac12@@` 的"1-余维圆柱覆盖猜想"（1-Codimensional Cylinder Covering Conjecture）；Verreault 的 2026 年综述仍把半面积问题列为未决。卡点在于：取等的例子看似刚性，没人知道能否扰动它以压低成本而不留缝隙。
+这个问题是 Tarski 木板问题（plank problem）的圆柱类比。Bang 在 1951 年证明凸体的有限木板覆盖的总宽度不小于其最小宽度，Ball 又对中心对称体给出按方向归一化的精化。在三维中把木板换成圆柱 `@@M@@C=B+\mathbb{R} u@@`（底面 `@@M@@B@@` 位于与轴垂直的平面内），Bezdek 与 Bezdek–Litvak 记录了归于 Bang 的问题：任何有限圆柱覆盖是否总有 `@@M@@\sum_i|B_i|\ge\tfrac12 A_{\min}(K)@@`？正四面体的两圆柱覆盖（两轴平行于一对对棱）恰好取等，暗示 `@@M@@\tfrac12@@` 可能是最优常数。Bezdek–Litvak 证明了方向化下界 `@@M@@\mathcal R\ge\tfrac13@@`（椭球体则 `@@M@@\ge1@@`），Bezdek–Khan 进一步提出 `@@M@@\mathcal R\ge\tfrac12@@` 的"1-余维圆柱覆盖猜想"（1-Codimensional Cylinder Covering Conjecture）；Verreault 的 2026 年综述仍把半面积问题列为未决。卡点在于：取等的例子看似刚性，没人知道能否扰动它以压低成本而不留缝隙。
 
 ## 主要结果
 

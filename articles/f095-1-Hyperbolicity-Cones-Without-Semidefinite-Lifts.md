@@ -68,12 +68,12 @@ pdfname: ""
 ## 主要结果
 
 主定理（Theorem 1.1）：存在实齐次双曲多项式，其闭双曲锥没有任何形如
-`@@M@@DS=\Big\{x\in\R^d:\exists u\in\R^a,\ A_0+\sum_{i=1}^d x_iA_i+\sum_{j=1}^a u_jB_j\succeq0\Big\}@@`
+`@@M@@DS=\Big\{x\in\mathbb{R}^d:\exists u\in\mathbb{R}^a,\ A_0+\sum_{i=1}^d x_iA_i+\sum_{j=1}^a u_jB_j\succeq0\Big\}@@`
 的表示——矩阵尺寸与辅助变量个数任意有限、系数任意实数，且定义要求精确等式，不允许对投影取闭包。构造是高维存在性论证：输入空间维数 `@@M@@m=330@@`，矩阵块规模 `@@M@@r=20N-1@@`（可取 `@@M@@N>10\cdot 36^2@@`），而非对某个具体表示的尺寸下界。两个 Lax 猜想就此同告失败。
 
 ## 证明思路
 
-先造锥。从一个处处半正定的二次矩阵映射 `@@M@@Q:\R^m\to\Sym_r@@` 出发，定义 `@@M@@p_Q(X,Z,y)=\det\big((\det X)Z-\Phi_y(\operatorname{adj}X)\big)@@`，其中 `@@M@@\Phi_y@@` 由 `@@M@@Q(y)@@` 的分块公式给出、`@@M@@\operatorname{adj}@@` 是经典伴随阵。固定 `@@M@@y@@` 做 Gram 分解 `@@M@@Q(y)=\sum_j b_jb_j^\top@@`，展开得到对称行列式恒等式 `@@M@@p_Q(te-(X,Z,y))=\det(tI-D_y(X,Z))@@`：根全是实对称矩阵的特征值，双曲性与锥的分块刻画一并到手。再取仿射截面 `@@M@@X=\diag(1,A)@@` 并投影，锥恰好映为 `@@M@@E_Q=\{(A,t,y):A\succeq0,\ \operatorname{ran}Q(y)\subseteq\operatorname{ran}A,\ t\ge\operatorname{tr}(A^\dagger Q(y))\}@@`，其中 `@@M@@A^\dagger@@` 是 Moore–Penrose 逆。仿射截面与坐标投影都保持提升的存在性，故只需证明 `@@M@@E_Q@@` 无提升。
+先造锥。从一个处处半正定的二次矩阵映射 `@@M@@Q:\mathbb{R}^m\to\Sym_r@@` 出发，定义 `@@M@@p_Q(X,Z,y)=\det\big((\det X)Z-\Phi_y(\operatorname{adj}X)\big)@@`，其中 `@@M@@\Phi_y@@` 由 `@@M@@Q(y)@@` 的分块公式给出、`@@M@@\operatorname{adj}@@` 是经典伴随阵。固定 `@@M@@y@@` 做 Gram 分解 `@@M@@Q(y)=\sum_j b_jb_j^\top@@`，展开得到对称行列式恒等式 `@@M@@p_Q(te-(X,Z,y))=\det(tI-D_y(X,Z))@@`：根全是实对称矩阵的特征值，双曲性与锥的分块刻画一并到手。再取仿射截面 `@@M@@X=\diag(1,A)@@` 并投影，锥恰好映为 `@@M@@E_Q=\{(A,t,y):A\succeq0,\ \operatorname{ran}Q(y)\subseteq\operatorname{ran}A,\ t\ge\operatorname{tr}(A^\dagger Q(y))\}@@`，其中 `@@M@@A^\dagger@@` 是 Moore–Penrose 逆。仿射截面与坐标投影都保持提升的存在性，故只需证明 `@@M@@E_Q@@` 无提升。
 
 再造障碍，难点是"`@@M@@Q@@` 处处半正定"与"`@@M@@E_Q@@` 有障碍"互相牵制，作者分两步绕开。第一步造有限性：令 `@@M@@H@@` 为八个变量的二次型空间（36 维），四次型上的线性泛函 `@@M@@y@@` 对应 Hankel 矩阵（Hankel matrix）`@@M@@Y(y)(f,g)=y(fg)@@`；借助附录里的有限域证书构造秩 20 的半正定"种子"矩阵 `@@M@@T@@`，其核满足强乘法条件。模掉平移与伸缩共八个参数后得到 185 维归一化流形，维数计数可选出子空间 `@@M@@K@@` 使归一化纤维有限，于是"压缩逆的极限方向"只剩有限多个射影类 `@@M@@\mathcal C@@`。第二步造分离：在 `@@M@@N@@` 份拷贝中用维数计数选出向量 `@@M@@w\in W^N@@` 与子空间 `@@M@@U\subset w^\perp@@`，再对任意逼近序列按"特征值发散／趋于有限非零极限／趋于零"分组做谱分析，证明 `@@M@@w@@` 不落在 Hankel 像 `@@M@@(I_N\otimes Y)u@@` 的闭包中。于是存在二次型 `@@M@@g@@` 在所有这些像上非负、而在 `@@M@@w@@` 处严格为负；定义 `@@M@@Q(y)=U^\top G(y)\,g\,G(y)U@@`，则对任意向量 `@@M@@a@@` 有 `@@M@@a^\top Q(y)a=(G(y)Ua)^\top g\,(G(y)Ua)\ge0@@`——处处半正定性免费获得，而 `@@M@@g@@` 的负方向正是预埋的障碍。
 

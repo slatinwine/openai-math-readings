@@ -73,7 +73,7 @@ pdfname: ""
 
 ## 主要结果
 
-主定理：设 `@@M@@\Omega,\Lambda\subset\R^3@@` 为有界连通开集，`@@M@@1\le p\le2@@`，`@@M@@f:\Omega\to\Lambda@@` 为 `@@M@@W^{1,p}@@` 同胚，则存在 `@@M@@C^\infty@@` 微分同胚 (diffeomorphism) `@@M@@f_j:\Omega\to\Lambda@@`，每个都属于 `@@M@@W^{1,p}@@`，使
+主定理：设 `@@M@@\Omega,\Lambda\subset\mathbb{R}^3@@` 为有界连通开集，`@@M@@1\le p\le2@@`，`@@M@@f:\Omega\to\Lambda@@` 为 `@@M@@W^{1,p}@@` 同胚，则存在 `@@M@@C^\infty@@` 微分同胚 (diffeomorphism) `@@M@@f_j:\Omega\to\Lambda@@`，每个都属于 `@@M@@W^{1,p}@@`，使
 
 `@@M@@D\int_\Omega\bigl(|f_j-f|^p+|Df_j-Df|^p\bigr)\,dx\longrightarrow0 .@@`
 

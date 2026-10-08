@@ -59,7 +59,7 @@ Kosterlitz 五十年前的重整化群预言，第一次对原始余弦相互作
 
 ## 问题背景
 
-平面 XY 模型在每个格点放一个单位向量（角度 `@@M@@\theta_x\in\R/(2\pi\Z)@@`），相邻自旋以 `@@M@@\exp\{b\cos(\theta_u-\theta_v)\}@@` 耦合。Berezinskii（1970）与 Kosterlitz–Thouless（1973）提出：低温下涡旋（vortex）成对束缚、自旋波（spin wave）主导，相关呈幂律衰减；升温后涡旋解绑，相关变为指数衰减。Kosterlitz（1974）的重整化群（renormalization group）递推进一步预言：转变点处相关长度的发散不是普通幂律，而是 `@@M@@\exp(\mathrm{const}/\sqrt{b_c-b})@@` 型本质奇性。严格数学方面，Fröhlich–Spencer（1981）证明了相变与低温慢衰减，van Engelenburg–Lis 给出了指数–多项式二分法，但"精确奇性"对原始余弦模型始终悬而未决。难点在于：临界点附近温度偏移 `@@M@@\varepsilon=b_c-b@@` 与涨落尺度同时发散，必须在一个尺度不断增长的区间里全程控制重整化流，再把流给出的尺度翻译回无穷体积的相关长度。
+平面 XY 模型在每个格点放一个单位向量（角度 `@@M@@\theta_x\in\mathbb{R}/(2\pi\mathbb{Z})@@`），相邻自旋以 `@@M@@\exp\{b\cos(\theta_u-\theta_v)\}@@` 耦合。Berezinskii（1970）与 Kosterlitz–Thouless（1973）提出：低温下涡旋（vortex）成对束缚、自旋波（spin wave）主导，相关呈幂律衰减；升温后涡旋解绑，相关变为指数衰减。Kosterlitz（1974）的重整化群（renormalization group）递推进一步预言：转变点处相关长度的发散不是普通幂律，而是 `@@M@@\exp(\mathrm{const}/\sqrt{b_c-b})@@` 型本质奇性。严格数学方面，Fröhlich–Spencer（1981）证明了相变与低温慢衰减，van Engelenburg–Lis 给出了指数–多项式二分法，但"精确奇性"对原始余弦模型始终悬而未决。难点在于：临界点附近温度偏移 `@@M@@\varepsilon=b_c-b@@` 与涨落尺度同时发散，必须在一个尺度不断增长的区间里全程控制重整化流，再把流给出的尺度翻译回无穷体积的相关长度。
 
 ## 主要结果
 

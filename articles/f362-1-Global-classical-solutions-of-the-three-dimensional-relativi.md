@@ -51,7 +51,7 @@ pdfname: ""
 
 ## 主要结果
 
-定理 1.1（整体经典解）：每个光滑容许初值（smooth admissible datum）——非负 `@@M@@f_0\in C_c^\infty(\R^3_x\times\R^3_v)@@`，`@@M@@E_0,B_0\in C_b^\infty(\R^3)\cap L^2(\R^3)@@` 满足散度约束 `@@M@@\nabla\cdot E_0=\rho_{f_0}@@`、`@@M@@\nabla\cdot B_0=0@@`——都生成唯一的整体经典解（global classical solution）：对每个有限 `@@M@@T@@`，`@@M@@f\in C^\infty([0,T]\times\R^3_x\times\R^3_v)@@`，`@@M@@E,B\in C^\infty([0,T]\times\R^3_x)@@`，`@@M@@f@@` 在 `@@M@@[0,T]@@` 上有紧的相空间支撑，且两个散度约束对所有时间成立。初值允许非零总电荷及其库仑尾（Coulomb tail），不要求场的各阶导数平方可积；动量支撑界只须在每个有限时间段上有限，允许随时间段增长。
+定理 1.1（整体经典解）：每个光滑容许初值（smooth admissible datum）——非负 `@@M@@f_0\in C_c^\infty(\mathbb{R}^3_x\times\mathbb{R}^3_v)@@`，`@@M@@E_0,B_0\in C_b^\infty(\mathbb{R}^3)\cap L^2(\mathbb{R}^3)@@` 满足散度约束 `@@M@@\nabla\cdot E_0=\rho_{f_0}@@`、`@@M@@\nabla\cdot B_0=0@@`——都生成唯一的整体经典解（global classical solution）：对每个有限 `@@M@@T@@`，`@@M@@f\in C^\infty([0,T]\times\mathbb{R}^3_x\times\mathbb{R}^3_v)@@`，`@@M@@E,B\in C^\infty([0,T]\times\mathbb{R}^3_x)@@`，`@@M@@f@@` 在 `@@M@@[0,T]@@` 上有紧的相空间支撑，且两个散度约束对所有时间成立。初值允许非零总电荷及其库仑尾（Coulomb tail），不要求场的各阶导数平方可积；动量支撑界只须在每个有限时间段上有限，允许随时间段增长。
 
 ## 证明思路
 

@@ -44,13 +44,13 @@ Banach 的简单 Lebesgue 谱问题（由 Ulam 1960 年的书记录）在光滑�
 > 暂无形式化证明（AI 结果待核验）
 
 ## 一句话结论
-本文在三维环面 `@@M@@\T^3@@` 上构造出保持标准体积的 `@@M@@C^\infty@@` 微分同胚（diffeomorphism）`@@M@@T@@` 及实观测函数 `@@M@@f@@`，使 `@@M@@\{f\circ T^n\}_{n\in\Z}@@` 恰为均值零空间 `@@M@@L^2_0@@` 的标准正交基，从而在光滑保测系统内解决了 Banach 简单 Lebesgue 谱问题的保概率形式。
+本文在三维环面 `@@M@@\T^3@@` 上构造出保持标准体积的 `@@M@@C^\infty@@` 微分同胚（diffeomorphism）`@@M@@T@@` 及实观测函数 `@@M@@f@@`，使 `@@M@@\{f\circ T^n\}_{n\in\mathbb{Z}}@@` 恰为均值零空间 `@@M@@L^2_0@@` 的标准正交基，从而在光滑保测系统内解决了 Banach 简单 Lebesgue 谱问题的保概率形式。
 
 ## 问题背景
 对保测变换（measure-preserving transformation）`@@M@@T@@`，Koopman 算子（Koopman operator）`@@M@@U_Tg=g\circ T@@` 把动力系统编码为酉算子，其谱是遍历论的核心不变量。最"混沌"的谱型是 Lebesgue 谱（Lebesgue spectrum）：算子西等价于 `@@M@@L^2(S^1)@@` 上的坐标乘法 `@@M@@w@@`。Banach 的问题（由 Ulam 1960 年的书记录）询问此类系统是否存在；Rokhlin（1949）进一步要求遍历自同构具有简单（simple）或至少有限重的 Lebesgue 谱。此前诸结果均未达此目标：Helson–Parry（1978）与 Mathew–Nadkarni（1984）只得到某些分量或二重分量；Fayad（2001）的光滑环面微分同胚有简单谱但非 Lebesgue 型；Prikhod'ko（2020）、Fayad–Forni–Kanigowski（2021）等是连续时间流，而简单 Lebesgue 流的非零时间映射只会产生可数无穷重的谱，给不出离散时间结论。真正的卡点在于：没有任何已知机制能让光滑、保标准体积的系统中一条双边轨道张满整个中心化空间。
 
 ## 主要结果
-主定理（Theorem 1.1）：存在 `@@M@@C^\infty@@` 保体积微分同胚 `@@M@@T\colon\T^3\to\T^3@@`（不变测度就是标准体积 `@@M@@\mu@@`）与实函数 `@@M@@f\in L^2_0(\T^3,\mu)@@`，使 `@@M@@\{f\circ T^n:n\in\Z\}@@` 构成 `@@M@@L^2_0(\T^3,\mu)@@` 的标准正交基（orthonormal basis）。等价地，`@@M@@U_T@@` 在整个均值零空间上西等价于 `@@M@@L^2(S^1,m)@@` 上的乘法算子 `@@M@@w@@`：谱型与重数同时被控制。注意 `@@M@@f@@` 只需属于 `@@M@@L^2@@`，不必光滑。推论（Corollary 6.1）：`@@M@@T@@` 任意阶混合（mixing of all orders，其中 3 阶以上引用姊妹篇的多重混合定理）、Kolmogorov–Sinai 熵 `@@M@@h_\mu(T)=0@@`、三个 Lyapunov 指数（Lyapunov exponents）几乎处处全为零。
+主定理（Theorem 1.1）：存在 `@@M@@C^\infty@@` 保体积微分同胚 `@@M@@T\colon\T^3\to\T^3@@`（不变测度就是标准体积 `@@M@@\mu@@`）与实函数 `@@M@@f\in L^2_0(\T^3,\mu)@@`，使 `@@M@@\{f\circ T^n:n\in\mathbb{Z}\}@@` 构成 `@@M@@L^2_0(\T^3,\mu)@@` 的标准正交基（orthonormal basis）。等价地，`@@M@@U_T@@` 在整个均值零空间上西等价于 `@@M@@L^2(S^1,m)@@` 上的乘法算子 `@@M@@w@@`：谱型与重数同时被控制。注意 `@@M@@f@@` 只需属于 `@@M@@L^2@@`，不必光滑。推论（Corollary 6.1）：`@@M@@T@@` 任意阶混合（mixing of all orders，其中 3 阶以上引用姊妹篇的多重混合定理）、Kolmogorov–Sinai 熵 `@@M@@h_\mu(T)=0@@`、三个 Lyapunov 指数（Lyapunov exponents）几乎处处全为零。
 
 ## 证明思路
 构造沿 Anosov–Katok 式逐次逼近展开，但用显式的保体积"通道"（passage）而非外部共轭定理。先取可积扭转（integrable twist）`@@M@@S(\theta,u,a)=(\theta+\phi(u),u,a)@@` 为中间系统，观测量写成"包"（packet）`@@M@@A(u,a)\ee(m\theta)@@` 的有限和并按颜色（color）分组；单个包的谱测度是 `@@M@@|A|^2\,\dd u\,\dd a@@` 在 `@@M@@m\phi\bmod 1@@` 下的推前（pushforward），故谱密度光滑。目标是让一个向量的平移"读出"每组的标签 `@@M@@b_r@@`。

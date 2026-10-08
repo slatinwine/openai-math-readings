@@ -51,7 +51,7 @@ pdfname: ""
 
 ## 主要结果
 
-设 `@@M@@f:Y\to X@@` 是紧 Kähler 流形间具连通纤维的满射全纯映射，`@@M@@\Delta@@` 是有效有理除子，支撑单正规交叉（simple normal crossing）、系数落在 `@@M@@[0,1]@@`，且 `@@M@@K_Y+\Delta\sim_{\Q}f^*L@@`（`@@M@@L\in\Pic(X)_{\Q}@@`）。对每个修改 `@@M@@\mu:X'\to X@@`，用 log 常规阈值（log canonical threshold）`@@M@@t_P@@` 定义判别式 `@@M@@B_{X'}=\sum_P(1-t_P)P@@` 与 moduli 部分 `@@M@@M_{X'}=\mu^*L-K_{X'}-B_{X'}@@`。主定理：moduli 有理 b-线丛 `@@M@@\mathbf M=(M_{X'})@@` 是 b-半丰富的——存在光滑紧 Kähler 修改 `@@M@@S\to X@@`，使得 (a) 对每个进一步的修改 `@@M@@\nu:S_1\to S@@` 都有 `@@M@@M_{S_1}=\nu^*M_S@@`（在 `@@M@@\Pic(S_1)_{\Q}@@` 中）；(b) 某个正整数倍 `@@M@@mM_S@@` 由其整体全纯截面生成。水平系数 1 分量被允许，点底与相对维数零亦然；不假设 `@@M@@f@@`、`@@M@@X@@`、`@@M@@Y@@` 的射影性，也不假设 Campana 轨道 Iitaka 假设。论文特别指出该判别式是阈值型而非轨道底的重数下确界除子，故把多重形式分解产生的 Hodge 线与它等同是证明的主要步骤之一。
+设 `@@M@@f:Y\to X@@` 是紧 Kähler 流形间具连通纤维的满射全纯映射，`@@M@@\Delta@@` 是有效有理除子，支撑单正规交叉（simple normal crossing）、系数落在 `@@M@@[0,1]@@`，且 `@@M@@K_Y+\Delta\sim_{\mathbb{Q}}f^*L@@`（`@@M@@L\in\Pic(X)_{\mathbb{Q}}@@`）。对每个修改 `@@M@@\mu:X'\to X@@`，用 log 常规阈值（log canonical threshold）`@@M@@t_P@@` 定义判别式 `@@M@@B_{X'}=\sum_P(1-t_P)P@@` 与 moduli 部分 `@@M@@M_{X'}=\mu^*L-K_{X'}-B_{X'}@@`。主定理：moduli 有理 b-线丛 `@@M@@\mathbf M=(M_{X'})@@` 是 b-半丰富的——存在光滑紧 Kähler 修改 `@@M@@S\to X@@`，使得 (a) 对每个进一步的修改 `@@M@@\nu:S_1\to S@@` 都有 `@@M@@M_{S_1}=\nu^*M_S@@`（在 `@@M@@\Pic(S_1)_{\mathbb{Q}}@@` 中）；(b) 某个正整数倍 `@@M@@mM_S@@` 由其整体全纯截面生成。水平系数 1 分量被允许，点底与相对维数零亦然；不假设 `@@M@@f@@`、`@@M@@X@@`、`@@M@@Y@@` 的射影性，也不假设 Campana 轨道 Iitaka 假设。论文特别指出该判别式是阈值型而非轨道底的重数下确界除子，故把多重形式分解产生的 Hodge 线与它等同是证明的主要步骤之一。
 
 ## 证明思路
 

@@ -64,11 +64,11 @@ pdfname: ""
 
 ## 问题背景
 
-一个复流形称为 Brody 双曲（Brody hyperbolic），如果每条整曲线（entire curve，即全纯映射 `@@M@@\C\to X@@`）都是常值；紧情形下由 Brody 定理，这等价于 Kobayashi 内在伪距离非退化。Kobayashi 在 1970 年建立内在度量理论后提出猜想：紧 Kähler 流形只要没有非常值整曲线，其典范丛（canonical bundle）`@@M@@K_X=\bigwedge^n(T^{1,0}X)^*@@` 就丰富（ample）。这个猜想之所以重要，是因为它把"一维全纯映射的缺失"这一度量动态条件，与最高次全纯形式的正性和射影代数性直接挂钩。此前最好结果都从曲率假设出发：Wu–Yau（2016）证明负全纯截面曲率强制典范丰富，Tosatti–Yang 去掉射影性假设，Diverio–Trapani 推广到拟负曲率，Chen–Yang 处理 Gromov Kähler 双曲性——但曲率不等式恰是"无整曲线"条件本身给不出来的。在更弱的"无有理曲线"假设下，Ou 与 Cao–Höring 的定理已给出 `@@M@@K_X@@` 的 nef 性，真正卡住的是正典范体积。
+一个复流形称为 Brody 双曲（Brody hyperbolic），如果每条整曲线（entire curve，即全纯映射 `@@M@@\mathbb{C}\to X@@`）都是常值；紧情形下由 Brody 定理，这等价于 Kobayashi 内在伪距离非退化。Kobayashi 在 1970 年建立内在度量理论后提出猜想：紧 Kähler 流形只要没有非常值整曲线，其典范丛（canonical bundle）`@@M@@K_X=\bigwedge^n(T^{1,0}X)^*@@` 就丰富（ample）。这个猜想之所以重要，是因为它把"一维全纯映射的缺失"这一度量动态条件，与最高次全纯形式的正性和射影代数性直接挂钩。此前最好结果都从曲率假设出发：Wu–Yau（2016）证明负全纯截面曲率强制典范丰富，Tosatti–Yang 去掉射影性假设，Diverio–Trapani 推广到拟负曲率，Chen–Yang 处理 Gromov Kähler 双曲性——但曲率不等式恰是"无整曲线"条件本身给不出来的。在更弱的"无有理曲线"假设下，Ou 与 Cao–Höring 的定理已给出 `@@M@@K_X@@` 的 nef 性，真正卡住的是正典范体积。
 
 ## 主要结果
 
-**主定理**：设 `@@M@@X@@` 是正复维数的紧连通 Kähler 流形，若每个全纯映射 `@@M@@\C\to X@@` 均为常值，则 `@@M@@K_X@@` 丰富；特别地，`@@M@@K_X@@` 的某个正张量幂的整体截面把 `@@M@@X@@` 全纯嵌入复射影空间。论文另给出两个推论：其一，此类流形上 `@@M@@K_X^{\otimes m}@@` 对一切 `@@M@@m\ge n+2@@` 由整体截面生成（pluricanonical freeness）；其二，若万有覆盖双全纯同构于某射影簇的半代数（semialgebraic）开子集，则 `@@M@@X@@` 有连通有限 étale 覆盖同构于 `@@M@@(D/\Gamma_0)\times F@@`，其中 `@@M@@D@@` 为有界对称域、`@@M@@F@@` 为单连通紧双曲射影流形。
+**主定理**：设 `@@M@@X@@` 是正复维数的紧连通 Kähler 流形，若每个全纯映射 `@@M@@\mathbb{C}\to X@@` 均为常值，则 `@@M@@K_X@@` 丰富；特别地，`@@M@@K_X@@` 的某个正张量幂的整体截面把 `@@M@@X@@` 全纯嵌入复射影空间。论文另给出两个推论：其一，此类流形上 `@@M@@K_X^{\otimes m}@@` 对一切 `@@M@@m\ge n+2@@` 由整体截面生成（pluricanonical freeness）；其二，若万有覆盖双全纯同构于某射影簇的半代数（semialgebraic）开子集，则 `@@M@@X@@` 有连通有限 étale 覆盖同构于 `@@M@@(D/\Gamma_0)\times F@@`，其中 `@@M@@D@@` 为有界对称域、`@@M@@F@@` 为单连通紧双曲射影流形。
 
 ## 证明思路
 

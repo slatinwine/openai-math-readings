@@ -49,7 +49,7 @@ pdfname: ""
 
 ## 主要结果
 
-主定理（01-introduction.tex 定理 1.1）：对任意正初值 `@@M@@x^0\in\R_{>0}^d@@`，解对一切 `@@M@@t\geq0@@` 整体存在，且存在 `@@M@@\varepsilon\in(0,1)@@`（依赖网络、速率与 `@@M@@x^0@@`）使 `@@M@@\varepsilon\leq x_i(t)\leq\varepsilon^{-1}@@` 对所有 `@@M@@t\geq0@@` 与所有坐标成立——注意是从零时刻起的全程界，而非仅渐近界。由此每个 `@@M@@\omega@@` 极限集非空且避开卦限边界。几何强化（03-dynamics.tex 命题 prop:polytope）：每个正点 `@@M@@x^0@@` 都属于某个含于正卦限的紧凸多胞形（polytope）`@@M@@K@@`，从 `@@M@@K@@` 出发的解整体存在且永驻 `@@M@@K@@`；`@@M@@K@@` 在环境物种空间中构造，可以横跨多个相容类。两个推论：把 `@@M@@K@@` 与相容类相交后用 Brouwer 不动点定理，恢复 Boros（2019）"每个正相容类都含正平衡点"的存在定理；在复杂平衡（complex-balanced）假设下，配合 Horn–Jackson 熵型 Lyapunov 函数与 LaSalle 不变性原理，得到每条正轨迹收敛到其类中唯一正平衡点的全局吸引子结论（对一切亏格零（deficiency zero）网络自动适用）。文中明确声明：不断言同一个 `@@M@@\varepsilon@@` 对全类初值通用——该升级由姊妹篇完成。
+主定理（01-introduction.tex 定理 1.1）：对任意正初值 `@@M@@x^0\in\mathbb{R}_{>0}^d@@`，解对一切 `@@M@@t\geq0@@` 整体存在，且存在 `@@M@@\varepsilon\in(0,1)@@`（依赖网络、速率与 `@@M@@x^0@@`）使 `@@M@@\varepsilon\leq x_i(t)\leq\varepsilon^{-1}@@` 对所有 `@@M@@t\geq0@@` 与所有坐标成立——注意是从零时刻起的全程界，而非仅渐近界。由此每个 `@@M@@\omega@@` 极限集非空且避开卦限边界。几何强化（03-dynamics.tex 命题 prop:polytope）：每个正点 `@@M@@x^0@@` 都属于某个含于正卦限的紧凸多胞形（polytope）`@@M@@K@@`，从 `@@M@@K@@` 出发的解整体存在且永驻 `@@M@@K@@`；`@@M@@K@@` 在环境物种空间中构造，可以横跨多个相容类。两个推论：把 `@@M@@K@@` 与相容类相交后用 Brouwer 不动点定理，恢复 Boros（2019）"每个正相容类都含正平衡点"的存在定理；在复杂平衡（complex-balanced）假设下，配合 Horn–Jackson 熵型 Lyapunov 函数与 LaSalle 不变性原理，得到每条正轨迹收敛到其类中唯一正平衡点的全局吸引子结论（对一切亏格零（deficiency zero）网络自动适用）。文中明确声明：不断言同一个 `@@M@@\varepsilon@@` 对全类初值通用——该升级由姊妹篇完成。
 
 ## 证明思路
 

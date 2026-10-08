@@ -64,7 +64,7 @@ pdfname: ""
 
 ## 主要结果
 
-设自旋 `@@M@@S\in\{\tfrac12,1,\tfrac32,\ldots\}@@`，耦合 `@@M@@J:\Z^3\to[0,\infty)@@` 有限支撑、对称 `@@M@@J(z)=J(-z)@@`、`@@M@@J(0)=0@@`，且支撑生成 `@@M@@\Z^3@@`（允许各向异性，也允许不含常规近邻键）。在立方体 `@@M@@\Lambda_N@@` 上取自由边界的哈密顿量 `@@M@@H^J_{S,N}=-\frac12\sum_{x,y}J(y-x)\boldsymbol S_x\cdot\boldsymbol S_y@@`，总磁化 `@@M@@M_{S,N}=\sum_xS_x^z@@`。压强（pressure）`@@M@@p_\beta(h)=\lim_{N\to\infty}\frac1{\beta|\Lambda_N|}\log\Tr e^{-\beta(H^J_{S,N}-hM_{S,N})}@@`，自发磁化定义为其零场右导数 `@@M@@m_{S,J}(\beta)=\partial_h^+p_\beta(0)@@`。由单磁振子色散（one-magnon dispersion）
+设自旋 `@@M@@S\in\{\tfrac12,1,\tfrac32,\ldots\}@@`，耦合 `@@M@@J:\mathbb{Z}^3\to[0,\infty)@@` 有限支撑、对称 `@@M@@J(z)=J(-z)@@`、`@@M@@J(0)=0@@`，且支撑生成 `@@M@@\mathbb{Z}^3@@`（允许各向异性，也允许不含常规近邻键）。在立方体 `@@M@@\Lambda_N@@` 上取自由边界的哈密顿量 `@@M@@H^J_{S,N}=-\frac12\sum_{x,y}J(y-x)\boldsymbol S_x\cdot\boldsymbol S_y@@`，总磁化 `@@M@@M_{S,N}=\sum_xS_x^z@@`。压强（pressure）`@@M@@p_\beta(h)=\lim_{N\to\infty}\frac1{\beta|\Lambda_N|}\log\Tr e^{-\beta(H^J_{S,N}-hM_{S,N})}@@`，自发磁化定义为其零场右导数 `@@M@@m_{S,J}(\beta)=\partial_h^+p_\beta(0)@@`。由单磁振子色散（one-magnon dispersion）
 `@@M@@D\varepsilon_{S,J}(k)=S\sum_zJ(z)\bigl(1-\cos(k\cdot z)\bigr)=k^{\mathsf T}D_{S,J}k+O(|k|^4)@@`
 定义正定矩阵 `@@M@@D_{S,J}=\frac S2\sum_zJ(z)zz^{\mathsf T}@@`。**定理（Bloch 律）**：对每个固定 `@@M@@S@@` 与每个满足上述条件的 `@@M@@J@@`，
 `@@M@@D\lim_{\beta\to\infty}\beta^{3/2}\bigl(S-m_{S,J}(\beta)\bigr)=\frac{\zeta(3/2)}{8\pi^{3/2}\sqrt{\det D_{S,J}}}.@@`

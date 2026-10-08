@@ -76,7 +76,7 @@ pdfname: ""
 
 ## 主要结果
 
-固定素数 `@@M@@p@@`，记 `@@M@@K(i)@@` 为 Morava `@@M@@K@@`-理论（`@@M@@K(0)=H\Q@@`），`@@M@@\Phi^H X@@` 为几何不动点 (geometric fixed points)。`@@M@@r_n(G,H)@@` 定义为使蕴含
+固定素数 `@@M@@p@@`，记 `@@M@@K(i)@@` 为 Morava `@@M@@K@@`-理论（`@@M@@K(0)=H\mathbb{Q}@@`），`@@M@@\Phi^H X@@` 为几何不动点 (geometric fixed points)。`@@M@@r_n(G,H)@@` 定义为使蕴含
 `@@M@@DK(n+r)_*(\Phi^H X)=0\ \Longrightarrow\ K(n)_*(\Phi^G X)=0@@`
 对一切有限 `@@M@@p@@`-局部真 `@@M@@G@@`-谱 (genuine `@@M@@G@@`-spectrum) `@@M@@X@@` 成立的最小整数 `@@M@@r\ge0@@`；`@@M@@\ell(G,H)@@` 是最短次正规链 `@@M@@H=G_0\trianglelefteq\cdots\trianglelefteq G_s=G@@` 的长度 `@@M@@s@@`，相邻商群须循环——`@@M@@C_{p^2}@@` 这样的商只计一步。主定理：对一切 `@@M@@p@@`、`@@M@@G@@`、`@@M@@H@@`、`@@M@@n\ge0@@`（含 `@@M@@n=0@@` 的有理检测），
 `@@M@@Dr_n(G,H)=\ell(G,H).@@`
@@ -86,11 +86,11 @@ pdfname: ""
 
 上界 `@@M@@r_n\le\ell@@` 是旧的：沿链逐段套用循环群的色度 Smith 定理即可。新意全在下界，分四步推进。
 
-第一步把问题译入上自由谱 (cofree spectrum) 的语言：设 `@@M@@\mathrm{Bor}_P(D)=F(EP_+,\inf_PD)@@`，`@@M@@U_P(D)=\Phi^P\mathrm{Bor}_P(D)@@`，先证有理估计 `@@M@@(U_P(L_{T(l)}S))_{\Q}\ne0\Rightarrow\ell(P,1)\le l@@`（`@@M@@T(l)@@` 为望远镜）。做法是在 `@@M@@T(l)@@`-局部可对偶对象的张量范畴中有理化态射群、拆分 Burnside 幂等元 (Burnside idempotent)：称有限群 `@@M@@L@@` "出现" (occurring)，若满标记幂等元切出的代数分量 `@@M@@D_L=e_L^L\,\one^{BL}@@` 非零；出现的群必是 `@@M@@p@@`-群、对子群与商群封闭，且由 Arone–Dwyer–Lesh–Mahowald 的初等交换锐性定理与 Frattini 论证，其一切截段 (section) 至多 `@@M@@l@@` 个生成元。再构造极大化塔，逐项最大化"到每个有限群的同态类数"，取极限得到映满 `@@M@@P@@` 的预 `@@M@@p@@`-群 (pro-`@@M@@p@@` group) `@@M@@\Gamma@@`；其连续同态给出广义特征分裂——这绕开了 Hopkins–Kuhn–Ravenel 特征只看得见交换像的障碍。
+第一步把问题译入上自由谱 (cofree spectrum) 的语言：设 `@@M@@\mathrm{Bor}_P(D)=F(EP_+,\inf_PD)@@`，`@@M@@U_P(D)=\Phi^P\mathrm{Bor}_P(D)@@`，先证有理估计 `@@M@@(U_P(L_{T(l)}S))_{\mathbb{Q}}\ne0\Rightarrow\ell(P,1)\le l@@`（`@@M@@T(l)@@` 为望远镜）。做法是在 `@@M@@T(l)@@`-局部可对偶对象的张量范畴中有理化态射群、拆分 Burnside 幂等元 (Burnside idempotent)：称有限群 `@@M@@L@@` "出现" (occurring)，若满标记幂等元切出的代数分量 `@@M@@D_L=e_L^L\,\one^{BL}@@` 非零；出现的群必是 `@@M@@p@@`-群、对子群与商群封闭，且由 Arone–Dwyer–Lesh–Mahowald 的初等交换锐性定理与 Frattini 论证，其一切截段 (section) 至多 `@@M@@l@@` 个生成元。再构造极大化塔，逐项最大化"到每个有限群的同态类数"，取极限得到映满 `@@M@@P@@` 的预 `@@M@@p@@`-群 (pro-`@@M@@p@@` group) `@@M@@\Gamma@@`；其连续同态给出广义特征分裂——这绕开了 Hopkins–Kuhn–Ravenel 特征只看得见交换像的障碍。
 
-第二步（第 4 节）用有限广群上的相对积分导出算术约束：对 `@@M@@\Gamma@@` 的每个开子群 `@@M@@U@@` 与有限连续 `@@M@@U@@`-集 `@@M@@X@@`，有同余式 `@@M@@\sum_{[U:V]=p^h}(|X^V|-|X|)\in p^{h+1}\Z_{(p)}@@`，以及同态计数整性 `@@M@@|\Hom_{\cts}(\Gamma,F)|/|F|\in\Z_{(p)}@@`。
+第二步（第 4 节）用有限广群上的相对积分导出算术约束：对 `@@M@@\Gamma@@` 的每个开子群 `@@M@@U@@` 与有限连续 `@@M@@U@@`-集 `@@M@@X@@`，有同余式 `@@M@@\sum_{[U:V]=p^h}(|X^V|-|X|)\in p^{h+1}\mathbb{Z}_{(p)}@@`，以及同态计数整性 `@@M@@|\Hom_{\cts}(\Gamma,F)|/|F|\in\mathbb{Z}_{(p)}@@`。
 
-第三步（第 5 节）是纯群论定理：这些条件迫使 `@@M@@\Gamma@@` 带有长度 `@@M@@\le l@@`、诸因子同构于 `@@M@@\Z_p@@` 的闭次正规列。核心是"收缩作用"引理——借助共同置换商，把 `@@M@@N\rtimes\Z_p@@` 在 `@@M@@p@@`-进极限下换成 `@@M@@N\times\Z_p@@`，同时保住同余式与生成元界；再用 Tamanoi 式子群计数生成函数的 `@@M@@p@@`-进极限证明剩余核的交换化必无限：否则投射满子群计数将收敛到非零极限，与同余式强制的趋于零矛盾。迭代由 `@@M@@d+1\le l@@` 强制终止。
+第三步（第 5 节）是纯群论定理：这些条件迫使 `@@M@@\Gamma@@` 带有长度 `@@M@@\le l@@`、诸因子同构于 `@@M@@\mathbb{Z}_p@@` 的闭次正规列。核心是"收缩作用"引理——借助共同置换商，把 `@@M@@N\rtimes\mathbb{Z}_p@@` 在 `@@M@@p@@`-进极限下换成 `@@M@@N\times\mathbb{Z}_p@@`，同时保住同余式与生成元界；再用 Tamanoi 式子群计数生成函数的 `@@M@@p@@`-进极限证明剩余核的交换化必无限：否则投射满子群计数将收敛到非零极限，与同余式强制的趋于零矛盾。迭代由 `@@M@@d+1\le l@@` 强制终止。
 
 第四步（第 6 节）升高度：Hopkins–Smith 环幂零性定理与 HKR 广义特征把有理估计升级为 `@@M@@T(k)\wedge U_P(L_{T(l)}S)\ne0\Rightarrow k+\ell(P,1)\le l@@`。其中用 Lubin–Tate 理论算出满射特征投影子的迹 `@@M@@N_{k,r}=p^{k^2(r-1)}\prod_{i=0}^{k-1}(p^k-p^i)>0@@`，保证满标记分量非零；再用与 `@@M@@(C_{p^r})^k@@`（`@@M@@r@@` 任意大）的乘积和逆极限"扣秩"引理分离出 `@@M@@k@@`，最后望远镜 fracture 方块经归纳粘合成有限高度消没估计。
 

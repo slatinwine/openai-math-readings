@@ -51,7 +51,7 @@ Hodge 在 1950 年国际数学家大会的报告中提出著名猜想：光滑�
 
 ## 主要结果
 
-主定理（论文定理 1.1）：设 `@@M@@m\ge1@@`，`@@M@@S_1,\ldots,S_m@@` 为任意射影复 K3 曲面，`@@M@@X=S_1\times\cdots\times S_m@@`，则对每个 `@@M@@0\le p\le 2m@@`，闭链类映射 `@@M@@\cl:\CH^p(X)_\Q\to\Hdg^p(X)=H^{2p}(X,\Q)\cap H^{p,p}(X)@@` 是满射；因子可以重复，不假设周期或自同态域之间有任何关系。论文还证明了"精确 Kuga–Satake 对应"定理：对每个射影 K3 曲面 `@@M@@S@@`，记超越空间 `@@M@@T(S)=\NS(S)_\Q^\perp\subset H^2(S,\Q)@@`、全偶 Clifford 代数 (even Clifford algebra) `@@M@@W_S=C^+(T(S))@@`，则由 `@@M@@v\mapsto(x\mapsto vxw)@@`（`@@M@@w@@` 为 `@@M@@T(S)@@` 中非迷向向量）定义的标准嵌入 `@@M@@\iota_w:T(S)\to W_S\otimes W_S\subset H^2(A_S^2,\Q)@@` 由 `@@M@@\CH^2(S\times A_S^2)_\Q@@` 中的代数闭链实现，且归一化精确到论文规定的水平。
+主定理（论文定理 1.1）：设 `@@M@@m\ge1@@`，`@@M@@S_1,\ldots,S_m@@` 为任意射影复 K3 曲面，`@@M@@X=S_1\times\cdots\times S_m@@`，则对每个 `@@M@@0\le p\le 2m@@`，闭链类映射 `@@M@@\cl:\CH^p(X)_\mathbb{Q}\to\Hdg^p(X)=H^{2p}(X,\mathbb{Q})\cap H^{p,p}(X)@@` 是满射；因子可以重复，不假设周期或自同态域之间有任何关系。论文还证明了"精确 Kuga–Satake 对应"定理：对每个射影 K3 曲面 `@@M@@S@@`，记超越空间 `@@M@@T(S)=\NS(S)_\mathbb{Q}^\perp\subset H^2(S,\mathbb{Q})@@`、全偶 Clifford 代数 (even Clifford algebra) `@@M@@W_S=C^+(T(S))@@`，则由 `@@M@@v\mapsto(x\mapsto vxw)@@`（`@@M@@w@@` 为 `@@M@@T(S)@@` 中非迷向向量）定义的标准嵌入 `@@M@@\iota_w:T(S)\to W_S\otimes W_S\subset H^2(A_S^2,\mathbb{Q})@@` 由 `@@M@@\CH^2(S\times A_S^2)_\mathbb{Q}@@` 中的代数闭链实现，且归一化精确到论文规定的水平。
 
 ## 证明思路
 

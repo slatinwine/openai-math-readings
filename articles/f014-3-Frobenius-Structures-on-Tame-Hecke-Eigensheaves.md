@@ -67,7 +67,7 @@ pdfname: ""
 
 ## 主要结果
 
-设 `@@M@@\F_q@@` 特征 `@@M@@p>n@@`、`@@M@@\ell\ne p@@`、`@@M@@E=\E@@`。设 `@@M@@X_0/\F_q@@` 是亏格 `@@M@@\ge2@@` 的光滑射影几何连通曲线，带 `@@M@@\F_q@@`-点 `@@M@@x_0@@`，令 `@@M@@U_0=X_0\setminus\{x_0\}@@`。设连续表示 `@@M@@\rho:\pi_1^{\mathrm{et}}(U_0)\to\PGL_n(L)@@`（`@@M@@L/\Q_\ell@@` 有限）的几何限制 Zariski 稠密，且 `@@M@@x_0@@` 处惯性消灭野惯性 (wild inertia)、形如 `@@M@@\rho(\gamma)=\exp(t_\ell(\gamma)N)@@`，`@@M@@N@@` 为正则幂零 (regular nilpotent)。
+设 `@@M@@\F_q@@` 特征 `@@M@@p>n@@`、`@@M@@\ell\ne p@@`、`@@M@@E=\E@@`。设 `@@M@@X_0/\F_q@@` 是亏格 `@@M@@\ge2@@` 的光滑射影几何连通曲线，带 `@@M@@\F_q@@`-点 `@@M@@x_0@@`，令 `@@M@@U_0=X_0\setminus\{x_0\}@@`。设连续表示 `@@M@@\rho:\pi_1^{\mathrm{et}}(U_0)\to\PGL_n(L)@@`（`@@M@@L/\mathbb{Q}_\ell@@` 有限）的几何限制 Zariski 稠密，且 `@@M@@x_0@@` 处惯性消灭野惯性 (wild inertia)、形如 `@@M@@\rho(\gamma)=\exp(t_\ell(\gamma)N)@@`，`@@M@@N@@` 为正则幂零 (regular nilpotent)。
 
 主定理断言：存在整数 `@@M@@m\ge1@@` 及 `@@M@@\Bun_{\SL_n,B,x_0}(X_0)_{\F_{q^m}}@@` 上非零的 `@@M@@E@@`-进 Weil 层 (Weil sheaf) `@@M@@M_0@@`，其几何拉回局部可构造且反常 (perverse)，奇异支集 (singular support) 含于抛物幂零锥 `@@M@@\Lambda_{\mathrm{par}}@@`；记 `@@M@@\rho_m@@` 为 `@@M@@\rho@@` 在 `@@M@@\pi_1(U_{0,\F_{q^m}})@@` 上的限制，则对任意有限腿集 `@@M@@I@@` 与表示族 `@@M@@V_i\in\Rep_E(\PGL_n)@@` 有 Weil 层同构
 `@@M@@D\Hecke_{I,\boldsymbol V}(M_0)\simeq M_0\boxtimes\bigboxtimes_{i\in I}(V_i)_{\rho_m},@@`

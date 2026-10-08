@@ -59,7 +59,7 @@ Steinitz 早年在研究条件收敛向量级数 (conditionally convergent serie
 
 ## 主要结果
 
-**定理 1（规定次序的带符号前缀）**：存在绝对常数 `@@M@@C@@`，对任意 `@@M@@d,N\ge1@@` 及单位球中序列 `@@M@@v_1,\ldots,v_N\in\R^d@@`（`@@M@@\lVert v_i\rVert_2\le1@@`），可选符号 `@@M@@\varepsilon_i\in\{-1,1\}@@`，使
+**定理 1（规定次序的带符号前缀）**：存在绝对常数 `@@M@@C@@`，对任意 `@@M@@d,N\ge1@@` 及单位球中序列 `@@M@@v_1,\ldots,v_N\in\mathbb{R}^d@@`（`@@M@@\lVert v_i\rVert_2\le1@@`），可选符号 `@@M@@\varepsilon_i\in\{-1,1\}@@`，使
 `@@M@@D\max_{0\le k\le N}\Bigl\lVert\sum_{i=1}^k\varepsilon_i v_i\Bigr\rVert_2\le C\sqrt d .@@`
 
 **定理 2（欧氏 Steinitz–Bergström 界）**：若再设 `@@M@@\sum_{i=1}^N v_i=0@@`，则存在置换 `@@M@@\pi@@`，使全部不带符号的部分和满足同一个界：`@@M@@\max_{0\le k\le N}\lVert\sum_{i=1}^k v_{\pi(i)}\rVert_2\le C\sqrt d@@`。按最优重排定义的欧氏 Steinitz 常数 `@@M@@S_2(d)@@` 由此受控：`@@M@@S_2(d)\le C\sqrt d@@`。
@@ -68,7 +68,7 @@ Steinitz 早年在研究条件收敛向量级数 (conditionally convergent serie
 
 ## 证明思路
 
-全文枢纽是把"带符号的随机游走"编码为高维系数空间 `@@M@@\R^{d+n}@@` 中一个凸体里的单个点，证明该凸体的 Dirichlet 能量 (Dirichlet energy) 一致地小，再援引"低能量凸体允许自适应选符号"的原理完成构造。
+全文枢纽是把"带符号的随机游走"编码为高维系数空间 `@@M@@\mathbb{R}^{d+n}@@` 中一个凸体里的单个点，证明该凸体的 Dirichlet 能量 (Dirichlet energy) 一致地小，再援引"低能量凸体允许自适应选符号"的原理完成构造。
 
 先建滤波 (filter)：取小绝对常数 `@@M@@\sigma@@`，令 `@@M@@b_i=\sigma v_i@@`，`@@M@@C_i=(I-b_ib_i^{\top})^{1/2}@@` 是满足 `@@M@@C_i^2+b_ib_i^{\top}=I@@` 的对称收缩，在系数空间上递推 `@@M@@R_tx=C_tR_{t-1}x+b_tx_{d+t}@@`。凸体 `@@M@@\mathcal D=\{x:\ |x_j|<B_0,\ \lVert R_tx\rVert_2<A_0\sqrt d\ \forall t\}@@` 就是"所有滤波状态受控"的点集。
 

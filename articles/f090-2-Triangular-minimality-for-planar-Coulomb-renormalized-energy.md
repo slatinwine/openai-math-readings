@@ -47,11 +47,11 @@ pdfname: ""
 
 ## 主要结果
 
-记 `@@M@@\Lambda_\triangle=\sqrt{2/\sqrt3}\,\bigl(\Z(1,0)+\Z(\tfrac12,\tfrac{\sqrt3}{2})\bigr)@@` 为协体积（covolume）为一的三角形格子，`@@M@@E_\triangle@@` 为其周期位势的梯度场。容许类 `@@M@@\mathcal A_1@@` 由满足 `@@M@@\operatorname{div}E=2\pi(\nu_\Lambda-1)@@`、`@@M@@\curl E=0@@` 且电荷计数有二次增长界的无旋场组成。
+记 `@@M@@\Lambda_\triangle=\sqrt{2/\sqrt3}\,\bigl(\mathbb{Z}(1,0)+\mathbb{Z}(\tfrac12,\tfrac{\sqrt3}{2})\bigr)@@` 为协体积（covolume）为一的三角形格子，`@@M@@E_\triangle@@` 为其周期位势的梯度场。容许类 `@@M@@\mathcal A_1@@` 由满足 `@@M@@\operatorname{div}E=2\pi(\nu_\Lambda-1)@@`、`@@M@@\curl E=0@@` 且电荷计数有二次增长界的无旋场组成。
 
 **定理 1（全平面）**：对每个容许场 `@@M@@W(E)\ge W(E_\triangle)@@`，且下确界被 `@@M@@E_\triangle@@` 实现；对竞争者不加任何分离性、周期性或胞腔有界性假设，也排除 `@@M@@W(E)=-\infty@@`。
 
-**定理 2（方环面）**：在方环面（square torus）`@@M@@T_n=\R^2/(\sqrt n\,\Z^2)@@` 上，任意 `@@M@@n@@` 个不同点的格林函数（Green function）位势能量满足 `@@M@@\mathcal W_n(h)\ge n\,W(E_\triangle)@@`。
+**定理 2（方环面）**：在方环面（square torus）`@@M@@T_n=\mathbb{R}^2/(\sqrt n\,\mathbb{Z}^2)@@` 上，任意 `@@M@@n@@` 个不同点的格林函数（Green function）位势能量满足 `@@M@@\mathcal W_n(h)\ge n\,W(E_\triangle)@@`。
 
 **推论（球面对数能量）**：令 `@@M@@E_{\log}(n)@@` 为 `@@M@@S^2@@` 上 `@@M@@n@@` 点有序对（ordered pairs）对数能量和的最小值，则
 

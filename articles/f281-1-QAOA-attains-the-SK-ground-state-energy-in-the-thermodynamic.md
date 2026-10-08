@@ -73,7 +73,7 @@ Sherrington–Kirkpatrick（SK）模型是 1975 年提出的全连接伊辛自�
 
 记代价哈密顿量 `@@M@@C_{n,J}=\frac1{\sqrt n}\sum_{i<j}J_{ij}Z_iZ_j@@`（`@@M@@X,Y,Z@@` 为 Pauli 矩阵），混合器 `@@M@@B_n=\sum_iX_i@@`，深度 `@@M@@p@@` 的 QAOA 态为
 `@@M@@D\ket{\psi_{n,p,J}(\gamma,\beta)}=e^{-\mathrm{i}\beta_pB_n}e^{-\mathrm{i}\gamma_pC_{n,J}}\cdots e^{-\mathrm{i}\beta_1B_n}e^{-\mathrm{i}\gamma_1C_{n,J}}\ket{+}^{\otimes n}.@@`
-对固定角度先取 `@@M@@n\to\infty@@` 得每自旋期望能量 `@@M@@v_p(\gamma,\beta)@@`，再对角度取上确界得 `@@M@@Q_p@@`。主定理（Theorem 1.1）断言 `@@M@@\lim_{p\to\infty}Q_p=P_*@@`，其中 `@@M@@P_*=\lim_{n\to\infty}\frac1n\E\max_\sigma h_{n,J}(\sigma)@@` 是 SK 基态能量常数。等价地说：对每个 `@@M@@\varepsilon>0@@`，存在有限深度 `@@M@@p@@` 与确定性角度 `@@M@@\gamma,\beta\in\R^p@@`——不依赖 `@@M@@n@@` 与无序 `@@M@@J@@`——使 `@@M@@v_p(\gamma,\beta)\ge P_*-\varepsilon@@`。这正是上述猜想的固定参数热力学表述。推论（Corollary 1.2）进一步给出大度正则图 MaxCut 的首阶最优：对围长超过 `@@M@@2p+1@@` 的 `@@M@@(D+1)@@`-正则图 `@@M@@G@@`，同一组角度（按度数缩放为 `@@M@@2\gamma/\sqrt D@@`）切掉的边比例至少为 `@@M@@\frac12+\frac{P_*-\eta}{\sqrt D}@@`，且对随机正则图在相继极限下以概率达到首阶最优。
+对固定角度先取 `@@M@@n\to\infty@@` 得每自旋期望能量 `@@M@@v_p(\gamma,\beta)@@`，再对角度取上确界得 `@@M@@Q_p@@`。主定理（Theorem 1.1）断言 `@@M@@\lim_{p\to\infty}Q_p=P_*@@`，其中 `@@M@@P_*=\lim_{n\to\infty}\frac1n\E\max_\sigma h_{n,J}(\sigma)@@` 是 SK 基态能量常数。等价地说：对每个 `@@M@@\varepsilon>0@@`，存在有限深度 `@@M@@p@@` 与确定性角度 `@@M@@\gamma,\beta\in\mathbb{R}^p@@`——不依赖 `@@M@@n@@` 与无序 `@@M@@J@@`——使 `@@M@@v_p(\gamma,\beta)\ge P_*-\varepsilon@@`。这正是上述猜想的固定参数热力学表述。推论（Corollary 1.2）进一步给出大度正则图 MaxCut 的首阶最优：对围长超过 `@@M@@2p+1@@` 的 `@@M@@(D+1)@@`-正则图 `@@M@@G@@`，同一组角度（按度数缩放为 `@@M@@2\gamma/\sqrt D@@`）切掉的边比例至少为 `@@M@@\frac12+\frac{P_*-\eta}{\sqrt D}@@`，且对随机正则图在相继极限下以概率达到首阶最优。
 
 ## 证明思路
 

@@ -83,9 +83,9 @@ pdfname: ""
 
 ## 主要结果
 
-主定理：设 `@@M@@K_i@@` 为全实六次本原域（primitive，即不存在中间域 `@@M@@\Q\subsetneq F\subsetneq K_i@@`），`@@M@@|\Disc(K_i)|\to\infty@@`，并任意选取嵌入排序 `@@M@@\sigma_i@@`，则体积加权的 packet 概率测度满足
+主定理：设 `@@M@@K_i@@` 为全实六次本原域（primitive，即不存在中间域 `@@M@@\mathbb{Q}\subsetneq F\subsetneq K_i@@`），`@@M@@|\Disc(K_i)|\to\infty@@`，并任意选取嵌入排序 `@@M@@\sigma_i@@`，则体积加权的 packet 概率测度满足
 `@@M@@D\int_{X_6} f\,\dd\mu_{K_i,\sigma_i}\longrightarrow\int_{X_6} f\,\dd m_6\qquad(f\in C_c(X_6)),@@`
-极限是幺模格空间 `@@M@@X_6=\SL_6(\Z)\backslash\SL_6(\R)@@` 上的 Haar 概率测度 `@@M@@m_6@@`；且无质量逃逸（no escape of mass）：对每个 `@@M@@\epsilon>0@@` 存在紧集 `@@M@@C@@` 使 `@@M@@\mu_{K_i,\sigma_i}(C)\ge 1-\epsilon@@` 对一切充分大的 `@@M@@i@@` 成立。packet 的构造是：理想 `@@M@@I@@` 经六个实嵌入成格，归一化协体积为 1 得 `@@M@@\Lambda_{I,\sigma}@@`；每个普通理想类取一代表，再乘遍全部 `@@M@@2^6@@` 个坐标符号对角阵 `@@M@@w@@`，得到紧轨道 `@@M@@\Lambda_{I,\sigma}wA_6@@`，按各轨道的 `@@M@@A@@`-体积加权求平均。乘遍所有符号使 packet 不依赖理想类代表的选取。论文还精确算出每条轨道体积为 `@@M@@(s/2)R_K@@`（`@@M@@R_K@@` 为调节子）、轨道数 `@@M@@h_K2^6/s@@`、总权重为 `@@M@@Q\kappa@@`（`@@M@@Q=D^{1/2}@@`，`@@M@@\kappa@@` 为 `@@M@@\zeta_K@@` 在 `@@M@@s=1@@` 的留数）。
+极限是幺模格空间 `@@M@@X_6=\SL_6(\mathbb{Z})\backslash\SL_6(\mathbb{R})@@` 上的 Haar 概率测度 `@@M@@m_6@@`；且无质量逃逸（no escape of mass）：对每个 `@@M@@\epsilon>0@@` 存在紧集 `@@M@@C@@` 使 `@@M@@\mu_{K_i,\sigma_i}(C)\ge 1-\epsilon@@` 对一切充分大的 `@@M@@i@@` 成立。packet 的构造是：理想 `@@M@@I@@` 经六个实嵌入成格，归一化协体积为 1 得 `@@M@@\Lambda_{I,\sigma}@@`；每个普通理想类取一代表，再乘遍全部 `@@M@@2^6@@` 个坐标符号对角阵 `@@M@@w@@`，得到紧轨道 `@@M@@\Lambda_{I,\sigma}wA_6@@`，按各轨道的 `@@M@@A@@`-体积加权求平均。乘遍所有符号使 packet 不依赖理想类代表的选取。论文还精确算出每条轨道体积为 `@@M@@(s/2)R_K@@`（`@@M@@R_K@@` 为调节子）、轨道数 `@@M@@h_K2^6/s@@`、总权重为 `@@M@@Q\kappa@@`（`@@M@@Q=D^{1/2}@@`，`@@M@@\kappa@@` 为 `@@M@@\zeta_K@@` 在 `@@M@@s=1@@` 的留数）。
 
 ## 证明思路
 

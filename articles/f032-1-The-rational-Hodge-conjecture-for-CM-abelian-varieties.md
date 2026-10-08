@@ -27,7 +27,7 @@ pdfname: ""
 
 **看个具体例子**
 
-最小的 CM 样本是椭圆曲线 `@@M@@E:\ y^2=x^3-x@@`：它的复坐标来自复平面上的方格 `@@M@@\Z+i\Z@@`（差一个缩放），而"乘 i"就是把整个方格旋转 90° 的对称操作。
+最小的 CM 样本是椭圆曲线 `@@M@@E:\ y^2=x^3-x@@`：它的复坐标来自复平面上的方格 `@@M@@\mathbb{Z}+i\mathbb{Z}@@`（差一个缩放），而"乘 i"就是把整个方格旋转 90° 的对称操作。
 
 <div>
 
@@ -67,11 +67,11 @@ CM 阿贝尔簇是 Hodge 猜想最大的一块"高对称试验田"，拿下它�
 
 ## 问题背景
 
-Hodge 猜想的余维数一情形是 Lefschetz `@@M@@(1,1)@@` 定理。对阿贝尔簇虽有 `@@M@@H^*(A,\Q)=\Lambda^*H^1(A,\Q)@@`，但并非每个 Hodge 类都能写成除子类的杯积：典型困难是 Weil 类 (Weil classes)——虚二次域作用下 `@@M@@\Lambda_K^{2n}H^1@@` 给出的 `@@M@@(n,n)@@` 型类，Moonen–Zarhin 证明它在四维阿贝尔簇上已不落在除子类生成的代数中。Deligne 在 1982 年证明阿贝尔簇上 Hodge 类的绝对 Hodge 性 (absolute Hodge)，他与 André 把 CM 情形归约到辅助 CM 簇上的分裂 Weil 类——但归约只指明哪些类代数性便已足够，并未在所有维数造出代数代表；Markman 最近才对判别式 `@@M@@-1@@` 的 Weil 型六维簇证明 Weil 类代数性并由此得到四维阿贝尔簇的 Hodge 猜想。Hazama 的排列方法与 Gao–Ullmo 的周期关系把问题进一步缩到"四标签"关系，但把四因子张量真正造成代数闭链并作为对应 (correspondence) 复合，正是本文补齐的缺口。
+Hodge 猜想的余维数一情形是 Lefschetz `@@M@@(1,1)@@` 定理。对阿贝尔簇虽有 `@@M@@H^*(A,\mathbb{Q})=\Lambda^*H^1(A,\mathbb{Q})@@`，但并非每个 Hodge 类都能写成除子类的杯积：典型困难是 Weil 类 (Weil classes)——虚二次域作用下 `@@M@@\Lambda_K^{2n}H^1@@` 给出的 `@@M@@(n,n)@@` 型类，Moonen–Zarhin 证明它在四维阿贝尔簇上已不落在除子类生成的代数中。Deligne 在 1982 年证明阿贝尔簇上 Hodge 类的绝对 Hodge 性 (absolute Hodge)，他与 André 把 CM 情形归约到辅助 CM 簇上的分裂 Weil 类——但归约只指明哪些类代数性便已足够，并未在所有维数造出代数代表；Markman 最近才对判别式 `@@M@@-1@@` 的 Weil 型六维簇证明 Weil 类代数性并由此得到四维阿贝尔簇的 Hodge 猜想。Hazama 的排列方法与 Gao–Ullmo 的周期关系把问题进一步缩到"四标签"关系，但把四因子张量真正造成代数闭链并作为对应 (correspondence) 复合，正是本文补齐的缺口。
 
 ## 主要结果
 
-主定理（论文定理 1.1）：设 `@@M@@A@@` 为复 CM 阿贝尔簇，即 `@@M@@\End(A)\otimes_{\Z}\Q@@` 含一个维数为 `@@M@@2\dim A@@` 的交换半单纯 `@@M@@\Q@@`-代数，则对每个 `@@M@@p\ge0@@`，Betti 闭链类映射 `@@M@@\cl_B:\CH^p(A)_\Q\to H^{2p}(A,\Q)\cap H^{p,p}(A)@@` 满射；结论对有限乘积及其任意次幂同样成立。推论有三：CM 阿贝尔簇的广义 Hodge 猜想 (generalized Hodge conjecture)（Hodge 子结构有代数支集）；有限域上任意阿贝尔簇的 Tate 猜想 (Tate conjecture)（对所有 `@@M@@\ell\ne\operatorname{char}@@`）；任意特征代数闭域上阿贝尔簇的 Hodge 标准猜想 (Hodge standard conjecture)（数值等价与 `@@M@@\ell@@`-进同调等价一致，且本原代数类上的交截形式正定）。后两条分别经由 Milne 1999 与 2002 年的定理从主定理导出。
+主定理（论文定理 1.1）：设 `@@M@@A@@` 为复 CM 阿贝尔簇，即 `@@M@@\End(A)\otimes_{\mathbb{Z}}\mathbb{Q}@@` 含一个维数为 `@@M@@2\dim A@@` 的交换半单纯 `@@M@@\mathbb{Q}@@`-代数，则对每个 `@@M@@p\ge0@@`，Betti 闭链类映射 `@@M@@\cl_B:\CH^p(A)_\mathbb{Q}\to H^{2p}(A,\mathbb{Q})\cap H^{p,p}(A)@@` 满射；结论对有限乘积及其任意次幂同样成立。推论有三：CM 阿贝尔簇的广义 Hodge 猜想 (generalized Hodge conjecture)（Hodge 子结构有代数支集）；有限域上任意阿贝尔簇的 Tate 猜想 (Tate conjecture)（对所有 `@@M@@\ell\ne\operatorname{char}@@`）；任意特征代数闭域上阿贝尔簇的 Hodge 标准猜想 (Hodge standard conjecture)（数值等价与 `@@M@@\ell@@`-进同调等价一致，且本原代数类上的交截形式正定）。后两条分别经由 Milne 1999 与 2002 年的定理从主定理导出。
 
 ## 证明思路
 

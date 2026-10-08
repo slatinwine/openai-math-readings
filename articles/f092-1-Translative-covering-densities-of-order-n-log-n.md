@@ -43,11 +43,11 @@ pdfname: ""
 
 ## 问题背景
 
-平移覆盖密度 (translative covering density) `@@M@@\theta_T(K)@@` 度量用凸体 `@@M@@K@@` 的副本铺满 `@@M@@\R^n@@` 所需的最小平均重叠，覆盖中心集合只要求局部有限 (locally finite)，甚至不需要存在渐近密度。Rogers 1957 年证明每个凸体都有密度至多 `@@M@@n\log n+n\log\log n+5n@@` 的周期平移覆盖，Fejes Tóth 后来用 `@@M@@O(\log n)@@` 个陪集达到同阶。下界一侧，Coxeter–Few–Rogers 对等球覆盖给出 `@@M@@\Omega(n)@@` 的障碍，球的精确阶至今悬而未决。Naszódi 记录的问题问：是否存在绝对常数 `@@M@@C@@`，使一切维度、一切凸体都有 `@@M@@\theta_T(K)\le Cn@@`？本文给出否定回答，而且是在"最坏的体可任选"这一最强意义下。
+平移覆盖密度 (translative covering density) `@@M@@\theta_T(K)@@` 度量用凸体 `@@M@@K@@` 的副本铺满 `@@M@@\mathbb{R}^n@@` 所需的最小平均重叠，覆盖中心集合只要求局部有限 (locally finite)，甚至不需要存在渐近密度。Rogers 1957 年证明每个凸体都有密度至多 `@@M@@n\log n+n\log\log n+5n@@` 的周期平移覆盖，Fejes Tóth 后来用 `@@M@@O(\log n)@@` 个陪集达到同阶。下界一侧，Coxeter–Few–Rogers 对等球覆盖给出 `@@M@@\Omega(n)@@` 的障碍，球的精确阶至今悬而未决。Naszódi 记录的问题问：是否存在绝对常数 `@@M@@C@@`，使一切维度、一切凸体都有 `@@M@@\theta_T(K)\le Cn@@`？本文给出否定回答，而且是在"最坏的体可任选"这一最强意义下。
 
 ## 主要结果
 
-主定理：存在绝对常数 `@@M@@c>0@@` 与 `@@M@@n_0@@`，对每个整数 `@@M@@n\ge n_0@@`，存在中心对称凸体 `@@M@@K_n\subset\R^n@@` 使
+主定理：存在绝对常数 `@@M@@c>0@@` 与 `@@M@@n_0@@`，对每个整数 `@@M@@n\ge n_0@@`，存在中心对称凸体 `@@M@@K_n\subset\mathbb{R}^n@@` 使
 
 `@@M@@D\theta_T(K_n)>c\,n\log n.@@`
 

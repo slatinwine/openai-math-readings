@@ -40,7 +40,7 @@ pdfname: ""
 
 ## 一句话结论
 
-在 `@@M@@\C@@` 上构造性地证明了 Artinian 情形的 Eisenbud–Green–Harris 猜想：任何包含正则序列（次数 `@@M@@\ge2@@`、任意长度）的齐次理想，都与某个含相应纯幂的单项式理想有相同的 Hilbert 函数，并经归约推广到全部特征零域。
+在 `@@M@@\mathbb{C}@@` 上构造性地证明了 Artinian 情形的 Eisenbud–Green–Harris 猜想：任何包含正则序列（次数 `@@M@@\ge2@@`、任意长度）的齐次理想，都与某个含相应纯幂的单项式理想有相同的 Hilbert 函数，并经归约推广到全部特征零域。
 
 ## 问题背景
 
@@ -48,7 +48,7 @@ EGH 猜想源自 Eisenbud–Green–Harris 在 1990 年代对高维 Castelnuovo 
 
 ## 主要结果
 
-定理 1.1（交换型构造）：设 `@@M@@f_1,\ldots,f_n@@` 是 `@@M@@\C[x_1,\ldots,x_n]@@` 中次数 `@@M@@2\le a_1\le\cdots\le a_n@@` 的齐次正则序列。则存在有限生成域扩张 `@@M@@k/\C@@`、有限维中心除代数 `@@M@@\Delta@@`，以及由有限多个两两交换的线性型生成的交换分次 `@@M@@k@@`-子代数 `@@M@@k[x]\subseteq A\subseteq\Delta[x]@@`，其中有线性型 `@@M@@t_1,\ldots,t_n@@` 满足三角幂恒等式
+定理 1.1（交换型构造）：设 `@@M@@f_1,\ldots,f_n@@` 是 `@@M@@\mathbb{C}[x_1,\ldots,x_n]@@` 中次数 `@@M@@2\le a_1\le\cdots\le a_n@@` 的齐次正则序列。则存在有限生成域扩张 `@@M@@k/\mathbb{C}@@`、有限维中心除代数 `@@M@@\Delta@@`，以及由有限多个两两交换的线性型生成的交换分次 `@@M@@k@@`-子代数 `@@M@@k[x]\subseteq A\subseteq\Delta[x]@@`，其中有线性型 `@@M@@t_1,\ldots,t_n@@` 满足三角幂恒等式
 `@@M@@Dt_i^{a_i}=c_if_i+\sum_{l<i}B_{il}f_l+\sum_{d>i}C_{id}t_d\qquad(c_i\in k^\times),@@`
 且有序单项式 `@@M@@\{t_1^{\alpha_1}\cdots t_n^{\alpha_n}\}@@` 构成整个多项式代数 `@@M@@\Delta[x]@@` 的左 `@@M@@\Delta@@`-基——基覆盖全代数而非仅完全交商。推论 1.2（Artinian EGH）：包含该序列的任何齐次理想 `@@M@@I@@` 都与某个含全部 `@@M@@x_i^{a_i}@@` 的单项式理想有相同的 Hilbert 函数；借助 Clements–Lindström 压缩还可取 lex-plus-powers 理想。推论 1.3 经 Artinian 归约与系数域下降，推广到特征零任意域、长度 `@@M@@c\le n@@` 的情形。第九节另给出两个应用：同一 lex-plus-powers 理想的局部上同调（local cohomology）逐层不等式，以及二次 Cayley–Bacharach 界——`@@M@@r@@` 个二次超曲面的完全交 `@@M@@\Omega@@` 若不含于 `@@M@@k@@` 次超面 `@@M@@X@@`，则 `@@M@@\deg(\Omega\cap X)\le 2^r-2^{r-k}@@`。
 

@@ -59,7 +59,7 @@ pdfname: ""
 对二维最近邻 `@@M@@O(4)@@` 自旋模型证明：低温区完整转移间隙被 `@@M@@\sqrt\beta e^{-\pi\beta}@@` 的正常数倍上下夹逼，且任意正温度下周期态间隙恒正——全温度格点质量生成猜想对该周期态获正面解决，物理单位下的质量也被压进双侧有界区间。
 
 ## 问题背景
-在每个方格点放自旋 `@@M@@\sigma_x\in S^3\subset\R^4@@`（"4"指内部自旋分量，时空仍是二维），按 `@@M@@\exp(\beta\sum_{\langle xy\rangle}\sigma_x\cdot\sigma_y)@@` 加权，即得 `@@M@@O(4)@@` 模型。Mermin–Wagner 定理排除自发磁化，却不回答关联衰减多快；McBryan–Spencer 只给出代数上界。二分量情形有 Berezinskii–Kosterlitz–Thouless 低温慢衰减相（Fröhlich–Spencer 严格证明多项式下界），指数衰减在那里必然失败。对 `@@M@@n\ge3@@`，Polyakov 的非阿贝尔重整化论证预言任意正温度都发生质量生成（mass generation），但严格结果长期只覆盖高温区（Aizenman–Simon 的 Ward 恒等式方法）与大分量区（Kupiainen）；全温度格点问题被 Aru–Garban–Sepúlveda（2025）记为公开猜想。本文还把目标抬高：要控制的不只是单个自旋两点函数，而是包括转动不变键能 `@@M@@\sigma_x\cdot\sigma_y@@` 在内、由一切局部观测量生成的转移算子谱。
+在每个方格点放自旋 `@@M@@\sigma_x\in S^3\subset\mathbb{R}^4@@`（"4"指内部自旋分量，时空仍是二维），按 `@@M@@\exp(\beta\sum_{\langle xy\rangle}\sigma_x\cdot\sigma_y)@@` 加权，即得 `@@M@@O(4)@@` 模型。Mermin–Wagner 定理排除自发磁化，却不回答关联衰减多快；McBryan–Spencer 只给出代数上界。二分量情形有 Berezinskii–Kosterlitz–Thouless 低温慢衰减相（Fröhlich–Spencer 严格证明多项式下界），指数衰减在那里必然失败。对 `@@M@@n\ge3@@`，Polyakov 的非阿贝尔重整化论证预言任意正温度都发生质量生成（mass generation），但严格结果长期只覆盖高温区（Aizenman–Simon 的 Ward 恒等式方法）与大分量区（Kupiainen）；全温度格点问题被 Aru–Garban–Sepúlveda（2025）记为公开猜想。本文还把目标抬高：要控制的不只是单个自旋两点函数，而是包括转动不变键能 `@@M@@\sigma_x\cdot\sigma_y@@` 在内、由一切局部观测量生成的转移算子谱。
 
 ## 主要结果
 由反射正性（reflection positivity）构造正转移压缩 `@@M@@T_\beta@@` 与真空 `@@M@@\Omega@@`，定义完整转移间隙 `@@M@@m_{\mathrm{lat}}(\beta)=-\log\|T_\beta|_{\Omega^\perp}\|@@`。定理 1.1：存在 `@@M@@\beta_0,c,C@@`（`@@M@@0<c<C@@`），对一切 `@@M@@\beta\ge\beta_0@@`，周期方盒测度有唯一局部极限，且

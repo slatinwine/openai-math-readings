@@ -29,7 +29,7 @@ pdfname: ""
 
 定理的数字版：存在二维正规复代数 A 与极大理想 m，使
 
-`@@M@@\Der_{\C}(A)\cong A^{\oplus2}@@`，而 `@@M@@A_{\mathfrak m}@@` 不正则。
+`@@M@@\Der_{\mathbb{C}}(A)\cong A^{\oplus2}@@`，而 `@@M@@A_{\mathfrak m}@@` 不正则。
 
 <div>
 

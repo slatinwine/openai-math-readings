@@ -64,7 +64,7 @@ hot spots 猜想源自 Rauch（1975）对绝热边界热流的讨论：边界绝
 
 ## 主要结果
 
-设 `@@M@@\Omega\subset\R^2@@` 为有界单连通开集、边界 `@@M@@C^\infty@@`，`@@M@@\mu=\mu_1(\Omega)@@` 为第一正 Neumann 特征值（只计正特征值），`@@M@@\V@@` 为对应特征空间（eigenspace）。主定理（Theorem 1.1）：每个 `@@M@@0\ne u\in\V@@` 在内部处处 `@@M@@\nabla u\ne0@@`；特别地，对一切内点 `@@M@@x@@`，
+设 `@@M@@\Omega\subset\mathbb{R}^2@@` 为有界单连通开集、边界 `@@M@@C^\infty@@`，`@@M@@\mu=\mu_1(\Omega)@@` 为第一正 Neumann 特征值（只计正特征值），`@@M@@\V@@` 为对应特征空间（eigenspace）。主定理（Theorem 1.1）：每个 `@@M@@0\ne u\in\V@@` 在内部处处 `@@M@@\nabla u\ne0@@`；特别地，对一切内点 `@@M@@x@@`，
 
 `@@M@@D\min_{y\in\partial\Omega}u(y)<u(x)<\max_{y\in\partial\Omega}u(y).@@`
 
@@ -74,7 +74,7 @@ hot spots 猜想源自 Rauch（1975）对绝热边界热流的讨论：边界绝
 
 证明把"极值在哪"改写为"梯度何时为零"，骨架四步。
 
-先立向量变分原理（variational principle）。Neumann 条件使特征函数的梯度在边界上切向，于是考察切向量场 `@@M@@X@@` 的散度–旋度（divergence–curl）能量：Rohleder 原理（Proposition 3.1，文中含等号情形的推导）给出 `@@M@@\Q(X)\ge\mu\int|X|^2@@`，等号恰当 `@@M@@X=\nabla v@@`、`@@M@@v\in\V@@`——第一特征函数的梯度恰是某个非负二次型的零空间。难点在于：`@@M@@u@@` 的两个笛卡尔导数各自满足同一 Helmholtz 方程，但边界值符号失控，单独哪个分量都无从下手，只能把两者捆绑、用切向边界条件。这一步的地基是谱隙 `@@M@@\mu<\lambda_D@@`（Friedlander–Filonov 平面波比较的严格形式，文中自足证明）。
+先立向量变分原理（variational principle）。Neumann 条件使特征函数的梯度在边界上切向，于是考察切向量场 `@@M@@X@@` 的散度–旋度（divergence–curl）能量：Rohleder 原理（Proposition 3.1，文中含等号情形的推导）给出 `@@M@@\mathbb{Q}(X)\ge\mu\int|X|^2@@`，等号恰当 `@@M@@X=\nabla v@@`、`@@M@@v\in\V@@`——第一特征函数的梯度恰是某个非负二次型的零空间。难点在于：`@@M@@u@@` 的两个笛卡尔导数各自满足同一 Helmholtz 方程，但边界值符号失控，单独哪个分量都无从下手，只能把两者捆绑、用切向边界条件。这一步的地基是谱隙 `@@M@@\mu<\lambda_D@@`（Friedlander–Filonov 平面波比较的严格形式，文中自足证明）。
 
 再经共形映射（conformal map）`@@M@@\Phi:\D\to\Omega@@` 拉回单位圆盘，特征方程化为带位势 `@@M@@q=\mu|\Phi'|^2@@` 的方程，而谱隙恰转为次临界不等式 `@@M@@\|\psi\|_{L^2(q)}^2\le d\int_\D|\nabla\psi|^2@@`（`@@M@@d=\mu/\lambda_D<1@@`）。在圆盘上构造边界核 `@@M@@N@@` 与内部赋值核 `@@M@@K@@`，把能量写成圆周上的双积分，得乘子恒等式（multiplier identity，Proposition 4.4）：对特征函数的边界梯度 `@@M@@g@@` 与圆周上实值 Lipschitz 函数 `@@M@@b@@`，
 

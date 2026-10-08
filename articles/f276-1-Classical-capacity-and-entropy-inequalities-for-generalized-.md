@@ -63,7 +63,7 @@ Holevo 与 Schumacher–Westmoreland 的编码定理把容量写成 Holevo 信�
 
 全文围绕一个"保人口的熵下界"：对任意纯 `@@M@@n@@` 比特输入 `@@M@@\psi@@`，证明 `@@M@@\mathcal S(\mathcal A_{\gamma,\nu}^{\otimes n}(\proj\psi))\ge\sum_{j=1}^n e(p_j)@@`，其中 `@@M@@p_j@@` 是第 `@@M@@j@@` 位激发概率，`@@M@@e(p)=g(v_{\gamma,\nu}(p))@@` 恰为单比特输出熵。这个界必须逐位保留人口信息——只控最小输出熵会抹掉 `@@M@@p_j@@`，撑不起后续的 Holevo 优化，这正是与以往工作的分水岭。
 
-先建立零块熵不等式（zero-block entropy inequality）：对分块矩阵 `@@M@@M=\begin{pmatrix}A&B\\C&0\end{pmatrix}@@`，若三个非零块的平方 Hilbert–Schmidt 质量 `@@M@@x,y,z@@` 之和为一，则 `@@M@@\mathcal S(MM^*)\ge x\,\mathcal S(AA^*/x)+y\,\mathcal S(BB^*/y)+z\,\mathcal S(CC^*/z)+g(yz)@@`。证明先把熵亏损写成对数行列式之差的积分，再利用 `@@M@@G_Z(D,E)=\ln\det(D+ZE^{-1}Z^*)-\ln\det D@@` 的联合凸性（二阶方向导数化为 `@@M@@\|L\|^2-\Tr((RL)^2)@@`，而 `@@M@@R=(I+K)^{-1}@@` 是压缩矩阵，故非负），对坐标符号做平均把矩阵参数压成对角，最后用一次齐次且超可加的标量亏损函数归并；矩形块由零填充化归方块。
+先建立零块熵不等式（zero-block entropy inequality）：对分块矩阵 `@@M@@M=\begin{pmatrix}A&B\\mathbb{C}&0\end{pmatrix}@@`，若三个非零块的平方 Hilbert–Schmidt 质量 `@@M@@x,y,z@@` 之和为一，则 `@@M@@\mathcal S(MM^*)\ge x\,\mathcal S(AA^*/x)+y\,\mathcal S(BB^*/y)+z\,\mathcal S(CC^*/z)+g(yz)@@`。证明先把熵亏损写成对数行列式之差的积分，再利用 `@@M@@G_Z(D,E)=\ln\det(D+ZE^{-1}Z^*)-\ln\det D@@` 的联合凸性（二阶方向导数化为 `@@M@@\|L\|^2-\Tr((RL)^2)@@`，而 `@@M@@R=(I+K)^{-1}@@` 是压缩矩阵，故非负），对坐标符号做平均把矩阵参数压成对角，最后用一次齐次且超可加的标量亏损函数归并；矩形块由零填充化归方块。
 
 再做热扩展：正阻尼加内点热占据时输出不再呈零块结构，论文把热态写成两个零块分解的凸组合——固定行和与交叉系数后，非负系数解集是一条线段，其两个端点各给出一个零块分解，且角块质量之积同为 `@@M@@u@@`，于是标量项 `@@M@@g(u)@@` 在混合中保持不变，熵凹性便保住下界。这一步正是越过"纯输出判据"的关键。
 

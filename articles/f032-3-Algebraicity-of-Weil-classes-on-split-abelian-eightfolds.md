@@ -19,8 +19,8 @@ Hodge 猜想最著名的"钉子户"叫 Weil 类：在带虚数乘法的八维甜
 
 **关键词卡片**
 
-- Weil 型八重簇（abelian eightfold of Weil type）：八维阿贝尔簇，坐标可被虚二次域 `@@M@@K=\Q(\sqrt{-d})@@` 相乘，且 Hodge 型恰好对半分。
-- Weil 空间（Weil space）：那两页例外笔记——二维的 `@@M@@(4,4)@@` 型影子空间 `@@M@@\bigwedge_K^8 H^1(A,\Q)@@`。
+- Weil 型八重簇（abelian eightfold of Weil type）：八维阿贝尔簇，坐标可被虚二次域 `@@M@@K=\mathbb{Q}(\sqrt{-d})@@` 相乘，且 Hodge 型恰好对半分。
+- Weil 空间（Weil space）：那两页例外笔记——二维的 `@@M@@(4,4)@@` 型影子空间 `@@M@@\bigwedge_K^8 H^1(A,\mathbb{Q})@@`。
 - 分裂（split）：`@@M@@H_1@@` 里含一个四维 `@@M@@K@@`-子空间，其上度量型恒为零——一块完全"躺平"的切片。
 - 代数闭链（algebraic cycle）：子簇按有理系数的组合，"真骨头"。
 - 镜像对称（mirror symmetry）：来自弦论的对偶技巧，证明在特殊纤维处用到它。
@@ -53,7 +53,7 @@ Hodge 猜想最著名的"钉子户"叫 Weil 类：在带虚数乘法的八维甜
 
 </div>
 
-主定理代入：对每个分裂 Weil 型八重簇（`@@M@@K@@` 任取、相容极化类型任取、连带额外自同态的成员也算），`@@M@@W_K(A)\subset\mathrm{im}\bigl(\CH^4(A)\otimes\Q\to H^8(A,\Q)\bigr)@@`——两页笔记各有真骨头代笔。四维簇与分裂六维簇是 Markman 早先拿下的，分裂八重簇正是这条路线公开的下一站。
+主定理代入：对每个分裂 Weil 型八重簇（`@@M@@K@@` 任取、相容极化类型任取、连带额外自同态的成员也算），`@@M@@W_K(A)\subset\mathrm{im}\bigl(\CH^4(A)\otimes\mathbb{Q}\to H^8(A,\mathbb{Q})\bigr)@@`——两页笔记各有真骨头代笔。四维簇与分裂六维簇是 Markman 早先拿下的，分裂八重簇正是这条路线公开的下一站。
 
 **为什么值得关心**
 
@@ -71,15 +71,15 @@ Hodge 猜想最著名的"钉子户"叫 Weil 类：在带虚数乘法的八维甜
 
 ## 主要结果
 
-设 `@@M@@K=\Q(\sqrt{-d})@@` 为虚二次域，`@@M@@A@@` 为八维复阿贝尔簇（abelian variety），带嵌入 `@@M@@\iota:K\hookrightarrow\End(A)\otimes_\Z\Q@@` 与极化 `@@M@@\lambda@@`，Rosati 对合在 `@@M@@\iota(K)@@` 上为复共轭，且 Weil 型条件（Weil-type condition）`@@M@@\dim_\C H^{1,0}(A)_\sigma=\dim_\C H^{1,0}(A)_{\bar\sigma}=4@@` 成立。有理 Weil 空间 `@@M@@W_K(A)=\bigwedge\nolimits_K^8 H^1(A,\Q)\subset H^8(A,\Q)@@` 是二维的，恰好落在 `@@M@@H^{4,4}(A)@@` 中。分裂（split）指 `@@M@@V=H_1(A,\Q)@@` 含四维 `@@M@@K@@`-子空间，使 Hermitian 型 `@@M@@h(x,y)=\psi(Jx,y)+\sqrt{-d}\,\psi(x,y)@@` 在其上恒为零。主定理：对每个分裂 Weil 型四元组 `@@M@@(K,A,\iota,\lambda)@@`，
+设 `@@M@@K=\mathbb{Q}(\sqrt{-d})@@` 为虚二次域，`@@M@@A@@` 为八维复阿贝尔簇（abelian variety），带嵌入 `@@M@@\iota:K\hookrightarrow\End(A)\otimes_\mathbb{Z}\mathbb{Q}@@` 与极化 `@@M@@\lambda@@`，Rosati 对合在 `@@M@@\iota(K)@@` 上为复共轭，且 Weil 型条件（Weil-type condition）`@@M@@\dim_\mathbb{C} H^{1,0}(A)_\sigma=\dim_\mathbb{C} H^{1,0}(A)_{\bar\sigma}=4@@` 成立。有理 Weil 空间 `@@M@@W_K(A)=\bigwedge\nolimits_K^8 H^1(A,\mathbb{Q})\subset H^8(A,\mathbb{Q})@@` 是二维的，恰好落在 `@@M@@H^{4,4}(A)@@` 中。分裂（split）指 `@@M@@V=H_1(A,\mathbb{Q})@@` 含四维 `@@M@@K@@`-子空间，使 Hermitian 型 `@@M@@h(x,y)=\psi(Jx,y)+\sqrt{-d}\,\psi(x,y)@@` 在其上恒为零。主定理：对每个分裂 Weil 型四元组 `@@M@@(K,A,\iota,\lambda)@@`，
 
-`@@M@@DW_K(A)\subset \operatorname{im}\bigl(\CH^4(A)\otimes_\Z\Q \xrightarrow{\ \mathrm{cl}\ } H^8(A,\Q)\bigr),@@`
+`@@M@@DW_K(A)\subset \operatorname{im}\bigl(\CH^4(A)\otimes_\mathbb{Z}\mathbb{Q} \xrightarrow{\ \mathrm{cl}\ } H^8(A,\mathbb{Q})\bigr),@@`
 
 即二维 Weil 空间由余维四代数闭链类张成；结论对一切虚二次域、一切相容极化类型及带额外自同态的特殊成员成立，但不涉及一般八重簇上的全部 Hodge 类。
 
 ## 证明思路
 
-证明分四个阶段。先把所有分裂 Weil 型八重簇装进统一模型：它们都 `@@M@@K@@`-相容地同构（isogeny）于标记族 `@@M@@A_\Pi=\C^8/(\Z^8+\Pi\Z^8)@@`，代数性沿同构传递；再用 Hodge 群的表示论算出，在余可数个例外集外，一般周期点的有理 Hodge 类恰为 `@@M@@\Q\theta^j@@` 加上 `@@M@@j=4@@` 时的 `@@M@@W_K@@`。再在实辛十六环面 `@@M@@T@@` 上构造中间维数同调类 `@@M@@\alpha=\alpha_{\mathrm{ex}}+g_1+g_2+g_3@@`：三个标量图拉格朗日与例外分量 `@@M@@\alpha_{\mathrm{ex}}@@` 配对为零，另一图 `@@M@@C@@` 则探测它；关键引理断言与 `@@M@@\alpha@@` 缩并为零的二形式恰是十六维混合空间 `@@M@@\Omega@@`。
+证明分四个阶段。先把所有分裂 Weil 型八重簇装进统一模型：它们都 `@@M@@K@@`-相容地同构（isogeny）于标记族 `@@M@@A_\Pi=\mathbb{C}^8/(\mathbb{Z}^8+\Pi\mathbb{Z}^8)@@`，代数性沿同构传递；再用 Hodge 群的表示论算出，在余可数个例外集外，一般周期点的有理 Hodge 类恰为 `@@M@@\mathbb{Q}\theta^j@@` 加上 `@@M@@j=4@@` 时的 `@@M@@W_K@@`。再在实辛十六环面 `@@M@@T@@` 上构造中间维数同调类 `@@M@@\alpha=\alpha_{\mathrm{ex}}+g_1+g_2+g_3@@`：三个标量图拉格朗日与例外分量 `@@M@@\alpha_{\mathrm{ex}}@@` 配对为零，另一图 `@@M@@C@@` 则探测它；关键引理断言与 `@@M@@\alpha@@` 缩并为零的二形式恰是十六维混合空间 `@@M@@\Omega@@`。
 
 再把 `@@M@@\alpha@@` 几何化：其正倍数实现为嵌入的自旋拉格朗日（spin Lagrangian）`@@M@@L@@`，`@@M@@H_2@@`、`@@M@@H_6@@` 到环境的映射均为单射，指定的二形式族在上同调水平限制为零，正是这两个单射迫使后续障碍消失。加权 Floer 操作以有限能量与元数截断构造，经超积（ultraproduct）剩余域化为 `@@M@@R=\kappa[[t]]@@` 上的精确代数恒等式；定向图代数被算成 theta 截面环 `@@M@@\mathscr S@@`，`@@M@@\mathscr X=\Proj\mathscr S@@` 在 `@@M@@R@@` 上光滑射影。特殊纤维 `@@M@@t=0@@` 处对无障碍图膜应用通常的镜像对称（mirror symmetry），恢复出周期四分次的完美对象，其交错陈特征（Chern character）逸出极化幂的张成。
 

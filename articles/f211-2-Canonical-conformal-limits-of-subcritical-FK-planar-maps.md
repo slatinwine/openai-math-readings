@@ -20,7 +20,7 @@ pdfname: ""
 **关键词卡片**
 
 - FK 参数对照：`@@M@@q=2+2\cos(\pi\gamma^2/2)@@`、`@@M@@\kappa=16/\gamma^2@@`；`@@M@@0<q<4@@` 对应 `@@M@@\gamma\in(\sqrt2,2)@@`。
-- 单值化（uniformization）：把球面共形地摊平到黎曼球 `@@M@@\widehat\C@@` 的标准操作。
+- 单值化（uniformization）：把球面共形地摊平到黎曼球 `@@M@@\widehat\mathbb{C}@@` 的标准操作。
 - LQG 量子球（quantum sphere）：随机场 `@@M@@h@@` 经 `@@M@@e^{\gamma h}@@` 定义的随机球面，面积极不均匀。
 - CLE（conformal loop ensemble）：共形不变的嵌套随机环系，统计力学界面的普适极限。
 - 极值长度（extremal length）：共形不变的"电阻"式度量，防止摊平时曲面被压塌。

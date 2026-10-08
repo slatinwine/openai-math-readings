@@ -81,7 +81,7 @@ pdfname: ""
 
 ## 主要结果
 
-对紧标签集 `@@M@@D\subset\R^2@@`、速度场（velocity field）`@@M@@V@@` 与半长 `@@M@@L>0@@`，记直纹集（ruled set）`@@M@@E(D,V,L)=\{(s,p+sV(p)):p\in D,\ |s|\le L\}@@`。主定理：若 `@@M@@V@@` 在 `@@M@@D@@` 的邻域上 `@@M@@C^1@@` 且逐点满足 `@@M@@\tr DV=0@@`、`@@M@@-L^{-2}<\det DV\le0@@`，则对任意 `@@M@@\varepsilon>0@@` 存在有限个紧的非退化方形砖 `@@M@@T_i@@`（方向可各异）与常速度 `@@M@@g_i@@`，使 `@@M@@E(D,V,L)\subset\bigcup_i\Cyl(T_i,g_i)@@` 且 `@@M@@\sum_i|T_i|J_h(g_i)\le\int_D J_h(V(p))\,dp+\varepsilon@@`；经物理伸缩 `@@M@@F_h@@` 后各垂直底是紧的非退化平行四边形，总面积为 `@@M@@h\sum_i|T_i|J_h(g_i)@@`。谱条件即特征值为 `@@M@@\pm\lambda_p@@`（`@@M@@\lambda_p=\sqrt{-\det DV}@@`）且 `@@M@@0\le L\lambda_p<1@@`：既允许非零双曲对逼近严格长度界，也允许平方零微分（square-zero differential，`@@M@@(DV)^2=0@@`）而完全不限制剪切系数，两类可在同一场中并存（例 `@@M@@V=(p_2,p_1^3/3)@@`）。定理不要求 `@@M@@\partial D@@` 面积为零、不要求 `@@M@@\|DV\|@@` 小，甚至允许 `@@M@@|D|=0@@`。
+对紧标签集 `@@M@@D\subset\mathbb{R}^2@@`、速度场（velocity field）`@@M@@V@@` 与半长 `@@M@@L>0@@`，记直纹集（ruled set）`@@M@@E(D,V,L)=\{(s,p+sV(p)):p\in D,\ |s|\le L\}@@`。主定理：若 `@@M@@V@@` 在 `@@M@@D@@` 的邻域上 `@@M@@C^1@@` 且逐点满足 `@@M@@\tr DV=0@@`、`@@M@@-L^{-2}<\det DV\le0@@`，则对任意 `@@M@@\varepsilon>0@@` 存在有限个紧的非退化方形砖 `@@M@@T_i@@`（方向可各异）与常速度 `@@M@@g_i@@`，使 `@@M@@E(D,V,L)\subset\bigcup_i\Cyl(T_i,g_i)@@` 且 `@@M@@\sum_i|T_i|J_h(g_i)\le\int_D J_h(V(p))\,dp+\varepsilon@@`；经物理伸缩 `@@M@@F_h@@` 后各垂直底是紧的非退化平行四边形，总面积为 `@@M@@h\sum_i|T_i|J_h(g_i)@@`。谱条件即特征值为 `@@M@@\pm\lambda_p@@`（`@@M@@\lambda_p=\sqrt{-\det DV}@@`）且 `@@M@@0\le L\lambda_p<1@@`：既允许非零双曲对逼近严格长度界，也允许平方零微分（square-zero differential，`@@M@@(DV)^2=0@@`）而完全不限制剪切系数，两类可在同一场中并存（例 `@@M@@V=(p_2,p_1^3/3)@@`）。定理不要求 `@@M@@\partial D@@` 面积为零、不要求 `@@M@@\|DV\|@@` 小，甚至允许 `@@M@@|D|=0@@`。
 
 ## 证明思路
 

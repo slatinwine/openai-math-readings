@@ -45,21 +45,21 @@ pdfname: ""
 
 ## 问题背景
 
-凸体（convex body）`@@M@@K\subset\R^n@@` 的迷向常数（isotropic constant）为 `@@M@@L_K=(\det\Sigma_K/|K|^2)^{1/(2n)}@@`，`@@M@@\Sigma_K@@` 是 `@@M@@K@@` 上均匀分布的协方差矩阵，且 `@@M@@L_K@@` 仿射不变。Bourgain 在 1986 年提出的切片问题（slicing problem）问：`@@M@@L_K@@` 是否有与维数无关的上界？经随机定位（stochastic localization）等工作，Klartag–Lehec 最终得到维数无关的界。但"强迷向常数猜想"问的是锐形式：每维中是否恰由单纯形最大化 `@@M@@L_K@@`，极值常数与极值体是什么。二维已解决（Campi–Colesanti–Gronchi、Saroglou），高维仅有 Rademacher 等部分限制；本文对所有凸体证明完整不等式并分类全部等号。
+凸体（convex body）`@@M@@K\subset\mathbb{R}^n@@` 的迷向常数（isotropic constant）为 `@@M@@L_K=(\det\Sigma_K/|K|^2)^{1/(2n)}@@`，`@@M@@\Sigma_K@@` 是 `@@M@@K@@` 上均匀分布的协方差矩阵，且 `@@M@@L_K@@` 仿射不变。Bourgain 在 1986 年提出的切片问题（slicing problem）问：`@@M@@L_K@@` 是否有与维数无关的上界？经随机定位（stochastic localization）等工作，Klartag–Lehec 最终得到维数无关的界。但"强迷向常数猜想"问的是锐形式：每维中是否恰由单纯形最大化 `@@M@@L_K@@`，极值常数与极值体是什么。二维已解决（Campi–Colesanti–Gronchi、Saroglou），高维仅有 Rademacher 等部分限制；本文对所有凸体证明完整不等式并分类全部等号。
 
 ## 主要结果
 
-**定理一（单纯形不等式）**：每个整数 `@@M@@n\ge1@@`、每个凸体 `@@M@@K\subset\R^n@@` 都满足
+**定理一（单纯形不等式）**：每个整数 `@@M@@n\ge1@@`、每个凸体 `@@M@@K\subset\mathbb{R}^n@@` 都满足
 
 `@@M@@DL_K\le\frac{(n!)^{1/n}}{(n+1)^{(n+1)/(2n)}\sqrt{n+2}},@@`
 
 等号当且仅当 `@@M@@K@@` 是单纯形，右端即正则单纯形的取值。由 Klartag 的蕴含关系，它同时给出非对称 Mahler 不等式（nonsymmetric Mahler inequality）`@@M@@|K|\,|K^\circ|\ge\frac{(n+1)^{n+1}}{(n!)^2}@@`，`@@M@@K^\circ@@` 为极体（polar body）。
 
-**定理二（锐熵界）**：`@@M@@\R^m@@` 上任意对数凹（log-concave）概率密度 `@@M@@f@@` 的微分熵（differential entropy）满足
+**定理二（锐熵界）**：`@@M@@\mathbb{R}^m@@` 上任意对数凹（log-concave）概率密度 `@@M@@f@@` 的微分熵（differential entropy）满足
 
 `@@M@@Dh(f)\ge m+\tfrac12\log\det\Cov(f),@@`
 
-等号当且仅当 `@@M@@f@@` 几乎处处是 `@@M@@M(E_1,\ldots,E_m)^{\mathsf T}+b@@` 的密度：`@@M@@M@@` 可逆、`@@M@@b\in\R^m@@`、`@@M@@E_i@@` 独立且服从密度 `@@M@@e^{-u}\mathbf 1_{\{u\ge0\}}@@`。该命题与单纯形界跨维等价（Fradelizi–Marín Sola），一维已证明（Melbourne–Nayar–Roberto）；本文在每个维度给出不等式与完整等号分类。
+等号当且仅当 `@@M@@f@@` 几乎处处是 `@@M@@M(E_1,\ldots,E_m)^{\mathsf T}+b@@` 的密度：`@@M@@M@@` 可逆、`@@M@@b\in\mathbb{R}^m@@`、`@@M@@E_i@@` 独立且服从密度 `@@M@@e^{-u}\mathbf 1_{\{u\ge0\}}@@`。该命题与单纯形界跨维等价（Fradelizi–Marín Sola），一维已证明（Melbourne–Nayar–Roberto）；本文在每个维度给出不等式与完整等号分类。
 
 ## 证明思路
 

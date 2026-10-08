@@ -51,8 +51,8 @@ pdfname: ""
 ## 主要结果
 
 定理 1.1：设 `@@M@@Q(y)@@` 为由系数一的 Choi–Lam 双二次型（Choi–Lam biquadratic form）`@@M@@b(z,y)=z^\top Q(y)z@@` 决定的 `@@M@@3\times3@@` 矩阵，`@@M@@\Phi_y@@` 为由它诱导的 `@@M@@\Sym^4@@` 上的线性映射，则
-`@@M@@Dp(X,Z,y)=\det\big((\det X)Z-\Phi_y(\operatorname{adj}X)\big),\qquad (X,Z,y)\in\Sym^4\times\Sym^4\times\R^3@@`
-是 20 次齐次多项式，关于 `@@M@@e=(I_4,I_4,0)@@` 双曲且 `@@M@@p(e)=1@@`；其闭双曲锥 `@@M@@K=\Lambda_+(p,e)@@` 不是谱面：对任意有限 `@@M@@N@@` 与任意实线性映射 `@@M@@L:\Sym^4\times\Sym^4\times\R^3\to\Sym^N@@`，都有 `@@M@@K\ne\{(X,Z,y):L(X,Z,y)\succeq0\}@@`。推论 1.2：商 `@@M@@q=p/\det X@@` 可延拓为同样 23 个变量的 16 次齐次双曲多项式且锥不变，故得到 16 次反例。作者不声称维数或次数极小；实对称框架也已覆盖 Hermitian 铅笔。
+`@@M@@Dp(X,Z,y)=\det\big((\det X)Z-\Phi_y(\operatorname{adj}X)\big),\qquad (X,Z,y)\in\Sym^4\times\Sym^4\times\mathbb{R}^3@@`
+是 20 次齐次多项式，关于 `@@M@@e=(I_4,I_4,0)@@` 双曲且 `@@M@@p(e)=1@@`；其闭双曲锥 `@@M@@K=\Lambda_+(p,e)@@` 不是谱面：对任意有限 `@@M@@N@@` 与任意实线性映射 `@@M@@L:\Sym^4\times\Sym^4\times\mathbb{R}^3\to\Sym^N@@`，都有 `@@M@@K\ne\{(X,Z,y):L(X,Z,y)\succeq0\}@@`。推论 1.2：商 `@@M@@q=p/\det X@@` 可延拓为同样 23 个变量的 16 次齐次双曲多项式且锥不变，故得到 16 次反例。作者不声称维数或次数极小；实对称框架也已覆盖 Hermitian 铅笔。
 
 ## 证明思路
 
@@ -60,13 +60,13 @@ pdfname: ""
 
 先证多项式性质良好。对秩一矩阵有恒等式 `@@M@@u^\top\Phi_y(vv^\top)u=b(v_0u'-u_0v',y)\ge0@@`，故 `@@M@@\Phi_y@@` 是保持半正定的正线性映射（positive linear map）。双曲性用上半平面论证：取 `@@M@@t=a+i\eta@@`，`@@M@@(tI_4-X)^{-1}@@` 的虚部负定，经 `@@M@@\Phi_y@@` 的正性传导后目标矩阵虚部正定从而可逆，故 `@@M@@p(te-(X,Z,y))@@` 无复根。随之算出两个切片：`@@M@@X\succ0@@` 时属于 `@@M@@K@@` 当且仅当 `@@M@@Z\succeq\Phi_y(X^{-1})@@`；`@@M@@y=0@@` 时当且仅当 `@@M@@X\succeq0@@` 且 `@@M@@Z\succeq0@@`。
 
-再压榨假设的铅笔。设 `@@M@@K@@` 有表示 `@@M@@L=L_1(X)+L_2(Z)+L_3(y)@@`。先除去公共核并把 `@@M@@L(e)@@` 归一化为严格正定；`@@M@@y=0@@` 切片迫使 `@@M@@L_1,L_2@@` 是正映射，分块后得到单态（unital）正映射 `@@M@@D:\Sym^4\to\Sym^a@@`、`@@M@@E:\Sym^4\to\Sym^c@@` 与线性映射 `@@M@@B:\R^3\to\R^{a\times c}@@`。关键一步是重标度：由 `@@M@@\Phi_{sy}=s^2\Phi_y@@`，整条点列 `@@M@@(I_4,s^2Z_0,sy)@@` 落在 `@@M@@K@@` 内；用 `@@M@@\diag(I_a,s^{-1}I_c)@@` 做同余变换并令 `@@M@@s\to0@@`，可得 `@@M@@G(y)=0@@`，且块矩阵 `@@M@@\begin{pmatrix}D(X)&B(y)\\B(y)^\top&E(Z)\end{pmatrix}\succeq0@@` 与 `@@M@@Z\succeq\Phi_y(X^{-1})@@` 等价，取 Schur 补即 `@@M@@E(Z)\succeq B(y)^\top D(X)^{-1}B(y)@@`。
+再压榨假设的铅笔。设 `@@M@@K@@` 有表示 `@@M@@L=L_1(X)+L_2(Z)+L_3(y)@@`。先除去公共核并把 `@@M@@L(e)@@` 归一化为严格正定；`@@M@@y=0@@` 切片迫使 `@@M@@L_1,L_2@@` 是正映射，分块后得到单态（unital）正映射 `@@M@@D:\Sym^4\to\Sym^a@@`、`@@M@@E:\Sym^4\to\Sym^c@@` 与线性映射 `@@M@@B:\mathbb{R}^3\to\mathbb{R}^{a\times c}@@`。关键一步是重标度：由 `@@M@@\Phi_{sy}=s^2\Phi_y@@`，整条点列 `@@M@@(I_4,s^2Z_0,sy)@@` 落在 `@@M@@K@@` 内；用 `@@M@@\diag(I_a,s^{-1}I_c)@@` 做同余变换并令 `@@M@@s\to0@@`，可得 `@@M@@G(y)=0@@`，且块矩阵 `@@M@@\begin{pmatrix}D(X)&B(y)\\B(y)^\top&E(Z)\end{pmatrix}\succeq0@@` 与 `@@M@@Z\succeq\Phi_y(X^{-1})@@` 等价，取 Schur 补即 `@@M@@E(Z)\succeq B(y)^\top D(X)^{-1}B(y)@@`。
 
 然后取秩一极限。令 `@@M@@X_t=vv^\top+t(I-vv^\top)@@`、`@@M@@Z_t=uu^\top+t(I-uu^\top)@@` 趋于秩一投影，把两个等价条件分别化成闭射线的阈值，对齐得 `@@M@@\lambda_{\max}(A_t)=\|C_t\|_{\op}^2@@`；令 `@@M@@t\to\infty@@`，`@@M@@D(X_t)^{-1/2}@@` 收敛到 `@@M@@D(I-vv^\top)@@` 核上的投影 `@@M@@P(v)@@`，`@@M@@E@@` 侧同理得 `@@M@@R(u)@@`，于是出现精确的范数恒等式
 `@@M@@Db(v_0u'-u_0v',y)=\big\|P(v)B(y)R(u)\big\|_{\op}^2@@`
 ——Choi–Lam 型从锥的几何中原样浮现。
 
-最后一步切向微分。核投影 `@@M@@R(u)@@` 在秩最大的开集上光滑；在基点 `@@M@@u=v@@` 处左边为零，强迫 `@@M@@P(v)B(y)R(v)=0@@`。沿球面路径 `@@M@@u_s=(v+sh)/\sqrt{1+s^2\|h\|^2}@@` 求导，左边变成 `@@M@@b(Jh,y)@@`，右边变成 `@@M@@\|P(v)B(y)\,dR_v(h)\|_{\op}^2@@`，其中 `@@M@@J:v^\perp\to\R^3@@` 是同构。于是矩阵 `@@M@@F(z,y)=P(v)B(y)dR_v(J^{-1}z)@@` 的每个元素都是双线性型，且其平方不超过 `@@M@@\|F\|_{\op}^2=b(z,y)@@`；由弱极端性这些元素全部为零，从而 `@@M@@b@@` 恒为零，与 `@@M@@b(e_1,e_1)=1@@` 矛盾。
+最后一步切向微分。核投影 `@@M@@R(u)@@` 在秩最大的开集上光滑；在基点 `@@M@@u=v@@` 处左边为零，强迫 `@@M@@P(v)B(y)R(v)=0@@`。沿球面路径 `@@M@@u_s=(v+sh)/\sqrt{1+s^2\|h\|^2}@@` 求导，左边变成 `@@M@@b(Jh,y)@@`，右边变成 `@@M@@\|P(v)B(y)\,dR_v(h)\|_{\op}^2@@`，其中 `@@M@@J:v^\perp\to\mathbb{R}^3@@` 是同构。于是矩阵 `@@M@@F(z,y)=P(v)B(y)dR_v(J^{-1}z)@@` 的每个元素都是双线性型，且其平方不超过 `@@M@@\|F\|_{\op}^2=b(z,y)@@`；由弱极端性这些元素全部为零，从而 `@@M@@b@@` 恒为零，与 `@@M@@b(e_1,e_1)=1@@` 矛盾。
 
 ## 可信度与备注
 
