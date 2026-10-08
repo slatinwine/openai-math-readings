@@ -13,6 +13,36 @@ pdfname: ""
 
 > 结果族 260：Spacetime Penrose inequalities: enclosing area, charge, rotation, and anti-de Sitter extensions　·　学科：Mathematical physics　·　验证状态：暂无形式化证明，请以社区核验为准
 
+## 入门导读 🐣
+
+一个不等式成不成立，可能取决于你把哪个量称作"角动量"。这篇论文像法庭上的反方证人，构造出光滑漂亮的反例：只要把电磁修正漏掉、把电磁场的衰减条件放弱，上一条的 Kerr–Newman 不等式就真的会翻车——从而把它的正确表述逼了出来。
+
+**关键词卡片**
+
+- 反例（counterexample）：满足全部前提却违反结论的实例，用来否定过强的命题。
+- 裸引力 ADM 角动量（bare ADM angular momentum）：只从空间形状算出的角动量通量，它本身不守恒。
+- 守恒总角动量（conserved total angular momentum）：引力项加电磁修正项之和，才是物理上守恒的量。
+- 电磁尾巴（electromagnetic tails）：远处衰减慢、随方向变化的电磁场残余。
+- 取等刚性（rigidity）：取等则必为标准解；本文连它也一并造出反例打破。
+
+**看个具体例子**
+
+构造的诀窍：让电磁场从半径 `@@M@@L@@` 之外才"登场"，黑洞近旁干干净净、远处拖着尾巴。妙在两笔账正好对消——裸引力通量 `@@M@@-\frac{4s^2c(r)^2}{15}@@` 与电磁修正 `@@M@@+\frac{4s^2c(r)^2}{15}@@` 大小相等、符号相反，守恒总角动量恒为零：
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280"><text x="40" y="30" font-size="14" font-weight="bold" fill="#333">反例示意：电磁尾巴从 r = L 才登场</text><line x1="45" y1="200" x2="525" y2="200" stroke="#333" stroke-width="1.5"/><polygon points="532,200 520,194 520,206" fill="#333"/><text x="490" y="222" font-size="12">半径 r →</text><circle cx="66" cy="200" r="13" fill="#2b2b2b"/><text x="36" y="232" font-size="12">黑洞（边界 r=1）</text><text x="140" y="112" font-size="13" fill="#999">近处干干净净：电磁场为零（r &lt; L）</text><line x1="335" y1="66" x2="335" y2="200" stroke="#aaa" stroke-width="1.2" stroke-dasharray="6 5"/><text x="322" y="58" font-size="13" fill="#555">r = L</text><path d="M355,105 q9,-14 18,0 t18,0 t18,0 t18,0 t18,0 t18,0 t18,0 t18,0 t18,0" stroke="#3a7d44" fill="none" stroke-width="1.6"/><path d="M355,140 q9,14 18,0 t18,0 t18,0 t18,0 t18,0 t18,0 t18,0 t18,0 t18,0" stroke="#3a7d44" fill="none" stroke-width="1.6"/><text x="355" y="88" font-size="13" fill="#3a7d44">电磁尾巴（r ≥ L）</text><text x="45" y="249" font-size="12.5" fill="#555">两笔角动量账：引力通量 −4s²c(r)²/15 ＋ 电磁修正 +4s²c(r)²/15 ＝ 守恒总角动量 0</text><text x="45" y="266" font-size="12.5" fill="#555">取 s=1、L→∞：不等式亏损 → −1/225（负数＝被违反）</text></svg>
+
+</div>
+
+这些反例总电荷为零、两个电磁场均非零；取 `@@M@@s=1@@`、`@@M@@L\to\infty@@` 时亏损趋于 `@@M@@-1/225@@`，由连续性还能得到恰好取等、却不来自 Kerr–Newman 时空的样本。
+
+**为什么值得关心**
+
+与姊妹篇一反一正合拢成完整答案：守恒总角动量加库仑渐近的表述成立，裸通量加弱衰减的表述必假；反例全是显式公式，可逐项检验。
+
+> 暂无形式化证明（AI 结果待核验）
+
 ## 一句话结论
 构造了光滑轴对称电真空反例：当角动量 `@@M@@J@@` 取裸引力 ADM 通量、电磁场只衰减 `@@M@@O(r^{-2})@@` 时，Kerr–Newman Penrose 不等式被严格违反，且存在取等但不来自 Kerr–Newman 时空的数据——从而证明该不等式必须用含电磁修正的守恒角动量表述。
 

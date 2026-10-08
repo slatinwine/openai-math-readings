@@ -13,6 +13,69 @@ pdfname: ""
 
 > 结果族 219：GOE bulk universality for regular graphs with weak Anderson disorder　·　学科：Probability and statistical mechanics　·　验证状态：暂无形式化证明，请以社区核验为准
 
+## 入门导读 🐣
+
+一张巨型社交网，每人恰好有 `@@M@@d@@` 位朋友（网络稀疏得可怜），再给每人随机塞一点"个人偏好"（无序）。这张网的"关系矩阵"振动起来，特征值在数轴上的局部排布会像谁？本文证明：像实对称高斯矩阵 GOE——尽管网络每行只有 `@@M@@d@@` 个非零元、局部像棵树，谱的微观统计却与稠密随机矩阵无异。
+
+**关键词卡片**
+
+- d-正则图（d-regular graph）：每个顶点恰好有 `@@M@@d@@` 条边；均匀随机抽取一张。
+- 邻接矩阵（adjacency matrix）：图的账本，第 `@@M@@i@@` 行第 `@@M@@j@@` 列记 1 表示有边。
+- Anderson 无序（Anderson disorder）：每个顶点上独立随机的对角偏移 `@@M@@w\omega_v@@`，模拟杂质。
+- 态密度（density of states）：单位谱长里特征值的平均个数，是展开谱的新刻度尺。
+- GOE 体过程（GOE bulk process）：实对称高斯矩阵谱内部的极限点过程，局部统计的"参照仪"。
+
+**看个具体例子**
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280">
+  <circle cx="90" cy="60" r="7" fill="#333"/>
+  <circle cx="50" cy="120" r="7" fill="#333"/>
+  <circle cx="130" cy="120" r="7" fill="#333"/>
+  <circle cx="30" cy="180" r="7" fill="#333"/>
+  <circle cx="70" cy="180" r="7" fill="#333"/>
+  <circle cx="110" cy="180" r="7" fill="#333"/>
+  <circle cx="150" cy="180" r="7" fill="#333"/>
+  <line x1="90" y1="60" x2="50" y2="120" stroke="#333" stroke-width="2"/>
+  <line x1="90" y1="60" x2="130" y2="120" stroke="#333" stroke-width="2"/>
+  <line x1="50" y1="120" x2="30" y2="180" stroke="#333" stroke-width="2"/>
+  <line x1="50" y1="120" x2="70" y2="180" stroke="#333" stroke-width="2"/>
+  <line x1="130" y1="120" x2="110" y2="180" stroke="#333" stroke-width="2"/>
+  <line x1="130" y1="120" x2="150" y2="180" stroke="#333" stroke-width="2"/>
+  <text x="95" y="45" font-size="13" fill="#e67e22">ω=+0.3</text>
+  <text x="8" y="110" font-size="13" fill="#e67e22">ω=−0.7</text>
+  <text x="142" y="112" font-size="13" fill="#e67e22">ω=+0.9</text>
+  <text x="25" y="215" font-size="14" fill="#333">图局部像 3-正则树（带无序 ω）</text>
+  <line x1="250" y1="90" x2="530" y2="90" stroke="#333" stroke-width="2"/>
+  <text x="252" y="70" font-size="13" fill="#333">−2√2</text>
+  <text x="498" y="70" font-size="13" fill="#333">+2√2</text>
+  <circle cx="290" cy="90" r="3" fill="#333"/>
+  <circle cx="322" cy="90" r="3" fill="#333"/>
+  <circle cx="341" cy="90" r="3" fill="#333"/>
+  <circle cx="368" cy="90" r="3" fill="#333"/>
+  <circle cx="384" cy="90" r="3" fill="#333"/>
+  <circle cx="412" cy="90" r="3" fill="#333"/>
+  <circle cx="439" cy="90" r="3" fill="#333"/>
+  <circle cx="460" cy="90" r="3" fill="#333"/>
+  <circle cx="483" cy="90" r="3" fill="#333"/>
+  <circle cx="502" cy="90" r="3" fill="#333"/>
+  <circle cx="390" cy="90" r="11" fill="none" stroke="#c0392b" stroke-width="2"/>
+  <text x="300" y="130" font-size="14" fill="#c0392b">放大固定能量 E 处：按树态密度 ρ(E) 展开</text>
+  <text x="360" y="152" font-size="14" fill="#c0392b">后点过程 ≈ GOE</text>
+  <text x="255" y="215" font-size="14" fill="#333">d=3 的干净谱带 [−2√2, 2√2]</text>
+</svg>
+
+</div>
+
+红圈内取固定能量 `@@M@@E@@`，把特征值按无穷树算子的态密度 `@@M@@n\rho_{d,w}(E)@@` 重标展开后，其微观点过程收敛到 GOE 体过程——无序强度 `@@M@@w@@` 固定且足够小即可，结论沿一切图规模成立。
+
+**为什么值得关心**
+
+Anderson 1958 年的无序思想与稀疏图的 GOE 普适性在此汇合：单个固定能量处的完整统计，首次在固定度加无序的情形被完全识别。证明里最讲究的一步，是把随机环境显式保留到最后一刻才平均，避免过早抹去关键信息。
+
+> 暂无形式化证明（AI 结果待核验）
+
 ## 一句话结论
 
 证明：对固定度 `@@M@@d\ge 3@@` 的均匀随机 `@@M@@d@@`-正则图，加上强度足够小且固定的独立对角无序后，干净谱带内任一固定能量处的特征值点过程经无穷树态密度展开后收敛到 GOE 体过程，把固定度普适性推广到弱 Anderson 无序情形。

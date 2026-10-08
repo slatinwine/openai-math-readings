@@ -13,6 +13,34 @@ pdfname: ""
 
 > 结果族 009：Function-field reconstruction from Milnor K-theory and Galois data　·　学科：Number theory　·　验证状态：暂无形式化证明，请以社区核验为准
 
+## 入门导读 🐣
+
+每个域都随身带着一本厚得翻不完的通讯录——绝对 Galois 群。直觉上要认出一个域得通读整本；Bogomolov 在 1991 年提出惊人猜想：只要其中两页——"先交换化、再模去二重交换子"的那个 pro-ℓ 小商群，配上交换子括号——就足以唯一确定一个函数域。本文证明了这个猜想（Topaz 记录的精确形式），覆盖任意代数闭常数域、曲面以及 `@@M@@\ell=2@@`。
+
+**关键词卡片**
+
+- pro-ℓ 商群（pro-ℓ quotient）：只保留 `@@M@@\ell@@` 幂次覆盖的"望远镜极限"版 Galois 群。
+- abelian-by-central（交换子居中）：交换化后再模去二重交换子的小商群，其交换子恰好落在中心里。
+- 交换子括号（commutator bracket）：这个小群上残留的双线性运算 `@@M@@[\ ,\ ]@@`，量度"两元素不交换的程度"。
+- 括号相容（bracket-compatible）：同构 `@@M@@\varphi@@` 若把括号送到括号，就是合格的"通讯录对齐"。
+- 完美闭包（perfect closure）：正特征下重建的终点；歧义只剩 Frobenius 幂与 `@@M@@\mathbb Z_\ell^\times@@` 标量。
+
+**看个具体例子**
+
+定理：`@@M@@\operatorname{Isom}^i_{\mathrm F}(K,L)\to\operatorname{Isom}^c(\Pi_L^a,\Pi_K^a)/\mathbb Z_\ell^\times@@` 是双射——凡括号相容的同构都来自域同构。接口非常具体：经 Kummer 对偶，"交换子为零"恰好对应交错关系 `@@M@@f(x)g(1-x)=f(1-x)g(x)@@`；而"两个 `@@M@@d@@` 维极大交错子空间交出一条直线"恰好辨认出一个除子的惯性群——几何信息就这样从纯群论数据里长了出来。
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280"><rect x="60" y="40" width="240" height="60" fill="none" stroke="#333" stroke-width="2.5"/><text x="180" y="75" font-size="15" text-anchor="middle" fill="#222">绝对 Galois 群 G_K（巨大）</text><line x1="180" y1="100" x2="180" y2="118" stroke="#333" stroke-width="2"/><polygon points="174,118 186,118 180,130" fill="#333"/><rect x="85" y="132" width="190" height="48" fill="none" stroke="#333" stroke-width="2.5"/><text x="180" y="160" font-size="14" text-anchor="middle" fill="#222">pro-ℓ 商群</text><line x1="180" y1="180" x2="180" y2="198" stroke="#333" stroke-width="2"/><polygon points="174,198 186,198 180,210" fill="#333"/><rect x="100" y="212" width="160" height="48" fill="none" stroke="#2a9d4f" stroke-width="3"/><text x="180" y="240" font-size="14" text-anchor="middle" fill="#222">Πᵃ ＋ 括号 [ , ]</text><rect x="390" y="120" width="150" height="90" fill="none" stroke="#d64545" stroke-width="3"/><text x="465" y="155" font-size="15" text-anchor="middle" fill="#222">函数域</text><text x="465" y="180" font-size="13" text-anchor="middle" fill="#555">完美闭包＋常数域</text><path d="M262 236 C 330 262, 350 240, 386 190" fill="none" stroke="#d64545" stroke-width="2.5"/><polygon points="380,196 390,184 394,198" fill="#d64545"/><text x="322" y="262" font-size="14" fill="#d64545">重建</text><text x="465" y="230" font-size="13" text-anchor="middle" fill="#555">歧义：Z_ℓ^× 单位、Frobenius 幂</text><text x="280" y="26" font-size="16" text-anchor="middle" fill="#222">两页"通讯录"认出整个域（示意）</text></svg>
+
+</div>
+
+**为什么值得关心**
+
+它是 anabelian 几何的顶点定理之一：确认"两页通讯录足以认出整个域"，且对 `@@M@@\ell=2@@` 与曲面无任何豁免条款。
+
+> 暂无形式化证明（AI 结果待核验）
+
 ## 一句话结论
 
 证明了 Bogomolov–Pop 重构猜想：超越次数 `@@M@@\ge 2@@` 的函数域由其 pro-`@@M@@\ell@@` 的 abelian-by-central Galois 商群连同交换子括号唯一确定，只差一个 `@@M@@\mathbb Z_\ell^\times@@` 单位与正特征下的 Frobenius 幂；对任意代数闭常数域成立，覆盖曲面与 `@@M@@\ell=2@@` 的情形。

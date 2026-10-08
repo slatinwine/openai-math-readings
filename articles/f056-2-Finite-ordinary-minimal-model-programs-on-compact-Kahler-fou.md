@@ -13,6 +13,63 @@ pdfname: ""
 
 > 结果族 056：Termination of projective and Kähler fourfold minimal model programs　·　学科：Algebraic and complex geometry　·　验证状态：暂无形式化证明，请以社区核验为准
 
+## 入门导读 🐣
+
+还是那台"化简机器"（极小模型纲领），但这次工作场地从铺好坐标网的射影空间，搬进了更幽暗的紧 Kähler 世界：那里没有全局代数坐标，射影情形惯用的计数工具集体失灵。论文证明：在四维 Kähler 场地上，每步任选一条负射线的化简程序必定停机，而且终点只有两种好结局。
+
+**关键词卡片**
+
+- 紧 Kähler 流形（compact Kähler manifold）：比射影簇更大的一类复空间，局部像复平面、整体能测"面积"
+- 极小模型纲领（minimal model program）：反复收缩最负方向来化简空间的流水线
+- 极端射线（extremal ray）：藏在空间里最"负"的方向，化简沿它进行
+- nef（numerically effective）：伴随除子不再与任何曲线负相交的安稳状态
+- Mori 纤维空间（Mori fibre space）：另一种终点——整个空间化成一束低维纤维
+
+**看个具体例子**
+
+停机的理由一半可以数出来：空间里三维"循环类"撑出的维数 c₃，每次除子收缩都严格下降（翻转则不变），所以除子型手术只能做有限次；剩下的无穷翻转尾巴再由同族姊妹篇的定理排除。终点是谁，由伴随除子 K+Δ 是否伪有效决定。
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280">
+  <defs>
+    <marker id="ar" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+      <path d="M0,0 L7,3 L0,6 z" fill="#34506e"/>
+    </marker>
+  </defs>
+  <rect x="30" y="28" width="82" height="40" rx="8" fill="#eef3fb" stroke="#34506e" stroke-width="2"/>
+  <text x="71" y="53" text-anchor="middle" font-size="14" fill="#1a2433">(X0,Δ0)</text>
+  <rect x="152" y="28" width="82" height="40" rx="8" fill="#eef3fb" stroke="#34506e" stroke-width="2"/>
+  <text x="193" y="53" text-anchor="middle" font-size="14" fill="#1a2433">(X1,Δ1)</text>
+  <text x="266" y="54" text-anchor="middle" font-size="16" fill="#1a2433">⋯</text>
+  <rect x="300" y="28" width="82" height="40" rx="8" fill="#eef3fb" stroke="#34506e" stroke-width="2"/>
+  <text x="341" y="53" text-anchor="middle" font-size="14" fill="#1a2433">(Xn,Δn)</text>
+  <path d="M 112,48 L 150,48" stroke="#34506e" stroke-width="2" marker-end="url(#ar)"/>
+  <path d="M 234,48 L 298,48" stroke="#34506e" stroke-width="2" marker-end="url(#ar)"/>
+  <path d="M 341,68 C 341,110 240,115 165,138" stroke="#34506e" stroke-width="2" fill="none" marker-end="url(#ar)"/>
+  <path d="M 341,68 C 341,110 440,115 470,138" stroke="#34506e" stroke-width="2" fill="none" marker-end="url(#ar)"/>
+  <rect x="40" y="142" width="205" height="62" rx="8" fill="#eefbef" stroke="#3a7d44" stroke-width="2"/>
+  <text x="142" y="166" text-anchor="middle" font-size="13" fill="#1f4a26">K+Δ 伪有效</text>
+  <text x="142" y="188" text-anchor="middle" font-size="13" fill="#1f4a26">终于 nef 模型</text>
+  <rect x="320" y="142" width="205" height="62" rx="8" fill="#fdf6e8" stroke="#b07a2a" stroke-width="2"/>
+  <text x="422" y="160" text-anchor="middle" font-size="13" fill="#5a4212">非伪有效：Mori 纤维空间</text>
+  <line x1="345" y1="172" x2="500" y2="172" stroke="#b07a2a" stroke-width="2"/>
+  <line x1="360" y1="170" x2="360" y2="196" stroke="#b07a2a" stroke-width="2"/>
+  <line x1="395" y1="170" x2="395" y2="196" stroke="#b07a2a" stroke-width="2"/>
+  <line x1="430" y1="170" x2="430" y2="196" stroke="#b07a2a" stroke-width="2"/>
+  <line x1="465" y1="170" x2="465" y2="196" stroke="#b07a2a" stroke-width="2"/>
+  <text x="280" y="234" text-anchor="middle" font-size="13" fill="#1a2433">除子收缩次数受计数控制：c3 逐次严格下降（示意 12 → 9 → 6）</text>
+  <text x="280" y="258" text-anchor="middle" font-size="13" fill="#445368">每个中间模型都保持：正规 + 紧 Kähler + klt + 整体 Weil ℚ-因子化</text>
+</svg>
+
+</div>
+
+**为什么值得关心**
+
+四维终止性由此从"射影且伴随除子有效"的特殊情形，推进到一般紧 Kähler 有理 klt 配对，是复几何版极小模型纲领的关键落子。
+
+> 暂无形式化证明（AI 结果待核验）
+
 ## 一句话结论
 
 证明了紧 Kähler 四维 klt 配对上任何极大普通负射线极小模型程序都终止：伴随除子 `@@M@@K_X+\Delta@@` 伪有效时终于 nef 模型，否则终于射影 Mori 纤维空间。四维 MMP 的终止性由此从"射影且伴随除子有效"的特殊情形推进到一般紧 Kähler 有理 klt 配对。

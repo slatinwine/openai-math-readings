@@ -13,6 +13,46 @@ pdfname: ""
 
 > 结果族 340：A counterexample to the nearby Lagrangian conjecture　·　学科：Differential geometry　·　验证状态：暂无形式化证明，请以社区核验为准
 
+## 入门导读 🐣
+
+一根绷直的琴弦悬在无穷长圆筒的正中。猜想曾认为：筒里任何一根与它"外形完全相同、松紧规矩全对"的新弦，都能不撞筒壁地连续滑回原位。这篇论文造出反例——外形再标准，也可能永远滑不回去。
+
+**关键词卡片**
+
+- 余切丛（cotangent bundle）：把每个位置点上所有可能动量打包而成的空间，物理里的相空间。
+- 拉格朗日子流形（Lagrangian submanifold）：余切丛中与底空间同维、松紧与位置严格匹配的子空间。
+- 精确（exact）：辛形式限制在其上可写成某个函数的微分，即"绕圈不做功"。
+- 哈密顿同痕（Hamiltonian isotopy）：由能量函数驱动、可连续执行的一串形变。
+- 零截面（zero section）：动量处处为零的那根弦，即底空间在相空间中的标准嵌入。
+
+**看个具体例子**
+
+取底流形 `@@M@@Q=S^9\times S^{N-1}@@`（`@@M@@N@@` 为充分大的偶数），论文构造出闭、精确、光滑嵌入的拉格朗日子流形 `@@M@@L@@`：它与 `@@M@@Q@@` 微分同胚（外形一样），却不能由零截面经任何紧支撑哈密顿同痕得到——障碍不在拓扑，而在嵌入相空间的方式。
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280">
+<rect x="60" y="50" width="440" height="170" fill="#f7f7ff" stroke="#345" stroke-width="3"/>
+<text x="170" y="38" font-size="15" fill="#345">余切丛 T*Q（相空间圆筒）</text>
+<path d="M75 115 Q110 75 145 115 T215 115 T285 115 T355 115 T425 115 T485 115" stroke="#c33" stroke-width="4" fill="none"/>
+<text x="175" y="70" font-size="14" fill="#c33">拉格朗日 L（外形与 Q 相同）</text>
+<path d="M180 125 C190 155 210 165 230 178" stroke="#999" stroke-width="2" stroke-dasharray="6 5" fill="none"/>
+<line x1="216" y1="160" x2="236" y2="180" stroke="#c33" stroke-width="2.5"/>
+<line x1="236" y1="160" x2="216" y2="180" stroke="#c33" stroke-width="2.5"/>
+<text x="255" y="175" font-size="14" fill="#999">任何紧支撑哈密顿同痕</text>
+<text x="255" y="196" font-size="14" fill="#999">都无法把它送回零截面</text>
+<line x1="75" y1="215" x2="485" y2="215" stroke="#345" stroke-width="4"/>
+<text x="150" y="248" font-size="14" fill="#345">零截面 Q_0（绷直的琴弦）</text>
+</svg>
+
+</div>
+
+**为什么值得关心**
+
+推翻 Arnold 1986 年提出的辛几何核心猜想，说明既有必要条件在高维不足以为凭，为"拉格朗日纽结"划出真实边界。
+
+> 暂无形式化证明（AI 结果待核验）
+
 ## 一句话结论
 
 论文证明：存在充分大的偶数 `@@M@@N@@`，使 `@@M@@T^*(S^9\times S^{N-1})@@` 中有闭的、精确的、光滑嵌入的拉格朗日子流形，它与底流形微分同胚，却不能由零截面经紧支撑哈密顿同痕得到——推翻了无限制版的邻近拉格朗日猜想。

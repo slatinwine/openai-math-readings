@@ -13,6 +13,36 @@ pdfname: ""
 
 > 结果族 299：The Kirchberg–Rørdam character criterion and infinite tensor-power Jiang–Su stability　·　学科：Operator algebras　·　验证状态：主结果已 Lean 形式化
 
+## 入门导读 🐣
+
+分类无穷维代数时，有个神奇的中性构件——Jiang–Su 代数 Z：它与任何代数"混合"（做张量积）都不改变分类信息，像往饮料里兑纯水，类别不变。哪些代数"兑了等于没兑"（Z-稳定）？本文给出一个极简判据：去检查代数的"背景幽灵层"——中心序列代数，由与一切元素渐近交换的序列组成；只要这层幽灵里找不出任何"一维影子"（特征标，即把代数映到复数的一维乘法同态），代数就 Z-稳定，反之亦然。
+
+**关键词卡片**
+
+- Jiang–Su 代数（Jiang–Su algebra）：无穷维单代数里最像复数的中性构件，张量它不改变分类
+- 中心序列代数（central-sequence algebra）：与所有元素渐近交换的序列组成的极限"幽灵层"
+- 特征标（character）：到复数的一维 *-同态，代数能被压成的最薄影子
+- 维数下降代数（dimension-drop algebra）：区间上的矩阵值函数代数，两端矩阵维数"掉"下来
+- 自由超滤子（free ultrafilter）：给自然数序列取极限的一种法定方式
+
+**看个具体例子**
+
+判据的新构件 I(2,3)：[0,1] 上取值于 6×6 矩阵的连续函数，但左端点只能落在 M_2⊗1 型子代数、右端点只能落在 1⊗M_3 型子代数。
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280"><text x="280" y="34" font-size="15" text-anchor="middle">I(2,3)：矩阵维数在两端掉下来</text><line x1="70" y1="210" x2="490" y2="210" stroke="#333" stroke-width="2"/><rect x="93" y="170" width="34" height="40" fill="none" stroke="#b33" stroke-width="2"/><rect x="263" y="90" width="34" height="120" fill="none" stroke="#b33" stroke-width="2"/><rect x="433" y="150" width="34" height="60" fill="none" stroke="#b33" stroke-width="2"/><text x="110" y="160" font-size="13" text-anchor="middle">维数 2</text><text x="280" y="80" font-size="13" text-anchor="middle">维数 6</text><text x="450" y="140" font-size="13" text-anchor="middle">维数 3</text><text x="110" y="232" font-size="14" text-anchor="middle">0</text><text x="450" y="232" font-size="14" text-anchor="middle">1</text><text x="280" y="262" font-size="13" text-anchor="middle">端点取值被限制进更小的矩阵块，故压不成一维</text></svg>
+
+</div>
+
+两端维数不同，使它压不成一维（无特征标），又保有单性与良好性，恰好充当"幽灵层里没有影子"的见证。主定理：对任意自由超滤子，F_ω(A) 无特征标当且仅当 A≅A⊗Z；并推出单可分无特征标代数的无穷张量幂必 Z-稳定且含 Z 的单拷贝。
+
+**为什么值得关心**
+
+它把分类纲领中最要紧的正则性（Z-稳定）化为一个初等可查的障碍，且不设核性、迹、维数等任何假设。
+
+> 已 Lean 形式化
+
 ## 一句话结论
 
 证明 Kirchberg–Rørdam 特征标判据：非零单可分复 `@@M@@C^*@@`-代数吸收 Jiang–Su 代数 `@@M@@\mathcal Z@@`，当且仅当其范数中心序列代数对任意自由超滤子都无特征标；并推出无特征标代数的无穷极小张量幂必 `@@M@@\mathcal Z@@`-稳定。

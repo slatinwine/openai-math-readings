@@ -13,6 +13,64 @@ pdfname: ""
 
 > 结果族 174：Deterministic construction of strong thin trees　·　学科：Combinatorics　·　验证状态：暂无形式化证明，请以社区核验为准
 
+## 入门导读 🐣
+
+想象一座防守森严的城市：道路网结实到想把它拦腰切断，必须同时炸掉至少 k 条路。数学家早已证明这样的路网里藏着一条"纤细但连通"的骨架线路，可那条证明像一张存在性支票——保证金库里有这笔钱，却取不出来。这篇论文造出了"取款机"：一个确定性算法，能在多项式时间里把这条细骨架真正算出来。
+
+**关键词卡片**
+
+- 生成树（spanning tree）：用 n−1 条边把全部顶点连通起来的最小骨架，像地铁基础线网。
+- 割（cut）：把顶点分成两堆时横跨两堆的边集合；想切断图，就得砍光一个割里的边。
+- k-边连通（k-edge-connected）：任意砍掉 k−1 条边图仍连通，即每个割至少含 k 条边。
+- 细树（thin tree）：在每个割里只占约 C/k 比例的生成树——连通全城，却不垄断任何一处要道。
+- 多项式时间（polynomial time）：计算量只随输入长度的多项式增长，规模再大也实际可算。
+
+**看个具体例子**
+
+定理说算法输出的树 T 满足 `@@M@@|\delta_T(S)|\le\frac{C}{k}\,|\delta_G(S)|@@`。代入 k=100、某个横跨 200 条边的割：树只派至多 2C 条边跨线。下图中虚线是一个割，灰线是图的边，红线是算法造出的细生成树——它在割处只留 2 条。
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280">
+<line x1="280" y1="25" x2="280" y2="235" stroke="#999" stroke-width="2" stroke-dasharray="8,6"/>
+<line x1="80" y1="60" x2="400" y2="60" stroke="#c8c8c8" stroke-width="1.5"/>
+<line x1="70" y1="150" x2="490" y2="150" stroke="#c8c8c8" stroke-width="1.5"/>
+<line x1="120" y1="220" x2="440" y2="220" stroke="#c8c8c8" stroke-width="1.5"/>
+<line x1="80" y1="60" x2="390" y2="170" stroke="#c8c8c8" stroke-width="1.5"/>
+<line x1="120" y1="220" x2="390" y2="170" stroke="#c8c8c8" stroke-width="1.5"/>
+<line x1="70" y1="150" x2="400" y2="60" stroke="#c8c8c8" stroke-width="1.5"/>
+<line x1="160" y1="80" x2="490" y2="150" stroke="#c8c8c8" stroke-width="1.5"/>
+<line x1="80" y1="60" x2="70" y2="150" stroke="#d62728" stroke-width="3"/>
+<line x1="70" y1="150" x2="120" y2="220" stroke="#d62728" stroke-width="3"/>
+<line x1="120" y1="220" x2="170" y2="170" stroke="#d62728" stroke-width="3"/>
+<line x1="170" y1="170" x2="160" y2="80" stroke="#d62728" stroke-width="3"/>
+<line x1="400" y1="60" x2="450" y2="80" stroke="#d62728" stroke-width="3"/>
+<line x1="450" y1="80" x2="490" y2="150" stroke="#d62728" stroke-width="3"/>
+<line x1="490" y1="150" x2="440" y2="220" stroke="#d62728" stroke-width="3"/>
+<line x1="160" y1="80" x2="450" y2="80" stroke="#d62728" stroke-width="4"/>
+<line x1="170" y1="170" x2="390" y2="170" stroke="#d62728" stroke-width="4"/>
+<circle cx="80" cy="60" r="6" fill="#fff" stroke="#333" stroke-width="2"/>
+<circle cx="70" cy="150" r="6" fill="#fff" stroke="#333" stroke-width="2"/>
+<circle cx="120" cy="220" r="6" fill="#fff" stroke="#333" stroke-width="2"/>
+<circle cx="170" cy="170" r="6" fill="#fff" stroke="#333" stroke-width="2"/>
+<circle cx="160" cy="80" r="6" fill="#fff" stroke="#333" stroke-width="2"/>
+<circle cx="400" cy="60" r="6" fill="#fff" stroke="#333" stroke-width="2"/>
+<circle cx="450" cy="80" r="6" fill="#fff" stroke="#333" stroke-width="2"/>
+<circle cx="490" cy="150" r="6" fill="#fff" stroke="#333" stroke-width="2"/>
+<circle cx="440" cy="220" r="6" fill="#fff" stroke="#333" stroke-width="2"/>
+<circle cx="390" cy="170" r="6" fill="#fff" stroke="#333" stroke-width="2"/>
+<text x="288" y="40" fill="#777" font-size="13">虚线 = 一个割</text>
+<text x="288" y="252" fill="#555" font-size="13">灰 = 图的边；红 = 算法输出的细生成树（跨割仅 2 条）</text>
+</svg>
+
+</div>
+
+**为什么值得关心**
+
+细树是网络设计与近似算法的关键零件，把"存在"变成"可算"才真正可用；即使平行边以二进制紧凑编码，算法依然多项式时间完成。
+
+> 暂无形式化证明（AI 结果待核验）
+
 ## 一句话结论
 给出确定性多项式时间算法：对任意 `@@M@@k@@`-边连通多重图（重边多重数可用二进制编码），构造出对每个割至多占 `@@M@@C/k@@` 比例的生成树。它把姊妹篇证出的强细树猜想变成可执行构造，运行时间对输入的二进制长度是多项式的。
 

@@ -13,6 +13,49 @@ pdfname: ""
 
 > 结果族 116：Uniform black-box noncommutative identity testing across characteristics　·　学科：Theoretical computer science　·　验证状态：暂无形式化证明，请以社区核验为准
 
+## 入门导读 🐣
+
+想象无数台只做加减乘的计算器在流水线上出厂，说明书只印三个参数：素数 `@@M@@p@@`、变量数 `@@M@@n@@`、电路规模 `@@M@@s@@`。这篇论文造了一台"信号发生器"：输入这三个数字，它吐出一组固定矩阵。凡是这个型号里"并非恒为零"的计算器，吃进这组信号，输出必不为零——哪怕是 `@@M@@p=2@@` 这种最别扭的算术世界也不例外。
+
+**关键词卡片**
+
+- 多项式恒等测试（polynomial identity testing）：判断一个加减乘表达式是不是伪装成复杂样子的零。
+- 非交换（noncommutative）：变量相乘讲究顺序，`@@M@@x_1x_2@@` 与 `@@M@@x_2x_1@@` 不再相同。
+- 打击点（hitting point）：事先选好的一组代入值，任何非零多项式代进去都非零，像一张万能试纸。
+- 特征 `@@M@@p@@`（characteristic `@@M@@p@@`）：`@@M@@p@@` 个 1 相加得零的算术世界，如有限域 `@@M@@\mathbb F_p@@`。
+- 非交换公式（noncommutative formula）：由加法门与乘法门搭成的计算电路，`@@M@@s@@` 限制门的个数。
+
+**看个具体例子**
+
+先看为什么必须用矩阵：`@@M@@f=x_1x_2-x_2x_1@@` 不是零多项式，但代入任何标量 `@@M@@a,b@@` 都得 `@@M@@ab-ba=0@@`——标量会漏检，矩阵不会。
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 250">
+  <text x="125" y="35" text-anchor="middle" font-size="17">标量代入：抓不到</text>
+  <rect x="25" y="55" width="200" height="105" fill="none" stroke="#333" stroke-width="2"/>
+  <text x="125" y="95" text-anchor="middle" font-size="15">a·b − b·a = 0</text>
+  <text x="125" y="130" text-anchor="middle" font-size="13">乘法顺序被抹掉，误判为零</text>
+  <line x1="238" y1="107" x2="292" y2="107" stroke="#333" stroke-width="2"/>
+  <polygon points="296,107 284,101 284,113" fill="#333"/>
+  <text x="425" y="35" text-anchor="middle" font-size="17">矩阵代入：抓到</text>
+  <rect x="315" y="55" width="220" height="105" fill="none" stroke="#333" stroke-width="2"/>
+  <text x="425" y="95" text-anchor="middle" font-size="15">T₁T₂ − T₂T₁ ≠ 0</text>
+  <text x="425" y="130" text-anchor="middle" font-size="13">2×2 矩阵即可检出非零</text>
+  <text x="280" y="200" text-anchor="middle" font-size="14">标量会漏检非交换恒等式，矩阵不会</text>
+  <text x="280" y="226" text-anchor="middle" font-size="13">论文：只凭 p、n、s 就能造出统一的矩阵元组（维度 O(n³s⁶)）</text>
+</svg>
+
+</div>
+
+定理（数字版）：机器输入二进制素数 `@@M@@p@@` 与一进制的 `@@M@@n,s@@`，在 `@@M@@C(n+s+L+1)^k@@` 比特时间内输出维度 `@@M@@O(n^3s^6)@@` 的 `@@M@@\mathbb F_p@@` 矩阵元组；特征 `@@M@@p@@` 的一切域（含任意扩域与 `@@M@@p=2@@`）上、规模 `@@M@@\le s@@` 的非零公式代入必非零，同一元组还适用于无圈代数路径程序。
+
+**为什么值得关心**
+
+正特征是此前的空白：老方法里的"积分"要除以正整数，在 `@@M@@\mathbb F_p@@` 里寸步难行。本文改用乘法位移绕开障碍，补齐了非交换黑盒恒等测试版图的正特征半壁。
+
+> 暂无形式化证明（AI 结果待核验）
+
 ## 一句话结论
 对任意素数 `@@M@@p@@`，一台确定性算法仅凭 `@@M@@p@@`、变量数 `@@M@@n@@` 与公式规模 `@@M@@s@@`，在多项式比特时间内输出一组 `@@M@@O(n^3s^6)@@` 维的 `@@M@@\mathbb F_p@@` 矩阵，它同时检测特征 `@@M@@p@@` 的一切域（含任意扩域与 `@@M@@p=2@@`）上所有规模至多 `@@M@@s@@` 的非零非交换公式。
 

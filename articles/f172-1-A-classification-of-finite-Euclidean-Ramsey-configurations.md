@@ -13,6 +13,47 @@ pdfname: ""
 
 > 结果族 172：Classification of finite Euclidean Ramsey configurations　·　学科：Combinatorics　·　验证状态：主结果已 Lean 形式化
 
+## 入门导读 🐣
+
+给（足够高维的）空间里每个点随意上色，有些几何图案怎么染都躲不掉——总会冒出一只颜色纯正、尺寸分毫不差的原样拷贝。哪些图案有这种"宿命"？这就是欧几里得 Ramsey 理论的核心问题；本文交出了第一份完整的判据表。
+
+**关键词卡片**
+
+- 欧几里得 Ramsey 集（Euclidean Ramsey set）：任何有限染色都躲不开其单色全等拷贝的点集
+- 全等拷贝（congruent copy）：形状尺寸完全相同，不许缩放
+- 球面集（spherical）：所有点落在同一球面上，是 Ramsey 性的必要条件
+- 子传递（subtransitive）：能嵌入对称性足够丰富（群作用传递）的有限点集
+- 张量条件（tensor condition）：坐标域上一组矩阵方程，可解当且仅当点集是 Ramsey 的
+
+**看个具体例子**
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280">
+  <text x="280" y="24" text-anchor="middle" font-size="16" fill="#333">风筝形 K_a：单位圆的内接四边形</text>
+  <circle cx="280" cy="150" r="90" fill="none" stroke="#999" stroke-width="1.2" stroke-dasharray="5 4"/>
+  <polygon points="190,150 311,66 370,150 311,234" fill="none" stroke="#c0392b" stroke-width="2"/>
+  <circle cx="190" cy="150" r="4.5" fill="#333"/>
+  <circle cx="370" cy="150" r="4.5" fill="#333"/>
+  <circle cx="311" cy="66" r="4.5" fill="#333"/>
+  <circle cx="311" cy="234" r="4.5" fill="#333"/>
+  <text x="178" y="172" text-anchor="end" font-size="13" fill="#333">(-1, 0)</text>
+  <text x="382" y="172" font-size="13" fill="#333">(1, 0)</text>
+  <text x="322" y="56" font-size="13" fill="#333">(a, √(1−a²))</text>
+  <text x="322" y="256" font-size="13" fill="#333">(a, −√(1−a²))</text>
+  <text x="280" y="272" text-anchor="middle" font-size="14" fill="#555">定理：它是 Ramsey 的，却不是子传递集</text>
+</svg>
+
+</div>
+
+风筝形 `@@M@@K_a=\{(-1,0),(1,0),(a,\pm\sqrt{1-a^2})\}@@`：对每个超越数 `@@M@@a\in(-1,1)@@`，定理证明它是 Ramsey 的，却不是子传递集——直接推翻了 Leader–Russell–Walters 刻画的必要性方向。反方向也用得上：九个代数独立选取的圆上点、以 Liouville 常数为旋转角的三个同心正方形，都因不满足张量条件而被判为非 Ramsey。判据的分野极微妙：把张量方程"乘开"只能得到球面条件，必须在相乘之前的张量环里可解，才真正保证 Ramsey 性。
+
+**为什么值得关心**
+
+欧氏 Ramsey 理论五十余年来首次拿到充要判据；据此圆上任取不超过五个点的集合全部判为 Ramsey。
+
+> 已 Lean 形式化
+
 ## 一句话结论
 论文证明：有限欧氏点集是 Ramsey 集，当且仅当其坐标域上一组张量方程可解；据此圆上至多五个点的集合全是 Ramsey 的，而某些 Ramsey 的圆内接四边形并非子传递集，推翻了 Leader–Russell–Walters 猜想的必要性方向。
 

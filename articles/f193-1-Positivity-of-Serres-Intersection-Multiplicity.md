@@ -13,6 +13,43 @@ pdfname: ""
 
 > 结果族 193：Serre's intersection-multiplicity conjecture　·　学科：Algebra　·　验证状态：暂无形式化证明，请以社区核验为准
 
+## 入门导读 🐣
+
+两条曲线在一点相交，"交得有多深"——擦肩而过还是实实在在穿过——需要一个数字来度量，这就是交重数。Serre 在 1950 年代猜测：只要两个几何对象的维数恰好互补（像平面里两条曲线交出点、空间里曲线与曲面交出点），这个数必严格为正。他本人只证出等特征与不分歧情形，此后混合特征下长期只知"非负"。本文补上了最后、也最难的一块拼图。
+
+**关键词卡片**
+
+- 正则局部环（regular local ring）：在一点附近"最光滑"的代数环境，是讨论相交的标准舞台。
+- 交重数 `@@M@@\chi^R(M,N)@@`（intersection multiplicity）：用 Tor 群交替求和定义的相交深度。
+- 维数互补：`@@M@@\dim M+\dim N=\dim R@@`，比如曲线 1 + 曲面 2 = 空间 3。
+- 分歧混合特征（ramified mixed characteristic）：剩余特征 `@@M@@p@@` 落在 `@@M@@\mathfrak m^2@@` 之中的棘手系数世界。
+
+**看个具体例子**
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280">
+<text x="280" y="32" text-anchor="middle" font-size="14">局部放大：两条曲线在一点相交</text>
+<circle cx="280" cy="140" r="95" fill="none" stroke="#999" stroke-dasharray="7 6"/>
+<path d="M180 100 Q 280 135 380 185" fill="none" stroke="#b03030" stroke-width="2.5"/>
+<path d="M180 185 Q 280 140 380 95" fill="none" stroke="#3050a0" stroke-width="2.5"/>
+<circle cx="280" cy="140" r="4.5" fill="#222"/>
+<text x="168" y="90" text-anchor="end" font-size="14" fill="#b03030">曲线 M（维数 1）</text>
+<text x="168" y="205" text-anchor="end" font-size="14" fill="#3050a0">曲线 N（维数 1）</text>
+<text x="280" y="62" text-anchor="middle" font-size="13">1 + 1 = 2（平面维数），维数互补</text>
+<text x="280" y="262" text-anchor="middle" font-size="13">定理：此时 χ(M,N) 严格大于 0；维数之和不足时它恒为 0</text>
+</svg>
+
+</div>
+
+公式卡：`@@M@@\chi^R(M,N)=\sum_i(-1)^i\,\mathrm{length}_R\,\mathrm{Tor}^R_i(M,N)@@`。图中两条曲线真正相交，各项交替相减后仍严格为正——这正是 Serre 猜想的画面；而消没定理说维数之和不足时它恒为零，所以"互补"条件不可缺失。
+
+**为什么值得关心**
+
+悬置近七十年的 Serre 正性猜想就此完整，并首次覆盖不设任何附加条件的分歧混合特征情形。相交"深度"永远严格为正，这为用代数量刻画几何相交补上了坚实的一环。
+
+> 暂无形式化证明（AI 结果待核验）
+
 ## 一句话结论
 
 证明了 Serre 交重数（intersection multiplicity）猜想遗留的正性部分：正则局部环（regular local ring）上两个维数互补、张量积有限长的非零有限生成模，其交重数 `@@M@@\chi^R(M,N)@@` 必严格为正，首次覆盖分歧混合特征（ramified mixed characteristic）情形。

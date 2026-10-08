@@ -13,6 +13,48 @@ pdfname: ""
 
 > 结果族 078：The three-dimensional Bochner–Riesz conjecture　·　学科：Real and complex analysis　·　验证状态：暂无形式化证明，请以社区核验为准
 
+## 入门导读 🐣
+
+修照片想去掉高频噪点：一刀切掉太粗暴，物体边缘会出现"振铃"伪影；把切口磨圆滑一些，伪影就消失。Bochner–Riesz 乘子干的就是这件事——在频率空间里，把单位球外的成分不硬切，而是按 `@@M@@(1-|\xi|^2)^\delta@@` 平滑淡出，δ 就是淡出的圆滑程度。这篇论文证明：在三维空间里，只要 δ 是任意正数（哪怕极小），这个算子在 `@@M@@L^3@@` 上就安全，从而补齐了悬置五十多年的三维 Bochner–Riesz 猜想的最后缺口。
+
+**关键词卡片**
+
+- Bochner–Riesz 乘子（Bochner–Riesz multiplier）：在频率空间把"球外成分"平滑淡出的算子
+- 磨光阶 δ（order δ）：切口的圆滑程度；δ=0 是硬切，δ 越大越软
+- `@@M@@L^p@@` 有界性（`@@M@@L^p@@` boundedness）：输出大小能用输入大小控制，像放大器有增益上限
+- 临界指数 p=3：三维问题里最难缠的指标点，此前所有结果都差它一口气
+- 插值与对偶（interpolation and duality）：从少数已证指数"搭桥"推出全部相关指数
+
+**看个具体例子**
+
+横轴是频率 `@@M@@|\xi|@@`，纵轴是乘子取值：硬切是跳变，磨光后平滑落地。
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280">
+<rect x="70" y="30" width="440" height="190" fill="none" stroke="#888"/>
+<line x1="70" y1="220" x2="510" y2="220" stroke="#333"/>
+<line x1="70" y1="30" x2="70" y2="220" stroke="#333"/>
+<line x1="290" y1="30" x2="290" y2="220" stroke="#999" stroke-dasharray="6 4"/>
+<line x1="70" y1="60" x2="290" y2="60" stroke="#c33" stroke-width="3"/>
+<path d="M70,60 C150,60 210,62 290,150 C340,195 420,214 510,218" stroke="#369" stroke-width="3" fill="none"/>
+<text x="90" y="50" font-size="14" fill="#c33">硬切 δ=0</text>
+<text x="305" y="140" font-size="14" fill="#369">磨光 δ&gt;0</text>
+<text x="274" y="240" font-size="13" fill="#333">|ξ|=1</text>
+<text x="50" y="45" font-size="13" fill="#333">乘子值 1</text>
+<text x="438" y="240" font-size="13" fill="#333">频率 |ξ|</text>
+</svg>
+
+</div>
+
+数字版定理：取 `@@M@@\delta=0.001@@`、`@@M@@p=3@@`。存在常数 `@@M@@C_\delta@@` 使 `@@M@@\|T_\delta f\|_{L^3(\mathbb R^3)}\le C_\delta\|f\|_{L^3}@@`；而 `@@M@@\delta=0@@` 的硬切在 `@@M@@p\ne2@@` 时无界（Fefferman 1971）——一软一硬，天壤之别。再经插值与对偶得完整严格范围 `@@M@@\delta>\max\{3|1/p-1/2|-1/2,\,0\}@@`。
+
+**为什么值得关心**
+
+球面 Fourier 求和是"用圆滑平均重建函数"这一思想的高维化身，临界点 `@@M@@p=3@@` 正是整个猜想的枢纽；它五十多年来只被一步步逼近（`@@M@@10/3@@`、`@@M@@13/4@@`、`@@M@@22/7\cdots@@`），从未被真正够到，本文补上了最后一格。
+
+> 暂无形式化证明（AI 结果待核验）
+
 ## 一句话结论
 
 证明了三维 Bochner–Riesz 猜想的严格阶版本：对每个 `@@M@@\delta>0@@`，球磨光乘子 `@@M@@(1-|\xi|^2)_+^\delta@@` 在 `@@M@@L^3(\mathbb R^3)@@` 上有界，经插值与对偶推出全部临界范围 `@@M@@\delta>\max\{3|1/p-1/2|-1/2,0\}@@`，攻克了多维 Fourier 求和理论中悬置五十余年的核心难题。

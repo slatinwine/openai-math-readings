@@ -13,6 +13,35 @@ pdfname: ""
 
 > 结果族 034：Log abundance for compact Kähler spaces under logarithmic Iitaka subadditivity　·　学科：Algebraic and complex geometry　·　验证状态：暂无形式化证明，请以社区核验为准
 
+## 入门导读 🐣
+
+在实数世界里，多项式 `@@M@@x^2+1@@` 看不出有根；扩到复数，它裂成两个根。高维形状上的"贴纸"（边界分量）也会玩这一手：在出发的域上看是一整张，到代数闭包里可能裂成一串共轭的碎片。论文证明：只要贴纸贴得够重（系数不低于 `@@M@@t@@`），它裂成的碎片数有一个只依赖维数和 `@@M@@t@@` 的上限——这正是 Birkar 的 Stein 度猜想的"收缩到点"情形。
+
+**关键词卡片**
+
+- 边界（boundary）：形状上用来记录奇点的"扣除贴纸"，系数表示贴多紧
+- log Calabi–Yau 对（log Calabi–Yau pair）：固有曲率加边界后在有理意义上恰好为零的对 `@@M@@(X,B)@@`
+- 常量域次数 c(S/k)（relative algebraic closure degree）：贴纸 `@@M@@S@@` 在代数闭合后裂成的几何碎片个数，也是 Stein 度的上界来源
+- 一致界 N(d,t)：只看维数与阈值 `@@M@@t@@` 的碎片数上限，与出发域、系数分母等一切细节无关
+
+**看个具体例子**
+
+曲线情形有显式公式：`@@M@@N(1,t)=\lceil 2/t\rceil@@`。取 `@@M@@t=1/2@@`，即贴纸系数至少一半时，最多裂成 4 片。
+
+<div>
+
+<svg xmlns="http://www.w3.org//2000/svg" viewBox="0 0 560 280"><circle cx="230" cy="130" r="85" fill="none" stroke="#333" stroke-width="2.5"/><ellipse cx="196" cy="85" rx="20" ry="11" fill="#f6ccc5" stroke="#c0504d" stroke-width="1.5"/><ellipse cx="268" cy="92" rx="20" ry="11" fill="#f6ccc5" stroke="#c0504d" stroke-width="1.5"/><ellipse cx="192" cy="172" rx="20" ry="11" fill="#f6ccc5" stroke="#c0504d" stroke-width="1.5"/><ellipse cx="272" cy="165" rx="20" ry="11" fill="#f6ccc5" stroke="#c0504d" stroke-width="1.5"/><text x="150" y="38" font-size="16" fill="#333">出发域上看：一整张贴纸 S</text><text x="95" y="240" font-size="15" fill="#c0504d">代数闭包里最多裂成 4 片（t=1/2）</text><text x="365" y="100" font-size="15" fill="#4a6fa5">曲线情形公式：</text><text x="365" y="128" font-size="15" fill="#4a6fa5">N(1, 1/2) = 4</text><text x="365" y="160" font-size="14" fill="#666666">碎片数 = 常量域次数 c(S/k)</text></svg>
+
+</div>
+
+高维时公式不再显式，但定理保证同样的上限存在：碎片再碎，也碎不出 `@@M@@N(d,t)@@` 这只手掌心，而且界只依赖 `@@M@@d@@` 与 `@@M@@t@@`。
+
+**为什么值得关心**
+
+它控制的是"算术分裂"这种最隐蔽的不一致性；这个定理正是族内姊妹篇证明有效饭高纤维化时必需的算术输入。
+
+> 暂无形式化证明（AI 结果待核验）
+
 ## 一句话结论
 证明 Birkar 的 Stein 度猜想（收缩到点情形）对普通 `@@M@@\mathbb Q@@`-对成立：特征零域上射影 log Calabi–Yau 对中，系数不小于 `@@M@@t@@` 的边界素分量在底域上的常量域次数被仅依赖维数与 `@@M@@t@@` 的整数 `@@M@@N(d,t)@@` 一致控制。
 

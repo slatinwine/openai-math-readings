@@ -13,6 +13,47 @@ pdfname: ""
 
 > 结果族 232：Gaussian fields and interfaces for triangular-lattice Lipschitz heights　·　学科：Probability and statistical mechanics　·　验证状态：暂无形式化证明，请以社区核验为准
 
+## 入门导读 🐣
+
+一块圆蛋糕，边界上半圈写着 +1、下半圈写着 −1；往内部随机填充"高度"，要求相邻差只能是 0 或 2。切开看剖面：这块随机地形 = 一块确定的平滑斜坡 + 高斯自由场式的普适涨落。这正是 Schramm 2007 年问题清单第 2.2 问的"场"部分。
+
+**关键词卡片**
+
+- 奇整数高度（odd integer heights）：边界两弧取 +1/−1、相邻差为 0 或 2 的均匀随机填充。
+- 调和延拓（harmonic extension）：边界值的"最公平"内插 `@@M@@\bar g@@`——每点的值恰等于周围平均值。
+- 高斯自由场（Gaussian free field, GFF）：涨落部分；协方差由区域上的 Dirichlet Green 函数给出。
+- 反射正性（reflection positivity）：关于某条格点行镜像时概率律满足的特殊正性，是提取谱信息的钥匙。
+- 谱和规则（spectral sum rule）：论文导出的恒等式，把归一化常数逼成 `@@M@@c_*/|p|^2@@` 的形式。
+
+**看个具体例子**
+
+定理：`@@M@@h_\delta \Rightarrow \bar g+\sigma\Phi_D@@`，即随机高度 = 调和斜坡 `@@M@@\bar g@@` 加 `@@M@@\sigma@@` 倍 GFF。归一化 `@@M@@\sigma=4\pi\sqrt{c_*}@@`，而 `@@M@@c_*@@` 由一个绝对收敛的有限体积级数给出——级数每一项都是有限六角区域内构形的整数计数之比，原则上真能一步步算出来，且与区域大小无关。
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280">
+  <text x="280" y="26" text-anchor="middle" font-size="15">两弧边界 +1 / −1 的随机高度地形</text>
+  <ellipse cx="280" cy="150" rx="200" ry="95" fill="#fcfcfc" stroke="#999" stroke-width="1"/>
+  <path d="M80 150 A200 95 0 0 1 480 150" fill="none" stroke="#c62828" stroke-width="6"/>
+  <path d="M80 150 A200 95 0 0 0 480 150" fill="none" stroke="#1565c0" stroke-width="6"/>
+  <path d="M80 150 C150 100 210 200 280 150 C350 100 410 200 480 150" fill="none" stroke="#2e7d32" stroke-width="2.5" stroke-dasharray="7 5"/>
+  <circle cx="80" cy="150" r="5" fill="#333"/>
+  <circle cx="480" cy="150" r="5" fill="#333"/>
+  <text x="64" y="140" font-size="14">a</text>
+  <text x="490" y="140" font-size="14">b</text>
+  <text x="280" y="45" text-anchor="middle" font-size="14" fill="#c62828">边界弧取 +1</text>
+  <text x="280" y="262" text-anchor="middle" font-size="14" fill="#1565c0">边界弧取 −1</text>
+  <text x="280" y="112" text-anchor="middle" font-size="13" fill="#2e7d32">高度 = 0 的等高线（围绕直径随机摆动）</text>
+</svg>
+
+</div>
+
+**为什么值得关心**
+
+它解决了 Schramm 问题 2.2 的场部分；更重要的是归一化常数第一次有了显式可算的公式——此前连它是否存在、是否依赖区域都无法确定。涨落常数只依赖单位格点模型本身，换区域、换边界逼近方式都不变，这是"普适性"最具体的一种兑现方式。
+
+> 暂无形式化证明（AI 结果待核验）
+
 ## 一句话结论
 证明了三角格点上边界两弧分别取 `@@M@@+1@@` 与 `@@M@@-1@@` 的均匀奇整数 Lipschitz 高度场，中心化后收敛到 Dirichlet 高斯自由场的普适倍数，归一化常数由绝对收敛的有限体积计数公式显式给出，从而解决 Schramm 问题 2.2 的场部分。
 

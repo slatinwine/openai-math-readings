@@ -13,6 +13,34 @@ pdfname: ""
 
 > 结果族 360：Weak MTW curvature gives convexity and regular optimal transport　·　学科：Differential geometry　·　验证状态：主结果已 Lean 形式化
 
+## 入门导读 🐣
+
+想象你开一家搬沙公司：把一堆沙重新堆成指定的形状，运费按"搬运距离的平方"计价，最省钱的方案就叫最优输运。这篇论文研究的是：在一个弯曲的空间里，最省钱的搬法会不会把相邻的两粒沙甩到天各一方？作者证明：只要空间弯曲得足够"温和"（满足一个很弱的曲率条件），相邻的沙搬完仍然相邻，而且这个保证对一整类沙堆统一成立。
+
+**关键词卡片**
+
+- 最优输运（optimal transport）：把一堆分布搬运成另一堆、使总费用最小的方案。
+- 弱 MTW 条件（weak Ma–Trudinger–Wang condition）：弯曲空间上一种"搬运友好"的曲率条件，能防止最优方案折叠撕裂。
+- Hölder 连续（Hölder continuity）：距离缩小若干倍，像的距离也按固定幂次缩小的温和连续性。
+- 一致估计（uniform estimate）：连续性常数对上下有界的整类密度统一有效，不挑具体哪两堆沙。
+- 共轭割点（conjugate cut point）：弯曲空间里多条最短路径汇合的奇异地点，以往的理论在此失效，本文允许它出现。
+
+**看个具体例子**
+
+把主定理代入数字：在满足弱 MTW 的曲面上，任取密度都介于 λ 与 Λ 之间的两堆沙，最优搬运图 T 的正反两个方向都满足 `@@M@@d(T(x),T(x'))\le C\,d(x,x')^{\alpha}@@`，常数 C 与指数 α 只依赖空间和 λ、Λ。比如若 `@@M@@\alpha=1/2@@`：两点相距 `@@M@@0.0001@@`，搬完至多相距 `@@M@@C\times 0.01@@`——近处的沙不会被甩飞。
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280"><ellipse cx="150" cy="120" rx="115" ry="80" fill="none" stroke="#333" stroke-width="2"/><text x="150" y="232" font-size="16" text-anchor="middle" fill="#333">弯曲空间 M（弱 MTW）</text><circle cx="125" cy="115" r="4" fill="#333"/><text x="108" y="106" font-size="15" fill="#333">x</text><circle cx="147" cy="130" r="4" fill="#333"/><text x="156" y="148" font-size="15" fill="#333">x′</text><line x1="125" y1="115" x2="147" y2="130" stroke="#333" stroke-width="1.5"/><line x1="133" y1="118" x2="392" y2="89" stroke="#888" stroke-width="1.5"/><polygon points="392,89 381,94 380,86" fill="#888"/><line x1="152" y1="134" x2="408" y2="107" stroke="#888" stroke-width="1.5"/><polygon points="408,107 397,112 396,104" fill="#888"/><text x="265" y="72" font-size="15" fill="#555">最优搬运 T</text><circle cx="402" cy="86" r="4" fill="#333"/><text x="388" y="74" font-size="15" fill="#333">T(x)</text><circle cx="420" cy="104" r="4" fill="#333"/><text x="432" y="118" font-size="15" fill="#333">T(x′)</text><text x="100" y="262" font-size="15" fill="#333">像点依然贴近：d(Tx,Tx′) ≤ C·d(x,x′)^α</text></svg>
+
+</div>
+
+**为什么值得关心**
+
+它把"什么样的弯曲空间上最优输运一定连续"这个问题钉死为弱 MTW 条件：弱 MTW 与输运连续性等价，而且正方向还是对整类密度一致的定量版本，连共轭割点都不再是障碍。
+
+> 已 Lean 形式化
+
 ## 一句话结论
 
 在固定的紧致弱 MTW 流形上，对上下有界的可测密度类，平方距离最优输运映射及其逆有一致的 Hölder 连续同胚代表，常数只依赖流形与密度界，从而证明弱 MTW 与输运连续性等价。

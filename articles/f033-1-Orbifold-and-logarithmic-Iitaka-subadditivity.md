@@ -13,6 +13,46 @@ pdfname: ""
 
 > 结果族 033：Iitaka subadditivity, variation, and logarithmic additivity　·　学科：Algebraic and complex geometry　·　验证状态：暂无形式化证明，请以社区核验为准
 
+## 入门导读 🐣
+
+给代数簇数"复杂度方向数"（Kodaira 维数），像数一棵树能朝几个独立方向生长。Iitaka 的老问题是：把空间 `@@M@@X@@` 压到基 `@@M@@Y@@`、每点上方长一根纤维 `@@M@@F@@`，总复杂度是否至少是"纤维的加基的"？本文连 Campana 更挑剔的"轨道体"版本也证明了：一根纤维要转 `@@M@@m@@` 圈才回到原点的"多重纤维"，必须按 `@@M@@1-1/m@@` 记账计入基。
+
+**关键词卡片**
+
+- Kodaira 维数（Kodaira dimension）：多重典范形式随倍数增长出的维数，取值从 `@@M@@-\infty@@` 到空间维数。
+- 纤维化（fibration）：空间压到基、每点上方长一根纤维的地图。
+- 多重纤维 / 轨道体基（multiple fiber / orbifold base）：`@@M@@m@@` 重纤维按系数 `@@M@@1-1/m@@` 记入基的精细记账法。
+- 对数 Kodaira 维数（logarithmic Kodaira dimension）：允许形式沿边界发散的版本，适合"开"的空间。
+- Fujiki 类 `@@M@@\mathcal C@@`（Fujiki class C）：双有理等价于紧 Kähler 空间的复空间。
+
+**看个具体例子**
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280">
+<line x1="70" y1="212" x2="490" y2="212" stroke="#333" stroke-width="1.8"/>
+<text x="280" y="238" font-size="14" text-anchor="middle">基 = P¹（普通意义下复杂度为 −∞ 的直线）</text>
+<ellipse cx="130" cy="162" rx="12" ry="48" fill="none" stroke="#333" stroke-width="1.8"/>
+<ellipse cx="190" cy="162" rx="12" ry="48" fill="none" stroke="#333" stroke-width="1.8"/>
+<ellipse cx="250" cy="162" rx="12" ry="48" fill="none" stroke="#333" stroke-width="1.8"/>
+<ellipse cx="430" cy="162" rx="12" ry="48" fill="none" stroke="#333" stroke-width="1.8"/>
+<ellipse cx="360" cy="158" rx="21" ry="52" fill="none" stroke="#111" stroke-width="2.2"/>
+<ellipse cx="360" cy="158" rx="12" ry="43" fill="none" stroke="#111" stroke-width="1.8"/>
+<text x="160" y="92" font-size="13.5" text-anchor="middle">一般纤维（椭圆）</text>
+<text x="372" y="82" font-size="13.5" text-anchor="middle">二重纤维（m = 2）</text>
+<text x="280" y="266" font-size="13.5" text-anchor="middle">轨道体记账：m 重纤维记 1 − 1/m（m=2 记 1/2，m=3 记 2/3）</text>
+</svg>
+
+</div>
+
+记账算术就是具体例子：二重纤维记 `@@M@@1/2@@`，三重纤维记 `@@M@@2/3@@`。定理：`@@M@@\kappa(X,K_X+\Delta)\ge\kappa(F,K_F+\Delta_F)+\kappa(\text{轨道体基})@@`——即使普通意义下基是 `@@M@@\mathbb P^1@@`（复杂度 `@@M@@-\infty@@`），这些"零钱"也被如实计入下界。边界系数允许取到 1；不需要纤维一般型、不需要好极小模型等任何附加假设。普通与对数次可加性、准射影形式、特征零任意代数闭域的版本都作为推论一并得到。
+
+**为什么值得关心**
+
+次可加性是双有理几何的地基之一，本文把它推到最强表述且零附加条件，是结果族 033 另两篇论文的底盘。
+
+> 暂无形式化证明（AI 结果待核验）
+
 ## 一句话结论
 
 论文证明了 Campana 的轨道体（orbifold）Iitaka 次可加性猜想：对 Fujiki 类 `@@M@@\mathcal C@@` 紧复流形上系数取自 `@@M@@[0,1]\cap\mathbf Q@@` 的 SNC 边界（含系数一），`@@M@@\kappa(X,K_X+\Delta)\ge\kappa(F,K_F+\Delta_F)+\kappa(f\mid\Delta)@@`，普通与对数次可加性均为其推论。

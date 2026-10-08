@@ -13,6 +13,30 @@ pdfname: ""
 
 > 结果族 260：Spacetime Penrose inequalities: enclosing area, charge, rotation, and anti-de Sitter extensions　·　学科：Mathematical physics　·　验证状态：暂无形式化证明，请以社区核验为准
 
+## 入门导读 🐣
+
+这是一套"系列剧"的总集篇：同一个主角——黑洞质量不得低于视界面积给出的下界（Penrose 1973 年的猜想——在三维、四维空间，以及带电、负宇宙常数等不同"副本"里被逐关打通，而且何时恰好压线也被完全认清。它不需要任何对称性假设，黑洞可以在翻腾、在旋转、在带电。
+
+**关键词卡片**
+
+- 时空 Penrose 不等式（spacetime Penrose inequality）：允许空间正在演化（第二基本形不为零）时，质量仍不低于面积给出的下界。
+- 最小包围面积（minimum enclosing area）：不是黑洞边界自己的面积，而是"把黑洞连同远端一起包住"所需的最小面积；已知反例逼着必须用它。
+- 第二基本形（second fundamental form）：切片随时间弯曲的速率；不设为零意味着时空此刻可以任意翻腾。
+- 刚性（rigidity）：取等时原始数据恰是 Schwarzschild 黑洞时空的切片。
+- 反德西特（anti-de Sitter）：宇宙常数为负的模型宇宙，对应的不等式多出一个立方项。
+
+**看个具体例子**
+
+**公式卡**（三维中性版）：
+`@@M@@Dm\ \ge\ \sqrt{\frac{A_{\min}}{16\pi}}\ \xrightarrow{\ A_{\min}=64\pi\ }\ m\ \ge\ \sqrt{4}=2.@@`
+数字语言：测得黑洞最小包围面积为 `@@M@@64\pi@@`，质量想低于 `@@M@@2@@`？没门。其余"副本"同款：四维 `@@M@@m_e\ge\frac12(A_e/2\pi^2)^{2/3}@@`，带电版 `@@M@@m\ge Q@@` 且 `@@M@@r\le m+\sqrt{m^2-Q^2}@@`，反德西特版 `@@M@@m_{\mathbb H}\ge\frac{r_A+r_A^3}{2}@@`——等号都恰好落在标准黑洞解的切片上。
+
+**为什么值得关心**
+
+它在无任何对称性假设下，对一般时空初值数据给出锐不等式与完整取等分类，是整族论文的基座。证明骨架是先修端、再做一次"填充–图像–共形"形变，最后让黎曼不等式结账。
+
+> 暂无形式化证明（AI 结果待核验）
+
 ## 一句话结论
 
 这部五部分总集在 3、4 空间维证明了中性时空 Penrose 不等式（3D：`@@M@@m\ge\sqrt{A_{\min}/16\pi}@@`；4D：`@@M@@m_e\ge\frac12(A_e/\omega_3)^{2/3}@@`），等号分别被 Schwarzschild 与 Schwarzschild–Tangherlini 切片完全分类，并附三维带电上面积界与局部反德西特不等式。

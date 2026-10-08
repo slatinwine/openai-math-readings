@@ -13,6 +13,34 @@ pdfname: ""
 
 > 结果族 363：Nonuniqueness with local conservation for the hard-sphere Boltzmann equation　·　学科：Partial differential equations　·　验证状态：暂无形式化证明，请以社区核验为准
 
+## 入门导读 🐣
+
+抛出去的骰子只有一面朝上，可是在微分方程的世界里，同一副"初始牌"可以洗出两种未来。这篇论文在周期边界的三维盒子里构造出硬球气体的一副初始状态：它合规地演化出两个不同的未来剧本——同一个起点，两条都自洽的时间线，"未来不唯一"在严格的数学意义上发生了。
+
+**关键词卡片**
+
+- 重整化解（renormalized solution）：连经过非线性函数变换后都满足方程的弱解，DiPerna–Lions 建立的框架。
+- 硬球气体（hard-sphere gas）：分子是刚性小球、碰撞瞬时且完全弹性的气体模型。
+- 颜色分解（colored equations）：给每束粒子染色记账的构造：同色碰撞保留颜色，跨色碰撞产生"热"粒子。
+- 休眠族与封顶族（dormant / capped families）：两条不同的逼近路线，各自的极限给出两个解。
+- 速度平均引理（velocity averaging）：把速度积分掉之后获得空间紧性的标准工具。
+
+**看个具体例子**
+
+两个解从同一 `@@M@@F_0@@` 出发（质量、能量、熵都有限，速度支撑有界）："休眠剧本"里碰撞迟迟不点火；"带种子的剧本"里一颗会消失的微小热种子在某段有限时间内被碰撞链式放大。时刻 0 之后 `@@M@@F(t)@@` 与 `@@M@@G(t)@@` 在正测度集上不同，但两者都取同一初值、都满足局部质量连续性方程、总动量守恒以及能量与熵耗散不等式。
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280"><line x1="60" y1="160" x2="500" y2="160" stroke="#333" stroke-width="2"/><polygon points="500,160 490,156 490,164" fill="#333"/><text x="512" y="166" font-size="15" fill="#333">t</text><circle cx="120" cy="160" r="5" fill="#333"/><text x="75" y="188" font-size="15" fill="#333">同一初值 F₀</text><path d="M120,160 C220,158 340,162 470,152" fill="none" stroke="#333" stroke-width="2"/><text x="300" y="186" font-size="15" fill="#333">休眠解 F</text><path d="M120,160 C200,150 250,90 320,70 L480,55" fill="none" stroke="#333" stroke-width="2"/><text x="360" y="42" font-size="15" fill="#333">封顶解 G</text><circle cx="210" cy="150" r="4" fill="none" stroke="#333" stroke-width="2"/><text x="160" y="128" font-size="15" fill="#555">分岔</text><line x1="440" y1="68" x2="440" y2="150" stroke="#888" stroke-width="1.5"/><polygon points="440,68 436,78 444,78" fill="#888"/><polygon points="440,150 436,140 444,140" fill="#888"/><text x="300" y="112" font-size="15" fill="#555">正测度的差异</text></svg>
+
+</div>
+
+**为什么值得关心**
+
+非齐次玻尔兹曼方程在 DiPerna–Lions 类中的唯一性是悬置三十余年的公开问题，本文给出否定回答；此前只知相邻初值的不稳定性或特殊退化模型的结果。
+
+> 暂无形式化证明（AI 结果待核验）
+
 ## 一句话结论
 
 在三维环面 `@@M@@\mathbb T^3\times\mathbb R^3@@` 上构造出同一个初值派生的两个不同整体可容解：都满足重整化方程、局部质量守恒、总动量守恒及能量与熵耗散不等式，从而否定了 DiPerna–Lions 解类在一般初值下的唯一性。

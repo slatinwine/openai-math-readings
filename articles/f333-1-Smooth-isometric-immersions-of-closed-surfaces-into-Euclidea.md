@@ -13,6 +13,50 @@ pdfname: ""
 
 > 结果族 333：Smooth isometric immersions of surfaces into ℝ⁴　·　学科：Differential geometry　·　验证状态：暂无形式化证明，请以社区核验为准
 
+## 入门导读 🐣
+
+把橘子皮摊平成地图，长度必然失真；这篇论文研究反过来的问题：给一块"自带量长规则"的曲面（上面每个方向都规定了真实长度），能不能原样放进更高维的空间，让所有长度分毫不差？此前已知放进五维总是可行，放进三维有时会失败，本文把界钉死：任何封闭曲面——哪怕像克莱因瓶那样"不分内外"——总能光滑地放进四维，允许纸面自相交。
+
+**关键词卡片**
+
+- 黎曼度量（Riemannian metric）：曲面上每一点、每个方向的量长规则
+- 等距浸入（isometric immersion）：保持一切长度与角度的光滑放置；"浸入"允许自相交
+- 闭曲面（closed surface）：紧致且没有边缘的曲面，如球面、环面、克莱因瓶
+- 余维（codimension）：目标空间比曲面多出的维数，即安放的"活动余地"；本文把它压到 2
+- 本原添加（primitive addition）：证明的核心动作——在不破坏边界的前提下，往浸入上补一小块度量
+
+**看个具体例子**
+
+先由 Whitney 定理把曲面浸入小球面 `@@M@@S^3\subset\mathbb R^4@@`，算出量长差额 `@@M@@h=g-\gamma(F^0)@@`（正定）；再用夹角 `@@M@@0,\pi/3,2\pi/3@@` 的三个方向把它拆成秩一项之和 `@@M@@h=\sum_j a_j^2\,dx_j^2@@`——像用三原色调出任意颜色。随后逐块把每一项"补"到浸入上，经 Nash–Moser 式迭代收敛，所有长度精确兑现。
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280">
+<text x="20" y="35" font-size="16" fill="#333">闭曲面 → 四维欧氏空间</text>
+<ellipse cx="150" cy="150" rx="75" ry="48" fill="none" stroke="#333" stroke-width="2"/>
+<ellipse cx="150" cy="158" rx="30" ry="15" fill="none" stroke="#333" stroke-width="2"/>
+<text x="75" y="230" font-size="14" fill="#333">闭曲面（自带量长规则 g）</text>
+<line x1="240" y1="150" x2="300" y2="150" stroke="#333" stroke-width="2"/>
+<polygon points="312,150 300,144 300,156" fill="#333"/>
+<text x="238" y="138" font-size="13" fill="#333">等距浸入</text>
+<rect x="330" y="70" width="150" height="120" fill="none" stroke="#999"/>
+<rect x="355" y="90" width="100" height="80" fill="none" stroke="#999"/>
+<line x1="330" y1="70" x2="355" y2="90" stroke="#999"/>
+<line x1="480" y1="70" x2="455" y2="90" stroke="#999"/>
+<line x1="330" y1="190" x2="355" y2="170" stroke="#999"/>
+<line x1="480" y1="190" x2="455" y2="170" stroke="#999"/>
+<text x="365" y="60" font-size="14" fill="#333">R⁴（示意）</text>
+<text x="30" y="265" font-size="14" fill="#333">所有长度分毫不差；允许自相交。三维有反例，四维总是够。</text>
+</svg>
+
+</div>
+
+**为什么值得关心**
+
+结合姊妹篇的"三维局部放不下"反例，闭曲面的等距浸入问题答案被钉在四维；而且结论不要求可定向、不限高斯曲率，经典难题在最少的余维里得到完整解决。
+
+> 暂无形式化证明（AI 结果待核验）
+
 ## 一句话结论
 
 论文证明：任何闭（紧致、无边）光滑黎曼曲面——包括不可定向曲面、高斯曲率任意的度量——都存在 `@@M@@C^\infty@@` 等距浸入（isometric immersion）到 `@@M@@\mathbb{R}^4@@`。这把 Gromov 的闭曲面 `@@M@@\mathbb{R}^5@@` 定理压低一维，解决了四维等距浸入问题的闭曲面情形。

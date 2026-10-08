@@ -13,6 +13,27 @@ pdfname: ""
 
 > 结果族 348：Nonnegative-curvature Einstein classification and an L² topological gap　·　学科：微分几何（Differential geometry）　·　验证状态：暂无形式化证明，请以社区核验为准
 
+## 入门导读 🐣
+
+考满分固然优秀，但差半分的学生和满分学生常常上同一所大学。这篇论文关心"接近满分"的形状：四维空间只要"几乎"是 Einstein 的——偏差的能量足够小——它的拓扑就必然与三种标准模型之一完全相同。差的那一点点，在拓扑上根本留不下痕迹。
+
+**关键词卡片**
+
+- 无迹 Ricci 张量（trace-free Ricci tensor）：`@@M@@\operatorname{Ric}-\tfrac{\operatorname{Scal}}{4}g@@`，逐点度量"偏离 Einstein 有多远"，恰在 Einstein 度量处为零。
+- `@@M@@L^2@@` 能量（`@@M@@L^2@@` energy）：偏差平方在全空间的积分 `@@M@@\int_M|E_g|^2@@`，把度量整体放大缩小也不变。
+- 微分同胚（diffeomorphic）：存在光滑的可逆对应，属"同一类形状"。
+- 非负截面曲率（nonnegative sectional curvature）：沿任何方向切出的二维小片都不向内凹。
+
+**看个具体例子**
+
+公式卡（数字版定理）：单连通、闭、非负截面曲率的四维流形上，`@@M@@\int_M\big|\operatorname{Ric}-\tfrac{\operatorname{Scal}}4g\big|^2<\varepsilon_0\ \Rightarrow\ M@@` 微分同胚于 `@@M@@S^4@@`、`@@M@@\mathbb{CP}^2@@` 或 `@@M@@S^2\times S^2@@`。门槛 `@@M@@\varepsilon_0@@` 是普适常数，不需要体积、直径、单射半径等任何辅助条件。证明思路：让近似 Einstein 的序列沿 Ricci 流演化，紧性给出精确 Einstein 的极限，再用姊妹篇的三分类锁定拓扑。过程里最妙的一步是"分段不等式"：在相距很远的两团区域之间，总能挑出一条沿途偏差极小的测地线，用它顶替逐点的曲率控制。结论认定的是流形本身的形状，而非原度量的等距类——量差一点，形已定型。
+
+**为什么值得关心**
+
+它把"精确 Einstein 分类"推广到"近似 Einstein"情形，是同族证明链的收官一环。
+
+> 暂无形式化证明（AI 结果待核验）
+
 ## 一句话结论
 证明普适、尺度无关的 `@@M@@L^2@@` 间隙定理：单连通、闭、非负截面曲率的四维流形上，若无迹 Ricci 张量的 `@@M@@L^2@@` 能量足够小，流形必微分同胚于 `@@M@@S^4@@`、`@@M@@\mathbb{CP}^2@@` 或 `@@M@@S^2\times S^2@@`，把精确 Einstein 分类推广到"近似 Einstein"的拓扑层面。
 

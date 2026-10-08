@@ -13,6 +13,47 @@ pdfname: ""
 
 > 结果族 213：Critical percolation on every quasi-transitive graph　·　学科：Probability and statistical mechanics　·　验证状态：主结果已 Lean 形式化
 
+## 入门导读 🐣
+
+想象一张无限大的渔网，每条网线独立地以概率 p"接通"。p 很小时到处是孤岛，p 很大时一网连通到天边。分界点 p_c 处究竟有没有无限大的连通块？这个问题在三维方格网上卡了几十年，本文给出答案：没有——而且"随机接通边"和"随机接通顶点"两种玩法都没有。
+
+**关键词卡片**
+
+- 渗流（percolation）：每条边（或每个顶点）独立以概率 p 开放的随机连通模型。
+- 临界参数 p_c：存在无穷连通块与不存在之间的分水岭。
+- 渗流函数 θ(p)：原点连到无穷远的概率。
+- 键渗流与点渗流（bond/site percolation）：开放的对象是边还是顶点，两者临界参数不同。
+
+**看个具体例子**
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280">
+  <line x1="70" y1="220" x2="500" y2="220" stroke="#333" stroke-width="2"/>
+  <line x1="70" y1="220" x2="70" y2="50" stroke="#333" stroke-width="2"/>
+  <path d="M 70 220 L 285 220 C 315 220 325 130 365 110 C 405 92 455 80 495 74" fill="none" stroke="#2c5fa8" stroke-width="3"/>
+  <line x1="285" y1="220" x2="285" y2="70" stroke="#999" stroke-width="1.5" stroke-dasharray="5 4"/>
+  <circle cx="285" cy="220" r="5" fill="#c0392b"/>
+  <text x="285" y="242" font-size="13" text-anchor="middle" font-style="italic" fill="#333">p_c</text>
+  <text x="70" y="242" font-size="12" text-anchor="middle" fill="#333">0</text>
+  <text x="500" y="242" font-size="12" text-anchor="middle" fill="#333">1</text>
+  <text x="52" y="58" font-size="13" font-style="italic" fill="#333">θ(p)</text>
+  <text x="512" y="225" font-size="13" font-style="italic" fill="#333">p</text>
+  <text x="165" y="195" font-size="12" fill="#666">p &lt; p_c：无无穷簇</text>
+  <text x="400" y="140" font-size="12" fill="#2c5fa8">p &gt; p_c：有无穷簇</text>
+  <text x="285" y="266" font-size="12.5" text-anchor="middle" fill="#c0392b">临界点处 θ(p_c) = 0：无无穷簇，θ 在 p_c 连续</text>
+</svg>
+
+</div>
+
+定理的几何含义就是上图：θ(p) 在 p<p_c 时恒为 0，在 p>p_c 时变正，而在临界点本身取值也是 0——曲线"贴地"走过 p_c 后才抬头。二维靠对偶技巧早已解决，很高维（d≥11）靠花边展开也行，唯独物理上最重要的三维两边技巧同时失效，成了著名的空白。
+
+**为什么值得关心**
+
+它补上了悬置多年的"中间维度"缺口，证明还产出一台可复用的有限比较不等式"发动机"，对键、点两种模型统一走完。此前最好的结果是"薄板上的临界熄灭"，但薄板阈值收敛于整格点阈值并不自动给出临界点本身的结论——跨越最后这一步正是本文的关键一跃。
+
+> 已 Lean 形式化
+
 ## 一句话结论
 
 证明 `@@M@@\mathbb{Z}^3@@` 上最近邻 Bernoulli 键渗流与点渗流在临界参数 `@@M@@p_c@@` 处几乎必然均无无穷开簇，补上悬置多年的中间维度缺口，并得 `@@M@@\theta(p)@@` 在 `@@M@@p_c@@` 处连续。

@@ -13,6 +13,33 @@ pdfname: ""
 
 > 结果族 247：An infinite finitely presented residually finite 2-group and a finitely presented nil algebra　·　学科：Group theory　·　验证状态：暂无形式化证明，请以社区核验为准
 
+## 入门导读 🐣
+
+群就像一本"乘法说明书"：写清所有元素如何相乘。若这本说明书只有有限页（有限个生成元加有限条关系式），就称有限呈现。Burnside 在 1902 年问：如果说明书还保证每个元素转有限圈就回到原点（周期群），世界是否必然只有有限多个元素？本文造出反例：元素无穷多，说明书却只有有限页。
+
+**关键词卡片**
+
+- 周期群（periodic group）：每个元素的阶都有限的群；Burnside 问题问有限生成的它是否必有限。
+- 有限呈现（finitely presented）：有限个生成元＋有限条关系式完整刻画。
+- Steinberg 群（Steinberg group）：由环搭建的一类群，本文主角是 `@@M@@\mathrm{St}_{12}(R)@@`。
+- 幂零代数（nil algebra）：每个元素各自幂零、但整体未必幂零的结合代数。
+
+**看个具体例子**
+
+主角是一个按"自相似规则层级"造出的 `@@M@@\mathbb F_2@@` 上的代数 `@@M@@R@@`；其 Steinberg 群 `@@M@@\mathrm{St}_{12}(R)@@` 无限、有限呈现且周期（见图）。同一个 `@@M@@R@@` 还顺带否定三条代数问题：它给出有限呈现、逐元素幂零却不幂零的代数，以及有限呈现、代数的却无穷维的代数。
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280"><rect x="45" y="90" width="190" height="110" fill="none" stroke="#2c7fb8" stroke-width="2.5"/><text x="140" y="120" font-size="14" fill="#2c7fb8" text-anchor="middle">有限说明书</text><text x="140" y="145" font-size="13" fill="#333" text-anchor="middle">有限个生成元</text><text x="140" y="168" font-size="13" fill="#333" text-anchor="middle">＋有限条关系式</text><text x="140" y="225" font-size="13" fill="#666" text-anchor="middle">（有限呈现）</text><circle cx="370" cy="60" r="14" fill="none" stroke="#c0392b" stroke-width="2"/><text x="370" y="65" font-size="11" fill="#c0392b" text-anchor="middle">阶3</text><circle cx="455" cy="105" r="14" fill="none" stroke="#c0392b" stroke-width="2"/><text x="455" y="110" font-size="11" fill="#c0392b" text-anchor="middle">阶5</text><circle cx="480" cy="175" r="14" fill="none" stroke="#c0392b" stroke-width="2"/><text x="480" y="180" font-size="11" fill="#c0392b" text-anchor="middle">阶7</text><circle cx="430" cy="238" r="14" fill="none" stroke="#c0392b" stroke-width="2"/><text x="430" y="243" font-size="11" fill="#c0392b" text-anchor="middle">阶n</text><text x="350" y="272" font-size="13" fill="#c0392b" text-anchor="middle">……无穷多个元素，阶都有限</text><line x1="236" y1="115" x2="356" y2="66" stroke="#666" stroke-width="1.8"/><line x1="236" y1="130" x2="441" y2="102" stroke="#666" stroke-width="1.8"/><line x1="236" y1="160" x2="466" y2="170" stroke="#666" stroke-width="1.8"/><line x1="236" y1="180" x2="417" y2="230" stroke="#666" stroke-width="1.8"/></svg>
+
+</div>
+
+**为什么值得关心**
+
+这否定回答了 Ol'shanskii–Sapir 2003 年明确列出的公开问题；该群还具有 Kazhdan 性质 (T)、从而非顺从，代数侧三问也一并关闭。
+
+> 暂无形式化证明（AI 结果待核验）
+
 ## 一句话结论
 
 本文构造了首个具普通有限呈现的无限周期群 `@@M@@\mathop{\mathrm{St}}\nolimits_{12}(R)@@`，并同批造出有限呈现、无穷维、逐元素幂零却不幂零的结合代数，一并否定有限呈现 Burnside 问题、Ufnarovskij 幂零代数问题与 Kurosh 问题的有限呈现版本。

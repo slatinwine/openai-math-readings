@@ -13,6 +13,45 @@ pdfname: ""
 
 > 结果族 349：The Solomon–Yau least-volume conjecture　·　学科：Differential geometry　·　验证状态：暂无形式化证明，请以社区核验为准
 
+## 入门导读 🐣
+
+在球形肥皂泡里绷一层膜，它会自动收缩到面积最小的形状，数学家称之为极小超曲面。最小的膜是"赤道"；那么紧挨其上的"第二名"是谁？这篇论文给出终审判决：是一族叫 Clifford 积的乘积曲面，并且证明任何非赤道的膜都绝不比它小。
+
+**关键词卡片**
+
+- 极小超曲面（minimal hypersurface）：面积取到局部最小的膜，像绷紧的肥皂膜。
+- 全测地（totally geodesic）：完全顺着球面弯的赤道膜，体积冠军。
+- Clifford 积（Clifford product）：两个不同半径小球面的乘积曲面，两因子的弯曲一正一负恰好抵消，因而极小。
+- 覆盖重数（covering multiplicity）：膜若把同一处盖了几层，体积就记几份。
+- Morse 指标（Morse index）：还能让面积变小的方向个数，是证明的引擎。
+
+**看个具体例子**
+
+在三维球面里（m=2），Clifford 积就是由两个半径均为 1/√2 的圆相乘得到的 Clifford 环面，体积 2π²；而赤道（一张二维球面）体积 4π。定理给出完整排行榜：4π < 2π² ≤ 其余一切非赤道极小膜。在更高维 m≥3，第二能级由最小的 Clifford 积 S^k(√(k/m))×S^{m−k}(√((m−k)/m)) 接棒占据。证明还顺手得到两件副产品：曲率的积分不等式，以及"指标刚性"——比 Clifford 积更小的膜必有多余的压低方向，这正是变分论证的引擎。
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 290">
+<text x="280" y="28" font-size="16" text-anchor="middle" fill="#333">三维球面 S³ 中极小膜的体积排行榜（示意剖面）</text>
+<circle cx="280" cy="155" r="95" fill="none" stroke="#333" stroke-width="2"/>
+<line x1="185" y1="155" x2="375" y2="155" stroke="#4a86c8" stroke-width="2.5"/>
+<ellipse cx="280" cy="155" rx="52" ry="88" fill="none" stroke="#c84a4a" stroke-width="2.5"/>
+<line x1="332" y1="125" x2="438" y2="80" stroke="#c84a4a" stroke-width="1"/>
+<text x="444" y="78" font-size="14" fill="#c84a4a">Clifford 环面</text>
+<text x="444" y="96" font-size="13" fill="#c84a4a">体积 2π²（第二小）</text>
+<text x="18" y="148" font-size="13" fill="#4a86c8">赤道膜 4π</text>
+<text x="18" y="166" font-size="13" fill="#4a86c8">（最小）</text>
+<text x="280" y="272" font-size="14" text-anchor="middle" fill="#333">定理：任何非赤道的极小膜，体积 ≥ 2π²</text>
+</svg>
+
+</div>
+
+**为什么值得关心**
+
+这正面解决了丘成桐 1994 年问题集第 31 问（今称 Solomon–Yau 猜想），让悬置三十年的"第二体积能级"问题落幕。
+
+> 暂无形式化证明（AI 结果待核验）
+
 ## 一句话结论
 
 证明了 Solomon–Yau 最小体积猜想：单位球面 `@@M@@S^{m+1}@@`（`@@M@@m\ge2@@`）中任何非全测地（non-totally-geodesic）的闭连通极小浸入超曲面，其体积（按定义域计数、含覆盖重数）不小于最小极小 Clifford 积的体积 `@@M@@a_m@@`——Clifford 积确是赤道之上的第一个体积能级。

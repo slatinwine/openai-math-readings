@@ -13,6 +13,33 @@ pdfname: ""
 
 > 结果族 102：The Unique Games Conjecture and optimal approximation thresholds　·　学科：Theoretical computer science　·　验证状态：暂无形式化证明，请以社区核验为准
 
+## 入门导读 🐣
+
+给地图染红蓝两色，规矩是每条边两端必须异色。Min-UnCut 问：一张注定染不"完美"的图，最少会有几条边两端撞色？等价说法：最少删几条边，图才能变成能完美二染色的二部图。这篇论文证明：对"最少删几条"给出任何固定倍数的近似，都是 NP-难的。
+
+**关键词卡片**
+
+- Min-UnCut：二染色下两端同色的边（uncut 边）数量最少化，衡量图离二部图有多远。
+- 二部图（bipartite graph）：能红蓝二染色、每条边都跨色的图，比如偶数长度的圈。
+- 多一归约（many-one reduction）：把 3SAT 公式多项式时间翻译成图实例，并保持 YES/NO 两种情形。
+- 乘性鸿沟（multiplicative gap）：产物的最优值在两种情形相差固定倍数（如 `@@M@@K@@` 倍），倍数可事先指定成任意大。
+
+**看个具体例子**
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 300"><text x="280" y="26" text-anchor="middle" font-size="15" fill="#222">五边形（奇圈）：无论怎么染，至少一条边两端同色</text><line x1="280" y1="60" x2="366" y2="122" stroke="#667" stroke-width="2"/><line x1="366" y1="122" x2="333" y2="223" stroke="#667" stroke-width="2"/><line x1="333" y1="223" x2="227" y2="223" stroke="#667" stroke-width="2"/><line x1="227" y1="223" x2="194" y2="122" stroke="#667" stroke-width="2"/><line x1="194" y1="122" x2="280" y2="60" stroke="#c33" stroke-width="4"/><circle cx="280" cy="60" r="16" fill="#fbb" stroke="#933"/><circle cx="366" cy="122" r="16" fill="#bcd" stroke="#369"/><circle cx="333" cy="223" r="16" fill="#fbb" stroke="#933"/><circle cx="227" cy="223" r="16" fill="#bcd" stroke="#369"/><circle cx="194" cy="122" r="16" fill="#fbb" stroke="#933"/><text x="280" y="65" text-anchor="middle" font-size="12">红</text><text x="366" y="127" text-anchor="middle" font-size="12">蓝</text><text x="333" y="228" text-anchor="middle" font-size="12">红</text><text x="227" y="228" text-anchor="middle" font-size="12">蓝</text><text x="194" y="127" text-anchor="middle" font-size="12">红</text><text x="118" y="105" text-anchor="middle" font-size="12" fill="#c33">撞色边</text><text x="280" y="280" text-anchor="middle" font-size="13" fill="#333">删掉最少的撞色边使图变二部 = Min-UnCut；五边形的答案是 1</text></svg>
+
+</div>
+
+主定理保证存在这样的图族：公式可满足时删 `@@M@@\le k@@` 条边就够；不可满足时必须删 `@@M@@>Kk@@` 条边。想否决任何固定因子 `@@M@@C@@` 的近似算法，取整数 `@@M@@K\ge C@@` 即可——常数因子近似全部无望。
+
+**为什么值得关心**
+
+此前无条件的难度纪录只到约 1.49 因子，本文一步推到全部常数因子，且完全不依赖唯一博弈猜想。
+
+> 暂无形式化证明（AI 结果待核验）
+
 ## 一句话结论
 
 对任意固定常数 `@@M@@C>1@@`，在简单无向无权图上把 Min-UnCut 近似到 `@@M@@C@@` 因子以内是 NP-hard 的。该结果完全不依赖唯一游戏猜想，把此前无条件硬度只做到约 `@@M@@1.49@@` 因子的纪录一举推进到所有常数因子。

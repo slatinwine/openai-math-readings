@@ -13,6 +13,36 @@ pdfname: ""
 
 > 结果族 122：Quantitative trace-reconstruction bounds with a uniform decoder　·　学科：Theoretical computer science　·　验证状态：暂无形式化证明，请以社区核验为准
 
+## 入门导读 🐣
+
+想象一台爱漏拍的复印机:你把一条黑白珠链放进去,每次复印都随机丢掉几颗珠子,还不告诉你缺在哪。这篇论文造出一台"统一修复机":只要告诉它珠链长度和漏拍概率,它就能从足够多份残缺复印件里,把任意原始珠链又快又准地拼回来。
+
+**关键词卡片**
+
+- 轨迹(trace):原串每个比特以概率 `@@M@@p@@` 被保留、按原顺序拼出的"残缺复印件"。
+- 删除信道(deletion channel):随机丢位的劣质信道,只交出剩下的比特。
+- 拟多项式(quasipolynomial):`@@M@@2^{(\log n)^3}@@` 这类量级,比 `@@M@@2^n@@` 温和得多。
+- 统一解码器(uniform decoder):同一台图灵机对所有长度与保留概率都适用,不必逐案重造。
+- 半定矩松弛(semidefinite moment relaxation):把候选串的统计量放宽成半正定矩阵约束,用来系统排除错误候选。
+
+**看个具体例子**
+
+设原串 `@@M@@x=10110@@`、保留概率 `@@M@@p=1/2@@`。某次复印丢了第 1、4 位,轨迹是 `@@M@@010@@`;另一次丢了第 2、5 位,轨迹是 `@@M@@111@@`。单条轨迹残缺不全,许多条合起来就足以锁定 `@@M@@x@@`。
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280"><text x="280" y="26" text-anchor="middle" font-size="16" fill="#333">原串 x = 1 0 1 1 0(每位以概率 p = 1/2 保留)</text><circle cx="160" cy="72" r="20" fill="#fff" stroke="#333" stroke-width="2"/><circle cx="220" cy="72" r="20" fill="#fff" stroke="#333" stroke-width="2"/><circle cx="280" cy="72" r="20" fill="#fff" stroke="#333" stroke-width="2"/><circle cx="340" cy="72" r="20" fill="#fff" stroke="#333" stroke-width="2"/><circle cx="400" cy="72" r="20" fill="#fff" stroke="#333" stroke-width="2"/><text x="160" y="78" text-anchor="middle" font-size="15">1</text><text x="220" y="78" text-anchor="middle" font-size="15">0</text><text x="280" y="78" text-anchor="middle" font-size="15">1</text><text x="340" y="78" text-anchor="middle" font-size="15">1</text><text x="400" y="78" text-anchor="middle" font-size="15">0</text><line x1="200" y1="98" x2="166" y2="152" stroke="#c0392b" stroke-width="2.5"/><path d="M160,162 L170,155 L162,149 Z" fill="#c0392b"/><line x1="360" y1="98" x2="394" y2="152" stroke="#c0392b" stroke-width="2.5"/><path d="M400,162 L390,155 L398,149 Z" fill="#c0392b"/><circle cx="130" cy="198" r="18" fill="#f4ecf7" stroke="#c0392b" stroke-width="2"/><circle cx="180" cy="198" r="18" fill="#f4ecf7" stroke="#c0392b" stroke-width="2"/><circle cx="230" cy="198" r="18" fill="#f4ecf7" stroke="#c0392b" stroke-width="2"/><text x="130" y="204" text-anchor="middle" font-size="14">0</text><text x="180" y="204" text-anchor="middle" font-size="14">1</text><text x="230" y="204" text-anchor="middle" font-size="14">0</text><circle cx="330" cy="198" r="18" fill="#f4ecf7" stroke="#c0392b" stroke-width="2"/><circle cx="380" cy="198" r="18" fill="#f4ecf7" stroke="#c0392b" stroke-width="2"/><circle cx="430" cy="198" r="18" fill="#f4ecf7" stroke="#c0392b" stroke-width="2"/><text x="330" y="204" text-anchor="middle" font-size="14">1</text><text x="380" y="204" text-anchor="middle" font-size="14">1</text><text x="430" y="204" text-anchor="middle" font-size="14">1</text><text x="180" y="248" text-anchor="middle" font-size="14" fill="#c0392b">轨迹① 丢第 1、4 位 → 010</text><text x="380" y="248" text-anchor="middle" font-size="14" fill="#c0392b">轨迹② 丢第 2、5 位 → 111</text><text x="280" y="272" text-anchor="middle" font-size="13" fill="#666">许多条轨迹合起来,即可唯一锁定原串</text></svg>
+
+</div>
+
+定理的数字版:固定 `@@M@@p@@`,只需 `@@M@@\exp(C(\log n)^3(1+\log\log n)^6)@@` 条轨迹,这台机器就以至少 `@@M@@2/3@@` 的概率输出 `@@M@@x@@`,耗时同为拟多项式;若删除概率不超过 `@@M@@n^{-\varepsilon}@@`,轨迹数与时间都降为多项式。
+
+**为什么值得关心**
+
+此前人们只证明"这么多条轨迹在信息上够用",却造不出跑得快的算法;本文把样本界升级为一台真正可执行、对所有参数统一的解码器,跨过了删除信道研究的一道大门。
+
+> 暂无形式化证明(AI 结果待核验)
+
 ## 一句话结论
 论文为删除信道下的轨迹重构（trace reconstruction）造出单一"统一"解码图灵机：只要长度 `@@M@@n@@` 与有理保留概率 `@@M@@p@@` 已知，对每个固定 `@@M@@p@@` 用拟多项式条轨迹与拟多项式位复杂度即可重构任意二进制串，把此前只有样本界的结果升级为高效算法。
 

@@ -13,6 +13,53 @@ pdfname: ""
 
 > 结果族 322：Tingley's sphere-isometry problem　·　学科：Functional analysis　·　验证状态：主结果已 Lean 形式化
 
+## 入门导读 🐣
+
+只给你一只球的外壳，并告诉你壳面上任意两点的直线距离，你能据此重建整个三维空间、连同它的线性结构吗？Tingley 在 1987 年问：两个赋范空间的单位球面之间若存在保持距离的一一对应，它是否必然来自某个线性等距算子？本文给出肯定回答，且不设任何维数、可分性或光滑性限制。
+
+**关键词卡片**
+
+- 单位球面（unit sphere）：范数恰等于 1 的点全体，是空间的"外壳"。
+- 满等距（surjective isometry）：一对一、到上、且保持任意两点距离的映射。
+- 径向扩张（radial extension）：候选公式 `@@M@@T(x)=\|x\|\,f(x/\|x\|)@@`，把球面对应沿射线按比例放大到全空间。
+- Mazur–Ulam 定理（Mazur–Ulam theorem）：到上的保距映射自动仿射——本文的收官工具。
+
+**看个具体例子**
+
+扩张方式像太阳光线：壳面上的点如何对应，同一条射线上的内部点就按比例照搬，比如半径一半处的 `@@M@@t\cdot x@@` 映到 `@@M@@t\cdot f(x)@@`：
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280">
+<text x="280" y="30" font-size="14" text-anchor="middle">径向扩张：同一射线上的点按比例照搬</text>
+<circle cx="150" cy="150" r="80" fill="none" stroke="black" stroke-width="2"/>
+<circle cx="410" cy="150" r="80" fill="none" stroke="black" stroke-width="2"/>
+<line x1="150" y1="150" x2="217" y2="83" stroke="black" stroke-width="1.5" stroke-dasharray="5,4"/>
+<line x1="410" y1="150" x2="477" y2="83" stroke="black" stroke-width="1.5" stroke-dasharray="5,4"/>
+<circle cx="178" cy="122" r="4" fill="black"/>
+<circle cx="438" cy="122" r="4" fill="black"/>
+<circle cx="207" cy="93" r="4" fill="black"/>
+<circle cx="467" cy="93" r="4" fill="black"/>
+<text x="138" y="164" font-size="13">O</text>
+<text x="396" y="164" font-size="13">O′</text>
+<text x="213" y="80" font-size="13">x</text>
+<text x="474" y="80" font-size="13">f(x)</text>
+<text x="158" y="115" font-size="13">t·x</text>
+<text x="446" y="140" font-size="13">t·f(x)</text>
+<text x="150" y="248" font-size="13" text-anchor="middle">X 的单位球面</text>
+<text x="410" y="248" font-size="13" text-anchor="middle">Y 的单位球面</text>
+</svg>
+
+</div>
+
+定理断言这样定义的 T 必是满的实线性等距：外壳的度量几何完全决定内部结构。此前结论只对 `@@M@@\ell^p@@`、`@@M@@L^p@@`、C*-代数等具体空间逐类成立。
+
+**为什么值得关心**
+
+三十余年的逐类验证就此收官为一条无限制的一般定理，"球面决定空间"从经验升级为定律。
+
+> 已 Lean 形式化
+
 ## 一句话结论
 
 本文肯定地解决了 Tingley 问题：实 Banach 空间单位球面之间的满等距映射必可唯一扩张为全空间上的满实线性等距算子，且对维数、可分性、光滑性均无限制——单位球面的度量几何在线性等距意义下完全决定整个空间。

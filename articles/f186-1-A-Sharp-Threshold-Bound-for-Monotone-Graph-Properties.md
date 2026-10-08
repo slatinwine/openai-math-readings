@@ -13,6 +13,46 @@ pdfname: ""
 
 > 结果族 186：Uniform influence and sharp thresholds for graph and hypergraph properties　·　学科：Combinatorics　·　验证状态：暂无形式化证明，请以社区核验为准
 
+## 入门导读 🐣
+
+在随机图上慢慢撒网：每条边以概率 p 独立出现，p 从 0 拉到 1。"变得连通""出现三角形"这类不挑顶点的性质，一旦开始发生就发生得飞快——像推倒的多米诺。论文证明：对一切顶点置换不变的非平凡单调图性质，概率从 ε 涨到 1−ε 的 p 区间宽度至多 C·log(1/(2ε))/(log n)²，分母的平方正是最优阶——解决了 Friedgut–Kalai 1996 年尖阈值猜想。
+
+**关键词卡片**
+
+- 单调性质（monotone property）：加边只可能让性质从无到有，不会从有到无
+- 顶点置换不变（invariant under vertex permutations）：性质不依赖顶点标签；"连通"满足，"顶点 1 有邻居"不满足
+- 阈值宽度（threshold width）：概率从 ε 到 1−ε 的 p 区间长度，衡量相变陡度
+- 影响力（influence）：翻转一条边改变结论的概率；Margulis–Russo 公式把它与概率增速挂钩
+
+**看个具体例子**
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280">
+<text x="295" y="24" font-size="14" fill="#555" text-anchor="middle">横轴：边概率 p；纵轴：性质发生概率</text>
+<line x1="70" y1="230" x2="520" y2="230" stroke="#333" stroke-width="2"/>
+<line x1="70" y1="40" x2="70" y2="230" stroke="#333" stroke-width="2"/>
+<path d="M 85 226 Q 220 224 255 140 Q 285 44 480 34" fill="none" stroke="#1a6feb" stroke-width="3"/>
+<line x1="70" y1="208" x2="436" y2="208" stroke="#b03030" stroke-width="1.5" stroke-dasharray="6 4"/>
+<line x1="70" y1="52" x2="436" y2="52" stroke="#b03030" stroke-width="1.5" stroke-dasharray="6 4"/>
+<line x1="430" y1="52" x2="430" y2="208" stroke="#b03030" stroke-width="2.5"/>
+<text x="62" y="212" font-size="13" fill="#b03030" text-anchor="end">ε</text>
+<text x="62" y="56" font-size="13" fill="#b03030" text-anchor="end">1−ε</text>
+<text x="430" y="254" font-size="14" fill="#b03030" text-anchor="middle">宽度 ≤ C·log(1/(2ε))/(log n)²</text>
+<text x="100" y="150" font-size="14" fill="#1a6feb">顶点对称性</text>
+<text x="100" y="170" font-size="14" fill="#1a6feb">让曲线陡峭</text>
+</svg>
+
+</div>
+
+数字版：n=10^6 时 (ln n)² ≈ 191，宽度至多 C·log(1/(2ε))/191。最优性由反例保证：包含大小与 log n 成比例的团的性质，其宽度本身就达到 (log n)^(−2) 阶，平方不能再改进；此前最好结果带 η 或 (log log n)² 的损失。
+
+**为什么值得关心**
+
+尖阈值解释了大规模随机网络的状态切换为何如此突然，也是组合、概率与算法分析共用的基本工具；姊妹篇把同一方法推广到 r-一致超图。
+
+> 暂无形式化证明（AI 结果待核验）
+
 ## 一句话结论
 
 证明了 Friedgut–Kalai 1996 年提出的尖阈值（sharp threshold）猜想：`@@M@@n@@` 个顶点的图上，任何在全体顶点置换下不变的非平凡单调性质，从概率 `@@M@@\varepsilon@@` 涨到 `@@M@@1-\varepsilon@@` 的边概率区间宽度至多 `@@M@@2^{19}\log(1/(2\varepsilon))/(\log n)^2@@`，分母中的平方为最优阶。

@@ -13,6 +13,54 @@ pdfname: ""
 
 > 结果族 042：Oka classification for minimal compact complex surfaces: Kodaira dimension zero and class VII　·　学科：Algebraic and complex geometry　·　验证状态：暂无形式化证明，请以社区核验为准
 
+## 入门导读 🐣
+
+有些形状像海绵一样"柔软"：只要一张复解析地图能在某个小邻域上画出来，就一定能近似地把它扩展到整个空间。数学里叫 Oka 性质。这篇论文证明：所有 K3 曲面——复几何里最核心的一类空间——统统柔软，解决了专门的公开猜想。
+
+**关键词卡片**
+
+- K3 曲面（K3 surface）：单连通、"自带平直度量"的最简紧复曲面，几何与弦论的十字路口。
+- Oka 流形（Oka manifold）：满足"拓扑可行则全纯可行"的空间，柔性最强的一类。
+- 整映射（entire map）：在整个 C^m 上处处有定义、无奇点的全纯映射。
+- 凸逼近性质（CAP, convex approximation property）：紧凸集邻域上的映射能被整映射一致逼近；它是 Oka 性的判据。
+- 周期域（period domain）：登记所有 K3 "形状参数"的巨大分类空间。
+
+**看个具体例子**
+
+任取一个 K3 曲面 X。给一个闭球 K ⊂ C^m 和只在 K 附近有定义的全纯映射 f，定理保证存在整个 C^m 上的整映射 F，在 K 上与 f 任意接近：
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280">
+  <rect x="0" y="0" width="560" height="280" fill="#ffffff"/>
+  <text x="30" y="32" font-size="16" fill="#222222">"局部画得出来，就能整体近似画出来"</text>
+  <rect x="30" y="70" width="320" height="180" fill="#f2f7fb" stroke="#9bb7d4" stroke-width="2"/>
+  <ellipse cx="175" cy="165" rx="128" ry="76" fill="none" stroke="#7a9cc6" stroke-width="2" stroke-dasharray="7,5"/>
+  <ellipse cx="175" cy="165" rx="80" ry="46" fill="#dbe8f6" stroke="#3b6fb5" stroke-width="2"/>
+  <text x="166" y="172" font-size="18" fill="#1d3d63">K</text>
+  <text x="92" y="106" font-size="14" fill="#4a6c8e">f 的定义域：邻域 U（虚线）</text>
+  <text x="108" y="240" font-size="14" fill="#333333">整个 C^m（大矩形）</text>
+  <ellipse cx="462" cy="86" rx="76" ry="40" fill="#eaf3ea" stroke="#3a7d44" stroke-width="2.5"/>
+  <text x="428" y="92" font-size="15" fill="#275c2f">K3 曲面 X</text>
+  <line x1="248" y1="128" x2="386" y2="95" stroke="#c0392b" stroke-width="2.5" stroke-dasharray="8,5"/>
+  <polygon points="398,91 383,85 386,101" fill="#c0392b"/>
+  <text x="258" y="84" font-size="14" fill="#c0392b">f：只在 U 上有定义</text>
+  <path d="M 335 236 Q 466 224 486 136" fill="none" stroke="#2c7fb8" stroke-width="2.5"/>
+  <polygon points="488,124 479,141 497,139" fill="#2c7fb8"/>
+  <text x="356" y="248" font-size="14" fill="#2c7fb8">F：整个 C^m 上的整映射</text>
+  <text x="30" y="266" font-size="14" fill="#555555">在 K 上 d(F(z), f(z)) 可以小于任何事先给的 ε</text>
+</svg>
+
+</div>
+
+一个直观推论：从任意 K3 出发存在全纯浸入 C → X，其像的闭包铺满整个曲面——一根全纯"面条"涂满整块曲面。论文还顺带证明 Enriques 曲面（K3 的一半）也 Oka，从而 Kodaira 维数为零的极小曲面全部 Oka。
+
+**为什么值得关心**
+
+非射影的 K3 可以连一条曲线都没有，是最难啃的检验案例；此前只知道"一大批"K3 是 Oka，本文把缺口补成"每一个"。
+
+> 暂无形式化证明（AI 结果待核验）
+
 ## 一句话结论
 
 证明任一复 K3 曲面（K3 surface，含非射影者）都是 Oka 流形，解决 K3 Oka 猜想：到 K3 的局部全纯映射总能被整映射在紧凸集上一致逼近；进而 Kodaira 维数为零的极小紧复曲面都是 Oka。

@@ -13,6 +13,54 @@ pdfname: ""
 
 > 结果族 111：One-sample matroid prophet inequalities against an almighty adversary　·　学科：Theoretical computer science　·　验证状态：暂无形式化证明，请以社区核验为准
 
+## 入门导读 🐣
+
+一排礼盒依次递来，打开看到金额就必须当场决定收不收，收了不能退；更麻烦的是有些盒子互相"犯冲"，犯冲的不能同时收。"先知"是全部看完再挑的人。你不知道金额的分布规律，只允许提前对每个盒子试抽一次看个参考值；安排盒子顺序的对手甚至能看光你的参考值、每次金额，连你掷骰子的种子都一览无余。苛刻到这个地步，本文构造的规则仍保证拿到先知期望收益的固定比例。
+
+**关键词卡片**
+
+- 先知不等式（prophet inequality）：把"在线不可反悔的选择"与"事后全知的最优"作比较的定理。
+- 拟阵（matroid）：抽象刻画"哪些组合可同时拿"的约束，如"选中的向量须线性无关"。
+- 单样本（single sample）：每个元素只看一次独立试抽，以此替代未知的值分布。
+- 全能对手（almighty adversary）：看完样本、在线值与算法全部随机种子后再排顺序的对手。
+- 常数竞争比（constant competitive ratio）：期望收益 ≥ 2⁻³¹⁰ × 先知——数字极小，但与规模无关。
+
+**看个具体例子**
+
+三个盒子：样本依次为 5、2、6，在线值依次为 8、3、7，且盒 1 与盒 3 犯冲。先知全知全览，拿 8+3=11；一种直觉玩法是"只收明显高过自己样本的盒子"——本例收下盒 1、放弃其余，得 8。论文的正式规则更精细，但接口相同，保证 `@@M@@\mathbb{E}[\text{收益}]\ge 2^{-310}\cdot\mathbb{E}[\text{先知}]@@`，且收下的组合永远不犯冲。
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280">
+  <text x="280" y="26" text-anchor="middle" font-size="15" fill="#333333">三个礼盒：先看样本（上），再决定收不收在线值（盒内）</text>
+  <line x1="110" y1="95" x2="450" y2="95" stroke="#e0592a" stroke-width="2" stroke-dasharray="7 5"/>
+  <text x="280" y="86" text-anchor="middle" font-size="13" fill="#e0592a">盒 1 与盒 3 犯冲：不能同时收</text>
+  <text x="110" y="74" text-anchor="middle" font-size="13" fill="#777777">样本 5</text>
+  <text x="280" y="74" text-anchor="middle" font-size="13" fill="#777777">样本 2</text>
+  <text x="450" y="74" text-anchor="middle" font-size="13" fill="#777777">样本 6</text>
+  <rect x="70" y="100" width="80" height="90" rx="8" fill="#eef4fb" stroke="#3b82c4" stroke-width="2"/>
+  <rect x="240" y="100" width="80" height="90" rx="8" fill="#eef4fb" stroke="#3b82c4" stroke-width="2"/>
+  <rect x="410" y="100" width="80" height="90" rx="8" fill="#eef4fb" stroke="#3b82c4" stroke-width="2"/>
+  <text x="110" y="135" text-anchor="middle" font-size="14" fill="#333333">在线值</text>
+  <text x="110" y="164" text-anchor="middle" font-size="16" font-weight="bold" fill="#333333">8</text>
+  <text x="280" y="135" text-anchor="middle" font-size="14" fill="#333333">在线值</text>
+  <text x="280" y="164" text-anchor="middle" font-size="16" font-weight="bold" fill="#333333">3</text>
+  <text x="450" y="135" text-anchor="middle" font-size="14" fill="#333333">在线值</text>
+  <text x="450" y="164" text-anchor="middle" font-size="16" font-weight="bold" fill="#333333">7</text>
+  <text x="110" y="222" text-anchor="middle" font-size="13" fill="#2e8b57">✓ 收</text>
+  <text x="280" y="222" text-anchor="middle" font-size="13" fill="#999999">✗ 弃</text>
+  <text x="450" y="222" text-anchor="middle" font-size="13" fill="#999999">✗ 与盒1犯冲</text>
+  <text x="280" y="254" text-anchor="middle" font-size="13" fill="#555555">先知拿 8+3=11；本例规则拿 8。一般保证：期望收益 ≥ 2⁻³¹⁰ × 先知期望</text>
+</svg>
+
+</div>
+
+**为什么值得关心**
+
+它把"零分布知识"的在线选择推到最严苛的对手模型：连算法的随机种子都被看光，一个样本仍然够用——突破在于"常数比成立"这件事本身，而不在常数大小。
+
+> 暂无形式化证明（AI 结果待核验）
+
 ## 一句话结论
 
 在任意有限拟阵（matroid）上，每个元素仅凭一个独立样本、完全不知道值分布，就存在在线选取规则：即使到达顺序由看得见全部样本、在线值乃至算法完整随机种子的"全能对手"（almighty adversary）决定，仍能拿到离线最优期望收益的固定常数比例（`@@M@@2^{-310}@@`）。

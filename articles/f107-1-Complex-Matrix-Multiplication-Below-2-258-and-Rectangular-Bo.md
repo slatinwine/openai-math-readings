@@ -13,6 +13,49 @@ pdfname: ""
 
 > 结果族 107：Matrix multiplication with exponent at most 9/4　·　学科：Theoretical computer science　·　验证状态：主结果已 Lean 形式化
 
+## 入门导读 🐣
+
+旗舰篇证明了方阵乘法指数不超过 9/4；这篇姊妹篇盯的是"长方形"的账单——高矩阵乘宽矩阵要付多少。它把方阵纪录压到 2.258 以下，同时刷新矩形乘法与"对偶指数"的纪录，还把结论搬运到几乎所有数域上。
+
+**关键词卡片**
+
+- 矩形矩阵乘法（rectangular matrix multiplication）：`@@M@@n\times n^k@@` 矩阵乘 `@@M@@n^k\times n@@` 矩阵的指数 `@@M@@w(k)@@`
+- 对偶指数 α（dual exponent）：使 `@@M@@w(k)=2@@` 的最大 `@@M@@k@@`——内维可以涨多快而不加价
+- 特征零域（characteristic zero field）：有理数、实数、复数这类没有"循环加法"的数系
+- 张量退化（tensor degeneration）：带参数的线性代换，用来便宜地比较张量
+- 抽取（extraction）：从纠缠共享变量的张量幂中分离出大批独立的矩阵乘法
+
+**看个具体例子**
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280">
+<text x="280" y="32" text-anchor="middle" font-size="14">矩阵形状与渐近代价（宽高为示意）</text>
+<rect x="120" y="52" width="44" height="44" fill="#e8eef8" stroke="#345" stroke-width="2"/>
+<text x="172" y="80" font-size="14">×</text>
+<rect x="188" y="52" width="44" height="44" fill="#e8eef8" stroke="#345" stroke-width="2"/>
+<text x="252" y="80" font-size="13">n×n 乘 n×n ⇒ n^2.258</text>
+<rect x="100" y="116" width="22" height="56" fill="#e8f8e8" stroke="#383" stroke-width="2"/>
+<text x="132" y="148" font-size="14">×</text>
+<rect x="148" y="133" width="56" height="22" fill="#e8f8e8" stroke="#383" stroke-width="2"/>
+<text x="222" y="148" font-size="13">n×n^0.709 乘 n^0.709×n ⇒ n^2.092</text>
+<rect x="100" y="200" width="16" height="48" fill="#f8e8d8" stroke="#a73" stroke-width="2"/>
+<text x="124" y="228" font-size="14">×</text>
+<rect x="136" y="216" width="48" height="16" fill="#f8e8d8" stroke="#a73" stroke-width="2"/>
+<text x="200" y="228" font-size="13">n×n^0.465 乘 n^0.465×n ⇒ ≈ n^2</text>
+<text x="280" y="262" text-anchor="middle" font-size="13" fill="#567">对偶指数 α &gt; 0.465：内维涨到 n^0.465 仍近乎不加价</text>
+</svg>
+
+</div>
+
+输出 `@@M@@n^2@@` 个数决定了成本至少是 `@@M@@n^2@@`；矩形结果说的是，内维（中间那个共享维度）能白送你多少"免费额度"。附带红利：复矩阵的行列式、求逆、解线性方程组也一并降到 `@@M@@O(n^{2.258})@@` 级。更妙的是三张账单出自同一台机器：一套有限张量构造经不同取向与记账方式，同时挤出了方阵、矩形与对偶三份纪录。
+
+**为什么值得关心**
+
+方阵纪录虽被旗舰篇压得更低，本文独有的矩形、对偶与正特征结论却是别处拿不到的。矩形与对偶界是一大批代数算法的定价表，这一篇把整张表几乎重刷了一遍。
+
+> 已 Lean 形式化
+
 ## 一句话结论
 本文在复数域（进而一切特征零域）上证明方阵乘法指数 `@@M@@\omega<1129/500=2.258@@`、对偶指数 `@@M@@\alpha>0.465@@`、矩形乘法指数 `@@M@@\omega(1,0.709,1)<2.092@@`，并把前两条严格不等式转移到除有限个例外特征外的所有域上，同时大幅刷新矩形矩阵乘法的纪录表。
 

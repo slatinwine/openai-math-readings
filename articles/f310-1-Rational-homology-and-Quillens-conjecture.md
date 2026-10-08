@@ -13,6 +13,36 @@ pdfname: ""
 
 > 结果族 310：Quillen's conjecture in rational homology　·　学科：Topology　·　验证状态：暂无形式化证明，请以社区核验为准
 
+## 入门导读 🐣
+
+一个有限群像一张关系网；把其中所有"平面型"交换小团体挑出来，按包含关系摆成一张联络图。Quillen 在 1978 年猜：这张联络图会塌缩成一个点，当且仅当整个群藏着一个"无处不在的官方核心"。这篇论文对所有有限群、所有素数证明了这个猜想——而且证的是更强的形式。
+
+**关键词卡片**
+
+- 有限群（finite group）：元素个数有限的对称结构，比如魔方的旋转群。
+- 初等交换 `@@M@@p@@`-子群（elementary abelian p-subgroup）：形如 `@@M@@(\mathbb{Z}/p)^r@@` 的"平面型"交换小团体。
+- 偏序集（poset）：按包含关系排列的对象网络，联络图的学名。
+- `@@M@@O_p(G)@@`：群 `@@M@@G@@` 里最大的正规 `@@M@@p@@`-子群——"官方核心"。
+- 约化同调（reduced homology）：衡量网络"塌不塌"的代数探测器；可缩则必为零。
+
+**看个具体例子**
+
+拿最小的非交换群 `@@M@@S_3@@` 试刀：`@@M@@p=2@@` 时官方核心平凡，联络图是三个孤立的 `@@M@@2@@` 阶子群（三个点），`@@M@@\widetilde H_0\cong\mathbb{Q}^2\neq 0@@`，果然不塌；`@@M@@p=3@@` 时核心 `@@M@@A_3@@` 非平凡，联络图只剩一个点，自动塌缩、约化同调为零。主定理断言这种二选一普遍成立：
+
+`@@M@@DO_p(G)=1\ \Rightarrow\ \widetilde H_*\big(\mathcal{A}_p(G);\mathbb{Q}\big)\neq 0.@@`
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280"><text x="20" y="34" font-size="15" fill="#333">用 S₃ 试刀：联络图塌不塌？</text><text x="55" y="72" font-size="14" fill="#333">p = 2：官方核心平凡</text><circle cx="90" cy="130" r="7" fill="#36c"/><circle cx="160" cy="130" r="7" fill="#36c"/><circle cx="230" cy="130" r="7" fill="#36c"/><text x="60" y="172" font-size="13" fill="#666">三个孤立点，塌不掉</text><text x="78" y="194" font-size="13" fill="#666">H̃₀ ≅ Q² ≠ 0</text><line x1="285" y1="60" x2="285" y2="210" stroke="#ccc" stroke-dasharray="5 4"/><text x="320" y="72" font-size="14" fill="#333">p = 3：官方核心非平凡</text><circle cx="400" cy="130" r="7" fill="#36c"/><text x="345" y="172" font-size="13" fill="#666">一个点，自动塌缩</text><text x="345" y="194" font-size="13" fill="#666">约化同调全为零</text><text x="20" y="240" font-size="13" fill="#666">点 = 初等交换 p-子群；主定理：核心平凡 ⇔ 联络图必不塌缩</text></svg>
+
+</div>
+
+**为什么值得关心**
+
+悬置近五十年的 Quillen 猜想就此收官，且"在任一固定域上零调"恰好刻画"存在非平凡正规 `@@M@@p@@`-子群"，给出群结构的纯拓扑判据。
+
+> 暂无形式化证明（AI 结果待核验）
+
 ## 一句话结论
 
 论文对一切有限群与一切素数证明了 Quillen 猜想（Quillen's conjecture）：若最大正规 `@@M@@p@@`-子群 `@@M@@O_p(G)@@` 平凡，则初等交换 `@@M@@p@@`-子群偏序集 `@@M@@\mathcal A_p(G)@@` 的增广约化有理同调非零、必不缩拢——比原猜想更强的有理同调形式。

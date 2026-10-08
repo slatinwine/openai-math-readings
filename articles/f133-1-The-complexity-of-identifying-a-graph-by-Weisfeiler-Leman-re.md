@@ -13,6 +13,35 @@ pdfname: ""
 
 > 结果族 133：The computational complexity of Weisfeiler–Leman refinement　·　学科：Theoretical computer science　·　验证状态：暂无形式化证明，请以社区核验为准
 
+## 入门导读 🐣
+
+`@@M@@k@@` 维 WL"对话"分不出两张图，只说明这两张像；本文问一个更强的问题：多大的 `@@M@@k@@` 才能让一张图 `@@M@@G@@` 从**所有**非同构的图里被单独认出来？论文证明：判定"认出来所需维数 `@@M@@\le k@@`"是 EXPTIME 完全的——指数时间世界里的最难一档，比 NP 难题还要再高一层。
+
+**关键词卡片**
+
+- WL 维数（Weisfeiler–Leman dimension, `@@M@@\mathrm{WLdim}(G)@@`）：能把 `@@M@@G@@` 与所有非同构图区分开的最小维数 `@@M@@k@@`。
+- 识别问题（identification）：判定 `@@M@@\mathrm{WLdim}(G)\le k@@`，要对一切比较图 `@@M@@H@@` 全称量化。
+- 联合更新（joint update）：`@@M@@k@@` 维颜色细化的一种标准约定。
+- EXPTIME 完全（EXPTIME-complete）：指数时间可解，且一切指数时间问题都能归约到它。
+
+**看个具体例子**
+
+比如输入一张 20 个顶点的图和 `@@M@@k=5@@`，问"5-WL 认得出它吗"：
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280"><text x="280" y="24" text-anchor="middle" font-size="15" fill="#333">识别：多大的 k 能让 G 从所有非同构图中被单独认出？</text><line x1="280" y1="140" x2="112" y2="66" stroke="#99a" stroke-width="1.5" stroke-dasharray="5,4"/><line x1="280" y1="140" x2="468" y2="66" stroke="#99a" stroke-width="1.5" stroke-dasharray="5,4"/><line x1="280" y1="140" x2="80" y2="196" stroke="#99a" stroke-width="1.5" stroke-dasharray="5,4"/><line x1="280" y1="140" x2="480" y2="196" stroke="#99a" stroke-width="1.5" stroke-dasharray="5,4"/><line x1="280" y1="140" x2="170" y2="230" stroke="#99a" stroke-width="1.5" stroke-dasharray="5,4"/><line x1="280" y1="140" x2="390" y2="230" stroke="#99a" stroke-width="1.5" stroke-dasharray="5,4"/><polygon points="250,100 310,100 325,146 280,176 235,146" fill="none" stroke="#345" stroke-width="2"/><line x1="250" y1="100" x2="325" y2="146" stroke="#345" stroke-width="1.5"/><circle cx="250" cy="100" r="5" fill="#345"/><circle cx="310" cy="100" r="5" fill="#345"/><circle cx="325" cy="146" r="5" fill="#345"/><circle cx="280" cy="176" r="5" fill="#345"/><circle cx="235" cy="146" r="5" fill="#345"/><text x="280" y="200" text-anchor="middle" font-size="14" fill="#123">G（输入图）</text><polygon points="88,52 124,52 106,82" fill="none" stroke="#888" stroke-width="1.5"/><circle cx="88" cy="52" r="4" fill="#888"/><circle cx="124" cy="52" r="4" fill="#888"/><circle cx="106" cy="82" r="4" fill="#888"/><text x="106" y="44" text-anchor="middle" font-size="13" fill="#666">H₁</text><polygon points="444,52 480,52 462,82" fill="none" stroke="#888" stroke-width="1.5"/><circle cx="444" cy="52" r="4" fill="#888"/><circle cx="480" cy="52" r="4" fill="#888"/><circle cx="462" cy="82" r="4" fill="#888"/><text x="462" y="44" text-anchor="middle" font-size="13" fill="#666">H₂</text><polygon points="56,182 92,182 74,212" fill="none" stroke="#888" stroke-width="1.5"/><circle cx="56" cy="182" r="4" fill="#888"/><circle cx="92" cy="182" r="4" fill="#888"/><circle cx="74" cy="212" r="4" fill="#888"/><text x="74" y="236" text-anchor="middle" font-size="13" fill="#666">H₃</text><polygon points="456,182 492,182 474,212" fill="none" stroke="#888" stroke-width="1.5"/><circle cx="456" cy="182" r="4" fill="#888"/><circle cx="492" cy="182" r="4" fill="#888"/><circle cx="474" cy="212" r="4" fill="#888"/><text x="474" y="236" text-anchor="middle" font-size="13" fill="#666">H₄</text><polygon points="146,222 182,222 164,248" fill="none" stroke="#888" stroke-width="1.5"/><circle cx="146" cy="222" r="4" fill="#888"/><circle cx="182" cy="222" r="4" fill="#888"/><circle cx="164" cy="248" r="4" fill="#888"/><text x="164" y="216" text-anchor="middle" font-size="13" fill="#666">H₅</text><polygon points="366,222 402,222 384,248" fill="none" stroke="#888" stroke-width="1.5"/><circle cx="366" cy="222" r="4" fill="#888"/><circle cx="402" cy="222" r="4" fill="#888"/><circle cx="384" cy="248" r="4" fill="#888"/><text x="384" y="216" text-anchor="middle" font-size="13" fill="#666">H₆</text><text x="280" y="272" text-anchor="middle" font-size="13" fill="#666">配对等价只比指定的两张图；识别要赢下所有对手</text></svg>
+
+</div>
+
+上界一侧很朴素：`@@M@@k\ge n@@` 时必能识别，故枚举全部 `@@M@@2^{\binom n2}@@` 张 `@@M@@n@@` 顶点图逐一检验，耗时对 `@@M@@n@@` 指数；下界一侧把任意图灵机的指数长计算压进多项式规模的图与维数 `@@M@@r@@`。结论：即使 `@@M@@k@@` 改用一进制编码，问题仍 EXPTIME 完全——难，不靠 `@@M@@k@@` 的数字写得长。
+
+**为什么值得关心**
+
+它补全了 WL 框架下"识别"这一量词形态的复杂度分类（此前只知 P 艰难与 NP 艰难），说明只差一个"对所有图"的量词，问题就从多项式可解跳到指数时间完全。
+
+> 暂无形式化证明（AI 结果待核验）
+
 ## 一句话结论
 本文证明：给定无色图 `@@M@@G@@` 的邻接矩阵和二进制编码的正整数 `@@M@@k@@`，判定"Weisfeiler–Leman 维数 `@@M@@\mathrm{WLdim}(G)\le k@@`"是 EXPTIME 完全的；即使 `@@M@@k@@` 改为一进制编码仍然完全，从而完成了输入维数下识别问题的复杂度分类。
 

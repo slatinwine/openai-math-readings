@@ -13,6 +13,60 @@ pdfname: ""
 
 > 结果族 086：An `@@M@@L^3@@` bound for the trilinear Hilbert transform　·　学科：Real and complex analysis（实分析与复分析）　·　验证状态：暂无形式化证明，请以社区核验为准
 
+## 入门导读 🐣
+
+三位滑冰者站在数轴上的点 `@@M@@x@@` 附近：第一位每次退到 `@@M@@x-t@@`，第二位退到 `@@M@@x-2t@@`，第三位退到 `@@M@@x-3t@@`；把三人脚下的"高度"相乘，再对 `@@M@@t@@` 做一种叫主值的对称平均。这个"三重乘积平均"算子的输出会不会失控？论文给出第一个完整答案：不会，只要三个输入都用 `@@M@@L^3@@` 这把尺子度量。
+
+**关键词卡片**
+
+- 三线性 Hilbert 变换（trilinear Hilbert transform）：主值积分 `@@M@@\mathrm{p.v.}\int f_1(x-t)f_2(x-2t)f_3(x-3t)\,\frac{dt}{t}@@`，在三个等距点上同时取样再平均。
+- 主值积分（principal value）：让 `@@M@@t@@` 对称地趋于 0 取极限，是处理 `@@M@@\frac1t@@` 奇异性的正规化方式。
+- `@@M@@L^p@@` 范数（`@@M@@L^p@@` norm）：`@@M@@(\int|f|^p)^{1/p}@@`，衡量函数"有多大"的标准尺子。
+- 有界性（boundedness）：输出大小被输入大小的乘积乘常数封顶。
+- 二次调制（quadratic modulation）：相位含 `@@M@@t^2@@` 的振荡模式；它能在逐尺度抵消中存活，是三线性情形特有的敌人。
+
+**看个具体例子**
+
+取样几何一目了然：三个点 `@@M@@x-3t@@`、`@@M@@x-2t@@`、`@@M@@x-t@@` 与中心 `@@M@@x@@` 等距排开，相邻距离恰为 `@@M@@t@@`，三个函数各守一个位置。
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280">
+<text x="60" y="50" font-size="18" fill="#333">三个函数在等距点上取样，间距为 t</text>
+<line x1="60" y1="150" x2="500" y2="150" stroke="#333" stroke-width="2"/>
+<line x1="60" y1="144" x2="60" y2="156" stroke="#333" stroke-width="2"/>
+<line x1="500" y1="144" x2="500" y2="156" stroke="#333" stroke-width="2"/>
+<circle cx="200" cy="150" r="7" fill="#8e44ad"/>
+<circle cx="280" cy="150" r="7" fill="#2980b9"/>
+<circle cx="360" cy="150" r="7" fill="#27ae60"/>
+<circle cx="440" cy="150" r="7" fill="#555555"/>
+<text x="172" y="132" font-size="16" fill="#8e44ad">x−3t</text>
+<text x="254" y="132" font-size="16" fill="#2980b9">x−2t</text>
+<text x="338" y="132" font-size="16" fill="#27ae60">x−t</text>
+<text x="432" y="132" font-size="16" fill="#555555">x</text>
+<line x1="200" y1="185" x2="280" y2="185" stroke="#888888" stroke-width="1.5"/>
+<line x1="200" y1="179" x2="200" y2="191" stroke="#888888" stroke-width="1.5"/>
+<line x1="280" y1="179" x2="280" y2="191" stroke="#888888" stroke-width="1.5"/>
+<line x1="280" y1="185" x2="360" y2="185" stroke="#888888" stroke-width="1.5"/>
+<line x1="360" y1="179" x2="360" y2="191" stroke="#888888" stroke-width="1.5"/>
+<line x1="360" y1="185" x2="440" y2="185" stroke="#888888" stroke-width="1.5"/>
+<line x1="440" y1="179" x2="440" y2="191" stroke="#888888" stroke-width="1.5"/>
+<text x="224" y="210" font-size="14" fill="#888888">t</text>
+<text x="304" y="210" font-size="14" fill="#888888">t</text>
+<text x="384" y="210" font-size="14" fill="#888888">t</text>
+<text x="60" y="250" font-size="15" fill="#777777">f₁ 读 x−t 处的值，f₂ 读 x−2t，f₃ 读 x−3t；乘起来再对 t 作主值平均</text>
+</svg>
+
+</div>
+
+数字版定理：若 `@@M@@\|f_1\|_3=\|f_2\|_3=\|f_3\|_3=1@@`，则 `@@M@@\|T(f_1,f_2,f_3)\|_{L^1}\le C@@`。三个 `@@M@@\tfrac13@@` 相加恰为 1，`@@M@@L^3\times L^3\times L^3\to L^1@@` 正是尺度上自然的指数组合，但把"自然"变成定理，跨尺度抵消是全部难点。
+
+**为什么值得关心**
+
+双线性 Hilbert 变换的有界性 1997–1999 年由 Lacey–Thiele 攻克，直线上的三线性情形此后悬置二十余年；本文（斜率固定为 1、2、3）是该情形的首个完整有界性结果。
+
+> 暂无形式化证明（AI 结果待核验）
+
 ## 一句话结论
 
 论文证明斜率 1、2、3 的三线性 Hilbert 变换（trilinear Hilbert transform）把 `@@M@@L^3(\mathbb R)\times L^3(\mathbb R)\times L^3(\mathbb R)@@` 有界地映入 `@@M@@L^1(\mathbb R)@@`，正面解决三线性 Hilbert 变换标准猜想在这组指数与斜率下的情形，是 Lacey–Thiele 双线性定理之后直线三线性情形的首个完整有界性结果。

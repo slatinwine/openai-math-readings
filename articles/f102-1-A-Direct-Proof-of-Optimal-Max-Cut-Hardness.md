@@ -13,6 +13,33 @@ pdfname: ""
 
 > 结果族 102：The Unique Games Conjecture and optimal approximation thresholds　·　学科：Theoretical computer science　·　验证状态：主结果已 Lean 形式化
 
+## 入门导读 🐣
+
+学校分班：把互相吵架的学生分进两个班，让跨班的"吵架对"尽量多。1995 年的 Goemans–Williamson 算法能保证切到最优值的约 87.86%；这篇论文证明：除非 P=NP，谁也别想明显超过这条线——三十年前的老算法原来已经是天花板。
+
+**关键词卡片**
+
+- Max-Cut：把图顶点分成两部分，使跨越两部分的边尽量多。
+- 半定规划（semidefinite programming）：把"二选一"放松成"选一个方向向量"的凸优化，可高效求解。
+- 近似比（approximation ratio）：算法答案与真正最优值之间的保证比例。
+- Goemans–Williamson 常数（`@@M@@\alpha_{\mathrm{GW}}\approx 0.8786@@`）：用随机超平面舍入所能保证的最优近似比。
+
+**看个具体例子**
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 300"><text x="280" y="24" text-anchor="middle" font-size="15" fill="#222">Max-Cut：虚线分两班，跨线边（粗）越多越好</text><line x1="280" y1="45" x2="280" y2="250" stroke="#888" stroke-width="1.5" stroke-dasharray="7,6"/><line x1="160" y1="80" x2="110" y2="180" stroke="#99a" stroke-width="1.5"/><line x1="160" y1="80" x2="210" y2="220" stroke="#99a" stroke-width="1.5"/><line x1="110" y1="180" x2="210" y2="220" stroke="#99a" stroke-width="1.5"/><line x1="420" y1="80" x2="470" y2="180" stroke="#99a" stroke-width="1.5"/><line x1="420" y1="80" x2="360" y2="220" stroke="#99a" stroke-width="1.5"/><line x1="470" y1="180" x2="360" y2="220" stroke="#99a" stroke-width="1.5"/><line x1="176" y1="80" x2="404" y2="80" stroke="#c33" stroke-width="3"/><line x1="126" y1="180" x2="454" y2="180" stroke="#c33" stroke-width="3"/><line x1="226" y1="220" x2="344" y2="220" stroke="#c33" stroke-width="3"/><circle cx="160" cy="80" r="16" fill="#fbb"/><circle cx="110" cy="180" r="16" fill="#fbb"/><circle cx="210" cy="220" r="16" fill="#fbb"/><circle cx="420" cy="80" r="16" fill="#bdf"/><circle cx="470" cy="180" r="16" fill="#bdf"/><circle cx="360" cy="220" r="16" fill="#bdf"/><text x="280" y="168" text-anchor="middle" font-size="11" fill="#c33">计入割值</text><text x="160" y="262" text-anchor="middle" font-size="14" fill="#333">班 1</text><text x="420" y="262" text-anchor="middle" font-size="14" fill="#333">班 2</text><text x="280" y="288" text-anchor="middle" font-size="13" fill="#555">三角形图：最优割 = 2 条边；GW 算法期望至少切到 0.8786×2 ≈ 1.757 条</text></svg>
+
+</div>
+
+小例子：三角形图的最优割是 2 条边（三人分两班，必有一对同班），GW 算法期望至少切到 `@@M@@\alpha_{\mathrm{GW}}\cdot2\approx1.757@@` 条。定理说：对任何固定 `@@M@@\alpha>\alpha_{\mathrm{GW}}@@`，给出 `@@M@@\alpha@@`-近似的算法都不存在（NP-难）——"保证切到最优的 95%"这类目标绝无可能。
+
+**为什么值得关心**
+
+为悬置二十余年的中心问题画上句号：GW 的半定规划算法就是 Max-Cut 的最优多项式算法，而且结论不再依赖任何未证猜想。
+
+> 已 Lean 形式化
+
 ## 一句话结论
 本文无条件证明：在简单无权图上，把 Max-Cut 近似到优于 Goemans–Williamson 常数 `@@M@@\alpha_{\mathrm{GW}}\approx 0.8786@@` 的任何固定比率都是 NP 难的。1995 年的半定规划算法由此被确认为最优多项式算法，且结论不再需要唯一博弈猜想作前提。
 

@@ -13,6 +13,51 @@ pdfname: ""
 
 > 结果族 033：Iitaka subadditivity, variation, and logarithmic additivity　·　学科：Algebraic and complex geometry　·　验证状态：暂无形式化证明，请以社区核验为准
 
+## 入门导读 🐣
+
+次可加性说：纤维化空间的总复杂度"不少于"基加纤维之和。这篇证明反方向：在合理的"层光滑"设定下，总复杂度也"不多于"基加纤维之和。两头一夹，得到漂亮的可加性等式——像确认三明治总量恰好等于两片面包加馅，一点不多、一点不少。
+
+**关键词卡片**
+
+- 对数 Kodaira 维数（logarithmic Kodaira dimension）：允许沿边界发散的复杂度，配约化 SNC 边界使用。
+- SNC 边界（simple normal crossing boundary）：分支像坐标轴一样规整相交的边界除子。
+- 层光滑（stratum-smooth）：`@@M@@X@@` 与边界的每一层交截在开基上都光滑——Popa 猜想要求的技术条件。
+- 反向不等式（reverse inequality）：上界 `@@M@@\kappa(X)\le\kappa(\text{基})+\kappa(\text{纤维})@@`。
+- 可加性（additivity）：上、下两个不等式相夹得到的精确等式。
+
+**看个具体例子**
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280">
+<line x1="80" y1="96" x2="480" y2="96" stroke="#888" stroke-width="1.4"/>
+<line x1="80" y1="90" x2="80" y2="102" stroke="#888" stroke-width="1.4"/>
+<line x1="480" y1="90" x2="480" y2="102" stroke="#888" stroke-width="1.4"/>
+<text x="280" y="82" font-size="14" text-anchor="middle">全空间的对数复杂度 κ(X, K_X+E)</text>
+<rect x="80" y="112" width="200" height="44" fill="#f0f0f0" stroke="#333" stroke-width="1.6"/>
+<rect x="280" y="112" width="200" height="44" fill="#e2e2e2" stroke="#333" stroke-width="1.6"/>
+<text x="180" y="139" font-size="13.5" text-anchor="middle">纤维：κ(F, K_F+E_F)</text>
+<text x="380" y="139" font-size="13.5" text-anchor="middle">基：κ(Y, K_Y+D)</text>
+<line x1="180" y1="196" x2="180" y2="178" stroke="#111" stroke-width="2"/>
+<polygon points="180,170 173,183 187,183" fill="#111"/>
+<text x="180" y="218" font-size="13.5" text-anchor="middle">≥（姊妹篇：次可加性）</text>
+<line x1="380" y1="170" x2="380" y2="188" stroke="#111" stroke-width="2"/>
+<polygon points="380,196 373,183 387,183" fill="#111"/>
+<text x="380" y="218" font-size="13.5" text-anchor="middle">≤（本篇：反向不等式）</text>
+<text x="280" y="248" font-size="14" text-anchor="middle">两边一夹 ⇒ 等号成立：κ(X,K_X+E) = κ(Y,K_Y+D) + κ(F,K_F+E_F)</text>
+<text x="280" y="270" font-size="13" text-anchor="middle" fill="#555">数字版：基=1、纤维=2 ⇒ 总数恰为 3；基侧 −∞ ⇒ 全空间无任何形式</text>
+</svg>
+
+</div>
+
+数字版定理：若基侧对数复杂度为 1、纤维侧为 2，则总空间恰好是 3；若基侧是 `@@M@@-\infty@@`，则总空间连一个多重形式都没有（所有 `@@M@@H^0@@` 全为零）。乘积 `@@M@@X=F\times Y@@` 上等式一目了然；定理说，所有满足层光滑条件的族都像乘积一样守规矩。
+
+**为什么值得关心**
+
+可加性是光滑族的期望行为；本文给出上界、与姊妹篇的下界拼成等式，正面解决 Popa 的对数可加性猜想（射影约化 SNC、层光滑设定），为结果族 033 封顶。
+
+> 暂无形式化证明（AI 结果待核验）
+
 ## 一句话结论
 
 论文在约化 SNC、边界层光滑设定下证明了反向对数 Kodaira 不等式 `@@M@@\kappa(X,K_X+E)\le\kappa(Y,K_Y+D)+\kappa(F,K_F+E_F)@@`，与姊妹篇的次可加性相加得到可加性等式，正面解决 Popa 的对数可加性猜想（该设定）。

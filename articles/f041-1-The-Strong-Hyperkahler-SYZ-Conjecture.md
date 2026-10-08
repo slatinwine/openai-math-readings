@@ -13,6 +13,56 @@ pdfname: ""
 
 > 结果族 041：Hyperkähler SYZ and projective-space bases　·　学科：Algebraic and complex geometry　·　验证状态：暂无形式化证明，请以社区核验为准
 
+## 入门导读 🐣
+
+把一块高维"发面团"擀成千层饼，是几何学家的重要手艺。猜想说：在一种对称性最高的面团（超凯勒流形）上，只要擀面杖选对方向，总能把面团均匀摊开成一层层环面。这篇论文证明了这件事对任何维数都成立，不附加任何额外条件。
+
+**关键词卡片**
+
+- 超凯勒流形（hyperkähler manifold）：对称性极高、处处由同一个"辛形式"管着的高维复空间。
+- 线丛（line bundle）：挂在空间各点的"复数刻度尺"；它的第一陈类是描述尺子扭转方式的向量。
+- nef 类（nef）：陈类落在"能当度量用"的方向的边界上，是"丰富"的极限情形。
+- 迷向（isotropic）：该向量关于空间天然的二次型长度恰为零，恰好可以充当纤维化的方向。
+- 半丰富（semiample）：尺子的某个高次幂足以定义一个到低维空间的投影。
+
+**看个具体例子**
+
+最低维的情形是 K3 曲面。定理说：取一条陈类非零、nef 且迷向的线丛 L，必存在 m>0 使 L^m 给出满映射 f: X → B，把曲面切成一族环面：
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280">
+  <rect x="0" y="0" width="560" height="280" fill="#ffffff"/>
+  <text x="30" y="34" font-size="16" fill="#222222">K3 曲面被切成"环面面条"（椭圆纤维化）</text>
+  <ellipse cx="130" cy="110" rx="62" ry="26" fill="none" stroke="#3b6fb5" stroke-width="3"/>
+  <ellipse cx="130" cy="110" rx="26" ry="10" fill="none" stroke="#3b6fb5" stroke-width="2"/>
+  <ellipse cx="310" cy="100" rx="58" ry="24" fill="none" stroke="#3b6fb5" stroke-width="3"/>
+  <ellipse cx="310" cy="100" rx="24" ry="9" fill="none" stroke="#3b6fb5" stroke-width="2"/>
+  <ellipse cx="470" cy="125" rx="42" ry="16" fill="none" stroke="#c0392b" stroke-width="3"/>
+  <ellipse cx="470" cy="125" rx="16" ry="6" fill="none" stroke="#c0392b" stroke-width="2"/>
+  <line x1="130" y1="140" x2="130" y2="197" stroke="#999999" stroke-width="1.5" stroke-dasharray="5,4"/>
+  <line x1="310" y1="128" x2="310" y2="197" stroke="#999999" stroke-width="1.5" stroke-dasharray="5,4"/>
+  <line x1="470" y1="143" x2="470" y2="197" stroke="#999999" stroke-width="1.5" stroke-dasharray="5,4"/>
+  <line x1="60" y1="205" x2="520" y2="205" stroke="#444444" stroke-width="3"/>
+  <circle cx="130" cy="205" r="5" fill="#3b6fb5"/>
+  <circle cx="310" cy="205" r="5" fill="#3b6fb5"/>
+  <circle cx="470" cy="205" r="5" fill="#c0392b"/>
+  <text x="60" y="232" font-size="15" fill="#222222">底空间 B（射影情形 B ≅ CP¹）</text>
+  <text x="40" y="75" font-size="14" fill="#3b6fb5">环面纤维</text>
+  <text x="400" y="165" font-size="14" fill="#c0392b">少数退化纤维</text>
+  <text x="30" y="262" font-size="14" fill="#555555">定理：只要"擀面杖"方向迷向且 nef，这样的切法必然存在</text>
+</svg>
+
+</div>
+
+在 K3 上这就是经典的椭圆纤维化：底是一条球面 CP¹，绝大多数点上方挂着光滑环面，个别点退化。一般情形下每根纤维都是半维的"拉格朗日"环面。推论还得到：当 b₂≥5 时，每个偶数维数只有有限多类这样的面团。
+
+**为什么值得关心**
+
+这一"强超凯勒 SYZ 猜想"是镜像对称 SYZ 纲领的核心待办事项，此前需要附加度量或维数条件才能部分解决；如今被无条件证明，还给出形变类型的有限性。
+
+> 暂无形式化证明（AI 结果待核验）
+
 ## 一句话结论
 证明了强超凯勒 SYZ 猜想：紧不可约全纯辛凯勒流形上第一陈类非零、nef 且迷向的线丛必半丰富，从而诱导拉格朗日纤维化；并推得 `@@M@@b_2\ge5@@` 时每个偶维数只有有限多个光滑形变类型。
 

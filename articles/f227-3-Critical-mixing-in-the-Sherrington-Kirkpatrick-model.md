@@ -13,6 +13,34 @@ pdfname: ""
 
 > 结果族 227：Critical SK autocorrelation processes and dynamics across the temperature transition　·　学科：Probability and statistical mechanics　·　验证状态：暂无形式化证明，请以社区核验为准
 
+## 入门导读 🐣
+
+搅一锅恰好停在结冰点的汤要多久？姊妹篇证明了"少于 n^(2/3) 搅不匀"，这篇补上匹配的上界并配平指数：即使在最严苛的标准（对手挑最坏起点）下，临界点的混合时间也恰是 n^(2/3)——幂次一点不差。
+
+**关键词卡片**
+
+- 混合时间（mixing time）：从最坏起点出发，总变差距离降到 1/4 以下所需的时间。
+- 离散更新时钟（discrete updates）：每步均匀挑一枚自旋重掷；n 次尝试约合连续时间 1 单位，故幂次差一个因子 n。
+- 松弛时间（relaxation time）：谱隙的倒数，链条"遗忘"初态的特征时间。
+- 对数 Sobolev 常数（logarithmic Sobolev constant）：控制熵耗散快慢的经典常数。
+- 记号 n^(2/3+o(1))：幂次恰为 2/3，误差不超过任意小的幂。
+
+**看个具体例子**
+
+n=10^6 枚自旋、温度恰为 β=1：连续搅拌约需 (10^6)^(2/3)=10^4 个时间单位；按"每步挑一枚"计数则需 (10^6)^(5/3)=10^10 次尝试。同一个指数还同时控制松弛时间与对数 Sobolev 常数。也就是说，难度按幂律温和增长：10 枚自旋约需 10^(2/3)≈4.6 个单位，100 万枚也只需 1 万个单位，远非低温区的指数爆炸。下图把整条温度轴的"搅拌难度"画在一起。
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280"><text x="140" y="24" font-size="15" fill="#333">搅拌多久才搅匀？——混合时间随温度变化</text><line x1="70" y1="235" x2="530" y2="235" stroke="#555" stroke-width="2"/><line x1="70" y1="235" x2="70" y2="50" stroke="#555" stroke-width="2"/><text x="24" y="150" font-size="12" fill="#555" transform="rotate(-90 24 150)">log(混合时间)</text><line x1="280" y1="235" x2="280" y2="55" stroke="#bbb" stroke-dasharray="5 5"/><text x="66" y="255" font-size="13" fill="#555">0</text><text x="276" y="255" font-size="13" fill="#555">1</text><text x="486" y="255" font-size="13" fill="#555">2</text><text x="430" y="272" font-size="12" fill="#555">温度参数 β</text><path d="M70,222 C140,224 200,220 250,205 C272,197 277,180 280,172 C283,180 291,183 300,174 C330,142 352,85 420,58 C452,46 492,42 522,42" fill="none" stroke="#333" stroke-width="2.5"/><circle cx="280" cy="172" r="5" fill="#c62828"/><text x="100" y="210" font-size="13" fill="#2e7d32">高温区：多项式搅匀</text><text x="216" y="140" font-size="13" fill="#c62828">临界点：恰为 n^(2/3)</text><line x1="262" y1="145" x2="276" y2="164" stroke="#c62828" stroke-width="1"/><text x="360" y="80" font-size="13" fill="#1565c0">低温区：伸展指数 e^(n^…)</text></svg>
+
+</div>
+
+**为什么值得关心**
+
+把严格混合结果从高温区第一次推进到相变点本身，而且一次定齐四个基本量（两种混合时间、松弛时间、对数 Sobolev 常数）的精确指数。
+
+> 暂无形式化证明（AI 结果待核验）。
+
 ## 一句话结论
 论文定出 SK 模型临界点 `@@M@@\beta=1@@` 处最坏初态混合时间的精确指数：连续时间（每站点更新率 1）为 `@@M@@n^{2/3+o(1)}@@`，离散尝试更新为 `@@M@@n^{5/3+o(1)}@@`；同一指数还控制松弛时间与经典对数 Sobolev 常数，把严格混合界从高温区域推进到临界温度本身。
 

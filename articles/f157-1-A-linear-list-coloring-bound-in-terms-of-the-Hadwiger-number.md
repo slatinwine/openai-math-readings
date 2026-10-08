@@ -13,6 +13,36 @@ pdfname: ""
 
 > 结果族 157：Graph coloring, clique minors, and Colin de Verdière invariants　·　学科：Combinatorics　·　验证状态：暂无形式化证明，请以社区核验为准
 
+## 入门导读 🐣
+
+考试发调色盘，但每人盘里的颜色清单不同：你要从自己的清单挑色，相邻两人不能撞色。清单要多长，才能保证任何图都挑得开？论文证明：只要每份清单有 C·h(G) 种颜色——h 是 Hadwiger 数，C 是绝对常数——就永远够用。
+
+**关键词卡片**
+
+- 列表染色（list coloring）：每个顶点从自己的颜色清单里选色。
+- 列表色数 ℓ(G)（list chromatic number）：保证总能正常染色的最小清单长度。
+- Hadwiger 数 h(G)：把连通块收缩成点后能捏出的最大完全图阶数。
+- 编织（woven）：大图内部能"织"出承载指定路线的团子式的结构性质，证明的组装车间。
+- 桶（bucket）：把所有列表的颜色全局分组，各桶内部自行染色、互不冲突的调度装置。
+
+**看个具体例子**
+
+最小情形的直觉：给三角形的三个顶点都发清单 {1,2}，只有两色，必然撞色；清单扩到 {1,2,3} 就总能染开：
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280"><text x="280" y="30" text-anchor="middle" font-size="16">列表染色：各选各的清单</text><line x1="110" y1="75" x2="230" y2="75" stroke="#333"/><line x1="110" y1="75" x2="170" y2="190" stroke="#333"/><line x1="230" y1="75" x2="170" y2="190" stroke="#333"/><circle cx="110" cy="75" r="10" fill="#fff" stroke="#333"/><circle cx="230" cy="75" r="10" fill="#fff" stroke="#333"/><circle cx="170" cy="190" r="10" fill="#fff" stroke="#333"/><text x="110" y="58" text-anchor="middle" font-size="14">{1,2}</text><text x="230" y="58" text-anchor="middle" font-size="14">{1,2}</text><text x="170" y="222" text-anchor="middle" font-size="14">{1,2}</text><text x="170" y="250" text-anchor="middle" font-size="14" fill="#c0392b">只有两色，必然撞色 ✗</text><line x1="330" y1="75" x2="450" y2="75" stroke="#333"/><line x1="330" y1="75" x2="390" y2="190" stroke="#333"/><line x1="450" y1="75" x2="390" y2="190" stroke="#333"/><circle cx="330" cy="75" r="10" fill="#e74c3c"/><circle cx="450" cy="75" r="10" fill="#3498db"/><circle cx="390" cy="190" r="10" fill="#f1c40f"/><text x="330" y="58" text-anchor="middle" font-size="14">{1,2,3}</text><text x="450" y="58" text-anchor="middle" font-size="14">{1,2,3}</text><text x="390" y="222" text-anchor="middle" font-size="14">{1,2,3}</text><text x="390" y="250" text-anchor="middle" font-size="14" fill="#2e7d32">三色在手，总能染开 ✓</text></svg>
+
+</div>
+
+所以 ℓ(K₃)=3=h(K₃)。论文先解决至多约 t^11/10 个点的小图，再用高连通子图抽取推向任意阶数；定理的威力在大图：`@@M@@\ell(G)\le C\,h(G)@@`，清单长度只需与团子式阶数成正比；而有人构造出无 Kₜ 子式却要 (2−ε)t 色的图，故 C 至少是 2——线性阶恰到好处。
+
+**为什么值得关心**
+
+在 Hadwiger 猜想（系数 1）被同族反例推翻后，这篇肯定了它的线性松弛，而且证明的是更强的列表染色版本（常数 C 未加优化）。
+
+> 暂无形式化证明（AI 结果待核验）
+
 ## 一句话结论
 证明存在绝对常数 `@@M@@C@@`，使每个有限非空简单图满足 `@@M@@\chi_{\mathrm{list}}(G)\le Ch(G)@@`，肯定地解决 Kawarabayashi–Mohar 的线性列表 Hadwiger 猜想；对每点取相同列表即得 `@@M@@\chi(G)\le Ch(G)@@`。
 

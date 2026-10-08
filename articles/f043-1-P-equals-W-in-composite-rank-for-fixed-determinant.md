@@ -13,6 +13,62 @@ pdfname: ""
 
 > 结果族 043：<i>P</i> = <i>W</i> for fixed-determinant SL<sub><i>n</i></sub> moduli spaces　·　学科：Algebraic and complex geometry（代数与复几何）　·　验证状态：暂无形式化证明，请以社区核验为准
 
+## 入门导读 🐣
+
+同一批几何对象有两份截然不同的档案：一份按"几何复杂度"分层，一份按"代数重量"分层。P=W 猜想说这两份目录页页对齐。本文补上最后一块空缺——把对齐验证推广到"复合秩"，使固定行列式情形在所有互素秩全部成立。
+
+**关键词卡片**
+
+- Higgs 模空间（Higgs moduli space）：曲线上"向量丛＋自作用矩阵"的所有稳定解组成的空间。
+- 特征簇（character variety）：同一故事的表示论版本：基本群到矩阵的表示做商得到的空间。
+- 反常 Leray 滤过（perverse Leray filtration）：按几何映射的复杂度给上同调分层的楼梯，记 P。
+- 权滤过（weight filtration）：混合 Hodge 结构中按代数重量分层的楼梯，记 W。
+- 固定行列式（fixed determinant）：把规范群从 GLₙ 缩小到 SLₙ 的限定版本。
+
+**看个具体例子**
+
+定理断言对一切 m, k ≥ 0：`@@M@@P_kH^m=W_{2k}H^m=W_{2k+1}H^m@@`（在整个有理上同调上）。两座楼梯这样逐层焊死：
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280">
+  <rect x="0" y="0" width="560" height="280" fill="#ffffff"/>
+  <text x="24" y="32" font-size="16" fill="#222222">两座楼梯逐层对齐：P 的第 k 层 = W 的第 2k 层</text>
+  <rect x="60" y="72" width="150" height="34" fill="#dbe8f6" stroke="#3b6fb5" stroke-width="2"/>
+  <rect x="60" y="110" width="150" height="34" fill="#c3d9ef" stroke="#3b6fb5" stroke-width="2"/>
+  <rect x="60" y="148" width="150" height="34" fill="#a8c9e8" stroke="#3b6fb5" stroke-width="2"/>
+  <rect x="60" y="186" width="150" height="34" fill="#8db9e0" stroke="#3b6fb5" stroke-width="2"/>
+  <text x="30" y="94" font-size="15" fill="#1d3d63">P₃</text>
+  <text x="30" y="132" font-size="15" fill="#1d3d63">P₂</text>
+  <text x="30" y="170" font-size="15" fill="#1d3d63">P₁</text>
+  <text x="30" y="208" font-size="15" fill="#1d3d63">P₀</text>
+  <text x="50" y="58" font-size="14" fill="#3b6fb5">几何侧：反常滤过 P</text>
+  <rect x="350" y="72" width="170" height="34" fill="#d97070" stroke="#c0392b" stroke-width="2"/>
+  <rect x="350" y="110" width="170" height="34" fill="#df8585" stroke="#c0392b" stroke-width="2"/>
+  <rect x="350" y="148" width="170" height="34" fill="#e59a9a" stroke="#c0392b" stroke-width="2"/>
+  <rect x="350" y="186" width="170" height="34" fill="#ebafaf" stroke="#c0392b" stroke-width="2"/>
+  <text x="358" y="94" font-size="15" fill="#7a1f1f">W₆</text>
+  <text x="358" y="132" font-size="15" fill="#7a1f1f">W₄ = W₅</text>
+  <text x="358" y="170" font-size="15" fill="#7a1f1f">W₂ = W₃</text>
+  <text x="358" y="208" font-size="15" fill="#7a1f1f">W₀ = W₁</text>
+  <text x="344" y="58" font-size="14" fill="#c0392b">代数侧：权滤过 W</text>
+  <line x1="215" y1="89" x2="345" y2="89" stroke="#666666" stroke-width="1.5" stroke-dasharray="5,4"/>
+  <line x1="215" y1="127" x2="345" y2="127" stroke="#666666" stroke-width="1.5" stroke-dasharray="5,4"/>
+  <line x1="215" y1="165" x2="345" y2="165" stroke="#666666" stroke-width="1.5" stroke-dasharray="5,4"/>
+  <line x1="215" y1="203" x2="345" y2="203" stroke="#666666" stroke-width="1.5" stroke-dasharray="5,4"/>
+  <text x="120" y="248" font-size="14" fill="#555555">指标加倍后，几何分层与代数分层完全重合</text>
+</svg>
+
+</div>
+
+取最小的复合秩 n=4、次数 d=1、亏格 g=2 的曲线：特征簇由 2g=4 个 SL₄(C) 矩阵、其换位子乘积等于固定标量阵的表示构成。以前只有素数秩得证，n=4 这类合数秩正是本文攻下的难关；与素秩定理合并，互素情形全秩成立。
+
+**为什么值得关心**
+
+P=W 是非阿贝尔霍奇理论的"字典核对条款"：两个长相完全不同的空间被断言共享同一套分层逻辑；本文还顺带回答了内窥对应的权相容性问题。
+
+> 暂无形式化证明（AI 结果待核验）
+
 ## 一句话结论
 
 本文在复合秩（`@@M@@n\ge4@@` 非素数）、次数与秩互素的情形下，证明了固定行列式 `@@M@@\mathrm{SL}_n@@` Higgs 模空间上完整形式（整个有理上同调、含变体部分）的 `@@M@@P=W@@` 猜想；与已知素秩定理合并，固定行列式的 `@@M@@P=W@@` 在一切互素秩都成立。

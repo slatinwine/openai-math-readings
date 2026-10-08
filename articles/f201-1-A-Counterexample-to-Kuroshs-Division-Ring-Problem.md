@@ -13,6 +13,54 @@ pdfname: ""
 
 > 结果族 201：A counterexample to Kurosh's division-ring problem　·　学科：Algebra　·　验证状态：暂无形式化证明，请以社区核验为准
 
+## 入门导读 🐣
+
+复数 = 实数添加一个平方等于 −1 的新数 `@@M@@i@@`，只盖了 2 层"楼"就装下了所有代数方程的根。Kurosh 在 1941 年问：非交换的"数系"（除环）若每个成员都是中心多项式的根、且整个系统由两个元素生成，是否也必然只盖有限层楼？这篇论文回答：不——存在两块砖就能撑起无穷层楼的怪物。
+
+**关键词卡片**
+
+- 除环（division ring）：每个非零元都有乘法逆元的（可能非交换的）数系
+- 中心（center）：数系里与所有人都交换的元素组成的子域，是"地基"
+- 代数元（algebraic element）：是某个中心系数非零多项式之根的元素
+- 局部有限（locally finite）：任意有限个元素都只撑起有限维空间；反例正是它的失败
+
+**看个具体例子**
+
+对照两栋楼：
+
+`@@M@@D\mathbb C=\mathbb R(i)\ \Rightarrow\ [\mathbb C:\mathbb R]=2;\qquad D=F(x,y)\ \Rightarrow\ [D:F]=\infty .@@`
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280">
+<text x="70" y="40" font-size="16" fill="#222">有限层楼：C = R(i)</text>
+<rect x="90" y="150" width="110" height="50" fill="#eef3ff" stroke="#35a"/>
+<text x="115" y="180" font-size="15" fill="#235">实数 R</text>
+<rect x="90" y="90" width="110" height="50" fill="#f2f7ee" stroke="#4a3"/>
+<text x="97" y="120" font-size="14" fill="#253">复数 C（2 维）</text>
+<text x="330" y="40" font-size="16" fill="#222">无穷层楼：D = F(x,y)</text>
+<rect x="330" y="200" width="190" height="42" fill="#fdf3ee" stroke="#c53"/>
+<text x="355" y="226" font-size="14" fill="#532">F（中心，地基）</text>
+<rect x="330" y="154" width="190" height="42" fill="#fdf3ee" stroke="#c53"/>
+<text x="370" y="180" font-size="13" fill="#532">x 的多项式层</text>
+<rect x="330" y="108" width="190" height="42" fill="#fdf3ee" stroke="#c53"/>
+<text x="370" y="134" font-size="13" fill="#532">再加 y 的幂层</text>
+<rect x="330" y="62" width="190" height="42" fill="#fdf3ee" stroke="#c53"/>
+<text x="405" y="88" font-size="13" fill="#532">⋯⋯</text>
+<text x="330" y="52" font-size="14" fill="#d33">层高无尽头</text>
+<text x="70" y="240" font-size="14" fill="#888">共同点：每个元素都是中心系数多项式的根</text>
+</svg>
+
+</div>
+
+关键在于没有一致的次数上限：每个元素各自有一条消灭它的多项式，次数可以任意大——恰好躲开所有已知肯定定理（如一致次数界 `@@M@@d\Rightarrow@@` 维数 `@@M@@\le d^2@@`）的适用范围。整个除环可数、特征为零；构造像一台逐层加盖的电梯：每一步只需解有限多个线性方程，就能把一个新元素"点名"变成代数元，取极限后得到 `@@M@@D@@`。
+
+**为什么值得关心**
+
+Kurosh 问题是 Burnside 型问题在除环上的化身，悬置八十余年；此反例划清了"中心代数＋少量生成元"推不出"有限维"的边界。
+
+> 暂无形式化证明（AI 结果待核验）
+
 ## 一句话结论
 
 论文构造了一个特征零的可数除环 `@@M@@D@@`：它在其中心 `@@M@@F@@` 上代数、作为 `@@M@@F@@` 上代数由两个元素生成，却在 `@@M@@F@@` 上无穷维。这给 Kurosh 除环问题以否定回答——中心代数性不蕴含局部有限性。

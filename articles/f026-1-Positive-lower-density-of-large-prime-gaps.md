@@ -13,6 +13,33 @@ pdfname: ""
 
 > 结果族 026：Positive lower density of large prime gaps　·　学科：Number theory　·　验证状态：暂无形式化证明，请以社区核验为准
 
+## 入门导读 🐣
+
+把素数想成数轴上的公交站：越往远处，平均站距约等于 ln p。早就知道偶有"超级长"的站距，但没人能证明"特别长的站距不只是深夜偶发，而是常态化占一定比例"。这篇论文证明：无论标准定多苛刻——站距超过平均值的 C 倍——够格的站距永远占一个不消失的比例。
+
+**关键词卡片**
+
+- 素数间隔（prime gap）：相邻两个素数的差 d_n = p_{n+1} − p_n。
+- 平均间距 ln p：素数定理保证 p 附近平均隔 ln p 就有一站，是衡量长短的标尺。
+- 正下密度（positive lower density）：在每一个足够长的初始段里都至少占固定比例 c(C)，不靠挑特殊片段充数。
+- 一致性（uniformity）：估计对所有大的 N 同时成立——比以往"沿某条子列成立"的结果更强。
+
+**看个具体例子**
+
+p ≈ 10^6 处 ln p ≈ 13.8，即平均站距约 14。取 C = 2，站距需超过 2 ln p ≈ 27.6 才算"长"。定理说存在常数 c(2) > 0，使前 N 个间隔中至少 c(2)·N 个超过 2 ln p_n。论文还顺手回答了 1962 年埃尔德什–普拉哈之问：使 p_n/n 变大的那些指标也占正比例——由素数定理，p_n/n 与 ln p_n 相当，取 C = 2 应用主定理、丢掉有限个例外即得。
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280"><line x1="35" y1="150" x2="522" y2="150" stroke="#333" stroke-width="2"/><polygon points="535,150 521,144 521,156" fill="#333"/><line x1="60" y1="142" x2="60" y2="158" stroke="#333" stroke-width="2"/><line x1="72" y1="142" x2="72" y2="158" stroke="#333" stroke-width="2"/><line x1="85" y1="142" x2="85" y2="158" stroke="#333" stroke-width="2"/><line x1="97" y1="142" x2="97" y2="158" stroke="#333" stroke-width="2"/><line x1="112" y1="142" x2="112" y2="158" stroke="#333" stroke-width="2"/><line x1="124" y1="142" x2="124" y2="158" stroke="#333" stroke-width="2"/><line x1="135" y1="142" x2="135" y2="158" stroke="#333" stroke-width="2"/><line x1="150" y1="142" x2="150" y2="158" stroke="#333" stroke-width="2"/><line x1="162" y1="142" x2="162" y2="158" stroke="#333" stroke-width="2"/><line x1="174" y1="142" x2="174" y2="158" stroke="#333" stroke-width="2"/><line x1="186" y1="142" x2="186" y2="158" stroke="#333" stroke-width="2"/><line x1="200" y1="142" x2="200" y2="158" stroke="#333" stroke-width="2"/><line x1="212" y1="142" x2="212" y2="158" stroke="#333" stroke-width="2"/><line x1="226" y1="142" x2="226" y2="158" stroke="#333" stroke-width="2"/><line x1="238" y1="142" x2="238" y2="158" stroke="#333" stroke-width="2"/><line x1="252" y1="142" x2="252" y2="158" stroke="#333" stroke-width="2"/><line x1="368" y1="142" x2="368" y2="158" stroke="#333" stroke-width="2"/><line x1="382" y1="142" x2="382" y2="158" stroke="#333" stroke-width="2"/><line x1="396" y1="142" x2="396" y2="158" stroke="#333" stroke-width="2"/><line x1="409" y1="142" x2="409" y2="158" stroke="#333" stroke-width="2"/><line x1="424" y1="142" x2="424" y2="158" stroke="#333" stroke-width="2"/><line x1="438" y1="142" x2="438" y2="158" stroke="#333" stroke-width="2"/><line x1="452" y1="142" x2="452" y2="158" stroke="#333" stroke-width="2"/><line x1="466" y1="142" x2="466" y2="158" stroke="#333" stroke-width="2"/><line x1="480" y1="142" x2="480" y2="158" stroke="#333" stroke-width="2"/><line x1="494" y1="142" x2="494" y2="158" stroke="#333" stroke-width="2"/><line x1="508" y1="142" x2="508" y2="158" stroke="#333" stroke-width="2"/><rect x="262" y="118" width="100" height="64" fill="none" stroke="#c0392b" stroke-width="2" stroke-dasharray="7 5"/><text x="312" y="105" font-size="15" text-anchor="middle" fill="#c0392b">长间隔：超过 C·ln p</text><text x="150" y="180" font-size="13" text-anchor="middle" fill="#555">常规间距</text><text x="300" y="235" font-size="14" text-anchor="middle" fill="#333">素数"车站"示意：长间隔不是稀有事件，至少占固定比例</text></svg>
+
+</div>
+
+**为什么值得关心**
+
+"最大间隔有多长"名结果众多，"长间隔有多普遍"却一直缺无条件的正比例结论；本文用一套新的筛法权重首次把它钉死。
+
+> 暂无形式化证明（AI 结果待核验）
+
 ## 一句话结论
 
 论文证明：对任意固定 `@@M@@C>0@@`，都存在 `@@M@@c(C)>0@@`，使得每个足够大的前 `@@M@@N@@` 个素数里，相邻间隔 `@@M@@p_{n+1}-p_n>C\log p_n@@` 者至少占比例 `@@M@@c(C)@@`；由此 `@@M@@p_n/n@@` 递增的指标具有正下密度，肯定回答了 Erdős–Prachar 1962 年的问题。

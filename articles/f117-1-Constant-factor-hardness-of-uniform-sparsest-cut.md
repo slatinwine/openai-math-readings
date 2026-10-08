@@ -13,6 +13,54 @@ pdfname: ""
 
 > 结果族 117：Uniform sparsest cut: hardness and semidefinite gaps　·　学科：Theoretical computer science　·　验证状态：暂无形式化证明，请以社区核验为准
 
+## 入门导读 🐣
+
+办派对要把嘉宾分进两个厅，横跨两厅的"老交情"会被拆散。主办方想选一种分法，让"被拆断的交情总重 ÷ 被拆散的人数对"尽量小——这就是最稀疏割。论文证明：哪怕只想要一个固定倍数（比如 1.01 倍）的近似方案，这问题也已经和最难的 NP 问题一样无望。
+
+**关键词卡片**
+
+- 最稀疏割（sparsest cut）：把图分成两块，最小化"跨割容量 ÷ 被拆散点对数"。
+- 均匀需求（uniform demand）：每对不同顶点间需求都是 1 的设定。
+- NP-难（NP-hard）：若能多项式时间解决它，就能解决一切 NP 问题。
+- 不可近似性（hardness of approximation）：连"近似到固定倍数"都做不到的更强难度。
+- 无条件（unconditional）：不依赖唯一博弈猜想等任何未证明的复杂度假设。
+
+**看个具体例子**
+
+定义 `@@M@@\Phi(G)=\min_S\ \frac{\text{跨割边容量和}}{|S|\,(N-|S|)}@@`。拿 4 点方框图（每条边容量 1）试刀：
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280">
+  <circle cx="180" cy="80" r="20" fill="none" stroke="#333" stroke-width="2"/>
+  <text x="180" y="86" text-anchor="middle" font-size="15">1</text>
+  <circle cx="360" cy="80" r="20" fill="none" stroke="#333" stroke-width="2"/>
+  <text x="360" y="86" text-anchor="middle" font-size="15">2</text>
+  <circle cx="360" cy="210" r="20" fill="none" stroke="#333" stroke-width="2"/>
+  <text x="360" y="216" text-anchor="middle" font-size="15">3</text>
+  <circle cx="180" cy="210" r="20" fill="none" stroke="#333" stroke-width="2"/>
+  <text x="180" y="216" text-anchor="middle" font-size="15">4</text>
+  <line x1="200" y1="80" x2="340" y2="80" stroke="#333" stroke-width="2"/>
+  <line x1="360" y1="100" x2="360" y2="190" stroke="#333" stroke-width="2"/>
+  <line x1="340" y1="210" x2="200" y2="210" stroke="#333" stroke-width="2"/>
+  <line x1="180" y1="190" x2="180" y2="100" stroke="#333" stroke-width="2"/>
+  <line x1="270" y1="45" x2="270" y2="245" stroke="#c00" stroke-width="2" stroke-dasharray="8,6"/>
+  <text x="270" y="32" text-anchor="middle" font-size="14">割：左厅 {1,4}，右厅 {2,3}</text>
+  <text x="55" y="150" font-size="13">左半 2 点</text>
+  <text x="465" y="150" font-size="13">右半 2 点</text>
+  <text x="280" y="268" text-anchor="middle" font-size="13">切断容量 1+1=2，拆散点对 2×2=4，比值 2/4 = 1/2</text>
+</svg>
+
+</div>
+
+切 `@@M@@\{1,4\}@@`：跨割容量 `@@M@@2@@`，拆散 `@@M@@4@@` 对，比值 `@@M@@\tfrac12@@`；切单点 `@@M@@\{1\}@@`：容量 `@@M@@2@@`，拆散 `@@M@@3@@` 对，比值 `@@M@@\tfrac23@@`。故此图 `@@M@@\Phi(G)=\tfrac12@@`。定理说：对任何固定 `@@M@@C>1@@`，从 3-SAT 出发能造出图，满足"公式可满足则 `@@M@@\Phi\le a@@`，不可满足则 `@@M@@\Phi>Ca@@`"——区分二者是 NP-难的。
+
+**为什么值得关心**
+
+均匀需求是最难啃的情形：分母只依赖割的大小，无法借需求结构制造间隙。此前的近似下界都背着"复杂度假设"的包袱，本文第一次无条件封死了均匀最稀疏割的常数比近似，其证明链横跨函数域塔、PCP 式比特测试与有理装配，堪称组合构造的重型机械。
+
+> 暂无形式化证明（AI 结果待核验）
+
 ## 一句话结论
 证明对任意固定 `@@M@@C>1@@`，把均匀最稀疏割近似到 `@@M@@C@@` 因子是 NP-难的，且实例容量为非负有理数、每对不同顶点需求恰为 `@@M@@1@@`。这是不依赖任何复杂度假设的常因子不可近似性，封死了该问题的多项式时间常数比近似。
 

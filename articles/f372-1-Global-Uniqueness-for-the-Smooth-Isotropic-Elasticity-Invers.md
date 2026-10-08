@@ -13,6 +13,48 @@ pdfname: ""
 
 > 结果族 372：Global uniqueness in smooth isotropic elasticity　·　学科：Partial differential equations　·　验证状态：暂无形式化证明，请以社区核验为准
 
+## 入门导读 🐣
+
+体检时医生敲一敲、按一按，凭手感判断内部状况。这篇论文给弹性体做"全套体检"：在物体表面逐点按压（给定位移），记下每处的反弹力（牵引力）。仅凭这本厚厚的"按压–回弹对照表"，能否推断材料内部每一点的软硬参数？论文证明：对三维光滑、各方向同性的弹性体，可以，而且答案唯一。
+
+**关键词卡片**
+
+- Lamé 模量（Lamé moduli）：`@@M@@\lambda@@` 与 `@@M@@\mu@@`，分别刻画抗压缩与抗剪切的两个材料常数。
+- 各向同性（isotropic）：各方向性质相同，两个模量足以描述。
+- 位移–牵引力映射（displacement-to-traction map）：按压方式与反弹力的完整对照表。
+- 弹性 Calderón 问题（elasticity inverse problem）：由边界力学测量重建内部弹性参数。
+- 整体唯一性（global uniqueness）：不同材料必给出不同的对照表。
+
+**看个具体例子**
+
+定理的符号版：若 `@@M@@\mu\gt0@@`、`@@M@@3\lambda+2\mu\gt0@@`（弹性能正定）且 `@@M@@\Lambda_{\lambda_1,\mu_1}=\Lambda_{\lambda_2,\mu_2}@@`，则 `@@M@@\lambda_1=\lambda_2@@`、`@@M@@\mu_1=\mu_2@@` 处处成立。不需要系数解析、不需要接近常数，也不必预先知道它们在边界附近的值。
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280">
+  <text x="280" y="30" text-anchor="middle" font-size="15" fill="#333">"按压–回弹"对照表唯一确定内部软硬</text>
+  <ellipse cx="280" cy="150" rx="150" ry="75" fill="none" stroke="#333" stroke-width="2.5"/>
+  <path d="M280 52 L280 84" fill="none" stroke="#c0392b" stroke-width="2"/>
+  <path d="M274 76 L280 84 L286 76" fill="none" stroke="#c0392b" stroke-width="2"/>
+  <path d="M146 77 L172 96" fill="none" stroke="#c0392b" stroke-width="2"/>
+  <path d="M165 90 L173 97 L163 99" fill="none" stroke="#c0392b" stroke-width="2"/>
+  <path d="M414 77 L388 96" fill="none" stroke="#c0392b" stroke-width="2"/>
+  <path d="M395 90 L387 97 L397 99" fill="none" stroke="#c0392b" stroke-width="2"/>
+  <text x="128" y="62" text-anchor="middle" font-size="13" fill="#c0392b">边界按压（给定位移）</text>
+  <text x="432" y="62" text-anchor="middle" font-size="13" fill="#c0392b">测反弹力（牵引力）</text>
+  <text x="280" y="145" text-anchor="middle" font-size="14" fill="#666">内部：λ(x)、μ(x)</text>
+  <text x="280" y="167" text-anchor="middle" font-size="13" fill="#666">待恢复的两个模量</text>
+  <text x="280" y="252" text-anchor="middle" font-size="13" fill="#666">若两种材料的对照表完全相同，则 λ、μ 逐点相等</text>
+</svg>
+
+</div>
+
+**为什么值得关心**
+
+悬置三十余年的三维光滑各向同性弹性反问题被彻底解决——此前的结果都需要解析性或小性假设。弹性位移是向量场，剪切与体积两种形变方式耦合在一起，比标量电导率的 Calderón 问题难得多。
+
+> 暂无形式化证明（AI 结果待核验）
+
 ## 一句话结论
 
 论文证明了三维光滑各向同性弹性体的弹性 Calderón 问题整体唯一性：静态位移—牵引力边界映射唯一确定两个 Lamé 模量 `@@M@@\lambda,\mu@@`，无需解析性、小性或边界先验假设，解决了这一悬置三十余年的公开问题。

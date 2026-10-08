@@ -13,6 +13,38 @@ pdfname: ""
 
 > 结果族 006：Goldfeld's conjecture: densities and mean analytic rank　·　学科：Number theory　·　验证状态：暂无形式化证明，请以社区核验为准
 
+## 入门导读 🐣
+
+每条椭圆曲线都有一大群"表亲"：取一个无平方因子整数 `@@M@@d@@`，对曲线做二次扭曲，就得到表亲 `@@M@@E^{(d)}@@`，而每条表亲头顶挂着一个数——"秩"，粗略衡量它有多少个独立的有理点。Goldfeld 在 1979 年猜测：这群表亲的秩分布像抛硬币，秩 0 与秩 1 各占一半。本文证明了这个猜想，而且更进一步：只要一个能实际算出来的代数量（Selmer 余秩）取 0 或 1，那么"解析仪表"与"代数仪表"的读数必然一致，连著名的 BSD 猜想都不需要预先假设。
+
+**关键词卡片**
+
+- 椭圆曲线（elliptic curve）：形如 `@@M@@y^2=x^3+ax+b@@` 的三次曲线，有理点可定义加法构成群，是数论主角。
+- 二次扭曲（quadratic twist）：以无平方因子整数 `@@M@@d@@` 为参数得到的"表亲曲线" `@@M@@E^{(d)}@@`。
+- 解析秩（analytic rank）：`@@M@@L@@` 函数在 `@@M@@s=1@@` 处零点的阶数 `@@M@@a(E)@@`，像一台解析仪表的读数。
+- Selmer 余秩（Selmer corank）：可用有限次 2-descent 实际计算的代数量；本文证明它为 0 或 1 时就锁死一切。
+- BSD 猜想（BSD conjecture）：断言解析秩等于有理点群的秩；本文不假设它，却证得等式成立且 `@@M@@\Sha@@` 有限。
+
+**看个具体例子**
+
+把 `@@M@@0<|d|\le X@@` 的无平方因子整数排成一列，每个 `@@M@@d@@` 对应一条表亲曲线。定理断言（`@@M@@a@@` 为解析秩）：
+
+`@@M@@D\frac{\#\{d:\,a(E^{(d)})=0\}}{\#\mathcal D(X)}\to\frac12,\qquad \frac{\#\{d:\,a(E^{(d)})=1\}}{\#\mathcal D(X)}\to\frac12 .@@`
+
+画成图就是两根一样高的柱子，秩 `@@M@@\ge2@@` 的柱子高度趋零：
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280"><line x1="70" y1="230" x2="520" y2="230" stroke="#333" stroke-width="2"/><line x1="70" y1="230" x2="70" y2="50" stroke="#333" stroke-width="2"/><rect x="120" y="80" width="110" height="150" fill="none" stroke="#2a9d4f" stroke-width="3"/><rect x="300" y="80" width="110" height="150" fill="none" stroke="#d64545" stroke-width="3"/><rect x="470" y="222" width="36" height="8" fill="#888"/><text x="175" y="255" font-size="18" text-anchor="middle" fill="#222">秩 0</text><text x="355" y="255" font-size="18" text-anchor="middle" fill="#222">秩 1</text><text x="488" y="255" font-size="15" text-anchor="middle" fill="#222">秩 ≥ 2</text><text x="175" y="70" font-size="16" text-anchor="middle" fill="#2a9d4f">密度 → 1/2</text><text x="355" y="70" font-size="16" text-anchor="middle" fill="#d64545">密度 → 1/2</text><text x="488" y="212" font-size="14" text-anchor="middle" fill="#666">→ 0</text><text x="42" y="150" font-size="15" text-anchor="middle" fill="#222" transform="rotate(-90 42 150)">占比</text><text x="295" y="30" font-size="16" text-anchor="middle" fill="#222">二次扭曲族中解析秩的占比（示意）</text></svg>
+
+</div>
+
+**为什么值得关心**
+
+它把"椭圆曲线的秩统计学"从猜想变成定理，并首次在不假设 BSD 的前提下，从可计算的 Selmer 数据反推出解析结论，补上了 `@@M@@p=2@@` 一侧的长期空白。
+
+> 暂无形式化证明（AI 结果待核验）
+
 ## 一句话结论
 
 对 `@@M@@\mathbb{Q}@@` 上任意椭圆曲线 `@@M@@E@@`，本文证明 Goldfeld 解析密度猜想：二次扭曲中解析秩 0 与 1 各占密度 `@@M@@1/2@@`；并证明低余秩 2-逆定理：`@@M@@2^\infty@@`-Selmer 余秩为 0 或 1 时它就等于解析秩与 Mordell–Weil 秩且 `@@M@@\Sha@@` 有限，全程不假设 BSD。

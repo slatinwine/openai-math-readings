@@ -13,6 +13,52 @@ pdfname: ""
 
 > 结果族 091：Logarithmic and `@@M@@L_p@@` Brunn–Minkowski inequalities and the B-conjecture　·　学科：Convex and metric geometry　·　验证状态：主结果已 Lean 形式化
 
+## 入门导读 🐣
+
+两块左右对称的"石头"按比例混合，经典结论保证混合体的体积不小于体积的加权平均。这篇论文证明更强的版本：按"几何平均"方式混合（每个方向的伸展取两种石头的几何平均），体积同样不缩水——相当于把"算术平均 ≥ 几何平均"这句口诀升级成任意维凸体的体积定律，一举解决 2012 年悬置的对数 Brunn–Minkowski 猜想。
+
+**关键词卡片**
+
+- 凸体（convex body）：有界、内部充实的凸集。
+- 支撑函数（support function）：`@@M@@h_K(u)@@`，从原点看，方向 `@@M@@u@@` 上影子伸到的最远距离。
+- Wulff 体（Wulff body）：按"每个方向给定半径"交出的包络体，晶体长成的形状。
+- 对数凹测度（log-concave measure）：密度形如 `@@M@@e^{-V}@@`（`@@M@@V@@` 为凸函数）的概率分布。
+- `@@M@@(B)@@`-猜想：`@@M@@t\mapsto\mu(e^tK)@@` 对数凹——指数放大凸体时测度先增后减。
+
+**看个具体例子**
+
+一维热身：取对称区间 `@@M@@K=[-1,1]@@`（长 2）与 `@@M@@L=[-2,2]@@`（长 4），`@@M@@\lambda=\tfrac12@@`。支撑函数的几何平均 `@@M@@1^{1/2}\cdot 2^{1/2}=\sqrt2@@` 给出 Wulff 体 `@@M@@[-\sqrt2,\sqrt2]@@`，长 `@@M@@2\sqrt2\approx 2.83@@`，恰为 `@@M@@\sqrt{2\times 4}@@`——一维情形定理取等；经典 Minkowski 混合则给出长 3 的区间（算术平均）。一维是等式，高维处处是硬仗：两个凸体没有公共的"法方向扇区"，此前只在平面等特殊情形得证，本文在任意维对称凸体上全线证明，并经转移定理自动推广到一切偶对数凹测度。
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280">
+  <text x="280" y="28" font-size="15" text-anchor="middle" fill="#222">一维版：几何平均混合的长度不缩水（此情形取等）</text>
+  <rect x="100" y="58" width="360" height="18" rx="9" fill="#e8b78a" stroke="#b07b3a"/>
+  <text x="110" y="71" font-size="13" fill="#222">L = [−2, 2]，长 4</text>
+  <rect x="190" y="96" width="180" height="18" rx="9" fill="#9fc6e8" stroke="#5a86b8"/>
+  <text x="200" y="109" font-size="13" fill="#222">K = [−1, 1]，长 2</text>
+  <rect x="153" y="134" width="254" height="18" rx="9" fill="#a8d8a8" stroke="#4e8b4e"/>
+  <text x="163" y="147" font-size="13" fill="#222">几何平均混合：长 2√2 ≈ 2.83</text>
+  <rect x="145" y="172" width="270" height="18" rx="9" fill="#d8c8e8" stroke="#8a6ab0"/>
+  <text x="155" y="185" font-size="13" fill="#222">Minkowski 混合：长 3</text>
+  <line x1="80" y1="225" x2="480" y2="225" stroke="#555" stroke-width="2"/>
+  <g font-size="13" fill="#333" text-anchor="middle">
+    <text x="100" y="248">−2</text>
+    <text x="190" y="248">−1</text>
+    <text x="280" y="248">0</text>
+    <text x="370" y="248">1</text>
+    <text x="460" y="248">2</text>
+  </g>
+</svg>
+
+</div>
+
+**为什么值得关心**
+
+一个证明同时收获三条定理：对数 BM 不等式、`@@M@@0<p<1@@` 的对称 `@@M@@L_p@@` 不等式与 `@@M@@(B)@@`-猜想——凸几何与测度集中领域的核心拼图就此落位。
+
+> 已 Lean 形式化
+
 ## 一句话结论
 
 本文证明了任意维数中原点对称凸体的对数 Brunn–Minkowski 不等式：以支撑函数几何平均定义的 Wulff 体，其体积不小于两端体积的几何加权；并连带得到 `@@M@@0<p<1@@` 的加性 `@@M@@L_p@@` 不等式与 `@@M@@(B)@@`-猜想。

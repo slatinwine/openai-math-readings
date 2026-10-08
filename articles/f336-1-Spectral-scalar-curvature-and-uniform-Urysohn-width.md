@@ -13,6 +13,56 @@ pdfname: ""
 
 > 结果族 336：Spectral scalar curvature, Urysohn width, and macroscopic dimension　·　学科：Differential geometry　·　验证状态：暂无形式化证明，请以社区核验为准
 
+## 入门导读 🐣
+
+一个处处鼓胀的空间，从很远的地方看会"矮掉两维"——就像一根粗绳子远看只是一条线。Gromov 猜想：正标量曲率的 `@@M@@n@@` 维空间一定能整体连续地压到 `@@M@@n-2@@` 维骨架上，且被压到同一点的原材料不超过固定长度。姊妹篇已在"每点曲率都正"时证明此结论；本文把它推广到宽松得多的"谱条件"——允许局部凹陷，只要能量加权的整体为正。
+
+**关键词卡片**
+
+- 标量曲率（scalar curvature）：每一点的平均弯曲度，正像球面外鼓
+- 谱条件（spectral condition）`@@M@@-4\Delta+\mathrm{Scal}\ge1@@`：曲率与测试函数的能量加权平均后为正——局部可以取负值
+- Urysohn 宽度（Urysohn width）：把空间连续压到低维骨架时，能保证的纤维直径的最小值
+- 纤维（fiber）：映射送到同一处的全部点，含所有连通分支
+- 宏观维度（macroscopic dimension）：空间在大尺度上"有效"的维数
+
+**看个具体例子**
+
+定理数字版：`@@M@@n\ge4@@` 且谱下界为 `@@M@@\lambda@@` 时，存在到 `@@M@@n-2@@` 维复形的连续映射，整根纤维直径 `@@M@@\le C_n/\sqrt\lambda@@`，按原尺度量。代入 `@@M@@n=4@@`：四维空间宏观上塌成二维骨架；若 `@@M@@\lambda=\tfrac14@@`，纤维界放大为 `@@M@@2C_n@@`。逐点条件 `@@M@@\mathrm{Scal}\ge\lambda@@` 只是特例——谱条件严格更弱。
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280">
+<text x="20" y="35" font-size="16" fill="#333">n 维空间 → n−2 维骨架</text>
+<ellipse cx="150" cy="140" rx="95" ry="70" fill="none" stroke="#333" stroke-width="2"/>
+<path d="M 120,74 Q 150,115 180,74" fill="none" stroke="#c33" stroke-width="4"/>
+<path d="M 236,110 Q 195,140 236,170" fill="none" stroke="#c33" stroke-width="4"/>
+<text x="55" y="240" font-size="14" fill="#333">n 维完备流形</text>
+<text x="55" y="262" font-size="13" fill="#c33">红色凹陷：局部负曲率也允许</text>
+<line x1="255" y1="140" x2="315" y2="140" stroke="#333" stroke-width="2"/>
+<polygon points="327,140 315,134 315,146" fill="#333"/>
+<text x="258" y="128" font-size="13" fill="#333">连续映射</text>
+<line x1="370" y1="90" x2="470" y2="130" stroke="#345" stroke-width="2"/>
+<line x1="370" y1="90" x2="430" y2="180" stroke="#345" stroke-width="2"/>
+<line x1="470" y1="130" x2="430" y2="180" stroke="#345" stroke-width="2"/>
+<line x1="470" y1="130" x2="520" y2="80" stroke="#345" stroke-width="2"/>
+<line x1="430" y1="180" x2="520" y2="210" stroke="#345" stroke-width="2"/>
+<circle cx="370" cy="90" r="5" fill="#345"/>
+<circle cx="470" cy="130" r="5" fill="#345"/>
+<circle cx="430" cy="180" r="5" fill="#345"/>
+<circle cx="520" cy="80" r="5" fill="#345"/>
+<circle cx="520" cy="210" r="5" fill="#345"/>
+<text x="395" y="245" font-size="14" fill="#333">n−2 维骨架</text>
+<text x="335" y="268" font-size="13" fill="#555">整根纤维直径 ≤ Cₙ（原尺度）</text>
+</svg>
+
+</div>
+
+**为什么值得关心**
+
+曲率信号从"逐点"放宽到"谱"，正曲率的空间坍缩现象仍然成立；定理不需要定向、spin、紧性或"有界几何"假设，紧与非紧流形一并适用。
+
+> 暂无形式化证明（AI 结果待核验）
+
 ## 一句话结论
 
 对每个 `@@M@@n\ge4@@` 证明了：满足谱型标量曲率不等式 `@@M@@-4\Delta+\mathrm{Scal}\ge1@@` 的完备无边 `@@M@@n@@` 维流形都可连续映射到 `@@M@@n-2@@` 维单纯复形，且整根纤维的直径被仅依赖 `@@M@@n@@` 的常数控制——把 Gromov 的均匀 Urysohn 宽度结论从逐点曲率条件推广到了谱条件。

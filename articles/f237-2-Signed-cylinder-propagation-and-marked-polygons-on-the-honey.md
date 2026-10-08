@@ -13,6 +13,34 @@ pdfname: ""
 
 > 结果族 237：The three-quarter exponent for honeycomb self-avoiding walk　·　学科：Probability and statistical mechanics　·　验证状态：暂无形式化证明，请以社区核验为准
 
+## 入门导读 🐣
+
+统计物理里有一种"会消账"的计数法：给图形记上正负两种权，大量项成对抵消，账本上只剩你真正想数的那类图形。麻烦在于：抵消之后的余额还准不准？这篇论文证明，在蜂窝格点的圆柱上，这种带符号的记账能精确到每一位指数，还顺势推出一串平面结论。
+
+**关键词卡片**
+
+- 带符号权重（signed weights）：辅助计数法里权重有正有负，靠成对抵消筛掉不想要的图形。
+- 圆柱配分（cylinder partition function）`@@M@@G_m@@`：无限圆柱上把两个标记点隔开的不相交圈族的总权。
+- 圈逸度（loop fugacity）`@@M@@g@@`：每多放一个圈的乘数，本文取临界值 `@@M@@g=2@@`。
+- 嵌套配分（nesting partition）：平面上围绕一个面心层层相套的圈族的配分。
+- 首发弦（first-exit chord）：从六边形中心区域出发、第一次跨出边界的路径。
+
+**看个具体例子**
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280"><rect x="30" y="70" width="190" height="140" fill="#f2f6fa" stroke="#889" stroke-width="2" stroke-dasharray="7 5"/><ellipse cx="125" cy="140" rx="34" ry="60" fill="none" stroke="#7dc7a3" stroke-width="2"/><ellipse cx="125" cy="140" rx="16" ry="30" fill="none" stroke="#7dc7a3" stroke-width="2"/><circle cx="125" cy="140" r="4" fill="#336"/><circle cx="125" cy="140" r="0" fill="none"/><text x="112" y="128" font-size="12" fill="#336">O</text><text x="112" y="158" font-size="12" fill="#933">O'</text><text x="45" y="60" font-size="13" fill="#333">圆柱（上下边相接）</text><text x="45" y="232" font-size="13" fill="#1a7a4a">G_m(2)=m^(1/6)</text><line x1="245" y1="105" x2="315" y2="90" stroke="#666" stroke-width="1.5"/><line x1="245" y1="140" x2="315" y2="140" stroke="#666" stroke-width="1.5"/><line x1="245" y1="175" x2="315" y2="192" stroke="#666" stroke-width="1.5"/><text x="330" y="94" font-size="13" fill="#333">平面嵌套配分 R^(1/12)</text><text x="330" y="144" font-size="13" fill="#333">六边形弦配分 R^(3/4)</text><text x="330" y="188" font-size="13" fill="#333">弦平均长、平方质量 H^(2/3) 等</text><text x="120" y="265" font-size="12" fill="#666">一个圆柱指数，派生一族平面幂律</text></svg>
+
+</div>
+
+数字版定理：圆柱参数 `@@M@@m=10^6@@` 时，分离双标记的圈族总权 `@@M@@G_m(2)=m^{1/6}\approx10@@`；平面嵌套配分 `@@M@@\mathcal Z(R)=R^{1/12}@@`，`@@M@@R=10^{12}@@` 时也约 `@@M@@10@@`；边长 `@@M@@R@@` 的六边形内首发弦配分为 `@@M@@R^{3/4}@@`、归一化平均长度 `@@M@@R^{4/3}@@`——`@@M@@R=10^3@@` 时平均走 `@@M@@10^4@@` 步。
+
+**为什么值得关心**
+
+"正负抵消后余额仍可读出精确幂律"是精确可积方法的命门；本文把它做成，为整个家族的 3/4 尺寸指数主张提供了关键解析输入。
+
+> 暂无形式化证明（AI 结果待核验）
+
 ## 一句话结论
 
 在临界活度与圈逸度（loop fugacity）`@@M@@2@@` 处，本文证明平衡无限圆柱上分离双标记的不交蜂窝多边形配分函数为 `@@M@@m^{1/6+o(1)}@@`，并由此推出平面嵌套指数 `@@M@@1/12@@`、六边形弦配分 `@@M@@R^{3/4+o(1)}@@`、归一化平均长度 `@@M@@R^{4/3+o(1)}@@` 与多边形长度平方质量界 `@@M@@H^{2/3+o(1)}@@`。

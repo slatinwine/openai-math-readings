@@ -13,6 +13,49 @@ pdfname: ""
 
 > 结果族 238：Optimal logarithmic mixing of the Thorp shuffle　·　学科：Probability and statistical mechanics　·　验证状态：主结果已 Lean 形式化
 
+## 入门导读 🐣
+
+证明洗牌快，有种套路是"先剧透再看"：先亮出几张牌各自怎么走，再检查剩下的随机安排像不像均匀。麻烦在于剧透会改变剩余部分的概率——这篇论文把这笔"剧透税"精确入账，再用复分析的最大值原理，把好估计从一个人造模型"搬运"到真正的 Thorp 洗牌。
+
+**关键词卡片**
+
+- 条件扫掠（conditional sweep）：先固定部分牌的行走路线（剧透），再估计剩下的随机对应表
+- 无放回修正（falling-factorial correction）：不许重复地指定 `@@M@@u@@` 个座位的组合账单 `@@M@@(m)_u=m(m-1)\cdots@@`，剧透越多账越贵
+- Schatten 矩（Schatten moment）：算子幂的迹，统一度量洗牌算子的收缩强度
+- 次调和最大值原理（subharmonic maximum principle）：复变工具——边界上不超标，内部就处处不超标
+- 解析转移（analytic transfer）：沿复平面把"掺混模型"上的好估计搬到目标模型
+
+**看个具体例子**
+
+剧透税有多便宜？在一条 `@@M@@m=64@@` 的线上指定 `@@M@@u=3@@` 张牌的落点，代价 `@@M@@C=\ln\frac{64^3}{64\cdot63\cdot62}\approx0.047@@`——只多付约 5%。再看搬运：把扫掠掺进参数 `@@M@@z@@`（`@@M@@z=0@@` 是均匀线律、好证，`@@M@@z=1@@` 是二进制真扫掠、要证的目标），矩阵系数 `@@M@@f(z)@@` 在 `@@M@@z=0@@` 附近有维数节省、在某个圆周上范数 `@@M@@\le1@@`；在挖去实轴一线段的圆盘上对 `@@M@@\log|f|@@` 用最大值原理，节省便搬到 `@@M@@z=1@@`。结论：`@@M@@\|K_\lambda\|_{\rm op}\le D_\lambda^{-g}@@`，固定次数扫掠后全变差趋于零，`@@M@@t_{\rm mix}=\Theta(d)@@`。
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280">
+  <text x="280" y="26" text-anchor="middle" font-size="15">挖去一线段的圆盘：用最大值原理搬运估计</text>
+  <line x1="55" y1="150" x2="505" y2="150" stroke="#bbb" stroke-width="1"/>
+  <line x1="280" y1="35" x2="280" y2="265" stroke="#bbb" stroke-width="1"/>
+  <circle cx="280" cy="150" r="95" fill="none" stroke="#333" stroke-width="2"/>
+  <line x1="240" y1="150" x2="330" y2="150" stroke="#d62728" stroke-width="6" stroke-linecap="round"/>
+  <circle cx="240" cy="150" r="4" fill="#d62728"/>
+  <circle cx="330" cy="150" r="4" fill="#d62728"/>
+  <text x="233" y="170" text-anchor="middle" font-size="13">u</text>
+  <text x="326" y="170" text-anchor="middle" font-size="13">v</text>
+  <text x="250" y="140" text-anchor="middle" font-size="12" fill="#555">0</text>
+  <text x="318" y="140" text-anchor="middle" font-size="12" fill="#555">1</text>
+  <text x="120" y="95" font-size="13" fill="#1f77b4">z=0：掺均匀，好证</text>
+  <text x="360" y="210" font-size="13" fill="#d62728">z=1：真洗牌</text>
+  <text x="280" y="110" text-anchor="middle" font-size="12" fill="#555">边界不超标 ⇒ 内部处处不超标</text>
+</svg>
+
+</div>
+
+**为什么值得关心**
+
+"条件矩＋复分析搬运"的组合拳是本族被机器验证的骨干路线，也成为伙伴论文反复借用的证明模板。
+
+> 已 Lean 形式化
+
 ## 一句话结论
 
 本文先对"给定了部分牌轨迹"的条件坐标扫掠证明一个普适的 Schatten 矩估计，再用次调和最大值原理（subharmonic maximum principle）把近均匀线律下的收缩解析转移到二进制扫掠，证明固定次数扫掠即可混合 `@@M@@2^d@@` 张牌的 Thorp 洗牌，混合时间 `@@M@@O(d)@@` 与支撑下界同阶。

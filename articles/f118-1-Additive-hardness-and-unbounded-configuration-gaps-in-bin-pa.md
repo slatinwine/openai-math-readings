@@ -13,6 +13,51 @@ pdfname: ""
 
 > 结果族 118：Bin packing and unbounded configuration-LP gaps　·　学科：Theoretical computer science　·　验证状态：主结果已 Lean 形式化
 
+## 入门导读 🐣
+
+搬家装箱：一堆物品、容量 1 的箱子、目标最省箱。业内长期相信一个温和的猜想："理想规划（允许把物品磨成粉分装）算出的箱数，顶多比真实答案多 1 箱"。这篇论文把它推翻：差距可以任意大；而且除非 P=NP，任何算法都保证不了"只多固定几个箱子"。
+
+**关键词卡片**
+
+- 装箱问题（bin packing）：用容量 1 的箱子装下所有物品，最小化箱数。
+- 配置 LP（configuration LP）：允许分数装箱的线性规划，给出箱数的下界。
+- 修正整数取整猜想（Modified Integer Round-Up Conjecture）：`@@M@@\mathrm{OPT}\le\lceil\mathrm{LP}\rceil+1@@`，本文否定。
+- 加性间隙（additive gap）：LP 值与真实最优箱数之差。
+- 加性近似（additive approximation）：允许总多花固定常数个箱子的算法保证。
+
+**看个具体例子**
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280">
+  <text x="20" y="30" font-size="15">配置 LP 的说法：B = 3 箱就够（灰色 = 分数地装）</text>
+  <rect x="40" y="45" width="90" height="90" fill="none" stroke="#333" stroke-width="2"/>
+  <rect x="150" y="45" width="90" height="90" fill="none" stroke="#333" stroke-width="2"/>
+  <rect x="260" y="45" width="90" height="90" fill="none" stroke="#333" stroke-width="2"/>
+  <rect x="41" y="106" width="88" height="28" fill="#ccc"/>
+  <rect x="151" y="106" width="88" height="28" fill="#ccc"/>
+  <rect x="261" y="106" width="88" height="28" fill="#ccc"/>
+  <text x="20" y="172" font-size="15">真实最优：物品必须整件放入，需要 &gt; B + c 箱</text>
+  <rect x="40" y="185" width="90" height="70" fill="none" stroke="#333" stroke-width="2"/>
+  <rect x="150" y="185" width="90" height="70" fill="none" stroke="#333" stroke-width="2"/>
+  <rect x="260" y="185" width="90" height="70" fill="none" stroke="#333" stroke-width="2"/>
+  <rect x="370" y="185" width="90" height="70" fill="none" stroke="#333" stroke-width="2"/>
+  <text x="478" y="226" font-size="16">……</text>
+  <text x="20" y="272" font-size="13">每件物品 &gt; 1/6，故每箱至多 5 件；差距可超过任意给定的 c</text>
+</svg>
+
+</div>
+
+数字版定理：对任意 `@@M@@c\ge0@@`，存在每件物品 `@@M@@>\tfrac16@@` 的实例，使 `@@M@@\mathrm{LP}=B@@` 恰为整数、而 `@@M@@\mathrm{OPT}>B+c@@`。取 `@@M@@c=1@@`：规划说 `@@M@@B@@` 箱够，现实却至少要 `@@M@@B+2@@` 箱——直接超出猜想允许的余量。定理 2 进一步说：区分"`@@M@@B@@` 箱够"与"`@@M@@B+c@@` 箱不够"是 NP-难的。
+
+直觉上，规划允许"半个物品进这箱、半个进那箱"，现实物品却不能切开。论文的归约把图的顶点覆盖难题悄悄编码进物品尺寸的小数位，再靠"两棵竞争树"的组合障碍，让分数世界与整数世界分道扬镳到任意远。
+
+**为什么值得关心**
+
+一个悬置三十年的猜想被干净利落地否定，同时 Williamson–Shmoys 教科书里"是否存在加性近似算法"的公开问题得到否定答案。
+
+> 已 Lean 形式化
+
 ## 一句话结论
 
 论文证明：装箱问题的配置线性规划（configuration LP）值与真实最优箱数之间可以存在任意大的加性间隙，直接推翻 Scheithauer–Terno 的修正整数取整猜想（`@@M@@\OPT\le\lceil\LP\rceil+1@@`）；并且除非 `@@M@@\classP=\classNP@@`，任何多项式算法都无法保证只多用固定常数个箱子。两个结论都已在"每件物品大于 `@@M@@1/6@@`"的约束下成立。

@@ -13,6 +13,33 @@ pdfname: ""
 
 > 结果族 347：Counterexamples to stable-Morse and strong Arnold fixed-point bounds　·　学科：Differential geometry　·　验证状态：主结果已 Lean 形式化
 
+## 入门导读 🐣
+
+设计山地地形时，无论怎么捏，驻点（山顶、谷底、鞍点）总数有下限；可这篇论文让地形随哈密顿流"动起来"之后，一个周期结束停在原处的点居然可以更少。舞台是一个非常具体的空间——复三维二次超曲面：任何函数都得要至少 4 个驻点，它却只有 3 个停点。
+
+**关键词卡片**
+
+- 二次超曲面（quadric threefold）：四维复射影空间中由二次方程定义的闭辛流形 `@@M@@Q^3@@`，实维六。
+- 哈密顿微分同胚（Hamiltonian diffeomorphism）：哈密顿力学演化一个周期得到的空间变换。
+- 临界数（critical number）：允许退化临界点时，所有光滑函数临界点数的最小值，此处为 4。
+- 哈密顿对合（Hamiltonian involution）：施行两次等于恒等的对称变换，本文用翻转部分坐标实现。
+
+**看个具体例子**
+
+公式卡（数字版定理）：`@@M@@\#\operatorname{Fix}(\phi)=3<4=\operatorname{Crit}(Q^3)=\operatorname{cuplength}(Q^3)@@`，且至少一个不动点退化。下图的对比：左边是地形函数至少 4 个驻点，右边是本文映射的 3 个不动点。三还是最优计数——已有定理保证这类流形上任何哈密顿映射至少 3 个不动点，本例恰好触底。诀窍是先用一个"施行两次回到原样"的对称变换，其不动集是一块好处理的子空间；再叠加微小扰动，把不动点按需安放在这块子空间上。
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280"><path d="M20 170 Q60 90 100 170 Q140 250 180 170 Q220 90 260 170 Q300 250 340 170" fill="none" stroke="#333" stroke-width="2"/><circle cx="60" cy="130" r="6" fill="#2980b9"/><circle cx="140" cy="210" r="6" fill="#2980b9"/><circle cx="220" cy="130" r="6" fill="#2980b9"/><circle cx="300" cy="210" r="6" fill="#2980b9"/><text x="34" y="40" font-size="13" fill="#333">Q³ 上任何函数：≥ 4 个驻点</text><ellipse cx="460" cy="170" rx="78" ry="62" fill="none" stroke="#8e44ad" stroke-width="2"/><circle cx="460" cy="112" r="6" fill="#c0392b"/><circle cx="402" cy="192" r="6" fill="#c0392b"/><circle cx="518" cy="192" r="6" fill="#c0392b"/><text x="368" y="40" font-size="13" fill="#333">本文哈密顿映射：仅 3 个不动点</text><text x="386" y="254" font-size="13" fill="#8e44ad">流形 Q³（实六维）</text></svg>
+
+</div>
+
+**为什么值得关心**
+
+一个例子同时推翻 Arnold 猜想的临界数形式与有理杯长形式，而且是光滑反例中的首个；主结果已通过机器验证。
+
+> 已 Lean 形式化
+
 ## 一句话结论
 
 在复三维二次超曲面 `@@M@@Q^3@@`（实六维闭辛流形）上，本文构造出恰好有三个不动点的光滑哈密顿微分同胚，而该流形上任何光滑函数都至少有四个临界点——同时推翻 Arnold 猜想的临界数形式与有理杯长形式，且三是最优计数。

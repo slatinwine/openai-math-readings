@@ -13,6 +13,56 @@ pdfname: ""
 
 > 结果族 032：Hodge and Kuga–Satake results for all projective K3 surfaces　·　学科：Algebraic and complex geometry　·　验证状态：暂无形式化证明，请以社区核验为准
 
+## 入门导读 🐣
+
+把一条曲线按交换群的规则叠成若干层、在指定位置粘边，得到"覆盖曲线"；再把曲线上的闭路积分收集起来，就得到一个高维甜甜圈（Jacobi 簇）。本文证明：任意连通阿贝尔覆盖、任意底亏格、任意粘边方案下，覆盖族里"一般"成员的 Jacobi 簇——还可以随意外挂任何 CM 因子——的所有自幂都满足 Hodge 猜想。
+
+**关键词卡片**
+
+- 阿贝尔覆盖（abelian cover）：粘边规则服从交换群的多层覆盖，循环覆盖是特例。
+- Jacobi 簇（Jacobian）：把曲线的闭路积分收集成的阿贝尔簇。
+- Hodge-一般点（Hodge-generic point）：族中影子最"普通"（对称性不额外缩水）的位置。
+- 对角完全交（diagonal complete intersection）：由至多两条同次方程定义的交簇，本文第二个战场。
+- Gale 对偶（Gale correspondence）：把两组系数互为正交补地配对的技巧，用来输送代数闭链。
+
+**看个具体例子**
+
+取 `@@M@@C:\ y^2=x^5-1@@`：这是 `@@M@@\mathbb P^1@@` 的二重覆盖（`@@M@@\Z/2@@` 是交换群），在 6 个点粘边，是一条亏格 2 曲线。
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280">
+<line x1="60" y1="205" x2="305" y2="205" stroke="#333" stroke-width="1.8"/>
+<text x="180" y="230" font-size="14" text-anchor="middle">基 = 射影直线 P¹</text>
+<g fill="#333">
+<circle cx="85" cy="205" r="3.5"/><circle cx="117" cy="205" r="3.5"/><circle cx="149" cy="205" r="3.5"/><circle cx="181" cy="205" r="3.5"/><circle cx="213" cy="205" r="3.5"/><circle cx="245" cy="205" r="3.5"/>
+</g>
+<g stroke="#999" stroke-width="1.2" stroke-dasharray="4,4">
+<line x1="85" y1="92" x2="85" y2="203"/><line x1="117" y1="92" x2="117" y2="203"/><line x1="149" y1="92" x2="149" y2="203"/><line x1="181" y1="92" x2="181" y2="203"/><line x1="213" y1="92" x2="213" y2="203"/><line x1="245" y1="92" x2="245" y2="203"/>
+</g>
+<path d="M 60 140 Q 180 126 305 140" fill="none" stroke="#333" stroke-width="1.8"/>
+<path d="M 60 92 Q 180 78 305 92" fill="none" stroke="#333" stroke-width="1.8"/>
+<text x="182" y="60" font-size="14" text-anchor="middle">两叶在 6 个点粘边：覆盖曲线 C: y² = x⁵ − 1</text>
+<line x1="318" y1="140" x2="388" y2="140" stroke="#111" stroke-width="2"/>
+<polygon points="398,140 384,134 384,146" fill="#111"/>
+<text x="356" y="128" font-size="13" text-anchor="middle">收集闭路积分</text>
+<circle cx="468" cy="140" r="56" fill="none" stroke="#333" stroke-width="1.8"/>
+<ellipse cx="468" cy="140" rx="17" ry="8" fill="none" stroke="#333" stroke-width="1.5"/>
+<text x="468" y="222" font-size="14" text-anchor="middle">Jac(C)：阿贝尔簇</text>
+<text x="280" y="252" font-size="13.5" text-anchor="middle">定理：族中 Hodge-一般点处，(Jac(C) × M)^N 的每个余维数</text>
+<text x="280" y="271" font-size="13.5" text-anchor="middle">Hodge 类都代数（M 可任取 CM 阿贝尔簇）</text>
+</svg>
+
+</div>
+
+定理 1.1：在这类覆盖的"全标记族"的张量 Hodge-一般点处，`@@M@@(\mathrm{Jac}(C)\times M)^N@@` 上每个余维数的 Hodge 类都是代数闭链，`@@M@@M@@` 可任取 CM 阿贝尔簇；定理 1.2：至多两条同次方程定义的对角完全交的非常一般成员，同样在全部自幂上成立。
+
+**为什么值得关心**
+
+三十年前 Schoen 只能处理可配对的特殊情形，本文一举推到任意阿贝尔覆盖与任意分支模式，还新增完全交一族，大幅扩张了 Hodge 猜想的已知版图。
+
+> 暂无形式化证明（AI 结果待核验）
+
 ## 一句话结论
 在任意连通阿贝尔覆盖曲线的 Jacobi 簇处（全标记变化的张量 Hodge-generic 点上），以及由至多两条同次方程定义的对角完全交的非常一般成员处，论文证明了每个自幂、每个余维数上的有理 Hodge 猜想，且可自由添乘任意 CM 阿贝尔簇因子。
 

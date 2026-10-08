@@ -13,6 +13,49 @@ pdfname: ""
 
 > 结果族 323：Independence of the separable quotient problem　·　学科：Functional analysis　·　验证状态：暂无形式化证明，请以社区核验为准
 
+## 入门导读 🐣
+
+有些数学问题不是"难"，而是"公理系统管不着"：在满足同样公理的不同宇宙里，答案相反。连续统假设是著名先例，本文证明泛函分析中的可分商问题也属此类——它独立于整个标准集合论公理体系 ZFC。
+
+**关键词卡片**
+
+- 可分空间（separable space）：含有可数稠密集、能被一列点任意逼近的赋范空间。
+- 商空间（quotient space）：把一个闭子空间整体揉成一点后得到的压缩版本。
+- ZFC（Zermelo–Fraenkel set theory with Choice）：现代数学共同的地基，标准集合论公理系统。
+- 独立（independent）：在该系统内既无法证明、也无法反驳。
+- 连续统假设（continuum hypothesis）：关于"实数有多少"的著名独立命题。
+
+**看个具体例子**
+
+问题本身一句话："每个无穷维 Banach 空间都能压出一个可分的无穷维商吗？"两个都满足 ZFC 的宇宙给出相反答案：
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280">
+<text x="280" y="30" font-size="14" text-anchor="middle">可分商问题：每个无穷维 Banach 空间都有可分无穷维商吗？</text>
+<rect x="35" y="60" width="235" height="150" fill="none" stroke="black" stroke-width="2"/>
+<text x="152" y="95" font-size="14" text-anchor="middle" font-weight="bold">宇宙 A：连续统实值可测</text>
+<text x="152" y="135" font-size="14" text-anchor="middle" fill="green">答案：是 ✓</text>
+<text x="152" y="165" font-size="13" text-anchor="middle">每个无穷维空间都有</text>
+<text x="152" y="185" font-size="13" text-anchor="middle">可分无穷维商</text>
+<rect x="290" y="60" width="235" height="150" fill="none" stroke="black" stroke-width="2"/>
+<text x="407" y="95" font-size="14" text-anchor="middle" font-weight="bold">宇宙 B：连续统假设成立</text>
+<text x="407" y="135" font-size="14" text-anchor="middle" fill="red">答案：否 ✗</text>
+<text x="407" y="165" font-size="13" text-anchor="middle">存在反例</text>
+<text x="407" y="185" font-size="13" text-anchor="middle">（密度恰为 ℵ₁）</text>
+<text x="280" y="245" font-size="13" text-anchor="middle">两个宇宙都满足 ZFC —— ZFC 本身无法裁决</text>
+</svg>
+
+</div>
+
+更精细的结论：对密度恰为 `@@M@@\aleph_1@@`（最小的不可数基数）的空间版本，正反两个方向的相容性都只需 ZFC 自身相容，不必假设可测基数这样的大基数。
+
+**为什么值得关心**
+
+它把一个纯分析问题与集合论根基直接接通：想彻底解决它，光在分析里使劲是不够的。
+
+> 暂无形式化证明（AI 结果待核验）
+
 ## 一句话结论
 
 证明了经典的可分商问题独立于 ZFC：当连续统实值可测时，每个无穷维 Banach 空间都有可分无穷维商；而在连续统假设下存在反例。对密度恰为 `@@M@@\aleph_1@@` 的空间，独立性只需 ZFC 自身相容即得。

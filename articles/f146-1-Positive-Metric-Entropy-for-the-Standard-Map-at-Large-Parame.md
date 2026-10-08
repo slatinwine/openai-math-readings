@@ -13,6 +13,34 @@ pdfname: ""
 
 > 结果族 146：Positive metric entropy for the standard map　·　学科：Dynamical systems and ergodic theory　·　验证状态：暂无形式化证明，请以社区核验为准
 
+## 入门导读 🐣
+
+想象一口大锅里倒一杯颜料，锅铲按一套固定规则不停搅动。把搅拌力度（参数 `@@M@@k@@`）开到足够大时，这杯颜料会不会在相当大一块面积上被彻底搅散、再也回不了头？这篇论文研究的正是数学里最著名的"搅拌规则"——环面上的标准映射，结论是：只要力度足够大，混沌就在一块正面积的区域内真实出现，而且整段大参数无一例外。
+
+**关键词卡片**
+
+- 标准映射（standard map）：环面上的规则 `@@M@@(x,y)\mapsto(x+y+k\sin 2\pi x,\ y+k\sin 2\pi x)@@`，物理里保守不稳定性的头号模型
+- 度量熵（metric entropy）：系统平均每步"长出多少新信息"，大于零意味着混沌占据正面积的轨道集合
+- Lyapunov 指数（Lyapunov exponent）：相邻两条轨道平均以多快的指数速度分离
+- 参数尾部（parameter tail）：所有 `@@M@@k\ge k_0@@` 的大参数连成的一整段区间
+- Sinai 猜想（Sinai's positive-parameter-measure conjecture）：正熵的参数是否占正测度——本文以更强的"整段尾部"形式给出肯定
+
+**看个具体例子**
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280"><text x="130" y="30" font-size="15" text-anchor="middle">小参数 k：轨道抱成环（守规矩）</text><ellipse cx="110" cy="150" rx="55" ry="22" fill="none" stroke="black"/><ellipse cx="110" cy="150" rx="40" ry="16" fill="none" stroke="black"/><ellipse cx="110" cy="150" rx="25" ry="9" fill="none" stroke="black"/><line x1="280" y1="45" x2="280" y2="245" stroke="black" stroke-dasharray="6 4"/><text x="430" y="30" font-size="15" text-anchor="middle">大参数 k≥k₀：正面积混沌区</text><path d="M365 140 q28 -58 78 -44 q52 14 34 58 q-17 38 -66 29 q-47 -9 -33 -47 q11 -33 56 -28 q43 5 38 42" fill="none" stroke="black"/><text x="280" y="268" font-size="13" text-anchor="middle">示意图：右图只强调"正面积区域出现混沌"，并非全域混沌</text></svg>
+
+</div>
+
+定理的"数字版"很干脆：存在常数 `@@M@@k_0@@`，使每个 `@@M@@k\ge k_0@@` 都有 `@@M@@h_m(f_k)>0@@`。注意它不宣称整个环面都混沌，也没给出 `@@M@@k_0@@` 的具体数值——只保证混沌在正面积集合上出现。
+
+**为什么值得关心**
+
+保守系统里"混沌到底可不可见"争论了几十年：以前只能在"典型"参数或零面积的奇特集合上说话，现在整条参数尾部一锤定音。
+
+> 暂无形式化证明（AI 结果待核验）
+
 ## 一句话结论
 
 证明了环面标准映射（Chirikov standard map）`@@M@@f_k@@` 对一切充分大的正参数 `@@M@@k@@` 都具有关于面积测度的正度量熵（metric entropy），以"整条参数尾部"这一更强形式肯定回答了 Sinai 的正参数测度猜想，解决了保守动力系统中的一个长期未决问题。

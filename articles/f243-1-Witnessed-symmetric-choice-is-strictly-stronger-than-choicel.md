@@ -13,6 +13,33 @@ pdfname: ""
 
 > 结果族 243：Separating choiceless counting from polynomial time and witnessed choice　·　学科：Mathematical logic　·　验证状态：暂无形式化证明，请以社区核验为准
 
+## 入门导读 🐣
+
+还是那位公正裁判：他现在获准一项受严格约束的新权力——在真正别无差别时"整批挑一份代表"，但必须当场出示证明（一个保住全部历史记录的对称变换）表明这次挑选不破坏公正。这份新权力到底有没有实打实的用处？本文证明：有，而且严格有——他能断以前断不了的案子。
+
+**关键词卡片**
+
+- 见证对称选择（witnessed symmetric choice, WSC）：从一批完全等价的对象里选代表，同时构造自同构证明这次选择合法。
+- CPT：无选择多项式时间，只做对称计算、允许计数的旧系统。
+- 表达能力（expressive power）：一个计算逻辑能定义哪些"是/否"查询。
+- 严格更强（strictly stronger）：新系统能做旧系统的一切，还能做旧系统做不到的。
+
+**看个具体例子**
+
+考题仍是姊妹篇那族"带电网格"上的模 3 方程组相容性查询。一个只出现一次 WSC 算子的固定句子，就能在每个有限输入上给出确定的"是/否"且从不中途失败；而任何 CPT 句子（哪怕允许计数与任意复杂的中间对象）都定义不出同样的查询——于是得到严格包含：
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280"><circle cx="280" cy="140" r="115" fill="none" stroke="#c0392b" stroke-width="2.5"/><circle cx="215" cy="150" r="70" fill="none" stroke="#2c7fb8" stroke-width="2.5"/><text x="280" y="20" font-size="14" fill="#c0392b" text-anchor="middle">CPT＋WSC（允许一次见证选择）</text><text x="215" y="145" font-size="14" fill="#2c7fb8" text-anchor="middle">CPT＋计数</text><text x="215" y="168" font-size="14" fill="#2c7fb8" text-anchor="middle">可定义的查询</text><circle cx="355" cy="150" r="8" fill="#c0392b"/><text x="345" y="180" font-size="13" fill="#c0392b" text-anchor="middle">带电网格</text><text x="345" y="198" font-size="13" fill="#c0392b" text-anchor="middle">相容性查询</text><text x="280" y="268" font-size="13" fill="#666" text-anchor="middle">外圈严格包含内圈：WSC 带来真本事</text></svg>
+
+</div>
+
+**为什么值得关心**
+
+这肯定回答了 Lichter–Schweitzer 在 2023 年提出的问题，首次把两个系统严格分开；本篇最重的技术部件复用自已形式化的姊妹篇，但结论本身仍待核验。
+
+> 暂无形式化证明（AI 结果待核验）
+
 ## 一句话结论
 
 本文证明：在带计数的无选择多项式时间（CPT）之上加入见证对称选择算子（witnessed symmetric choice, WSC）会严格增强表达能力——一个只含一次 WSC 出现的固定句子在所有有限输入上定义了一个布尔查询，却不能被任何 CPT 句子定义，肯定回答了 Lichter–Schweitzer 提出的表达能力问题。

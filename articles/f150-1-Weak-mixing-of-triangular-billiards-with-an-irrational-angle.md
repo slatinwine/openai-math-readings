@@ -13,6 +13,34 @@ pdfname: ""
 
 > 结果族 150：Weak mixing of triangular billiards with an irrational angle　·　学科：Dynamical systems and ergodic theory　·　验证状态：暂无形式化证明，请以社区核验为准
 
+## 入门导读 🐣
+
+咖啡里滴牛奶，搅一阵就完全混匀；"怎么搅都混"比"平均而言混"更强。这篇论文证明：任何三角形台球桌，只要有一个角与 `@@M@@\pi@@` 之比写不成分数，球的弹道就具有这种强混匀性——不仅一颗球的分布被搅匀，两颗球一起弹跳的联合分布也被搅匀。以往这类结论只对"典型"或"可被分数快速逼近"的多边形成立，这是第一次覆盖每一个具体的无理三角形。
+
+**关键词卡片**
+
+- 弱混合（weak mixing）：比遍历更强的混匀性，等价于"流与自身的乘积流遍历"
+- 遍历（ergodic）：时间平均等于空间平均，不存在中途被"锁死"的区域
+- 无理角（irrational angle）：角度与 `@@M@@\pi@@` 之比不是分数
+- 展开二重面（unfolding double）：把两份镜像三角形粘合，反射被拉直成曲面上的直线运动
+- 刘维尔测度（Liouville measure）：位置均匀 × 方向均匀的自然概率测度
+
+**看个具体例子**
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280"><text x="280" y="28" font-size="16" text-anchor="middle">无理角三角形：一条弹道反复反射</text><path d="M130 230 L430 230 L255 70 Z" fill="none" stroke="black" stroke-width="2"/><path d="M170 230 L345 162 L225 132 L335 212" fill="none" stroke="black" stroke-dasharray="7 5"/><circle cx="345" cy="162" r="3" fill="black"/><circle cx="225" cy="132" r="3" fill="black"/><path d="M268 84 A20 20 0 0 1 243 87" fill="none" stroke="black"/><text x="288" y="96" font-size="14">α/π∉Q</text><text x="280" y="265" font-size="13" text-anchor="middle">只要一个角与 π 之比无理（如 α/π=1/√10），双球联合分布就被彻底搅匀</text></svg>
+
+</div>
+
+具体代入：取顶角 `@@M@@\alpha@@` 满足 `@@M@@\alpha/\pi=1/\sqrt{10}@@`（无理数）的三角形，定理保证其台球流弱混合——从随机起点出发的两颗球各自弹跳，位置对的联合测度随时间收敛到"处处均匀"。条件也是锋利的：三个角全为 `@@M@@\pi@@` 的有理倍数时，方向上只剩有限种反射模式，不可能混匀。
+
+**为什么值得关心**
+
+多边形台球因"直边无曲率、顶点无定义"成为遍历论最难啃的一角，本文不设任何通有性或逼近条件，把弱混合一次性推广到全部无理三角形。
+
+> 暂无形式化证明（AI 结果待核验）
+
 ## 一句话结论
 
 证明了只要欧氏三角形有一个角与 `@@M@@\pi@@` 之比无理，其台球流就对归一化刘维尔测度弱混合（weak mixing），等价于流与自身的乘积流遍历。这把以往只在"通有"或"可快速有理逼近"多边形上成立的弱混合推广到每一个无理三角形，无需任何丢番图条件。

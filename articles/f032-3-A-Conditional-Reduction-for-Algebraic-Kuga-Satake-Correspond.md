@@ -13,6 +13,52 @@ pdfname: ""
 
 > 结果族 032：Hodge and Kuga–Satake results for all projective K3 surfaces　·　学科：Algebraic and complex geometry　·　验证状态：暂无形式化证明，请以社区核验为准
 
+## 入门导读 🐣
+
+想确认整片森林每棵树都健康，本文说：只需在"非常一般"的那棵树上找到一根菌丝（一个非零的代数对应），整片森林的结论就自动到手；甚至只要有这一根，就能恢复出整套指定配置的完整 Kuga–Satake 对应。但那根菌丝是否真的存在，仍是留给别人的假设——这是一篇诚实标注"条件性"的论文。
+
+**关键词卡片**
+
+- K3 曲面（K3 surface）：光滑四次曲面，如 `@@M@@x^4+y^4+z^4+w^4=0@@`。
+- Hodge 群（Hodge group）：影子对称性的量度；等于满正交群 `@@M@@\mathrm{SO}@@` 时即"最一般"情形。
+- Kuga–Satake 对应（Kuga–Satake correspondence）：把 K3 信息装进阿贝尔簇的翻译机；"代数"意味着有几何连线。
+- 非常一般点（very general point）：避开可数多个特殊位置的点。
+- 专门化（specialization）：把一般点上的好性质推广到整个族的传递论证。
+
+**看个具体例子**
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280">
+<ellipse cx="148" cy="132" rx="108" ry="72" fill="none" stroke="#333" stroke-width="1.8" stroke-dasharray="7,5"/>
+<g fill="#333">
+<circle cx="100" cy="112" r="4"/><circle cx="148" cy="92" r="4"/><circle cx="196" cy="112" r="4"/><circle cx="92" cy="162" r="4"/><circle cx="148" cy="172" r="4"/><circle cx="204" cy="162" r="4"/><circle cx="120" cy="140" r="4"/><circle cx="176" cy="140" r="4"/>
+</g>
+<circle cx="148" cy="92" r="9" fill="none" stroke="#111" stroke-width="1.8"/>
+<text x="148" y="66" font-size="13.5" text-anchor="middle">非常好一般点：假设它有一个非零对应 α</text>
+<text x="148" y="230" font-size="14" text-anchor="middle">度 2d 的极化 K3 分支（一族曲面）</text>
+<line x1="272" y1="132" x2="330" y2="132" stroke="#111" stroke-width="2"/>
+<polygon points="342,132 328,126 328,138" fill="#111"/>
+<text x="306" y="116" font-size="14" text-anchor="middle">定理 B</text>
+<text x="306" y="156" font-size="13" text-anchor="middle" fill="#555">专门化</text>
+<ellipse cx="446" cy="132" rx="100" ry="68" fill="none" stroke="#333" stroke-width="1.8"/>
+<g fill="none" stroke="#111" stroke-width="1.6">
+<circle cx="404" cy="112" r="7"/><circle cx="448" cy="94" r="7"/><circle cx="492" cy="112" r="7"/><circle cx="396" cy="160" r="7"/><circle cx="448" cy="170" r="7"/><circle cx="500" cy="160" r="7"/><circle cx="422" cy="140" r="7"/><circle cx="476" cy="140" r="7"/>
+</g>
+<text x="440" y="230" font-size="14" text-anchor="middle">分支内每个 K3 都拿到 Γ_S</text>
+<text x="280" y="260" font-size="13.5" text-anchor="middle">定理 A：一个非零 α 即可恢复整套指定数据；α 的存在性仍是假设</text>
+</svg>
+
+</div>
+
+把主结果代入小情形：定理 A（恢复）说，当 Hodge 群是满正交群时，只要存在一个非零代数对应把 `@@M@@S@@` 的影子送进某个阿贝尔簇，就能造出指定配置的完整对应 `@@M@@\Gamma_S\in\CH^2(S\times A_S\times A_S)_\Q@@`；定理 B（专门化）说，若这个输入在某度数的极化分支上非常好一般地成立，则分支内每个 K3 都成立。推论：若输入在每个度数都成立，则每个射影 K3 的对应都代数。
+
+**为什么值得关心**
+
+它把"整族悬案"压缩成一个可检验的单一输入，是全族证明网络的发动机；但切记：初始对应的存在性本身未被证明，绝对 Hodge 类不能充当输入。
+
+> 暂无形式化证明（AI 结果待核验）
+
 ## 一句话结论
 
 论文证明：Hodge 群为满正交群的 K3 曲面上，一个非零代数对应即可恢复指定的完整 Kuga–Satake 对应，非常好一般成立时可专门化到整个极化分支；初始对应的存在性仍是未证假设。

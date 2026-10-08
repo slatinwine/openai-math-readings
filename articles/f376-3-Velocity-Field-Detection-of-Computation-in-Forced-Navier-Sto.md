@@ -13,6 +13,47 @@ pdfname: ""
 
 > 结果族 376：Universal computation in forced Navier–Stokes flows　·　学科：Partial differential equations　·　验证状态：暂无形式化证明，请以社区核验为准
 
+## 入门导读 🐣
+
+从前的"水计算机"都要跟踪一个随波逐流的小颗粒——像跟着快递员跑全程。这篇改成装监控摄像头：站在固定地点测流速本身。某个固定区域里的竖直流速一旦超过 1/2，当且仅当程序停机；不用追任何粒子，计算照样藏不住。
+
+**关键词卡片**
+
+- 欧拉观测（Eulerian observation）：在固定位置测量演化中的速度场。
+- 拉格朗日观测（Lagrangian observation）：跟随流体粒子走，此前的观测方式。
+- 对流–扩散方程（advection–diffusion equation）：染料既被水流携带、又自己向外扩散；竖向速度分量满足它。
+- 注入–搅动–等待（injection–stirring–waiting）：先注入一小滴"墨水"，快速搅动搬运，再等扩散把残影抹淡。
+- 阈值检验（threshold test）：固定区域、固定阈值 1/2，与机器和输入都无关。
+
+**看个具体例子**
+
+往静止的水里注入质量仅 10⁻¹¹ 的墨滴，然后周期性地"搅一波、等一等"。停机时，搅拌恰好把新鲜墨滴送进探测带，读数 u₃>15/16；不停机时墨滴离带至少距离 d，残影加误差至多 1/16。两条路以 1/2 为界严格分开，任何时刻都不会误报。
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280">
+<rect x="40" y="60" width="220" height="160" fill="none" stroke="#333" stroke-width="2"/>
+<rect x="60" y="150" width="180" height="30" fill="none" stroke="#c0392b" stroke-width="2.5"/>
+<circle cx="150" cy="165" r="7" fill="#333"/>
+<text x="55" y="50" font-size="14">停机的情形</text>
+<text x="62" y="205" font-size="12">探测带内读数 15/16 ＞ 1/2</text>
+<rect x="300" y="60" width="220" height="160" fill="none" stroke="#333" stroke-width="2"/>
+<rect x="320" y="150" width="180" height="30" fill="none" stroke="#c0392b" stroke-width="2.5"/>
+<circle cx="360" cy="90" r="7" fill="#333"/>
+<line x1="360" y1="99" x2="360" y2="147" stroke="#999" stroke-dasharray="4,3"/>
+<text x="315" y="50" font-size="14">不停机的情形</text>
+<text x="318" y="205" font-size="12">读数 ≤ 1/16 ＜ 1/2</text>
+<text x="112" y="245" font-size="12">●＝墨滴，红框＝固定探测带</text>
+</svg>
+
+</div>
+
+**为什么值得关心**
+
+观测方式更苛刻也更"物理"：不追粒子、只看场，连检测区域和阈值都预先固定，计算依然不可判定。那套注入–搅动–等待的染料技术，本身就像一场精巧的思想实验。
+
+> 暂无形式化证明（AI 结果待核验）
+
 ## 一句话结论
 在平坦三维区域上为从静止出发、粘性 `@@M@@\nu>0@@` 固定的不可压 Navier–Stokes 流构造光滑外力，使得只看速度场的固定检验——环面某带内 `@@M@@u_3>\tfrac12@@`，或 `@@M@@\mathbb R^2\times\mathbb T@@` 上半平面积分 `@@M@@>\tfrac12@@`——恰好等价于给定图灵机停机；由此这类速度事件不可判定。
 

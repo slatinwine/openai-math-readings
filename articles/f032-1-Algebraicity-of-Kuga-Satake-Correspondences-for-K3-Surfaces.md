@@ -13,6 +13,34 @@ pdfname: ""
 
 > 结果族 032：Hodge and Kuga–Satake results for all projective K3 surfaces　·　学科：Algebraic and complex geometry　·　验证状态：暂无形式化证明，请以社区核验为准
 
+## 入门导读 🐣
+
+K3 曲面的"隐藏振动"（超越上同调）很神秘，但 1967 年有一招老办法：Kuga–Satake 构造能把这些振动原样搬进一个"甜甜圈"（阿贝尔簇）的振动里——像把一首复杂的歌完整转录进一群简单音叉。转录对照表的存在早已知晓；本文证明更强的：对照表本身是代数的，由货真价实的代数闭链给出。
+
+**关键词卡片**
+
+- Kuga–Satake 对应（Kuga–Satake correspondence）：把 K3 的上同调嵌进阿贝尔簇上同调的经典构造。
+- 阿贝尔簇（abelian variety）：带加法运算的高维甜甜圈，几何工具最丰富的空间。
+- 超越上同调（transcendental cohomology）：K3 账本中扣掉代数类后剩下的振动部分。
+- 代数闭链（algebraic cycle）：能用代数方程写出来的对应关系，几何上"实打实"。
+- 固定归一化（fixed normalization）：构造里嵌入映射的精确刻度——定理实现的是这张精确的表。
+
+**看个具体例子**
+
+对每个射影 K3 曲面 S，构造给出明确的嵌入 κ_S : T(S) → H²(A_S × A_S, Q)。定理断言：存在余二维代数闭链 Γ_S，其作用在 T(S) 上恰好实现 κ_S——不是"某个非零对应"，而是这张带固定归一化的完整对照表本身；对同构的 Kuga–Satake 模型同样成立。
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280"><path d="M 130 32 C 184 32 214 60 214 94 C 214 128 178 148 130 148 C 82 148 46 128 46 94 C 46 60 82 32 130 32" fill="#f2f7f2" stroke="#1e8449" stroke-width="3"/><path d="M 82 100 q 12 -10 24 0" fill="none" stroke="#888" stroke-width="2"/><path d="M 118 100 q 12 -10 24 0" fill="none" stroke="#888" stroke-width="2"/><path d="M 100 118 q 12 -10 24 0" fill="none" stroke="#888" stroke-width="2"/><text x="130" y="170" font-size="14" text-anchor="middle" fill="#1e8449">K3 曲面 S（隐藏振动）</text><ellipse cx="432" cy="94" rx="88" ry="56" fill="none" stroke="#1e8449" stroke-width="3"/><ellipse cx="432" cy="86" rx="33" ry="17" fill="none" stroke="#1e8449" stroke-width="3"/><text x="432" y="170" font-size="14" text-anchor="middle" fill="#1e8449">阿贝尔簇 A_S（甜甜圈）</text><line x1="222" y1="94" x2="322" y2="94" stroke="#c0392b" stroke-width="4"/><polygon points="338,94 322,86 322,102" fill="#c0392b"/><text x="280" y="72" font-size="14" text-anchor="middle" fill="#c0392b">Kuga–Satake 对应</text><text x="280" y="122" font-size="12.5" text-anchor="middle" fill="#c0392b">由代数闭链 Γ_S 实现（实线）</text><text x="280" y="212" font-size="14" text-anchor="middle" fill="#333">定理：这张"转录对照表"本身是代数的</text><text x="280" y="238" font-size="12.5" text-anchor="middle" fill="#555">T(S) → H²(A_S×A_S) 的精确嵌入由余二维闭链诱导</text></svg>
+
+</div>
+
+**为什么值得关心**
+
+Kuga–Satake 对应的代数性是 Hodge 猜想在 K3 情形的关键特例——Deligne 当年就靠这类构造证明了 K3 的 Weil 猜想；本文首次对全部 K3 曲面证出精确版本。
+
+> 暂无形式化证明（AI 结果待核验）
+
 ## 一句话结论
 
 论文证明：每个光滑射影复 K3 曲面的 Kuga–Satake 对应 (Kuga–Satake correspondence) 都是代数的——超越上同调嵌入其 Kuga–Satake 阿贝尔簇上同调的既定映射，在固定归一化与全偶 Clifford 目标下由有理代数闭链诱导，这是 Hodge 猜想在 K3 情形的关键特例。

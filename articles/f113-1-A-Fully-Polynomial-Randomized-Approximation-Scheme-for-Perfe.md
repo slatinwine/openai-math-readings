@@ -13,6 +13,51 @@ pdfname: ""
 
 > 结果族 113：Approximate counting and entropy of perfect matchings　·　学科：Theoretical computer science　·　验证状态：暂无形式化证明，请以社区核验为准
 
+## 入门导读 🐣
+
+联谊会上有 2n 个人，任意两人都可以结对，要把所有人两两配对——找出一种配法早就是教科书算法，但"数清一共有多少种配法"却被证明是 #P 完全的，几乎无望精确。本文给出随机近似算法：像"标记再捕"估计湖里有多少鱼一样，在多项式时间内给出相对误差 ε、成功率 1−δ 的估计，而且根本配不成对时必然如实输出 0。这补上了 1989 年提出、悬了近四十年的最后一块拼图。
+
+**关键词卡片**
+
+- 完美匹配（perfect matching）：让每个顶点恰好连一条边的边集，即全员结对。
+- #P 完全（#P-complete）：计数问题的最高难度等级，精确求解被认为无望。
+- FPRAS（fully polynomial randomized approximation scheme）：时间多项式于输入长、1/ε 与 log(1/δ) 的随机近似计数格式。
+- 马尔可夫链蒙特卡洛（Markov chain Monte Carlo）：设计随机游走来采样，用样本估计数量。
+- 退火（annealing）：从容易采样的完全图出发逐步收紧到目标图，逐级估比值再连乘。
+
+**看个具体例子**
+
+把立方体的 8 个顶点、12 条棱看作一张图：它共有 9 个完美匹配（图中红色 4 条"斜棱"是其中之一）。定理的数字版：`@@M@@\Pr[(1-\epsilon)\cdot 9\le\hat Z\le(1+\epsilon)\cdot 9]\ge 1-\delta@@`——比如取 ε=1%，输出就落在 8.91 与 9.09 之间；若图根本无法全员结对，则每次执行都输出 0。
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280">
+  <text x="280" y="26" text-anchor="middle" font-size="15" fill="#333333">立方体图（8 顶点 12 棱）：红色 4 条棱是一个完美匹配</text>
+  <rect x="190" y="50" width="120" height="120" fill="none" stroke="#bbbbbb" stroke-width="2"/>
+  <line x1="150" y1="80" x2="190" y2="50" stroke="#e0592a" stroke-width="4"/>
+  <line x1="270" y1="80" x2="310" y2="50" stroke="#e0592a" stroke-width="4"/>
+  <line x1="270" y1="200" x2="310" y2="170" stroke="#e0592a" stroke-width="4"/>
+  <line x1="150" y1="200" x2="190" y2="170" stroke="#e0592a" stroke-width="4"/>
+  <rect x="150" y="80" width="120" height="120" fill="none" stroke="#888888" stroke-width="2"/>
+  <circle cx="190" cy="50" r="7" fill="#777777"/>
+  <circle cx="310" cy="50" r="7" fill="#777777"/>
+  <circle cx="310" cy="170" r="7" fill="#777777"/>
+  <circle cx="190" cy="170" r="7" fill="#777777"/>
+  <circle cx="150" cy="80" r="7" fill="#3b82c4"/>
+  <circle cx="270" cy="80" r="7" fill="#3b82c4"/>
+  <circle cx="270" cy="200" r="7" fill="#3b82c4"/>
+  <circle cx="150" cy="200" r="7" fill="#3b82c4"/>
+  <text x="280" y="245" text-anchor="middle" font-size="13" fill="#555555">每个顶点恰好连一条红棱 ⇒ 8 人全部结对；立方体图共有 9 个完美匹配</text>
+</svg>
+
+</div>
+
+**为什么值得关心**
+
+一般图完美匹配计数是近似计数理论的地标难题：二部图 2004 年解决、平面图早有精确解，一般图这一格被本文填上，连带指定度数、指定大小的匹配也能近似计数。
+
+> 暂无形式化证明（AI 结果待核验）
+
 ## 一句话结论
 对任意有限简单无向图给出完美匹配计数的全多项式随机逼近格式（FPRAS），时间多项式于输入长度、`@@M@@\varepsilon^{-1}@@` 与 `@@M@@\log\delta^{-1}@@`，无完美匹配时确定性输出零，正面解决了 Jerrum–Sinclair 在 1989 年提出的一般图难题。
 

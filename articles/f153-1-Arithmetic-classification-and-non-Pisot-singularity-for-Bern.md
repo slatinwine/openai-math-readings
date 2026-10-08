@@ -13,6 +13,36 @@ pdfname: ""
 
 > 结果族 153：Arithmetic classification and non-Pisot singularity for Bernoulli convolutions　·　学科：Dynamical systems and ergodic theory　·　验证状态：暂无形式化证明，请以社区核验为准
 
+## 入门导读 🐣
+
+想象你站在原点反复掷硬币：正面走一步、反面退一步，而且每步长度按固定比例 λ 缩短。走完无穷多步后，你会停在哪里？这篇论文给"停点分布"做全面体检：它是摊成一段有密度的光滑分布，还是缩成一层没有密度的"灰尘"。
+
+**关键词卡片**
+
+- Bernoulli 卷积（Bernoulli convolution）：掷硬币随机走步后，最终停点的概率分布。
+- 奇异（singular）：概率堆在零长度的集合上，画不出密度曲线。
+- 绝对连续（absolutely continuous）：概率摊得很匀，可以用密度函数描述。
+- Pisot 数（Pisot number）：一种特殊代数整数，其余"同伴根"（共轭）都缩在单位圆内。
+- Salem 数（Salem number）：同伴根分布在单位圆内外的代数整数，比 Pisot 数更难对付。
+
+**看个具体例子**
+
+只走三步，把 8 种可能落点画出来：λ=0.5 时均匀铺开；λ=0.4 时裂成两堆，中间出现一条大缝——"灰尘"的征兆。
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280"><text x="280" y="35" text-anchor="middle" font-size="16">掷三步硬币后的 8 种可能落点</text><text x="280" y="70" text-anchor="middle" font-size="15">λ = 0.5：落点均匀铺开</text><line x1="80" y1="100" x2="480" y2="100" stroke="#999"/><circle cx="105" cy="100" r="5" fill="#333"/><circle cx="155" cy="100" r="5" fill="#333"/><circle cx="205" cy="100" r="5" fill="#333"/><circle cx="255" cy="100" r="5" fill="#333"/><circle cx="305" cy="100" r="5" fill="#333"/><circle cx="355" cy="100" r="5" fill="#333"/><circle cx="405" cy="100" r="5" fill="#333"/><circle cx="455" cy="100" r="5" fill="#333"/><text x="280" y="150" text-anchor="middle" font-size="15">λ = 0.4：裂成两堆，中间出现大缝</text><line x1="80" y1="185" x2="480" y2="185" stroke="#999"/><circle cx="124" cy="185" r="5" fill="#333"/><circle cx="156" cy="185" r="5" fill="#333"/><circle cx="204" cy="185" r="5" fill="#333"/><circle cx="236" cy="185" r="5" fill="#333"/><circle cx="324" cy="185" r="5" fill="#333"/><circle cx="356" cy="185" r="5" fill="#333"/><circle cx="404" cy="185" r="5" fill="#333"/><circle cx="436" cy="185" r="5" fill="#333"/><line x1="236" y1="197" x2="236" y2="207" stroke="#c0392b"/><line x1="324" y1="197" x2="324" y2="207" stroke="#c0392b"/><line x1="236" y1="202" x2="324" y2="202" stroke="#c0392b"/><text x="280" y="230" text-anchor="middle" font-size="14" fill="#c0392b">中缝：永远填不上的空隙（奇异征兆）</text></svg>
+
+</div>
+
+λ 小于 1/2 时缝隙越走越多，奇异是显然的；λ=0.5 恰是均匀分布；难的是中间地带。论文给出覆盖一切 λ∈(0,1) 的算术判据，并证明新的奇异参数：任何四次 Salem 数的倒数（如 x⁴−x³−x²−x+1 的大于 1 的根），以及一个 31 次多项式的某个非 Pisot 根的倒数处，分布都奇异——Pisot 之外首次有了确凿例子。
+
+**为什么值得关心**
+
+Erdős 1939 年发现 Pisot 奇异例之后，"非 Pisot 参数是否也可能奇异"悬置多年，本文给出全参数判据并首次拿下非 Pisot 例子。
+
+> 暂无形式化证明（AI 结果待核验）
+
 ## 一句话结论
 
 论文为无偏 Bernoulli 卷积（Bernoulli convolution）`@@M@@\nu_\lambda@@` 建立了覆盖全部 `@@M@@\lambda\in(0,1)@@` 的奇异性算术判据——一个用显式有限代数单位集表达的单侧逼近条件，并证明了 Pisot 之外的奇异参数：一切四次 Salem 数的倒数、以及一个 31 次多项式的非 Pisot 根的倒数处均奇异，回答了近期文献记录的公开问题。

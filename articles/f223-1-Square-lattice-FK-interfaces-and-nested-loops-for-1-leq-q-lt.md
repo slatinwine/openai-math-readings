@@ -13,6 +13,50 @@ pdfname: ""
 
 > 结果族 223：Random-cluster interfaces: critical, disordered, thermal, and natural-time scaling　·　学科：Probability and statistical mechanics　·　验证状态：暂无形式化证明，请以社区核验为准
 
+## 入门导读 🐣
+
+在一张巨大的方格纸上玩"连边"游戏：每条边按规则随机决定接通与否，接通的边把格子连成一个个团块。用一个旋钮 q 控制团块爱不爱扎堆，再在边界的两段设下不同待遇，中间自然出现一条蜿蜒的分界线。这篇论文证明：格子无限变细时，这条分界线收敛到一条著名的随机曲线 SLE，还顺带算出了游戏的各种临界指数。
+
+**关键词卡片**
+
+- 随机簇模型（random-cluster model）：统一的"连边"框架，q=1 是渗流，q=2 是 Ising 模型。
+- 簇权重 q（cluster weight）：调节团块扎堆偏好的旋钮，1≤q<4 时临界行为最丰富。
+- 探索界面（Dobrushin interface）：两种边界待遇相遇处自然生成的分界曲线。
+- SLE（Schramm–Loewner evolution）：由布朗运动驱动的随机曲线族，κ 是它的"性格参数"。
+- Cardy 公式（Cardy's formula）：矩形左右两边被连通的概率公式，共形不变性的标志性检验。
+
+**看个具体例子**
+
+代入数字：q=1（渗流）时 κ=6，q=2（Ising）时 κ=16/3，通式为 `@@M@@\kappa(q)=4\pi/\arccos(-\sqrt q/2)@@`。q=1 还给出方格版 Cardy 公式：交叉概率收敛到 `@@M@@\int_0^x[t(1-t)]^{-2/3}dt\big/\int_0^1[t(1-t)]^{-2/3}dt@@`，代入 `@@M@@x=1/2@@` 恰得 `@@M@@1/2@@`——左右交叉对半开，符合直觉的"体检"。
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280">
+  <text x="20" y="26" font-size="15" fill="#333">方格探索界面：格子无限变细 → 收敛到 SLE</text>
+  <rect x="150" y="50" width="260" height="200" fill="#f7f7f7" stroke="#333" stroke-width="2"/>
+  <path d="M150,250 L410,250 L410,50" fill="none" stroke="#36c" stroke-width="7" opacity="0.3"/>
+  <path d="M150,250 C180,228 205,192 235,180 C272,165 262,128 292,118 C322,108 345,88 410,50" fill="none" stroke="#c33" stroke-width="3"/>
+  <circle cx="150" cy="250" r="7" fill="#333"/>
+  <circle cx="410" cy="50" r="7" fill="#333"/>
+  <text x="130" y="272" font-size="14" fill="#333">a</text>
+  <text x="416" y="46" font-size="14" fill="#333">b</text>
+  <text x="418" y="150" font-size="13" fill="#888">free 边界</text>
+  <text x="30" y="230" font-size="13" fill="#36c">wired 边界</text>
+  <text x="30" y="248" font-size="13" fill="#36c">（连成一片）</text>
+  <text x="30" y="140" font-size="14" fill="#c33">界面 η</text>
+  <line x1="70" y1="136" x2="142" y2="136" stroke="#c33" stroke-width="2" stroke-dasharray="4 3"/>
+  <text x="428" y="220" font-size="13" fill="#555">κ(q)=4π/arccos(−√q/2)</text>
+  <text x="428" y="240" font-size="13" fill="#555">q=1→SLE₆，q=2→SLE₁₆/₃</text>
+</svg>
+
+</div>
+
+**为什么值得关心**
+
+它证实了 Rohde–Schramm 2005 年的猜想在 1≤q<4 成立，把二十年来只有渗流、Ising 两个孤立端点的知识连成完整一段。
+
+> 暂无形式化证明（AI 结果待核验）
+
 ## 一句话结论
 对每个固定 `@@M@@1\le q<4@@`，论文证明方格上临界随机簇模型的 Dobrushin 界面收敛到 chordal `@@M@@\SLE_{\kappa(q)}@@`，全体嵌套回路收敛到 whole-plane `@@M@@\CLE_{\kappa(q)}@@`，并在 `@@M@@q=1@@` 时顺带得到方格键渗流的 Cardy 公式与临界指数，证实了 Rohde–Schramm 预言在该参数范围成立。
 

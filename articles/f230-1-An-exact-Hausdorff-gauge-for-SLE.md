@@ -13,6 +13,34 @@ pdfname: ""
 
 > 结果族 230：Exact Hausdorff gauges for SLE　·　学科：Probability and statistical mechanics　·　验证状态：暂无形式化证明，请以社区核验为准
 
+## 入门导读 🐣
+
+量一条无限曲折的海岸线有多长？用米尺得到一个数，换毫米尺得到更大的数——尺子越细、长度越大，答案永远定不下来。这篇论文为一种著名的随机曲线（SLE）量身打造了一把"补正过的尺子"：刻度函数经过精心设计，用它量出的长度既不是 0，也不是无穷。
+
+**关键词卡片**
+
+- SLE（Schramm–Loewner evolution）：统计物理中反复出现的随机曲线，参数 κ 越大越蜿蜒，是二维临界现象的通用语言。
+- 豪斯多夫测度（Hausdorff measure）：用一堆小圆盘盖住曲线、按刻度 h(r) 计代价，再对所有覆盖取下确界。
+- 规范（gauge）：刻度函数 h(r)；普通尺子 h(r)=r，量分形必须特制。
+- 豪斯多夫维数（Hausdorff dimension）：SLE 轨迹维数 d=1+κ/8（Beffara 定理）；但只知维数不够——用 r^d 去量，测度仍是 0。
+- Schramm 问题（Schramm's problem, 2006）：是否存在规范，使每段轨迹的测度都正且有限。
+
+**看个具体例子**
+
+取 κ=4：维数 d=1.5，但已有结果证明 r^1.5 刻度下测度为零。本文构造只依赖 κ 的确定性规范 h_κ（由有限批次的阈值与半径作"二次包络"的下确界定义），证明几乎必然对每段轨迹 γ([s,t]) 的测度都介于 0 与 ∞ 之间，且整条轨迹在每个有界方盒内的期望测度有限。
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280"><text x="280" y="24" font-size="14" fill="#333" text-anchor="middle">用圆盘"盖住"随机曲线，数总代价</text><path d="M55,225 C85,205 60,150 105,120 C150,90 125,165 185,150 C245,135 215,70 275,85 C335,100 300,175 360,165 C420,155 390,95 450,105 C490,112 495,60 525,72" fill="none" stroke="#333" stroke-width="2"/><circle cx="105" cy="120" r="30" fill="none" stroke="#1565c0" stroke-width="1.5" stroke-dasharray="5 4"/><circle cx="185" cy="150" r="18" fill="none" stroke="#1565c0" stroke-width="1.5" stroke-dasharray="5 4"/><circle cx="275" cy="85" r="10" fill="none" stroke="#1565c0" stroke-width="1.5" stroke-dasharray="5 4"/><circle cx="360" cy="165" r="6" fill="none" stroke="#1565c0" stroke-width="1.5" stroke-dasharray="5 4"/><circle cx="450" cy="105" r="14" fill="none" stroke="#1565c0" stroke-width="1.5" stroke-dasharray="5 4"/><text x="66" y="86" font-size="12" fill="#777">大盘</text><text x="372" y="192" font-size="12" fill="#777">小盘</text><text x="280" y="242" font-size="12" fill="#333" text-anchor="middle">普通刻度 r^d：量出的总代价要么 0 要么 ∞</text><text x="280" y="264" font-size="12" fill="#1565c0" text-anchor="middle">特制刻度 h_κ：总代价被夹在中间——正且有限</text></svg>
+
+</div>
+
+**为什么值得关心**
+
+在全部 0&lt;κ&lt;8 范围内肯定回答了 Schramm 的豪斯多夫测度存在性问题；姊妹篇随后给出显式闭式规范，两篇相互独立又互相印证。
+
+> 暂无形式化证明（AI 结果待核验）。
+
 ## 一句话结论
 
 对每个 `@@M@@0<\kappa<8@@`，本文构造出只依赖 `@@M@@\kappa@@` 的确定性豪斯多夫规范（Hausdorff gauge）`@@M@@h_\kappa@@`，使弦 `@@M@@\mathrm{SLE}_\kappa@@` 任一非平凡紧段 `@@M@@\gamma([s,t])@@` 的 `@@M@@h_\kappa@@`-豪斯多夫测度几乎必然既正又有限，肯定地回答了 Schramm 的测度存在性问题。

@@ -13,6 +13,58 @@ pdfname: ""
 
 > 结果族 048：A characteristic-zero counterexample to Lipman–Zariski　·　学科：Algebraic and complex geometry　·　验证状态：暂无形式化证明，请以社区核验为准
 
+## 入门导读 🐣
+
+光滑曲面上每个点都自带两把独立的"方向尺"（向量场），这是光滑的招牌。Lipman–Zariski 猜想反过来问：若一个曲面处处恰好配齐两把独立方向尺，它是否必然光滑？本文造出一个带孤立奇点的正规曲面，方向尺依然成对齐全——猜想在特征零被推翻。
+
+**关键词卡片**
+
+- 切层（tangent sheaf）：把所有点的方向尺打包成的整体代数对象。
+- 自由模（free module）：同构于"环自身的若干份直和"的最简单模；本文中秩为 2。
+- 正规（normal）：曲面没有自交式坏点、但允许孤立"缩点"的温和条件。
+- 奇点（singularity）：空间局部不平直的点；本文反例只有一个，且数据被完全算出。
+- 例外曲线（exceptional curve）：解消奇点时"炸开"出来的曲线，本文中亏格 21、自交 −10。
+
+**看个具体例子**
+
+定理的数字版：存在二维正规复代数 A 与极大理想 m，使
+
+`@@M@@\Der_{\C}(A)\cong A^{\oplus2}@@`，而 `@@M@@A_{\mathfrak m}@@` 不正则。
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280">
+  <rect x="0" y="0" width="560" height="280" fill="#ffffff"/>
+  <text x="30" y="30" font-size="16" fill="#222222">奇点处，两把方向尺依然独立存在</text>
+  <path d="M 50 170 Q 140 55 265 120" fill="none" stroke="#3b6fb5" stroke-width="3"/>
+  <circle cx="140" cy="100" r="5" fill="#333333"/>
+  <line x1="140" y1="100" x2="184" y2="78" stroke="#c0392b" stroke-width="2.5"/>
+  <polygon points="194,73 178,69 182,85" fill="#c0392b"/>
+  <line x1="140" y1="100" x2="127" y2="143" stroke="#2e8b57" stroke-width="2.5"/>
+  <polygon points="124,153 117,138 133,140" fill="#2e8b57"/>
+  <text x="200" y="78" font-size="13" fill="#c0392b">尺 1</text>
+  <text x="76" y="152" font-size="13" fill="#2e8b57">尺 2</text>
+  <text x="50" y="205" font-size="14" fill="#333333">光滑点：两把尺独立（正常）</text>
+  <path d="M 330 195 Q 360 120 420 105 L 495 62" fill="none" stroke="#3b6fb5" stroke-width="3"/>
+  <circle cx="497" cy="61" r="9" fill="#ffe2b8" stroke="#e67e22" stroke-width="3"/>
+  <line x1="497" y1="61" x2="468" y2="36" stroke="#c0392b" stroke-width="2.5"/>
+  <polygon points="461,30 468,44 476,32" fill="#c0392b"/>
+  <line x1="497" y1="61" x2="529" y2="40" stroke="#2e8b57" stroke-width="2.5"/>
+  <polygon points="537,34 522,33 529,47" fill="#2e8b57"/>
+  <text x="430" y="98" font-size="14" fill="#e67e22">奇点 x</text>
+  <text x="330" y="230" font-size="14" fill="#c0392b">反例：x 处奇异，切层却依然自由</text>
+</svg>
+
+</div>
+
+奇点的"体检报告"全部给出：例外曲线亏格 21、自交 −10，差异 −5，p_g≥33——这些数字恰好都落在所有已知正面判据的射程之外。
+
+**为什么值得关心**
+
+它宣告"方向尺齐全"不再保证光滑，给特征零的奇点理论立了一块界碑；并否定回答了"沿切层反复爆破能否消解奇点"——每次爆破都是恒等映射。
+
+> 暂无形式化证明（AI 结果待核验）
+
 ## 一句话结论
 
 本文构造出一个带孤立奇点的正规仿射复曲面（二维），其切层 (tangent sheaf) 在整个曲面上自由、秩为 `@@M@@2@@`，而环不正则。这推翻了特征零下的 Lipman–Zariski 猜想——"切层局部自由的代数簇必光滑"。

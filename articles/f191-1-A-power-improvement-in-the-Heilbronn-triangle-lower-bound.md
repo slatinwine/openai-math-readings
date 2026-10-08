@@ -13,6 +13,55 @@ pdfname: ""
 
 > 结果族 191：A power improvement in the Heilbronn triangle lower bound　·　学科：Combinatorics　·　验证状态：暂无形式化证明，请以社区核验为准
 
+## 入门导读 🐣
+
+在一块边长为 1 的方桌布上钉 n 枚图钉，任何三枚钉子都会围出一个三角形；怎么钉，才能让"最扁的那个三角形"尽量不扁？这就是海尔布伦在 1950 年代提出的三角形问题。随手乱撒大概率撞出很扁的三角形，所以必须精心设计位置。本文给出惊人构造：能让每个三角形的面积都不小于 `@@M@@c_1 n^{-2+\eta}@@`——指数上真正前进了一步。
+
+**关键词卡片**
+
+- 海尔布伦三角形问题：`@@M@@n@@` 个点放入单位正方形，最大化最小三角形面积，记作 `@@M@@\Delta(n)@@`。
+- 幂次改进（power improvement）：下界从 `@@M@@n^{-2}@@` 量级提高到 `@@M@@n^{-2+\eta}@@`，`@@M@@\eta>0@@` 是固定小常数。
+- 对数因子：1982 年以来仅有的改进是乘一个 `@@M@@\log n@@`，增长极慢，只算"半个"进步。
+- 上界与下界：答案被夹在两者之间；本文抬高下界，推翻"几乎 `@@M@@n^{-2}@@`"的上界表述。
+
+**看个具体例子**
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280">
+<text x="205" y="30" text-anchor="middle" font-size="14">单位正方形，撒 n 个点（示意 n=12）</text>
+<rect x="90" y="45" width="230" height="190" fill="none" stroke="#222" stroke-width="2"/>
+<line x1="120" y1="75" x2="165" y2="80" stroke="#b03030" stroke-width="2"/>
+<line x1="165" y1="80" x2="160" y2="220" stroke="#b03030" stroke-width="2"/>
+<line x1="160" y1="220" x2="120" y2="75" stroke="#b03030" stroke-width="2"/>
+<circle cx="120" cy="75" r="4" fill="#b03030"/>
+<circle cx="165" cy="80" r="4" fill="#b03030"/>
+<circle cx="160" cy="220" r="4" fill="#b03030"/>
+<circle cx="205" cy="95" r="3" fill="#222"/>
+<circle cx="235" cy="175" r="3" fill="#222"/>
+<circle cx="265" cy="65" r="3" fill="#222"/>
+<circle cx="130" cy="150" r="3" fill="#222"/>
+<circle cx="185" cy="135" r="3" fill="#222"/>
+<circle cx="290" cy="205" r="3" fill="#222"/>
+<circle cx="300" cy="105" r="3" fill="#222"/>
+<circle cx="175" cy="60" r="3" fill="#222"/>
+<circle cx="250" cy="120" r="3" fill="#222"/>
+<circle cx="215" cy="160" r="3" fill="#222"/>
+<text x="345" y="105" font-size="13" fill="#b03030">最扁的三角形也要</text>
+<text x="345" y="123" font-size="13" fill="#b03030">面积 ≥ c₁·n^(−2+η)</text>
+<text x="280" y="262" text-anchor="middle" font-size="13">旧构造：Δ(n) ≈ n^(−2)；新定理：Δ(n) ≥ c₁·n^(−2+η)</text>
+</svg>
+
+</div>
+
+数字对比：取 `@@M@@\varepsilon=\eta/2@@`，则 `@@M@@c_1 n^{-2+\eta}\div\bigl(C_\varepsilon n^{-2+\varepsilon}\bigr)\to\infty@@`，故"对每个 `@@M@@\varepsilon@@` 都有 `@@M@@\Delta(n)\le C_\varepsilon n^{-2+\varepsilon}@@`"的表述必假。注意 `@@M@@\eta=2/(45435k+16)@@` 小到天文级，作者明言未做优化。
+
+**为什么值得关心**
+
+这是 1982 年对数改进之后的第一个幂次级改进，直接宣判了流行几十年的"几乎 `@@M@@n^{-2}@@`"猜想死刑。`@@M@@\eta@@` 虽小到天文级，但在数学上"指数动了一丝"就是质的飞跃：它说明 `@@M@@n^{-2}@@` 绝不是这个问题的最终答案。上界方向目前最好约为 `@@M@@n^{-7/6+\varepsilon}@@`，与下界之间仍隔着巨大鸿沟，本文让天平向下界一侧倾斜。
+
+> 暂无形式化证明（AI 结果待核验）
+
 ## 一句话结论
 
 论文证明存在绝对常数 `@@M@@\eta,c_1>0@@`：当 `@@M@@n@@` 充分大时，可在单位正方形内放置 `@@M@@n@@` 个点，使它们决定的任何三角形面积都不小于 `@@M@@c_1n^{-2+\eta}@@`。这一幂次（power）改进推翻了海尔布伦三角形问题的"几乎 `@@M@@n^{-2}@@`"上界猜想。

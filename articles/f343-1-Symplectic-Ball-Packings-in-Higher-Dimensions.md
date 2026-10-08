@@ -13,6 +13,47 @@ pdfname: ""
 
 > 结果族 343：Symplectic ball packing in higher dimensions　·　学科：Differential geometry　·　验证状态：暂无形式化证明，请以社区核验为准
 
+## 入门导读 🐣
+
+往箱子里塞球，直觉上只看总体积；但辛几何的"魔箱"多一条怪规矩——任何两球大小之和不得超过箱子大小，哪怕体积富余也白搭。这篇论文证明：从实六维开始，规矩就只有"体积"和"两球"这两条，再无隐藏关卡；实四维则远比这复杂，存在一整族更细的填充障碍。
+
+**关键词卡片**
+
+- 辛嵌入（symplectic embedding）：保住面积尺结构、不折叠不撕开的塞球方式。
+- 容量（capacity）：辛球的大小刻度，等于 π 乘以半径平方。
+- 体积障碍（volume obstruction）：所有球的体积之和必须小于箱子体积。
+- Gromov 两球障碍（two-ball obstruction）：任意两球容量之和不得超过箱子容量，源自 1985 年 Gromov 的探针方法。
+- 伪全纯曲线（pseudoholomorphic curve）：探测辛刚性的"探针曲面"。
+
+**看个具体例子**
+
+主定理代入实六维（n = 3）、箱子容量 R = 1：两个容量 0.49 的球满足体积条件 `@@M@@0.49^3+0.49^3\approx 0.24<1@@` 与两球条件 `@@M@@0.49+0.49=0.98<1@@`，必能辛嵌入；换成两个 0.51 的球，体积更小（`@@M@@\approx 0.27<1@@`），但 `@@M@@0.51+0.51=1.02>1@@`，必塞不进。两个条件缺一不可：体积是常识，两球条件则是辛世界独有的刚性。
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280">
+<circle cx="210" cy="140" r="105" fill="#eef4ff" stroke="#345" stroke-width="3"/>
+<circle cx="172" cy="118" r="42" fill="#ffffff" stroke="#c33" stroke-width="3"/>
+<circle cx="248" cy="172" r="42" fill="#ffffff" stroke="#c33" stroke-width="3"/>
+<text x="130" y="112" font-size="13" fill="#c33">R1 = 0.49</text>
+<text x="218" y="180" font-size="13" fill="#c33">R2 = 0.49</text>
+<text x="150" y="268" font-size="15" fill="#345">箱子容量 R = 1</text>
+<text x="355" y="72" font-size="14" fill="#345">塞得进：</text>
+<text x="355" y="97" font-size="14" fill="#345">0.49³ + 0.49³ ≈ 0.24 &lt; 1</text>
+<text x="355" y="122" font-size="14" fill="#345">0.49 + 0.49 = 0.98 &lt; 1</text>
+<text x="355" y="160" font-size="14" fill="#c33">换成两个 0.51 的球：</text>
+<text x="355" y="185" font-size="14" fill="#c33">体积仍小，但 1.02 &gt; 1，</text>
+<text x="355" y="210" font-size="14" fill="#c33">怎么摆都塞不进</text>
+</svg>
+
+</div>
+
+**为什么值得关心**
+
+正面解决 Siegel–Yao 猜想 A：高维辛球填充的判定从此化为两条初等不等式，与四维的复杂迷宫形成鲜明对照；论文三种情形共用同一套"比较—填充"机制，几何模型取自射影空间中曲线的退化。
+
+> 暂无形式化证明（AI 结果待核验）
+
 ## 一句话结论
 
 论文证明：实维数至少 6 时，容量为 `@@M@@R_1,\ldots,R_k@@` 的有限个闭辛球可两两不交地辛嵌入容量 `@@M@@R@@` 的开球，当且仅当 `@@M@@\sum_i R_i^n<R^n@@` 且 `@@M@@R_i+R_j<R@@`。这正面解决了 Siegel–Yao 猜想 A：高维辛球填充的刚性恰由体积与 Gromov 两球障碍完全刻画。

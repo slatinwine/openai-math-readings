@@ -13,6 +13,48 @@ pdfname: ""
 
 > 结果族 248：Thompson's group <i>F</i> is nonamenable　·　学科：Group theory　·　验证状态：主结果已 Lean 形式化
 
+## 入门导读 🐣
+
+想象一家搬家公司，每种"搬法"都会重新排列棋盘上的棋子。温和的公司允许你圈出一大块地盘：无论用公司里哪几种标准搬法，地盘边界都几乎不动；暴躁的公司则任你圈哪块地盘，总有搬法把它搅得面目全非。这篇论文证明：几何群论的明星对象 Thompson 群 `@@M@@F@@` 属于暴躁的一类——它不是顺从群，Geoghegan 1979 年提出、悬置四十多年的难题就此定案。
+
+**关键词卡片**
+
+- Thompson 群 F（Thompson's group F）：区间 `@@M@@[0,1]@@` 上所有"断点取二进分数、斜率取 2 的幂"的分段线性变形组成的群
+- 顺从群（amenable group）：能找到"边界几乎不被搬动"的大地盘的群，等价于群上存在不变平均
+- Følner 准则（Følner criterion）：顺从当且仅当对任何有限搬法集，边界比 `@@M@@|hA\triangle A|/|A|@@` 可以任意小
+- 对称差（symmetric difference）：`@@M@@A\triangle B@@` 是只属于 `@@M@@A@@`、`@@M@@B@@` 之一的元素全体，用来量"搬动前后差了多少"
+- 非顺从（nonamenable）：无论选哪块有限地盘，总有一种搬法让边界占相当大的比例
+
+**看个具体例子**
+
+先看温和的例子：整数群 `@@M@@\mathbb{Z}@@` 中取地盘 `@@M@@A=\{1,2,\dots,100\}@@`，搬法 `@@M@@h@@` 是"右移一格"，`@@M@@hA@@` 与 `@@M@@A@@` 只在两端各差一个数，边界比 `@@M@@=2/100=0.02@@`；地盘越大比值越小，故 `@@M@@\mathbb{Z}@@` 顺从。论文证明 `@@M@@F@@` 中存在一组固定搬法 `@@M@@S@@` 与正常数 `@@M@@c@@`，使任何有限地盘 `@@M@@A@@` 都被某个 `@@M@@h\in S@@` 搅动到边界比不小于 `@@M@@c@@`——"右移一步几乎不动"的好事在 `@@M@@F@@` 里永远不会发生。
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280">
+  <text x="20" y="28" font-size="16" fill="#333333">温和的 Z：大地盘右移一格，几乎不漏边</text>
+  <rect x="30" y="50" width="240" height="24" fill="#bbdefb" stroke="#1565c0"/>
+  <rect x="33" y="84" width="240" height="24" fill="none" stroke="#c62828" stroke-dasharray="5 4"/>
+  <text x="30" y="134" font-size="13" fill="#555555">A = {1,…,100} 与右移后的 A：重合 98 格，边界比 2/100</text>
+  <text x="20" y="172" font-size="16" fill="#333333">暴躁的 F：任何地盘都被大幅搅动</text>
+  <rect x="40" y="192" width="46" height="22" fill="#c8e6c9" stroke="#2e7d32"/>
+  <rect x="100" y="192" width="84" height="22" fill="#c8e6c9" stroke="#2e7d32"/>
+  <rect x="196" y="192" width="28" height="22" fill="#c8e6c9" stroke="#2e7d32"/>
+  <rect x="70" y="224" width="24" height="22" fill="#ffcdd2" stroke="#c62828"/>
+  <rect x="140" y="224" width="64" height="22" fill="#ffcdd2" stroke="#c62828"/>
+  <rect x="226" y="224" width="56" height="22" fill="#ffcdd2" stroke="#c62828"/>
+  <text x="310" y="205" font-size="13" fill="#555555">绿块 = 地盘 A，红块 = 搬后 hA：</text>
+  <text x="310" y="225" font-size="13" fill="#555555">重叠零散，边界比至少为某个固定正数 c</text>
+</svg>
+
+</div>
+
+**为什么值得关心**
+
+`@@M@@F@@` 早在 1985 年就被证明不含非交换自由子群，也不属于初等顺从类，两条判断非顺从的经典路径全部失效，使它成为该领域最著名的悬案之一；本文以"无穷维球面上一个没有近似不动点的映射"加一次有限平均论证将其攻克。
+
+> 已 Lean 形式化
+
 ## 一句话结论
 
 论文证明了 Thompson 群 `@@M@@F@@`——区间 `@@M@@[0,1]@@` 上二进分段线性同胚构成的群——不是顺从群（nonamenable），确认了 Geoghegan 1979 年猜想，为这个悬置四十余年的几何群论难题画上句号。

@@ -13,6 +13,54 @@ pdfname: ""
 
 > 结果族 207：The ℓ¹-Bass conjecture for all discrete groups　·　学科：Algebra　·　验证状态：暂无形式化证明，请以社区核验为准
 
+## 入门导读 🐣
+
+把群想成一张无限延伸的地铁网，幂等矩阵像网上的一台"投影装置"，它的迹是按站点（共轭类）记账的流水单。定理说：流水单上非零的条目只落在有限几个"环线站"（有限阶元素）上——哪怕装置的触手伸到无限远，远端账目恒为零。
+
+**关键词卡片**
+
+- `@@M@@\ell^1@@` 群代数（`@@M@@\ell^1@@` group algebra）：系数绝对可和的函数在卷积下构成的代数，比普通群环更"大"但带分析结构。
+- 幂等矩阵（idempotent matrix）：满足 `@@M@@e^2=e@@` 的矩阵，对应有限生成射影模。
+- Hattori–Stallings 迹（Hattori–Stallings trace）：把"秩"细化成逐共轭类记账的流水单。
+- 有限阶元素（finite-order element）：走有限步就回到起点的群元素。
+- 共轭类（conjugacy class）：一个元素被全群"换位"后得到的家族。
+
+**看个具体例子**
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280">
+  <text x="60" y="60" font-size="14" fill="#333">幂等元的系数散布到很远的群元素上（但绝对可和）</text>
+  <circle cx="120" cy="110" r="5" fill="#666"/>
+  <circle cx="165" cy="130" r="5" fill="#777"/>
+  <circle cx="210" cy="100" r="5" fill="#888"/>
+  <circle cx="255" cy="125" r="5" fill="#999"/>
+  <circle cx="300" cy="105" r="5" fill="#aaa"/>
+  <circle cx="345" cy="130" r="5" fill="#b8b8b8"/>
+  <circle cx="390" cy="102" r="5" fill="#c4c4c4"/>
+  <circle cx="435" cy="126" r="5" fill="#d0d0d0"/>
+  <circle cx="480" cy="108" r="5" fill="#dcdcdc"/>
+  <line x1="70" y1="170" x2="530" y2="170" stroke="#555" stroke-width="2"/>
+  <polygon points="530,170 516,165 516,175" fill="#555"/>
+  <text x="290" y="196" font-size="13" fill="#555" text-anchor="middle">字长（离单位元的距离）</text>
+  <circle cx="80" cy="170" r="7" fill="#c33"/>
+  <circle cx="116" cy="170" r="6" fill="#d66"/>
+  <circle cx="146" cy="170" r="6" fill="#d66"/>
+  <text x="70" y="228" font-size="13" fill="#333">单位元</text>
+  <text x="120" y="250" font-size="13" fill="#333">有限阶共轭类（只有有限个）</text>
+  <text x="60" y="266" font-size="15" fill="#333">定理：其余一切共轭类上，迹系数 τ_C(e) = 0</text>
+</svg>
+
+</div>
+
+注意"只有有限多条非零"并非白送：系数虽绝对可和，仍可能每个类都记一点点；证明必须给出与所考察类无关的统一几何截断。本文对一切离散群成立，不需要此前必需的装配映射或顺从性条件。
+
+**为什么值得关心**
+
+去掉了 2004 年以来所有额外假设，把 Bass 迹问题在 `@@M@@\ell^1@@` 世界推广到最一般的离散群，是群环 `@@M@@K@@` 理论经典难题的重要一步。
+
+> 暂无形式化证明（AI 结果待核验）
+
 ## 一句话结论
 
 本文对任意离散群证明了 `@@M@@\ell^1@@`-Bass 猜想：`@@M@@\ell^1(G)@@` 上幂等矩阵的 Hattori–Stallings 迹只在有限多个有限阶元素共轭类上非零。这去掉了 Berrick–Chatterji–Mislin 此前证明所依赖的"Bost 装配映射有理满射"条件，把猜想推广到一切离散群。

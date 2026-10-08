@@ -13,6 +13,50 @@ pdfname: ""
 
 > 结果族 074：Kakeya in three and four dimensions　·　学科：Real and complex analysis　·　验证状态：暂无形式化证明，请以社区核验为准
 
+## 入门导读 🐣
+
+升一个维度玩"针毯"：在四维空间里铺一块集合，要求每个方向上都躺着一根单位长针。Besicovitch 告诉你这块毯子体积可以是零，于是问题变成：它能瘦到什么程度？此前三十余年，最好的维数下界只从 3 爬到 3.059；本文一步到位：必须胖到顶——维数恰好是 4。
+
+**关键词卡片**
+
+- Kakeya 集（Kakeya set）：每个方向都含一条单位线段的集合，四维情形即 `@@M@@K\subset\mathbb R^4@@`。
+- Hausdorff 维数（Hausdorff dimension）：衡量集合"占满空间程度"的分数刻度，四维空间封顶为 4。
+- 装箱维数（packing dimension）：另一种偏"外层"的维数；推论里有界 Kakeya 集的它也取满值 4。
+- 无正则性假设（no regularity assumption）：集合和见证线段族都不需要可测、紧致或"粘性"——对最坏情形照样成立。
+
+**看个具体例子**
+
+把历史下界画在同一条维数轴上，看这场"长跑"：
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280">
+  <text x="295" y="44" text-anchor="middle" font-size="15" fill="#333">四维 Kakeya 维数下界的长跑：从 3 到 4</text>
+  <line x1="60" y1="170" x2="530" y2="170" stroke="#333" stroke-width="2"/>
+  <line x1="70" y1="163" x2="70" y2="177" stroke="#333" stroke-width="2"/>
+  <line x1="520" y1="163" x2="520" y2="177" stroke="#333" stroke-width="2"/>
+  <text x="64" y="197" font-size="13" fill="#333">3</text>
+  <text x="514" y="197" font-size="13" fill="#333">4</text>
+  <circle cx="70" cy="170" r="3.5" fill="#c0392b"/>
+  <circle cx="81" cy="170" r="3.5" fill="#c0392b"/>
+  <circle cx="97" cy="170" r="3.5" fill="#c0392b"/>
+  <text x="112" y="200" font-size="12" fill="#8a5a5a">Wolff 3.0 · 多项式 3.025 · planebrush 3.059</text>
+  <circle cx="520" cy="170" r="9" fill="#1a7f37"/>
+  <line x1="520" y1="158" x2="520" y2="122" stroke="#1a7f37" stroke-width="1.5"/>
+  <text x="438" y="112" font-size="14" fill="#1a7f37">本文：满维数 4</text>
+  <text x="295" y="240" text-anchor="middle" font-size="12" fill="#777">红点为此前最佳纪录，密集挤在 3 附近；绿点为本文结论</text>
+</svg>
+
+</div>
+
+数字版定理：任何 `@@M@@K\subset\mathbb R^4@@`，只要每个方向含单位线段，就有 `@@M@@\dim_H K=4@@`；推论还给出 `@@M@@d\ge4@@` 维空间中任何 Kakeya 集维数至少为 4，以及四维 Nikodym 集满维数。
+
+**为什么值得关心**
+
+Kakeya 猜想首次在四维对完全无假设的集合成立，一举跨过 3.059 的长期瓶颈，并顺带解决 Gao–Liu–Xi 的四维 Nikodym 猜想。
+
+> 暂无形式化证明（AI 结果待核验）
+
 ## 一句话结论
 
 证明四维 Kakeya 猜想的 Hausdorff 维数形式：`@@M@@\mathbb R^4@@` 中任何在每个方向含单位线段的集合，不论是否可测、是否紧致，Hausdorff 维数必为 `@@M@@4@@`。这使该猜想首次在四维对完全无正则性假设的集合成立。

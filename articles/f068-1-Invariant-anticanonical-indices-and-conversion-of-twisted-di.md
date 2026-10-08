@@ -13,6 +13,56 @@ pdfname: ""
 
 > 结果族 068：Anticanonical nonvanishing in every dimension　·　学科：Algebraic and complex geometry　·　验证状态：暂无形式化证明，请以社区核验为准
 
+## 入门导读 🐣
+
+想象你在数一栋大楼每层楼的窗户：楼层越高窗户越多，而且增长严格有规律，像能写出公式的那种。这篇论文就是在数"对称图形"——在高维复空间上数"转完之后保持不变"的几何对象，证明这个数目随尺寸严格按多项式增长，而且把尺寸缩到零时，公式给出的恰好是真实起点值，不是硬外推出来的。
+
+**关键词卡片**
+
+- 反典范丛（anticanonical bundle）：由"全纯体积形式的倒数"打包成的线丛；它有非零截面，粗略说就是空间上存在一个全局的"体积公式"。
+- 环面作用（torus action）：一族可交换的连续对称操作，像圆桌可以转到任意角度。
+- 不变截面（invariant section）：对称操作之后保持原样的对象，"转完了看起来没变"的那一个。
+- 不变 Euler 特征（invariant Euler characteristic）：对不变对象做"生成的减去消失的"净计数。
+- 伪有效（pseudoeffective）：数值上"平均不亏"的除子类，是有效除子的极限位置。
+
+**看个具体例子**
+
+主定理说：计数函数 `@@M@@I_T(m)@@` 在某个等差数列的指数上等于一个多项式 `@@M@@P(m)@@`，且 `@@M@@P(0)@@` 是真实计数。取最小的情形——环面完全不动的黎曼球面 `@@M@@\mathbb P^1@@`：反典范幂的 Euler 特征 `@@M@@\chi(\mathcal O(2m))=2m+1@@`，落在一条直线上。
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280">
+  <line x1="60" y1="235" x2="500" y2="235" stroke="#555" stroke-width="2"/>
+  <line x1="60" y1="235" x2="60" y2="40" stroke="#555" stroke-width="2"/>
+  <line x1="60" y1="214" x2="440" y2="54" stroke="#9dbfdd" stroke-width="2"/>
+  <circle cx="60" cy="214" r="7" fill="#e05a4e"/>
+  <circle cx="130" cy="182" r="6" fill="#4a7dbd"/>
+  <circle cx="200" cy="150" r="6" fill="#4a7dbd"/>
+  <circle cx="270" cy="118" r="6" fill="#4a7dbd"/>
+  <circle cx="340" cy="86" r="6" fill="#4a7dbd"/>
+  <circle cx="410" cy="54" r="6" fill="#4a7dbd"/>
+  <text x="46" y="252" font-size="14" fill="#333">0</text>
+  <text x="126" y="252" font-size="14" fill="#333">1</text>
+  <text x="196" y="252" font-size="14" fill="#333">2</text>
+  <text x="266" y="252" font-size="14" fill="#333">3</text>
+  <text x="336" y="252" font-size="14" fill="#333">4</text>
+  <text x="406" y="252" font-size="14" fill="#333">5</text>
+  <text x="432" y="252" font-size="14" fill="#333">指数 m</text>
+  <text x="28" y="42" font-size="14" fill="#333">计数</text>
+  <text x="74" y="207" font-size="13" fill="#a33">真实计数 1</text>
+  <text x="300" y="34" font-size="15" fill="#1d3c5c">P(m) = 2m + 1</text>
+</svg>
+
+</div>
+
+妙处在"零点取真值"：只看远处像多项式，排除不了它恒为零；`@@M@@P(0)=1\neq0@@` 说明多项式活着，于是某些大指数处计数非零。配上第二条定理——从无界增长的有效扭曲中消去固定的伪有效误差——两块拼图合成对丘成桐 Problem 75 的完整回答：`@@M@@-K_X@@` 光滑半正时 `@@M@@H^0(X,-mK_X)\neq0@@`。
+
+**为什么值得关心**
+
+反典范非消没是双有理几何悬置多年的核心缺口，本文与姊妹篇给出任意维数的第一条无条件证明链，"零点取真值"是全新的技术武器。
+
+> 验证状态：暂无形式化证明（AI 结果待核验）
+
 ## 一句话结论
 
 证明两条独立定理——紧环面作用下反典范幂的不变 Euler 特征（invariant Euler characteristic）在可除等差数列上为多项式且在零点取真值；光滑半正反典范簇上可从无界有效扭曲中消去固定伪有效误差——再经"先下降后转换"组合成丘成桐反典范非消没问题的完整证明。

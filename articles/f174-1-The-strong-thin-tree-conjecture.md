@@ -13,6 +13,65 @@ pdfname: ""
 
 > 结果族 174：Deterministic construction of strong thin trees　·　学科：Combinatorics　·　验证状态：主结果已 Lean 形式化
 
+## 入门导读 🐣
+
+设想城市群之间修了 `@@M@@k@@` 条互不相干的干道。现在要选一套"骨架路网"：连通所有城市、一条不多修，还得处处谦让——无论从哪里把地图切成两半，骨架最多占用跨越切口干道的一小份（比例 `@@M@@C/k@@`）。干道越多，可挑选的余地越大，骨架理应越"瘦"；本文证明它永远选得出来，这正是"强"形式的含义：比例必须严格与 `@@M@@1/k@@` 成正比。
+
+**关键词卡片**
+
+- 生成树（spanning tree）：连通全部顶点、边数最少（`@@M@@n-1@@` 条）的骨架网
+- 割（cut）：把顶点分成两半时，跨越两半的边集合
+- `@@M@@k@@`-边连通（k-edge-connected）：任意两城之间至少有 `@@M@@k@@` 条互不共享的干道
+- 细树（thin tree）：对每个割都只占 `@@M@@C/k@@` 比例的生成树
+- 有效电阻（effective resistance）：把图当电阻网络后每条边呈现的电阻，用来给边"称重"挑树
+
+**看个具体例子**
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280">
+  <text x="280" y="26" text-anchor="middle" font-size="16" fill="#333">一个割：8 条干道跨越左右两半</text>
+  <ellipse cx="160" cy="150" rx="95" ry="80" fill="none" stroke="#333" stroke-width="1.3"/>
+  <ellipse cx="400" cy="150" rx="95" ry="80" fill="none" stroke="#333" stroke-width="1.3"/>
+  <line x1="120" y1="110" x2="200" y2="95" stroke="#bbb" stroke-width="1"/>
+  <line x1="120" y1="110" x2="130" y2="180" stroke="#bbb" stroke-width="1"/>
+  <line x1="200" y1="95" x2="195" y2="185" stroke="#bbb" stroke-width="1"/>
+  <line x1="130" y1="180" x2="195" y2="185" stroke="#bbb" stroke-width="1"/>
+  <line x1="365" y1="100" x2="440" y2="110" stroke="#bbb" stroke-width="1"/>
+  <line x1="365" y1="100" x2="370" y2="185" stroke="#bbb" stroke-width="1"/>
+  <line x1="440" y1="110" x2="435" y2="180" stroke="#bbb" stroke-width="1"/>
+  <line x1="370" y1="185" x2="435" y2="180" stroke="#bbb" stroke-width="1"/>
+  <line x1="120" y1="110" x2="365" y2="100" stroke="#888" stroke-width="1.3"/>
+  <line x1="120" y1="110" x2="440" y2="110" stroke="#888" stroke-width="1.3"/>
+  <line x1="200" y1="95" x2="365" y2="100" stroke="#888" stroke-width="1.3"/>
+  <line x1="200" y1="95" x2="440" y2="110" stroke="#888" stroke-width="1.3"/>
+  <line x1="130" y1="180" x2="370" y2="185" stroke="#888" stroke-width="1.3"/>
+  <line x1="130" y1="180" x2="435" y2="180" stroke="#888" stroke-width="1.3"/>
+  <line x1="195" y1="185" x2="370" y2="185" stroke="#888" stroke-width="1.3"/>
+  <line x1="195" y1="185" x2="435" y2="180" stroke="#c0392b" stroke-width="3"/>
+  <circle cx="120" cy="110" r="4" fill="#333"/>
+  <circle cx="200" cy="95" r="4" fill="#333"/>
+  <circle cx="130" cy="180" r="4" fill="#333"/>
+  <circle cx="195" cy="185" r="4" fill="#333"/>
+  <circle cx="365" cy="100" r="4" fill="#333"/>
+  <circle cx="440" cy="110" r="4" fill="#333"/>
+  <circle cx="370" cy="185" r="4" fill="#333"/>
+  <circle cx="435" cy="180" r="4" fill="#333"/>
+  <text x="160" y="155" text-anchor="middle" font-size="15" fill="#333">S</text>
+  <text x="400" y="155" text-anchor="middle" font-size="15" fill="#333">V∖S</text>
+  <text x="280" y="266" text-anchor="middle" font-size="14" fill="#555">细树（骨架）只挑其中 1 条（红）：占比 1/8 ≤ C/k，此处 k=8</text>
+</svg>
+
+</div>
+
+数字版定理：`@@M@@k=1000@@` 连通的图中，任何一条 2000 边的割，骨架至多跨越 `@@M@@C\cdot 2000/1000=2C@@` 条。比例 `@@M@@C/k@@` 无法再改进：两点间连 `@@M@@k@@` 条重边时，唯一的生成树必须占用割中 1 条边，占比恰为 `@@M@@1/k@@`。
+
+**为什么值得关心**
+
+Goddyn 2004 年猜想的"强形式"就此解决；细树是非对称旅行商问题近似算法的核心零件，比例常数直接影响算法质量。此前一般多重图上最好的存在性结果只有 `@@M@@\mathrm{poly}(\log\log n)/k@@`，还非构造性。
+
+> 已 Lean 形式化
+
 ## 一句话结论
 证明了强细树猜想（strong thin tree conjecture）：每个 `@@M@@k@@`-边连通无环多重图都含一棵生成树，与任何割的交不超过割规模的 `@@M@@C/k@@` 倍（`@@M@@C@@` 为普适常数）。这一阶是最优的，把此前 `@@M@@\mathrm{poly}(\log\log n)/k@@` 的存在性结果推进到与连通度严格成反比。
 

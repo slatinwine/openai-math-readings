@@ -13,6 +13,51 @@ pdfname: ""
 
 > 结果族 058：Semialgebraic universal covers and bounded domains　·　学科：Algebraic and complex geometry　·　验证状态：暂无形式化证明，请以社区核验为准
 
+## 入门导读 🐣
+
+把一个空间沿所有绕圈"摊平"成一层，得到泛覆盖。一百年前的单值化定理说：紧黎曼面摊开后只有三种命运——球面、平面、圆盘。Kollár–Pardon 问了高维版本：如果摊开的结果带一份"有限多项式说明书"（半代数），它是否也只能由三种特殊积木拼成？本文证明：是，而且积木清单完全确定。
+
+**关键词卡片**
+
+- 泛覆盖（universal cover）：摊开一切绕圈之后的单层空间
+- 半代数开集（semialgebraic open subset）：由有限条多项式等式与不等式定义的开集
+- 有界对称域（bounded symmetric domain）：单位圆盘的高维对称亲戚
+- 正规射影簇（normal projective variety）：能放进射影空间、奇点温和的空间
+- 阿贝尔簇（abelian variety）：带群运算的射影簇，即高维环面
+
+**看个具体例子**
+
+数字版定理：`@@M@@\widetilde{X}\simeq D\times\mathbb{C}^m\times F@@`，三块积木分别是有界对称域、复仿射空间、单连通紧簇，允许退化成点。对照一维老故事：椭圆曲线的泛覆盖是 ℂ（D、F 退化，m=1）；亏格 ≥2 的曲线泛覆盖是单位圆盘（D=圆盘，m=0，F=点）；球面自己盖自己（F=整球）。
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280">
+  <circle cx="105" cy="115" r="46" fill="#e8f0fe" stroke="#34506e" stroke-width="2"/>
+  <circle cx="105" cy="115" r="3" fill="#34506e"/>
+  <text x="105" y="180" text-anchor="middle" font-size="13" fill="#1a2433">有界对称域 D</text>
+  <text x="105" y="198" text-anchor="middle" font-size="12" fill="#445368">如单位圆盘</text>
+  <text x="195" y="122" text-anchor="middle" font-size="20" fill="#1a2433">×</text>
+  <path d="M 230,75 L 330,75 M 230,105 L 330,105 M 230,135 L 330,135 M 230,75 L 230,155 M 280,75 L 280,155 M 330,75 L 330,155" stroke="#7a8ba3" stroke-width="1.5" fill="none"/>
+  <text x="280" y="180" text-anchor="middle" font-size="13" fill="#1a2433">复仿射空间 C^m</text>
+  <text x="280" y="198" text-anchor="middle" font-size="12" fill="#445368">如平面 C</text>
+  <text x="360" y="122" text-anchor="middle" font-size="20" fill="#1a2433">×</text>
+  <ellipse cx="470" cy="115" rx="48" ry="36" fill="#fdeef0" stroke="#993344" stroke-width="2"/>
+  <text x="470" y="180" text-anchor="middle" font-size="13" fill="#1a2433">单连通射影簇 F</text>
+  <text x="470" y="198" text-anchor="middle" font-size="12" fill="#445368">紧的"整块"积木</text>
+  <text x="280" y="238" text-anchor="middle" font-size="13" fill="#1a2433">数字版定理：泛覆盖 ≅ D × C^m × F</text>
+  <text x="280" y="262" text-anchor="middle" font-size="13" fill="#445368">半代数 ⟺ 恰好由这三种积木拼成</text>
+</svg>
+
+</div>
+
+推论同样醒目：被 ℂⁿ 覆盖的光滑射影簇必被阿贝尔簇有限覆盖——Iitaka 均匀化问题得到肯定回答。
+
+**为什么值得关心**
+
+它把一维的"三分类"推广到任意维数的正规射影簇，给"代数可描述的泛覆盖"开出完整清单；同族姊妹篇（对称性定理）已机器验证，为其中一环提供独立支撑。
+
+> 暂无形式化证明（AI 结果待核验）
+
 ## 一句话结论
 证明了 Kollár–Pardon 猜想：连通正规射影复簇的泛覆盖双全纯于某射影簇的半代数开集，当且仅当它是"有界对称域 `@@M@@\times@@` 复仿射空间 `@@M@@\times@@` 单连通正规射影簇"的乘积。由此推出：被 `@@M@@\mathbb C^n@@` 覆盖的光滑射影簇必有阿贝尔簇的有限平展覆盖。
 

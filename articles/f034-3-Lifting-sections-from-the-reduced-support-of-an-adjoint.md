@@ -13,6 +13,34 @@ pdfname: ""
 
 > 结果族 034：Log abundance for compact Kähler spaces under logarithmic Iitaka subadditivity　·　学科：Algebraic and complex geometry　·　验证状态：暂无形式化证明，请以社区核验为准
 
+## 入门导读 🐣
+
+一栋楼的一楼地面上已经铺好了花纹（边界上截面丰富），能否断定整栋楼都会出现图案？这篇论文证明：只要"花纹"确实铺满了整层地板（在全部约化支撑上截面可用），楼上就一定开始出现图案（Iitaka 维数为正）。据此，四维及以下的空间"只要找到第一个截面，就自动得到完整的纤维化"。
+
+**关键词卡片**
+
+- dlt 配对（divisorial log terminal）：比 klt 稍宽、仍属温和的奇性等级，证明的舞台。
+- 系数 1 边界（coefficient-one boundary）：边界中系数取满 `@@M@@1@@` 的部分，截面的"地基"。
+- 既约支撑（reduced support）：把地基当作不带重数的点集整体看待。
+- 半丰富（semiample）：某倍数由整体截面生成，给出映射。
+- Iitaka 维数（Iitaka dimension）：由全部多重典范截面量出的"截面丰度"。
+
+**看个具体例子**
+
+定理的数字骨架：若存在有效除子 `@@M@@G\sim q(K_V+C)@@` 整个落在地板 `@@M@@\operatorname{Supp}\lfloor C\rfloor@@` 内，且 `@@M@@\mathcal O_V(G)|_{G_{\mathrm{red}}}@@` 在整块地板上由截面生成，则 `@@M@@\kappa(V,K_V+C)>0@@`——地板上的截面能"长"上全空间。配上定理 B：四维及以下 nef 且 `@@M@@\kappa\ge 0@@` 就半丰富。
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280"><rect x="180" y="45" width="200" height="52" fill="none" stroke="#333" stroke-width="1.8"/><text x="235" y="76" font-size="14" fill="#333">整空间 V</text><rect x="180" y="97" width="200" height="52" fill="none" stroke="#333" stroke-width="1.8"/><text x="230" y="128" font-size="12" fill="#888">（中间楼层）</text><rect x="180" y="149" width="200" height="52" fill="#e8e8e8" stroke="#333" stroke-width="1.8"/><text x="196" y="180" font-size="13" fill="#333">地板：系数 1 边界</text><line x1="150" y1="200" x2="150" y2="60" stroke="#555" stroke-width="1.8"/><polygon points="150,54 145,65 155,65" fill="#555"/><text x="52" y="135" font-size="13" fill="#555">截面提升</text><text x="60" y="235" font-size="13" fill="#777">地板花纹半丰富 → 全楼开始有图案</text></svg>
+
+</div>
+
+**为什么值得关心**
+
+它把丰度的全部困难压缩到"第一个截面从哪来"这一个问题：找到截面之后的路（纤维化、半丰富）被本文一次铺平。与姊妹篇的非消失结果拼起来，就是四维及以下的完整 log 丰度，并为高维提供条件性归约框架。
+
+> 暂无形式化证明（AI 结果待核验）
+
 ## 一句话结论
 
 证明了一个"支撑式截面提升"定理：当 dlt 对的伴随除子有某个有效倍数落在系数为 1 的边界支撑内、且其线丛在整个约化支撑上半丰富时，Iitaka 维数必为正；由此把丰富性与非零截面问题分离，证得四维及以下"有非零截面即丰富"。

@@ -13,6 +13,34 @@ pdfname: ""
 
 > 结果族 034：Log abundance for compact Kähler spaces under logarithmic Iitaka subadditivity　·　学科：Algebraic and complex geometry　·　验证状态：暂无形式化证明，请以社区核验为准
 
+## 入门导读 🐣
+
+把一个复杂的四维几何对象想成一间堆满杂物的房间。极小模型纲领（MMP）是"收纳术"：不断腾挪，直到房间最简。收纳有两个等级：东西摆得下（nef）叫极小模型；摆下的柜子还真能装东西（截面生成）叫"好"极小模型。这篇论文证明四维凯勒房间里收纳术总能做到第二级——前提是先接受三条厂家说明书（明确列出的假设）；论文自己新造的零件，是"柜子里至少装进一件东西"这一步。
+
+**关键词卡片**
+
+- 极小模型（minimal model）：双有理等价类里"最简"的代表，伴随除子变为 nef。
+- 好极小模型（good minimal model）：极小模型上伴随除子还被整体截面生成。
+- klt 配对（Kawamata log terminal）：奇性温和程度的一个标准等级。
+- 伪有效（pseudo-effective）：能被有效除子或正电流逼近的除子类，正性的弱形式。
+- 非消失性（nonvanishing）：某个倍数的整体截面空间非零，即"找到第一个截面"。
+
+**看个具体例子**
+
+论文的主张画成流程：四维凯勒 klt 配对 `@@M@@(X,B)@@`、`@@M@@D=K_X+B@@` 解析伪有效 `@@M@@\Rightarrow@@` 跑 MMP 得到 nef 终点 `@@M@@Y@@` `@@M@@\Rightarrow@@` 用本文新补的非消失性 `@@M@@\Rightarrow@@` 某个 `@@M@@\mathcal O_Y(mD_Y)@@` 由整体截面生成。三条前提缺一不可，论文的贡献是把最后那个缺口焊上。
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280"><rect x="40" y="105" width="140" height="70" fill="none" stroke="#333" stroke-width="1.8"/><text x="62" y="132" font-size="14" fill="#333">四维凯勒 X</text><text x="72" y="155" font-size="12" fill="#666">(X,B) klt</text><line x1="184" y1="140" x2="224" y2="140" stroke="#555" stroke-width="1.8"/><polygon points="227,140 216,135 216,145" fill="#555"/><text x="185" y="95" font-size="12" fill="#555">跑 MMP</text><rect x="230" y="105" width="150" height="70" fill="none" stroke="#333" stroke-width="1.8"/><text x="252" y="132" font-size="14" fill="#333">极小模型 Y</text><text x="268" y="155" font-size="12" fill="#666">K+B nef</text><line x1="384" y1="140" x2="424" y2="140" stroke="#555" stroke-width="1.8"/><polygon points="427,140 416,135 416,145" fill="#555"/><text x="372" y="95" font-size="12" fill="#555">非消失（新）</text><rect x="430" y="105" width="110" height="70" fill="none" stroke="#333" stroke-width="1.8"/><text x="452" y="132" font-size="14" fill="#333">好模型</text><text x="442" y="155" font-size="12" fill="#666">截面生成</text><text x="60" y="215" font-size="13" fill="#777">前提：三条明确列出的假设（轨体次可加性等）</text></svg>
+
+</div>
+
+**为什么值得关心**
+
+"非消失"是高维丰度问题公认最硬的一环，本文在四维凯勒（含非射影）环境给出完整方案，并把所依赖的假设逐条摆上台面，便于社区逐项核验。
+
+> 暂无形式化证明（AI 结果待核验）
+
 ## 一句话结论
 论文在三条明确列出的假设（轨体伊塔卡次可加性、伪有效四维极小模型纲领、非负 Kodaira 维数下的 nef 伴随除子丰度）之下，证明了整体强 `@@M@@\mathbb{Q}@@`-分解的紧凯勒 klt 四维配对在伴随除子解析伪有效时必有好极小模型。论文的真正新贡献是填补其中缺环——nef 终点上多重典范截面的非消灭性（nonvanishing）。
 

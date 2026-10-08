@@ -13,6 +13,49 @@ pdfname: ""
 
 > 结果族 284：The optimal quartic separation between randomized and quantum queries　·　学科：Mathematical physics　·　验证状态：暂无形式化证明，请以社区核验为准
 
+## 入门导读 🐣
+
+量子计算机查资料能少翻很多页，问题是"最坏能省多少次"。已知对任何任务，随机算法所需的查询次数不超过量子算法的四次方，有人猜三次方就够。本文造出一族"规规矩矩"的函数（对每个输入都要答对），其随机查询数几乎顶到四次方——四次方这个指数被证明最优，三次方猜想被推翻。
+
+**关键词卡片**
+
+- 查询复杂度 R(f) 与 Q(f)（query complexity）：最坏情形下随机／量子算法最少要读多少输入位
+- 全函数（total function）：所有输入上都要给出答案，不许只挑部分输入
+- 四次普适上界（quartic bound）：一切全函数满足 `@@M@@\R(f)=O(\Q(f)^4)@@`
+- Forrelation：量子几次查询可解、经典却极难的一族函数，分离的引擎
+- 锦标赛引理（tournament lemma）：把"打擂台淘汰赛"精确量子化
+
+**看个具体例子**
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280">
+  <line x1="60" y1="240" x2="530" y2="240" stroke="#000" stroke-width="1.5"/>
+  <line x1="60" y1="240" x2="60" y2="40" stroke="#000" stroke-width="1.5"/>
+  <text x="514" y="262" font-size="13" fill="#000">Q</text>
+  <text x="34" y="52" font-size="13" fill="#000">R</text>
+  <text x="88" y="35" font-size="12" fill="#000">（对数尺度）</text>
+  <line x1="80" y1="230" x2="480" y2="60" stroke="#000" stroke-width="1.8"/>
+  <text x="475" y="52" font-size="13" fill="#000" text-anchor="end">R ≈ Q^4：最优上界</text>
+  <line x1="80" y1="212" x2="480" y2="142" stroke="#999" stroke-width="1.5" stroke-dasharray="7,5"/>
+  <text x="335" y="192" font-size="13" fill="#999">R = Q^3：被推翻的猜想</text>
+  <circle cx="150" cy="207" r="5" fill="#c00"/>
+  <circle cx="230" cy="173" r="5" fill="#c00"/>
+  <circle cx="310" cy="139" r="5" fill="#c00"/>
+  <circle cx="390" cy="105" r="5" fill="#c00"/>
+  <text x="158" y="231" font-size="13" fill="#c00">本文的例子</text>
+</svg>
+
+</div>
+
+公式卡（数字版定理）：`@@M@@\Q(F_{k,m})\le C_k\sqrt m\,(\log m)^{b_k}@@`，而 `@@M@@\R(F_{k,m})\ge c_k\,m^{2-1/k}/(\log m)^2@@`；两者之比约为 `@@M@@m^{3/2-1/k}@@`，取 `@@M@@k@@` 足够大，便任意接近四次幂。
+
+**为什么值得关心**
+
+它终结了随机与量子查询复杂度之间"指数究竟几次"的最后悬念：答案是 4，不是 3。
+
+> 暂无形式化证明（AI 结果待核验）
+
 ## 一句话结论
 
 构造出一族全布尔函数 `@@M@@F_{k,m}@@`：量子算法只需 `@@M@@\sqrt m\,(\log m)^{O_k(1)}@@` 次查询，而任何随机算法都需约 `@@M@@m^{2-1/k}/(\log m)^2@@` 次，两者之比可任意逼近四次幂。这证明已知的四次普适上界指数最优，并推翻了此前猜想的三次关系。

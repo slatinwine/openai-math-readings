@@ -13,6 +13,47 @@ pdfname: ""
 
 > 结果族 215：Canonical `@@M@@O(3)@@` continuum limit and exact `@@M@@O(4)@@` mass asymptotics　·　学科：Probability and statistical mechanics　·　验证状态：暂无形式化证明，请以社区核验为准
 
+## 入门导读 🐣
+
+收音机的频谱可以从某个频率起连成一片杂音，也可以在最低处先立着一个清晰的电台。"有质量隙"只保证谱从正数开始，并不保证最低处有"电台"。本文证明：姊妹篇构造出的 O(3) 极限场，其谱在最低质量处确实有一个孤立原子——也就是说，这个理论里真的有一颗"单粒子"。
+
+**关键词卡片**
+
+- 谱测度（spectral measure）：把两点函数按质量拆开后得到的分布，记录场能耦合哪些质量。
+- 原子（atom）：谱测度中离散的一块质量，物理上对应粒子态。
+- Källén–Lehmann 表示：两点函数等于各种质量的自由粒子叠加的积分公式。
+- 孤立粒子极点（isolated particle pole）：最低质量既是原子，又与其余谱隔开正间隙。
+
+**看个具体例子**
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280">
+  <text x="290" y="38" font-size="14" text-anchor="middle" fill="#222">O(3) 极限场的向量二点谱测度 ρ</text>
+  <line x1="70" y1="220" x2="510" y2="220" stroke="#333" stroke-width="2"/>
+  <line x1="70" y1="220" x2="70" y2="50" stroke="#333" stroke-width="2"/>
+  <rect x="152" y="105" width="12" height="115" fill="#c0392b"/>
+  <path d="M 305 220 L 305 150 L 325 118 L 345 162 L 365 100 L 385 170 L 405 125 L 425 155 L 445 108 L 465 160 L 485 128 L 505 145 L 505 220 Z" fill="#c7d2dc" stroke="#8fa3b5" stroke-width="1"/>
+  <path d="M 170 70 L 300 70" stroke="#555" stroke-width="1.5" fill="none"/>
+  <path d="M 170 70 L 180 64 M 170 70 L 180 76 M 300 70 L 290 64 M 300 70 L 290 76" stroke="#555" stroke-width="1.5" fill="none"/>
+  <text x="235" y="60" font-size="12" text-anchor="middle" fill="#555">正间隙 δ</text>
+  <text x="158" y="92" font-size="12" text-anchor="middle" fill="#c0392b">原子 Z（单粒子）</text>
+  <text x="405" y="90" font-size="12" text-anchor="middle" fill="#555">其余谱（多粒子等）</text>
+  <text x="158" y="242" font-size="13" text-anchor="middle" fill="#333">m₁²</text>
+  <text x="345" y="242" font-size="13" text-anchor="middle" fill="#333">(m₁+δ)²</text>
+  <text x="52" y="58" font-size="13" font-style="italic" fill="#333">ρ</text>
+</svg>
+
+</div>
+
+定理写成公式：`@@M@@\rho=Z\,\delta_{m_1^2}+\rho_{\mathrm{rest}}@@`，其中原子权重 `@@M@@Z>0@@`，其余谱的支撑整体落在 `@@M@@(m_1+\delta)^2@@` 之后。图里那根红色竖线就是质量为 `@@M@@m_1@@` 的单粒子，它与灰色连续谱之间隔着一段正的"无人区"`@@M@@\delta@@`。注意"正原子"与"正间隙"两件事都不能由指数衰减免费推出，必须分别证明。
+
+**为什么值得关心**
+
+它把严格构造的场论从"有隙"推进到"有粒子"，是继 Glimm–Jaffe–Spencer 之后罕见的构造性粒子存在定理。本篇完全站在姊妹篇构造的肩上做谱分析：构造若有问题，本篇随之失效；反过来它把那份构造从"有隙"推进到"有粒子"。
+
+> 暂无形式化证明（AI 结果待核验）
+
 ## 一句话结论
 
 在姊妹篇构造的二维 `@@M@@O(3)@@` 模型连续统自旋场上，证明向量二点谱测度在最低质量处有一个正原子，且与其余谱支撑隔开正距离——最低质量是孤立的单粒子极点（isolated particle pole），而非连续谱的起点。

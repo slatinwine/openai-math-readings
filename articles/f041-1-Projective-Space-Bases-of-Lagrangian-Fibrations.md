@@ -13,6 +13,48 @@ pdfname: ""
 
 > 结果族 041：Hyperkähler SYZ and projective-space bases　·　学科：Algebraic and complex geometry　·　验证状态：暂无形式化证明，请以社区核验为准
 
+## 入门导读 🐣
+
+想象一个 `@@M@@2n@@` 维、对称性极高的"水晶世界"，它可以整体压扁，投影到一片 `@@M@@n@@` 维的底座上，每根纤维都是 `@@M@@n@@` 维环面。底座长什么样？此前只在部分已知类型里核实过。本文证明：无论哪种超凯勒流形，底座只能是射影空间 `@@M@@\mathbb P^n@@`——最标准、最干净的 `@@M@@n@@` 维舞台。
+
+**关键词卡片**
+
+- 超凯勒流形（irreducible holomorphic symplectic manifold）：对称性比卡拉比–丘还高的基本几何对象。
+- 拉格朗日纤维化（Lagrangian fibration）：把 `@@M@@2n@@` 维空间压成 `@@M@@n@@` 维底座、纤维为环面型的投影。
+- 射影空间 `@@M@@\mathbb P^n@@`（projective space）：由齐次坐标描述的最标准舞台。
+- 正规射影簇（normal projective variety）：允许温和奇点的合格底座。
+- 阿贝尔簇（abelian variety）：高维环面，纤维的一般形状。
+
+**看个具体例子**
+
+`@@M@@n=1@@`：底座是一条曲线，定理说只能是 `@@M@@\mathbb P^1@@`——与 `@@M@@K3@@` 曲面椭圆纤维化的经典事实吻合。`@@M@@n=2@@`：四维空间压扁后底座必为 `@@M@@\mathbb P^2@@`。旧结论多依赖具体形变类型逐一核对，本文不要求底座光滑、不限形变类型，一刀切地宣告唯一候选人。证明分两步走：先排除"不是有限群商"的坏奇点，再消灭商奇点处的稳定子，最后借用 Hwang 的光滑情形定理收尾。
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280">
+  <text x="280" y="30" text-anchor="middle" font-size="15" fill="#334455">拉格朗日纤维化：底座只能是 Pⁿ</text>
+  <ellipse cx="140" cy="110" rx="38" ry="13" fill="#eef4fa" stroke="#4a90c4" stroke-width="2"/>
+  <ellipse cx="240" cy="110" rx="38" ry="13" fill="#eef4fa" stroke="#4a90c4" stroke-width="2"/>
+  <ellipse cx="340" cy="110" rx="38" ry="13" fill="#eef4fa" stroke="#4a90c4" stroke-width="2"/>
+  <ellipse cx="440" cy="110" rx="38" ry="13" fill="#eef4fa" stroke="#4a90c4" stroke-width="2"/>
+  <text x="140" y="88" font-size="12" fill="#4a90c4">环面纤维</text>
+  <line x1="140" y1="123" x2="140" y2="200" stroke="#8899aa" stroke-width="1.5"/>
+  <line x1="240" y1="123" x2="240" y2="200" stroke="#8899aa" stroke-width="1.5"/>
+  <line x1="340" y1="123" x2="340" y2="200" stroke="#8899aa" stroke-width="1.5"/>
+  <line x1="440" y1="123" x2="440" y2="200" stroke="#8899aa" stroke-width="1.5"/>
+  <rect x="60" y="200" width="460" height="14" fill="#e8e0ee" stroke="#8878a0" stroke-width="1.5"/>
+  <text x="280" y="242" text-anchor="middle" font-size="14" fill="#6a5a8a">底座 B ≅ Pⁿ（唯一可能的舞台）</text>
+  <text x="280" y="266" text-anchor="middle" font-size="13" fill="#666666">总空间 X 为 2n 维超凯勒，纤维是 n 维环面</text>
+</svg>
+
+</div>
+
+**为什么值得关心**
+
+底座被钉死为 `@@M@@\mathbb P^n@@`，等于为超凯勒几何的 SYZ 镜像对称纲领拆掉了最大的一块路障，也是分类这些流形的必修一步。
+
+> 暂无形式化证明（AI 结果待核验）
+
 ## 一句话结论
 证明了紧不可约全纯辛凯勒流形上射影拉格朗日纤维化的正规射影基必是射影空间 `@@M@@\PP^n@@`，对一切维数与形变类型成立，完全解决了"射影空间基猜想"（projective-space base conjecture）。
 

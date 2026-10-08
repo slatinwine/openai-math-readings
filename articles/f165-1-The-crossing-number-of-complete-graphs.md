@@ -13,6 +13,58 @@ pdfname: ""
 
 > 结果族 165：The Harary–Hill and Zarankiewicz crossing-number formulas　·　学科：Combinatorics　·　验证状态：主结果已 Lean 形式化
 
+## 入门导读 🐣
+
+开圆桌会议，n 个人每两人都要握手一次，把每次握手画成纸上的一条曲线——人一多，总有线躲不开地相交。问：相交点最少能有几个？这就是完全图 `@@M@@K_n@@` 的交叉数问题。Harary 与 Hill 在 1963 年猜出了一个简洁公式，悬置六十多年；这篇论文证明猜想成立：教科书式的"书脊画法"就是全局最优，任何曲线诡计都省不掉一个交叉。
+
+**关键词卡片**
+
+- 完全图 `@@M@@K_n@@`（complete graph）：n 个顶点两两连边的图，相当于人人握手一次。
+- 交叉数（crossing number）：所有画法中交叉点个数的最小值，记 `@@M@@\operatorname{cr}(G)@@`。
+- 画法（drawing）：顶点放在互异位置、边画成不自交的连续弧，允许交叉。
+- 带号交叉（signed intersection）：给每个交叉按方向记 +1 或 −1，把几何问题代数化，是证明的引擎。
+
+**看个具体例子**
+
+公式（数字版定理）：`@@M@@\operatorname{cr}(K_n)=\frac14\lfloor\frac n2\rfloor\lfloor\frac{n-1}2\rfloor\lfloor\frac{n-2}2\rfloor\lfloor\frac{n-3}2\rfloor@@`。代入小数字逐一应验：`@@M@@\operatorname{cr}(K_5)=1@@`、`@@M@@\operatorname{cr}(K_6)=3@@`、`@@M@@\operatorname{cr}(K_7)=9@@`、`@@M@@\operatorname{cr}(K_8)=18@@`。要知道此前的最好成绩：计算机只核实到 `@@M@@n\le 13@@`，旗代数方法也只证到猜想值的约 `@@M@@0.9856@@` 倍，离终点始终差一口气。
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280">
+  <line x1="150" y1="90" x2="410" y2="90" stroke="#8899aa" stroke-width="2"/>
+  <line x1="410" y1="90" x2="410" y2="230" stroke="#8899aa" stroke-width="2"/>
+  <line x1="410" y1="230" x2="150" y2="230" stroke="#8899aa" stroke-width="2"/>
+  <line x1="150" y1="230" x2="150" y2="90" stroke="#8899aa" stroke-width="2"/>
+  <line x1="150" y1="90" x2="410" y2="230" stroke="#8899aa" stroke-width="2"/>
+  <line x1="410" y1="90" x2="150" y2="230" stroke="#8899aa" stroke-width="2"/>
+  <line x1="280" y1="25" x2="150" y2="90" stroke="#8899aa" stroke-width="2"/>
+  <line x1="280" y1="25" x2="410" y2="90" stroke="#8899aa" stroke-width="2"/>
+  <path d="M 280 25 Q 550 300 410 230" fill="none" stroke="#8899aa" stroke-width="2"/>
+  <path d="M 280 25 Q 10 300 150 230" fill="none" stroke="#8899aa" stroke-width="2"/>
+  <circle cx="280" cy="160" r="11" fill="none" stroke="#e0a000" stroke-width="2.5"/>
+  <circle cx="150" cy="90" r="11" fill="#45607a"/>
+  <circle cx="410" cy="90" r="11" fill="#45607a"/>
+  <circle cx="410" cy="230" r="11" fill="#45607a"/>
+  <circle cx="150" cy="230" r="11" fill="#45607a"/>
+  <circle cx="280" cy="25" r="11" fill="#45607a"/>
+  <text x="150" y="95" font-size="12" text-anchor="middle" fill="#ffffff">A</text>
+  <text x="410" y="95" font-size="12" text-anchor="middle" fill="#ffffff">B</text>
+  <text x="410" y="235" font-size="12" text-anchor="middle" fill="#ffffff">C</text>
+  <text x="150" y="235" font-size="12" text-anchor="middle" fill="#ffffff">D</text>
+  <text x="280" y="30" font-size="12" text-anchor="middle" fill="#ffffff">E</text>
+  <text x="280" y="264" font-size="14" text-anchor="middle" fill="#333333">K₅：5 点两两连线，交叉最少 1 个（黄圈），不可能画成 0 个</text>
+</svg>
+
+</div>
+
+下界证明不走"限制画法"的老路，而是从任意画法中提取代数信息：给边定向、统计带号交叉，构造双线性型 J 并证明它在圈上恒为零，再用拉格朗日插值多项式把"交叉必多"压缩成一次维数计数。
+
+**为什么值得关心**
+
+与姊妹篇（完全二部图）在同一个"带号交叉+插值"框架下连环解决两大画图猜想，且已通过 Lean 形式化。
+
+> 已 Lean 形式化
+
 ## 一句话结论
 
 论文证明了悬置六十余年的哈拉里–希尔猜想（Harary–Hill conjecture）：`@@M@@n@@` 顶点完全图 `@@M@@K_n@@` 的普通交叉数恰为 `@@M@@\frac14\lfloor\frac n2\rfloor\lfloor\frac{n-1}2\rfloor\lfloor\frac{n-2}2\rfloor\lfloor\frac{n-3}2\rfloor@@`，宣告希尔经典构图在任意连续弧画法下都无法改进。

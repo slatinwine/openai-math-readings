@@ -13,6 +13,54 @@ pdfname: ""
 
 > 结果族 080：The exact Sobolev endpoint for Schrödinger convergence　·　学科：Real and complex analysis　·　验证状态：暂无形式化证明，请以社区核验为准
 
+## 入门导读 🐣
+
+量子波回到初值的问题，这回从平面搬到一切 `@@M@@n\ge3@@` 维空间：初始波形要多光滑，时间倒回零时薛定谔演化才能几乎处处回到初值？维数越高，波能逃散的方向越多，把演化"摁回"初值就越难，所需的光滑度门槛也随之水涨船高。本文证明答案是精确的临界门槛 `@@M@@s_n=\frac{n}{2(n+1)}@@`——含等号，对所有 `@@M@@n\ge3@@` 一网打尽，与平面姊妹篇合计覆盖全部维数 `@@M@@n\ge2@@`。
+
+**关键词卡片**
+
+- 临界指标 `@@M@@s_n=n/(2(n+1))@@`：维数越高门槛越高，从 `@@M@@1/3@@` 缓慢爬向 `@@M@@1/2@@`
+- 高斯正则化（Gaussian regularization）：给演化加阻尼因子 `@@M@@e^{-a|\xi|^2}@@`，先令 `@@M@@a\downarrow0@@` 再令 `@@M@@t\downarrow0@@`，给极限一个明确次序
+- 多项式分割（polynomial partitioning）：用多项式曲面把空间切块，逐块围剿波的能量
+- 横向波包（transverse wave packets）：朝不同方向传播的"小束平面波"，波分解的基本单元
+- 二进时间树（dyadic time tree）：把时间轴按 2 的幂分层记账，轻孩子重孩子分开核算
+
+**看个具体例子**
+
+门槛随维数缓慢爬升，逼近但永远够不到 `@@M@@1/2@@`：
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280">
+<line x1="70" y1="230" x2="510" y2="230" stroke="#333"/>
+<line x1="70" y1="30" x2="70" y2="230" stroke="#333"/>
+<line x1="70" y1="60" x2="500" y2="60" stroke="#bbb" stroke-dasharray="5 4"/>
+<text x="440" y="55" font-size="13" fill="#777">上限 1/2</text>
+<polyline points="110,117 180,102 250,94 320,88 390,84 460,81" stroke="#369" stroke-width="3" fill="none"/>
+<circle cx="110" cy="117" r="5" fill="#c33"/>
+<circle cx="180" cy="102" r="5" fill="#c33"/>
+<circle cx="250" cy="94" r="5" fill="#c33"/>
+<circle cx="320" cy="88" r="5" fill="#c33"/>
+<circle cx="390" cy="84" r="5" fill="#c33"/>
+<circle cx="460" cy="81" r="5" fill="#c33"/>
+<text x="95" y="142" font-size="13" fill="#333">n=2</text>
+<text x="168" y="127" font-size="13" fill="#333">n=3</text>
+<text x="238" y="119" font-size="13" fill="#333">n=4</text>
+<text x="442" y="108" font-size="13" fill="#333">n=7</text>
+<text x="100" y="45" font-size="14" fill="#369">临界指标 sₙ</text>
+<text x="430" y="252" font-size="13" fill="#333">维数 n→</text>
+</svg>
+
+</div>
+
+数字版定理：`@@M@@n=3@@` 时 `@@M@@s_3=3/8@@`——凡 `@@M@@f\in H^{3/8}(\mathbb R^3)@@`，几乎处处有 `@@M@@\lim_{t\downarrow0}u_f(x,t)=f^*(x)@@`；`@@M@@n=4@@` 时 `@@M@@s_4=2/5@@`，依此类推。Bourgain 的反例说明再降一丝都不行，门槛是精确的。
+
+**为什么值得关心**
+
+端点不容任何频率损失，任何 `@@M@@o(1)@@` 的开销都会毁掉临界指标。本文与平面姊妹篇共用"横向增益→弱型估计→时间树→高斯迹线"的架构，把 Carleson 问题在全部维数上一举钉死在最优值。
+
+> 暂无形式化证明（AI 结果待核验）
+
 ## 一句话结论
 
 对每个维数 `@@M@@n\ge3@@`，当初值属于临界空间 `@@M@@H^{n/(2(n+1))}(\mathbb R^n)@@` 时，自由 Schrödinger 演化几乎处处随 `@@M@@t\downarrow0@@` 收敛回归初值；高维 Carleson 收敛问题的 Sobolev 端点（等号情形）由此确立，与平面姊妹篇合计覆盖一切 `@@M@@n\ge2@@`。

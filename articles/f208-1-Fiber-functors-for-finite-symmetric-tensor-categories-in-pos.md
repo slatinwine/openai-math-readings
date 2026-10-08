@@ -13,6 +13,47 @@ pdfname: ""
 
 > 结果族 208：Finite symmetric tensor categories and the Verlinde tower　·　学科：Algebra　·　验证状态：暂无形式化证明，请以社区核验为准
 
+## 入门导读 🐣
+
+在特征零的数学世界里，Deligne 定理给所有"对称张量范畴"提供了统一坐标系（超向量空间）。正特征的世界里坐标崩坏，数学家盖了一座层层加高的 Verlinde 塔当新坐标系。本文证明：每个有限的对称张量范畴都能装进这座塔的某一层——连最麻烦的特征 2 也首次被覆盖。
+
+**关键词卡片**
+
+- 对称张量范畴（symmetric tensor category）：对象能"张量相乘"且交换次序不变的代数世界。
+- 纤维函子（fiber functor）：把范畴安放进某个标准世界的"坐标安装器"。
+- Verlinde 塔（Verlinde tower）：`@@M@@\mathrm{Ver}_p\subset\mathrm{Ver}_{p^2}\subset\cdots@@` 逐层扩大的塔式范畴序列。
+- 有限范畴（finite category）：单对象只有有限多个、且有足够多射影对象的范畴。
+- 正特征（positive characteristic）：`@@M@@p@@` 的倍数为零的数系，如 `@@M@@\overline{\mathbb F}_p@@`。
+
+**看个具体例子**
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280">
+  <rect x="150" y="45" width="300" height="205" fill="none" stroke="#555" stroke-width="2"/>
+  <rect x="195" y="90" width="210" height="130" fill="none" stroke="#555" stroke-width="2"/>
+  <rect x="240" y="135" width="120" height="55" fill="none" stroke="#555" stroke-width="2"/>
+  <text x="300" y="72" font-size="14" fill="#333" text-anchor="middle">Ver（p³）</text>
+  <text x="300" y="115" font-size="14" fill="#333" text-anchor="middle">Ver（p²）</text>
+  <text x="300" y="167" font-size="14" fill="#333" text-anchor="middle">Ver（p）</text>
+  <rect x="15" y="120" width="105" height="58" rx="8" fill="#eef" stroke="#555" stroke-width="2"/>
+  <text x="67" y="145" font-size="13" fill="#222" text-anchor="middle">任意有限对称</text>
+  <text x="67" y="165" font-size="13" fill="#222" text-anchor="middle">张量范畴 C</text>
+  <line x1="120" y1="149" x2="192" y2="149" stroke="#a33" stroke-width="2"/>
+  <polygon points="192,149 181,144 181,154" fill="#a33"/>
+  <text x="300" y="268" font-size="13" fill="#555" text-anchor="middle">塔底：Ver（2）= Vec，Ver（3）= sVec；装进哪一层视 C 而定</text>
+</svg>
+
+</div>
+
+塔的底两层是老熟人：`@@M@@\mathrm{Ver}_2@@` 本质上就是普通向量空间 `@@M@@\mathrm{Vec}@@`，`@@M@@\mathrm{Ver}_3@@` 就是超向量空间 `@@M@@\mathrm{sVec}@@`——特征零的坐标系其实是这座塔的地基。层数 `@@M@@n@@` 允许依赖于范畴 `@@M@@\mathcal C@@`；论文还附送"受限挠量定理"（把有限交换 `@@M@@p@@`-群的表示提升为 `@@M@@SL_2@@` 的挠量模）与有限不可压缩范畴的完全分类。
+
+**为什么值得关心**
+
+Benson–Etingof–Ostrik 猜想的有限情形被彻底解决，正特征张量范畴从此有了统一坐标系；完整的非有限情形仍是下一步的挑战。
+
+> 暂无形式化证明（AI 结果待核验）
+
 ## 一句话结论
 
 证明了 Benson–Etingof–Ostrik 猜想的有限情形：特征 `@@M@@p>0@@` 的代数闭域上，任何有限对称张量范畴都容许到某层高阶 Verlinde 范畴 `@@M@@\mathrm{Ver}_{p^n}(k)@@` 的纤维函子，且首次覆盖特征 `@@M@@2@@`，为正特征张量范畴补上统一"坐标系"。

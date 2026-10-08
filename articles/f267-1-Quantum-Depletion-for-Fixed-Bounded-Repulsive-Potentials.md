@@ -13,6 +13,49 @@ pdfname: ""
 
 > 结果族 267：Positive-temperature Bose–Einstein condensation and exact quantum depletion　·　学科：Mathematical physics　·　验证状态：暂无形式化证明，请以社区核验为准
 
+## 入门导读 🐣
+
+换一副柔软的手套：把硬邦邦的"小球"换成一片有限高、有限范围、只推不拉的光滑力场，被挤出舞池的比例会变吗？这篇论文证明：不变。损耗只认"散射长度"这一个数，力场的具体形状无关紧要——Bogoliubov 损耗定律的普适性，就此拿到第二块拼图。
+
+**关键词卡片**
+
+- 有界排斥势（bounded repulsive potential）：有限高度、有限范围、处处非负的径向相互作用 `@@M@@v\ge 0@@`。
+- 散射长度（scattering length）a_v：由零能散射方程定义的"有效半径"，是唯一进入损耗公式的位势参数。
+- 量子损耗（quantum depletion）：零温基态中处于常值轨道之外的粒子比例。
+- 基态密度矩阵：最低本征空间上的迹一正算符；结论对一切这样的密度矩阵一致，不挑基向量。
+- 迭代极限：位势全程固定，先取热力学极限再取稀薄极限。
+
+**看个具体例子**
+
+数字版定理：对每个这样的位势 `@@M@@v@@`，比值 `@@M@@\frac{1-B_\Gamma}{\sqrt{\rho a_v^3}}@@` 沿一切热力学聚积值都落入 `@@M@@\frac{8}{3\sqrt\pi}\approx 1.5045@@` 的 `@@M@@\epsilon@@`-邻域——硬球的"墙"与有界势的"鼓包"殊途同归。
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280">
+  <text x="30" y="28" font-size="14">硬球：不可逾越的墙</text>
+  <line x1="60" y1="180" x2="230" y2="180" stroke="#333" stroke-width="1.5"/>
+  <line x1="60" y1="180" x2="60" y2="70" stroke="#333" stroke-width="1.5"/>
+  <path d="M 100 180 L 145 180 L 145 80 L 185 80" fill="none" stroke="#b3442e" stroke-width="2.5"/>
+  <text x="150" y="70" font-size="13" fill="#b3442e">V = ∞（r &lt; a）</text>
+  <text x="192" y="197" font-size="13">r = a</text>
+  <text x="70" y="215" font-size="12">确定性几何约束</text>
+  <text x="320" y="28" font-size="14">有界势：有限高的鼓包</text>
+  <line x1="310" y1="180" x2="520" y2="180" stroke="#333" stroke-width="1.5"/>
+  <line x1="310" y1="180" x2="310" y2="70" stroke="#333" stroke-width="1.5"/>
+  <path d="M 330 180 Q 415 50 500 180" fill="none" stroke="#4a7ebb" stroke-width="2.5"/>
+  <text x="352" y="105" font-size="13" fill="#4a7ebb">0 ≤ v ≤ J，有限范围</text>
+  <text x="330" y="215" font-size="12">Boltzmann 软权重</text>
+  <text x="105" y="252" font-size="14">两者给出同一个损耗公式：8/(3√π) · √(ρa³)</text>
+</svg>
+
+</div>
+
+**为什么值得关心**
+
+硬球（确定性几何约束）与有界势（Boltzmann 软权重）的难点互为对偶；两篇姊妹工作共用"盒内变化＋盒间平均变化"的拆分与删除测度技术，共同确立损耗只依赖散射长度的普适性。
+
+> 暂无形式化证明（AI 结果待核验）
+
 ## 一句话结论
 
 把 Bogoliubov 量子损耗定律推广到固定有界排斥位势：对三维径向、非负、有限程位势 `@@M@@v@@`（散射长度 `@@M@@a_v@@`），基态在常值轨道之外的占比沿一切热力学聚积值均为 `@@M@@\frac{8}{3\sqrt\pi}\sqrt{\rho a_v^3}+o(\sqrt{\rho a_v^3})@@`；位势固定，先取热力学极限再取稀薄极限，对一切基态密度矩阵一致。

@@ -13,6 +13,31 @@ pdfname: ""
 
 > 结果族 184：Correspondence coloring with a fixed forbidden subgraph　·　学科：Combinatorics　·　验证状态：主结果已 Lean 形式化
 
+## 入门导读 🐣
+
+宴会上想挑一群互不相识的人。任意图里总能挑出约 n/(d+1) 个（d 是平均熟人数）；但如果全场不存在 4 个两两都认识的人，能挑的其实多得多——多出一个对数因子。论文证明了 1981 年 Ajtai–Erdős–Komlós–Szemerédi 猜想：无团图的独立集至少有 c_r·n·log d/d 个，并去掉了此前最佳界中残留的 log log d 损失。
+
+**关键词卡片**
+
+- 独立集（independent set）：图中两两不相邻的顶点集合，即"互不相识小组"
+- 无团图（clique-free / K_r-free）：不含 r 个两两相邻顶点的图；被禁的团越大，条件越弱
+- 平均度（average degree）：顶点平均邻居数 d，衡量图的稀疏程度
+- 对数改进（logarithmic improvement）：比平凡的 n/d 多一个 log d 因子；对无三角形图这已是最好可能的阶
+
+**看个具体例子**
+
+数字版定理（n=10^6 个顶点、平均度 d=100、无 K₄）：
+
+`@@M@@\alpha(G)\ \ge\ c_4\cdot\frac{10^6\cdot\ln 100}{100}\ \approx\ 46000\,c_4@@`
+
+而平凡保证只有 n/(d+1) ≈ 9901 个——禁团带来的额外收益恰是 ln 100 ≈ 4.6 倍。此前最好结果（Shearer 1995）还带着 log log d 的分母损失，本文彻底去掉它，n·log d/d 这一阶即使对无三角形图也已最优。
+
+**为什么值得关心**
+
+独立集大小直接关系到染色、装箱与网络问题；它还是同族对应染色论文的方法源头（乘子构造与熵-分裂技术），并且是结果族中已获机器验证的基石。
+
+> 已 Lean 形式化
+
 ## 一句话结论
 
 论文证明：对每个固定 `@@M@@r\ge 4@@`，任何 `@@M@@n@@` 个顶点、平均度 `@@M@@d\ge 2@@` 的 `@@M@@K_r@@`-free 图都含有大小至少 `@@M@@c_r\,n\log d/d@@` 的独立集 (independent set)，从而解决了 Ajtai–Erdős–Komlós–Szemerédi 1981 年猜想（Erdős 问题 802），并去掉此前最佳界中残留的 `@@M@@\log\log d@@` 损失。

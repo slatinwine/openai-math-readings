@@ -13,6 +13,35 @@ pdfname: ""
 
 > 结果族 133：The computational complexity of Weisfeiler–Leman refinement　·　学科：Theoretical computer science　·　验证状态：暂无形式化证明，请以社区核验为准
 
+## 入门导读 🐣
+
+比较两张图是否同构，有个经典流程叫 WL 细化：给顶点组反复"染颜色、对答案"，颜色统计始终相同就分不出这两张图。本文把"两张图在 `@@M@@k@@` 维对话里打平"精确编码成一道填表题：构造出的图对等价，当且仅当填表题无解；并由此推出，在 3-SAT 需要指数时间的假设下，判定 `@@M@@k@@`-WL 等价没有快于 `@@M@@n^{ck}@@` 的算法。
+
+**关键词卡片**
+
+- Weisfeiler–Leman 细化（Weisfeiler–Leman refinement）：对顶点元组反复重着色并比较两图颜色直方图的流程。
+- `@@M@@k@@`-WL 等价（`@@M@@k@@`-WL equivalence）：`@@M@@k@@` 维对话完全分不出两张图。
+- 选择系统（choice system）：若干有限"格子"，每对格子间有标签约束；从每格挑一个值使所有两两标签吻合即算成功。
+- 正率指数时间假设（positive exponential-rate ETH）：3-SAT 本质需要指数时间一类的前提。
+
+**看个具体例子**
+
+玩具版选择系统：三格 `@@M@@D_1=D_2=D_3=\{0,1\}@@`，约束为 `@@M@@d_1=d_2@@`、`@@M@@d_2=d_3@@`、`@@M@@d_1\neq d_3@@`。
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280"><text x="280" y="26" text-anchor="middle" font-size="15" fill="#333">玩具选择系统：三格各挑 0 或 1，两两约束要同时满足</text><rect x="140" y="44" width="110" height="44" rx="8" fill="#eef" stroke="#345"/><text x="195" y="72" text-anchor="middle" font-size="14" fill="#123">D₁ = {0,1}</text><rect x="40" y="190" width="110" height="44" rx="8" fill="#eef" stroke="#345"/><text x="95" y="218" text-anchor="middle" font-size="14" fill="#123">D₂ = {0,1}</text><rect x="330" y="190" width="110" height="44" rx="8" fill="#eef" stroke="#345"/><text x="385" y="218" text-anchor="middle" font-size="14" fill="#123">D₃ = {0,1}</text><line x1="170" y1="88" x2="112" y2="188" stroke="#345" stroke-width="2"/><text x="100" y="140" font-size="14" fill="#345">d₁=d₂</text><line x1="152" y1="212" x2="328" y2="212" stroke="#345" stroke-width="2"/><text x="240" y="204" text-anchor="middle" font-size="14" fill="#345">d₂=d₃</text><line x1="358" y1="188" x2="228" y2="88" stroke="#d62728" stroke-width="2"/><text x="322" y="140" font-size="14" fill="#d62728">d₁≠d₃</text><text x="215" y="162" text-anchor="middle" font-size="15" fill="#d62728">矛盾 ⇒ 无成功选择 ✗</text><text x="280" y="262" text-anchor="middle" font-size="13" fill="#666">主定理：无成功选择 ⇔ 构造出的两张图 k-WL 等价（真实构造用 t=k+1 格）。</text></svg>
+
+</div>
+
+绕一圈就矛盾，无成功选择——对应的图对 `@@M@@X_0\equiv_k X_\star@@`（真实构造取 `@@M@@t=k+1@@` 格；若有成功选择，两轮内直方图就分开）。把 3-SAT 实例也编码成选择系统后，"快速判定等价"就会顺带快速解 3-SAT。结论：正率 ETH 下存在常数 `@@M@@c>0@@`，使每个固定 `@@M@@k\ge4@@` 都没有 `@@M@@O(n^{ck})@@` 时间的确定性判定算法——哪怕只比较两轮后的直方图。
+
+**为什么值得关心**
+
+它把"维数 `@@M@@k@@` 带来的难度"从细化流程本身推进到最终判定问题，实现了 Lichter–Raßmann–Schweitzer 猜想的条件版本。
+
+> 暂无形式化证明（AI 结果待核验）
+
 ## 一句话结论
 对每个固定 `@@M@@k\ge 4@@`，本文构造两张无色简单图，使 `@@M@@k@@` 维 Weisfeiler–Leman 等价当且仅当一个给定的有限域"选择系统"没有兼容选择；结合稀疏化，在正率 ETH 下推出判定 `@@M@@k@@`-WL 等价没有 `@@M@@O(n^{ck})@@` 时间的确定性算法，且难度在两轮迭代之内已经出现。
 

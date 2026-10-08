@@ -13,6 +13,48 @@ pdfname: ""
 
 > 结果族 267：Positive-temperature Bose–Einstein condensation and exact quantum depletion　·　学科：Mathematical physics　·　验证状态：暂无形式化证明，请以社区核验为准
 
+## 入门导读 🐣
+
+想象往一座不停扩建的体育馆里，按固定密度撒进越来越稀薄的氦原子，再微微加热。这篇论文证明：只要气体足够稀，不管馆有多大、温度在"零到密度平方"之间怎么取，总有固定比例的原子齐唱同一首歌——集体安顿在最平缓的那个量子态里，而且这个比例有一个不随密度、温度走低的保底数。
+
+**关键词卡片**
+
+- 玻色–爱因斯坦凝聚（Bose–Einstein condensation）：一大群全同粒子宏观地挤进同一个量子态
+- 凝聚分数（condensate fraction）：处在共同态里的粒子占总数的比例
+- 常数轨道（constant orbital）：盒子内波幅处处相等的最平坦波函数，凝聚的目的地
+- 热力学极限（thermodynamic limit）：体积与粒子数按固定密度同步趋于无穷
+- Feynman–Kac 公式（Feynman–Kac formula）：把量子配分函数翻译成随机路径加权平均的桥梁
+
+**看个具体例子**
+
+固定一个径向排斥势 v（比如小球形势阱），取密度 ρ=10⁻⁶、温度 T=10⁻¹²（恰为 ρ²）。定理说：只要盒子边长 L 足够大，落在常数轨道上的粒子占比至少是某个 c*(v)>0；换成 ρ=10⁻⁷、温度更低，这个保底数纹丝不动。下图里抛物线 T=ρ² 下方的整片"稀薄低温区"，处处适用同一张保单。
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280">
+<path d="M 70 230 Q 330 140 430 70 L 430 230 Z" fill="#e8f0fa" stroke="none"/>
+<line x1="70" y1="230" x2="510" y2="230" stroke="#333" stroke-width="2"/>
+<line x1="70" y1="230" x2="70" y2="35" stroke="#333" stroke-width="2"/>
+<path d="M 70 230 Q 330 140 430 70" fill="none" stroke="#c0392b" stroke-width="2.5"/>
+<line x1="430" y1="230" x2="430" y2="236" stroke="#333" stroke-width="2"/>
+<text x="402" y="252" font-size="13" fill="#333">ρ*(v)</text>
+<text x="460" y="252" font-size="14" fill="#333">密度 ρ</text>
+<text x="14" y="50" font-size="14" fill="#333">温度 T</text>
+<text x="362" y="98" font-size="14" fill="#c0392b">T = ρ²</text>
+<text x="166" y="206" font-size="14" fill="#23527c">0 ≤ T ≤ ρ² 且 ρ &lt; ρ*(v)</text>
+<text x="172" y="224" font-size="14" fill="#23527c">处处凝聚分数 ≥ c*(v)</text>
+<line x1="250" y1="48" x2="440" y2="48" stroke="#c0392b" stroke-width="2.5"/>
+<text x="250" y="34" font-size="13" fill="#333">常数轨道 u₀：波幅处处等高</text>
+</svg>
+
+</div>
+
+**为什么值得关心**
+
+相互作用不随粒子数缩放、密度与温度先固定再让体积趋于无穷——这是最贴近实验的设定；而在此框架下，对整段稀薄区间一致的正温凝聚下界此前并无定理，本文补上了这个多年的缺口。
+
+> 暂无形式化证明（AI 结果待核验）
+
 ## 一句话结论
 
 对三维中任一固定的有界、径向、有限力程非负势 `@@M@@v@@`，论文证明稀薄玻色气体正则吉布斯态的常数轨道凝聚分数（condensate fraction）有统一正常数下界 `@@M@@c_*(v)@@`：它对所有足够小的密度及一切 `@@M@@0\le T\le\rho^2@@` 的温度一致成立。这是在固定势、固定密度的热力学极限框架下，对整段稀薄区间一致的正温凝聚结果。

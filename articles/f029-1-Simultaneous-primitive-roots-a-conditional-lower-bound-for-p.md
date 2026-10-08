@@ -13,6 +13,33 @@ pdfname: ""
 
 > 结果族 029：Primitive roots for every admissible integer base　·　学科：数论（Number theory）　·　验证状态：暂无形式化证明，请以社区核验为准
 
+## 入门导读 🐣
+
+上一篇说：随便指一个整数（比如 2），就有无穷多张素数"钟面"请它当发令员。这一篇再进一步：随便指一组整数（比如 2 和 3，甚至 2、3、5、7），存在无穷多张钟面让这组人同时当发令员。注意这是条件性结果：只要姊妹篇的四个技术声明成立，结论就成立。
+
+**关键词卡片**
+
+- 联立原根（simultaneous primitive roots）：多个基数在同一个素数 p 下同时都是原根。
+- 条件结果（conditional result）：依赖显式列出假设的定理——此处假设姊妹篇的四个解析与筛法输入。
+- 二次非剩余（quadratic nonresidue）：在模 p 意义下不是任何数的平方；证明用中国剩余定理一次让所有基数变成非剩余。
+- Kummer 扩域（Kummer extension）：添加 q 的 λ 次根得到的数域，用于识别并排除"坏素数"。
+
+**看个具体例子**
+
+最小样本 p = 5：2 的幂走出 1→2→4→3→1，3 的幂走出 1→3→4→2→1，两条路线都跑遍全部四个非零刻度，所以 2 和 3 同时是模 5 的原根。主定理说这样的素数有无穷多：在四个假设下，区间 (x, 2x) 内至少有 c·x/(ln x)² 个素数让指定的一组素数基数同时当原根。
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280"><line x1="30" y1="28" x2="72" y2="28" stroke="#333" stroke-width="3"/><text x="78" y="33" font-size="13" fill="#333">2 的幂（顺时针）</text><line x1="30" y1="50" x2="72" y2="50" stroke="#c0392b" stroke-width="2.5" stroke-dasharray="6 4"/><text x="78" y="55" font-size="13" fill="#c0392b">3 的幂（逆时针）</text><line x1="289" y1="53" x2="360" y2="124" stroke="#333" stroke-width="3"/><polygon points="367,131 357.5,126.5 362.5,121.5" fill="#333"/><line x1="367" y1="149" x2="296" y2="220" stroke="#333" stroke-width="3"/><polygon points="289,227 298.5,222.5 293.5,217.5" fill="#333"/><line x1="271" y1="227" x2="200" y2="156" stroke="#333" stroke-width="3"/><polygon points="193,149 202.5,153.5 197.5,158.5" fill="#333"/><line x1="193" y1="131" x2="264" y2="60" stroke="#333" stroke-width="3"/><polygon points="271,53 266.5,62.5 261.5,57.5" fill="#333"/><line x1="276" y1="93" x2="241" y2="128" stroke="#c0392b" stroke-width="2.5" stroke-dasharray="6 4"/><polygon points="232,136 240,132 236,126" fill="#c0392b"/><line x1="232" y1="144" x2="266" y2="178" stroke="#c0392b" stroke-width="2.5" stroke-dasharray="6 4"/><polygon points="272,184 267,179 263,175" fill="#c0392b"/><line x1="284" y1="188" x2="318" y2="154" stroke="#c0392b" stroke-width="2.5" stroke-dasharray="6 4"/><polygon points="324,148 319,157 315,153" fill="#c0392b"/><line x1="328" y1="136" x2="294" y2="102" stroke="#c0392b" stroke-width="2.5" stroke-dasharray="6 4"/><polygon points="288,96 297,101 293,105" fill="#c0392b"/><circle cx="280" cy="68" r="13" fill="#fff" stroke="#333" stroke-width="2"/><text x="280" y="73" font-size="14" text-anchor="middle" fill="#333">1</text><circle cx="352" cy="140" r="13" fill="#fff" stroke="#333" stroke-width="2"/><text x="352" y="145" font-size="14" text-anchor="middle" fill="#333">2</text><circle cx="280" cy="212" r="13" fill="#fff" stroke="#333" stroke-width="2"/><text x="280" y="217" font-size="14" text-anchor="middle" fill="#333">4</text><circle cx="208" cy="140" r="13" fill="#fff" stroke="#333" stroke-width="2"/><text x="208" y="145" font-size="14" text-anchor="middle" fill="#333">3</text><text x="280" y="262" font-size="14" text-anchor="middle" fill="#333">两条环都走遍 1、2、3、4 → 2 与 3 同为模 5 的原根</text></svg>
+
+</div>
+
+**为什么值得关心**
+
+此前无条件只能保证"任取三个素数基数至少一个成立"；本文（在假设下）给出指认式的联立版本，证明"先建素数库、再逐基排除"这条路线可以推广。
+
+> 暂无形式化证明（AI 结果待核验）
+
 ## 一句话结论
 在把姊妹篇的四个解析与筛法陈述列为显式假设后，论文证明：任意固定有限个互异正素数 `@@M@@q_1,\dots,q_k@@` 可同时充当 `@@M@@\gg x/(\log x)^2@@` 个素数 `@@M@@p\in(x,2x)@@` 的原根，是 Artin 单基猜想的无条件路线向联立版本的条件性推广。
 

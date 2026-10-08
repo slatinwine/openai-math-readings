@@ -13,6 +13,36 @@ pdfname: ""
 
 > 结果族 140：Memory–sample lower bounds for noiseless Gaussian regression　·　学科：Theoretical computer science　·　验证状态：主结果已 Lean 形式化
 
+## 入门导读 🐣
+
+你用第一批顾客的评价挑出了想收藏的评论，然后反复研究这批"被选中的"评价——它们天生带着幸存者偏差；若换成一批全新的顾客，结论会差多少？这篇论文证明：差价极小，至多 `@@M@@O(d)@@`。这条"换新对比定理"直接锁死了小内存学习器的样本需求。
+
+**关键词卡片**
+
+- 条件互信息（conditional mutual information）：在已知辅助数据的前提下，消息还额外泄露多少信号情报
+- 自适应偏差（adaptivity bias）：用"帮着做选择的那批数据"自己证明自己，必然有偏
+- 熵（entropy）：消息有多少种可能取值，本文允许它大到 `@@M@@d^2@@`
+- 临界半径（critical radius）：在每个点上找到信息最"浓缩"的尺度，让新旧两侧的偏差恰好对消
+- 信息位势（information potential）：`@@M@@J(U)=I(S;U\mid G,GS)@@`，随观测块数线性增长，却被成功输出逼出下界
+
+**看个具体例子**
+
+比较两个实验：左边让"旧数据"参与挑选消息，右边换成全新独立数据——
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280"><rect x="25" y="55" width="225" height="170" fill="#f6f8fa" stroke="#333" stroke-width="2"/><rect x="310" y="55" width="225" height="170" fill="#f6f8fa" stroke="#333" stroke-width="2"/><text x="137" y="45" font-size="14" fill="#333" text-anchor="middle">对齐实验（旧数据）</text><text x="422" y="45" font-size="14" fill="#333" text-anchor="middle">独立实验（全新数据）</text><rect x="52" y="72" width="170" height="26" fill="#fff" stroke="#c0392b"/><text x="137" y="90" font-size="13" fill="#333" text-anchor="middle">信号 S（球面均匀）</text><rect x="52" y="118" width="170" height="26" fill="#fff" stroke="#333"/><text x="137" y="136" font-size="13" fill="#333" text-anchor="middle">旧高斯行 A 参与挑选</text><rect x="52" y="164" width="170" height="26" fill="#fff" stroke="#333"/><text x="137" y="182" font-size="13" fill="#333" text-anchor="middle">消息 W（熵 ≤ d²）</text><line x1="137" y1="98" x2="137" y2="118" stroke="#333" stroke-width="2"/><line x1="137" y1="144" x2="137" y2="164" stroke="#333" stroke-width="2"/><rect x="337" y="72" width="170" height="26" fill="#fff" stroke="#c0392b"/><text x="422" y="90" font-size="13" fill="#333" text-anchor="middle">信号 S（同一分布）</text><rect x="337" y="118" width="170" height="26" fill="#fff" stroke="#333"/><text x="422" y="136" font-size="13" fill="#333" text-anchor="middle">全新独立行 G</text><rect x="337" y="164" width="170" height="26" fill="#fff" stroke="#333"/><text x="422" y="182" font-size="13" fill="#333" text-anchor="middle">同一消息 W 的信息</text><line x1="422" y1="98" x2="422" y2="118" stroke="#333" stroke-width="2"/><line x1="422" y1="144" x2="422" y2="164" stroke="#333" stroke-width="2"/><text x="280" y="110" font-size="13" fill="#c0392b" text-anchor="middle">信息差</text><text x="280" y="130" font-size="13" fill="#c0392b" text-anchor="middle">≤ K·d</text><text x="280" y="250" font-size="13" fill="#333" text-anchor="middle">两个实验的剩余信息之差 ≤ K·d：d=1000 时只差约 1000K nats</text></svg>
+
+</div>
+
+差价是 `@@M@@Kd@@`，而达到角精度 `@@M@@\epsilon@@` 所需的信息约 `@@M@@c\,d\log(1/\epsilon)@@`（`@@M@@d=1000@@`、`@@M@@\epsilon=10^{-6}@@` 时约 `@@M@@13800\,c@@` nats）——差价只占零头。于是每消化一块（`@@M@@d/10@@` 条）观测，净信息至多涨 `@@M@@Kd@@`，逼出 `@@M@@T=\Omega(d\log(1/\epsilon))@@`。记账方式很直观：把"还剩多少不知道"当成水位，每块观测后水位至多升一格固定的 `@@M@@Kd@@`，而成功输出要求水位灌到 `@@M@@c\,d\log(1/\epsilon)@@` 那么高，块数不够就注定灌不满。
+
+**为什么值得关心**
+
+它把"选择偏差要付多少信息代价"从哲学疑问变成了带绝对常数的定理，并以此为小内存学习器钉死了样本下界。
+
+> 已 Lean 形式化
+
 ## 一句话结论
 
 本文证明"换行比较定理"：把参与挑选有限消息的高斯行整体换成全新独立行，关于信号的剩余条件互信息至多增加 `@@M@@Cd@@`；据此推出 `@@M@@o(d^2)@@` 比特记忆的学习器达到 `@@M@@3/5@@` 成功率、角精度 `@@M@@0<\epsilon\le1/10@@` 需要 `@@M@@\Omega(d\log(1/\epsilon))@@` 个精确观测。

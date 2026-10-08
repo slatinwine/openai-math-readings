@@ -13,6 +13,34 @@ pdfname: ""
 
 > 结果族 125：The metric `@@M@@k@@`-median approximation threshold and recovery　·　学科：Theoretical computer science　·　验证状态：主结果已 Lean 形式化
 
+## 入门导读 🐣
+
+在一条长街上开连锁店:从候选地址里挑至多 `@@M@@k@@` 家,让每位顾客走到最近门店的总路程最短——这就是 `@@M@@k@@`-中值。老方法的通病是:要么偷偷多开店,要么总路程压不进"最优的两倍"。这篇论文打磨出两件新工具,第一次让一个"绝不多开一家店"的随机算法把总路程做到严格优于 2 倍最优。
+
+**关键词卡片**
+
+- 度量 `@@M@@k@@`-中值(metric k-median):选至多 `@@M@@k@@` 个设施,最小化所有客户到最近设施的距离总和。
+- 近似比(approximation factor):算法答案与最优答案之比的保证上界。
+- 锚点(anchor):一份现成的"草稿解";表现好的簇各有门店替身(代理 proxy),表现差的坏簇要修。
+- 恢复(recovery):从草稿解出发、修好所有坏簇且不超预算的随机过程。
+- 有界价格严格性(bounded-price strictness):支付论证,保证算法花掉的"预算"严格少于对手,从而凿穿 2 倍的墙。
+
+**看个具体例子**
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280"><text x="280" y="22" text-anchor="middle" font-size="16" fill="#333">一条街上的顾客(●)与门店(★),预算 k = 3</text><text x="60" y="110" text-anchor="middle" font-size="15" fill="#8e44ad">草稿解</text><line x1="95" y1="105" x2="545" y2="105" stroke="#bbb" stroke-width="2"/><circle cx="110" cy="105" r="5" fill="#333"/><circle cx="130" cy="105" r="5" fill="#333"/><circle cx="150" cy="105" r="5" fill="#333"/><circle cx="290" cy="105" r="5" fill="#333"/><circle cx="310" cy="105" r="5" fill="#333"/><circle cx="490" cy="105" r="5" fill="#333"/><circle cx="510" cy="105" r="5" fill="#333"/><circle cx="530" cy="105" r="5" fill="#333"/><text x="110" y="90" text-anchor="middle" font-size="18" fill="#c0392b">★</text><text x="130" y="90" text-anchor="middle" font-size="18" fill="#c0392b">★</text><text x="310" y="90" text-anchor="middle" font-size="18" fill="#c0392b">★</text><text x="280" y="138" text-anchor="middle" font-size="14" fill="#c0392b">第 3 簇没人管:9+10+11=30,总路程 31</text><text x="60" y="210" text-anchor="middle" font-size="15" fill="#8e44ad">恢复后</text><line x1="95" y1="205" x2="545" y2="205" stroke="#bbb" stroke-width="2"/><circle cx="110" cy="205" r="5" fill="#333"/><circle cx="130" cy="205" r="5" fill="#333"/><circle cx="150" cy="205" r="5" fill="#333"/><circle cx="290" cy="205" r="5" fill="#333"/><circle cx="310" cy="205" r="5" fill="#333"/><circle cx="490" cy="205" r="5" fill="#333"/><circle cx="510" cy="205" r="5" fill="#333"/><circle cx="530" cy="205" r="5" fill="#333"/><text x="130" y="190" text-anchor="middle" font-size="18" fill="#c0392b">★</text><text x="310" y="190" text-anchor="middle" font-size="18" fill="#c0392b">★</text><text x="510" y="190" text-anchor="middle" font-size="18" fill="#c0392b">★</text><text x="110" y="226" text-anchor="middle" font-size="11" fill="#888">1</text><text x="130" y="226" text-anchor="middle" font-size="11" fill="#888">2</text><text x="150" y="226" text-anchor="middle" font-size="11" fill="#888">3</text><text x="290" y="226" text-anchor="middle" font-size="11" fill="#888">10</text><text x="310" y="226" text-anchor="middle" font-size="11" fill="#888">11</text><text x="490" y="226" text-anchor="middle" font-size="11" fill="#888">20</text><text x="510" y="226" text-anchor="middle" font-size="11" fill="#888">21</text><text x="530" y="226" text-anchor="middle" font-size="11" fill="#888">22</text><text x="280" y="248" text-anchor="middle" font-size="14" fill="#1e8449">每簇一家店:2+1+2,总路程 5(最优)</text><text x="280" y="272" text-anchor="middle" font-size="13" fill="#666">恢复:揪出没有代理门店的坏簇,把多余的店挪过去,预算仍 ≤ k</text></svg>
+
+</div>
+
+图中草稿解把两家店挤进第 1 簇、漏掉第 3 簇;恢复算法认出坏簇后重摆,总路程从 31 降到 5。主定理:在任意有限有理度量上,随机算法总是开至多 `@@M@@k@@` 家店,费用 `@@M@@\le(2-\sigma)\times@@`最优(`@@M@@\sigma>0@@` 为绝对常数),概率与期望意义下同时成立;修复过程的中间保证是 `@@M@@1+2/e+\varepsilon\approx1.736@@`。
+
+**为什么值得关心**
+
+`@@M@@k@@`-中值的近似比三十年来从 `@@M@@3+\varepsilon@@` 一路降到 `@@M@@2+\varepsilon@@`,但"严格小于 2 且绝不多开店"始终无人做到;本文跨过这条线,而且是本结果族中验证等级最高的一篇。
+
+> 已 Lean 形式化
+
 ## 一句话结论
 
 本文为度量 `@@M@@k@@`-中值（metric `@@M@@k@@`-median）问题打造两件工具：坏簇数仅为对数时仍可多项式完成的"锚点恢复"算法，以及对剩余构造一次相容执行的"有界价格严格性"支付论证；合并后首次在一般有理度量上得到严格小于 2 的随机 `@@M@@(2-\sigma)@@`-近似。

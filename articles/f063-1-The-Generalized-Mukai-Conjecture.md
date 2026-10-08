@@ -13,6 +13,51 @@ pdfname: ""
 
 > 结果族 063：The generalized Mukai conjecture　·　学科：Algebraic and complex geometry　·　验证状态：暂无形式化证明，请以社区核验为准
 
+## 入门导读 🐣
+
+Fano 流形是"处处正曲率"的高维空间，像吹足气的气球。它有两个天然参数：独立"旋钮"的个数（Picard 数 ρ），和最窄一条走廊的宽度（伪指数 ι）。Mukai 猜想说一条朴素的账目不等式：旋钮数乘以（宽度减一），不能超过房间的维数。本文在任意维数证明了它，并找出恰好"住满"的房型。
+
+**关键词卡片**
+
+- Fano 流形（Fano manifold）：反典范线丛丰富的光滑射影空间，正曲率的代数几何化身。
+- Picard 数 ρ（Picard number）：独立除子方向的个数，即"旋钮数"。
+- 伪指数 ι（pseudoindex）：有理曲线上反典范度的最小值，即最窄走廊的宽度。
+- 量子上同调（quantum cohomology）：把曲线计数编入乘法表的升级版上同调，本文证明的主力工具。
+
+**看个具体例子**
+
+把三条 `@@M@@P^1@@`（球面）相乘：`@@M@@P^1\times P^1\times P^1@@` 是三维 Fano 流形，`@@M@@\rho=3@@`、`@@M@@\iota=2@@`，于是 `@@M@@\rho(\iota-1)=3\times1=3=n@@`，恰好取等——它正是定理判定的"等号房型" `@@M@@\rho@@` 个 `@@M@@P^{\iota-1}@@` 的乘积。再如 `@@M@@P^2\times P^2@@`：`@@M@@\rho=2@@`、`@@M@@\iota=3@@`，`@@M@@2\times2=4=n@@` 同样取等。而三次三维超曲面 `@@M@@\rho=1@@`、`@@M@@\iota=2@@`，得 `@@M@@1<3@@`，只能严格不等。再看"单间"射影空间 `@@M@@P^n@@`：`@@M@@\rho=1@@`、`@@M@@\iota=n+1@@`，同样 `@@M@@1\times n=n@@` 取等。不等式的直觉是：旋钮每多一个，最窄的走廊就必须整体收窄一截，二者此消彼长，总数被维数封顶。
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280">
+  <text x="240" y="40" text-anchor="middle" font-size="16" fill="#204060">三个 P¹ 相乘＝最典型的取等例子</text>
+  <circle cx="70" cy="150" r="40" fill="#eaf2fb" stroke="#35618f" stroke-width="2"/>
+  <text x="70" y="156" text-anchor="middle" font-size="15" fill="#204060">P¹</text>
+  <text x="122" y="158" text-anchor="middle" font-size="22" fill="#333333">×</text>
+  <circle cx="175" cy="150" r="40" fill="#eaf2fb" stroke="#35618f" stroke-width="2"/>
+  <text x="175" y="156" text-anchor="middle" font-size="15" fill="#204060">P¹</text>
+  <text x="227" y="158" text-anchor="middle" font-size="22" fill="#333333">×</text>
+  <circle cx="280" cy="150" r="40" fill="#eaf2fb" stroke="#35618f" stroke-width="2"/>
+  <text x="280" y="156" text-anchor="middle" font-size="15" fill="#204060">P¹</text>
+  <line x1="328" y1="150" x2="356" y2="150" stroke="#333333" stroke-width="2"/>
+  <polygon points="356,150 346,145 346,155" fill="#333333"/>
+  <rect x="362" y="85" width="182" height="132" rx="12" fill="#fdf6ec" stroke="#8a4b00" stroke-width="2"/>
+  <text x="453" y="115" text-anchor="middle" font-size="15" fill="#6b3a00">P¹×P¹×P¹</text>
+  <text x="453" y="143" text-anchor="middle" font-size="14" fill="#6b3a00">维数 n=3</text>
+  <text x="453" y="167" text-anchor="middle" font-size="14" fill="#6b3a00">ρ=3，ι=2</text>
+  <text x="453" y="195" text-anchor="middle" font-size="14" fill="#6b3a00">3×(2−1)=3=n</text>
+  <text x="280" y="252" text-anchor="middle" font-size="15" fill="#204060">定理：ρ(ι−1)≤n 恒成立，等号房型恰为 ρ 个 P^(ι−1) 的乘积</text>
+</svg>
+
+</div>
+
+**为什么值得关心**
+
+一个不设任何附加假设的干净不等式，把正曲率空间的"旋钮与走廊"卡进乘积房型的框架，是 Fano 几何的基本刻度。
+
+> 暂无形式化证明（AI 结果待核验）
+
 ## 一句话结论
 
 论文在任意维数证明了广义 Mukai 猜想：`@@M@@n@@` 维光滑复 Fano 流形的 Picard 数 `@@M@@\rho@@` 与伪指数 `@@M@@\iota@@` 必满足 `@@M@@\rho(\iota-1)\le n@@`，等号恰在 `@@M@@X\cong(\mathbb P^{\iota-1})^{\rho}@@` 时成立，无任何附加几何假设。

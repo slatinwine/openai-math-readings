@@ -13,6 +13,48 @@ pdfname: ""
 
 > 结果族 285：Counterexamples to Baum–Connes and Kadison–Kaplansky　·　学科：Operator algebras　·　验证状态：暂无形式化证明，请以社区核验为准
 
+## 入门导读 🐣
+
+每个群都有两份档案：一份记它的"形状"（拓扑），一份记它生成的算子代数（分析）。两者之间有一座标准桥梁，叫装配映射；著名的 Baum–Connes 猜想断言这座桥不丢信息。本文造出一个有限生成、无挠的群：一块拓扑侧的无限阶"石块"过桥后竟消失得无影无踪——桥确实会丢东西。
+
+**关键词卡片**
+
+- 装配映射（assembly map）：从拓扑侧 K-同调通往算子代数 K-理论的桥
+- 约化群 C*-代数（reduced group C*-algebra）：群左正则表示打包成的算子代数
+- K-理论（K-theory）：给空间或代数记"账"的不变量
+- 无挠群（torsion-free）：没有有限阶元素的群
+- Bott 生成元（Bott generator）：环面 K-理论里的基本"计量块"
+
+**看个具体例子**
+
+石块来自大家熟悉的环面 `@@M@@T^2@@`：其自旋 Dirac 类 `@@M@@[D_{T^2}]@@` 经嵌入映射推入大群 `@@M@@G_{\mathrm{inj}}@@` 的拓扑侧，记作 `@@M@@h@@`。
+
+公式卡（数字版定理）：`@@M@@\langle(Bi)^*c,[T^2]\rangle=1@@`（配对等于 1，保证 `@@M@@h@@` 是无限阶元素），但 `@@M@@\mu^r_{G_{\mathrm{inj}}}(h)=0@@`——同一块石块，拓扑侧非零无限阶，过桥后归零。
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280">
+  <line x1="20" y1="185" x2="170" y2="185" stroke="#000" stroke-width="4"/>
+  <line x1="390" y1="185" x2="540" y2="185" stroke="#000" stroke-width="4"/>
+  <path d="M170 178 Q 280 70 390 178" fill="none" stroke="#333" stroke-width="2"/>
+  <rect x="72" y="147" width="34" height="34" fill="none" stroke="#000" stroke-width="2"/>
+  <text x="40" y="136" font-size="13" fill="#000">h：无限阶</text>
+  <rect x="452" y="147" width="34" height="34" fill="none" stroke="#c00" stroke-width="2" stroke-dasharray="5,4"/>
+  <text x="432" y="136" font-size="13" fill="#c00">μ(h) = 0</text>
+  <text x="238" y="88" font-size="13" fill="#333">装配映射 μ</text>
+  <text x="52" y="212" font-size="13" fill="#000">拓扑侧 K(BG)</text>
+  <text x="420" y="212" font-size="13" fill="#000">分析侧 K(C_r^*(G))</text>
+  <text x="103" y="252" font-size="13" fill="#000">同一块石块 h：过桥前无限阶，过桥后归零</text>
+</svg>
+
+</div>
+
+**为什么值得关心**
+
+这是首个"无系数、无挠群"情形的反例，动摇了 Baum–Connes 猜想最核心的版本；但注意经典 Novikov 猜想与最大装配版本并未被推翻。
+
+> 暂无形式化证明（AI 结果待核验）
+
 ## 一句话结论
 
 本文构造了一个有限生成无挠群 `@@M@@G_{\mathrm{inj}}@@`：环面 Dirac 类 `@@M@@(Bi)_*[D_{T^2}]@@` 在拓扑侧是无限阶元素，经约化 Baum–Connes 装配映射（assembly map）后却变成零。这个无限阶核类推翻了无挠群、无系数情形约化 Baum–Connes 猜想的有理单射性。

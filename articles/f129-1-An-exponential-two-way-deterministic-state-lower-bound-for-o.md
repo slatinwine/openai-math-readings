@@ -13,6 +13,35 @@ pdfname: ""
 
 > 结果族 129：Exponential state costs for two-way automata　·　学科：Theoretical computer science　·　验证状态：主结果已 Lean 形式化
 
+## 入门导读 🐣
+
+想象一个多层迷宫：从第 1 层的某个门出发，沿"允许的跳转"一路走到最后一层就算赢。会"猜路"的读者（非确定自动机）只需 `@@M@@h+3@@` 张便签就能应付层数为 `@@M@@h@@` 的这类题；而每步只有一种走法、虽然可以来回翻页重看的读者（双向确定自动机），便签数量必须随 `@@M@@h@@` 指数增长——这正是 1978 年 Sakoda–Sipser 状态简洁性问题第一个完全不受限的指数答案。
+
+**关键词卡片**
+
+- 双向确定自动机（two-way deterministic automaton）：读头可左右移动、每步走法唯一的识别器，状态数就是它的"便签"数。
+- 非确定自动机（nondeterministic automaton）：每步可同时"猜"多条走法的识别器，猜中一条即算接受。
+- 单向活性（one-way liveness）：给一串二元关系（层与层之间允许的跳转），问是否存在一条贯通路径。
+- 状态数下界（state lower bound）：证明任何等价的确定机器至少需要多少状态。
+
+**看个具体例子**
+
+把 4 层、每层 3 个点的关系串画出来：只要存在一条从左到右的贯通路径（红线），这个字就被接受。
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280"><text x="280" y="26" text-anchor="middle" font-size="16" fill="#333">单向活性：一串关系层里有没有一条贯通的路？</text><line x1="80" y1="90" x2="220" y2="90" stroke="#bbb" stroke-width="2"/><line x1="80" y1="90" x2="220" y2="150" stroke="#bbb" stroke-width="2"/><line x1="80" y1="210" x2="220" y2="150" stroke="#bbb" stroke-width="2"/><line x1="220" y1="90" x2="360" y2="90" stroke="#bbb" stroke-width="2"/><line x1="220" y1="210" x2="360" y2="90" stroke="#bbb" stroke-width="2"/><line x1="220" y1="150" x2="360" y2="210" stroke="#bbb" stroke-width="2"/><line x1="360" y1="90" x2="500" y2="90" stroke="#bbb" stroke-width="2"/><line x1="360" y1="90" x2="500" y2="150" stroke="#bbb" stroke-width="2"/><line x1="360" y1="210" x2="500" y2="150" stroke="#bbb" stroke-width="2"/><line x1="80" y1="210" x2="220" y2="150" stroke="#d62728" stroke-width="4"/><line x1="220" y1="150" x2="360" y2="210" stroke="#d62728" stroke-width="4"/><line x1="360" y1="210" x2="500" y2="150" stroke="#d62728" stroke-width="4"/><circle cx="80" cy="90" r="8" fill="#fff" stroke="#345" stroke-width="1.5"/><circle cx="80" cy="150" r="8" fill="#fff" stroke="#345" stroke-width="1.5"/><circle cx="80" cy="210" r="8" fill="#fdd" stroke="#345" stroke-width="1.5"/><circle cx="220" cy="90" r="8" fill="#fff" stroke="#345" stroke-width="1.5"/><circle cx="220" cy="150" r="8" fill="#fdd" stroke="#345" stroke-width="1.5"/><circle cx="220" cy="210" r="8" fill="#fff" stroke="#345" stroke-width="1.5"/><circle cx="360" cy="90" r="8" fill="#fff" stroke="#345" stroke-width="1.5"/><circle cx="360" cy="150" r="8" fill="#fff" stroke="#345" stroke-width="1.5"/><circle cx="360" cy="210" r="8" fill="#fdd" stroke="#345" stroke-width="1.5"/><circle cx="500" cy="90" r="8" fill="#fff" stroke="#345" stroke-width="1.5"/><circle cx="500" cy="150" r="8" fill="#fdd" stroke="#345" stroke-width="1.5"/><circle cx="500" cy="210" r="8" fill="#fff" stroke="#345" stroke-width="1.5"/><text x="80" y="248" text-anchor="middle" font-size="14" fill="#555">第 1 层</text><text x="220" y="248" text-anchor="middle" font-size="14" fill="#555">第 2 层</text><text x="360" y="248" text-anchor="middle" font-size="14" fill="#555">第 3 层</text><text x="500" y="248" text-anchor="middle" font-size="14" fill="#555">第 4 层</text><text x="280" y="274" text-anchor="middle" font-size="13" fill="#777">灰线：关系允许的跳转；红线：一条"活"路径 ⇒ 接受</text></svg>
+
+</div>
+
+非确定机沿红线"猜"着走，只要 `@@M@@h+3@@` 个状态；论文证明任何等价的双向确定机状态数 `@@M@@s@@` 必须满足 `@@M@@4(s+2)^2\ge 2^{\lfloor (h-2)/31\rfloor}@@`：`@@M@@h@@` 每加 31，需求就翻倍。代入 `@@M@@h=1862@@`：非确定机用 1865 个状态，确定机却至少要 `@@M@@2^{29}-2\approx 5.4@@` 亿个。字母表随 `@@M@@h@@` 增长（全部 `@@M@@h\times h@@` 二元关系），故结论是：不存在与字母表无关的多项式确定化模拟。
+
+**为什么值得关心**
+
+非确定性到底"贵不贵"是自动机理论四十多年的核心悬案；本文证明在状态数量上它本质昂贵，允许读头来回移动也救不了确定机器。
+
+> 已 Lean 形式化
+
 ## 一句话结论
 
 论文在增长的有限字母表上解决了 Sakoda–Sipser 状态简洁性问题：单向活性语言有 `@@M@@h+3@@` 状态、不用左移的非确定自动机，而任何等价的 `@@M@@s@@` 状态双向确定自动机满足 `@@M@@4(s+2)^2\ge2^{\lfloor(h-2)/31\rfloor}@@`，指数下界排除了与字母表无关的多项式确定化模拟。

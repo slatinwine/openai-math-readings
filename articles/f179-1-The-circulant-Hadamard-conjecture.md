@@ -13,6 +13,53 @@ pdfname: ""
 
 > 结果族 179：The circulant Hadamard and Barker-sequence conjectures　·　学科：Combinatorics　·　验证状态：主结果已 Lean 形式化
 
+## 入门导读 🐣
+
+一支仪仗队方阵，每人举 +1 或 −1 的牌子，要求任意两行牌子"对齐一半、错开一半"（数学上叫正交）。如果每一行都只是第一行整体向右挪一格（循环移位），这种方阵能有多大？答案悬置了六十多年，这篇论文给出终审：只有 1×1 和 4×4 两种，别无分店。此前最强的计算证据已把 4×10³⁰ 以内的候选阶排除到只剩 4489 个，但完整证明始终缺位，本文补上了最后一环。
+
+**关键词卡片**
+
+- Hadamard 矩阵（Hadamard matrix）：元素全为 ±1 且行两两正交的方阵，满足 `@@M@@HH^{\mathsf T}=nI@@`。
+- 循环矩阵（circulant matrix）：每行都由上一行循环移位一格得到。
+- 周期自相关（periodic autocorrelation）：序列与自身错位相乘再求和；正交等价于一切非零移位处取零。
+- Barker 序列（Barker sequence）：非周期自相关绝对值不超过 1 的 ±1 序列，雷达理想波形的数学化身。
+
+**看个具体例子**
+
+唯一的非平凡例子是 4 阶：首行 `@@M@@(1,1,1,-1)@@`，其余各行依次右移一格。下图黑格记 +1、白格记 −1，白格恰好排成一条反对角线；可直接验证 `@@M@@P_h(t)=0@@` 对一切 `@@M@@1\le t<4@@` 成立：两行正交意味着同号位置恰好占一半，比如错位一格相乘得 `@@M@@-1、+1、+1、-1@@`，正负相抵总和为零。主定理断言 n=1、4 之外再无可能，并顺带证明 Barker 序列只在长度 2, 3, 4, 5, 7, 11, 13 存在。
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280">
+<text x="280" y="34" fill="#555" font-size="14" text-anchor="middle">首行 (1, 1, 1, -1)，每行右移一格</text>
+<rect x="188" y="50" width="42" height="42" fill="#333" stroke="#333" stroke-width="1.5"/>
+<rect x="230" y="50" width="42" height="42" fill="#333" stroke="#333" stroke-width="1.5"/>
+<rect x="272" y="50" width="42" height="42" fill="#333" stroke="#333" stroke-width="1.5"/>
+<rect x="314" y="50" width="42" height="42" fill="#fff" stroke="#333" stroke-width="1.5"/>
+<rect x="188" y="92" width="42" height="42" fill="#fff" stroke="#333" stroke-width="1.5"/>
+<rect x="230" y="92" width="42" height="42" fill="#333" stroke="#333" stroke-width="1.5"/>
+<rect x="272" y="92" width="42" height="42" fill="#333" stroke="#333" stroke-width="1.5"/>
+<rect x="314" y="92" width="42" height="42" fill="#333" stroke="#333" stroke-width="1.5"/>
+<rect x="188" y="134" width="42" height="42" fill="#333" stroke="#333" stroke-width="1.5"/>
+<rect x="230" y="134" width="42" height="42" fill="#fff" stroke="#333" stroke-width="1.5"/>
+<rect x="272" y="134" width="42" height="42" fill="#333" stroke="#333" stroke-width="1.5"/>
+<rect x="314" y="134" width="42" height="42" fill="#333" stroke="#333" stroke-width="1.5"/>
+<rect x="188" y="176" width="42" height="42" fill="#333" stroke="#333" stroke-width="1.5"/>
+<rect x="230" y="176" width="42" height="42" fill="#333" stroke="#333" stroke-width="1.5"/>
+<rect x="272" y="176" width="42" height="42" fill="#fff" stroke="#333" stroke-width="1.5"/>
+<rect x="314" y="176" width="42" height="42" fill="#333" stroke="#333" stroke-width="1.5"/>
+<text x="280" y="246" fill="#555" font-size="13" text-anchor="middle">黑 = +1，白 = -1：白格恰排成一条反对角线</text>
+<text x="280" y="268" fill="#555" font-size="13" text-anchor="middle">任意两行正交：P_h(t) = 0（1 ≤ t < 4）</text>
+</svg>
+
+</div>
+
+**为什么值得关心**
+
+一篇论文同时终结两个六十余年的名题（循环 Hadamard 猜想与 Barker 序列猜想），且证明经机器核验，含金量极高。
+
+> 已 Lean 形式化
+
 ## 一句话结论
 
 本文证明了循环 Hadamard 矩阵猜想：实循环 Hadamard 矩阵（circulant Hadamard matrix）的阶只能是 `@@M@@1@@` 或 `@@M@@4@@`；并顺势证明 Barker 序列猜想——长度大于 `@@M@@1@@` 的 Barker 序列恰在 `@@M@@2,3,4,5,7,11,13@@` 七个长度存在，一举终结两个悬置六十余年的组合难题。

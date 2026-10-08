@@ -13,6 +13,34 @@ pdfname: ""
 
 > 结果族 272：Entanglement without distillable secret key　·　学科：Mathematical physics　·　验证状态：暂无形式化证明，请以社区核验为准
 
+## 入门导读 🐣
+
+Alice 和 Bob 共享一个神奇的"纠缠信封"。按直觉，纠缠是量子世界里最亲密的资源，总该能从中榨出一点保密通信的本钱。这篇论文构造出惊人反例：一个 10×10 维的纠缠态，无论双方联合处理多少份副本、公开通话多少轮，都提炼不出哪怕一个保密比特——窃听者永远能猜中一部分。
+
+**关键词卡片**
+
+- 纠缠态（entangled state）：无法拆成"双方各自状态之积"的量子关联态。
+- 可蒸馏秘密密钥（distillable secret key）：从共享态中提炼保密随机比特的最大速率。
+- 纯化态（purification）：窃听者 Eve 手里的"完整底牌"，与双方系统严格互补。
+- PPT 映射（PPT map）：部分转置后仍完全正的量子操作，一类"温和"的噪声通道。
+- 迹距离（trace distance）：衡量两个量子态差多远的标准尺子。
+
+**看个具体例子**
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280"><rect x="60" y="170" width="120" height="60" fill="none" stroke="#333" stroke-width="2"/><text x="88" y="205" font-size="16" fill="#333">Alice</text><rect x="380" y="170" width="120" height="60" fill="none" stroke="#333" stroke-width="2"/><text x="425" y="205" font-size="16" fill="#333">Bob</text><line x1="180" y1="200" x2="200" y2="200" stroke="#c0392b" stroke-width="2"/><line x1="360" y1="200" x2="380" y2="200" stroke="#c0392b" stroke-width="2"/><ellipse cx="280" cy="200" rx="80" ry="30" fill="none" stroke="#c0392b" stroke-width="2" stroke-dasharray="5 3"/><text x="236" y="206" font-size="14" fill="#c0392b">共享 ρ（纠缠）</text><rect x="220" y="30" width="120" height="55" fill="none" stroke="#333" stroke-width="2"/><text x="266" y="63" font-size="16" fill="#333">Eve</text><line x1="250" y1="85" x2="232" y2="168" stroke="#666" stroke-width="1.5" stroke-dasharray="4 3"/><line x1="310" y1="85" x2="328" y2="168" stroke="#666" stroke-width="1.5" stroke-dasharray="4 3"/><text x="50" y="125" font-size="13" fill="#666">持有纯化态</text><text x="368" y="125" font-size="13" fill="#666">读全部公开记录</text><text x="60" y="262" font-size="14" fill="#333">任意副本数 n ＋ 无限公开通信 ⇒ 仍榨不出保密比特</text></svg>
+
+</div>
+
+定理的数字版：对任意副本数 n 与文中许可的任意协议，输出与理想保密比特的距离满足 `@@M@@\lVert\tau-\tfrac12\sum_{i=0}^{1}|i,i\rangle\langle i,i|\otimes\sigma\rVert_1\ge\tfrac15@@`，即迹距离至少 1/10，且常数与副本数、通信量统统无关。同一构造还顺带否定了双映射 PPT 复合猜想与 PPT 信道平方猜想。
+
+**为什么值得关心**
+
+它回答了 2005 年开问题集第 24 问"是否所有纠缠态都能用于保密"：答案是未必——纠缠与保密可用性从此正式分家，量子信息论的地基被重新校准。
+
+> 暂无形式化证明（AI 结果待核验）
+
 ## 一句话结论
 
 在 `@@M@@\mathbb C^{10}\otimes\mathbb C^{10}@@` 上显式构造出一个纠缠态：即便双方可联合处理任意多份副本、进行无限双向认证公开通信，窃听者还持有体系纯化态与全部公开记录，其可蒸馏秘密密钥（distillable secret key）`@@M@@K_D@@` 仍严格为零，连一个近似保密比特都拿不到；同一构造还否定了双映射 PPT 复合猜想与 PPT 信道平方猜想。

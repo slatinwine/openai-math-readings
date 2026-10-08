@@ -13,6 +13,55 @@ pdfname: ""
 
 > 结果族 096：The Gaussian propeller conjecture in every dimension　·　学科：Convex and metric geometry　·　验证状态：主结果已 Lean 形式化
 
+## 入门导读 🐣
+
+往平面上撒一团雾：原点最浓、越远越稀，浓淡按钟形曲线（高斯）分布。现在随你把平面切成有限块——歪的、斜的都行——每块雾的"净漂移矢量"（块内所有位置按浓淡加权加总）先求长度平方，再把各块加起来，最大能到多少？论文证明上界是 `@@M@@9/(8\pi)\approx0.358@@`，而且最优切法就是三片张角 120° 的"螺旋桨"扇叶。
+
+**关键词卡片**
+
+- 高斯测度（Gaussian measure）：按钟形曲线分配质量的概率分布。
+- 一阶矩／质心（first moment / centroid）：块内位置按概率加权的总和；注意不除以质量。
+- 可测分割（measurable partition）：把空间分成有限个互不重叠的可测块。
+- 螺旋桨（propeller）：平面内张角 `@@M@@2\pi/3@@` 的三个扇形拼成的取等构型。
+
+**看个具体例子**
+
+极坐标一算，就能看到 `@@M@@9/(8\pi)@@` 从哪来：半张角 `@@M@@\alpha@@` 的扇形，质心长度恰为 `@@M@@\sin\alpha/\sqrt{2\pi}@@`。取 `@@M@@\alpha=\pi/3@@`：每叶质心长 `@@M@@\frac{\sqrt3/2}{\sqrt{2\pi}}\approx0.345@@`，平方为 `@@M@@\frac{3}{8\pi}@@`；三叶相加：`@@M@@3\cdot\frac{3}{8\pi}=\frac{9}{8\pi}\approx0.358@@`。当维数 `@@M@@d\ge2@@`、胞格数 `@@M@@\ge3@@` 时这已是最优常数；更高维无非把平面扇形再乘一个正交的欧氏因子，胞格数再多也占不到便宜。
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280">
+  <path d="M 278 148 L 373.3 93 A 110 110 0 0 0 182.7 93 Z" fill="#cfe8ff" stroke="#345" stroke-width="1.5"/>
+  <path d="M 278 148 L 182.7 93 A 110 110 0 0 0 278 258 Z" fill="#ffe3c1" stroke="#345" stroke-width="1.5"/>
+  <path d="M 278 148 L 278 258 A 110 110 0 0 0 373.3 93 Z" fill="#d8f0d0" stroke="#345" stroke-width="1.5"/>
+  <circle cx="262" cy="132" r="1.8" fill="#667"/>
+  <circle cx="296" cy="140" r="1.8" fill="#667"/>
+  <circle cx="272" cy="166" r="1.8" fill="#667"/>
+  <circle cx="256" cy="158" r="1.5" fill="#778"/>
+  <circle cx="290" cy="160" r="1.5" fill="#778"/>
+  <circle cx="246" cy="142" r="1.5" fill="#778"/>
+  <circle cx="278" cy="148" r="3" fill="#222"/>
+  <line x1="278" y1="148" x2="278" y2="92" stroke="#c00" stroke-width="2.5"/>
+  <path d="M 278 88 L 282 98 L 274 98 Z" fill="#c00"/>
+  <line x1="278" y1="148" x2="230" y2="176" stroke="#c00" stroke-width="2.5"/>
+  <path d="M 226 180 L 232.7 171.5 L 236.7 178.5 Z" fill="#c00"/>
+  <line x1="278" y1="148" x2="326" y2="176" stroke="#c00" stroke-width="2.5"/>
+  <path d="M 330 180 L 321.3 178.5 L 325.3 171.5 Z" fill="#c00"/>
+  <text x="20" y="28" font-size="14" fill="#123">平面撒标准高斯雾（原点最浓）</text>
+  <text x="348" y="46" font-size="14" fill="#123">每叶张角 2π/3</text>
+  <text x="348" y="68" font-size="14" fill="#123">三叶平方和＝9/(8π)≈0.358</text>
+  <text x="20" y="242" font-size="14" fill="#123">红箭头＝该叶质心，长度</text>
+  <text x="20" y="264" font-size="14" fill="#123">sin(π/3)/√(2π)≈0.345</text>
+</svg>
+
+</div>
+
+**为什么值得关心**
+
+这个常数不只是几何趣味：它决定核聚类近似算法的精确难度阈值——损失因子低于 `@@M@@\frac{8\pi}{9}(1-\frac1k)@@` 的确定性多项式算法是 NP-难的，与已知的舍入保证恰好咬合。证明走反证法，把无限维优化压成有限项数值核对，全部比较有精确有理数区间证书兜底。
+
+> 已 Lean 形式化
+
 ## 一句话结论
 
 论文证明了高斯螺旋桨猜想（Gaussian propeller conjecture）：任何有限可测分割的各胞格高斯一阶矩长度平方之和不超过 `@@M@@9/(8\pi)@@`，当 `@@M@@d\ge 2@@`、`@@M@@k\ge 3@@` 时由三个 `@@M@@2\pi/3@@` 平面扇形取等，从而补全所有维度的缺口，并确立核聚类近似的精确难度阈值。

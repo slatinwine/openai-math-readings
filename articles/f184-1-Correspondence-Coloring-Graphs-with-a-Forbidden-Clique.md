@@ -13,6 +13,59 @@ pdfname: ""
 
 > 结果族 184：Correspondence coloring with a fixed forbidden subgraph　·　学科：Combinatorics　·　验证状态：暂无形式化证明，请以社区核验为准
 
+## 入门导读 🐣
+
+给图染色本来是"相邻顶点不同色"；对应染色把它升级成"私人订制"：每个顶点有自己的候选颜色清单，而且每条边单独规定哪些颜色组合算冲突——你的"红"可能偏偏跟朋友的"蓝"犯冲。论文证明：只要图里不含固定大小的团（比如没有 4 个两两相连的顶点），清单颜色只需约 Δ/log Δ 种，比朴素的 Δ+1 省一个对数因子，以最强形式解决了 1999 年的 Alon–Krivelevich–Sudakov 猜想。
+
+**关键词卡片**
+
+- 对应染色（correspondence coloring / DP-coloring）：每顶点有列表、每条边附带列表间匹配禁对的染色模型，比普通染色与列表染色都更苛刻
+- 匹配（matching）：一对一的禁对关系，每个颜色在一条边里至多卷入一个禁对
+- 最大度（maximum degree）：一个顶点最多的邻居数，记 Δ；贪心算法保证 Δ+1 色永远够
+- 无团图（K_r-free）：不含 r 个两两相邻顶点的图；这种局部稀疏性让染色省颜色
+
+**看个具体例子**
+
+相邻顶点 u、v 各有一份清单，边 uv 规定了两个禁对：
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280">
+<text x="120" y="35" font-size="16" fill="#333" text-anchor="middle">顶点 u 的清单</text>
+<text x="440" y="35" font-size="16" fill="#333" text-anchor="middle">顶点 v 的清单</text>
+<rect x="70" y="60" width="100" height="36" rx="8" fill="#dbe9ff" stroke="#1a6feb"/>
+<rect x="70" y="120" width="100" height="36" rx="8" fill="#dbe9ff" stroke="#1a6feb"/>
+<rect x="70" y="180" width="100" height="36" rx="8" fill="#dbe9ff" stroke="#1a6feb"/>
+<rect x="390" y="60" width="100" height="36" rx="8" fill="#e6f4ea" stroke="#2da44e"/>
+<rect x="390" y="120" width="100" height="36" rx="8" fill="#e6f4ea" stroke="#2da44e"/>
+<rect x="390" y="180" width="100" height="36" rx="8" fill="#e6f4ea" stroke="#2da44e"/>
+<text x="120" y="84" font-size="15" fill="#333" text-anchor="middle">红</text>
+<text x="120" y="144" font-size="15" fill="#333" text-anchor="middle">蓝</text>
+<text x="120" y="204" font-size="15" fill="#333" text-anchor="middle">绿</text>
+<text x="440" y="84" font-size="15" fill="#333" text-anchor="middle">红</text>
+<text x="440" y="144" font-size="15" fill="#333" text-anchor="middle">蓝</text>
+<text x="440" y="204" font-size="15" fill="#333" text-anchor="middle">黄</text>
+<line x1="170" y1="78" x2="390" y2="138" stroke="#b03030" stroke-width="2"/>
+<line x1="170" y1="138" x2="390" y2="198" stroke="#b03030" stroke-width="2"/>
+<text x="230" y="75" font-size="14" fill="#b03030" text-anchor="middle">禁对：u红 — v蓝</text>
+<text x="230" y="172" font-size="14" fill="#b03030" text-anchor="middle">禁对：u蓝 — v黄</text>
+<text x="280" y="255" font-size="14" fill="#555" text-anchor="middle">u 选红时 v 不能选蓝；v 选红、绿、黄都可以</text>
+</svg>
+
+</div>
+
+数字版（r=4、Δ=10^6，无 K₄）：所需清单颜色数
+
+`@@M@@\chi_{\mathrm{DP}}(G)\ \le\ \left\lceil C_4\cdot\frac{10^6}{\ln 10^6}\right\rceil\ \approx\ 72000\,C_4@@`
+
+而贪心需要 10^6+1 种。把 K₄ 换成任何固定禁用子图 F，同阶结论仍成立；当 F 含圈时，高围长随机图表明 Δ/log Δ 这一阶已无法再改进。
+
+**为什么值得关心**
+
+对应色数同时控制普通色数与列表色数，证明的是最强版本；对数因子的节省在染色理论中是难得的整体改进。
+
+> 暂无形式化证明（AI 结果待核验）
+
 ## 一句话结论
 
 对每个固定整数 `@@M@@r\ge 4@@`，论文证明最大度 (maximum degree) `@@M@@\Delta@@` 充分大的 `@@M@@K_r@@`-free 图的对应色数 (correspondence chromatic number) 满足 `@@M@@\chi_{\mathrm{DP}}(G)\le O_r(\Delta/\log\Delta)@@`，以最强的对应染色形式解决了 Alon–Krivelevich–Sudakov 1999 年染色猜想；排除任意固定子图 `@@M@@F@@` 的推广同样成立。

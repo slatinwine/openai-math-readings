@@ -13,6 +13,54 @@ pdfname: ""
 
 > 结果族 055：Gepner symmetry and large-volume stability on threefolds　·　学科：Algebraic and complex geometry　·　验证状态：暂无形式化证明，请以社区核验为准
 
+## 入门导读 🐣
+
+给空间里所有的"广义对象"（凝聚层的导出范畴）排序，需要一把奇特的秤：中心荷把每个对象称成一个复数，辐角就是它的相位——这就是 Bridgeland 稳定性条件。弦论学家发现，在最对称的五次三维超曲面上，应该存在一把会"自动转指针"的秤：每做一次特殊操作，指针恰好旋转 72°。Toda 在 2013 年把它写成严格猜想，本文证明猜想成立。
+
+**关键词卡片**
+
+- 五次三维超曲面（quintic threefold）：`@@M@@\mathbb P^4@@` 中由五次多项式定义的三维流形，弦论的经典主角。
+- Bridgeland 稳定性条件（Bridgeland stability condition）：中心荷（复值称重）加相位切片，给范畴对象排序。
+- 中心荷（central charge）：把对象映成复数的线性泛函，模长与辐角都有意义。
+- 球面扭转（spherical twist）：绕结构层 `@@M@@\mathcal O_X@@` 的特殊自等价，把范畴"拧一下"。
+- Gepner 对称（Gepner symmetry）：张超平面丛再拧一下的合成 `@@M@@\Phi@@`，应使指针恰转 `@@M@@2/5@@` 圈。
+
+**看个具体例子**
+
+定理：每个光滑五次超曲面上都存在数值稳定性条件 `@@M@@\sigma=(Z,\mathcal P)@@`，使得 `@@M@@Z(\Phi E)=e^{2\pi i/5}Z(E)@@`（读数旋转 72°）、`@@M@@\Phi(\mathcal P(\varphi))=\mathcal P(\varphi+2/5)@@`（半稳定相位整体平移 `@@M@@2/5@@`），且归一化 `@@M@@Z(\mathcal O_x)=-1@@` 下该中心荷唯一。五次操作恰好转满一圈，对应已知关系 `@@M@@\Phi^5\simeq[2]@@`。
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280">
+  <circle cx="280" cy="150" r="4" fill="#000"/>
+  <line x1="280" y1="150" x2="280" y2="66" stroke="#333" stroke-width="2"/>
+  <polygon points="280,58 274,70 286,70" fill="#333"/>
+  <line x1="280" y1="150" x2="202" y2="126" stroke="#06c" stroke-width="2"/>
+  <polygon points="195,124 208,119 206,131" fill="#06c"/>
+  <line x1="280" y1="150" x2="233" y2="215" stroke="#080" stroke-width="2"/>
+  <polygon points="228,222 232,210 244,218" fill="#080"/>
+  <line x1="280" y1="150" x2="327" y2="215" stroke="#940" stroke-width="2"/>
+  <polygon points="332,222 321,218 331,210" fill="#940"/>
+  <line x1="280" y1="150" x2="358" y2="126" stroke="#90c" stroke-width="2"/>
+  <polygon points="365,124 354,131 352,119" fill="#90c"/>
+  <text x="292" y="50" font-size="13" fill="#333">Z(E)</text>
+  <text x="150" y="115" font-size="13" fill="#06c">Z(ΦE)</text>
+  <text x="200" y="240" font-size="13" fill="#080">Z(Φ²E)</text>
+  <text x="325" y="240" font-size="13" fill="#940">Z(Φ³E)</text>
+  <text x="372" y="115" font-size="13" fill="#90c">Z(Φ⁴E)</text>
+  <path d="M 280 64 A 86 86 0 0 0 198 123" fill="none" stroke="#c00" stroke-width="1.5"/>
+  <text x="212" y="72" font-size="12" fill="#c00">72° = 2π/5</text>
+  <text x="280" y="265" text-anchor="middle" font-size="13" fill="#333">每施加一次 Φ，指针恰转 72°；五次转满一圈</text>
+</svg>
+
+</div>
+
+**为什么值得关心**
+
+它证明了 Toda 的归一化五次 Gepner 猜想：此前已知五次超曲面上存在数值稳定性条件，但都不带这种对称；本文正面绕开"候选中心荷系数非有理、荷像不离散"这些绊脚石，让物理直觉升格为定理。
+
+> 暂无形式化证明（AI 结果待核验）
+
 ## 一句话结论
 在每个光滑复五次三维超曲面（quintic threefold）上，作者构造出数值 Bridgeland 稳定性条件，使"张以超平面丛、再作结构层的球面扭转"这一自等价恰好把中心荷旋转 `@@M@@2\pi/5@@`、把半稳定相位平移 `@@M@@2/5@@`，从而证明了 Toda 的归一化五次 Gepner 猜想。
 

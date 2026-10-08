@@ -13,6 +13,45 @@ pdfname: ""
 
 > 结果族 235：Limiting random SAT thresholds, sharp variance and computability　·　学科：Probability and statistical mechanics　·　验证状态：暂无形式化证明，请以社区核验为准
 
+## 入门导读 🐣
+
+阈值告诉你悬崖在哪里，方差告诉你悬崖有多宽。这篇论文证明：随机 3-SAT 里"崩溃时刻"（第一条压垮公式的子句出现的位置）的方差恰好正比于 n——悬崖宽度被精确钉在 √n 条子句，一步不多、一步不少。不同随机样本的崩溃点会散得多开？答案：标准差恰是 √n 的量级，再无悬念。
+
+**关键词卡片**
+
+- 命中时间（hitting time）H_n：逐条加入子句时，第一个不可满足时刻的编号。
+- 方差（variance）：随机时刻散布多宽的度量；它直接决定相变窗口的宽度。
+- Efron–Stein 不等式：把总体方差拆解为"删去一条子句造成延迟"的平方和。
+- 势函数（potential）：给"解集有多脆"定价的新工具，专治 k = 3 的对数空隙。
+- Wilson 转移宽度定理：2002 年的老结果——窗口至少 √n 宽；本文给出与之匹配的下界。
+
+**看个具体例子**
+
+数字版定理：`@@M@@\operatorname{Var}(H_n)=\Theta(n)@@`。设 n = 10^6 个变量：崩溃时刻的典型偏差约 `@@M@@\sqrt{n}=10^3@@` 条子句，只占总量的 0.1%；相应地，可满足概率从 99% 跌到 1% 也只需 `@@M@@\Theta(\sqrt n)@@` 条子句——悬崖很陡，但不是刀刃。上界 `@@M@@\operatorname{Var}(H_n)\le Cn@@` 是全新贡献，删去了姊妹篇 `@@M@@O(n\log n)@@` 估计里的对数损失；下界则由 Wilson 定理直接推出。
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280">
+  <text x="280" y="26" text-anchor="middle" font-size="15">崩溃时刻 H_n 的分布：宽度 ≈ √n</text>
+  <line x1="60" y1="230" x2="520" y2="230" stroke="#555" stroke-width="1.5"/>
+  <path d="M120 230 C170 230 195 95 300 95 C405 95 430 230 480 230 Z" fill="#dbe9f9" stroke="#1565c0" stroke-width="2.5"/>
+  <line x1="300" y1="82" x2="300" y2="230" stroke="#c62828" stroke-dasharray="5 4"/>
+  <text x="300" y="72" text-anchor="middle" font-size="13" fill="#c62828">均值 ≈ α_3·n</text>
+  <line x1="250" y1="250" x2="350" y2="250" stroke="#333" stroke-width="1.5"/>
+  <line x1="250" y1="245" x2="250" y2="255" stroke="#333" stroke-width="1.5"/>
+  <line x1="350" y1="245" x2="350" y2="255" stroke="#333" stroke-width="1.5"/>
+  <text x="300" y="268" text-anchor="middle" font-size="12">典型偏差 ~ √n（n = 10^6 时约 10^3 条子句）</text>
+  <text x="455" y="222" font-size="11">H_n（子句条数）</text>
+</svg>
+
+</div>
+
+**为什么值得关心**
+
+与 k ≥ 4 的姊妹篇合成完整图景：一切 k ≥ 3 的方差都是 `@@M@@\Theta(n)@@`；而且全程不需要知道阈值在哪里，只围绕有限尺寸期望做文章。
+
+> 暂无形式化证明（AI 结果待核验）
+
 ## 一句话结论
 
 对 `@@M@@n@@` 个变量上的随机 3-SAT，证明了首个不可满足前缀下标 `@@M@@H_n@@` 的方差恰为 `@@M@@\Theta(n)@@`：新证明的上界 `@@M@@\operatorname{Var}(H_n)\le Cn@@` 去掉了姊妹篇 `@@M@@O(n\log n)@@` 估计中的对数损失，下界由 Wilson 转移宽度定理给出，从而确定随机 3-SAT 相变窗口的正确尺度是 `@@M@@\sqrt n@@`。

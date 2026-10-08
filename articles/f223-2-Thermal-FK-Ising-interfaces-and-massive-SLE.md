@@ -13,6 +13,46 @@ pdfname: ""
 
 > 结果族 223：Random-cluster interfaces: critical, disordered, thermal, and natural-time scaling　·　学科：Probability and statistical mechanics　·　验证状态：暂无形式化证明，请以社区核验为准
 
+## 入门导读 🐣
+
+把磁铁的温度从临界点调开一点点：分界线不再是无偏的随机漫步，更像在起风的天气里飘的丝带——布朗式的随机抖动还在，但多了一股"风"推着它偏。这篇论文严格证明：这股风的强度和方向由一个确定的方程给出，极限曲线唯一存在，而且不依赖你用哪种格子、怎样逼近区域。
+
+**关键词卡片**
+
+- 质量 m（mass）：偏离临界温度的度量，正负对应往哪个方向偏。
+- 等半径格点（isoradial lattice）：一大类"菱形拼出来的"格点，方格只是特例。
+- massive SLE（massive Schramm–Loewner evolution）：带漂移的 SLE——布朗驾驶外加风力修正。
+- 边值问题（boundary value problem）：方程 `@@M@@\Delta h=-4m|\nabla h|@@` 定出风场 `@@M@@h@@`，漂移由它算出。
+- 有限能量（finite energy）：漂移满足 `@@M@@\int_0^T C_t^2dt<\infty@@`，保证理论不出"无穷风"。
+
+**看个具体例子**
+
+极限的驾驶方程是 `@@M@@\dd W_t=\sqrt{16/3}\,\dd B_t+\tfrac{2\pi}{3}C_t\,\dd t@@`：前一项是纯布朗随机性，后一项是风。代入特例 `@@M@@m=0@@`（恰在临界点），风场退化、`@@M@@C_t\equiv0@@`，方程还原成纯 `@@M@@\mathrm{SLE}_{16/3}@@` 的驾驶方程——临界情形被严丝合缝地包含在内。
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280">
+  <text x="20" y="24" font-size="15" fill="#333">临界（m=0）与偏离临界（m≠0）的界面形状对比</text>
+  <rect x="60" y="50" width="180" height="180" fill="#f7f7f7" stroke="#333" stroke-width="2"/>
+  <text x="95" y="40" font-size="14" fill="#333">m=0：SLE₁₆/₃</text>
+  <path d="M60,230 C85,200 120,190 110,155 C100,120 150,120 150,95 C150,75 200,80 240,50" fill="none" stroke="#c33" stroke-width="3"/>
+  <rect x="320" y="50" width="180" height="180" fill="#f7f7f7" stroke="#333" stroke-width="2"/>
+  <text x="345" y="40" font-size="14" fill="#333">m＞0：massive SLE</text>
+  <path d="M320,230 C350,205 365,175 375,150 C385,125 405,105 430,85 C450,70 475,60 500,50" fill="none" stroke="#c33" stroke-width="3"/>
+  <line x1="480" y1="70" x2="512" y2="46" stroke="#36c" stroke-width="2.5"/>
+  <polygon points="516,43 505,42 510,53" fill="#36c"/>
+  <text x="470" y="105" font-size="13" fill="#36c">漂移＝风</text>
+  <text x="20" y="262" font-size="14" fill="#333">风由质量边值问题确定；m&lt;0 时经对偶与反向行走得到</text>
+</svg>
+
+</div>
+
+**为什么值得关心**
+
+"Makarov–Smirnov 非临界纲领"此前只有零散观测输入，本文补上唯一性与收敛的完整随机分析，是 FK-Ising 非临界几何的第一块完整基石。
+
+> 暂无形式化证明（AI 结果待核验）
+
 ## 一句话结论
 本文证明偏离临界温度的 FK–Ising 界面在极一般的区域与格点逼近下沿全序列收敛到唯一的"热质量 SLE`@@M@@_{16/3}@@`"：漂移由一个质量边值问题给出的有限能量泛函确定，负质量经对偶与反转得到，从而把 Makarov–Smirnov 非临界界面纲领在 FK–Ising 情形完整实现。
 

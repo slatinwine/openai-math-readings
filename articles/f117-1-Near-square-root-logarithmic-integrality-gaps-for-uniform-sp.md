@@ -13,6 +13,48 @@ pdfname: ""
 
 > 结果族 117：Uniform sparsest cut: hardness and semidefinite gaps　·　学科：Theoretical computer science　·　验证状态：主结果已 Lean 形式化
 
+## 入门导读 🐣
+
+估价师先给房子一个"乐观估值"（松弛问题的解），真实成交价（整数最优解）往往更高，两者的落差叫积分间隙。这篇论文盖了一整批"最稀疏割"的房子：乐观估值和成交价的落差随规模增长达到 `@@M@@\sqrt{\log n}@@` 量级——离理论上限只差一个 `@@M@@\log\log n@@` 的幂。
+
+**关键词卡片**
+
+- 半定规划松弛（semidefinite programming relaxation）：把离散的割放宽成"向量距离"问题，总能快速求解。
+- 积分间隙（integrality gap）：松弛最优值与真实最优值之比的最大落差。
+- 负型半度量（negative-type semimetric）：能实现为希尔伯特空间平方距离的距离结构。
+- `@@M@@\ell_1@@` 嵌入（`@@M@@\ell_1@@` embedding）：把度量嵌进"曼哈顿距离"，从而舍入成割。
+- 割锥对偶（cut-cone duality）：把距离结构翻译回图容量的对偶桥梁。
+
+**看个具体例子**
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280">
+  <line x1="70" y1="230" x2="510" y2="230" stroke="#333" stroke-width="2"/>
+  <rect x="140" y="160" width="80" height="70" fill="none" stroke="#333" stroke-width="2"/>
+  <text x="180" y="142" text-anchor="middle" font-size="14">SDP 松弛值 GL（小）</text>
+  <rect x="350" y="60" width="80" height="170" fill="none" stroke="#333" stroke-width="2"/>
+  <text x="390" y="42" text-anchor="middle" font-size="14">真实最优 OPT（大）</text>
+  <line x1="228" y1="155" x2="342" y2="58" stroke="#c00" stroke-width="2"/>
+  <polygon points="346,55 333,54 340,65" fill="#c00"/>
+  <text x="272" y="78" text-anchor="middle" font-size="14">积分间隙</text>
+  <text x="280" y="258" text-anchor="middle" font-size="13">比值 ≥ c·√log n / (loglog n)³，上界为 O(√log n)</text>
+</svg>
+
+</div>
+
+数字版：构造的实例（每对顶点需求为 1）满足真实最优 `@@M@@\mathrm{OPT}\ge1@@`，而 SDP 值 `@@M@@\mathrm{GL}\le b/a@@`，于是
+
+`@@M@@D\frac{\mathrm{OPT}}{\mathrm{GL}}\ \ge\ c\,\frac{\sqrt{\log n}}{(\log\log n)^3}@@`
+
+构造思路是造一个"全局距离大、界面代价小"的距离结构：顶点标签来自参数立方体的分块取整，任何把点嵌进曼哈顿距离的收缩映射都被迫把平均距离压低约 `@@M@@\sqrt{\log n}@@` 倍，最后经割锥对偶翻译回图容量。对比 Arora–Rao–Vazirani 的上界 `@@M@@O(\sqrt{\log n})@@`：下界与上界几乎贴上了，只差 `@@M@@\log\log n@@` 的一个幂。
+
+**为什么值得关心**
+
+它宣告均匀需求下"SDP 常数间隙"彻底无望、ARV 的 `@@M@@\sqrt{\log n}@@` 阶本质上已最优——此前已知下界只有 `@@M@@\log\log n@@` 量级，这是一次大幅跃进。
+
+> 已 Lean 形式化
+
 ## 一句话结论
 构造了一列每对顶点需求恰为 `@@M@@1@@` 的最稀疏割实例，其 Goemans–Linial 半定松弛的积分间隙至少为 `@@M@@c\sqrt{\log n}/(\log\log n)^3@@`，把均匀需求下的已知下界推进到近乎匹配 Arora–Rao–Vazirani 的 `@@M@@O(\sqrt{\log n})@@` 上界。
 

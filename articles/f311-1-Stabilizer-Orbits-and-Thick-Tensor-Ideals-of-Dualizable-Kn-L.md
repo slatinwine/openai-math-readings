@@ -13,6 +13,49 @@ pdfname: ""
 
 > 结果族 311：The Hovey–Strickland and Chai conjectures　·　学科：Topology　·　验证状态：暂无形式化证明，请以社区核验为准
 
+## 入门导读 🐣
+
+想象一座图书馆要给"同伦世界里的几何对象"上架，馆规苛刻：一摞对象若对"彼此拼接"封闭，才算一层合法的书架。这篇论文把其中一整层楼——可对偶化的 K(n)-局部谱——的书架数了个干干净净：恰好 n+2 层，从大到小串成一条链，顺手证明了代数那边两个悬置近三十年的猜想。
+
+**关键词卡片**
+
+- 厚张量理想（thick tensor ideal）：对取和、收缩、与任意对象做张量积都封闭的对象集合，像一层自成一体的书架。
+- 可对偶化（dualizable）：谱世界里"有限感"良好的对象，拥有行为端正的对偶，好比有限维向量空间。
+- K(n)-局部（K(n)-local）：用第 n 号显微镜 Morava K-理论看世界，只保留第 n 层"高度"的信息。
+- Balmer 谱（Balmer spectrum）：把所有厚张量理想压缩成的点集地图，是张量范畴版的"素谱"。
+- Morava 稳定子群（Morava stabilizer group）：Lubin–Tate 形变环的对称群；它作用下哪些理想纹丝不动，正是 Chai 猜想的问题。
+
+**看个具体例子**
+
+取高度 n=2：厚张量理想恰有 4 个，排成 D₀⊋D₁⊋D₂⊋D₃=0；对应的 Balmer 谱是 3 个点组成的一条链——一端是泛点，另一端是唯一闭点，中间不多不少：
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280">
+<text x="280" y="38" text-anchor="middle" font-size="18" fill="#222">n = 2：Balmer 谱是 3 个点的链</text>
+<circle cx="270" cy="85" r="10" fill="#fff" stroke="#222" stroke-width="2"/>
+<text x="292" y="90" font-size="16" fill="#222">D₁（泛点）</text>
+<line x1="270" y1="97" x2="270" y2="138" stroke="#555" stroke-width="2"/>
+<polygon points="264,136 276,136 270,148" fill="#555"/>
+<circle cx="270" cy="170" r="10" fill="#fff" stroke="#222" stroke-width="2"/>
+<text x="292" y="175" font-size="16" fill="#222">D₂</text>
+<line x1="270" y1="182" x2="270" y2="224" stroke="#555" stroke-width="2"/>
+<polygon points="264,222 276,222 270,234" fill="#555"/>
+<circle cx="270" cy="250" r="10" fill="#fff" stroke="#222" stroke-width="2"/>
+<text x="292" y="255" font-size="16" fill="#222">D₃ = 0（唯一闭点）</text>
+<text x="110" y="172" font-size="14" fill="#666">箭头方向 = 特殊化</text>
+</svg>
+
+</div>
+
+一般地：理想恰 n+2 个、谱恰 n+1 个点，且与生成元的选取无关。
+
+**为什么值得关心**
+
+一篇论文同时证明 Chai（1996）与 Hovey–Strickland（1999）两个猜想，把"群作用下的不变理想"与"同伦范畴分类"两块大陆焊接在一起。
+
+> 暂无形式化证明（AI 结果待核验）
+
 ## 一句话结论
 
 本文在任意素数 `@@M@@p@@` 与任意正高度 `@@M@@n@@` 下证明了 Chai 关于 Lubin–Tate 形变环上稳定子不变理想的猜想，并经 Barthel–Heard–Naumann 的蕴涵推出 Hovey–Strickland 猜想：可对偶化 `@@M@@K(n)@@`-局部谱范畴恰有 `@@M@@n+2@@` 个厚张量理想，其 Balmer 谱是 `@@M@@n+1@@` 个点组成的链。

@@ -13,6 +13,54 @@ pdfname: ""
 
 > 结果族 296：The generator problem for finite factors　·　学科：Operator algebras　·　验证状态：主结果已 Lean 形式化
 
+## 入门导读 🐣
+
+一台老收音机面板上密密麻麻几百个旋钮；能不能重造一台只有一个旋钮的，却仍调得出所有电台？算子代数的"生成元问题"问的正是这件事：每个代数能否由单个元素经过加、乘、取伴随再取极限，无限搅拌后整体生成。本文攻下了最后也最硬的一块阵地，答案是：能。
+
+**关键词卡片**
+
+- 冯·诺依曼代数（von Neumann algebra）：希尔伯特空间上极限运算齐全的算子代数。
+- II₁ 因子（II₁ factor）：自带概率秤、中心最简的成员，生成元问题的最后难关。
+- 生成元（generator）：使 `@@M@@M=W^*(x)@@` 的单个算子。
+- 相对生成（relative generation）：在已有子代数 `@@M@@P@@` 之上再添一个酉元就能生成全部。
+- 稠密 `@@M@@G_\delta@@`（dense `@@M@@G_\delta@@`）：拓扑意义下的"通有"——闭眼乱抓一个通常就对。
+
+**看个具体例子**
+
+定理分两层。相对版：在"不可约包含" `@@M@@P\subset M@@`（即 `@@M@@P'\cap M=\mathbb C1@@`）中，能使 `@@M@@W^*(P,u)=M@@` 的酉元 `@@M@@u@@` 在酉群里构成稠密 `@@M@@G_\delta@@` 集。绝对版：每个具可分预对偶的 II₁ 因子都由两个自伴元生成；把二者打包成 `@@M@@x=a+ib@@` 的实部与虚部，就得到单个生成元。证明分三步走：先在极限世界里制造自由独立的酉元，再用小扰动逼近目标，最后用贝尔纲论证把"存在"升级为"通有"。
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280">
+<ellipse cx="290" cy="150" rx="230" ry="105" fill="none" stroke="#222" stroke-width="2"/>
+<text x="205" y="40" font-size="16" fill="#000">整个代数 M = W*(x)</text>
+<circle cx="290" cy="150" r="24" fill="none" stroke="#222" stroke-width="2"/>
+<text x="283" y="157" font-size="17" fill="#000">x</text>
+<line x1="312" y1="138" x2="410" y2="95" stroke="#777" stroke-width="2"/>
+<polyline points="399,94 412,94 404,105" fill="none" stroke="#777" stroke-width="2"/>
+<text x="420" y="92" font-size="15" fill="#555">x²</text>
+<line x1="268" y1="138" x2="170" y2="95" stroke="#777" stroke-width="2"/>
+<polyline points="181,94 168,94 176,105" fill="none" stroke="#777" stroke-width="2"/>
+<text x="118" y="92" font-size="15" fill="#555">x*x</text>
+<line x1="300" y1="174" x2="390" y2="215" stroke="#777" stroke-width="2"/>
+<polyline points="379,212 392,217 385,227" fill="none" stroke="#777" stroke-width="2"/>
+<text x="400" y="228" font-size="15" fill="#555">xⁿ</text>
+<line x1="280" y1="174" x2="195" y2="215" stroke="#777" stroke-width="2"/>
+<polyline points="206,212 193,217 200,227" fill="none" stroke="#777" stroke-width="2"/>
+<text x="128" y="228" font-size="15" fill="#555">x+x*</text>
+<text x="180" y="120" font-size="14" fill="#777">一个旋钮搅拌出一切</text>
+</svg>
+
+</div>
+
+图中一个旋钮 `@@M@@x@@` 的一切含伴随的多项式（再取极限）像墨滴一样晕开，铺满整个代数。
+
+**为什么值得关心**
+
+结合经典的直接积分约化，它完整解决冯·诺依曼代数的生成元问题；副产品：自由熵维数不是代数不变量。
+
+> 已 Lean 形式化
+
 ## 一句话结论
 
 证明每个具可分预对偶的 `@@M@@\mathrm{II}_1@@` 因子由单个算子（等价地两个自伴算子）生成，且不可约包含下相对生成元构成稠密 `@@M@@G_\delta@@` 集；结合 Willig 约化，生成元问题获肯定解答。

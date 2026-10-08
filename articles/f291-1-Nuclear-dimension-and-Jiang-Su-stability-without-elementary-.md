@@ -13,6 +13,49 @@ pdfname: ""
 
 > 结果族 291：Cuntz comparison, nuclear dimension, and equivariant Jiang–Su stability　·　学科：Operator algebras　·　验证状态：暂无形式化证明，请以社区核验为准
 
+## 入门导读 🐣
+
+给一条无限长的项链涂色，要求相邻珠子颜色不同：直线项链两种颜色就够，网面项链则要更多。数学家给抽象代数也定义了类似的"最少颜色数"，叫核维数。这篇论文证明：只要代数内部不暗藏"过于简单的碎片"，"颜色数有限"与"能兑入无味填充物"完全是同一回事——而且一旦有限，两种颜色就封顶。
+
+**关键词卡片**
+
+- 核维数（nuclear dimension）：用有限维小块逼近整个代数时所需的"颜色"个数，是覆盖维数的非交换版。
+- Jiang–Su 稳定性（Z-stability）：`@@M@@A\cong A\otimes\mathcal Z@@`，兑入无味填充后仍与原代数等价。
+- 初等理想子商（elementary ideal subquotient）：理想商中形如紧算子直和的"平凡碎片"。
+- 无处散射（nowhere scattered）：任何理想商都不是初等代数的排除条件。
+- AF 代数（AF algebra）：可用有限维代数逐步逼近的代数，核维数为 0。
+
+**看个具体例子**
+
+一维的线只需两种颜色：红、蓝交替，同色珠子之间永远隔着别人。
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280">
+<line x1="40" y1="120" x2="520" y2="120" stroke="#222" stroke-width="2"/>
+<circle cx="90" cy="120" r="13" fill="#222"/>
+<circle cx="150" cy="120" r="13" fill="#fff" stroke="#222" stroke-width="2"/>
+<circle cx="210" cy="120" r="13" fill="#222"/>
+<circle cx="270" cy="120" r="13" fill="#fff" stroke="#222" stroke-width="2"/>
+<circle cx="330" cy="120" r="13" fill="#222"/>
+<circle cx="390" cy="120" r="13" fill="#fff" stroke="#222" stroke-width="2"/>
+<circle cx="450" cy="120" r="13" fill="#222"/>
+<text x="72" y="166" font-size="15" fill="#000">红（实心）</text>
+<text x="190" y="166" font-size="15" fill="#000">蓝（空心）</text>
+<text x="80" y="60" font-size="15" fill="#555">一维结构：两种颜色交替即可</text>
+<text x="60" y="230" font-size="15" fill="#000">同色互不相邻 ⇔ 核维数 ≤ 1；有限维代数连颜色都不用（维数 0）</text>
+</svg>
+
+</div>
+
+主定理：对无处散射的可分核代数，"核维数有限""`@@M@@\mathcal Z@@`-稳定""核维数 `@@M@@\le 1@@`"三者等价。排除条件不可省——矩阵代数核维数为 0，却不吸收 `@@M@@\mathcal Z@@`。另一个最优界同样漂亮：任何可分核代数 `@@M@@A_0@@` 都满足 `@@M@@\dim_{\mathrm{nuc}}(A_0\otimes\mathcal Z)\le 1@@`；由于核维数为 0 的可分代数必是 AF，而 `@@M@@\mathcal Z@@` 本身维数为 1，这个界无法再降。
+
+**为什么值得关心**
+
+它解决了悬置多年的 Robert–Tikuisis 猜想，并把分类纲领的正则性等价推广到非单代数。
+
+> 暂无形式化证明（AI 结果待核验）
+
 ## 一句话结论
 
 证明可分核 C*-代数只要没有非零初等理想子商，"有限核维数""Jiang–Su 稳定""核维数 `@@M@@\le1@@`"三者等价，解决 Robert–Tikuisis 猜想 (C1) 及非单 Toms–Winter 正则性问题的核维数等价，并对一切可分核 `@@M@@A_0@@` 给出最优界 `@@M@@\dim_{\mathrm{nuc}}(A_0\otimes\mathcal Z)\le1@@`。

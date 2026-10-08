@@ -13,6 +13,56 @@ pdfname: ""
 
 > 结果族 211：The geometric phase diagram, diffusion, and spectra of random planar maps　·　学科：Probability and statistical mechanics　·　验证状态：暂无形式化证明，请以社区核验为准
 
+## 入门导读 🐣
+
+给随机地图拍一张"标准护照照片"：把粘满等边小三角旗的随机曲面摊平到黎曼球面上，三个随机采样点分别定住 `@@M@@0,1,\infty@@`。论文证明：摊平后的面积分布、按统一比例缩放的顶点间距表、以及地图上 FK 界面画出的整套嵌套圈，三者联合收敛——照片的"材质"是 LQG 量子球，圈纹是与之独立的共形环系 CLE。
+
+**关键词卡片**
+
+- FK 参数对照：`@@M@@q=2+2\cos(\pi\gamma^2/2)@@`、`@@M@@\kappa=16/\gamma^2@@`；`@@M@@0<q<4@@` 对应 `@@M@@\gamma\in(\sqrt2,2)@@`。
+- 单值化（uniformization）：把球面共形地摊平到黎曼球 `@@M@@\widehat\C@@` 的标准操作。
+- LQG 量子球（quantum sphere）：随机场 `@@M@@h@@` 经 `@@M@@e^{\gamma h}@@` 定义的随机球面，面积极不均匀。
+- CLE（conformal loop ensemble）：共形不变的嵌套随机环系，统计力学界面的普适极限。
+- 极值长度（extremal length）：共形不变的"电阻"式度量，防止摊平时曲面被压塌。
+
+**看个具体例子**
+
+取 Ising 值 `@@M@@q=2@@`：换算得 `@@M@@\gamma=\sqrt3@@`、`@@M@@\kappa=16/3@@`。定理说 `@@M@@q=2@@` 的旗帜嵌入地图收敛到 `@@M@@\sqrt3@@`-量子球＋独立的 `@@M@@\mathrm{CLE}_{16/3}@@`；距离经同一个确定性 `@@M@@a_n@@` 缩放后，任何两个顶点间的图距离都给出极限距离 `@@M@@D_h@@`。
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280">
+  <text x="120" y="42" font-size="14" text-anchor="middle" fill="#333">旗帜三角形粘合的随机曲面</text>
+  <polygon points="200,150 160,81 80,81 40,150 80,219 160,219" fill="#f6f6f6" stroke="#999" stroke-width="1.5"/>
+  <line x1="120" y1="150" x2="200" y2="150" stroke="#bbb" stroke-width="1"/>
+  <line x1="120" y1="150" x2="160" y2="81" stroke="#bbb" stroke-width="1"/>
+  <line x1="120" y1="150" x2="80" y2="81" stroke="#bbb" stroke-width="1"/>
+  <line x1="120" y1="150" x2="40" y2="150" stroke="#bbb" stroke-width="1"/>
+  <line x1="120" y1="150" x2="80" y2="219" stroke="#bbb" stroke-width="1"/>
+  <line x1="120" y1="150" x2="160" y2="219" stroke="#bbb" stroke-width="1"/>
+  <circle cx="120" cy="150" r="42" fill="none" stroke="#2e6bd6" stroke-width="2"/>
+  <circle cx="120" cy="150" r="22" fill="none" stroke="#2e6bd6" stroke-width="2" stroke-dasharray="5 4"/>
+  <text x="120" y="252" font-size="13" text-anchor="middle" fill="#2e6bd6">FK 界面＝嵌套圈</text>
+  <line x1="235" y1="150" x2="325" y2="150" stroke="#333" stroke-width="2"/>
+  <polygon points="325,144 339,150 325,156" fill="#333"/>
+  <text x="287" y="128" font-size="13" text-anchor="middle" fill="#333">单值化摊平</text>
+  <text x="287" y="174" font-size="13" text-anchor="middle" fill="#333">三点定标 0,1,∞</text>
+  <circle cx="440" cy="150" r="62" fill="#f6f6f6" stroke="#333" stroke-width="2"/>
+  <circle cx="440" cy="150" r="40" fill="none" stroke="#2e6bd6" stroke-width="2"/>
+  <circle cx="440" cy="150" r="24" fill="none" stroke="#2e6bd6" stroke-width="2" stroke-dasharray="5 4"/>
+  <circle cx="440" cy="150" r="10" fill="none" stroke="#2e6bd6" stroke-width="2"/>
+  <text x="440" y="42" font-size="14" text-anchor="middle" fill="#333">LQG 量子球＋CLEκ</text>
+  <text x="440" y="252" font-size="13" text-anchor="middle" fill="#2e6bd6">嵌套环系（与曲面独立）</text>
+</svg>
+
+</div>
+
+**为什么值得关心**
+
+"在指定共形坐标下识别极限"的普适性猜想此前在有限球面 FK 模型上悬而未决，本文首次完整解决整个 `@@M@@0<q<4@@` 区间；距离断言覆盖一切顶点对（包括度数反常的顶点），但论文不主张 `@@M@@q=4@@` 端点、收敛速率或 `@@M@@a_n@@` 的显式公式。
+
+> 暂无形式化证明（AI 结果待核验）
+
 ## 一句话结论
 
 对每个固定的 `@@M@@0<q<4@@`，本文证明：球面 FK 随机平面图按其“旗帜三角形”共形嵌入后，联合收敛到单位面积 LQG 量子球面并伴随独立的共形环系装饰；面积测度、经确定性重标的全体顶点图距离以及全部嵌套界面同时收敛。

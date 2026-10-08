@@ -13,6 +13,37 @@ pdfname: ""
 
 > 结果族 224：Critical and quenched near-critical universality for Poisson–Voronoi percolation　·　学科：Probability and statistical mechanics　·　验证状态：暂无形式化证明，请以社区核验为准
 
+## 入门导读 🐣
+
+在一张随机切成的黑白拼图上问：黑色能否从左边连到右边？直觉上答案该依赖拼图细节。论文却证明：拼图无限加细后，这个概率收敛到一个只依赖区域"外形"的显式公式——Cardy 公式。好比无论用方格纸还是随机碎瓷片铺同一形状的地面，雨水横流的成功率殊途同归。
+
+**关键词卡片**
+
+- 沃罗诺伊渗流（Poisson–Voronoi percolation）：随机种子点切出不规则胞，每胞独立公平地染黑白。
+- 退火概率（annealed probability）：对随机拼图与染色一起取平均得到的概率。
+- Cardy 公式（Cardy's formula）：跨越概率的显式公式，值只依赖四个边界标记点的"共形位置"。
+- 共形不变（conformal invariance）：保角变换不改变概率，把千姿百态的区域归类成有限个参数。
+
+**看个具体例子**
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280"><polygon points="80,85 200,50 330,72 345,180 210,232 95,198" fill="#eee" stroke="#333" stroke-width="2"/><circle cx="98" cy="196" r="5" fill="#c0392b"/><circle cx="210" cy="230" r="5" fill="#c0392b"/><circle cx="336" cy="176" r="5" fill="#c0392b"/><circle cx="202" cy="56" r="5" fill="#c0392b"/><text x="74" y="218" font-size="15">a</text><text x="204" y="252" font-size="15">b</text><text x="346" y="182" font-size="15">c</text><text x="196" y="42" font-size="15">d</text><line x1="365" y1="130" x2="400" y2="130" stroke="#333" stroke-width="2"/><path d="M418,130 l-14,-6 l0,12 z" fill="#333"/><text x="348" y="112" font-size="13">共形映射</text><rect x="420" y="45" width="125" height="185" fill="#f7f7f7" stroke="#333" stroke-width="2"/><circle cx="445" cy="230" r="4" fill="#c0392b"/><circle cx="483" cy="230" r="4" fill="#c0392b"/><circle cx="520" cy="230" r="4" fill="#c0392b"/><text x="440" y="252" font-size="14">0</text><text x="479" y="252" font-size="14">x</text><text x="516" y="252" font-size="14">1</text><text x="473" y="66" font-size="14">∞</text><text x="440" y="140" font-size="13">上半平面</text></svg>
+
+</div>
+
+把区域共形映射到上半平面，让 `@@M@@a,c,d\mapsto 0,1,\infty@@`，`@@M@@b@@` 落在 `@@M@@x\in(0,1)@@`，则"黑胞连通弧 `@@M@@ab@@` 与 `@@M@@cd@@`"的退火概率收敛到
+
+`@@M@@DF(x)=\frac{\int_0^x[u(1-u)]^{-2/3}\,du}{\int_0^1[u(1-u)]^{-2/3}\,du}.@@`
+
+代入对称位置验算：`@@M@@x=1/2@@` 时被积函数关于 `@@M@@u\leftrightarrow 1-u@@` 对称，分子恰为分母一半，得 `@@M@@F(1/2)=1/2@@`。另有一条推论：条件于固定拼图的跨越概率也经方差界得到淬火 `@@M@@L^2@@` 收敛——典型拼图上结论同样成立。
+
+**为什么值得关心**
+
+Smirnov 只在最规则的三角格点上证明了这一公式；本文把它推进到几何完全随机的 Voronoi 拼图，解决了 Schramm 遗留问题 2.12 的退火跨越部分，并且是同族另外两篇近临界定理的公共基石。
+
+> 暂无形式化证明（AI 结果待核验）
+
 ## 一句话结论
 
 本文证明临界平面泊松–沃罗诺伊渗流的退火跨越概率在每个有界 Jordan 四边形上都收敛到 Cardy 共形不变公式，正面解决 Schramm 问题 2.12 的退火跨越部分，也是同族另两篇近临界定理的共同基石。

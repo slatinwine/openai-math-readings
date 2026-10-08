@@ -13,6 +13,34 @@ pdfname: ""
 
 > 结果族 149：Classwise permanence for weakly reversible mass-action systems　·　学科：Dynamical systems and ergodic theory　·　验证状态：暂无形式化证明，请以社区核验为准
 
+## 入门导读 🐣
+
+一口密封鱼缸里养着几种会互相转化的物质，转化路线只要"连得成环、能兜回来"，这篇论文就能担保：不管你从哪个浓度配比开始投料，缸里最终会自己长出一圈无形的"围栏"——每种浓度既不会归零（物种灭绝），也不会爆表（爆炸），而且同一个缸里所有起点共用同一套上下限。奇妙之处在于：允许的活动范围本身可以无界，围栏却照样立得起来。
+
+**关键词卡片**
+
+- 弱可逆（weakly reversible）：反应网络里每条转化都能沿箭头找到回路的图论性质
+- 质量作用动力学（mass-action kinetics）：反应速率正比于反应物浓度幂的化学规则
+- 持久性（permanence）：各物种浓度长期既不趋零也不爆炸
+- 化学计量相容类（stoichiometric compatibility class）：由守恒量圈定的一条轨道活动"平面"
+- 吸收集（absorbing set）：所有轨迹迟早进入且不再离开的紧凸集
+
+**看个具体例子**
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280"><text x="280" y="28" font-size="16" text-anchor="middle">循环反应 A→B→C→A：轨迹绕圈并落入公共吸收集</text><path d="M120 235 L440 235 L280 60 Z" fill="none" stroke="black" stroke-width="2"/><text x="98" y="252" font-size="15">A</text><text x="448" y="252" font-size="15">B</text><text x="273" y="50" font-size="15">C</text><path d="M185 235 L375 235 L280 142 Z" fill="none" stroke="black" stroke-dasharray="6 4"/><text x="280" y="196" font-size="13" text-anchor="middle">公共吸收集</text><path d="M315 118 q30 32 -8 58 q-34 24 -62 6 q-20 -16 -6 -36 q16 -22 42 -10 q24 11 10 36 q-12 22 -38 14" fill="none" stroke="black" stroke-dasharray="5 4"/><text x="280" y="270" font-size="13" text-anchor="middle">示意：类内每条轨迹有限时间进入后，共享上下界 ε ≤ 浓度 ≤ 1/ε</text></svg>
+
+</div>
+
+外圈大三角是守恒量圈出的相容类（如 `@@M@@a+b+c=@@` 常数），虚线小三角是定理保证的公共吸收集 `@@M@@K_P@@`：它只依赖网络、速率和这个类，不依赖投料初值；进入的快慢则允许因起点而异。数字版：存在 `@@M@@\varepsilon_P\in(0,1)@@`，使类内每条解在进入时刻之后都满足 `@@M@@\varepsilon_P\le x_i(t)\le \varepsilon_P^{-1}@@`。
+
+**为什么值得关心**
+
+这是 Feinberg 1987 年提出、困扰化学反应网络理论近四十年的持久性猜想的完整解答，且给的是"全类一致"的最强版本。
+
+> 暂无形式化证明（AI 结果待核验）
+
 ## 一句话结论
 
 本文证明了弱可逆质量作用系统的持久性（permanence）猜想：速率固定为正时，每个正化学计量相容类——哪怕本身无界——都拥有一个公共的紧凸前向不变吸收集，类内所有正轨迹最终共享同一组正的下界与有限的上界。

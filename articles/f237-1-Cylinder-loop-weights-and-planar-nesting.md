@@ -13,6 +13,34 @@ pdfname: ""
 
 > 结果族 237：The three-quarter exponent for honeycomb self-avoiding walk　·　学科：Probability and statistical mechanics　·　验证状态：暂无形式化证明，请以社区核验为准
 
+## 入门导读 🐣
+
+往池塘里扔两块石头，水面荡起一圈圈涟漪。现在做一道奇怪的算术题：把两块石头隔开的"套圈"有多少种层层相套的摆法？每种摆法按圈的个数与周长打分后全部加起来，这个总分随池塘尺寸涨多快？这篇论文给出精确公式，证实了物理学家二十年前的预言。
+
+**关键词卡片**
+
+- 环路逸度（loop fugacity）`@@M@@\chi@@`：每多放一个圈的"奖励系数"，`@@M@@\chi@@` 越大圈越愿意出现。
+- 配分函数（partition function）：所有合法构型按权重加总的"总分"，统计物理的核心记账量。
+- 分隔多边形（separating polygon）：把两个标记点隔在两侧、互不相交的闭合圈。
+- 嵌套族（nest）：层层相套的圈族，大圈套小圈，像洋葱剥皮。
+- 柱面（cylinder）：把平面卷成圆筒；总分在柱面上更好算，再还原回平面。
+
+**看个具体例子**
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280"><circle cx="270" cy="140" r="100" fill="none" stroke="#7dc7a3" stroke-width="2"/><circle cx="270" cy="140" r="70" fill="none" stroke="#7dc7a3" stroke-width="2"/><circle cx="270" cy="140" r="42" fill="none" stroke="#7dc7a3" stroke-width="2"/><circle cx="270" cy="140" r="18" fill="none" stroke="#7dc7a3" stroke-width="2"/><circle cx="270" cy="140" r="5" fill="#336"/><text x="282" y="144" font-size="13" fill="#336">标记点</text><text x="60" y="60" font-size="13" fill="#1a7a4a">每层圈的权重：χ·ρ^周长</text><text x="60" y="82" font-size="13" fill="#555">（ρ 为临界边权）</text><text x="90" y="235" font-size="13" fill="#333">总质量 = 所有嵌套摆法打分求和</text><text x="90" y="258" font-size="13" fill="#333" font-weight="bold">χ=2 时：柱面 N^（1/6），平面 r^（1/12）</text></svg>
+
+</div>
+
+数字版定理（取 `@@M@@\chi=2@@`）：柱面周长为 `@@M@@N@@` 时总分 `@@M@@Z_N=N^{1/6+o(1)}@@`；回到平面，围绕一个标记、直径不超过 `@@M@@r@@` 的嵌套族总质量 `@@M@@P_2(r)=r^{1/12+o(1)}@@`——直径涨到 `@@M@@10^{12}@@` 格，总分也只涨约 10 倍。一般公式为 `@@M@@\tau(\chi)=\tfrac16-\tfrac{2}{3\pi^2}(\arccos(\chi/2))^2@@`（`@@M@@0<\chi\le2@@`），`@@M@@\chi>2@@` 时把 `@@M@@\arccos@@` 换成 `@@M@@\operatorname{arcosh}@@`。
+
+**为什么值得关心**
+
+Gamsa–Cardy 2006 年靠未证明的标度极限图像算出的库仑气嵌套指数，本文首次严格证明；嵌套结构正是理解临界自避行走多尺度涨落的钥匙。
+
+> 暂无形式化证明（AI 结果待核验）
+
 ## 一句话结论
 
 对任意固定环路逸度（loop fugacity）`@@M@@\chi>0@@`，确定了临界蜂窝柱面上"分隔两个标记点的不交多边形族"配分函数的增长指数 `@@M@@\tau(\chi)@@`；`@@M@@\chi=2@@` 时为 `@@M@@1/6@@`，对应平面嵌套指数 `@@M@@1/12@@`，严格证明了 Gamsa–Cardy 的库仑气预言。

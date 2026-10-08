@@ -13,6 +13,43 @@ pdfname: ""
 
 > 结果族 360：Weak MTW curvature gives convexity and regular optimal transport　·　学科：Differential geometry　·　验证状态：主结果已 Lean 形式化
 
+## 入门导读 🐣
+
+把一堆沙以最省代价搬到指定位置（最优运输），搬运方案是否连续规矩，取决于地形几何。论文证明：名为"弱 MTW"的曲率条件自动保证每个点的"可行出发方向盘"是凸的——不许有月牙形缺口——而且方案里每个点都被一座"整山"从下方稳稳托住。
+
+**关键词卡片**
+
+- 最优输运（optimal transport）：以最小总代价把一个概率分布搬到另一个。
+- 割迹（cut locus）：平方距离代价在此失去光滑的"分水岭"，正则性的天敌。
+- 弱 MTW 曲率（weak MTW / A3w）：对代价曲率的一个四阶非负性要求。
+- 切单射域（tangent injectivity domain）：从某点出发、走过后仍是唯一最短路的初速度集合。
+- 支撑山峰（supporting mountain）：势函数图像上每点都被一张全局切平面（一座山）托住。
+
+**看个具体例子**
+
+定理一：弱 MTW ⇒ 每点的切单射域 `@@M@@I(x)@@` 及闭极小域 `@@M@@G_x@@` 都是凸集：
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280">
+<circle cx="140" cy="130" r="80" fill="none" stroke="#1a6" stroke-width="3"/>
+<text x="55" y="30" font-size="14" fill="#1a6">I(x)：可行出发方向</text>
+<text x="70" y="248" font-size="15" fill="#1a6">凸域（定理保证）</text>
+<path d="M430 130 L360.7 90 A 80 80 0 1 1 360.7 170 Z" fill="none" stroke="#e33" stroke-width="3"/>
+<text x="378" y="137" font-size="20" fill="#e33">×</text>
+<text x="352" y="248" font-size="15" fill="#e33">非凸（有缺口）：被排除</text>
+</svg>
+
+</div>
+
+定理二：每个次梯度 `@@M@@p\in\partial u(x)@@` 都是极小速度，满足全局支撑不等式 `@@M@@u(x')\ge u(x)+c(x,\exp_x p)-c(x',\exp_x p)@@`；且全程不假设非聚焦、允许共轭割点、不用任何密度假设。
+
+**为什么值得关心**
+
+它在无聚焦假设下解决 Villani 猜想，补上"弱 MTW ⇒ 凸单射域 ⇒ 一致正则输运"这条链条中缺失的一环。
+
+> 已 Lean 形式化
+
 ## 一句话结论
 
 在紧致无边的连通黎曼流形上，弱 MTW 曲率条件本身就迫使每点的切单射域凸，从而在不假设非聚焦的前提下解决 Villani 猜想；同时证明任意势函数的次梯度都自带全局支撑山峰，为一致正则输运奠定几何基础。

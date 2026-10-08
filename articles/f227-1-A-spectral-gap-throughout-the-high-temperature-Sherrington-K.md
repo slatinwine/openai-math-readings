@@ -13,6 +13,35 @@ pdfname: ""
 
 > 结果族 227：Critical SK autocorrelation processes and dynamics across the temperature transition　·　学科：Probability and statistical mechanics　·　验证状态：暂无形式化证明，请以社区核验为准
 
+## 入门导读 🐣
+
+一亿个互相影响的磁针，每个都在随机时刻按"当前大家的意见"重新投票。要让全系统达到热平衡，磁针越多是不是越难？论文证明：在临界温度以下的整个高温区间，不管多少个磁针，局部随机翻转消除涨落的"基础速率"都有与尺寸无关的底线——大系统并不更难混匀。
+
+**关键词卡片**
+
+- 热浴动力学（heat-bath dynamics）：每个自旋以速率 1、按给定其余自旋时的条件分布重新抽取。
+- 谱隙（spectral gap）：马尔可夫链收敛速率的谱刻画；正的下界意味着指数式混合。
+- Poincaré 不等式（Poincaré inequality）：`@@M@@\mathrm{Var}(f)\le C\,\mathcal D(f)@@`，方差被能量控制且常数与维数无关。
+- 高温相（high-temperature phase）：`@@M@@0\lt\beta\lt1@@` 的参数区间，系统行为接近独立自旋。
+
+**看个具体例子**
+
+先看研究进展的"温度数轴"：
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280"><line x1="60" y1="150" x2="505" y2="150" stroke="#333" stroke-width="2"/><path d="M517,150 l-12,-6 l0,12 z" fill="#333"/><line x1="60" y1="143" x2="60" y2="157" stroke="#333" stroke-width="2"/><line x1="170" y1="143" x2="170" y2="157" stroke="#333" stroke-width="2"/><line x1="190" y1="143" x2="190" y2="157" stroke="#333" stroke-width="2"/><line x1="280" y1="143" x2="280" y2="157" stroke="#333" stroke-width="2"/><line x1="500" y1="143" x2="500" y2="157" stroke="#333" stroke-width="2"/><text x="55" y="176" font-size="13">0</text><text x="158" y="176" font-size="13">1/4</text><text x="176" y="132" font-size="13">≈0.295</text><text x="270" y="176" font-size="13">1/2</text><text x="492" y="176" font-size="13">1</text><path d="M62,105 L62,115 M278,105 L278,115 M62,110 L278,110" stroke="#c0392b" stroke-width="2" fill="none"/><text x="300" y="100" font-size="13">此前最佳：β&lt;1/2</text><path d="M62,205 L62,195 M498,205 L498,195 M62,200 L498,200" stroke="#2a7f3b" stroke-width="3" fill="none"/><text x="140" y="228" font-size="13">本文：整个 0&lt;β&lt;1 都有正常数谱隙</text><text x="450" y="132" font-size="13">β</text></svg>
+
+</div>
+
+主定理的数字版：连续时间混合时间为 `@@M@@O_\beta(1)@@`，与 `@@M@@n@@` 无关——`@@M@@n=10^6@@` 与 `@@M@@n=100@@` 同量级；离散版（每次均匀挑一格更新）谱隙至少 `@@M@@1/(C_\beta n)@@`，即"平均每格轮到一次"的量级。定理以趋近 1 的概率对同一份无序耦合、对所有可观测量同时成立。证明的骨架是"随机定位"：在噪声中逐步观测样本，把吉布斯律变成一族后验律，先在每份后验上证不等式，再沿观测路径传回初始律。
+
+**为什么值得关心**
+
+它把动力学谱隙的门槛从 `@@M@@\beta\lt1/2@@` 一举推进到整个高温相，与早已覆盖全部 `@@M@@\beta\lt1@@` 的平衡态协方差估计看齐，填平了动力学与平衡态知识之间的鸿沟。
+
+> 暂无形式化证明（AI 结果待核验）
+
 ## 一句话结论
 
 对每个固定的 `@@M@@0\lt\beta\lt 1@@`，证明零场高斯 SK 模型单格点热浴（heat-bath）动力学的未缩放谱隙（spectral gap）在无 disorder 上以趋于一的概率被正常数 `@@M@@1/C_\beta@@` 下界，即 Gibbs 律对一切函数满足维数无关的 Poincaré 不等式，把此前的 `@@M@@\beta\lt 1/2@@` 门槛一举推进到整个高温相。

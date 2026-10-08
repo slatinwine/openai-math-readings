@@ -13,6 +13,44 @@ pdfname: ""
 
 > 结果族 335：Gromov's integral scalar-curvature bound for simplicial volume　·　学科：Differential geometry　·　验证状态：暂无形式化证明，请以社区核验为准
 
+## 入门导读 🐣
+
+把一个高维封闭空间想象成一件雕塑品：拓扑越复杂（洞越多、越难拼出来），雕刻时被迫留下的"凹陷"就得越多。这篇论文证明了 Gromov 四十年前提出的猜想：负弯曲（凹陷）的总量有一个只跟维数有关的下限，且正比于流形的"拓扑复杂度"——想搭得复杂，就必须配上足量的负弯曲，一点都省不了。
+
+**关键词卡片**
+
+- 标量曲率（scalar curvature）：每一点的平均弯曲度；球面为正，马鞍面为负
+- 负部 `@@M@@\mathrm{Scal}^-@@`（negative part）：只记录曲率为负的部分，正曲率不参与计数
+- 单纯体积（simplicial volume）：用最省材料的方式拼出该流形所需的"材料总量下限"，是纯拓扑量
+- 闭定向流形（closed oriented manifold）：紧致、无边界、能统一区分内外的空间
+- Yamabe 极小化度量（Yamabe minimizer）：每个形变类中总曲率积分最小的代表，证明的出发点
+
+**看个具体例子**
+
+定理的数字版：`@@M@@\int_M(\mathrm{Scal}_g^-)^{n/2}\,dV_g\ge a_n\|M\|@@`，常数 `@@M@@a_n@@` 只依赖维数。把直接推论代入 `@@M@@n=3@@`：若曲率处处 `@@M@@\mathrm{Scal}\ge-6@@`，则 `@@M@@\mathrm{Vol}(M)\ge\dfrac{a_3}{6^{3/2}}\|M\|=\dfrac{a_3}{6\sqrt6}\|M\|@@`——拓扑复杂的三维封闭空间，体积不可能被压到任意小。
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280">
+<text x="20" y="35" font-size="16" fill="#333">闭流形 M：红色凹陷 = 负曲率集中区</text>
+<ellipse cx="190" cy="150" rx="95" ry="70" fill="none" stroke="#333" stroke-width="2"/>
+<path d="M 160,84 Q 190,125 220,84" fill="none" stroke="#c33" stroke-width="4"/>
+<path d="M 276,120 Q 235,150 276,180" fill="none" stroke="#c33" stroke-width="4"/>
+<path d="M 101,174 Q 138,190 142,211" fill="none" stroke="#c33" stroke-width="4"/>
+<text x="120" y="255" font-size="14" fill="#333">凹陷可以集中在小区域，但总量跑不掉：</text>
+<text x="345" y="115" font-size="14" fill="#333">∫ (Scal⁻)^(n/2) dV</text>
+<text x="345" y="140" font-size="14" fill="#333">≥ aₙ · ‖M‖</text>
+<text x="345" y="175" font-size="13" fill="#555">右边是拓扑复杂度</text>
+</svg>
+
+</div>
+
+**为什么值得关心**
+
+它把局部几何（每点的弯曲）与整体拓扑（复杂度）用一条不等式直接锁死，是 Gromov 积分猜想的定量一半；与姊妹篇的定性消失定理互相咬合，合成完整证明。
+
+> 暂无形式化证明（AI 结果待核验）
+
 ## 一句话结论
 
 证明了 Gromov 1986 年提出的积分标量曲率不等式：对每个 `@@M@@n\ge 3@@` 有常数 `@@M@@a_n\gt 0@@`，使任意闭定向光滑 `@@M@@n@@`-流形上任一黎曼度量都满足 `@@M@@\int_M(\mathrm{Scal}_g^-)^{n/2}\,dV_g\ge a_n\|M\|@@`，把单纯体积这一拓扑复杂度与负标量曲率的总量直接定量挂钩。

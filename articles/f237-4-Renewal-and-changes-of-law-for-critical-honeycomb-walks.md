@@ -13,6 +13,46 @@ pdfname: ""
 
 > 结果族 237：The three-quarter exponent for honeycomb self-avoiding walk　·　学科：Probability and statistical mechanics　·　验证状态：暂无形式化证明，请以社区核验为准
 
+## 入门导读 🐣
+
+把一条长长的自避行走想成一列火车：在它只穿过一次的水平线处逐节切开，就得到一节节"不可约车厢"，彼此独立、可以随机拼接。这篇论文证明：无论按哪种方式发车——固定总长度、给长度打折扣、还是无限接龙——车头前进的距离都服从同一个幂律 `@@M@@n^{3/4}@@`，系统兑现了 Nienhuis 1982 年的预言。
+
+**关键词卡片**
+
+- 不可约桥（irreducible bridge）：只严格穿越某条水平线一次的自避行走段，是拼接的基本车厢。
+- 更新过程（renewal process）：独立随机段不断累加的经典概率模型，这里刻画车厢一节节接上。
+- 空间指数 `@@M@@3/4@@`（spatial exponent）：`@@M@@n@@` 步行走的端距与直径约为 `@@M@@n^{3/4}@@`。
+- 热律（thermal law）：按 `@@M@@(\rho e^{-1/N})^L@@` 加权的采样方式，相当于给路径长度打折扣再抽签。
+- 自由能（free energy）：微小拉力 `@@M@@s@@` 下典型伸长付出的能量，本文证得 `@@M@@f_e(s)=s^{4/3+o(1)}@@`。
+
+**看个具体例子**
+
+走 `@@M@@n=10^8@@` 步的临界桥，端距约为 `@@M@@(10^8)^{3/4}=10^6@@`；反过来说，想从起点扩散到高度 `@@M@@h=10^3@@` 处，典型需要 `@@M@@h^{4/3}=10^4@@` 步——走得多、前进得慢，正是"不许自交"把路径撑得蓬松的体现。
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280">
+  <line x1="40" y1="55" x2="520" y2="55" stroke="#bbb" stroke-width="1" stroke-dasharray="5 5"/>
+  <line x1="40" y1="115" x2="520" y2="115" stroke="#bbb" stroke-width="1" stroke-dasharray="5 5"/>
+  <line x1="40" y1="175" x2="520" y2="175" stroke="#bbb" stroke-width="1" stroke-dasharray="5 5"/>
+  <path d="M60 235 L145 185 L105 145 L190 95 L150 55 L235 25" fill="none" stroke="#c0392b" stroke-width="2.5"/>
+  <circle cx="60" cy="235" r="4" fill="#c0392b"/>
+  <circle cx="235" cy="25" r="4" fill="none" stroke="#c0392b" stroke-width="2"/>
+  <text x="400" y="210" font-size="13" fill="#777">第 1 节</text>
+  <text x="400" y="140" font-size="13" fill="#777">第 2 节</text>
+  <text x="400" y="75" font-size="13" fill="#777">第 3 节</text>
+  <text x="330" y="28" font-size="13" fill="#333">端距 ≈ n^(3/4)</text>
+  <text x="46" y="262" font-size="13" fill="#333">在虚线处切开，每节是一个不可约桥</text>
+</svg>
+
+</div>
+
+**为什么值得关心**
+
+从"各长度总质量"推进到"固定单个长度"的局部估计，是这个问题四十年来真正的卡点；本文用更新过程的局部下界一次打通三种采样律，让 `@@M@@3/4@@` 从物理直觉变成定理。
+
+> 暂无形式化证明（AI 结果待核验）
+
 ## 一句话结论
 对蜂巢格点临界自避行走，本文证明无穷不可约桥律、每个大偶数长度的均匀桥与热权重行走三种采样律的空间指数均为 `@@M@@3/4@@`：端距与直径 `@@M@@n^{3/4+o(1)}@@`，固定高度桥长 `@@M@@h^{4/3+o(1)}@@`，并确定微小力自由能指数，系统兑现 Nienhuis 预言。
 

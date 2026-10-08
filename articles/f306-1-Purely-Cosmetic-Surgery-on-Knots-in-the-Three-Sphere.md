@@ -13,6 +13,34 @@ pdfname: ""
 
 > 结果族 306：The purely cosmetic surgery conjecture　·　学科：Topology　·　验证状态：暂无形式化证明，请以社区核验为准
 
+## 入门导读 🐣
+
+修补一条打了结的软管：剪掉打结的一段，再换个方向把口子接回去——接的方向不同，补好的管子形状也可能不同。三维拓扑里的 Dehn 手术正是这种"剪管重接"操作。Gordon 在 1991 年猜：对一个非平凡的结，只要接的方向不同，补出来的三维空间就一定本质不同。这篇论文终于证明了这个"纯装饰手术猜想"。
+
+**关键词卡片**
+
+- 纽结（knot）：三维球面里打结的闭合绳圈。
+- Dehn 手术（Dehn surgery）：挖去纽结的实心管邻域，沿某条缝线斜率把实心环体粘回去，得到新的三维流形。
+- 斜率（slope）：边界环面上"缝线方向"的数值 `@@M@@p/q@@`，决定怎么接回去。
+- 纯装饰对（purely cosmetic pair）：两个不同斜率却给出保定向同胚流形的情形——猜想断言它不存在。
+- 瞬时子（instanton）：规范理论方程的特殊解，是给三维、四维流形记账的不变量来源。
+
+**看个具体例子**
+
+主定理的数字版：对非平凡纽结 `@@M@@K\subset S^3@@`，若 `@@M@@S^3_r(K)\cong S^3_s(K)@@`（保定向同胚），则必有 `@@M@@r=s@@`。此前几十年各家不变量层层围剿，只剩最后一幕没排除：亏格为 `@@M@@2@@` 的纽结上，斜率 `@@M@@-2@@` 与 `@@M@@+2@@` 这一对。本文用一个非零整数计数 `@@M@@\Omega\neq 0@@` 和另一条带旋量的计数推出 `@@M@@2^\eta\Omega=0@@`，两条等式相撞，把这最后一对也判了"不同胚"：
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280"><text x="20" y="34" font-size="15" fill="#333">Dehn 手术：剪掉纽结的管子，换个方向接回去</text><ellipse cx="150" cy="150" rx="92" ry="62" fill="none" stroke="#999" stroke-width="3"/><ellipse cx="150" cy="150" rx="48" ry="30" fill="none" stroke="#999" stroke-width="3"/><line x1="85" y1="194" x2="215" y2="106" stroke="#c22" stroke-width="4"/><text x="66" y="96" font-size="13" fill="#c22">缝线斜率 +2</text><text x="55" y="252" font-size="14" fill="#333">结果流形 A</text><text x="252" y="162" font-size="30" fill="#000">≠</text><ellipse cx="410" cy="150" rx="92" ry="62" fill="none" stroke="#999" stroke-width="3"/><ellipse cx="410" cy="150" rx="48" ry="30" fill="none" stroke="#999" stroke-width="3"/><line x1="345" y1="106" x2="475" y2="194" stroke="#c22" stroke-width="4"/><text x="388" y="96" font-size="13" fill="#c22">缝线斜率 −2</text><text x="315" y="252" font-size="14" fill="#333">结果流形 B</text><text x="20" y="272" font-size="13" fill="#666">主定理：只要斜率不同，A 与 B 保定向永远不同胚</text></svg>
+
+</div>
+
+**为什么值得关心**
+
+手术是三维拓扑的头号工具，"从手术结果能反推手术参数吗"这一 Kirby 问题清单上的名题（1.81A）就此收官。
+
+> 暂无形式化证明（AI 结果待核验）
+
 ## 一句话结论
 
 本文证明了 `@@M@@S^3@@` 中非平凡光滑纽结的纯装饰手术猜想（purely cosmetic surgery conjecture）：两个不同的 Dehn 手术斜率永远给出互不同胚（保定向意义）的三维流形，从而彻底解决了 Gordon 1991 年提出、Kirby 问题列表 1.81(A) 收录的这一著名公开问题。

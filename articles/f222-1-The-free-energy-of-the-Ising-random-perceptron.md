@@ -13,6 +13,54 @@ pdfname: ""
 
 > 结果族 222：Perceptron free energies and microscopic jamming exponents　·　学科：Probability and statistical mechanics　·　验证状态：暂无形式化证明，请以社区核验为准
 
+## 入门导读 🐣
+
+想象一个极简裁判：它有 N 个只能拨到 +1 或 −1 的旋钮。每来一张随机噪点图，旋钮组合就给出一个投影打分，规则奖优罚劣。考卷越来越多时，这堆旋钮还剩多少"自由度"？这篇论文第一次对任意数量的考卷、任意正温度，算出了这个量（自由能）的精确极限。
+
+**关键词卡片**
+
+- 感知机（perceptron）：最简神经网络——一个神经元，带 N 个 ±1 的权重旋钮。
+- 模式（patterns）：随机生成的高斯样本向量，相当于喂给裁判的一张张"考卷"。
+- 密度 α（density）：考卷数除以旋钮数，比值越大系统越"拥挤"。
+- 自由能（free energy）：对数配分函数除以 N，衡量剩余自由度的"成绩单"。
+- 交叠（overlap）：两套旋钮配置的相似度，极限公式里唯一的主角。
+
+**看个具体例子**
+
+设 α=0.5：1000 个旋钮要应付 500 张随机考卷。定理断言自由能收敛到 `@@M@@\inf_q\{\alpha V(q)+S(q)\}@@`——左边 `@@M@@V(q)@@` 是考卷项沿交叠路径 `@@M@@q@@` 的逐层高斯递归，右边 `@@M@@S(q)@@` 是旋钮剩下的熵；在所有非降路径里挑最优折中，得到的正是真值。而且不管打分规则 `@@M@@f@@` 是什么样的有界函数，公式都成立。
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280">
+  <text x="20" y="26" font-size="15" fill="#333">Ising 感知机：旋钮 x=±1，考卷 g，打分 f</text>
+  <circle cx="90" cy="80" r="17" fill="#fff" stroke="#333" stroke-width="2"/>
+  <text x="78" y="86" font-size="14" fill="#333">g₁</text>
+  <circle cx="90" cy="150" r="17" fill="#fff" stroke="#333" stroke-width="2"/>
+  <text x="78" y="156" font-size="14" fill="#333">g₂</text>
+  <circle cx="90" cy="220" r="17" fill="#fff" stroke="#333" stroke-width="2"/>
+  <text x="70" y="226" font-size="14" fill="#333">g₃…</text>
+  <line x1="107" y1="85" x2="233" y2="130" stroke="#888" stroke-width="2"/>
+  <line x1="107" y1="150" x2="233" y2="150" stroke="#888" stroke-width="2"/>
+  <line x1="107" y1="215" x2="233" y2="170" stroke="#888" stroke-width="2"/>
+  <circle cx="255" cy="150" r="26" fill="#eef" stroke="#333" stroke-width="2"/>
+  <text x="247" y="156" font-size="15" fill="#333">Σ·x</text>
+  <line x1="281" y1="150" x2="352" y2="150" stroke="#888" stroke-width="2"/>
+  <polygon points="356,150 346,145 346,155" fill="#888"/>
+  <text x="288" y="136" font-size="13" fill="#555">投影 gᵃ·x/√N</text>
+  <rect x="358" y="122" width="60" height="56" rx="8" fill="#fff" stroke="#c33" stroke-width="2"/>
+  <text x="376" y="146" font-size="14" fill="#c33">奖惩</text>
+  <text x="368" y="166" font-size="13" fill="#c33">f(·)</text>
+  <text x="20" y="262" font-size="14" fill="#333">考卷数 M=αN；自由能极限＝一切交叠路径上的最优折中</text>
+</svg>
+
+</div>
+
+**为什么值得关心**
+
+此前的严格结果只在小密度下成立，本文取消了全部限制，把统计物理的 replica 直觉完整扶正为数学定理。
+
+> 暂无形式化证明（AI 结果待核验）
+
 ## 一句话结论
 
 本文对独立高斯模式的 Ising 感知机证明了：在任意正温度、任意正模式密度下，自由能极限由一个显式变分公式（Parisi 型高斯递归加 Ising 熵对偶）给出，且依期望与依概率收敛，彻底取消了既往工作必需的小密度限制。

@@ -13,6 +13,36 @@ pdfname: ""
 
 > 结果族 274：Parity is not in QAC<sup>0</sup>　·　学科：Mathematical physics　·　验证状态：主结果已 Lean 形式化
 
+## 入门导读 🐣
+
+判断一排开关里"按下的个数是奇是偶"（奇偶性），你必须看清每一个开关，任何偷懒的速算都会露馅。这篇论文证明：即使借助量子魔法——常数深度、多项式个量子比特、能一次摸遍所有输入的巨型门——也没有固定优势能算对奇偶性。Moore 1999 年的猜想被正面解决。
+
+**关键词卡片**
+
+- 奇偶函数（parity）：x₁⊕x₂⊕…⊕xₙ，输出"1 的个数是奇还是偶"。
+- QAC⁰（constant-depth quantum circuits）：常数深度量子电路，允许任意单比特门和无界元 Toffoli 门。
+- Toffoli 门（Toffoli gate）：多控制位的受控翻转门，可一次触碰任意多个输入。
+- 辅助比特（ancilla）：电路自备的工作比特，允许纠缠、允许留下任意垃圾。
+- 局部化（localization）：本文核心定理——乘积态经电路演化后仍"记不住"大量失配。
+
+**看个具体例子**
+
+画出一个这样的电路：所有输入汇入一个巨型 Toffoli 门，最后只测一个输出比特。
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280"><text x="60" y="49" font-size="14" fill="#333">x₁</text><line x1="85" y1="45" x2="225" y2="45" stroke="#333" stroke-width="2"/><text x="60" y="84" font-size="14" fill="#333">x₂</text><line x1="85" y1="80" x2="225" y2="80" stroke="#333" stroke-width="2"/><text x="60" y="119" font-size="14" fill="#333">⋯</text><line x1="85" y1="115" x2="225" y2="115" stroke="#333" stroke-width="2" stroke-dasharray="5 3"/><text x="60" y="154" font-size="14" fill="#333">xₙ</text><line x1="85" y1="150" x2="225" y2="150" stroke="#333" stroke-width="2"/><circle cx="235" cy="45" r="5" fill="#333"/><circle cx="235" cy="80" r="5" fill="#333"/><circle cx="235" cy="115" r="5" fill="#333"/><circle cx="235" cy="150" r="5" fill="#333"/><line x1="235" y1="45" x2="235" y2="190" stroke="#333" stroke-width="2"/><circle cx="235" cy="200" r="10" fill="none" stroke="#333" stroke-width="2"/><line x1="228" y1="200" x2="242" y2="200" stroke="#333" stroke-width="2"/><line x1="235" y1="193" x2="235" y2="207" stroke="#333" stroke-width="2"/><line x1="245" y1="200" x2="322" y2="200" stroke="#333" stroke-width="2"/><path d="M 327 209 A 11 11 0 0 1 349 209" fill="none" stroke="#333" stroke-width="2"/><line x1="338" y1="200" x2="346" y2="209" stroke="#333" stroke-width="1.5"/><text x="356" y="205" font-size="14" fill="#333">只测这一个输出比特</text><text x="262" y="178" font-size="13" fill="#666">无界元 Toffoli 门</text><text x="340" y="35" font-size="15" fill="#333">深度 d、总比特 ≤ nᶜ</text><text x="60" y="240" font-size="14" fill="#999">|0⟩</text><line x1="85" y1="236" x2="225" y2="236" stroke="#999" stroke-width="1.5" stroke-dasharray="5 3"/><line x1="225" y1="236" x2="235" y2="211" stroke="#999" stroke-width="1.5" stroke-dasharray="5 3"/><text x="100" y="264" font-size="14" fill="#999">辅助比特（初始 |0⟩，可纠缠、可留垃圾）</text></svg>
+
+</div>
+
+数字版定理：对任何深度 ≤ d、总比特 ≤ nᶜ 的此类电路，必存在输入 x，使其答对 parity(x) 的概率 `@@M@@<\tfrac12+\varepsilon@@`。取 ε=1/6：成功率连常见的 2/3 门槛都够不着。此前最好的结果都要限制辅助比特数量或固定纠缠深度，本文一举覆盖任意固定多项式资源下的全部固定深度。
+
+**为什么值得关心**
+
+奇偶性是浅电路的试金石：它一倒，严格多数判决、Dicke 态制备等一串对称任务连带倒下，量子浅电路的真实能力边界由此划定。
+
+> 已 Lean 形式化
+
 ## 一句话结论
 本文证明 QAC⁰——常数深度、多项式总比特、由任意单比特门与无界元数 Toffoli 门组成的量子电路——无法以任何固定正优势算出奇偶性，正面解决 Moore 1999 年的奇偶性猜想（测量输出模型），并连带排除严格多数判决等对称任务。
 

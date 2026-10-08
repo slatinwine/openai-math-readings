@@ -13,6 +13,58 @@ pdfname: ""
 
 > 结果族 336：Spectral scalar curvature, Urysohn width, and macroscopic dimension　·　学科：Differential geometry　·　验证状态：暂无形式化证明，请以社区核验为准
 
+## 入门导读 🐣
+
+想象把一大团揉皱的纸收进展示架：只要纸面每一处的鼓包程度都不低于一条底线，整团纸就能被连续压扁、挂到一个薄了两层的骨架上，每个挂点下只垂着一小撮纸。这篇论文证明的正是这件事：曲率条件会逼着高维空间在宏观上"瘦"掉两个维度。
+
+**关键词卡片**
+
+- 标量曲率（scalar curvature）：空间每点平均弯曲程度的数值，越大越弯；Scal ≥ 1 即处处不低于基准弯度。
+- 单纯复形（simplicial complex）：由点、线段、三角形等拼成的骨架，维数是所用拼块的最高维数。
+- 纤维（fiber）：把整个空间映射到骨架后，落在骨架同一点上的全部原像，即挂点下垂着的那一撮。
+- 宏观维度（macroscopic dimension）：忽略小于某个尺度的细节后，空间"看起来"的维数。
+- 万有覆盖（universal cover）：把空间里的环路全部摊开后得到的单连通大空间。
+
+**看个具体例子**
+
+把主定理代入 n = 4：任何 Scal ≥ 1 的完备无边四维流形，都存在到二维骨架的连续映射，且每根纤维的直径 ≤ C₄（只依赖维数的常数）；曲率更强、Scal ≥ σ² 时，界还按比例缩到 C₄/σ。
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280">
+<circle cx="90" cy="70" r="5" fill="#345"/>
+<circle cx="130" cy="50" r="5" fill="#345"/>
+<circle cx="160" cy="85" r="5" fill="#345"/>
+<circle cx="70" cy="115" r="5" fill="#345"/>
+<circle cx="115" cy="125" r="5" fill="#345"/>
+<circle cx="85" cy="165" r="5" fill="#345"/>
+<circle cx="140" cy="170" r="5" fill="#345"/>
+<circle cx="175" cy="130" r="5" fill="#345"/>
+<text x="70" y="212" font-size="16" fill="#345">n 维流形</text>
+<text x="55" y="236" font-size="14" fill="#678">标量曲率 ≥ 1</text>
+<line x1="215" y1="120" x2="325" y2="120" stroke="#345" stroke-width="3"/>
+<polygon points="340,112 360,120 340,128" fill="#345"/>
+<text x="228" y="100" font-size="14" fill="#345">连续映射 f</text>
+<g stroke="#345" stroke-width="3">
+<line x1="395" y1="55" x2="525" y2="85"/>
+<line x1="385" y1="115" x2="530" y2="60"/>
+<line x1="405" y1="70" x2="495" y2="185"/>
+<line x1="385" y1="160" x2="530" y2="150"/>
+</g>
+<circle cx="452" cy="102" r="6" fill="#c33"/>
+<line x1="452" y1="108" x2="452" y2="150" stroke="#c33" stroke-width="4"/>
+<text x="385" y="215" font-size="16" fill="#345">n−2 维骨架</text>
+<text x="370" y="238" font-size="14" fill="#c33">纤维直径 ≤ C_n</text>
+</svg>
+
+</div>
+
+**为什么值得关心**
+
+它把"局部弯 ⇒ 全局瘦"这一 Gromov 提出近三十年的直觉，在所有 n ≥ 4 量化成精确定理，并顺带推出正曲率闭流形的万有覆盖宏观维度 ≤ n − 2、闭非球面流形不容许正标量曲率度量。
+
+> 暂无形式化证明（AI 结果待核验）
+
 ## 一句话结论
 
 在每个 `@@M@@n\ge4@@` 证明 Gromov 标量曲率猜想的量化连续形式：`@@M@@\mathrm{Scal}\ge1@@` 的完备无边 `@@M@@n@@` 维流形可连续映到 `@@M@@n-2@@` 维复形，整根纤维直径只依赖 `@@M@@n@@`；并推出闭正标量曲率流形的万有覆盖在一切 `@@M@@n\ge2@@` 有连续宏观维度 `@@M@@\le n-2@@` 等系论。

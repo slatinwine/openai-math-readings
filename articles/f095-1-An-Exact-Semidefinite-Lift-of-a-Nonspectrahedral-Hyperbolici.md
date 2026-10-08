@@ -13,6 +13,47 @@ pdfname: ""
 
 > 结果族 095：Hyperbolicity cones without semidefinite lifts　·　学科：Convex and metric geometry　·　验证状态：暂无形式化证明，请以社区核验为准
 
+## 入门导读 🐣
+
+姊妹篇刚证明：有一块 23 变量的凸"地"，无论用多大的矩阵都写不出"体检表"。这一篇马上补上后半句：若允许帮手上场——额外引入 307 个辅助变量——同一块地就能在高维里写成标准的矩阵半正定条件，再投影回来。就像圆是圆柱在墙上的影子：影子本身写不出简单公式，本体在高一维处却极规整。
+
+**关键词卡片**
+
+- 谱面影子（spectrahedral shadow）：谱面经线性投影得到的凸集，等价于"允许辅助变量的半定表示"。
+- 半定提升（semidefinite lift）：引入辅助变量后，把集合精确写成 `@@M@@L(x,v)\succeq0@@` 的表示方式。
+- 辅助变量（auxiliary variable）：不属于原始坐标、只为帮助描述而引入的自由变量。
+- 对称铅笔（symmetric pencil）：随变量线性变化的对称矩阵，形如 `@@M@@\sum_\nu x_\nu A_\nu+\sum_j v_jB_j@@`。
+
+**看个具体例子**
+
+提升后的"数字版"关系是：`@@M@@x\in K\iff\exists v\in\R^{307}:\ \sum_{\nu=1}^{23}x_\nu A_\nu+\sum_{j=1}^{307}v_jB_j\succeq0@@`，其中矩阵全是 `@@M@@100\times100@@` 的。
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280">
+  <rect x="90" y="16" width="400" height="88" rx="10" fill="#dbeafe" stroke="#345" stroke-width="1.5"/>
+  <text x="140" y="48" font-size="15" fill="#123">高维中的谱面：100×100 对称矩阵半正定</text>
+  <text x="175" y="78" font-size="15" fill="#123">Σ xνAν + Σ vjBj ⪰ 0</text>
+  <line x1="278" y1="104" x2="278" y2="136" stroke="#888" stroke-width="2"/>
+  <path d="M 273 134 L 278 146 L 283 134 Z" fill="#888"/>
+  <line x1="200" y1="104" x2="158" y2="196" stroke="#aaa" stroke-dasharray="6 5"/>
+  <line x1="356" y1="104" x2="398" y2="196" stroke="#aaa" stroke-dasharray="6 5"/>
+  <path d="M 278 152 L 158 200 L 278 250 L 398 200 Z" fill="#fde8d0" stroke="#833" stroke-width="1.5"/>
+  <text x="228" y="212" font-size="15" fill="#701">23 变量双曲锥 K</text>
+  <text x="404" y="228" font-size="13" fill="#701">本身无 LMI</text>
+  <text x="16" y="140" font-size="14" fill="#456">投影＝扔掉 307 个辅助变量 v</text>
+</svg>
+
+</div>
+
+尺寸从哪来：330 维矩量空间的坐标扣除 23 个输出方程，恰剩 307 个辅助变量；测试向量空间 `@@M@@5\times20=100@@` 给出矩阵尺寸。等价覆盖整个闭锥，包括边界上 `@@M@@X@@` 奇异的退化点，无需再取闭包；作者声明这只是显式上界，未必最小。
+
+**为什么值得关心**
+
+它与姊妹篇合起来给同一个锥下了完整判决：不是谱面，但是谱面影子——"辅助变量"这一个小让步，就足以恢复矩阵可表示性。
+
+> 暂无形式化证明（AI 结果待核验）
+
 ## 一句话结论
 
 为姊妹篇那个 23 变量的非谱面双曲锥构造了精确半定提升：`@@M@@100\times100@@` 齐次对称铅笔加 307 个辅助变量，覆盖含奇异边界点的整个闭锥——该锥不是谱面，却是谱面影子。

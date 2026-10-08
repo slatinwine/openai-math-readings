@@ -13,6 +13,32 @@ pdfname: ""
 
 > 结果族 210：Foulkes' conjecture for sixth powers and quadratic stabilization　·　学科：Algebra　·　验证状态：主结果已 Lean 形式化
 
+## 入门导读 🐣
+
+接着装箱：有一台"翻译机"（乘法映射），把"`@@M@@b@@` 个盒子、每盒 `@@M@@a@@` 件"的信息翻译成"`@@M@@a@@` 个盒子、每盒 `@@M@@b@@` 件"。问盒子数 `@@M@@b@@` 多大起，这台机器能把对面所有花样全部翻译出来（满射）？本文的答案漂亮得像烧水定理：只要 `@@M@@b\ge a(a-1)@@`，无论商品空间多大维数，机器必定全译。
+
+**关键词卡片**
+
+- Foulkes–Howe 映射（canonical Foulkes–Howe map）：由分量乘法自然诱导的翻译 `@@M@@\mu:\Sym^b(\Sym^a V)\to\Sym^a(\Sym^b V)@@`。
+- 满射（surjective）：目标里每个元素都有原像，即机器"全译"。
+- 稳定化（stabilization）：参数越过某道门槛后性质永远成立，如同水温到 100°C 必沸腾。
+- 完全可约性（complete reducibility）：复数域上表示总能直和分解，满射反过来可分裂出等变单射。
+- Fischer（apolar）内积：配对多项式的一种内积，把"求导算子是否单射"化成比度数差。
+
+**看个具体例子**
+
+取姊妹篇正需要的情形 `@@M@@a=6@@`，门槛 `@@M@@a(a-1)=30@@`。数字版定理：
+
+`@@M@@Da=6,\ b\ge 30:\quad \Sym^b(\Sym^6 V)\twoheadrightarrow\Sym^6(\Sym^b V)\quad\text{对每个有限维 } V \text{ 同时满射}.@@`
+
+顺带得到反向的等变单射 `@@M@@\Sym^6(\Sym^b V)\hookrightarrow\Sym^b(\Sym^6 V)@@`。证明骨架是：先把满射等价于"一个对称多重线性型在对角上处处取零就必为零"，再用求导算子的度数单射性像剥洋葱一样逐层剥离公共因子。注意 30 这道门槛只看 `@@M@@a@@`，完全不依赖 `@@M@@V@@` 的维数——因为每次度数比较只用到 `@@M@@a@@` 与 `@@M@@b@@`，同一道门槛便对所有维数一齐生效。
+
+**为什么值得关心**
+
+给出首个与 `@@M@@\dim V@@` 无关的显式稳定化界（恰好是二次式 `@@M@@a(a-1)@@`），正面回答了 Landsberg 教科书里悬置的多项式界问题（Problem 7.19）。
+
+> 已 Lean 形式化
+
 ## 一句话结论
 
 证明了典范 Foulkes–Howe 乘法映射 `@@M@@\Sym^b(\Sym^a V)\to\Sym^a(\Sym^b V)@@` 在 `@@M@@a\ge 2@@`、`@@M@@b\ge a(a-1)@@` 时必满射，给出首个与 `@@M@@\dim V@@` 无关的二次稳定化界，正面回答 Landsberg 的多项式界问题，并附带 `@@M@@b\ge a(a-1)@@` 时的 Foulkes 嵌入。

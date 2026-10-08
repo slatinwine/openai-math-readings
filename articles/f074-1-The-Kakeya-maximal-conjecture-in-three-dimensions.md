@@ -13,6 +13,50 @@ pdfname: ""
 
 > 结果族 074：Kakeya in three and four dimensions　·　学科：Real and complex analysis　·　验证状态：暂无形式化证明，请以社区核验为准
 
+## 入门导读 🐣
+
+把三维空间想象成一缸雾，密度函数是 `@@M@@f@@`。拿一根半径 `@@M@@\delta@@` 的细吸管，固定朝向、来回平移，记录管内雾的平均浓度，再对这个朝向取"最浓的一管"。把所有朝向的纪录汇成一册，问：管子变细时，这本纪录册（按三次方平均）会不会爆炸式变厚？本文证明：涨幅慢于任何幂次，几乎等于不涨。
+
+**关键词卡片**
+
+- Kakeya 集（Kakeya set）：在每个方向都含一条单位线段的集合；Besicovitch 证明它的体积可以是零。
+- 极大管算子（Kakeya maximal operator）：`@@M@@K_\delta f(\omega)@@` = 方向 `@@M@@\omega@@` 上所有细管中 `@@M@@|f|@@` 平均值的最大值。
+- `@@M@@L^3@@` 有界性：`@@M@@\|K_\delta f\|_{L^3(S^2)}\le C_\varepsilon\delta^{-\varepsilon}\|f\|_{L^3(\mathbb R^3)}@@`，对任意 `@@M@@\varepsilon>0@@` 成立。
+- Nikodym 极大估计：由转移定理一并得到的"近亲"结论，本文顺带覆盖。
+
+**看个具体例子**
+
+每个方向放一根单位细管，它们可以大量互相叠压；猜想给"叠压总量"封了顶。
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280">
+  <g stroke="#4a6fa5" stroke-width="5" stroke-opacity="0.55" stroke-linecap="round">
+    <line x1="170" y1="150" x2="390" y2="150"/>
+    <line x1="178" y1="108" x2="382" y2="192"/>
+    <line x1="202" y1="72" x2="358" y2="228"/>
+    <line x1="238" y1="48" x2="322" y2="252"/>
+    <line x1="280" y1="44" x2="280" y2="256"/>
+    <line x1="238" y1="252" x2="322" y2="48"/>
+    <line x1="202" y1="228" x2="358" y2="72"/>
+    <line x1="178" y1="192" x2="382" y2="108"/>
+  </g>
+  <ellipse cx="280" cy="150" rx="30" ry="22" fill="none" stroke="#c0392b" stroke-width="1.5" stroke-dasharray="4 3"/>
+  <line x1="302" y1="164" x2="348" y2="248" stroke="#c0392b" stroke-width="1" stroke-dasharray="3 3"/>
+  <text x="40" y="46" font-size="14" fill="#333">每个方向来一根细管</text>
+  <text x="352" y="262" font-size="13" fill="#c0392b">叠压集中在中心区</text>
+</svg>
+
+</div>
+
+数字版定理：取 `@@M@@\delta=0.01@@`、`@@M@@\varepsilon=0.01@@`，则 `@@M@@\delta^{-\varepsilon}=100^{0.01}\approx 1.05@@`——管变细一百倍，纪录册平均只涨约 5%。等价的密度形式：给每根管染 `@@M@@\lambda@@` 份额的阴影，阴影总体积 `@@M@@\gtrsim \delta^\varepsilon\lambda^3\sum_T|T|@@`，`@@M@@\lambda@@` 的三次方不能放弱。
+
+**为什么值得关心**
+
+这是三维 Kakeya 极大猜想的完整解决，比"三维 Kakeya 集满维数"的集合版更强，还连带推出三维 Nikodym 极大估计等一串结论。
+
+> 暂无形式化证明（AI 结果待核验）
+
 ## 一句话结论
 
 证明三维 Kakeya 极大猜想：对任意 `@@M@@\varepsilon>0@@`，半径 `@@M@@\delta@@` 的单位长度管上的极大平均算子 `@@M@@K_\delta@@` 从 `@@M@@L^3(\mathbb R^3)@@` 到 `@@M@@L^3(S^2)@@` 的算子范数不超过 `@@M@@C_\varepsilon\delta^{-\varepsilon}@@`。这比刚解决的三维 Kakeya 集维数定理更强，并连带推出三维 Nikodym 极大估计。

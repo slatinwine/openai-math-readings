@@ -13,6 +13,47 @@ pdfname: ""
 
 > 结果族 059：Counterexamples to Zariski's multiplicity conjecture　·　学科：Algebraic and complex geometry　·　验证状态：暂无形式化证明，请以社区核验为准
 
+## 入门导读 🐣
+
+看两个从原点长出来的"奇异曲面花苞"。如果肉眼（拓扑意义的眼）完全分不清它们，那描述它们的最低次多项式次数是否必然相同？Zariski 在 1971 年猜"必然"。本文造出一对花苞：拓扑上无法区分，最低次次数却是 2 和 3——猜想被推翻，连 Arnold 余秩问题也一并否掉。
+
+**关键词卡片**
+
+- 超曲面芽（hypersurface germ）：一个函数的零点集在原点附近的局部形状
+- 重数（multiplicity）：定义函数最低次项的次数，是原点处最粗的代数近似
+- 环境同胚（ambiently homeomorphic）：整个周围空间有连续变形把一个变成另一个
+- 孤立奇点（isolated critical point）：导数只在原点同时为零
+- 链环（link）：零集与一个小球面的交，奇点拓扑的"指纹"
+
+**看个具体例子**
+
+两个芽住在同一座 ℂ^N（N 是 8 的倍数且大于 3）里，各自只以原点为奇点。给原点套上小球面，两个零集在球面上刻出的链环一模一样——这正是环境同胚的来源；可最低次项一个次数是 2、一个是 3。
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280">
+  <circle cx="150" cy="120" r="62" fill="#f4f6fa" stroke="#445368" stroke-width="2"/>
+  <path d="M 118,120 C 118,95 142,87 156,99 C 172,113 164,141 146,147 C 126,154 108,141 112,129 C 114,123 116,127 118,120 Z" fill="none" stroke="#993344" stroke-width="2.5"/>
+  <text x="150" y="205" text-anchor="middle" font-size="14" fill="#1a2433">V(f₁)：ord₀ = 2</text>
+  <circle cx="410" cy="120" r="62" fill="#f4f6fa" stroke="#445368" stroke-width="2"/>
+  <path d="M 378,120 C 378,95 402,87 416,99 C 432,113 424,141 406,147 C 386,154 368,141 372,129 C 374,123 376,127 378,120 Z" fill="none" stroke="#993344" stroke-width="2.5"/>
+  <text x="410" y="205" text-anchor="middle" font-size="14" fill="#1a2433">V(f₂)：ord₀ = 3</text>
+  <text x="280" y="128" text-anchor="middle" font-size="22" fill="#1a2433">≅</text>
+  <text x="280" y="60" text-anchor="middle" font-size="13" fill="#445368">小球面 ∩ 零集：两个链环完全相同（示意）</text>
+  <text x="280" y="238" text-anchor="middle" font-size="13" fill="#1a2433">环境同胚 (ℂ^N, V(f₁), 0) ≅ (ℂ^N, V(f₂), 0)</text>
+  <text x="280" y="262" text-anchor="middle" font-size="13" fill="#445368">但最低次次数 2 ≠ 3，拓扑对重数失明</text>
+</svg>
+
+</div>
+
+再补一刀：各加一个平方 t² 后，初始形式的 Milnor 纤维整同调分别是 ℤ 与 ℤ²——差异真实存在，却完全不被拓扑看见。
+
+**为什么值得关心**
+
+它证明"拓扑指纹"与"最低次代数近似"属于互不通约的两个世界，一次否定 Zariski 重数猜想（嵌入版）、拓扑右等价重数猜想与 Arnold 余秩问题等多个悬了五十多年的老问题。
+
+> 暂无形式化证明（AI 结果待核验）
+
 ## 一句话结论
 
 构造出两个约化、加权齐次、带孤立临界点的超曲面芽，可由环境空间（ambient space）的同胚相互变换，重数却是 2 与 3——这否定了 Zariski 重数猜想的嵌入拓扑版本，并连带否定 Arnold 余秩问题与拓扑右等价重数猜想。

@@ -13,6 +13,57 @@ pdfname: ""
 
 > 结果族 170：Sharp logarithmic exponents for off-diagonal Ramsey numbers　·　学科：Combinatorics　·　验证状态：暂无形式化证明，请以社区核验为准
 
+## 入门导读 🐣
+
+还是那场派对：固定小团体人数 `@@M@@s@@`，让陌生人群 `@@M@@t@@` 无限变大，问最少请多少人才能保证出现"`@@M@@s@@` 人全相识"或"`@@M@@t@@` 人全陌生"。姊妹篇解决了 5 人团体的情形，本文把 6 人及以上全部一网打尽，公式整齐得像一段楼梯：分子是 `@@M@@t^{s-1}@@`，分母的对数幂恰是 `@@M@@s-2@@`，楼梯每升一级恰好加一。
+
+**关键词卡片**
+
+- 非对角拉姆齐数（off-diagonal Ramsey number）：`@@M@@r(s,t)@@` 在 `@@M@@s@@` 固定、`@@M@@t\to\infty@@` 时的取值
+- 对数指数（logarithmic exponent）：分母 `@@M@@(\log t)@@` 的幂，本文证得恰为 `@@M@@s-2@@`
+- 旗（flag）：射影空间里"点落在超平面上"的入射对
+- 一致序列（consistent tuple）：构造图中对应"独立集"的特殊结构
+- 熵压缩（entropy compression）：用"信息量必须守恒"逼死坏构形的计数技术
+
+**看个具体例子**
+
+对数指数随 `@@M@@s@@` 变化的图像：
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280">
+  <line x1="80" y1="230" x2="500" y2="230" stroke="#333" stroke-width="1.5"/>
+  <polygon points="500,230 490,226 490,234" fill="#333"/>
+  <line x1="80" y1="230" x2="80" y2="50" stroke="#333" stroke-width="1.5"/>
+  <polygon points="80,50 76,60 84,60" fill="#333"/>
+  <polyline points="160,190 260,160 360,130 460,100" fill="none" stroke="#2471a3" stroke-width="2"/>
+  <circle cx="160" cy="190" r="5" fill="#c0392b"/>
+  <circle cx="260" cy="160" r="5" fill="#c0392b"/>
+  <circle cx="360" cy="130" r="5" fill="#c0392b"/>
+  <circle cx="460" cy="100" r="5" fill="#c0392b"/>
+  <text x="160" y="252" text-anchor="middle" font-size="14" fill="#333">s=5</text>
+  <text x="260" y="252" text-anchor="middle" font-size="14" fill="#333">s=6</text>
+  <text x="360" y="252" text-anchor="middle" font-size="14" fill="#333">s=7</text>
+  <text x="460" y="252" text-anchor="middle" font-size="14" fill="#333">s=8</text>
+  <text x="176" y="185" font-size="13" fill="#c0392b">3</text>
+  <text x="276" y="155" font-size="13" fill="#c0392b">4</text>
+  <text x="376" y="125" font-size="13" fill="#c0392b">5</text>
+  <text x="476" y="95" font-size="13" fill="#c0392b">6</text>
+  <text x="90" y="42" font-size="13" fill="#333">对数指数</text>
+  <text x="512" y="235" font-size="14" fill="#333">s</text>
+  <text x="280" y="272" text-anchor="middle" font-size="14" fill="#555">对数指数 = s−2：对每个固定 s≥6 精确成立</text>
+</svg>
+
+</div>
+
+写成公式：`@@M@@r(s,t)=\dfrac{t^{s-1}}{(\log t)^{s-2+o(1)}}@@`（每个固定 `@@M@@s\ge6@@`）。例如 `@@M@@s=6@@` 时 `@@M@@r(6,t)=t^5/(\log t)^{4+o(1)}@@`，`@@M@@s=10@@` 时分母幂为 8——多项式指数 `@@M@@s-1@@` 与对数指数 `@@M@@s-2@@` 同时锁定，与 1980 年的经典上界只差 `@@M@@o(1)@@` 的幂；常数因子同样留作公开问题。
+
+**为什么值得关心**
+
+与姊妹篇合并，所有固定 `@@M@@s\ge5@@` 的非对角拉姆齐数对数指数全部确定，一个悬置四十年的参数就此收官。通往高维的新工具（重复投影、高维稀疏对描述）是独立于五团定理的新估计，并非从低维直接推断。
+
+> 暂无形式化证明（AI 结果待核验）
+
 ## 一句话结论
 
 本文对每个固定整数 `@@M@@s\ge6@@` 证明 `@@M@@r(s,t)=t^{s-1}/(\log t)^{s-2+o(1)}@@`；连同姊妹篇的 `@@M@@s=5@@` 情形，非对角拉姆齐数（off-diagonal Ramsey number）的对数指数（logarithmic exponent）对所有固定 `@@M@@s\ge5@@` 完全确定，与经典上界只差 `@@M@@o(1)@@` 的幂。

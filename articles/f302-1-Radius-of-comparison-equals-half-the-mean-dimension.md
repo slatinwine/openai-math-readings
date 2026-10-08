@@ -13,6 +13,34 @@ pdfname: ""
 
 > 结果族 302：Radius of comparison equals half the mean dimension　·　学科：Operator algebras　·　验证状态：暂无形式化证明，请以社区核验为准
 
+## 入门导读 🐣
+
+把动力系统想成一台永不停止的变换机器：每个时刻把整个空间搬动一下。Gromov 问：记录这台机器的轨道，平均每一步需要多少维的"存储空间"？这个数叫平均维数，对无限维空间也有意义。另一边，把动力系统翻译成算子代数（交叉积）后，有个"比较半径"：两个正元素要分出高下，迹的差距必须迈过多大的门槛。Phillips–Toms 猜想宣布二者精确挂钩：门槛恰为存储维数的一半（因子 1/2 来自复向量丛秩与实维数之比）。本文对一切极小系统证明该等式，含两端同为无穷的情形。
+
+**关键词卡片**
+
+- 极小同胚（minimal homeomorphism）：任何轨道都稠密的变换，每个点都会逛遍全空间
+- 平均维数（mean dimension）：系统每步平均消耗的"存储维数"
+- 交叉积（crossed product）：把动力系统编码为 C*-代数的标准构造
+- 比较半径（radius of comparison）：Cuntz 比较正元素时迹需要让出的最小差距
+- Jiang–Su 稳定性（Z-stability）：与中性构件 Z 张量后不变的代数正则性
+
+**看个具体例子**
+
+数字版定理（含无穷）：rc=½·mdim。平均维数为 2 的系统，其交叉积的比较半径就是 1；平均维数无穷，比较半径也无穷。还有一组漂亮的五重等价：零存储 ⟺ 小边界性质 ⟺ Z-稳定 ⟺ 核维数有限 ⟺ 核维数至多一。
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280"><rect x="40" y="85" width="170" height="65" fill="none" stroke="#333" stroke-width="2"/><text x="125" y="113" font-size="14" text-anchor="middle">极小系统 (X,h)</text><text x="125" y="172" font-size="13" text-anchor="middle" fill="#369">平均维数 mdim</text><line x1="215" y1="118" x2="316" y2="118" stroke="#333" stroke-width="2"/><polygon points="332,118 316,111 316,125" fill="#333"/><text x="272" y="100" font-size="14" text-anchor="middle" fill="#b33">rc = 1/2 × mdim</text><rect x="340" y="85" width="185" height="65" fill="none" stroke="#333" stroke-width="2"/><text x="432" y="113" font-size="14" text-anchor="middle">交叉积 C(X)⋊Z</text><text x="432" y="172" font-size="13" text-anchor="middle" fill="#b33">比较半径 rc</text><text x="280" y="235" font-size="13" text-anchor="middle">mdim = 0 ⟺ Z-稳定 ⟺ 核维数 ≤ 1（最正则的情形）</text></svg>
+
+</div>
+
+**为什么值得关心**
+
+猜想的上界早已由 Niu 解决，本文补齐悬置多年的下界，把动力系统的正则性与代数分类纲领焊接为一体。
+
+> 暂无形式化证明（AI 结果待核验）
+
 ## 一句话结论
 
 证明 Phillips–Toms 猜想的整作用情形：对无穷紧可度量空间上任意极小同胚 `@@M@@h@@`，交叉积的比较半径恰为平均维数之半（含无穷），即 `@@M@@\rc(C(X)\rtimes_h\mathbb Z)=\tfrac12\mdim(X,h)@@`；并推出零平均维数等价于 Jiang–Su 稳定与核维数至多一。

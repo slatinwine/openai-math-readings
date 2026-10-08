@@ -13,6 +13,51 @@ pdfname: ""
 
 > 结果族 051：Kobayashi's canonical-ampleness conjecture　·　学科：Algebraic and complex geometry　·　验证状态：暂无形式化证明，请以社区核验为准
 
+## 入门导读 🐣
+
+想象一块"全域防滑"的封闭地盘：从复平面开来的任何全纯"列车"（整曲线），一进入就被迫不断减速，最后缩成一个点停住——这样的空间叫双曲的。Kobayashi 在 1970 年猜想：这样的地盘必有个好身价——它的典范丛（收集最高次全纯微分形式的那类线丛）充足，从而整个空间可被多项式嵌入射影空间。本文完全证明了这个猜想。
+
+**关键词卡片**
+
+- 整曲线（entire curve）：从整个复平面 `@@M@@\mathbb C@@` 到空间里的全纯映射，一条无限延伸的全纯轨迹。
+- Brody 双曲（Brody hyperbolic）：所有整曲线都是常值（缩成一点）的空间，即"防滑"；紧情形下等价于 Kobayashi 内在距离不退化。
+- 典范丛（canonical bundle）：把所有最高维全纯微分形式打包成的线丛。
+- 充足（ample）：截面足够多，某个正幂的截面能把空间全纯嵌入射影空间。
+- Kähler 流形（Kähler manifold）：带相容度量的复流形，复几何的标准舞台。
+
+**看个具体例子**
+
+对紧 Kähler 流形 `@@M@@X@@` 检查所有全纯映射 `@@M@@\mathbb C\to X@@`：若全是常值，定理断言典范丛 `@@M@@K_X@@` 充足、`@@M@@X@@` 必是射影代数簇；更强的推论是 `@@M@@K_X^{\otimes m}@@` 对一切 `@@M@@m\ge n+2@@`（`@@M@@n@@` 为复维数）都由整体截面生成——空间能被自己的体积形式"照亮"。
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280">
+  <rect x="30" y="65" width="190" height="140" fill="none" stroke="#bbb" stroke-width="1" stroke-dasharray="4 3"/>
+  <line x1="125" y1="75" x2="125" y2="195" stroke="#ccc" stroke-width="1"/>
+  <line x1="40" y1="135" x2="210" y2="135" stroke="#ccc" stroke-width="1"/>
+  <text x="125" y="52" text-anchor="middle" font-size="13" fill="#666">复平面 C：整曲线的出发地</text>
+  <ellipse cx="440" cy="135" rx="85" ry="62" fill="none" stroke="#333" stroke-width="2"/>
+  <text x="440" y="48" text-anchor="middle" font-size="14" fill="#333">紧 Kähler 流形 X（双曲）</text>
+  <circle cx="410" cy="145" r="5" fill="#c00"/>
+  <circle cx="470" cy="120" r="5" fill="#c00"/>
+  <line x1="85" y1="90" x2="400" y2="142" stroke="#c00" stroke-width="1.5"/>
+  <polygon points="408,144 397,147 395,137" fill="#c00"/>
+  <line x1="80" y1="130" x2="404" y2="144" stroke="#c00" stroke-width="1.5"/>
+  <polygon points="408,144 396,149 396,139" fill="#c00"/>
+  <line x1="90" y1="175" x2="462" y2="123" stroke="#c00" stroke-width="1.5"/>
+  <polygon points="468,121 457,128 455,118" fill="#c00"/>
+  <text x="280" y="218" text-anchor="middle" font-size="13" fill="#333">每条整曲线 C → X 都被压成一个点（常值映射）</text>
+  <text x="280" y="248" text-anchor="middle" font-size="13" fill="#333">结论：典范丛 K_X 充足，X 必是射影代数簇</text>
+</svg>
+
+</div>
+
+**为什么值得关心**
+
+它把"没有非常数全纯运动"这一动态条件与最高次形式的正性直接划上等号，是 Kobayashi 猜想半个世纪后在光滑紧 Kähler 范畴的完整解决。
+
+> 暂无形式化证明（AI 结果待核验）
+
 ## 一句话结论
 
 证明了 Kobayashi 典范丰富性猜想：紧 Kähler 流形上若不存在非常值整曲线（即 Brody 双曲），则典范丛 `@@M@@K_X@@` 必丰富，流形必为射影代数簇。猜想在光滑紧 Kähler 范畴的完整正面解决。

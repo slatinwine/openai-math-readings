@@ -13,6 +13,31 @@ pdfname: ""
 
 > 结果族 199：Counterexamples to Auslander–Reiten, Tachikawa and related homological conjectures　·　学科：Algebra　·　验证状态：主结果已 Lean 形式化
 
+## 入门导读 🐣
+
+医院里若一个人所有体检指标全部正常，医生会断定他健康。代数里也有类似信条：一个模块若各项"扩张指标"全为零，它就该是标准件（投射模）。Auslander 与 Reiten 五十年前猜想必是如此；这篇论文造出一个"体检全正常却查出病灶"的模块，把猜想推翻。
+
+**关键词卡片**
+
+- 有限维代数（finite-dimensional algebra）：作为向量空间只有有限维的乘法系统
+- 投射模（projective module）：同调意义上"最规整"的模块，标准件
+- Ext 群（Ext group）：给两个模块之间"互相嵌套的方式"计数的尺子；全为零表示毫无扩张余地
+- Gorenstein 投射模（Gorenstein-projective module）：比投射稍弱的一类规整模块，由双向无限的标准件正合列产生
+
+**看个具体例子**
+
+定理：在 `@@M@@k=\mathbb F_2(q,H_1,H_2)@@`（三个代数无关的参数）上，存在有限维代数 `@@M@@\Lambda@@` 与非投射模 `@@M@@Z@@`，使得
+
+`@@M@@D\operatorname{Ext}^i_\Lambda(Z,Z)=\operatorname{Ext}^i_\Lambda(Z,\Lambda)=0\quad(\forall\, i\ge1),\qquad Z\ \text{非投射}.@@`
+
+这座代数完全可以点名：`@@M@@\Lambda/\operatorname{rad}\Lambda\cong k^8@@`（恰有 8 个单模），`@@M@@\operatorname{rad}^4\Lambda\ne0@@`（故意避开已知的"小根基"正面类），`@@M@@\dim_k\Lambda=800+\dim_k F@@`（`@@M@@F@@` 为构造中的双模），且 `@@M@@\Lambda@@` 非交换。构造从 10 维小代数出发，其角上是量子外代数——正是此前唯一已知"高阶自扩张消尽"现象的发生地。指标全零，病灶仍在；任何域扩张下反例都不消失，特征二的代数闭域上同样成立。
+
+**为什么值得关心**
+
+同一样本同时否定 Auslander–Reiten 猜想与 Gorenstein 投射猜想，"扩张消失逼出投射性"这条纲领失去普遍性；生成元版本（`@@M@@Z\oplus\Lambda@@`）也随之失效。
+
+> 已 Lean 形式化
+
 ## 一句话结论
 本文构造出 Auslander–Reiten 猜想的显式反例：在特征 2 的有理函数域 `@@M@@\mathbb F_2(q,H_1,H_2)@@` 上给出有限维代数 `@@M@@\Lambda@@` 与非投射模 `@@M@@Z@@`，使 `@@M@@Z@@` 的所有正阶自扩张及到 `@@M@@\Lambda@@` 的扩张全部为零；同一样本还否定 Gorenstein 投射猜想，且在任何域扩张下反例依然成立。
 

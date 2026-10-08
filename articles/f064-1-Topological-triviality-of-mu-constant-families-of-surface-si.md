@@ -13,6 +13,54 @@ pdfname: ""
 
 > 结果族 064：Topological triviality of μ-constant surface singularities　·　学科：Algebraic and complex geometry　·　验证状态：暂无形式化证明，请以社区核验为准
 
+## 入门导读 🐣
+
+把一块橡皮泥捏出尖角，就得到"奇点"；捏的手法连续变化，就得到一族奇点。每个奇点有个身份证号——Milnor 数 μ，数的是它附近"碎成几个球"。老问题是：如果全家福里每个人的 μ 都一样，形状是不是其实从头到尾没变？高维与曲线情形 1976 年起陆续有肯定答案，唯独曲面的四维拓扑最难缠。本文对 `@@M@@\mathbb C^3@@` 中的曲面奇点给出肯定答案：号码不变，拓扑就不变。
+
+**关键词卡片**
+
+- 奇点（singularity）：曲面上的尖点，如原点处 `@@M@@x^3+y^3+z^3=0@@` 的奇异点。
+- Milnor 数 μ（Milnor number）：奇点邻近纤维碎成的球数，最基本的拓扑不变量。
+- μ 常数问题（μ-constant problem）：族中 μ 不变时，形状拓扑是否不随参数变。
+- 拓扑右平凡（topological right-triviality）：存在保持参数的同胚 `@@M@@\phi_t@@`，把每个 `@@M@@f_t@@` 搬回出发时的 `@@M@@f_0@@`。
+
+**看个具体例子**
+
+看族 `@@M@@f_t(x,y,z)=x^3+y^3+z^3+t\,xyz@@`：对每个 `@@M@@t@@`（`@@M@@t^3\ne-27@@`）都有 `@@M@@\mu=8@@`，全程不变。定理于是给出同胚 `@@M@@\phi_t@@`（钉住原点、保持参数）使 `@@M@@f_t(\phi_t(x))=f_0(x)@@`：无论 `@@M@@t@@` 怎么动，零点集的拓扑纹丝不动。注意只保证拓扑不变——更细的解析形状仍可能变化，这正是"μ 一个数锁死拓扑"的惊人之处。
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280">
+  <text x="280" y="30" text-anchor="middle" font-size="16" fill="#204060">φ_t：把 t 时刻的形状搬回 f₀ 的形状（拓扑不变）</text>
+  <path d="M 400 104 Q 290 40 182 74" stroke="#888888" stroke-width="2" fill="none"/>
+  <polygon points="182,74 193,72 188,85" fill="#888888"/>
+  <path d="M 258 106 Q 232 66 178 78" stroke="#aaaaaa" stroke-width="1.5" fill="none" stroke-dasharray="5 4"/>
+  <ellipse cx="150" cy="140" rx="52" ry="32" fill="#eaf2fb" stroke="#35618f" stroke-width="2"/>
+  <polygon points="150,98 158,112 142,112" fill="#c07015"/>
+  <ellipse cx="280" cy="140" rx="52" ry="32" fill="#eaf2fb" stroke="#35618f" stroke-width="2"/>
+  <polygon points="280,98 288,112 272,112" fill="#c07015"/>
+  <ellipse cx="410" cy="140" rx="52" ry="32" fill="#eaf2fb" stroke="#35618f" stroke-width="2"/>
+  <polygon points="410,98 418,112 402,112" fill="#c07015"/>
+  <text x="280" y="196" text-anchor="middle" font-size="15" fill="#204060">μ=8 全程不变 ⇒ 拓扑全程不变</text>
+  <line x1="60" y1="225" x2="505" y2="225" stroke="#333333" stroke-width="2"/>
+  <polygon points="505,225 493,220 493,230" fill="#333333"/>
+  <line x1="150" y1="219" x2="150" y2="231" stroke="#333333" stroke-width="2"/>
+  <line x1="280" y1="219" x2="280" y2="231" stroke="#333333" stroke-width="2"/>
+  <line x1="410" y1="219" x2="410" y2="231" stroke="#333333" stroke-width="2"/>
+  <text x="150" y="246" text-anchor="middle" font-size="13" fill="#333333">t=0</text>
+  <text x="280" y="246" text-anchor="middle" font-size="13" fill="#333333">t</text>
+  <text x="410" y="246" text-anchor="middle" font-size="13" fill="#333333">t=1</text>
+  <text x="280" y="272" text-anchor="middle" font-size="14" fill="#666666">例：f_t(x,y,z)=x³+y³+z³+t·xyz（μ 恒为 8）</text>
+</svg>
+
+</div>
+
+**为什么值得关心**
+
+这是 μ 常数问题最后一个、也是被四维拓扑挡了五十年的维数缺口：一个数字锁死全部拓扑，曲面奇点的"指纹识别"从此成立。
+
+> 暂无形式化证明（AI 结果待核验）
+
 ## 一句话结论
 
 本文证明：`@@M@@\mathbb C^3@@` 中孤立超曲面奇点的全纯单参数族只要 Milnor 数（Milnor number）`@@M@@\mu@@` 恒定就必拓扑右平凡。`@@M@@\mu@@` 常数问题在唯一遗留的曲面维数上得到肯定答案——单凭 `@@M@@\mu@@` 这一个数，确实锁死了曲面奇点族的全部拓扑。

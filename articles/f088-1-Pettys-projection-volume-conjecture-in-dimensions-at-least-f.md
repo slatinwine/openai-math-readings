@@ -13,6 +13,55 @@ pdfname: ""
 
 > 结果族 088：Sharp projection-body inequalities and a counterexample to simplex maximization　·　学科：Convex and metric geometry（凸几何与度量几何）　·　验证状态：主结果已 Lean 形式化
 
+## 入门导读 🐣
+
+手影游戏：一个立体在灯光下朝各个方向投出影子，方向不同，影子的大小也不同。数学家把"每个方向的影子大小"整体打包，造成一个新的立体——投影体。Petty 1971 年猜：体积相同的立体中，椭球（球的均匀拉伸版）的投影体最小。这篇论文证明：在四维及以上的所有维度，椭球、且只有椭球，投影体最"瘦"。
+
+**关键词卡片**
+
+- 投影体（projection body）：`@@M@@\Pi K@@`，其各方向的"半径"等于 `@@M@@K@@` 在该方向投影的 `@@M@@(n-1)@@` 维体积——一本影子档案册。
+- 支撑函数（support function）：`@@M@@h_K(u)=\max_{x\in K}\langle x,u\rangle@@`，凸体在方向 `@@M@@u@@` 上伸出去的距离。
+- 椭球（ellipsoid）：球经可逆线性变换的像，"被均匀拉扯过的球"。
+- 仿射不变量（affine invariant）：平移、旋转、拉伸都不改变的量；`@@M@@R_n(K)=|\Pi K|/|K|^{n-1}@@` 就是。
+- 等号情形（equality case）：定理全局断言取等的只有椭球，不需要"接近球"的附加假设。
+
+**看个具体例子**
+
+球朝任何方向投去，影子都是低一维的球。于是对单位球 `@@M@@B@@`（记 `@@M@@\kappa_d@@` 为 `@@M@@d@@` 维单位球体积），每个方向的影子一样大：`@@M@@\Pi B=\kappa_{n-1}B@@`。数字版定理：
+
+`@@M@@\frac{|\Pi K|}{|K|^{n-1}}\ \ge\ \frac{|\Pi B|}{|B|^{n-1}}=\kappa_{n-1}^{\,n}\,\kappa_n^{\,2-n}\qquad(n\ge4)@@`
+
+代入 `@@M@@n=4@@` 读一读：任何四维凸体的"影子总分"都不低于球的值，取等的只有椭球。
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280">
+<text x="40" y="34" font-size="18" fill="#333">手影游戏：换个方向，影子大小就变</text>
+<circle cx="90" cy="140" r="10" fill="#f4d03f" stroke="#b7950b" stroke-width="2"/>
+<text x="58" y="106" font-size="15" fill="#7d6608">光源</text>
+<rect x="230" y="100" width="80" height="80" fill="#aed6f1" stroke="#2e6da4" stroke-width="2.5"/>
+<text x="226" y="205" font-size="15" fill="#1a4d7a">物体 K</text>
+<line x1="90" y1="140" x2="460" y2="34" stroke="#e59866" stroke-width="1.5" stroke-dasharray="6 4"/>
+<line x1="90" y1="140" x2="460" y2="73" stroke="#e59866" stroke-width="1.5" stroke-dasharray="6 4"/>
+<line x1="90" y1="140" x2="460" y2="207" stroke="#e59866" stroke-width="1.5" stroke-dasharray="6 4"/>
+<line x1="90" y1="140" x2="460" y2="246" stroke="#e59866" stroke-width="1.5" stroke-dasharray="6 4"/>
+<line x1="460" y1="20" x2="460" y2="260" stroke="#8d6e63" stroke-width="4"/>
+<rect x="452" y="34" width="16" height="212" fill="#f1948a"/>
+<text x="444" y="145" font-size="14" fill="#943126" text-anchor="end">这个方向的影子</text>
+<text x="440" y="272" font-size="15" fill="#6e4b3a">墙</text>
+<text x="40" y="250" font-size="15" fill="#777777">把所有方向的影子大小打包成一个凸体 = 投影体 ΠK</text>
+</svg>
+
+</div>
+
+一般凸体的影子随方向忽大忽小，打包出的投影体更胖；定理断言同体积下椭球最省，其余一律严格更胖。
+
+**为什么值得关心**
+
+与三维的已有结果合并，1971 年提出的 Petty 投影体积猜想在全部 `@@M@@n\ge3@@` 维成立；论文还推出新的仿射 Sobolev 不等式与赋范空间等周不等式。
+
+> 已 Lean 形式化
+
 ## 一句话结论
 
 证明 Petty 投影体积猜想在所有 `@@M@@n\ge 4@@` 维成立：体积固定的凸体中，椭球、且仅有椭球，使其投影体的体积最小。与陈等人此前证得的三维结果合并，这个 1971 年提出的仿射等周型猜想在全部 `@@M@@n\ge 3@@` 维度获得解决。

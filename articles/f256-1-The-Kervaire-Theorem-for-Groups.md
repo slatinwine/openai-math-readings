@@ -13,6 +13,30 @@ pdfname: ""
 
 > 结果族 256：Nonsingular systems of equations over arbitrary groups　·　学科：Group theory　·　验证状态：暂无形式化证明，请以社区核验为准
 
+## 入门导读 🐣
+
+往俱乐部章程里添一条新规矩，会不会"规矩互相打架，人人被压成一模一样"？把一个非平凡群 A 加上一个新生成元 t、再添一条关系 w=1，商群会不会塌缩成只剩单位元的"扁平群"？Kervaire 在研究高维纽结时猜想：不会。这篇论文证明：他猜对了。
+
+**关键词卡片**
+
+- 自由积（free product）：把两个群"不带任何关系"拼在一起，记作 `@@M@@A*\langle t\rangle@@`。
+- 正规闭包（normal closure）：元素 w 连同其所有共轭生成的子群；若它吞没全群，w 就"独自撑起"整个群。
+- 指数和（exponent sum）：词 w 中 t 的净出现次数，记 p(w)。
+- 幺模词（unimodular word）：p(w)=±1 的词，最刁钻的情形。
+- 高维纽结群（high-dimensional knot group）：猜想的发源地。
+
+**看个具体例子**
+
+关键在"计分"：给 t 记 1 分、给 A 记 0 分，乘法变加法，得到打分同态 p。若 p(w)=2，商群自动有满同态到 `@@M@@\mathbb{Z}/2\mathbb{Z}@@`（w 的 2 分被模 2 抹掉），立刻非平凡；p(w)=0 时则满射到 `@@M@@\mathbb{Z}@@`，同样白送。唯独 p(w)=±1 时，一切"逃生通道"失效，只能硬证系数映射是单射。
+
+数字版定理：`@@M@@p(w)=\pm 1\ \Longrightarrow\ A\hookrightarrow (A*\langle t\rangle)/\langle\!\langle w\rangle\!\rangle@@`，特别地商群非平凡——这正是 Kervaire 猜想。举一个最小的幺模词：`@@M@@w=tat@@`（t 净出现两次，不合要求）；而 `@@M@@w=tat^{-1}\cdot at@@` 中 t 净出现一次，就落在定理的保护范围内，无论 A 多古怪。
+
+**为什么值得关心**
+
+"一个元素压不塌一个群"看似直白，却是 Kervaire 刻画高维纽结群的关键条件，悬置了六十年；本文与姊妹篇（Howie 猜想）共用一套"谱相位＋平面曲面"的新武器，把系数群彻底放开。
+
+> 暂无形式化证明（AI 结果待核验）
+
 ## 一句话结论
 
 本文正面解决 Kervaire 猜想：给任意非平凡群 `@@M@@A@@` 添加一个生成元 `@@M@@t@@` 与一个关系 `@@M@@w=1@@`，商群 `@@M@@(A*\langle t\rangle)/\langle\!\langle w\rangle\!\rangle@@` 仍非平凡。核心步骤是证明 `@@M@@w@@` 幺模（`@@M@@t@@` 的指数和为 `@@M@@\pm1@@`）时系数映射必为单射。

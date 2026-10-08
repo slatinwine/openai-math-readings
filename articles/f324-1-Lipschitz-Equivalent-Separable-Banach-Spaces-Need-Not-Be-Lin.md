@@ -13,6 +13,51 @@ pdfname: ""
 
 > 结果族 324：Lipschitz equivalent Banach spaces need not be linearly isomorphic　·　学科：Functional analysis　·　验证状态：主结果已 Lean 形式化
 
+## 入门导读 🐣
+
+两张城市地图比例尺略有伸缩：任意两地距离的读数永远只差固定倍数，但两座城市的街道并不是同一套直线网格。数学版问题：两个 Banach 空间之间若存在双侧 Lipschitz 的双射（距离只差常数倍），它们是否必然线性同构？这个悬置近五十年的问题被本文否定。
+
+**关键词卡片**
+
+- 双 Lipschitz 等价（bi-Lipschitz equivalence）：双射把任意两点的距离夹在常数上下界之间。
+- 线性同构（linear isomorphism）：同时保持加法与数乘的连续双射。
+- c₀(ℓ₂)（c₀ of ℓ₂）：每个坐标放一个希尔伯特方块、趋于零的序列空间——本文的"身份证障碍"。
+- Lipschitz 自由空间（Lipschitz-free space）：能把非线性映射自动线性化的通用机器。
+
+**看个具体例子**
+
+构造出的可分空间 X、Y 与双射 Ψ 满足论文算出的显式常数（约压缩 0.19 倍到拉伸 3.04 倍之间）：
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280">
+<path d="M 60,150 C 55,95 130,60 185,85 C 240,110 245,175 195,205 C 145,235 65,210 60,150 Z" fill="none" stroke="black" stroke-width="2"/>
+<path d="M 320,150 C 315,95 390,60 445,85 C 500,110 505,175 455,205 C 405,235 325,210 320,150 Z" fill="none" stroke="black" stroke-width="2"/>
+<text x="125" y="150" font-size="18" text-anchor="middle" font-weight="bold">X</text>
+<text x="385" y="150" font-size="18" text-anchor="middle" font-weight="bold">Y</text>
+<line x1="245" y1="100" x2="312" y2="100" stroke="black" stroke-width="2"/>
+<line x1="312" y1="100" x2="300" y2="94" stroke="black" stroke-width="2"/>
+<line x1="312" y1="100" x2="300" y2="106" stroke="black" stroke-width="2"/>
+<text x="278" y="86" font-size="13" text-anchor="middle">Ψ：双 Lipschitz</text>
+<line x1="312" y1="195" x2="245" y2="195" stroke="black" stroke-width="2" stroke-dasharray="6,4"/>
+<line x1="257" y1="189" x2="245" y2="195" stroke="black" stroke-width="2"/>
+<line x1="257" y1="201" x2="245" y2="195" stroke="black" stroke-width="2"/>
+<line x1="270" y1="185" x2="286" y2="205" stroke="red" stroke-width="3"/>
+<line x1="286" y1="185" x2="270" y2="205" stroke="red" stroke-width="3"/>
+<text x="278" y="228" font-size="13" text-anchor="middle" fill="red">线性同构 ✗</text>
+<text x="280" y="258" font-size="13" text-anchor="middle">距离被夹在 4/21 与 76/25 倍之间；X 含 c₀(ℓ₂)，Y 不含</text>
+</svg>
+
+</div>
+
+两句白话：距离层面 X、Y 几乎是同一个空间（只差常数倍伸缩）；线性层面却天差地别——X 含 `@@M@@c_0(\ell_2)@@` 的等距拷贝，Y 连一个线性同构拷贝都不含。
+
+**为什么值得关心**
+
+1978 年 Aharoni–Lindenstrauss 造出不可分反例并点名索要可分的，此后近五十年无解；此例一出，"度量等价"与"线性等价"在可分世界正式分家。
+
+> 已 Lean 形式化
+
 ## 一句话结论
 
 构造出可分实 Banach 空间 `@@M@@X,Y@@` 与双射 `@@M@@\Psi:X\to Y@@`，满足双侧 Lipschitz 界 `@@M@@\frac{4}{21}\|s-t\|_X\le\|\Psi(s)-\Psi(t)\|_Y\le\frac{76}{25}\|s-t\|_X@@`，但二者不线性同构——对悬置近五十年的可分 Lipschitz 同构问题给出否定回答。

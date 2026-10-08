@@ -13,6 +13,58 @@ pdfname: ""
 
 > 结果族 167：Planar distinct distances and unit-distance bounds　·　学科：Combinatorics　·　验证状态：主结果已 Lean 形式化
 
+## 入门导读 🐣
+
+想象操场上站着 `@@M@@n@@` 个同学，每人环顾四周，报出"我到大家的距离有多少种不同取值"。这篇论文证明：几乎每个人的答案都大得惊人——距离取值至少有 `@@M@@n^{1-\varepsilon}@@` 种，想要多接近 `@@M@@n@@` 都行；只能看到很少种距离的"宅点"，占比必然趋于零。这就是 Erdős 1957 年提出、悬置近七十年的钉点不同距离猜想的弱形式，而且结论对一切点集一致成立，不设任何分离性或一般位置假设。
+
+**关键词卡片**
+
+- 不同距离（distinct distances）：`@@M@@n@@` 个点两两之间能数出多少种互不相同的距离长度
+- 钉点（pinned）：把所有距离固定从同一个出发点丈量，看单个点能"看到"多少种
+- 例外点（exceptional points）：只看到很少种距离的点，例如圆心；定理证明其占比为 `@@M@@o(n)@@`，即随 `@@M@@n@@` 增大占比趋近于零
+- 距离纤维（distance fiber）：与钉点等距的所有点构成的"同距圈"
+
+**看个具体例子**
+
+最天然的例外点是圆心：
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280">
+  <text x="280" y="26" text-anchor="middle" font-size="16" fill="#333">圆心是天然的"例外点"</text>
+  <circle cx="280" cy="150" r="85" fill="none" stroke="#333" stroke-width="1.5"/>
+  <line x1="280" y1="150" x2="365" y2="150" stroke="#aaa" stroke-width="1" stroke-dasharray="4 3"/>
+  <line x1="280" y1="150" x2="340" y2="210" stroke="#aaa" stroke-width="1" stroke-dasharray="4 3"/>
+  <line x1="280" y1="150" x2="280" y2="235" stroke="#aaa" stroke-width="1" stroke-dasharray="4 3"/>
+  <line x1="280" y1="150" x2="220" y2="210" stroke="#aaa" stroke-width="1" stroke-dasharray="4 3"/>
+  <line x1="280" y1="150" x2="195" y2="150" stroke="#aaa" stroke-width="1" stroke-dasharray="4 3"/>
+  <line x1="280" y1="150" x2="220" y2="90" stroke="#aaa" stroke-width="1" stroke-dasharray="4 3"/>
+  <line x1="280" y1="150" x2="280" y2="65" stroke="#aaa" stroke-width="1" stroke-dasharray="4 3"/>
+  <line x1="280" y1="150" x2="340" y2="90" stroke="#aaa" stroke-width="1" stroke-dasharray="4 3"/>
+  <circle cx="365" cy="150" r="4" fill="#333"/>
+  <circle cx="340" cy="210" r="4" fill="#333"/>
+  <circle cx="280" cy="235" r="4" fill="#333"/>
+  <circle cx="220" cy="210" r="4" fill="#333"/>
+  <circle cx="195" cy="150" r="4" fill="#333"/>
+  <circle cx="220" cy="90" r="4" fill="#333"/>
+  <circle cx="280" cy="65" r="4" fill="#333"/>
+  <circle cx="340" cy="90" r="4" fill="#333"/>
+  <circle cx="280" cy="150" r="6" fill="#c0392b"/>
+  <text x="292" y="147" font-size="13" fill="#c0392b">圆心 O</text>
+  <text x="280" y="256" text-anchor="middle" font-size="14" fill="#555">圆心到圆上每点等距：只看到 1 种距离（半径）</text>
+  <text x="280" y="276" text-anchor="middle" font-size="14" fill="#555">定理：这样的例外点只占 o(n)，其余点各看到至少 n^(1−ε) 种距离</text>
+</svg>
+
+</div>
+
+定理代入数字：`@@M@@n=10^6@@`、`@@M@@\varepsilon=0.01@@` 时，`@@M@@n^{1-\varepsilon}\approx 8.7\times10^5@@`——除占比趋零的点外，每个点都各自张出至少约 87 万种互异距离。
+
+**为什么值得关心**
+
+全局版不同距离问题已被 Guth–Katz 解决，而逐点的钉点版本此前最好结果只有 `@@M@@n^{0.864}@@`；本文一举推到 `@@M@@n^{1-\varepsilon}@@`；其工具箱（复坐标分解、数域乘积公式、实闭域转移）与姊妹篇单位距离上界共享，互相印证，且主结果已通过机器核验。
+
+> 已 Lean 形式化
+
 ## 一句话结论
 
 证明了弱钉点 Erdős 不同距离猜想：对任何固定 `@@M@@\varepsilon>0@@`，任何 `@@M@@n@@` 点平面点集中除 `@@M@@o(n)@@` 个例外点外，每个点都与其余点张出至少 `@@M@@n^{1-\varepsilon}@@` 个互异距离——Erdős 1957 年提出的这一公开问题得到肯定解决。

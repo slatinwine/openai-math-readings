@@ -13,6 +13,36 @@ pdfname: ""
 
 > 结果族 025：Short Egyptian fractions　·　学科：Number theory　·　验证状态：主结果已 Lean 形式化
 
+## 入门导读 🐣
+
+古埃及人记分数只用"几分之一"，还不许重复——好比口袋里只有一套面额互不相同的硬币，要刚好凑出任意金额。这篇论文解决的埃尔德什老问题是：金额（分母 b）再大，最少要几枚硬币？答案是对数再取一次对数那么少，而且证明了不可能更省。
+
+**关键词卡片**
+
+- 埃及分数（Egyptian fraction）：把分数拆成互不相同的单位分数之和，如 4/5 = 1/2 + 1/4 + 1/20。
+- 单位分数（unit fraction）：分子为 1 的分数，埃及人的"硬币面额"。
+- 贪心算法（greedy algorithm）：每步都拿不超过剩余量的最大面额，必能拆完，但可能拆得很长。
+- 最少项数 N(b)：分母固定为 b、分子任取时最坏情况所需的项数。
+- 双对数阶 O(log log b)：对 b 连取两次自然对数——增长慢得几乎原地踏步的速率。
+
+**看个具体例子**
+
+4/5 = 1/2 + 1/4 + 1/20，三项搞定。主定理说：任何真分数都能用"常数 × ln ln b"项拆完。代入 b = 10^100：ln b ≈ 230，再取一次对数只剩约 5.4——分母大到天文数字，所需项数也只是个位数乘一个常数；而 1985 年的旧上界 √ln b ≈ 15，随 b 爬升快得多。
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280"><line x1="80" y1="240" x2="530" y2="240" stroke="#333" stroke-width="2"/><line x1="80" y1="240" x2="80" y2="30" stroke="#333" stroke-width="2"/><polygon points="530,240 518,235 518,245" fill="#333"/><polygon points="80,30 75,42 85,42" fill="#333"/><path d="M 80 238 Q 300 224 496 62" fill="none" stroke="#c0392b" stroke-width="3"/><path d="M 80 238 Q 280 186 496 154" fill="none" stroke="#1e8449" stroke-width="3"/><text x="452" y="52" font-size="15" text-anchor="middle" fill="#c0392b">旧上界 √(ln b)</text><text x="468" y="182" font-size="15" text-anchor="middle" fill="#1e8449">新上界 ln ln b</text><text x="300" y="266" font-size="14" text-anchor="middle" fill="#333">分母 b（越往右越大）</text><text x="24" y="130" font-size="14" fill="#333">所</text><text x="24" y="150" font-size="14" fill="#333">需</text><text x="24" y="170" font-size="14" fill="#333">项</text><text x="24" y="190" font-size="14" fill="#333">数</text><text x="290" y="214" font-size="13" text-anchor="middle" fill="#555">b = 10^100 时：约 15 项 对 约 5.4 项（各乘同一常数）</text></svg>
+
+</div>
+
+图中横轴是分母 b，纵轴是所需项数的上界：红色旧界稳步上升，绿色新界几乎躺平。
+
+**为什么值得关心**
+
+一个 1950 年提出的猜想被一次说死：ln ln b 这个阶既够用又最优（分子取 b−1 时恰好逼出匹配的下界），上下界在同一篇里闭合，数论中难得的干净利落。
+
+> 已 Lean 形式化
+
 ## 一句话结论
 
 证明了 Erdős 的短埃及分数猜想：对充分大的 `@@M@@b@@`，任何真分数 `@@M@@a/b@@` 都能写成至多 `@@M@@O(\log\log b)@@` 个互不相同的单位分数之和，且这一双对数阶已是最优；附带确定了 1 的 `@@M@@k@@` 项展开个数与"指定分母"缺失量均按双指数增长。

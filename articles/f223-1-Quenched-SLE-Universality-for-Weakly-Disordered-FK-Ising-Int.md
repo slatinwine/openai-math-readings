@@ -13,6 +13,53 @@ pdfname: ""
 
 > 结果族 223：Random-cluster interfaces: critical, disordered, thermal, and natural-time scaling　·　学科：Probability and statistical mechanics　·　验证状态：暂无形式化证明，请以社区核验为准
 
+## 入门导读 🐣
+
+磁铁游戏升级：这次每条边的"连接强度"被随机微调——有的边略强、有的略弱，像材料里撒进杂质。直觉担心这些杂质会搅乱分界线的形状。这篇论文证明：只要别调得太狠，分界线根本不在乎杂质，最终仍是原来那条随机曲线 SLE₁₆/₃——普适性对随机缺陷是稳定的。
+
+**关键词卡片**
+
+- FK–Ising 模型（FK–Ising model）：随机簇框架取 q=2，等价于研究磁铁的连通几何。
+- 键无序（bond disorder）：每条边独立地取强度 1+ε 或 1−ε 的随机微调，ε 是杂质浓度。
+- 淬火（quenched）：先把一套随机杂质固定住、再采样曲线——比"对杂质取平均"更严的要求。
+- 临界逆温（critical inverse temperature）：无序模型自己的临界点，方程 `@@M@@(e^{2\beta_c(1+\varepsilon)}-1)(e^{2\beta_c(1-\varepsilon)}-1)=2@@` 的唯一解。
+- 普适性（universality）：微观细节（此处是杂质）不影响宏观极限的现象。
+
+**看个具体例子**
+
+取 ε=0.1：一半边强度 0.9、一半 1.1，且这个"不完美程度"固定，不随格子变细而消失。定理说只要 ε 足够小，无论哪一套具体的杂质实现，条件曲线律都收敛到同一个 `@@M@@\mathrm{SLE}_{16/3}(D;a,b)@@`。
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280">
+  <text x="20" y="24" font-size="15" fill="#333">无杂质与固定杂质的界面 → 同一条极限曲线</text>
+  <rect x="60" y="50" width="180" height="180" fill="#f7f7f7" stroke="#333" stroke-width="2"/>
+  <text x="100" y="40" font-size="14" fill="#333">均匀强度</text>
+  <line x1="80" y1="90" x2="80" y2="190" stroke="#9bb" stroke-width="1"/>
+  <line x1="110" y1="70" x2="110" y2="210" stroke="#9bb" stroke-width="1"/>
+  <line x1="140" y1="80" x2="140" y2="200" stroke="#9bb" stroke-width="1"/>
+  <line x1="170" y1="75" x2="170" y2="205" stroke="#9bb" stroke-width="1"/>
+  <line x1="200" y1="85" x2="200" y2="195" stroke="#9bb" stroke-width="1"/>
+  <path d="M60,230 C90,205 105,170 130,160 C160,148 150,110 185,100 C205,94 215,80 240,50" fill="none" stroke="#c33" stroke-width="3"/>
+  <rect x="320" y="50" width="180" height="180" fill="#f7f7f7" stroke="#333" stroke-width="2"/>
+  <text x="345" y="40" font-size="14" fill="#333">随机强弱边（ε 固定）</text>
+  <line x1="340" y1="90" x2="340" y2="190" stroke="#9bb" stroke-width="2.5"/>
+  <line x1="370" y1="70" x2="370" y2="210" stroke="#9bb" stroke-width="1"/>
+  <line x1="400" y1="80" x2="400" y2="200" stroke="#9bb" stroke-width="2.5"/>
+  <line x1="430" y1="75" x2="430" y2="205" stroke="#9bb" stroke-width="1"/>
+  <line x1="460" y1="85" x2="460" y2="195" stroke="#9bb" stroke-width="2.5"/>
+  <path d="M320,230 C350,208 362,172 390,162 C418,152 412,112 445,102 C462,96 475,80 500,50" fill="none" stroke="#c33" stroke-width="3"/>
+  <text x="20" y="262" font-size="14" fill="#333">两图极限同为 SLE₁₆/₃：杂质不改变宏观形状（细线=弱边，粗线=强边）</text>
+</svg>
+
+</div>
+
+**为什么值得关心**
+
+二维 Ising 恰处于 Harris 判据的边缘情形，物理界争论随机耦合是否产生对数修正数十年；本文给出第一个固定强度无序下的整条界面严格收敛结果。
+
+> 暂无形式化证明（AI 结果待核验）
+
 ## 一句话结论
 证明带固定强度、对称二值键无序的临界 FK–Ising 界面仍收敛到 chordal `@@M@@\SLE_{16/3}@@`：无序强度不随网格变小，收敛对环境取 quenched 意义（依概率成立），确认 SLE 普适性对随机耦合稳定。
 

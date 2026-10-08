@@ -13,6 +13,65 @@ pdfname: ""
 
 > 结果族 168：Combinatorial invariance of Kazhdan–Lusztig polynomials　·　学科：Combinatorics　·　验证状态：暂无形式化证明，请以社区核验为准
 
+## 入门导读 🐣
+
+两所学校用完全不同的方式给干部编号，但只要"谁归谁管"的层级结构一模一样，两校算出的"管理复杂度成绩单"就该完全相同。这篇论文证明的正是这种"只认结构、不认标签"的现象：表示论中重要的 Kazhdan–Lusztig 多项式，其实只由区间的偏序结构决定，与生成元、根系等一切附加记号无关。
+
+**关键词卡片**
+
+- Kazhdan–Lusztig 多项式（Kazhdan–Lusztig polynomial）：挂在"等级区间"上的一串系数，编码表示论与几何的深层信息
+- Coxeter 系统（Coxeter system）：由反射生成的对称体系，好比一组互相映照的镜子
+- Bruhat 区间（Bruhat interval）：两个元素之间按"复杂度"排出的等级阶梯
+- 组合不变性（combinatorial invariance）：多项式只由阶梯的形状决定，与镜子如何编号无关
+- 偏序集同构（poset isomorphism）：只保留上下关系、不带任何附加标签的一一对应
+
+**看个具体例子**
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280">
+  <text x="135" y="48" text-anchor="middle" font-size="14" fill="#333">系统 A 的区间 [u, b]</text>
+  <text x="425" y="48" text-anchor="middle" font-size="14" fill="#333">系统 B 的区间 [u', b']</text>
+  <rect x="45" y="60" width="180" height="170" rx="10" fill="none" stroke="#333" stroke-width="1.3"/>
+  <rect x="335" y="60" width="180" height="170" rx="10" fill="none" stroke="#333" stroke-width="1.3"/>
+  <line x1="135" y1="88" x2="92" y2="145" stroke="#333" stroke-width="1.5"/>
+  <line x1="135" y1="88" x2="178" y2="145" stroke="#333" stroke-width="1.5"/>
+  <line x1="92" y1="145" x2="135" y2="202" stroke="#333" stroke-width="1.5"/>
+  <line x1="178" y1="145" x2="135" y2="202" stroke="#333" stroke-width="1.5"/>
+  <circle cx="135" cy="88" r="4.5" fill="#333"/>
+  <circle cx="92" cy="145" r="4.5" fill="#333"/>
+  <circle cx="178" cy="145" r="4.5" fill="#333"/>
+  <circle cx="135" cy="202" r="4.5" fill="#333"/>
+  <text x="135" y="79" text-anchor="middle" font-size="13" fill="#333">b</text>
+  <text x="80" y="150" text-anchor="end" font-size="13" fill="#333">x</text>
+  <text x="190" y="150" font-size="13" fill="#333">y</text>
+  <text x="135" y="222" text-anchor="middle" font-size="13" fill="#333">u</text>
+  <line x1="425" y1="88" x2="382" y2="145" stroke="#333" stroke-width="1.5"/>
+  <line x1="425" y1="88" x2="468" y2="145" stroke="#333" stroke-width="1.5"/>
+  <line x1="382" y1="145" x2="425" y2="202" stroke="#333" stroke-width="1.5"/>
+  <line x1="468" y1="145" x2="425" y2="202" stroke="#333" stroke-width="1.5"/>
+  <circle cx="425" cy="88" r="4.5" fill="#333"/>
+  <circle cx="382" cy="145" r="4.5" fill="#333"/>
+  <circle cx="468" cy="145" r="4.5" fill="#333"/>
+  <circle cx="425" cy="202" r="4.5" fill="#333"/>
+  <text x="425" y="79" text-anchor="middle" font-size="13" fill="#333">b'</text>
+  <text x="370" y="150" text-anchor="end" font-size="13" fill="#333">x'</text>
+  <text x="480" y="150" font-size="13" fill="#333">y'</text>
+  <text x="425" y="222" text-anchor="middle" font-size="13" fill="#333">u'</text>
+  <text x="280" y="152" text-anchor="middle" font-size="26" fill="#c0392b">≅</text>
+  <text x="280" y="262" text-anchor="middle" font-size="14" fill="#555">偏序结构相同 ⇒ 两个区间的 KL 多项式完全相同</text>
+</svg>
+
+</div>
+
+定理的"数字版"：只要 `@@M@@[u,b]\cong[u',b']@@`（仅保序同构），两个系统的多项式就逐系数相等：`@@M@@P^W_{u,b}(q)=P^{W'}_{u',b'}(q)@@`——不管多项式恰好是 `@@M@@1@@` 还是 `@@M@@1+2q+q^2@@`，两边的答案都完全同步。定理覆盖任意 Coxeter 系统，包括无限群与不可晶体化的情形，而此前只有低秩或特殊类型的部分结果。
+
+**为什么值得关心**
+
+这个由 Lusztig 与 Dyer 提出的猜想三十余年只有零星进展；本文给出覆盖一切情形的完整证明。
+
+> 暂无形式化证明（AI 结果待核验）
+
 ## 一句话结论
 
 本文彻底证明了 Kazhdan–Lusztig 多项式的"组合不变性猜想"：在任意 Coxeter 系统中，两个仅作为抽象偏序集同构的 Bruhat 区间拥有完全相同的等参数（equal-parameter）Kazhdan–Lusztig 多项式——多项式只由区间的序结构决定。

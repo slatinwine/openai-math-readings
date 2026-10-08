@@ -13,6 +13,37 @@ pdfname: ""
 
 > 结果族 006：Goldfeld's conjecture: densities and mean analytic rank　·　学科：Number theory　·　验证状态：暂无形式化证明，请以社区核验为准
 
+## 入门导读 🐣
+
+一个班级若一半人得 0 分、一半人得 1 分，平均分是 0.5；可万一冒出一个考 100 分的天才，平均分就会被拉高。椭圆曲线的二次扭曲大家族也是如此：即便"秩 0 与秩 1 各占一半"，罕见的超高秩曲线会不会拖高平均？这篇论文证明：不会。全族的平均解析秩恰好是 `@@M@@1/2@@`，而且证明是无条件的——既不用黎曼假设，也不用 BSD 猜想。
+
+**关键词卡片**
+
+- 平均解析秩（mean analytic rank）：所有二次扭曲的解析秩取平均，相当于"全班平均分"。
+- 二次扭曲（quadratic twist）：以无平方因子整数 `@@M@@d@@` 为参数的表亲曲线 `@@M@@E^{(d)}@@`；正负参数按绝对值一起计数。
+- 尾部估计（tail estimate）：秩超过 `@@M@@R@@` 的曲线贡献的"总秩质量"不超过 `@@M@@C_E/R@@`——学霸再多也拉不动平均分的定量版本。
+- 无条件（unconditional）：不依赖 GRH、BSD 等未证猜想；此前的精确平均 `@@M@@1/2@@` 都要附加假设才能得到。
+
+**看个具体例子**
+
+主定理：`@@M@@\dfrac{1}{\#\mathcal D(Y)}\sum_{d\in\mathcal D(Y)}a(E^{(d)})\to\dfrac12@@`。推论更有画面感：把秩看成随机变量，它渐近地表现得像一枚公平硬币——一半取 0、一半取 1，于是
+
+`@@M@@D\frac1{\#\mathcal D(Y)}\sum_d e^{t\,r(E^{(d)})}\to\frac{1+e^t}{2},@@`
+
+这正是掷硬币的特征函数（代入 `@@M@@t=1@@` 得 `@@M@@(1+e)/2\approx1.86@@`），代数秩的各阶矩平均也收敛到 `@@M@@1/2@@` 的幂。图示如下：
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280"><line x1="70" y1="210" x2="520" y2="210" stroke="#333" stroke-width="2"/><line x1="70" y1="210" x2="70" y2="60" stroke="#333" stroke-width="2"/><line x1="110" y1="204" x2="110" y2="216" stroke="#333" stroke-width="2"/><line x1="210" y1="204" x2="210" y2="216" stroke="#333" stroke-width="2"/><line x1="310" y1="204" x2="310" y2="216" stroke="#333" stroke-width="2"/><line x1="410" y1="204" x2="410" y2="216" stroke="#333" stroke-width="2"/><line x1="490" y1="204" x2="490" y2="216" stroke="#333" stroke-width="2"/><text x="110" y="236" font-size="16" text-anchor="middle" fill="#222">0</text><text x="210" y="236" font-size="16" text-anchor="middle" fill="#222">1</text><text x="310" y="236" font-size="16" text-anchor="middle" fill="#222">2</text><text x="410" y="236" font-size="16" text-anchor="middle" fill="#222">3</text><text x="490" y="236" font-size="16" text-anchor="middle" fill="#222">4</text><circle cx="110" cy="185" r="7" fill="none" stroke="#2a5fd6" stroke-width="2.5"/><circle cx="110" cy="167" r="7" fill="none" stroke="#2a5fd6" stroke-width="2.5"/><circle cx="110" cy="149" r="7" fill="none" stroke="#2a5fd6" stroke-width="2.5"/><circle cx="110" cy="131" r="7" fill="none" stroke="#2a5fd6" stroke-width="2.5"/><circle cx="110" cy="113" r="7" fill="none" stroke="#2a5fd6" stroke-width="2.5"/><circle cx="210" cy="185" r="7" fill="none" stroke="#2a5fd6" stroke-width="2.5"/><circle cx="210" cy="167" r="7" fill="none" stroke="#2a5fd6" stroke-width="2.5"/><circle cx="210" cy="149" r="7" fill="none" stroke="#2a5fd6" stroke-width="2.5"/><circle cx="210" cy="131" r="7" fill="none" stroke="#2a5fd6" stroke-width="2.5"/><circle cx="210" cy="113" r="7" fill="none" stroke="#2a5fd6" stroke-width="2.5"/><circle cx="310" cy="185" r="7" fill="none" stroke="#2a5fd6" stroke-width="2.5"/><circle cx="310" cy="167" r="7" fill="none" stroke="#2a5fd6" stroke-width="2.5"/><circle cx="410" cy="185" r="7" fill="none" stroke="#2a5fd6" stroke-width="2.5"/><line x1="160" y1="70" x2="160" y2="196" stroke="#d64545" stroke-width="2" stroke-dasharray="5 4"/><polygon points="150,207 170,207 160,194" fill="#d64545"/><text x="160" y="60" font-size="16" text-anchor="middle" fill="#d64545">平均秩 = 1/2</text><text x="295" y="262" font-size="15" text-anchor="middle" fill="#222">解析秩（每个圆圈代表一批扭曲，示意）</text><text x="295" y="30" font-size="16" text-anchor="middle" fill="#222">一半秩 0、一半秩 1，高秩拖不动平均</text></svg>
+
+</div>
+
+**为什么值得关心**
+
+`@@M@@1/2@@` 正是随机矩阵理论预言的"基准线"，本文在标准计数约定下无条件抵达它，宣告高秩曲线虽然存在、却拖累不了统计。
+
+> 暂无形式化证明（AI 结果待核验）
+
 ## 一句话结论
 
 本文证明 Goldfeld 平均解析秩猜想：任一椭圆曲线 `@@M@@E/\mathbb{Q}@@` 的二次扭曲在带符号平方自由参数、按绝对值计数下平均解析秩趋于 `@@M@@1/2@@`；证明无条件（不用广义黎曼假设与 BSD 猜想），核心新工具是导数阶随高度增长的一致尾部估计。

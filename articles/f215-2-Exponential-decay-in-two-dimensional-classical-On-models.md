@@ -13,6 +13,51 @@ pdfname: ""
 
 > 结果族 215：Canonical `@@M@@`O(3)`@@` continuum limit and exact `@@M@@`O(4)`@@` mass asymptotics　·　学科：Probability and statistical mechanics　·　验证状态：主结果已 Lean 形式化
 
+## 入门导读 🐣
+
+想象一张巨大的棋盘，每个格点上站着一个举箭的人，"温度"就是周围环境的吵闹程度。这篇论文证明了一件让人安心的事：只要箭头生活在三维或更高维的空间里（`@@M@@n\ge 3@@`），不管环境多吵，相隔很远的两个箭头都会彻底"忘记"彼此——关联随距离按指数速度归零，距离每拉开一格就再打一次固定折扣。
+
+**关键词卡片**
+
+- O(n) 模型（O(n) model）：格点上放 `@@M@@n@@` 维单位球面上的小箭头，相邻箭头方向越一致能量越低
+- 两点关联（two-point correlation）：两个格点箭头的平均内积，衡量"隔这么远还像不像"
+- 指数衰减（exponential decay）：关联不超过 `@@M@@A\,e^{-m\cdot\text{距离}}@@`，随距离拉长飞快归零
+- 自发磁化（spontaneous magnetization）：没人拨动时全体箭头自发指向同一方向的现象
+- Mermin–Wagner 定理：二维连续对称模型不可能自发磁化的经典结论，本文是它的强力升级
+
+**看个具体例子**
+
+把定理代入示意数字（取衰减率 `@@M@@m=0.3@@`）：距离 1 时关联约 `@@M@@e^{-0.3}\approx 0.74@@`；距离 10 时只剩 `@@M@@e^{-3}\approx 0.05@@`；距离 30 时约 `@@M@@0.0001@@`。
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280">
+<line x1="60" y1="230" x2="530" y2="230" stroke="#444444" stroke-width="2"/>
+<line x1="60" y1="230" x2="60" y2="30" stroke="#444444" stroke-width="2"/>
+<line x1="66" y1="228" x2="524" y2="228" stroke="#bbbbbb" stroke-width="1" stroke-dasharray="5,5"/>
+<path d="M 60 60 C 150 63 220 100 280 150 C 340 200 420 222 520 227" fill="none" stroke="#1a6faa" stroke-width="3"/>
+<circle cx="60" cy="60" r="6" fill="#c0392b"/>
+<circle cx="170" cy="75" r="4" fill="#1a6faa"/>
+<circle cx="280" cy="150" r="4" fill="#1a6faa"/>
+<circle cx="400" cy="212" r="4" fill="#1a6faa"/>
+<text x="76" y="50" font-size="15" fill="#c0392b">出发格点</text>
+<text x="150" y="60" font-size="14" fill="#333333">距离1：约0.74</text>
+<text x="250" y="138" font-size="14" fill="#333333">距离10：约0.05</text>
+<text x="368" y="200" font-size="14" fill="#333333">距离30：约0.0001</text>
+<text x="260" y="262" font-size="15" fill="#333333">格点间距</text>
+<text x="205" y="22" font-size="15" fill="#333333">箭头关联随距离指数下跌</text>
+</svg>
+
+</div>
+
+这个界还对"删点、删边、任意减弱耦合"的一切子图一致成立，因此后续条件化论证不需要任何额外假设。
+
+**为什么值得关心**
+
+平面上的箭头（`@@M@@n=2@@`）低温下只有幂律慢衰减，而 `@@M@@n\ge 3@@` 的箭头在一切正温度都被迫指数忘却——这正面解决了 Polyakov 猜想逾五十年的"全温度质量生成"问题。
+
+> 已 Lean 形式化
+
 ## 一句话结论
 证明二维方格最近邻 `@@M@@O(n)@@` 自旋模型（`@@M@@n\ge3@@`）在任意正温度两点自旋关联指数衰减，且估计对一切有限自由边界子图与 `@@M@@[0,\beta]@@` 内的边强度一致成立——全温度指数自旋衰减猜想由此获得正面解决。
 

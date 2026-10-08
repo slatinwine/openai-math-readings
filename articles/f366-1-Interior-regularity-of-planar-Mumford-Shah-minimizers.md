@@ -13,6 +13,55 @@ pdfname: ""
 
 > 结果族 366：The planar Mumford–Shah regularity conjecture and local weak-<i>L</i><sup>4</sup> gradient bounds　·　学科：Partial differential equations　·　验证状态：暂无形式化证明，请以社区核验为准
 
+## 入门导读 🐣
+
+给一张布满噪点的照片描线稿：线条要贴合明暗变化，别画得太长，还不能偏离原图太远——三种愿望加在一起定价，选总价最低的方案。这篇论文证明：最优方案的"线条"规矩得惊人，在平面内部任何一点附近只能是三种样子之一：一条光滑弧、一条终止的弧，或三条弧以 120° 相遇。
+
+**关键词卡片**
+
+- Mumford–Shah 泛函（Mumford–Shah functional）：总代价＝图像振荡＋边缘总长＋偏离原图，三项之和。
+- 裂缝集（discontinuity set）：允许图像值跳变的"描边线条"集合，位置未知。
+- 极小化子（minimizer）：总代价最低、任何局部修改都无法再改进的方案。
+- 三叉点（triple junction）：三条弧两两夹 120° 的交汇，与肥皂膜的夹角相同。
+- 弱 `@@M@@L^4@@` 梯度界（weak-`@@M@@L^4@@` gradient bound）：梯度可以无界，但超过 `@@M@@t@@` 的面积不超过 `@@M@@Ct^{-4}@@`。
+
+**看个具体例子**
+
+在"裂缝尖端"附近，图像值像 `@@M@@r^{1/2}\sin(\theta/2)@@` 那样弯折：梯度按 `@@M@@r^{-1/2}@@` 越靠近尖端越大，却恰好不越过弱 `@@M@@L^4@@` 这条线——水平集面积 `@@M@@\#\{|\nabla u|>t\}\le C_U t^{-4}@@`，因此 `@@M@@\nabla u@@` 对一切 `@@M@@p<4@@` 可积。裂缝集本身只允许图中三种局部长相。
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280">
+  <text x="280" y="28" text-anchor="middle" font-size="15" fill="#333">裂缝集 K 在内点 x 附近的三种允许长相</text>
+  <rect x="18" y="55" width="156" height="150" fill="none" stroke="#bbbbbb"/>
+  <path d="M38 185 Q96 75 154 185" fill="none" stroke="#333" stroke-width="2.5"/>
+  <circle cx="96" cy="130" r="4" fill="#c0392b"/>
+  <text x="96" y="155" text-anchor="middle" font-size="12" fill="#c0392b">x 在弧内部</text>
+  <text x="96" y="48" text-anchor="middle" font-size="14" fill="#333">① 一条光滑弧</text>
+  <rect x="202" y="55" width="156" height="150" fill="none" stroke="#bbbbbb"/>
+  <path d="M222 185 Q262 185 302 145 Q340 105 356 100" fill="none" stroke="#333" stroke-width="2.5"/>
+  <circle cx="356" cy="100" r="4" fill="#c0392b"/>
+  <text x="318" y="88" text-anchor="middle" font-size="12" fill="#c0392b">x 是自由端点</text>
+  <text x="280" y="48" text-anchor="middle" font-size="14" fill="#333">② 弧终止于 x</text>
+  <rect x="386" y="55" width="156" height="150" fill="none" stroke="#bbbbbb"/>
+  <path d="M464 150 L464 96" fill="none" stroke="#333" stroke-width="2.5"/>
+  <path d="M464 150 L417 177" fill="none" stroke="#333" stroke-width="2.5"/>
+  <path d="M464 150 L511 177" fill="none" stroke="#333" stroke-width="2.5"/>
+  <circle cx="464" cy="150" r="4" fill="#c0392b"/>
+  <text x="464" y="200" text-anchor="middle" font-size="12" fill="#c0392b">三弧两两夹 120°</text>
+  <text x="464" y="48" text-anchor="middle" font-size="14" fill="#333">③ 三叉点</text>
+  <text x="280" y="240" text-anchor="middle" font-size="13" fill="#666">弧一律是 C^{1,α} 光滑曲线；其余长相都会被"涨价"淘汰</text>
+  <text x="280" y="262" text-anchor="middle" font-size="13" fill="#666">任何紧区域只与有限条整体连通的弧相交</text>
+</svg>
+
+</div>
+
+**为什么值得关心**
+
+这是 1989 年提出、悬置三十余年的 Mumford–Shah 猜想的内部正则性部分，也是图像分割与自由不连续问题理论的基石。
+
+> 暂无形式化证明（AI 结果待核验）
+
 ## 一句话结论
 
 证明了二维 Mumford–Shah 猜想的内部正则性断言：对具界保真数据的既约绝对极小化子，裂缝集在内部每点附近只能是 `@@M@@C^{1,\alpha}@@` 弧、以该点为端点的弧，或三条两两成 `@@M@@120^\circ@@` 的弧；任一紧区域只与有限个整体连通分支相交，并附带弱 `@@M@@L^4@@` 梯度估计。

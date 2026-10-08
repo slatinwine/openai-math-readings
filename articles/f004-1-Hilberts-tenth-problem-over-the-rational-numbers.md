@@ -13,6 +13,53 @@ pdfname: ""
 
 > 结果族 004：Hilbert’s tenth problem over ℚ　·　学科：Number theory（数论）　·　验证状态：暂无形式化证明，请以社区核验为准
 
+## 入门导读 🐣
+
+想象一台"方程判题机"：塞进去任何整系数多项式，它都能回答"这方程有没有有理数解"。希尔伯特 1900 年为整数解提出这个愿望，1970 年被证明落空——机器造不出来。有理数版本又悬了五十多年，这篇论文给出同样的否定答案：在分数的世界里，判题机也永远造不出来。
+
+**关键词卡片**
+
+- 希尔伯特第十问题（Hilbert's tenth problem）：寻求一个通用算法，判定整系数多项式方程有没有指定类型的解。
+- 丢番图方程（Diophantine equation）：求整数或有理数解的多项式方程。
+- 有理零点（rational zero）：让多项式取值为 0 的有理数取值组合。
+- 递归可枚举（recursively enumerable）："解可以一个一个列出来"的计算性质，整数版不可判定正源于此。
+- 典范高度（canonical height）：衡量椭圆曲线上一个点"大小"的标尺，证明结尾的高度矛盾靠它收官。
+
+**看个具体例子**
+
+有的方程一眼能判：`@@M@@x^2+y^2+3=0@@` 没有有理解，因为左边恒为正。难的不是单个方程，而是"统一机器"：论文证明不存在算法对所有多项式（变量个数也任意）作答，而且你无法事先知道哪个多项式属于"答不出"的那类。归约思路是：假如有理判题机存在，就能拼出整数判题机，与 1970 年的著名否定结论矛盾。
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280">
+  <text x="280" y="26" font-size="17" text-anchor="middle" fill="#222">假如"有理数判题机"存在……</text>
+  <rect x="40" y="60" width="180" height="64" fill="none" stroke="#333" stroke-width="2"/>
+  <text x="130" y="86" font-size="14" text-anchor="middle" fill="#222">输入：整系数多项式 f</text>
+  <text x="130" y="108" font-size="14" text-anchor="middle" fill="#222">（变量个数任意）</text>
+  <line x1="220" y1="92" x2="288" y2="92" stroke="#333" stroke-width="2"/>
+  <polygon points="288,87 300,92 288,97" fill="#333"/>
+  <rect x="300" y="60" width="200" height="64" fill="none" stroke="#333" stroke-width="2"/>
+  <text x="400" y="100" font-size="15" text-anchor="middle" fill="#222">万能判定算法？</text>
+  <line x1="310" y1="66" x2="490" y2="118" stroke="#c0392b" stroke-width="3"/>
+  <line x1="490" y1="66" x2="310" y2="118" stroke="#c0392b" stroke-width="3"/>
+  <line x1="370" y1="124" x2="330" y2="180" stroke="#333" stroke-width="1.5" stroke-dasharray="5,4"/>
+  <line x1="430" y1="124" x2="470" y2="180" stroke="#333" stroke-width="1.5" stroke-dasharray="5,4"/>
+  <rect x="290" y="180" width="90" height="44" fill="none" stroke="#333" stroke-width="1.5" stroke-dasharray="5,4"/>
+  <text x="335" y="206" font-size="14" text-anchor="middle" fill="#222">有理解</text>
+  <rect x="420" y="180" width="90" height="44" fill="none" stroke="#333" stroke-width="1.5" stroke-dasharray="5,4"/>
+  <text x="465" y="206" font-size="14" text-anchor="middle" fill="#222">无解</text>
+  <text x="280" y="252" font-size="15" text-anchor="middle" fill="#555">论文证明：中间那台机器永远造不出来</text>
+  <text x="280" y="272" font-size="14" text-anchor="middle" fill="#555">若它存在，整数版判题机也能造出，与 1970 年定理矛盾</text>
+</svg>
+
+</div>
+
+**为什么值得关心**
+
+这是数理逻辑与数论（椭圆曲线、模形式、Shimura 曲线、Green–Tao–Ziegler 素数定理）深度联手的成果，补上了丢番图不可判定版图上最大的空白。
+
+> 暂无形式化证明（AI 结果待核验）
+
 ## 一句话结论
 
 论文证明 ℚ 上的希尔伯特第十问题（Hilbert's tenth problem over ℚ）有否定答案：不存在算法能判定整系数多项式（变量个数任意）是否有有理零点。这一悬置五十余年的难题，由椭圆曲线、模形式与高度理论的深度组合攻克。

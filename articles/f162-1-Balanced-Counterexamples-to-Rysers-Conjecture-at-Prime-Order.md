@@ -13,6 +13,53 @@ pdfname: ""
 
 > 结果族 162：Counterexamples to Ryser's covering conjecture　·　学科：Combinatorics　·　验证状态：暂无形式化证明，请以社区核验为准
 
+## 入门导读 🐣
+
+想象一个社团组队：成员分成 q+1 个"部门"，每支小队恰好从每个部门各抽一人；社团有条铁律——任何两支小队必有共同成员。你是干事，想挑尽量少的人，使每支小队里至少有一人被挑中。Ryser 猜想说 q 个人就够；这篇论文证明：存在这样的社团，非 q+1 人不可——而且每个部门的人数还取到了理论上的最小值。
+
+**关键词卡片**
+
+- 超图（hypergraph）：一条边可以同时连接多个点的图；一支小队就是一条"超边"。
+- r-部 r-一致（r-partite r-uniform）：顶点分成 r 组、每条边恰好各组抽一个，正是组队规则。
+- 相交（intersecting）：任何两条边都有公共点，即社团铁律。
+- 覆盖数 τ（covering number）：碰到所有边所需的最少顶点数，即你要挑的最少人数。
+- 匹配数 ν（matching number）：两两无公共点的边最多有几条；相交超图的 ν=1。
+
+**看个具体例子**
+
+Ryser 猜想：`@@M@@\tau\le(r-1)\nu@@`；相交时 ν=1，即"q+1 个部门至多挑 q 人"。反例（数字版）：对每个足够大的素数 q，存在每部门恰 q+1 人的社团，`@@M@@\tau=q+1@@`——比预算恰好多一人。
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280">
+  <polyline points="110,70 280,140 450,70" fill="none" stroke="#d84a3f" stroke-width="5" stroke-opacity="0.55" stroke-linejoin="round"/>
+  <polyline points="110,70 280,210 450,210" fill="none" stroke="#3f7ad8" stroke-width="5" stroke-opacity="0.55" stroke-dasharray="12 7" stroke-linejoin="round"/>
+  <circle cx="110" cy="70" r="9" fill="#ffd76e" stroke="#444444" stroke-width="2"/>
+  <circle cx="110" cy="140" r="9" fill="#ffffff" stroke="#444444" stroke-width="2"/>
+  <circle cx="110" cy="210" r="9" fill="#ffffff" stroke="#444444" stroke-width="2"/>
+  <circle cx="280" cy="70" r="9" fill="#ffffff" stroke="#444444" stroke-width="2"/>
+  <circle cx="280" cy="140" r="9" fill="#ffffff" stroke="#444444" stroke-width="2"/>
+  <circle cx="280" cy="210" r="9" fill="#ffffff" stroke="#444444" stroke-width="2"/>
+  <circle cx="450" cy="70" r="9" fill="#ffffff" stroke="#444444" stroke-width="2"/>
+  <circle cx="450" cy="140" r="9" fill="#ffffff" stroke="#444444" stroke-width="2"/>
+  <circle cx="450" cy="210" r="9" fill="#ffffff" stroke="#444444" stroke-width="2"/>
+  <text x="110" y="40" font-size="14" text-anchor="middle" fill="#444444">第 1 部</text>
+  <text x="280" y="40" font-size="14" text-anchor="middle" fill="#444444">第 2 部</text>
+  <text x="450" y="40" font-size="14" text-anchor="middle" fill="#444444">第 3 部</text>
+  <text x="280" y="252" font-size="14" text-anchor="middle" fill="#555555">红队、蓝队各从每部抽一人，且共用第 1 部的同一个人（相交）</text>
+  <text x="280" y="272" font-size="12" text-anchor="middle" fill="#999999">示意：以 3 个部门代替构造中的 q+1 个部门</text>
+</svg>
+
+</div>
+
+构造从有限几何的"方向与直线"出发：每个方向设一个部门；把某方向的两条平行线合并、另两条拆成对角配对，使部门人数与覆盖难度同时抬升；再用概率方法选出兼容的拆分，最后借助"素平面稳定性"定理排除一切省人的覆盖方案。
+
+**为什么值得关心**
+
+Ryser 猜想是 König 定理向超图推广的核心关口，如今连"各部门等大"的平衡版本也被证伪。
+
+> 暂无形式化证明（AI 结果待核验）
+
 ## 一句话结论
 
 对每个足够大的素数 `@@M@@q@@`，本文构造出相交（intersecting）的 `@@M@@(q+1)@@`-部、`@@M@@(q+1)@@`-一致超图，覆盖数（covering number）达到理论上限 `@@M@@q+1@@`，且每部恰有 `@@M@@q+1@@` 个非孤立顶点，从而推翻 Ryser 覆盖猜想——连"各部等大"的平衡情形也一并推翻。

@@ -13,6 +13,47 @@ pdfname: ""
 
 > 结果族 212：Planar first-passage geometry and the absence of bigeodesics　·　学科：Probability and statistical mechanics　·　验证状态：主结果已 Lean 形式化
 
+## 入门导读 🐣
+
+在随机拥堵的路网里跑久了，司机会发现每个方向都有一个确定的"有效速度"。把各方向单位时间能到达的边界点连起来，就得到极限形状。这篇论文证明：当边权服从指数分布时，这条闭曲线既没有一段直边，也没有一个尖角——它像一个略歪的鸡蛋，而不是一枚方形印章。
+
+**关键词卡片**
+
+- 极限形状（limit shape）：长时间运行后可达区域收敛到的确定性凸体。
+- 平边（flat face）：边界上共线的一段支撑线，定理证明它不存在。
+- 角点（corner）：边界上切线不唯一的尖角，同样被排除。
+- Fréchet 可微（Fréchet differentiable）："有效速度"函数处处光滑的严格说法。
+- 指数边权（exponential edge weights）：通行时间服从指数分布，无原子且支撑下确界为 0，使旧方法全部失效。
+
+**看个具体例子**
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280">
+  <text x="280" y="35" font-size="14" text-anchor="middle" fill="#222">指数边权下 ℤ² 首达渗流的极限形状</text>
+  <path d="M 85 95 L 225 95 L 262 150 L 225 205 L 85 205 Z" fill="#f5f5f5" stroke="#333" stroke-width="2"/>
+  <line x1="55" y1="95" x2="250" y2="95" stroke="#c0392b" stroke-width="1.5" stroke-dasharray="6 5"/>
+  <circle cx="262" cy="150" r="4" fill="#c0392b"/>
+  <text x="272" y="154" font-size="12" fill="#c0392b">角点</text>
+  <text x="155" y="78" font-size="12" text-anchor="middle" fill="#c0392b">平边：整段支撑线都在边界上</text>
+  <ellipse cx="440" cy="155" rx="90" ry="70" fill="#eaf3ea" stroke="#2c7a4b" stroke-width="2"/>
+  <line x1="370" y1="85" x2="510" y2="85" stroke="#2c7a4b" stroke-width="1.5" stroke-dasharray="6 5"/>
+  <circle cx="440" cy="85" r="3.5" fill="#2c7a4b"/>
+  <text x="440" y="66" font-size="12" text-anchor="middle" fill="#2c7a4b">每点恰有一条切线</text>
+  <text x="170" y="245" font-size="13" text-anchor="middle" fill="#333">不允许：有平边或角点</text>
+  <text x="440" y="245" font-size="13" text-anchor="middle" fill="#2c7a4b">定理：严格凸且处处光滑</text>
+</svg>
+
+</div>
+
+把定理写成"数字版"：对极限形状边界上任意两个不同点 x、y 与 0<t<1，都有 `@@M@@\mu((1-t)x+ty)<1@@`。比如取 `@@M@@t=\tfrac12@@`：`@@M@@\mu\big(\tfrac{x+y}{2}\big)<1@@`，中点被严格压回形状内部——边界上找不到任何一小段直线。此前的方法依赖分布最小值处带原子，而指数分布恰好无原子、支撑下确界又是 0，本文只能另起炉灶。
+
+**为什么值得关心**
+
+它解决了平面指数模型悬置多年的严格凸性与可微性两大猜想，说明"每个方向的最快路线"行为规矩，为理解随机度量几何立下标杆；固定方向下的测地线还有恰一条、必聚合等配套结论。
+
+> 已 Lean 形式化
+
 ## 一句话结论
 证明了 `@@M@@\Z^2@@` 上独立指数边权首达渗流的极限形状严格凸且边界为 `@@M@@C^1@@` 曲线，并把可微性推广到一切形状、速率均为正的 Gamma 边权，解决平面指数模型的严格凸性与可微性两大猜想。
 

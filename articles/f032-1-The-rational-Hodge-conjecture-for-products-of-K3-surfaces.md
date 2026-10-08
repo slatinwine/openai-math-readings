@@ -13,6 +13,34 @@ pdfname: ""
 
 > 结果族 032：Hodge and Kuga–Satake results for all projective K3 surfaces　·　学科：Algebraic and complex geometry　·　验证状态：暂无形式化证明，请以社区核验为准
 
+## 入门导读 🐣
+
+K3 曲面可以想成复数世界里最光滑的"山坡"：没有洞、形状规整，却藏着无法用代数方程直接画出的隐藏振动。每张山坡有一本账（上同调），Hodge 猜想问：账本里哪些条目真正由山坡上的代数曲线产生？单张山坡早有答案；这篇论文证明：把任意几张山坡（可重复）相乘得到的大空间里，账目依然全部能对上。
+
+**关键词卡片**
+
+- K3 曲面（K3 surface）：复二维、光滑、拓扑上最简单的曲面类型，四次曲面是代表。
+- Hodge 猜想（Hodge conjecture）：哪些有理上同调类来自代数闭链——千禧年难题之一。
+- 代数闭链（algebraic cycle）：由子代数簇组合出的条目，几何上真正可画的部分。
+- 超越上同调（transcendental cohomology）：账本中扣掉代数部分后剩下的隐藏振动。
+- 乘积（product）：S₁×S₂ 上的点是一对点；麻烦出在"一半记在 S₁、一半记在 S₂"的混合条目。
+
+**看个具体例子**
+
+一张四次 K3 曲面的二阶账本是 22 维，其中代数部分通常只有 1 维，剩下 21 维是超越振动。乘积 S₁×S₂ 上会出现横跨两家账本的 (2,2) 型混合类——正是过去对不上的账。定理说：这些混合类也全是代数的（允许有理系数），对因子个数与是否重复都不设限。
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280"><path d="M 110 32 C 162 32 188 56 188 82 C 188 110 156 128 110 128 C 62 128 34 108 34 82 C 34 56 62 32 110 32" fill="#f2f7f2" stroke="#1e8449" stroke-width="3"/><text x="110" y="88" font-size="15" text-anchor="middle" fill="#1e8449">K3 之一 S₁</text><text x="230" y="92" font-size="24" text-anchor="middle" fill="#333">×</text><path d="M 350 32 C 402 32 428 56 428 82 C 428 110 396 128 350 128 C 302 128 274 108 274 82 C 274 56 302 32 350 32" fill="#f2f7f2" stroke="#1e8449" stroke-width="3"/><text x="350" y="88" font-size="15" text-anchor="middle" fill="#1e8449">K3 之二 S₂</text><line x1="233" y1="140" x2="233" y2="158" stroke="#333" stroke-width="2"/><polygon points="233,166 227,156 239,156" fill="#333"/><text x="430" y="156" font-size="13" text-anchor="middle" fill="#555">乘积 S₁×S₂ 的 (2,2) 型账目</text><rect x="110" y="172" width="120" height="42" fill="none" stroke="#888" stroke-width="2"/><rect x="240" y="172" width="120" height="42" fill="#fdf0f0" stroke="#c0392b" stroke-width="2"/><rect x="110" y="224" width="120" height="42" fill="#fdf0f0" stroke="#c0392b" stroke-width="2"/><rect x="240" y="224" width="120" height="42" fill="none" stroke="#888" stroke-width="2"/><text x="170" y="197" font-size="12" text-anchor="middle" fill="#555">S₁ 自己的类（早已知）</text><text x="300" y="197" font-size="12" text-anchor="middle" fill="#c0392b">跨 S₁⊗S₂ 的类（本文）</text><text x="170" y="249" font-size="12" text-anchor="middle" fill="#555">S₂ 自己的类（早已知）</text><text x="300" y="249" font-size="12" text-anchor="middle" fill="#c0392b">跨 S₂⊗S₁ 的类（本文）</text></svg>
+
+</div>
+
+**为什么值得关心**
+
+Hodge 猜想是千禧年难题，此前对 K3 乘积只有 CM、Kummer 等附加假设下的零星结果；本文对完全任意的一组射影 K3 曲面一次性收口。
+
+> 暂无形式化证明（AI 结果待核验）
+
 ## 一句话结论
 
 论文证明：任意有限多个射影复 K3 曲面的乘积（因子可重复，对 Picard 数、周期、自同态域均无限制）都满足有理 Hodge 猜想 (rational Hodge conjecture)：每个 `@@M@@(p,p)@@` 型有理上同调类都是代数闭链 (algebraic cycle) 类的有理线性组合。

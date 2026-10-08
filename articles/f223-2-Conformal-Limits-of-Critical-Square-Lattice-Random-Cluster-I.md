@@ -13,6 +13,36 @@ pdfname: ""
 
 > 结果族 223：Random-cluster interfaces: critical, disordered, thermal, and natural-time scaling　·　学科：Probability and statistical mechanics　·　验证状态：暂无形式化证明，请以社区核验为准
 
+## 入门导读 🐣
+
+把一张用乐高积木拼出的海岸线照片不断放大：积木越换越小，轮廓越来越像一条连续曲线。这篇论文证明，方形格点上一整族随机折线——"随机簇模型"的相变边界——在格点无限加细后，确实收敛到一种标准随机曲线 SLE，连刻画它"性格"的参数都能精确写出。
+
+**关键词卡片**
+
+- 随机簇模型（random-cluster model）：在格点每条小边上独立决定"开/关"，参数 q 控制扎堆倾向；渗流（q=1）和伊辛模型（q=2）都是它的成员。
+- Dobrushin 界面（Dobrushin interface）：把边界一段设为"接线"、一段设为"自由"后，开簇与闭簇之间那条随机分界折线。
+- SLE（stochastic Loewner evolution）：由布朗运动驱动的随机曲线，二维临界模型的通用极限形状。
+- CLE（conformal loop ensemble）：SLE 的全套家族版——一整族互相嵌套的随机回路。
+- Cardy 公式（Cardy's formula）：临界渗流中区域被黑色"横穿"概率的显式公式。
+
+**看个具体例子**
+
+主定理给出参数公式 `@@M@@\kappa(q)=4\pi/\arccos(-\sqrt q/2)@@`，代进具体数字：`@@M@@q=1@@`（渗流，临界概率 `@@M@@p_1=1/2@@`）时 `@@M@@\arccos(-1/2)=2\pi/3@@`，得 `@@M@@\kappa=6@@`；`@@M@@q=4@@` 时 `@@M@@\arccos(-1)=\pi@@`，得 `@@M@@\kappa=4@@`。也就是说：普通方格键渗流的界面极限是 SLE`@@M@@_6@@`，`@@M@@q=4@@` 端点是 SLE`@@M@@_4@@`。
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280"><rect x="90" y="40" width="370" height="200" fill="none" stroke="#bbb" stroke-width="2"/><polyline points="130,240 90,240 90,40 420,40" fill="none" stroke="#333" stroke-width="7"/><polyline points="420,40 460,40 460,240 130,240" fill="none" stroke="#333" stroke-width="2" stroke-dasharray="6 5"/><polyline points="130,240 165,215 150,178 208,188 238,148 218,108 288,118 318,78 378,88 420,40" fill="none" stroke="#c0392b" stroke-width="3"/><circle cx="130" cy="240" r="5" fill="#111"/><circle cx="420" cy="40" r="5" fill="#111"/><text x="112" y="262" font-size="16">a</text><text x="428" y="30" font-size="16">b</text><text x="16" y="150" font-size="14">接线弧</text><text x="200" y="264" font-size="14">自由弧(虚线)</text><text x="442" y="150" font-size="14">界面 η</text><text x="330" y="264" font-size="14">格距 δ→0：折线→SLE</text></svg>
+
+</div>
+
+图中粗实线是"接线"边界、虚线是"自由"边界，红色折线就是 Dobrushin 界面：格距趋于零后它不再逐格拐折，而是收敛为一条光滑却依旧随机的 SLE 曲线。
+
+**为什么值得关心**
+
+它补上了共形不变性纲领在普通方格上整个 `@@M@@1\le q\le4@@` 区间的缺口，还第一次证明了方格键渗流的 Cardy 公式。
+
+> 暂无形式化证明（AI 结果待核验）
+
 ## 一句话结论
 本文证明：对方形格点上簇权 `@@M@@1\le q\le4@@` 的临界随机簇模型，Dobrushin 界面收敛到弦 `@@M@@\mathrm{SLE}_{\kappa(q)}@@`（`@@M@@\kappa(q)=4\pi/\arccos(-\sqrt q/2)@@`），完整的嵌套平面回路族收敛到全平面 `@@M@@\mathrm{CLE}_{\kappa(q)}@@`，并在 `@@M@@q=1@@` 得到方形格点键渗流（含自由边界边）的 Cardy 公式——补上了共形不变性预言在普通方形格点上整个 `@@M@@q@@` 区间的缺口。
 

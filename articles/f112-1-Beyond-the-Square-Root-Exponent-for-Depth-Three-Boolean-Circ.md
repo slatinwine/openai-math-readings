@@ -13,6 +13,73 @@ pdfname: ""
 
 > 结果族 112：Beyond the square-root exponent for depth-three circuits　·　学科：Theoretical computer science　·　验证状态：主结果已 Lean 形式化
 
+## 入门导读 🐣
+
+把"判断一串 0/1 输入是否合格"的机器想成一条三层流水线：最底层一群"或门"扫局部特征，中层"与门"把特征拼成一张张清单，顶层一个"或门"只要任何清单点头就放行。这样的三层流水线（OR–AND–OR 电路）判同一个问题，最多能省多少零件？本文造出一个具体问题：用普通计算机多项式时间就能判定，但任何这种流水线无论怎么搭，零件总数都会超过 2^(A√n)——A 取多大的常数都拦不住。
+
+**关键词卡片**
+
+- 深度三电路（depth-three circuit）：无界扇入的 OR–AND–OR 三层电路，等价于若干 CNF 之或。
+- 显式语言（explicit language）：被证明存在多项式时间判定算法的具体问题，不是抽象存在性构造。
+- 电路下界（circuit lower bound）：证明某函数用某类电路"至少需要多少个门"。
+- 门数（gate count / S₃(f)）：AND、OR 门总数，底层门与输出门都计入。
+- 平方根壁垒（square-root barrier）：此前所有显式下界都停在"常数×√n"的指数量级。
+
+**看个具体例子**
+
+n=10000 位输入时 √n=100。旧纪录形如"超过 `@@M@@2^{3\sqrt n}=2^{300}@@` 个门"，常数被技巧钉死；新语言的判定函数满足：任给 A=5，只要 n 足够大，门数 `@@M@@>2^{5\sqrt n}@@`，且同一个语言对付所有常数 A——写成数字版定理就是 `@@M@@\lim_{n\to\infty}\frac{\log_2 S_3(f_n)}{\sqrt n}=\infty@@`。
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280">
+  <text x="280" y="24" text-anchor="middle" font-size="15" fill="#333333">深度三电路（OR–AND–OR）：要数的是全部门的总数</text>
+  <rect x="20" y="205" width="44" height="24" fill="#f4f4f4" stroke="#999999"/>
+  <text x="42" y="222" text-anchor="middle" font-size="13" fill="#555555">x₁</text>
+  <rect x="120" y="205" width="44" height="24" fill="#f4f4f4" stroke="#999999"/>
+  <text x="142" y="222" text-anchor="middle" font-size="13" fill="#555555">x₂</text>
+  <rect x="220" y="205" width="44" height="24" fill="#f4f4f4" stroke="#999999"/>
+  <text x="242" y="222" text-anchor="middle" font-size="13" fill="#555555">x₃</text>
+  <rect x="320" y="205" width="44" height="24" fill="#f4f4f4" stroke="#999999"/>
+  <text x="342" y="222" text-anchor="middle" font-size="13" fill="#555555">x₄</text>
+  <rect x="420" y="205" width="44" height="24" fill="#f4f4f4" stroke="#999999"/>
+  <text x="442" y="222" text-anchor="middle" font-size="13" fill="#555555">x₅</text>
+  <line x1="42" y1="205" x2="75" y2="132" stroke="#aaaaaa"/>
+  <line x1="142" y1="205" x2="105" y2="132" stroke="#aaaaaa"/>
+  <line x1="242" y1="205" x2="185" y2="132" stroke="#aaaaaa"/>
+  <line x1="342" y1="205" x2="315" y2="132" stroke="#aaaaaa"/>
+  <line x1="442" y1="205" x2="455" y2="132" stroke="#aaaaaa"/>
+  <rect x="60" y="132" width="60" height="28" rx="6" fill="#eef4fb" stroke="#3b82c4" stroke-width="2"/>
+  <text x="90" y="151" text-anchor="middle" font-size="14" fill="#3b82c4">或门</text>
+  <rect x="170" y="132" width="60" height="28" rx="6" fill="#eef4fb" stroke="#3b82c4" stroke-width="2"/>
+  <text x="200" y="151" text-anchor="middle" font-size="14" fill="#3b82c4">或门</text>
+  <rect x="300" y="132" width="60" height="28" rx="6" fill="#eef4fb" stroke="#3b82c4" stroke-width="2"/>
+  <text x="330" y="151" text-anchor="middle" font-size="14" fill="#3b82c4">或门</text>
+  <rect x="430" y="132" width="60" height="28" rx="6" fill="#eef4fb" stroke="#3b82c4" stroke-width="2"/>
+  <text x="460" y="151" text-anchor="middle" font-size="14" fill="#3b82c4">或门</text>
+  <line x1="90" y1="132" x2="170" y2="96" stroke="#aaaaaa"/>
+  <line x1="200" y1="132" x2="192" y2="96" stroke="#aaaaaa"/>
+  <line x1="330" y1="132" x2="352" y2="96" stroke="#aaaaaa"/>
+  <line x1="460" y1="132" x2="372" y2="96" stroke="#aaaaaa"/>
+  <rect x="150" y="68" width="64" height="28" rx="6" fill="#fdeee6" stroke="#e0592a" stroke-width="2"/>
+  <text x="182" y="87" text-anchor="middle" font-size="14" fill="#e0592a">与门</text>
+  <rect x="340" y="68" width="64" height="28" rx="6" fill="#fdeee6" stroke="#e0592a" stroke-width="2"/>
+  <text x="372" y="87" text-anchor="middle" font-size="14" fill="#e0592a">与门</text>
+  <line x1="182" y1="68" x2="268" y2="62" stroke="#aaaaaa"/>
+  <line x1="372" y1="68" x2="292" y2="62" stroke="#aaaaaa"/>
+  <rect x="248" y="34" width="64" height="28" rx="6" fill="#eef4fb" stroke="#3b82c4" stroke-width="2"/>
+  <text x="280" y="53" text-anchor="middle" font-size="14" fill="#3b82c4">或门</text>
+  <text x="325" y="53" font-size="13" fill="#555555">→ 输出</text>
+  <text x="280" y="258" text-anchor="middle" font-size="13" fill="#555555">扇入不限；存在多项式可判定的问题，任何此类电路的门数 &gt; 2^(A·√n)</text>
+</svg>
+
+</div>
+
+**为什么值得关心**
+
+显式电路下界是理论计算机科学最难的方向之一；本文首次让一个"好算"的函数把平方根指数远远甩开，且结论在每个充分大的输入长度上同时成立。
+
+> 已 Lean 形式化
+
 ## 一句话结论
 
 构造出一个确定性多项式时间语言：其 `@@M@@n@@` 位成员函数在无界扇入 OR–AND–OR 电路中所需总门数，在一切充分长的长度上超过 `@@M@@2^{A\sqrt n}@@`（`@@M@@A@@` 为任意常数），即达到 `@@M@@2^{\omega(\sqrt n)}@@`，首次突破显式深度三电路下界的平方根指数壁垒。

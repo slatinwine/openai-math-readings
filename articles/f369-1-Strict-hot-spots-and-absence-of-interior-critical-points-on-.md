@@ -13,6 +13,47 @@ pdfname: ""
 
 > 结果族 369：The hot spots conjecture for simply connected planar domains　·　学科：Partial differential equations　·　验证状态：暂无形式化证明，请以社区核验为准
 
+## 入门导读 🐣
+
+一块四周裹严棉被的金属板（边界完全绝热），被随手加热后让它自己均温。等足够久，温度只剩"衰减最慢的模式"。这个模式的最热点与最冷点，一定贴在板的边缘吗？论文证明：只要板是没有洞的光滑平面区域，答案是完全肯定的——而且内部连一个"山口"式的鞍点都不许有。
+
+**关键词卡片**
+
+- Neumann 边界条件（Neumann boundary condition）：边界绝热，热流不得进出。
+- 第一正特征值（first positive Neumann eigenvalue）：非平凡余温模式中衰减最慢的那一个。
+- 特征函数（eigenfunction）：该模式的空间形状。
+- 单连通（simply connected）：区域没有洞；带洞区域上猜想可能失效。
+- 临界点（critical point）：梯度为零的点，包括"山口"形鞍点。
+
+**看个具体例子**
+
+先在长方形 `@@M@@[0,L]\times[0,H]@@` 上手算：最慢模式 `@@M@@u=\cos(\pi x/L)@@`，最热在左边界、最冷在右边界；而 `@@M@@\nabla u=0@@` 仅当 `@@M@@\sin(\pi x/L)=0@@`，即 `@@M@@x=0@@` 或 `@@M@@L@@`——都落在边界上。主定理说明这种"极值贴边、内部梯度处处非零"对任何光滑无洞区域都成立，特征值有多重时对特征空间里每个成员都成立。
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280">
+  <text x="280" y="30" text-anchor="middle" font-size="15" fill="#333">光滑无洞区域：最热与最冷都贴边，内部梯度非零</text>
+  <path d="M180 145 C175 95 225 60 290 62 C355 64 405 95 402 145 C399 192 350 225 288 223 C226 221 185 195 180 145 Z" fill="none" stroke="#333" stroke-width="2.5"/>
+  <path d="M225 143 C223 110 253 90 292 92 C330 94 360 112 358 143 C356 174 328 192 290 190 C252 188 227 172 225 143 Z" fill="none" stroke="#999" stroke-width="1.3"/>
+  <path d="M255 142 C254 122 271 110 291 111 C311 112 328 122 327 142 C326 161 311 170 291 169 C271 168 256 160 255 142 Z" fill="none" stroke="#bbbbbb" stroke-width="1.3"/>
+  <circle cx="180" cy="145" r="6" fill="#c0392b"/>
+  <text x="122" y="132" text-anchor="middle" font-size="13" fill="#c0392b">最热点</text>
+  <text x="122" y="150" text-anchor="middle" font-size="12" fill="#c0392b">（在边界）</text>
+  <circle cx="402" cy="145" r="6" fill="#2471a3"/>
+  <text x="460" y="132" text-anchor="middle" font-size="13" fill="#2471a3">最冷点</text>
+  <text x="460" y="150" text-anchor="middle" font-size="12" fill="#2471a3">（在边界）</text>
+  <text x="291" y="145" text-anchor="middle" font-size="13" fill="#666">内部 ∇u ≠ 0</text>
+  <text x="280" y="258" text-anchor="middle" font-size="13" fill="#666">细线：温度等值线示意；连"山口"式鞍点也不出现</text>
+</svg>
+
+</div>
+
+**为什么值得关心**
+
+1975 年提出的 hot spots 猜想在一般光滑单连通区域上被证明，且"梯度非零"比原猜想更强。此前所有正面结果都要求凸性、对称性等附加几何条件；而区域一旦带洞，反例就会出现，"没有洞"这假设恰好不可去掉。
+
+> 暂无形式化证明（AI 结果待核验）
+
 ## 一句话结论
 
 证明了 Burdzy 单连通平面 hot spots 猜想的强形式：光滑有界单连通平面区域上，第一正 Neumann 特征值的任一非零特征函数在区域内部梯度处处非零，全部全局最大、最小值都落在边界上，特征值多重时同样成立。

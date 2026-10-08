@@ -13,6 +13,46 @@ pdfname: ""
 
 > 结果族 353：Affine Bernstein rigidity through dimension nine and a smooth dimension-ten counterexample　·　学科：Differential geometry　·　验证状态：暂无形式化证明，请以社区核验为准
 
+## 入门导读 🐣
+
+想象家里有一口无限大的炒锅，碗面永远是 `@@M@@y=x^2@@` 那种抛物形。这篇论文证明了一件很"霸道"的事：在 3 到 9 维空间里，凡是满足某个特殊"最优化方程"、又能无限延伸下去的光滑凸曲面（凸函数的图像），最后只能是这种锅——换花样的可能性为零。
+
+**关键词卡片**
+
+- 仿射极值方程（affine maximal equation）：刻画"在仿射几何意义下最均衡"的偏微分方程，是本文曲面的"身份证"。
+- 椭圆抛物面（elliptic paraboloid）：`@@M@@u=\tfrac12 x^{\mathsf T}Ax@@`（`@@M@@A@@` 正定）的图像，即那口无限大的碗。
+- 欧氏完备（Euclidean complete）：用曲面自身诱导的距离去量，能一直走下去而不碰边缘。
+- 局部一致凸（locally uniformly convex）：每个局部都严格向外鼓，不许有平坦片段。
+- 维数 3–9：结论成立的范围；证明里一个行列式 `@@M@@\tfrac{(n-2)(10-n)}{16}@@` 恰在此范围为正，第 10 维归零——姊妹篇恰在十维造出反例。
+
+**看个具体例子**
+
+定理代入最简单情形：若 `@@M@@u@@` 的 Hessian 正定、解仿射极值方程，且诱导度量 `@@M@@g_{ij}=\delta_{ij}+u_i u_j@@` 完备，则必为 `@@M@@u=\tfrac12 x^{\mathsf T}Ax+b\cdot x+c@@`。画出来：
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280">
+<line x1="100" y1="240" x2="520" y2="240" stroke="#555" stroke-width="2"/>
+<line x1="100" y1="40" x2="100" y2="252" stroke="#555" stroke-width="2"/>
+<text x="524" y="254" font-size="16">x</text>
+<text x="76" y="46" font-size="16">u</text>
+<polyline points="140,90 160,130 180,164 200,186 220,212 240,228 260,237 280,240 300,237 320,228 340,212 360,186 380,164 400,130 420,90" fill="none" stroke="#1a6" stroke-width="3"/>
+<polyline points="150,235 190,234 230,231 270,224 310,212 350,192 390,160 418,116" fill="none" stroke="#e33" stroke-width="2" stroke-dasharray="7 5"/>
+<text x="240" y="70" font-size="15" fill="#1a6">碗 u=½xᵀAx：定理的唯一幸存者</text>
+<text x="150" y="150" font-size="15" fill="#e33">别的凸解</text>
+<text x="424" y="112" font-size="19" fill="#e33">×</text>
+</svg>
+
+</div>
+
+红色虚线那样的其他凸曲面，只要同时占住"解方程 + 度量完备"两条，就被判定不可能存在。
+
+**为什么值得关心**
+
+它把 Trudinger–Wang 的二维定理一路推广到 3 至 9 维，补齐高维仿射 Bernstein 问题的最后拼图；而证明恰好失效的第 10 维正是反例所在——可行与不可行严丝合缝。
+
+> 暂无形式化证明（AI 结果待核验）
+
 ## 一句话结论
 论文证明当 `@@M@@3\le n\le9@@` 时，诱导欧氏度量完备的光滑局部一致凸仿射极值图必为椭圆抛物面——定义域必是全空间、函数必是正定二次多项式；仿射完备 (affine-complete) 的经典仿射极大浸入超曲面亦得同样结论。配合姊妹篇的十维反例，范围恰好封闭。
 

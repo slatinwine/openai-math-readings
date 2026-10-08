@@ -13,6 +13,53 @@ pdfname: ""
 
 > 结果族 069：Global quantum geometric Langlands at irrational level　·　学科：Algebraic and complex geometry　·　验证状态：暂无形式化证明，请以社区核验为准
 
+## 入门导读 🐣
+
+想象两座说不同语言的无限大城市，之间有一本理想的双语词典（范畴等价），一词不漏、语法全对。几何朗兰兹纲领早就在"经典档位"下编好了这本词典；这篇论文证明：把变形旋钮拧到任何无理数刻度——包括最古怪的非实数刻度——词典依然完美成立。
+
+**关键词卡片**
+
+- 几何朗兰兹（geometric Langlands）：把"G 主丛上的函数世界"与"对偶群局部系统"互译的宏大词典纲领。
+- 量子级别（level `@@M@@c@@`）：变形强度参数，像收音机调频旋钮；无理数刻度最难锁台。
+- D-模（D-module）：微分方程解的代数化身，本文两侧城市的主角。
+- 对偶群（dual group `@@M@@G^\vee@@`）：由根数据镜像而生的兄弟群，如 `@@M@@\mathrm{SL}_2\leftrightarrow\mathrm{PGL}_2@@`。
+- 花边数（lacing number `@@M@@r@@`）：根长平方比给出的 `@@M@@1,2,3@@`，决定互反级别公式 `@@M@@-1/(rc)@@`。
+
+**看个具体例子**
+
+取最小的非平凡群 `@@M@@G=\mathrm{SL}_2@@`（`@@M@@r=1@@`，对偶 `@@M@@G^\vee=\mathrm{PGL}_2@@`），旋钮拧到 `@@M@@c=\sqrt2@@`：
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280">
+  <rect x="30" y="70" width="190" height="130" rx="14" fill="#dbe7f5" stroke="#4a7dbd" stroke-width="2"/>
+  <text x="60" y="105" font-size="16" fill="#1d3c5c">G = SL₂</text>
+  <text x="55" y="138" font-size="14" fill="#1d3c5c">Bun_G(X) 上的</text>
+  <text x="55" y="161" font-size="14" fill="#1d3c5c">扭曲 D-模</text>
+  <rect x="340" y="70" width="190" height="130" rx="14" fill="#e9e2f2" stroke="#7a5ba8" stroke-width="2"/>
+  <text x="362" y="105" font-size="16" fill="#4a2f6b">对偶 PGL₂</text>
+  <text x="365" y="138" font-size="14" fill="#4a2f6b">Bun_G∨(X) 上的</text>
+  <text x="365" y="161" font-size="14" fill="#4a2f6b">扭曲 D-模</text>
+  <line x1="228" y1="118" x2="330" y2="118" stroke="#333" stroke-width="2"/>
+  <polygon points="330,112 330,124 342,118" fill="#333"/>
+  <line x1="332" y1="150" x2="230" y2="150" stroke="#333" stroke-width="2"/>
+  <polygon points="230,144 230,156 218,150" fill="#333"/>
+  <text x="238" y="98" font-size="14" fill="#333">级别 c = √2</text>
+  <text x="236" y="182" font-size="14" fill="#333">−1/(rc)</text>
+  <text x="248" y="202" font-size="14" fill="#333">= −1/√2</text>
+  <text x="150" y="245" font-size="15" fill="#333">范畴等价：无理级别也完美互译</text>
+</svg>
+
+</div>
+
+写成公式就是 `@@M@@D_{\sqrt2}(\operatorname{Bun}_{\mathrm{SL}_2}(X))\simeq D_{-1/\sqrt2}(\operatorname{Bun}_{\mathrm{PGL}_2}(X))@@`：左侧是级别 `@@M@@\sqrt2\approx1.414@@` 的扭曲 D-模，右侧自动落在互反级别 `@@M@@-1/(1\cdot\sqrt2)\approx-0.707@@`。任何曲线 `@@M@@X@@`、任何无理 `@@M@@c@@` 都成立，且保留给定的整体群形式与全部连通分支；等价本身由"局部化—Whittaker 比较"刻画，与曲线上标点及其碰撞相容，中心特征与连通分支还按 `@@M@@(\eta,p)\mapsto(p,-\eta)@@` 互换。
+
+**为什么值得关心**
+
+无理级别的全局等价悬置多年（谱描述在 `@@M@@c\ne0@@` 处失效），本文一次性补齐所有无理级别，含非实级别。
+
+> 验证状态：暂无形式化证明（AI 结果待核验）
+
 ## 一句话结论
 
 证明了无理级别的量子几何朗兰兹等价：对任意连通单复代数群 `@@M@@G@@`、任意光滑射影连通复曲线 `@@M@@X@@` 与任意 `@@M@@c\in\mathbb C\setminus\mathbb Q@@`（含非实级别），扭曲 `@@M@@D@@`-模范畴 `@@M@@D_c(\operatorname{Bun}_G(X))@@` 与对偶群在互反级别 `@@M@@-1/(rc)@@` 处的范畴 `@@M@@D_{-1/(rc)}(\operatorname{Bun}_{G^\vee}(X))@@` 等价，且保留给定的整体群形式与全部连通分支。

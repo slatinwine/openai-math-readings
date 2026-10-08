@@ -13,6 +13,47 @@ pdfname: ""
 
 > 结果族 016：Zilber–Pink in abelian varieties and the Siegel threefold　·　学科：Number theory　·　验证状态：暂无形式化证明，请以社区核验为准
 
+## 入门导读 🐣
+
+`@@M@@\mathcal A_2@@` 曲线情形的 Zilber–Pink 像一幅三块拼图：`@@M@@E\times@@`CM 分量、四元数分量，加上本文补上的第三块——"椭圆平方"点，即曲面恰是同一个普通椭圆曲线自乘 `@@M@@E^2@@` 的地方。本文独立攻克第三块，再把三块与处理特殊点的 André–Oort 定理拼装起来，让整个猜想在这个舞台上无条件收官。
+
+**关键词卡片**
+
+- 椭圆曲线平方 (`@@M@@E^2@@`)：同一椭圆曲线自乘得到的曲面；非 CM 指其因子没有超常自同态
+- Hodge 一般 (Hodge generic)：不落在任何真特殊子簇里的曲线
+- 正则迹判别式 (discriminant `@@M@@\Delta_s@@`)：自同构环复杂度的计量
+- Galois 轨道下界 (Galois orbit lower bound)：`@@M@@[K(s):K]\ge c\,\Delta_s^{\delta}@@` 型不等式，有限性的发动机
+- André–Oort 定理：模空间中特殊点稀疏性的定理，负责第四类例外
+
+**看个具体例子**
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 305">
+  <text x="280" y="24" font-size="15" text-anchor="middle" fill="#333">三块拼图＋特殊点＝A₂ 曲线情形的完整 Zilber–Pink</text>
+  <path d="M30 150 Q170 60 300 140 Q430 220 530 90" fill="none" stroke="#d33" stroke-width="2.5"/>
+  <path d="M40 60 Q160 200 280 70" fill="none" stroke="#26b" stroke-width="2"/>
+  <circle cx="105" cy="112" r="5" fill="#f0a"/>
+  <path d="M330 200 Q400 150 470 175" fill="none" stroke="#2a7" stroke-width="2"/>
+  <circle cx="400" cy="169" r="5" fill="#f0a"/>
+  <path d="M430 90 Q470 170 535 130" fill="none" stroke="#e83" stroke-width="2"/>
+  <circle cx="477" cy="141" r="5" fill="#f0a"/>
+  <polygon points="221,100 227,107 221,114 215,107" fill="#85a"/>
+  <polygon points="510,108 516,115 510,122 504,115" fill="#85a"/>
+  <text x="280" y="262" font-size="12" text-anchor="middle" fill="#555">红＝一般曲线 C；蓝＝E×CM；绿＝QM；橙＝E²；紫菱形＝特殊点</text>
+  <text x="280" y="286" font-size="13" text-anchor="middle" fill="#333">四类例外都有限 ⇒ C 与特殊点、特殊曲线之并只交有限点</text>
+</svg>
+
+</div>
+
+判定代入数字：`@@M@@s@@` 属于 `@@M@@\Sigma_{E^2}(C)@@` 当且仅当 `@@M@@A_s@@` 同源于某个 `@@M@@E^2@@`（`@@M@@E@@` 无 CM），等价于 `@@M@@\mathrm{End}^0(A_s)\simeq M_2(\mathbb Q)@@`；同源不必保持极化，次数、阶、椭圆曲线本身都可任意变化，定理一概照收。拼装后的定理二断言：`@@M@@C(\overline{\mathbb Q})\cap\bigcup_{\dim Z\le 1}Z(\overline{\mathbb Q})@@` 是有限集——一条一般曲线与全部特殊点、特殊曲线的并，只交有限个点。
+
+**为什么值得关心**
+
+"不可能交点"纲领在经典舞台 `@@M@@\mathcal A_2@@` 的曲线情形就此完整落地：三篇姊妹工作互相咬合，不需要任何边界、退化或约化假设。
+
+> 暂无形式化证明（AI 结果待核验）
+
 ## 一句话结论
 
 证明了 `@@M@@\mathcal A_2@@`（主极化阿贝尔曲面模空间）中任何 Hodge-通有代数曲线上，阿贝尔曲面同源于非 CM 椭圆曲线平方 `@@M@@E^2@@` 的点只有有限多个；与两篇姊妹篇合并，无条件解决了 `@@M@@\mathcal A_2@@` 中曲线情形的 Zilber–Pink 猜想。

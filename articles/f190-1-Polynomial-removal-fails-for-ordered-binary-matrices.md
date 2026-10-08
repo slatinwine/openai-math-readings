@@ -13,6 +13,80 @@ pdfname: ""
 
 > 结果族 190：Polynomial removal fails for ordered binary matrices　·　学科：Combinatorics　·　验证状态：主结果已 Lean 形式化
 
+## 入门导读 🐣
+
+玩"找茬"：一张巨大的 0-1 表格里藏着许多与你手里模板一模一样的图案，问要改多少格才能毁掉所有图案？直觉说：如果非改很多格不可（离"干净"很远），图案一定多得随手可抓。本文造出一张固定的 `@@M@@66\times66@@` 模板，让这个直觉在"行列有顺序的 0-1 矩阵"世界里彻底失灵——所谓有序，就是拷贝里行与行的先后、列与列的先后都不能乱。
+
+**关键词卡片**
+
+- 有序拷贝（ordered copy）：保持行序、列序，且 0 与 1 都逐格对上的复制。
+- 删除引理（removal lemma）：图论经典结论——离"无图案"很远，则图案数量巨大。
+- 多项式界（polynomial bound）：图案数 `@@M@@\ge c\,\epsilon^C n^{2k}@@` 型下界；本文否定其存在。
+- 采样测试器（tester）：随机抽若干行列、看子表是否含模板就下结论的算法。
+
+**看个具体例子**
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280">
+<text x="110" y="42" text-anchor="middle" font-size="14">模板本体 P</text>
+<path d="M70 70 H150 V150 H70 Z M70 110 H150 M110 70 V150" fill="none" stroke="#222" stroke-width="1.5"/>
+<text x="90" y="97" text-anchor="middle" font-size="14">1</text>
+<text x="130" y="97" text-anchor="middle" font-size="14">0</text>
+<text x="90" y="137" text-anchor="middle" font-size="14">1</text>
+<text x="130" y="137" text-anchor="middle" font-size="14">1</text>
+<text x="350" y="42" text-anchor="middle" font-size="14">宿主矩阵 A（示意 6×6）</text>
+<path d="M260 60 V240 M290 60 V240 M320 60 V240 M350 60 V240 M380 60 V240 M410 60 V240 M440 60 V240 M260 60 H440 M260 90 H440 M260 120 H440 M260 150 H440 M260 180 H440 M260 210 H440 M260 240 H440" fill="none" stroke="#999" stroke-width="1"/>
+<text x="275" y="80" text-anchor="middle" font-size="13">0</text>
+<text x="305" y="80" text-anchor="middle" font-size="13">1</text>
+<text x="335" y="80" text-anchor="middle" font-size="13">0</text>
+<text x="365" y="80" text-anchor="middle" font-size="13">0</text>
+<text x="395" y="80" text-anchor="middle" font-size="13">1</text>
+<text x="425" y="80" text-anchor="middle" font-size="13">0</text>
+<text x="275" y="110" text-anchor="middle" font-size="13">1</text>
+<text x="305" y="110" text-anchor="middle" font-size="13">0</text>
+<text x="335" y="110" text-anchor="middle" font-size="13">1</text>
+<text x="365" y="110" text-anchor="middle" font-size="13">1</text>
+<text x="395" y="110" text-anchor="middle" font-size="13">0</text>
+<text x="425" y="110" text-anchor="middle" font-size="13">1</text>
+<text x="275" y="140" text-anchor="middle" font-size="13">0</text>
+<text x="305" y="140" text-anchor="middle" font-size="13">1</text>
+<text x="335" y="140" text-anchor="middle" font-size="13">0</text>
+<text x="365" y="140" text-anchor="middle" font-size="13">1</text>
+<text x="395" y="140" text-anchor="middle" font-size="13">1</text>
+<text x="425" y="140" text-anchor="middle" font-size="13">0</text>
+<text x="275" y="170" text-anchor="middle" font-size="13">1</text>
+<text x="305" y="170" text-anchor="middle" font-size="13">1</text>
+<text x="335" y="170" text-anchor="middle" font-size="13">1</text>
+<text x="365" y="170" text-anchor="middle" font-size="13">0</text>
+<text x="395" y="170" text-anchor="middle" font-size="13">0</text>
+<text x="425" y="170" text-anchor="middle" font-size="13">1</text>
+<text x="275" y="200" text-anchor="middle" font-size="13">0</text>
+<text x="305" y="200" text-anchor="middle" font-size="13">0</text>
+<text x="335" y="200" text-anchor="middle" font-size="13">1</text>
+<text x="365" y="200" text-anchor="middle" font-size="13">1</text>
+<text x="395" y="200" text-anchor="middle" font-size="13">0</text>
+<text x="425" y="200" text-anchor="middle" font-size="13">0</text>
+<text x="275" y="230" text-anchor="middle" font-size="13">1</text>
+<text x="305" y="230" text-anchor="middle" font-size="13">1</text>
+<text x="335" y="230" text-anchor="middle" font-size="13">0</text>
+<text x="365" y="230" text-anchor="middle" font-size="13">0</text>
+<text x="395" y="230" text-anchor="middle" font-size="13">1</text>
+<text x="425" y="230" text-anchor="middle" font-size="13">0</text>
+<rect x="289" y="119" width="62" height="62" fill="none" stroke="#b03030" stroke-width="2.5" stroke-dasharray="7 5"/>
+<text x="280" y="264" text-anchor="middle" font-size="13">有序拷贝：行序、列序保持，0 与 1 都要逐格对上</text>
+</svg>
+
+</div>
+
+定理数字版：存在宿主矩阵 `@@M@@A_h@@`，改动比例至少 `@@M@@\epsilon_h=(386h+2)^{-2}@@` 才能变成"不含 `@@M@@H@@`"，但有序拷贝数不超过 `@@M@@\epsilon_h\,2^{-h}\,n^{132}@@`——随 `@@M@@h@@` 增大，任何 `@@M@@c\,\epsilon^C n^{132}@@` 型多项式下界都被击穿。
+
+**为什么值得关心**
+
+它否定了 2007 年起被反复陈述的多项式有序矩阵删除猜想，还连带表明固定精度的采样测试器需要超多项式的采样量。值得注意的是，定性版本依然成立：每个固定距离都有正的拷贝下界，爆炸的只是数量级——"定性成立、定量爆炸"的罕见标本。玄机在于：毁掉现有拷贝只需 `@@M@@2^h@@` 个格子，但这么一改会立刻造出新拷贝，任何彻底修复仍须改动至少 `@@M@@4^h@@` 个格子。
+
+> 已 Lean 形式化
+
 ## 一句话结论
 
 本文构造了一个固定的 `@@M@@66\times66@@` 0-1 矩阵 `@@M@@H@@`，并给出一列宿主矩阵：它们离不含 `@@M@@H@@` 很远，但所含 `@@M@@H@@` 的有序拷贝（ordered copy）密度低于任何多项式界，从而否定了有序二值矩阵的多项式删除引理猜想。

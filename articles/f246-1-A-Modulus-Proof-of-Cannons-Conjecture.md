@@ -13,6 +13,33 @@ pdfname: ""
 
 > 结果族 246：Cannon's conjecture　·　学科：Group theory　·　验证状态：暂无形式化证明，请以社区核验为准
 
+## 入门导读 🐣
+
+想象你站在一个巨大几何世界的中心，向四面八方的无穷远望去，看到的"地平线"是一个二维球面。Cannon 猜想问：这样的世界是否必然就是双曲三维空间的某种对称铺法？本文回答：是——而且靠的是纯分析的"模量"方法，把悬置多年的一般情形硬生生攻克。
+
+**关键词卡片**
+
+- 双曲群（hyperbolic group）：其"地铁图"（Cayley 图）上三角形一致细瘦的有限生成群。
+- 边界（boundary）：群在无穷远处的形状；本文设定它同胚于二维球面 `@@M@@S^2@@`。
+- 模量（modulus）：给小球分配权重、要求截住所有大路径的最小总代价——证明的核心量。
+- 余紧等距作用（cocompact isometric action）：群作为对称群铺满整个空间，且基本区域有限大。
+
+**看个具体例子**
+
+主定理：边界同胚于 `@@M@@S^2@@` 的双曲群 `@@M@@G@@`，必能实现为双曲三维空间 `@@M@@\mathbb H^3@@` 上的等距作用——真、余紧、核有限（允许含反向定向的元素）。无挠时，`@@M@@G@@` 恰好是某个闭双曲三维流形的基本群；`@@M@@G@@` 的某有限指标子群还同构于"曲面基本群与 `@@M@@\mathbb Z@@` 的半直积"（虚拟纤维化）。
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280"><circle cx="280" cy="128" r="95" fill="none" stroke="#2c7fb8" stroke-width="2.5"/><text x="280" y="22" font-size="14" fill="#2c7fb8" text-anchor="middle">无穷远边界 ∂G 同胚于球面 S²</text><polygon points="280,98 306,117 296,147 264,147 254,117" fill="none" stroke="#c0392b" stroke-width="2"/><line x1="280" y1="98" x2="280" y2="43" stroke="#c0392b" stroke-width="1.5"/><line x1="306" y1="117" x2="343" y2="80" stroke="#c0392b" stroke-width="1.5"/><line x1="296" y1="147" x2="329" y2="183" stroke="#c0392b" stroke-width="1.5"/><line x1="264" y1="147" x2="231" y2="183" stroke="#c0392b" stroke-width="1.5"/><line x1="254" y1="117" x2="217" y2="80" stroke="#c0392b" stroke-width="1.5"/><text x="280" y="130" font-size="12" fill="#c0392b" text-anchor="middle">铺砌</text><text x="280" y="250" font-size="14" fill="#333" text-anchor="middle">结论：G 等距、真且余紧地作用于双曲三维空间 H³</text><text x="280" y="272" font-size="13" fill="#666" text-anchor="middle">无挠时 G 恰是某闭双曲三维流形的基本群</text></svg>
+
+</div>
+
+**为什么值得关心**
+
+它把"群在无穷远处的拓扑"与"三维双曲几何"直接接通，是几何群论的核心猜想；卡点的一致模量上界由本文首次给出。
+
+> 暂无形式化证明（AI 结果待核验）
+
 ## 一句话结论
 
 本文正面证明 Cannon 猜想：边界同胚于二维球面的双曲群，必以真、余紧方式等距作用于双曲三维空间（允许有限核）；无挠时它恰为闭双曲三维流形的基本群。

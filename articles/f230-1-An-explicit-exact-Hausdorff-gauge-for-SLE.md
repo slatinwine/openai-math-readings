@@ -13,6 +13,43 @@ pdfname: ""
 
 > 结果族 230：Exact Hausdorff gauges for SLE　·　学科：Probability and statistical mechanics　·　验证状态：暂无形式化证明，请以社区核验为准
 
+## 入门导读 🐣
+
+量一段海岸线：用米尺和用毫米尺会得到不同的答案，因为海岸线是分形的，尺子越细量出的长度越长。这篇论文研究的正是概率论里最有名的"随机海岸线"——SLE 曲线，它由随机规则逐点生长而成。作者找到了唯一一套恰好合身的"砝码"：用它去称曲线上任何一段的"大小"，称出来的数既不是零，也不是无穷。
+
+**关键词卡片**
+
+- SLE 曲线（SLE, Schramm–Loewner evolution）：按随机规则生长的曲线；许多统计物理临界模型的轮廓线放大后都是它。
+- 豪斯多夫测度（Hausdorff measure）：用半径 r 的小球盖住集合、按计价函数 h(r) 累计费用的"广义尺子"。
+- 分形维数（fractal dimension）：d = 1 + κ/8，衡量曲线比一条直线"粗"多少；κ 是随机强度参数。
+- 规范（gauge）：计价函数本身；选小了测度为无穷，选大了为零，恰好正确的只有一条。
+- 几乎必然（almost surely）：以概率 1 成立，随机例外情形的概率为零。
+
+**看个具体例子**
+
+取 κ = 4：此时 d = 1.5，p = 2 − d = 0.5，论文的砝码是 `@@M@@h(r)=r^{1.5}\bigl(\log\log(1/r)\bigr)^{0.25}@@`。代入 r = 10^{-100}：`@@M@@\log(1/r)\approx 230@@`，`@@M@@\log\log(1/r)\approx 5.4@@`，修正因子 `@@M@@5.4^{0.25}\approx 1.5@@`，故 `@@M@@h(r)\approx 1.5\times 10^{-150}@@`。用这套砝码称 `@@M@@\mathrm{SLE}_4@@` 的任何一段，结果几乎必然是正的有限数；而 Schramm 当年猜的指数为 1 的版本，被证明连 σ-有限都做不到，称不出有意义的结果。
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280">
+  <text x="280" y="28" text-anchor="middle" font-size="16">SLE 曲线：一条随机分形</text>
+  <path d="M40 180 C90 60 150 250 210 130 C260 30 300 230 350 160 C400 90 440 250 520 100" fill="none" stroke="#1565c0" stroke-width="3"/>
+  <circle cx="130" cy="160" r="48" fill="none" stroke="#888" stroke-width="1.5" stroke-dasharray="6 4"/>
+  <circle cx="255" cy="120" r="30" fill="none" stroke="#888" stroke-width="1.5" stroke-dasharray="6 4"/>
+  <circle cx="390" cy="170" r="62" fill="none" stroke="#888" stroke-width="1.5" stroke-dasharray="6 4"/>
+  <circle cx="490" cy="110" r="24" fill="none" stroke="#888" stroke-width="1.5" stroke-dasharray="6 4"/>
+  <text x="130" y="245" text-anchor="middle" font-size="13">半径 r 的小球</text>
+  <text x="390" y="252" text-anchor="middle" font-size="13">按砝码 h(r) 计价，总费用正且有限</text>
+</svg>
+
+</div>
+
+**为什么值得关心**
+
+它显式解答了 Schramm 提出的豪斯多夫测度问题：随机分形的"精确大小"第一次有了公式，而不只停留在维数层面。
+
+> 暂无形式化证明（AI 结果待核验）
+
 ## 一句话结论
 
 本文给出 Schramm 问题的显式解答：当 `@@M@@0<\kappa<8@@`、`@@M@@d=1+\kappa/8@@` 时，规范 `@@M@@h(r)=r^d(\log\log(1/r))^{(2-d)/2}@@` 使 `@@M@@\mathrm{SLE}_\kappa@@` 每段轨迹的豪斯多夫测度几乎必然正且有限；同时证明 Schramm 建议的 `@@M@@r^d\log\log(1/r)@@` 并非 `@@M@@\sigma@@`-有限。

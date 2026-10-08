@@ -13,6 +13,34 @@ pdfname: ""
 
 > 结果族 227：Critical SK autocorrelation processes and dynamics across the temperature transition　·　学科：Probability and statistical mechanics　·　验证状态：主结果已 Lean 形式化
 
+## 入门导读 🐣
+
+想象一锅快要结冻的汤：温度恰好降到冰点附近时，搅动之后它恢复均匀会变得特别慢。这篇论文研究的正是数学版的"临界慢化"——一团彼此随机影响着的小磁针（自旋玻璃）恰好停在相变温度上，要搅拌多久才能"搅匀"。结论：真的非常慢，而且慢得有精确幂次。
+
+**关键词卡片**
+
+- SK 模型（Sherrington–Kirkpatrick model）：n 枚 ±1 小磁针，两两之间用随机强度的相互作用相连，是研究自旋玻璃的标准玩具。
+- 热浴动力学（heat-bath dynamics）：随机挑一枚磁针，让它按邻居现状重新"抛硬币"定指向；反复挑就是搅拌。
+- 总变差距离（total variation distance）：当前分布与平衡分布的差异，小于 1/4 即视为搅匀。
+- 临界慢化（critical slowing down）：恰在相变点 β=1 处弛豫骤然变慢；物理学家用近似和模拟看了四十多年。
+- 无序（disorder）：相互作用矩阵本身随机，定理对几乎所有这样的矩阵成立。
+
+**看个具体例子**
+
+取 n=10^6 枚磁针、温度恰为临界 β=1，从典型的平衡组态出发开始搅拌：连续时间不足 n^(2/3)=10^4（每枚磁针平均已被翻动上万次）时，绝大多数起点的总变差距离仍超过 1/4；换成离散"每步挑一枚更新"，则要 n^(5/3)=10^10 次尝试才够。下图对比高温与临界两种温度下"离平衡的距离"如何随时间下降。
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280"><text x="150" y="24" font-size="15" fill="#333">与平衡的距离 vs 搅拌时间（示意）</text><line x1="70" y1="240" x2="530" y2="240" stroke="#555" stroke-width="2"/><line x1="70" y1="240" x2="70" y2="45" stroke="#555" stroke-width="2"/><text x="24" y="150" font-size="12" fill="#555" transform="rotate(-90 24 150)">与平衡的距离</text><line x1="70" y1="192" x2="530" y2="192" stroke="#999" stroke-dasharray="6 5"/><text x="46" y="54" font-size="13" fill="#555">1</text><text x="40" y="196" font-size="13" fill="#555">1/4</text><text x="452" y="186" font-size="12" fill="#777">搅匀线</text><path d="M70,52 C110,150 150,205 230,218 C320,228 420,233 530,234" fill="none" stroke="#2e7d32" stroke-width="2.5"/><text x="150" y="150" font-size="13" fill="#2e7d32">高温 β&lt;1：早早搅匀</text><path d="M70,50 C150,58 260,68 350,88 C405,101 438,160 462,198 C486,230 510,234 530,235" fill="none" stroke="#c62828" stroke-width="2.5"/><text x="140" y="72" font-size="13" fill="#c62828">临界 β=1：拖到 n^(2/3) 才搅匀</text><line x1="462" y1="192" x2="462" y2="240" stroke="#c62828" stroke-dasharray="3 4"/><text x="438" y="258" font-size="13" fill="#c62828">n^(2/3)</text><text x="64" y="258" font-size="13" fill="#555">0</text><text x="498" y="262" font-size="12" fill="#555">时间</text></svg>
+
+</div>
+
+**为什么值得关心**
+
+它把物理直觉里的"临界慢化"第一次变成严格定理：总变差意义、典型初值、精确到 n^(2/3) 的时间下界，并已通过 Lean 形式化机器验证。
+
+> 已 Lean 形式化。
+
 ## 一句话结论
 论文在 SK 模型临界点 `@@M@@\beta=1@@` 证明了临界慢化（critical slowing down）的严格总变差下界：把典型的平衡组态固定为初始状态，热浴动力学在 `@@M@@o(n^{2/3})@@` 时间内（离散更新尝试 `@@M@@o(n^{5/3})@@` 步内）几乎必然仍未混合。配合独立比较得到的次指数上界，临界混合时间被夹在 `@@M@@n^{2/3-\epsilon}@@` 与 `@@M@@e^{\epsilon n}@@` 之间。
 

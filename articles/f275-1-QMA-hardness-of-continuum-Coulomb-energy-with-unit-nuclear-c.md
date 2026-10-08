@@ -13,6 +13,34 @@ pdfname: ""
 
 > 结果族 275：QMA-hardness of continuum Coulomb energy　·　学科：Mathematical physics　·　验证状态：暂无形式化证明，请以社区核验为准
 
+## 入门导读 🐣
+
+上一篇证明"分子能量难算"借用了指数大的核电荷当道具；这篇更狠：全用氢核（电荷恰为 1），分子能量依然 QMA 难。诀窍像"先摊煎饼再撒芝麻"——先设计一块均匀带电的板，把想要的性质全都配好，再用数学搬运把连续电荷换成一颗颗单位点电荷，误差全程可控。
+
+**关键词卡片**
+
+- clamped 核（clamped nuclei）：原子核固定不动，只算电子的账（玻恩–奥本海默式设定）。
+- 超交换（superexchange）：电子绕道邻位产生的二阶有效耦合，Anderson 1959 年提出。
+- 单态介导子（singlet mediator）：一对强束缚的辅助自旋，负责传递指定符号的耦合。
+- IMS 局部化（IMS localization）：把能量按空间分块估计的数学工具。
+- 输运（transport）：把一块电荷分布连续搬到目标分布的几何手法。
+
+**看个具体例子**
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280"><rect x="40" y="80" width="170" height="110" fill="none" stroke="#333" stroke-width="2"/><circle cx="70" cy="105" r="2.5" fill="#999"/><circle cx="108" cy="105" r="2.5" fill="#999"/><circle cx="146" cy="105" r="2.5" fill="#999"/><circle cx="184" cy="105" r="2.5" fill="#999"/><circle cx="70" cy="135" r="2.5" fill="#999"/><circle cx="108" cy="135" r="2.5" fill="#999"/><circle cx="146" cy="135" r="2.5" fill="#999"/><circle cx="184" cy="135" r="2.5" fill="#999"/><circle cx="70" cy="165" r="2.5" fill="#999"/><circle cx="108" cy="165" r="2.5" fill="#999"/><circle cx="146" cy="165" r="2.5" fill="#999"/><circle cx="184" cy="165" r="2.5" fill="#999"/><text x="46" y="68" font-size="14" fill="#333">均匀电荷板（密度 ρ）</text><line x1="228" y1="135" x2="310" y2="135" stroke="#333" stroke-width="2.5"/><polygon points="310,135 298,129 298,141" fill="#333"/><text x="242" y="122" font-size="13" fill="#333">数学搬运</text><circle cx="380" cy="100" r="4" fill="#c0392b"/><circle cx="420" cy="100" r="4" fill="#c0392b"/><circle cx="460" cy="100" r="4" fill="#c0392b"/><circle cx="500" cy="100" r="4" fill="#c0392b"/><circle cx="380" cy="140" r="4" fill="#c0392b"/><circle cx="420" cy="140" r="4" fill="#c0392b"/><circle cx="460" cy="140" r="4" fill="#c0392b"/><circle cx="500" cy="140" r="4" fill="#c0392b"/><circle cx="380" cy="180" r="4" fill="#c0392b"/><circle cx="420" cy="180" r="4" fill="#c0392b"/><circle cx="460" cy="180" r="4" fill="#c0392b"/><circle cx="500" cy="180" r="4" fill="#c0392b"/><text x="352" y="68" font-size="14" fill="#333">单位点核阵列（每颗电荷 = 1）</text><text x="40" y="235" font-size="14" fill="#333">每节点质量恰 1/λ，取 λ = 8k³/ρ 后电荷回到 1</text><text x="40" y="260" font-size="14" fill="#333">误差两级：λ^(−2/3) 与 λ^(−4/3)；阈隙 b−a ≥ (7/16)λτ²γ &gt; 1</text></svg>
+
+</div>
+
+搬运用的是两点高斯求积：把宽板切成边长 h=1/k 的小立方体，每块放 8 个等质量节点，取 λ=8k³/ρ 让每颗恰好带单位电荷。最终阈隙 `@@M@@b-a\ge\tfrac{7}{16}\lambda\tau^2\gamma>1@@`，YES 与 NO 之间隔着清晰的鸿沟。
+
+**为什么值得关心**
+
+在最刚性的物理设定（只有氢核、无附加势场、无束缚假设）下难度依然成立，说明"难"不是道具造出来的假象；有限构造与姊妹篇同构，连续实现则完全独立，两条路线互为印证。
+
+> 暂无形式化证明（AI 结果待核验）
+
 ## 一句话结论
 
 本文证明：当所有原子核电荷均为 `@@M@@1@@`（氢核）、位置为互异有理数时，在全自旋费米连续空间上逼近电子基态能下确界 `@@M@@E_0@@` 仍是 QMA 难的。确定性多项式归约只输出多项式多个单位核、电子与有理阈值，阈隙至少 1，全程不借助轨道基、磁场或束缚假设——这是最刚性外场约定下的连续硬度结果。

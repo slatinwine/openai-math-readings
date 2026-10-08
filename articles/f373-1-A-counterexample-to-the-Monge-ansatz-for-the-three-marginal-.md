@@ -13,6 +13,53 @@ pdfname: ""
 
 > 结果族 373：Nonattainment of the three-marginal Coulomb Monge problem　·　学科：Partial differential equations　·　验证状态：暂无形式化证明，请以社区核验为准
 
+## 入门导读 🐣
+
+给三个互相排斥的电子安排座位，让总排斥能最小。最省事的想法：第一个电子落在哪，另外两个的位置就由确定的规则给出，像一张快递路线表。论文构造出一种处处光滑的电子密度，使任何"确定性规则"都拿不到最优——想拿到最优，必须掷骰子随机分配。
+
+**关键词卡片**
+
+- 最优传输（optimal transport）：给定各粒子的分布，求总代价最小的配送方案。
+- 库仑代价（Coulomb cost）：`@@M@@\sum_{i\lt j}1/|x_i-x_j|@@`，即静电排斥能。
+- Monge 拟设（Monge ansatz）：最优方案可写成确定性映射的假设。
+- Kantorovich 松弛（Kantorovich relaxation）：允许随机耦合的更宽方案类。
+- 保测度映射（measure-preserving map）：把分布原样搬运的确定性规则。
+
+**看个具体例子**
+
+密度分散在五个小球上：中心球质量 `@@M@@\tfrac13@@`，四个卫星球各 `@@M@@\tfrac16@@`。任何确定性规则若在中心球的一块 `@@M@@S@@` 上选了某个分支，它必须把质量 `@@M@@\tfrac13\nu(S)@@` 送进只能容纳 `@@M@@\tfrac16\nu(S)@@` 的卫星球——装不下，必然矛盾。于是最优耦合只能是随机的；但把五个球切成越来越细的格子重排，确定性方案的代价能任意接近最优值：可逼近，永不可达。
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280">
+  <text x="280" y="28" text-anchor="middle" font-size="15" fill="#333">五球密度：确定性搬运"装不下"</text>
+  <circle cx="280" cy="142" r="36" fill="none" stroke="#c0392b" stroke-width="2.5"/>
+  <text x="280" y="138" text-anchor="middle" font-size="13" fill="#c0392b">中心球</text>
+  <text x="280" y="156" text-anchor="middle" font-size="13" fill="#c0392b">质量 1/3</text>
+  <circle cx="135" cy="142" r="28" fill="none" stroke="#2471a3" stroke-width="2"/>
+  <text x="135" y="147" text-anchor="middle" font-size="13" fill="#2471a3">1/6</text>
+  <circle cx="425" cy="142" r="28" fill="none" stroke="#2471a3" stroke-width="2"/>
+  <text x="425" y="147" text-anchor="middle" font-size="13" fill="#2471a3">1/6</text>
+  <circle cx="280" cy="72" r="28" fill="none" stroke="#2471a3" stroke-width="2"/>
+  <text x="280" y="77" text-anchor="middle" font-size="13" fill="#2471a3">1/6</text>
+  <circle cx="280" cy="212" r="28" fill="none" stroke="#2471a3" stroke-width="2"/>
+  <text x="280" y="217" text-anchor="middle" font-size="13" fill="#2471a3">1/6</text>
+  <path d="M245 132 L168 140" fill="none" stroke="#666" stroke-width="1.6"/>
+  <path d="M176 133 L167 140 L177 145" fill="none" stroke="#666" stroke-width="1.6"/>
+  <path d="M315 132 L392 140" fill="none" stroke="#666" stroke-width="1.6"/>
+  <path d="M384 133 L393 140 L383 145" fill="none" stroke="#666" stroke-width="1.6"/>
+  <text x="206" y="118" text-anchor="middle" font-size="12" fill="#666">质量 1/3 → 容量 1/6</text>
+  <text x="280" y="264" text-anchor="middle" font-size="13" fill="#666">确定性规则须把 1/3 的质量塞进容量 1/6 的分支：必然溢出</text>
+</svg>
+
+</div>
+
+**为什么值得关心**
+
+它否定了一般光滑密度下 Monge 拟设的可行性，回答了 2026 年初仍被列为公开问题的三维三体取等问题；多体最优传输是密度泛函理论强关联极限的数学骨架。
+
+> 暂无形式化证明（AI 结果待核验）
+
 ## 一句话结论
 
 本文构造了一个光滑紧支撑、平方根同样光滑的三维概率密度，使三体库仑最优传输不存在确定性映射解：任何保测度映射对都取不到最优值，但映射下确界与松弛下确界相等，从而推翻了光滑密度下 Monge ansatz（Monge 拟设）的一般可行性。

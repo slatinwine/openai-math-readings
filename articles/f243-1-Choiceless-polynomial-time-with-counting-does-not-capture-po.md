@@ -13,6 +13,33 @@ pdfname: ""
 
 > 结果族 243：Separating choiceless counting from polynomial time and witnessed choice　·　学科：Mathematical logic　·　验证状态：主结果已 Lean 形式化
 
+## 入门导读 🐣
+
+想象一位极度公正的裁判，面前是一袋没有编号、完全对称的球。他拒绝"随手抓一颗"这类动作，只允许整批地、对称地处理。这种"不做任意选择"的计算模型（CPT，还配上数数功能）到底能不能断完所有多项式时间可断的案子？本文给出否定答案：确有一件 P 里的案子，他永远断不了。
+
+**关键词卡片**
+
+- 无序结构（unordered structure）：元素没有编号与顺序的输入，整体完全对称。
+- 无选择多项式时间（choiceless polynomial time, CPT）：只做与输入对称性相容的计算，从不挑"某一个"元素。
+- 捕获（capture）：一个逻辑若能表达全部多项式时间可判定的性质，就说它捕获 P。
+- 线性方程组相容性（linear consistency）：问某个模 3 线性方程组有没有解——本文找到的分界查询。
+
+**看个具体例子**
+
+具体输入是"带电的三维网格"：每个顶点带电荷，要判断对应的 `@@M@@\mathbb F_3@@` 线性方程组是否相容。高斯消元多项式时间就能判（属于 P），但任何 CPT 程序都写不出这个判断——对两个总电荷不同的网格，正确答案一是一、一是零，而任何固定的对称程序在两者上被迫给出相同输出。
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280"><circle cx="185" cy="150" r="105" fill="none" stroke="#2c7fb8" stroke-width="2.5"/><text x="185" y="70" font-size="14" fill="#2c7fb8" text-anchor="middle">CPT＋计数 能表达的查询</text><text x="185" y="135" font-size="14" fill="#555" text-anchor="middle">"图连通吗？"</text><text x="185" y="165" font-size="14" fill="#555" text-anchor="middle">"元素个数是偶数吗？"</text><text x="185" y="195" font-size="14" fill="#555" text-anchor="middle">……</text><rect x="330" y="100" width="200" height="80" fill="none" stroke="#c0392b" stroke-width="2.5" stroke-dasharray="7 5"/><text x="430" y="130" font-size="14" fill="#c0392b" text-anchor="middle">模 3 线性方程组</text><text x="430" y="155" font-size="14" fill="#c0392b" text-anchor="middle">是否相容？</text><text x="430" y="212" font-size="14" fill="#333" text-anchor="middle">多项式时间可判（高斯消元）</text><text x="430" y="238" font-size="14" fill="#333" text-anchor="middle">却落在 CPT 之外</text></svg>
+
+</div>
+
+**为什么值得关心**
+
+这确认了 Blass–Gurevich–Shelah 在 1999 年提出的非捕获猜想，朝着"无序结构上的 P 无法被任何逻辑捕获"这一著名猜想迈出实质一步。
+
+> 已 Lean 形式化
+
 ## 一句话结论
 
 本文证明了带计数的无选择多项式时间（choiceless polynomial time with counting, CPT）不能捕获无序有限结构上的多项式时间：在 `@@M@@\mathbb F_3@@` 上的一个线性方程组相容性查询属于 P，却无法被 CPT 定义，从而确认了 Blass–Gurevich–Shelah 近三十年前提出的非捕获猜想。

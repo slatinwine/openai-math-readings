@@ -13,6 +13,55 @@ pdfname: ""
 
 > 结果族 015：Torus-packet equidistribution in prime, quartic, and sextic degrees　·　学科：Number theory　·　验证状态：暂无形式化证明，请以社区核验为准
 
+## 入门导读 🐣
+
+把数域里的理想格丢进"所有单位体积格组成的大厅"，单位群像看不见的手推它沿对角方向滚动，滚出若干封闭轨道，捆成一束"packet"。这篇论文证明：当域的判别式（复杂度指标）趋于无穷，这束轨道像滴进水里的墨水，最终均匀染遍整个大厅，一滴也不流失。
+
+**关键词卡片**
+
+- 全实域 (totally real field)：所有嵌入都是实数的数域；本文固定素数次 `@@M@@n\ge 5@@`
+- 环面束 (torus packet)：理想类给出的有限条紧对角轨道，按轨道体积加权
+- Haar 测度 (Haar measure)："绝对均匀"的严格数学版本
+- 无质量逃逸 (no escape of mass)：概率不会悄悄溜向无穷远（尖端）
+- 子凸性 (subconvexity)：一个悬而未决的 L 函数估计；本文用 Stark 零点法绕开了它
+
+**看个具体例子**
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280">
+  <text x="280" y="26" font-size="15" text-anchor="middle" fill="#333">判别式增大：轨道束像墨水一样铺满大厅</text>
+  <rect x="20" y="60" width="160" height="160" fill="none" stroke="#999" stroke-width="1.5"/>
+  <path d="M30 130 Q60 90 95 130 Q130 170 165 130" fill="none" stroke="#26b" stroke-width="1.5"/>
+  <path d="M30 165 Q60 135 95 165 Q130 195 165 165" fill="none" stroke="#26b" stroke-width="1.5"/>
+  <text x="100" y="240" font-size="12" text-anchor="middle" fill="#333">判别式小</text>
+  <rect x="200" y="60" width="160" height="160" fill="none" stroke="#999" stroke-width="1.5"/>
+  <path d="M210 110 Q240 75 275 110 Q310 145 345 110" fill="none" stroke="#26b" stroke-width="1.5"/>
+  <path d="M210 140 Q240 110 275 140 Q310 170 345 140" fill="none" stroke="#26b" stroke-width="1.5"/>
+  <path d="M210 170 Q240 145 275 170 Q310 195 345 170" fill="none" stroke="#26b" stroke-width="1.5"/>
+  <text x="280" y="240" font-size="12" text-anchor="middle" fill="#333">判别式增大</text>
+  <rect x="380" y="60" width="160" height="160" fill="none" stroke="#999" stroke-width="1.5"/>
+  <path d="M390 85 Q415 65 445 85 Q475 105 505 85" fill="none" stroke="#26b" stroke-width="1"/>
+  <path d="M390 105 Q415 85 445 105 Q475 125 505 105" fill="none" stroke="#26b" stroke-width="1"/>
+  <path d="M390 125 Q415 105 445 125 Q475 145 505 125" fill="none" stroke="#26b" stroke-width="1"/>
+  <path d="M390 145 Q415 125 445 145 Q475 165 505 145" fill="none" stroke="#26b" stroke-width="1"/>
+  <path d="M390 165 Q415 145 445 165 Q475 185 505 165" fill="none" stroke="#26b" stroke-width="1"/>
+  <path d="M390 185 Q415 165 445 185 Q475 205 505 185" fill="none" stroke="#26b" stroke-width="1"/>
+  <path d="M390 202 Q415 188 445 202 Q475 216 505 202" fill="none" stroke="#26b" stroke-width="1"/>
+  <text x="460" y="240" font-size="12" text-anchor="middle" fill="#333">判别式 → ∞：铺满＝Haar</text>
+  <text x="280" y="264" font-size="13" text-anchor="middle" fill="#333">束按轨道体积加权；极限均匀，且不流失</text>
+</svg>
+
+</div>
+
+设 `@@M@@n=5@@`。任取局部类型随意的全格 `@@M@@M@@`，其判别式 `@@M@@D(M)=|\mathrm{Disc}(K)|\,[\mathcal O_K:\mathcal O(M)]^2@@`。定理的数字版：`@@M@@D(M_i)\to\infty@@` 蕴含束测度 `@@M@@\mu_{K_i,M_i,\sigma_i}@@` 弱收敛到 Haar 概率测度 `@@M@@m_5@@`，且无质量逃逸；连"固定域、只让序指数增大"的极端情形也被覆盖。注意"任意局部类型"意味着每个素数处的格形状可以千差万别、非极大序指数可以无界增长，定理对每种类型单独成立。
+
+**为什么值得关心**
+
+这是 ELMV 2011 年提出的高维 Duke 均分布问题（束形式）在素数次的正面解，而且全程不依赖悬置的子凸性猜想。
+
+> 暂无形式化证明（AI 结果待核验）
+
 ## 一句话结论
 
 对固定素数次数 `@@M@@n\ge5@@` 的全实域，本文无条件证明：任意局部同位类型的环面束（torus packet）按轨道体积加权后，随乘子序判别式趋于无穷而弱收敛到 Haar 概率测度，且无质量逃逸。这正面解决了 ELMV 遗留的高维 Duke 均分布问题的束形式，全程不用子凸性界。

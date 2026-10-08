@@ -13,6 +13,50 @@ pdfname: ""
 
 > 结果族 090：Triangular-lattice optimality, long-range Riesz and Coulomb energies, and spherical logarithmic energy　·　学科：Convex and metric geometry　·　验证状态：暂无形式化证明，请以社区核验为准
 
+## 入门导读 🐣
+
+同样大小的硬币在无限大的桌面上最多能摆多密？人人都猜蜂窝式最密——这早被 Thue 证明。这篇论文做的是另一件事：造一台"验钞机"。它构造出一个特殊函数，几个符号条件一经检查，密度上界就被钉死在蜂窝的数值上、分毫不差。Cohn–Elkies 方法提出二十多年，这台二维验钞机终于被造了出来。
+
+**关键词卡片**
+
+- 圆堆积密度（circle packing density）：硬币盖住桌面的面积占比。
+- 线性规划界（linear programming bound）：Cohn–Elkies 框架——找一个辅助函数，其符号条件直接产出密度上界。
+- Fourier 变换（Fourier transform）：把函数拆成各种频率的波；证书要求变换后处处非负。
+- Schwartz 函数（Schwartz function）：衰减极快、极光滑的函数，造证书的材料。
+- 区间算术（interval arithmetic）：用区间包住精确值做运算，验证不含浮点误差。
+
+**看个具体例子**
+
+蜂窝摆法里，每枚硬币恰好嵌进一个正六边形"包间"，包间的内切圆正是硬币本身，所以密度 `@@M@@=\dfrac{\pi r^2}{2\sqrt3\,r^2}=\dfrac{\pi}{2\sqrt3}\approx 0.9069@@`。论文构造的证书 `@@M@@f@@` 满足 `@@M@@f(0)/\widehat f(0)=2/\sqrt3@@`，代入 Cohn–Elkies 定理，上界 `@@M@@=\frac\pi4\cdot\frac{2}{\sqrt3}=\frac{\pi}{2\sqrt3}@@`，与蜂窝密度严丝合缝；而且对任意（不必周期的）堆积都有效。
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280">
+  <text x="280" y="26" font-size="15" text-anchor="middle" fill="#222">蜂窝摆法：每枚硬币一个六边形“包间”</text>
+  <g fill="#cfe3f7" stroke="#5a86b8" stroke-width="1.5">
+    <circle cx="170" cy="130" r="40"/>
+    <circle cx="250" cy="130" r="40"/>
+    <circle cx="210" cy="199" r="40"/>
+    <circle cx="130" cy="199" r="40"/>
+    <circle cx="90" cy="130" r="40"/>
+    <circle cx="130" cy="61" r="40"/>
+    <circle cx="210" cy="61" r="40"/>
+  </g>
+  <polygon points="210,153.1 170,176.2 130,153.1 130,106.9 170,83.9 210,106.9" fill="none" stroke="#d64545" stroke-width="2" stroke-dasharray="6,4"/>
+  <text x="170" y="252" font-size="13" text-anchor="middle" fill="#444">六边形面积 = 2√3·r²，圆面积 = πr²</text>
+  <text x="345" y="120" font-size="14" fill="#222">密度 = π/(2√3) ≈ 0.9069</text>
+  <text x="345" y="150" font-size="14" fill="#222">证书比值 = 2/√3</text>
+  <text x="345" y="180" font-size="14" fill="#222">上界恰好达到同一数值</text>
+</svg>
+
+</div>
+
+**为什么值得关心**
+
+它与 8 维、24 维的"魔法函数"一脉相承，补齐二维拼图；同一张证书还顺带恢复经典结论——周期堆积中只有三角格能达到这个密度。
+
+> 暂无形式化证明（AI 结果待核验）
+
 ## 一句话结论
 
 本文构造了一个显式径向 Schwartz 函数 `@@M@@f@@`：在 `@@M@@|x|\ge1@@` 处非正、Fourier 变换处处非负、且 `@@M@@f(0)/\widehat f(0)=2/\sqrt3@@`，使 Cohn–Elkies 线性规划上界在平面达到精确的最优堆密度 `@@M@@\pi/(2\sqrt3)@@`，解决其二维 sharpness 猜想，并从零点结构恢复周期等号情形三角堆积的唯一性。

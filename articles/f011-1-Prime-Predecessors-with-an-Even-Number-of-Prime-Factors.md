@@ -13,6 +13,49 @@ pdfname: ""
 
 > 结果族 011：Prime-factor statistics of `@@M@@p-1@@`　·　学科：Number theory　·　验证状态：暂无形式化证明，请以社区核验为准
 
+## 入门导读 🐣
+
+想象一位鉴定师，只许把数 `@@M@@N@@` 分别除以 `@@M@@2,3,5,7,\dots@@` 看余数，别的什么都不许做。筛法大师们早就知道：这样的鉴定师原理上分不清 `@@M@@N@@` 的素因子个数是奇还是偶——这就是筛法著名的"奇偶性障碍"。这篇论文却证明：即便如此，仍能保证有无穷多个素数 `@@M@@p@@`，使 `@@M@@p-1@@` 恰有偶数个素因子。
+
+**关键词卡片**
+
+- Möbius 函数（Möbius function `@@M@@\mu@@`）：`@@M@@n@@` 含平方因子时取 `@@M@@0@@`；否则按素因子个数的奇偶取 `@@M@@-1@@` 或 `@@M@@+1@@`。定理即 `@@M@@\mu(p-1)=1@@` 无穷多次。
+- 无平方因子（squarefree）：分解里每个素数至多出现一次。
+- 奇偶性问题（parity problem）：仅凭同余信息的筛法在原理上无法分辨素因子个数的奇偶。
+- 双线性估计（Type II estimate）：把数拆成两段乘积、利用交错抵消的高级估计，是绕过奇偶障碍的钥匙。
+- 渐近筛法（asymptotic sieve）：Friedlander–Iwaniec 式能给出精确计数（而不只是上下界）的筛法。
+
+**看个具体例子**
+
+小例子：`@@M@@p=7@@` 时 `@@M@@p-1=6=2\times3@@`，无平方因子且恰有 2 个因子，`@@M@@\mu(6)=(-1)^2=+1@@`；`@@M@@p=11@@`、`@@M@@p=23@@` 同理都是 `@@M@@+1@@`；而 `@@M@@p=31@@` 时 `@@M@@30=2\times3\times5@@` 有 3 个因子，`@@M@@\mu(30)=-1@@`。主定理：标 `@@M@@+1@@` 的素数有无穷多个。
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280">
+  <text x="280" y="34" font-size="15" text-anchor="middle">p−1 的素因子个数：偶（μ=+1）还是奇（μ=−1）？</text>
+  <rect x="40" y="58" width="220" height="70" rx="10" fill="#e7f4e4" stroke="#345"/>
+  <text x="150" y="88" font-size="15" text-anchor="middle">p=7：6 = 2×3</text>
+  <text x="150" y="112" font-size="13" text-anchor="middle">2 个（偶）→ μ=+1</text>
+  <rect x="300" y="58" width="220" height="70" rx="10" fill="#e7f4e4" stroke="#345"/>
+  <text x="410" y="88" font-size="15" text-anchor="middle">p=11：10 = 2×5</text>
+  <text x="410" y="112" font-size="13" text-anchor="middle">2 个（偶）→ μ=+1</text>
+  <rect x="40" y="152" width="220" height="70" rx="10" fill="#e7f4e4" stroke="#345"/>
+  <text x="150" y="182" font-size="15" text-anchor="middle">p=23：22 = 2×11</text>
+  <text x="150" y="206" font-size="13" text-anchor="middle">2 个（偶）→ μ=+1</text>
+  <rect x="300" y="152" width="220" height="70" rx="10" fill="#f9e4e4" stroke="#345"/>
+  <text x="410" y="182" font-size="15" text-anchor="middle">p=31：30 = 2×3×5</text>
+  <text x="410" y="206" font-size="13" text-anchor="middle">3 个（奇）→ μ=−1</text>
+  <text x="280" y="262" font-size="14" text-anchor="middle">主定理：μ(p−1)=+1 的素数有无穷多个</text>
+</svg>
+
+</div>
+
+**为什么值得关心**
+
+"`@@M@@p@@` 是素数"与"`@@M@@p-1@@` 素因子个数为偶"两头各自都撞在奇偶障碍上，论文对这一双重难题给出肯定回答；这也是继 Friedlander–Iwaniec 找到 `@@M@@x^2+y^4@@` 型素数之后，人类绕过奇偶障碍路线上的又一座里程碑。
+
+> 暂无形式化证明（AI 结果待核验）
+
 ## 一句话结论
 
 证明有无穷多个素数 `@@M@@p@@` 使 `@@M@@p-1@@` 无平方因子且素因子个数（计入重数）为偶数，等价地 `@@M@@\mu(p-1)=1@@` 无穷多次成立——素数前一项的奇偶性问题由此获得肯定回答。

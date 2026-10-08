@@ -13,6 +13,59 @@ pdfname: ""
 
 > 结果族 200：Eisenbud–Green–Harris and lex-plus-powers　·　学科：Algebra　·　验证状态：暂无形式化证明，请以社区核验为准
 
+## 入门导读 🐣
+
+固定一栋楼的"各层房间数表"（Hilbert 函数），问：住法受同样约束的一族多项式理想里，谁的关系网最复杂（Betti 数最大）？没有附加条件时，答案是"字典序最贪婪"的理想；若理想还被要求包含一组正则序列，直觉说"纯幂＋字典段"应该顶到最复杂。这篇论文证明了这个悬置三十余年的排行榜猜想，还把每一步的关系数逐项压住。Betti 数比 Hilbert 函数更精细：它逐项记录分解每一步需要多少生成元，因此这条不等式比"房间数相同"的结论强得多。
+
+**关键词卡片**
+
+- Hilbert 函数（Hilbert function）：商环每一"次数层"的维数，像各楼层房间数表
+- 正则序列（regular sequence）：彼此不做零因子的一组多项式，理想的"好骨架"
+- graded Betti 数（graded Betti number）：极小自由分解中每一步所需生成元的个数，衡量关系复杂度
+- lex-plus-powers 理想：由纯幂 `@@M@@(x_1^{a_1},\dots,x_n^{a_n})@@` 加上字典序最大单项式拼成的"最贪心"理想
+
+**看个具体例子**
+
+取 `@@M@@S=k[x,y]@@`，纯幂次数 `@@M@@(2,2)@@`：商环 `@@M@@S/(x^2,y^2)@@` 里活下来的单项式恰是指数盒 `@@M@@0\le i,j<2@@` 里的四个 `@@M@@1,x,y,xy@@`。按斜对角（次数 `@@M@@i+j@@`）分层数格子，得 Hilbert 函数 `@@M@@1,2,1@@`：
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280">
+<text x="60" y="40" font-size="15" fill="#222">y 次数 ↑（向上 j 增）</text>
+<text x="430" y="248" font-size="15" fill="#222">x 次数 →</text>
+<g stroke="#bbb" fill="#fff">
+<rect x="200" y="60" width="50" height="50"/><rect x="250" y="60" width="50" height="50"/>
+<rect x="300" y="60" width="50" height="50"/><rect x="350" y="60" width="50" height="50"/>
+<rect x="200" y="110" width="50" height="50"/><rect x="250" y="110" width="50" height="50"/>
+<rect x="300" y="110" width="50" height="50"/><rect x="350" y="110" width="50" height="50"/>
+<rect x="200" y="160" width="50" height="50"/><rect x="250" y="160" width="50" height="50"/>
+<rect x="300" y="160" width="50" height="50"/><rect x="350" y="160" width="50" height="50"/>
+</g>
+<rect x="200" y="110" width="100" height="100" fill="#e8f4e8" stroke="#4a3" stroke-width="2"/>
+<text x="222" y="194" font-size="15" fill="#253">1</text>
+<text x="272" y="194" font-size="15" fill="#253">x</text>
+<text x="218" y="144" font-size="15" fill="#253">y</text>
+<text x="262" y="144" font-size="15" fill="#253">x·y</text>
+<text x="212" y="95" font-size="15" fill="#c33">y²=0</text>
+<text x="312" y="194" font-size="15" fill="#c33">x²=0</text>
+<text x="140" y="145" font-size="14" fill="#888">j=1</text>
+<text x="140" y="195" font-size="14" fill="#888">j=0</text>
+<text x="205" y="232" font-size="14" fill="#888">i=0</text>
+<text x="255" y="232" font-size="14" fill="#888">i=1</text>
+<text x="60" y="80" font-size="15" fill="#222">绿色盒子＝存活单项式</text>
+<text x="60" y="105" font-size="15" fill="#222">按次数分层：1, 2, 1</text>
+</svg>
+
+</div>
+
+定理断言（特征零域上）：任何包含这种正则序列的齐次理想 `@@M@@I@@`，其 Hilbert 函数被同款 lex-plus-powers 理想 `@@M@@J@@` 精确复制，且 `@@M@@\beta_{p,j}(S/I)\le\beta_{p,j}(S/J)@@` 处处成立；对 `@@M@@I@@` 其余生成元的个数与次数没有任何限制。
+
+**为什么值得关心**
+
+Eisenbud–Green–Harris 与 lex-plus-powers 是交换代数著名的"约束下极值"问题，本文在特征零上给出整体解决。
+
+> 暂无形式化证明（AI 结果待核验）
+
 ## 一句话结论
 
 在任意特征为零的域上证明了 Eisenbud–Green–Harris 与 lex-plus-powers 猜想：包含正则序列（任意长度、次数 `@@M@@\ge 2@@`）的齐次理想，其 Hilbert 函数被对应的 lex-plus-powers 理想精确匹配，全部 graded Betti 数被同一理想逐项压制。

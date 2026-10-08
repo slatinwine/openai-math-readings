@@ -13,6 +13,64 @@ pdfname: ""
 
 > 结果族 099：The sharp exponential scale of edit-distance distortion　·　学科：Convex and metric geometry　·　验证状态：暂无形式化证明，请以社区核验为准
 
+## 入门导读 🐣
+
+把"廉价平移"编进一棵家谱树：每层配一批互不相同的素数当周期，叶子放二进制单词。整层一起挪一格很便宜（删一行、插一行），但想单独挪动一个"家族成员"，素数互不整除的算术保证藏不住——任何对齐方式都会暴露位移。这棵树每深一层，词长只按平方增长，失真却按幂次往上翻。两条互相独立的树构造，都把 `@@M@@\ell_1@@` 失真逼到指数级。
+
+**关键词卡片**
+
+- 带标签行（labeled rows）：行由来自互不相交字母表的块拼成，标签用于对付任意对齐。
+- 素数周期（prime period）：每层用互异素数作周期，让位移无法同时被太多层"吸收"。
+- 割分解（cut decomposition）：把 `@@M@@\ell_1@@` 距离拆成割之和，再用傅里叶展开与 Parseval 分析平均位移。
+- 等长见证词（equal-length witnesses）：对每个足够大的 `@@M@@d@@`，都有一组公共长度的二进制词。
+
+**看个具体例子**
+
+"数字版定理"：深度 `@@M@@k@@` 的树给出失真 `@@M@@\ge(k/4)^k@@`（构造一）或 `@@M@@\ge(\gamma k)^k/@@`常数（构造二），而词长对数只有 `@@M@@O(k^2\log k)@@`；取 `@@M@@k\approx a\sqrt{\log d/\log\log d}@@` 平衡两式，词长不超过 `@@M@@d@@`、失真达到 `@@M@@\exp(\Omega(\sqrt{\log d\log\log d}))@@`。附录还独立证明了对单一指定长度的常数失真二元转换（因子 804），不过主下界并不需要它。
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280">
+  <circle cx="280" cy="38" r="7" fill="#345"/>
+  <line x1="280" y1="45" x2="160" y2="103" stroke="#345" stroke-width="1.5"/>
+  <line x1="280" y1="45" x2="280" y2="103" stroke="#345" stroke-width="1.5"/>
+  <line x1="280" y1="45" x2="400" y2="103" stroke="#345" stroke-width="1.5"/>
+  <circle cx="160" cy="110" r="6" fill="#345"/>
+  <circle cx="280" cy="110" r="6" fill="#345"/>
+  <circle cx="400" cy="110" r="6" fill="#345"/>
+  <line x1="160" y1="117" x2="100" y2="179" stroke="#345" stroke-width="1.2"/>
+  <line x1="160" y1="117" x2="160" y2="179" stroke="#345" stroke-width="1.2"/>
+  <line x1="160" y1="117" x2="220" y2="179" stroke="#345" stroke-width="1.2"/>
+  <line x1="280" y1="117" x2="250" y2="179" stroke="#345" stroke-width="1.2"/>
+  <line x1="280" y1="117" x2="310" y2="179" stroke="#345" stroke-width="1.2"/>
+  <line x1="400" y1="117" x2="370" y2="179" stroke="#345" stroke-width="1.2"/>
+  <line x1="400" y1="117" x2="430" y2="179" stroke="#345" stroke-width="1.2"/>
+  <circle cx="100" cy="185" r="5" fill="#c00"/>
+  <circle cx="160" cy="185" r="5" fill="#c00"/>
+  <circle cx="220" cy="185" r="5" fill="#c00"/>
+  <circle cx="250" cy="185" r="5" fill="#c00"/>
+  <circle cx="310" cy="185" r="5" fill="#c00"/>
+  <circle cx="370" cy="185" r="5" fill="#c00"/>
+  <circle cx="430" cy="185" r="5" fill="#c00"/>
+  <text x="294" y="42" font-size="14" fill="#123">根</text>
+  <text x="30" y="78" font-size="13" fill="#456">层 j：配互异素数 p_j</text>
+  <text x="30" y="100" font-size="13" fill="#456">节点＝一批行</text>
+  <text x="15" y="215" font-size="14" fill="#123">叶＝等长二进制词</text>
+  <text x="15" y="238" font-size="14" fill="#123">深度 k：失真 ≥(k/4)^k</text>
+  <text x="15" y="261" font-size="14" fill="#123">词长对数仅 O(k^2·log k)</text>
+  <text x="330" y="215" font-size="14" fill="#123">取 k≈√(log d/loglog d)</text>
+  <text x="330" y="238" font-size="14" fill="#123">词长 ≤d，失真达</text>
+  <text x="330" y="261" font-size="14" fill="#123">exp(Ω(√(log d·loglog d)))</text>
+</svg>
+
+</div>
+
+**为什么值得关心**
+
+与姊妹篇的一致上嵌入定理合并，`@@M@@\log E_\Sigma(d)@@` 的阶被钉死在 `@@M@@\sqrt{\log d\log\log d}@@`——编辑距离的 `@@M@@\ell_1@@` 失真问题就此定阶。
+
+> 暂无形式化证明（AI 结果待核验）
+
 ## 一句话结论
 
 本文用两条互相独立的"树构造"证明：对每个足够大的 `@@M@@d@@` 都存在长度不超过 `@@M@@d@@` 的等长二进制词有限集，其编辑距离度量嵌入 `@@M@@\ell_1@@` 的失真至少 `@@M@@\exp(c\sqrt{\log d\,\log\log d})@@`，与姊妹篇上界合并即得一致的两面指数阶。

@@ -13,6 +13,54 @@ pdfname: ""
 
 > 结果族 032：Hodge and Kuga–Satake results for all projective K3 surfaces　·　学科：Algebraic and complex geometry　·　验证状态：暂无形式化证明，请以社区核验为准
 
+## 入门导读 🐣
+
+给一块复杂几何体拍 X 光，片子上会出现一些格外规整的"影子"。Hodge 猜想问：每块规整影子，是不是都对应体内真实长着的一根"骨头"（子簇）？这篇论文对一类对称性极高、坐标允许被虚数整体相乘的"高维甜甜圈"给出了肯定答案：任何维数、任何位置，规整影子都来自真骨头。
+
+**关键词卡片**
+
+- 阿贝尔簇（abelian variety）：甜甜圈（环面）的高维推广，复几何里最规整的一类空间。
+- 复乘（complex multiplication, CM）：坐标能被某个含虚数平方根的数域（如 Q(i)）整体相乘，对称性极强。
+- Hodge 类（Hodge class）：上同调里最规整的那类"影子"，猜想它应来自代数对象。
+- 代数闭链（algebraic cycle）：由子簇按有理系数拼出来的"真骨头"。
+- Tate 猜想（Tate conjecture）：Hodge 猜想在有限域上的孪生兄弟，本文一并推得。
+
+**看个具体例子**
+
+最小的 CM 样本是椭圆曲线 `@@M@@E:\ y^2=x^3-x@@`：它的复坐标来自复平面上的方格 `@@M@@\Z+i\Z@@`（差一个缩放），而"乘 i"就是把整个方格旋转 90° 的对称操作。
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280">
+<g fill="#444">
+<circle cx="160" cy="80" r="3.5"/><circle cx="220" cy="80" r="3.5"/><circle cx="280" cy="80" r="3.5"/><circle cx="340" cy="80" r="3.5"/><circle cx="400" cy="80" r="3.5"/><circle cx="460" cy="80" r="3.5"/>
+<circle cx="160" cy="140" r="3.5"/><circle cx="220" cy="140" r="3.5"/><circle cx="280" cy="140" r="3.5"/><circle cx="340" cy="140" r="3.5"/><circle cx="400" cy="140" r="3.5"/><circle cx="460" cy="140" r="3.5"/>
+<circle cx="160" cy="200" r="3.5"/><circle cx="220" cy="200" r="3.5"/><circle cx="280" cy="200" r="3.5"/><circle cx="340" cy="200" r="3.5"/><circle cx="400" cy="200" r="3.5"/><circle cx="460" cy="200" r="3.5"/>
+</g>
+<circle cx="280" cy="140" r="6" fill="none" stroke="#444" stroke-width="1.5"/>
+<line x1="280" y1="140" x2="344" y2="140" stroke="#111" stroke-width="2"/>
+<polygon points="352,140 338,134 338,146" fill="#111"/>
+<text x="360" y="146" font-size="17" font-style="italic">1</text>
+<line x1="280" y1="140" x2="280" y2="80" stroke="#111" stroke-width="2"/>
+<polygon points="280,72 274,86 286,86" fill="#111"/>
+<text x="290" y="78" font-size="17" font-style="italic">i</text>
+<path d="M 325 95 A 64 64 0 0 0 282 77" fill="none" stroke="#666" stroke-width="1.5" stroke-dasharray="5,4"/>
+<polygon points="272,77 285,70 285,84" fill="#666"/>
+<text x="340" y="64" font-size="14">乘 i = 整体旋转 90°</text>
+<text x="280" y="246" font-size="15" text-anchor="middle">方格 Λ = Z + iZ；商空间 C/Λ 就是椭圆曲线 y² = x³ − x</text>
+<text x="280" y="267" font-size="13" text-anchor="middle" fill="#555">（CM 的最小样本：乘 i 是方格的自对称）</text>
+</svg>
+
+</div>
+
+定理说：`@@M@@E@@`、`@@M@@E\times E@@`、`@@M@@E\times E\times E@@`……不管复制多少份，乘积上任何余维数的 Hodge 类都是代数闭链类的有理组合。再借助 Milne 的两条旧定理，同一天还自动得到有限域上阿贝尔簇的 Tate 猜想与任意特征下的 Hodge 标准猜想。
+
+**为什么值得关心**
+
+CM 阿贝尔簇是 Hodge 猜想最大的一块"高对称试验田"，拿下它就顺带收获一串跨特征的推论，它也是这个结果族其余论文共同的基石。
+
+> 暂无形式化证明（AI 结果待核验）
+
 ## 一句话结论
 
 论文证明：每个具有复乘 (CM, complex multiplication) 的复阿贝尔簇在任意维数、任意余维数上满足有理 Hodge 猜想——一切有理 Hodge 类都是代数闭链类的有理组合；经 Milne 的定理进而导出有限域上阿贝尔簇的 Tate 猜想与任意特征下的 Hodge 标准猜想。

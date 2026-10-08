@@ -13,6 +13,61 @@ pdfname: ""
 
 > 结果族 166：The higher-dimensional Erdős distinct-distances conjecture　·　学科：Combinatorics　·　验证状态：暂无形式化证明，请以社区核验为准
 
+## 入门导读 🐣
+
+在天上撒一把星星，量出每两颗之间的距离——这些距离里能有多少种不同的数值？撒得聪明的话，很多距离会重复。Erdős 在 1946 年问：n 个点最少能给出多少种不同距离？平面情形至今还差着对数因子没合拢，而这篇论文把三维及以上的版本彻底解决：不管你怎么撒，至少 `@@M@@c_d n^{2/d}@@` 种，而且幂次无法再改进。
+
+**关键词卡片**
+
+- 不同距离集（distinct distances）：所有点对距离去重后的个数，记 `@@M@@|\Delta(P)|@@`。
+- 格点构造（integer lattice）：整点网格 `@@M@@\{1,\dots,t\}^d@@`，已知最"省距离"的撒法。
+- 幂次 `@@M@@2/d@@`（exponent）：距离种数随点数增长的指数，定理证明它不能更低。
+- 刚体运动（rigid motion）：整体旋转加平移；证明中用它给"等距点对"建立联系。
+
+**看个具体例子**
+
+拿最熟悉的格点：正方体的 8 个顶点。28 对点对的距离只有 3 种——棱、面对角线、体对角线。
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280">
+  <line x1="150" y1="100" x2="310" y2="100" stroke="#8899aa" stroke-width="2"/>
+  <line x1="310" y1="100" x2="310" y2="240" stroke="#8899aa" stroke-width="2"/>
+  <line x1="310" y1="240" x2="150" y2="240" stroke="#8899aa" stroke-width="2"/>
+  <line x1="150" y1="240" x2="150" y2="100" stroke="#8899aa" stroke-width="2"/>
+  <line x1="230" y1="58" x2="390" y2="58" stroke="#8899aa" stroke-width="2"/>
+  <line x1="390" y1="58" x2="390" y2="198" stroke="#8899aa" stroke-width="2"/>
+  <line x1="390" y1="198" x2="230" y2="198" stroke="#8899aa" stroke-width="2"/>
+  <line x1="230" y1="198" x2="230" y2="58" stroke="#8899aa" stroke-width="2"/>
+  <line x1="150" y1="100" x2="230" y2="58" stroke="#8899aa" stroke-width="2"/>
+  <line x1="310" y1="100" x2="390" y2="58" stroke="#8899aa" stroke-width="2"/>
+  <line x1="310" y1="240" x2="390" y2="198" stroke="#8899aa" stroke-width="2"/>
+  <line x1="150" y1="240" x2="230" y2="198" stroke="#8899aa" stroke-width="2"/>
+  <line x1="310" y1="100" x2="150" y2="240" stroke="#e0a000" stroke-width="2" stroke-dasharray="7 5"/>
+  <line x1="150" y1="240" x2="390" y2="58" stroke="#8a4fbf" stroke-width="2" stroke-dasharray="7 5"/>
+  <circle cx="150" cy="100" r="6" fill="#45607a"/>
+  <circle cx="310" cy="100" r="6" fill="#45607a"/>
+  <circle cx="310" cy="240" r="6" fill="#45607a"/>
+  <circle cx="150" cy="240" r="6" fill="#45607a"/>
+  <circle cx="230" cy="58" r="6" fill="#45607a"/>
+  <circle cx="390" cy="58" r="6" fill="#45607a"/>
+  <circle cx="390" cy="198" r="6" fill="#45607a"/>
+  <circle cx="230" cy="198" r="6" fill="#45607a"/>
+  <text x="100" y="86" font-size="13" fill="#777777">棱 = 1</text>
+  <text x="280" y="252" font-size="14" text-anchor="middle" fill="#333333">正方体 8 个顶点：28 对点对的距离只有 3 种</text>
+  <text x="280" y="271" font-size="13" text-anchor="middle" fill="#555555">实线棱 1；橙虚线面对角线 √2；紫虚线体对角线 √3</text>
+</svg>
+
+</div>
+
+推向三维格 `@@M@@\{1,\dots,t\}^3@@`：`@@M@@t^3@@` 个点，平方距离是 1 到 `@@M@@3(t-1)^2@@` 的整数，至多 `@@M@@O(t^2)=O(n^{2/3})@@` 种——指数 `@@M@@\tfrac23=2/d@@` 正是构造与定理的会师点。定理（数字版）：`@@M@@\mathbb{R}^3@@` 中任意 n 个点至少 `@@M@@c_3 n^{2/3}@@` 种距离；如 `@@M@@n=10^6@@` 时至少约 `@@M@@c_3\cdot 10^4@@` 种，且 `@@M@@c_3@@` 是不随点集变化的绝对常数。这最后一句并不显然：三维此前最好的 `@@M@@n^{2/3-o(1)}@@` 型界带着会慢慢衰减的尾巴，推不出常数因子，本文必须一次性排除所有潜在的反例序列。
+
+**为什么值得关心**
+
+高维 Erdős 不同距离猜想获正面解决；此前偏低的指数（如四维的 `@@M@@8/17@@`）全部被推平到 `@@M@@2/d@@`。
+
+> 暂无形式化证明（AI 结果待核验）
+
 ## 一句话结论
 
 对每个固定维数 `@@M@@d\ge3@@`，`@@M@@\mathbb R^d@@` 中任意 `@@M@@n\ge2@@` 个不同点至少决定 `@@M@@c_d n^{2/d}@@` 个不同距离，`@@M@@c_d>0@@` 只依赖 `@@M@@d@@`。幂次与整数格例子一致而达最优，由此正面解决高维 Erdős 不同距离猜想。

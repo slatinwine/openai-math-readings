@@ -13,6 +13,61 @@ pdfname: ""
 
 > 结果族 238：Optimal logarithmic mixing of the Thorp shuffle　·　学科：Probability and statistical mechanics　·　验证状态：暂无形式化证明，请以社区核验为准
 
+## 入门导读 🐣
+
+给对称群的每种"基本成分"记一本账：形状规整的便宜，形状杂乱的贵。这篇论文把 Thorp 洗牌的收敛证明做成一笔"熵预算"：只要证明账单永远付得起，洗牌速度就落在理论最优档——`@@M@@2^d@@` 张牌只需 `@@M@@\Theta(d)@@` 次物理洗牌。
+
+**关键词卡片**
+
+- 杨图（Young diagram）：左对齐的格子图，是对称群不可约表示的"形状身份证"
+- 带号张量（signed tensor）：描述杨图长列的张量，交换两个因子要变一个符号
+- 熵预算（entropy budget）：把表示的复杂度记成信息量——行、列颜色越集中越省，标出位置越稀疏越省
+- 平方 `@@M@@L^2@@` 距离（squared `@@M@@L^2@@` distance）：分布差距的能量型度量，压到 0 同样意味着洗匀
+- 不可约表示（irreducible representation）：对称群的基本成分，论文逐类算账
+
+**看个具体例子**
+
+预算函数形如 `@@M@@F(\alpha,\beta)=\sum_i\alpha_i\ln\frac{u+v}{\alpha_i}+\sum_j\beta_j\ln\frac{u+v}{\beta_j}@@`，余部（标出 `@@M@@l@@` 个位置）还带 `@@M@@-l\ln(n/l)@@` 的折扣。代入 `@@M@@u+v=n=1024@@`：颜色集中成一行时 `@@M@@F=0@@`，最省；平分成两行时 `@@M@@F=1024\ln2\approx710@@`；标出 `@@M@@l=4@@` 个位置带来 `@@M@@4\ln256\approx22@@` 的折扣——"越稀疏越便宜"的数字版。主定理：这笔账压得住表示的维数，故固定次数扫掠后平方 `@@M@@L^2@@` 距离趋于 0，混合时间 `@@M@@\Theta(d)@@`。
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280">
+  <text x="220" y="30" text-anchor="middle" font-size="15">杨图：表示形状的账本</text>
+  <rect x="90" y="60" width="26" height="26" fill="#e6d5f0" stroke="#333"/>
+  <rect x="116" y="60" width="26" height="26" fill="#cfe3ff" stroke="#333"/>
+  <rect x="142" y="60" width="26" height="26" fill="#cfe3ff" stroke="#333"/>
+  <rect x="168" y="60" width="26" height="26" fill="#cfe3ff" stroke="#333"/>
+  <rect x="194" y="60" width="26" height="26" fill="#cfe3ff" stroke="#333"/>
+  <rect x="220" y="60" width="26" height="26" fill="#cfe3ff" stroke="#333"/>
+  <rect x="246" y="60" width="26" height="26" fill="#cfe3ff" stroke="#333"/>
+  <rect x="272" y="60" width="26" height="26" fill="#cfe3ff" stroke="#333"/>
+  <rect x="298" y="60" width="26" height="26" fill="#cfe3ff" stroke="#333"/>
+  <rect x="324" y="60" width="26" height="26" fill="#cfe3ff" stroke="#333"/>
+  <rect x="90" y="86" width="26" height="26" fill="#ffd9cc" stroke="#333"/>
+  <rect x="116" y="86" width="26" height="26" fill="#cfe3ff" stroke="#333"/>
+  <rect x="142" y="86" width="26" height="26" fill="#cfe3ff" stroke="#333"/>
+  <rect x="90" y="112" width="26" height="26" fill="#ffd9cc" stroke="#333"/>
+  <rect x="116" y="112" width="26" height="26" fill="#cfe3ff" stroke="#333"/>
+  <rect x="90" y="138" width="26" height="26" fill="#ffd9cc" stroke="#333"/>
+  <text x="337" y="79" text-anchor="middle" font-size="18" fill="#d62728">×</text>
+  <text x="103" y="157" text-anchor="middle" font-size="18" fill="#d62728">×</text>
+  <rect x="370" y="60" width="14" height="14" fill="#cfe3ff" stroke="#333"/>
+  <text x="392" y="71" font-size="13">偶色＝长行</text>
+  <rect x="370" y="88" width="14" height="14" fill="#ffd9cc" stroke="#333"/>
+  <text x="392" y="99" font-size="13">奇色＝长列（带符号）</text>
+  <text x="377" y="124" text-anchor="middle" font-size="16" fill="#d62728">×</text>
+  <text x="392" y="120" font-size="13">标出位置（越少越省）</text>
+  <text x="220" y="205" text-anchor="middle" font-size="13" fill="#555">行/列颜色越集中、标出越稀疏，预算 F 越小</text>
+</svg>
+
+</div>
+
+**为什么值得关心**
+
+这是同一定理的又一条独立路线；论文还顺带得到一个近似均匀的置换采样器——每个坐标只需对共享随机源做 `@@M@@O(\log n)@@` 次自适应查询。
+
+> 暂无形式化证明（AI 结果待核验）
+
 ## 一句话结论
 
 证明了对 `@@M@@2^d@@` 张牌的 Thorp 洗牌，存在绝对常数 `@@M@@L@@`，使 `@@M@@L@@` 次坐标扫掠后整副牌的置换密度与均匀律的平方 `@@M@@L^2@@` 距离趋于零，混合时间（mixing time）为 `@@M@@\Theta(d)@@` 次物理洗牌，与支撑集下界同阶，最优阶就此落定。

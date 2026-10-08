@@ -13,6 +13,55 @@ pdfname: ""
 
 > 结果族 019：The local <i>p</i>-adic section conjecture and global consequences　·　学科：Number theory　·　验证状态：暂无形式化证明，请以社区核验为准
 
+## 入门导读 🐣
+
+把一条曲线的所有覆盖信息压缩进一个"群论数据库"（基本群），每个具体的点都会在库里留下一条天然条目（截面）。Grothendieck 1983 年猜：数据库反过来也能唯一恢复出点——条目和行李一一对应，没有"幽灵条目"。这篇论文在 p 进局部世界把它证成定理，并推出亏格 ≥2 的模曲线 X_0(N)、X_1(N) 上的整体版本。
+
+**关键词卡片**
+
+- 基本群（fundamental group）：记录曲线上所有"绕圈方式"的群，是覆盖世界的分类账本。
+- 截面（section）：正合列的分裂同态；每个点天然给出一个，猜想问是否只有点给出的那些。
+- 亏格（genus）：曲面的"洞数"，至少 2 时曲线才双曲、猜想才适用。
+- p 进数（p-adic numbers）：以素数 p 为基准重新定义"大小"后完备化的数系。
+- 模曲线（modular curve）：X_0(N)、X_1(N) 等自带丰富算术结构的特殊曲线。
+
+**看个具体例子**
+
+定理 A 是一本完美字典：对 Q_p 的有限扩张 k 上亏格 ≥2 的曲线 X，`@@M@@X(k)@@` 与"连续截面 `@@M@@s:G_k\to\pi_1(X)@@` 的共轭类"之间是双射。换句话说：曲线有几个点，截面（模共轭）就恰好有几个——一个不多、一个不少，幽灵不存在。
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280">
+  <text x="280" y="28" text-anchor="middle" font-size="16" fill="#333">点 ↔ 截面：p 进世界的完美字典</text>
+  <path d="M40 120 Q80 70 120 120 T200 120 Q240 70 280 120" fill="none" stroke="#345" stroke-width="2.5"/>
+  <circle cx="80" cy="105" r="5" fill="#c33"/>
+  <circle cx="160" cy="112" r="5" fill="#c33"/>
+  <circle cx="240" cy="106" r="5" fill="#c33"/>
+  <text x="160" y="152" text-anchor="middle" font-size="13" fill="#345">曲线 X(k)：3 个点</text>
+  <line x1="300" y1="115" x2="408" y2="115" stroke="#333" stroke-width="2"/>
+  <path d="M410 115 L398 109 L398 121 Z" fill="#333"/>
+  <path d="M300 115 L312 109 L312 121 Z" fill="#333"/>
+  <text x="355" y="100" text-anchor="middle" font-size="13" fill="#333">定理 A：双射</text>
+  <rect x="420" y="55" width="115" height="120" rx="10" fill="#efe" stroke="#273" stroke-width="1.5"/>
+  <text x="477" y="76" text-anchor="middle" font-size="12" fill="#273">基本群的截面</text>
+  <rect x="438" y="88" width="80" height="22" rx="5" fill="#fff" stroke="#273"/>
+  <rect x="438" y="116" width="80" height="22" rx="5" fill="#fff" stroke="#273"/>
+  <rect x="438" y="144" width="80" height="22" rx="5" fill="#fff" stroke="#273"/>
+  <text x="477" y="103" text-anchor="middle" font-size="11" fill="#273">截面 s₁</text>
+  <text x="477" y="131" text-anchor="middle" font-size="11" fill="#273">截面 s₂</text>
+  <text x="477" y="159" text-anchor="middle" font-size="11" fill="#273">截面 s₃</text>
+  <text x="280" y="205" text-anchor="middle" font-size="13" fill="#333">每个点天然给出一个截面；定理说反过来也成立：</text>
+  <text x="280" y="228" text-anchor="middle" font-size="13" fill="#333">截面（模共轭）不多不少，恰与点一一对应，没有"幽灵"。</text>
+</svg>
+
+</div>
+
+**为什么值得关心**
+
+若这类字典全面建立，"求有理点"就能换成纯群论操作——这是 anabelian 几何最雄心勃勃的纲领；本文还把整体版本落到一大类模曲线上。
+
+> 暂无形式化证明（AI 结果待核验）
+
 ## 一句话结论
 证明局部 `@@M@@p@@` 进截面猜想：对 `@@M@@\mathbb Q_p@@` 任一有限扩域上亏格至少 2 的光滑正常几何连通曲线，有理点与算术平展基本群的截面共轭类一一对应；结合既有有限下降定理，还推出 `@@M@@X_0(N)@@`、`@@M@@X_1(N)@@` 等曲线上 Grothendieck 整体截面猜想。
 

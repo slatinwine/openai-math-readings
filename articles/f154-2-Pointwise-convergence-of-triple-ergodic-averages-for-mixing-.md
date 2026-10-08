@@ -13,6 +13,40 @@ pdfname: ""
 
 > 结果族 154：Pointwise multiple ergodic averages for mixing transformations　·　学科：Dynamical systems and ergodic theory　·　验证状态：暂无形式化证明，请以社区核验为准
 
+## 入门导读 🐣
+
+继续在搅匀的咖啡里做实验：在时刻 n、2n、3n 三连拍，把三个观测值的乘积按 n 取长平均。论文证明：只要系统混合，这条平均曲线对几乎每个起点都收敛，极限就是三个均值的乘积。麻烦在于曲线会"抖"——论文的重头戏是造一台减震器（振荡不等式），把抖动压到可加总的规模，再锁死极限。
+
+**关键词卡片**
+
+- 混合（mixing）：相隔远的两次观测近似独立。
+- 三重遍历平均：同一轨道在 n, 2n, 3n 的观测之积对 n 的长平均。
+- 振荡不等式（oscillation inequality）："任何 w 段上的总抖动不超过 C√w"这类控制，由此直接逼出几乎处处收敛。
+- 三线性 Hilbert 变换（trilinear Hilbert transform）：调和分析中的著名算子，本文的分析引擎与它同源。
+- 光滑化（averaging profile）：先把离散平均换成带光滑权重的版本，证完再回头覆盖原始的等权平均。
+
+**看个具体例子**
+
+一条典型起点的平均曲线：起初剧烈摇摆，随后被逐级"减震"，最终贴住极限线：
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280"><line x1="60" y1="30" x2="60" y2="240" stroke="#666"/><line x1="60" y1="240" x2="520" y2="240" stroke="#666"/><line x1="60" y1="140" x2="520" y2="140" stroke="#2e7d32" stroke-dasharray="8 6"/><text x="392" y="130" font-size="14" fill="#2e7d32">极限 = ∫f·∫g·∫h</text><polyline points="60,60 90,210 120,95 150,180 180,115 210,165 240,125 270,158 300,133 330,152 360,138 390,149 420,141 450,147 480,142 520,145" fill="none" stroke="#333" stroke-width="2"/><text x="150" y="50" font-size="13" fill="#555">平均曲线</text><text x="290" y="265" text-anchor="middle" font-size="14">N（平均长度）→ ∞</text></svg>
+
+</div>
+
+代入数字：猫映射 T(x,y)=(2x+y, x+y) mod 1，A=[0,½)×[0,½)，则
+
+`@@M@@\dfrac1N\sum_{n\le N}\mathbf 1_A(T^nx)\,\mathbf 1_A(T^{2n}x)\,\mathbf 1_A(T^{3n}x)\to\big(\tfrac14\big)^3=\tfrac1{64}@@`
+
+对几乎每个起点成立。关键不等式在任何可逆系统上就已成立：若曲线不收敛，可挑出端点列使总抖动线性增长，与不超过 C√w 的上界冲突；混合只在最后用来锁死极限的数值。
+
+**为什么值得关心**
+
+三函数情形是 Bourgain 双重定理之后最著名的关口，本文在混合类上把它攻克，且不需要混合速率、不要求空间标准性。
+
+> 暂无形式化证明（AI 结果待核验）
+
 ## 一句话结论
 
 对任意概率空间上带可测逆的可逆混合（mixing）保测变换 `@@M@@T@@`，证明了三重遍历平均 `@@M@@\frac1N\sum_{n=1}^N f_1(T^nx)f_2(T^{2n}x)f_3(T^{3n}x)@@` 对几乎处处的 `@@M@@x@@` 收敛于 `@@M@@\prod_{j=1}^3\int f_j\,d\mu@@`，不需要混合速率、也不要求概率空间标准性——三函数逐点收敛问题在混合类上得到解决。

@@ -13,6 +13,31 @@ pdfname: ""
 
 > 结果族 242：Single-fold Diophantine representations and undecidability under an at-most-one-solution promise　·　学科：Mathematical logic　·　验证状态：主结果已 Lean 形式化
 
+## 入门导读 🐣
+
+有些判断问题可以写成一道多项式方程题：输入属于该问题，当且仅当方程有自然数解。经典 DPRM 定理早就保证这总能做到，但解可能有无穷多组——像一本字典里同一个词条散落在许多页。本文证明：字典总能重新排版，让每个词条恰好只出现在一页上。
+
+**关键词卡片**
+
+- Diophantine 表示（Diophantine representation）：用"某个整系数多项式方程是否有自然数解"来刻画一个集合。
+- 见证（witness）：让方程成立的那组辅助未知数的取值。
+- 单重（single-fold）：集合的成员恰有一个见证，非成员一个也没有。
+- 递归可枚举集（recursively enumerable set）：计算机能不停往外列举成员的集合。
+
+**看个具体例子**
+
+先看玩具版：偶数集可写成 `@@M@@a=2w@@`——`@@M@@a=6@@` 时恰有唯一见证 `@@M@@w=3@@`，`@@M@@a=7@@` 时无解。主定理说这种"唯一编码"对每个递归可枚举集都能做到：存在多项式 `@@M@@P@@` 使
+
+`@@M@@D\#\{w\in\mathbb{N}^m:\;P(a,w)=0\}=\begin{cases}1,&a\in S,\\0,&a\notin S.\end{cases}@@`
+
+即使复杂如停机问题的成员表也不例外。推论更出人意料：就算承诺输入多项式"至多一个解"，判定它有没有解仍然没有算法。
+
+**为什么值得关心**
+
+这解决了 Matiyasevich 1974 年提出的单重猜想，一个悬置半个世纪的问题；更弱的有限重猜想也随之成立。这也是希尔伯特第十问题自 DPRM 定理以来最引人注目的续章之一。
+
+> 已 Lean 形式化
+
 ## 一句话结论
 
 论文证明了悬置半个多世纪的单重猜想（single-fold conjecture）：每个递归可枚举集都有多项式 Diophantine 表示，其中每个成员恰对应一个辅助见证元组、非成员对应零个。由此有限重猜想（finite-fold conjecture）成立，且即使承诺"至多一个解"，多项式可解性依然不可判定。

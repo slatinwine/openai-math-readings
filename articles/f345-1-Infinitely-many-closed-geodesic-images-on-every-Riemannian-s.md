@@ -13,6 +13,33 @@ pdfname: ""
 
 > 结果族 345：Infinitely many closed geodesics on Riemannian spheres and closed three-manifolds　·　学科：Differential geometry　·　验证状态：暂无形式化证明，请以社区核验为准
 
+## 入门导读 🐣
+
+把一个篮球捏歪、压扁，表面变得坑坑洼洼。让一只蚂蚁在球面上"只走直线"，有些路线会绕一圈回到出发点——这就是闭测地线。这篇论文证明了一件听起来理所当然、实则悬置六十多年的事：无论把球面捏成什么怪样子，"形状不同"的闭合直线路线永远有无穷多条。
+
+**关键词卡片**
+
+- 闭测地线（closed geodesic）：曲面上不左拐不右拐走出来的闭合环路，像绷紧的橡皮筋。
+- 黎曼度量（Riemannian metric）：规定每点如何量长度与角度的数据，相当于球面的"胖瘦配方"。
+- 素闭测地线（prime closed geodesic）：只绕一圈的路线，同一条走两遍不算新的。
+- 像（image）：路线在球面上描出的痕迹；换起点、反着走，痕迹重合就不算新路线。
+
+**看个具体例子**
+
+完美的圆球上，每条经线都是闭测地线，当然无穷多。可球一旦被捏歪呢？定理保证：任何维度 `@@M@@n\ge2@@` 的球面、任何度量（包括最难缠的退化情形），素闭测地线的像仍有无穷多条。下图示意一个捏歪的球面：每条虚线圈都是一条"走直线"的闭合路线，形状彼此不同。
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280"><path d="M280 30 C400 28 512 92 498 158 C484 226 382 254 272 250 C158 246 58 208 58 140 C58 70 160 32 280 30 Z" fill="none" stroke="#333" stroke-width="2"/><ellipse cx="282" cy="142" rx="52" ry="92" fill="none" stroke="#c0392b" stroke-width="2" stroke-dasharray="7 5"/><ellipse cx="282" cy="140" rx="150" ry="42" fill="none" stroke="#2980b9" stroke-width="2" stroke-dasharray="7 5" transform="rotate(18 282 140)"/><path d="M150 128 C170 76 250 66 306 88 C368 112 372 168 326 196 C272 228 186 206 158 172 C142 152 142 146 150 128 Z" fill="none" stroke="#27ae60" stroke-width="2" stroke-dasharray="7 5"/><text x="236" y="22" font-size="14" fill="#333">捏歪的球面（任意维 n≥2）</text><text x="66" y="62" font-size="13" fill="#c0392b">闭合直线路线 1</text><text x="360" y="110" font-size="13" fill="#2980b9">路线 2（斜着绕）</text><text x="34" y="262" font-size="13" fill="#27ae60">路线 3（歪着绕）</text></svg>
+
+</div>
+
+**为什么值得关心**
+
+二维球面是几十年前的经典结论，`@@M@@n\ge3@@` 是本文新证；结合 Perelman 理论还推出任意闭三维流形上同样成立。历史上的证明先后被发现有漏洞，本文给出了完整证明。
+
+> 暂无形式化证明（AI 结果待核验）
+
 ## 一句话结论
 
 证明了闭测地线无穷性问题（closed-geodesic infinitude problem）的球面情形：任何 `@@M@@S^n@@`（`@@M@@n\ge2@@`）上的光滑黎曼度量都有无穷多条两两像不同的素闭测地线；结合 Perelman 几何化与 Rademacher–Taimanov 定理，任意闭三维流形上亦然。

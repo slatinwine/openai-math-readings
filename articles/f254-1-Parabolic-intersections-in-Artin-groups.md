@@ -13,6 +13,53 @@ pdfname: ""
 
 > 结果族 254：Classifying spaces and geometric obstructions for Artin groups　·　学科：Group theory　·　验证状态：暂无形式化证明，请以社区核验为准
 
+## 入门导读 🐣
+
+把群想成一张地铁图：每条"线路"只经过一部分站点。数学家问：两条（甚至无穷多条）线路的共同站点，是否恰好又拼成一条完整的线路？这篇论文证明：对一种叫 Artin 群的"编织代数结构"，答案永远是肯定的——由此解决了悬置多年的抛物交猜想。
+
+**关键词卡片**
+
+- Artin 群（Artin group）：生成元两两满足"编织关系"（如 aba=bab）的群。
+- 标准抛物子群（standard parabolic subgroup）：只用一部分生成元生成的子群，相当于一条原始线路。
+- 抛物子群（parabolic subgroup）：标准抛物子群的共轭，相当于整体平移过的线路。
+- 交（intersection）：若干线路共同覆盖的部分。
+- 字问题（word problem）：判断两个字是否代表群中同一个元素。
+
+**看个具体例子**
+
+取一个最简单的 Artin 群——右角型：三个生成元 a、b、c，只规定 a 与 b 交换（ab=ba），其余两两无关系。线路 ⟨a,b⟩ 是一小块方格平原，线路 ⟨b,c⟩ 完全自由；两者相交，恰好剩下 ⟨b⟩——又是一条干干净净的"单站线路"（下图）。标准线路的这种相交早有经典结论；定理的真正威力在于：让线路先各自"平移"（共轭）、再取任意多条甚至无穷多条，交下来的结果依然是一条完整线路。
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280">
+  <text x="280" y="26" font-size="15" text-anchor="middle" fill="#333">一次具体的相交：⟨a,b⟩ ∩ ⟨b,c⟩ = ⟨b⟩</text>
+  <rect x="95" y="112" width="230" height="72" rx="14" fill="none" stroke="#2a8" stroke-width="2.5"/>
+  <rect x="255" y="112" width="230" height="72" rx="14" fill="none" stroke="#36a" stroke-width="2.5"/>
+  <text x="98" y="102" font-size="13" fill="#2a8">线路 X = ⟨a,b⟩</text>
+  <text x="482" y="102" font-size="13" fill="#36a" text-anchor="end">线路 Y = ⟨b,c⟩</text>
+  <line x1="150" y1="150" x2="270" y2="150" stroke="#333" stroke-width="2"/>
+  <line x1="310" y1="150" x2="430" y2="150" stroke="#aaa" stroke-width="2" stroke-dasharray="6 5"/>
+  <text x="210" y="136" font-size="12" fill="#333" text-anchor="middle">ab=ba</text>
+  <text x="370" y="136" font-size="12" fill="#999" text-anchor="middle">无关系</text>
+  <circle cx="130" cy="150" r="20" fill="#fff" stroke="#333" stroke-width="2"/>
+  <circle cx="290" cy="150" r="20" fill="#fff" stroke="#333" stroke-width="2"/>
+  <circle cx="450" cy="150" r="20" fill="#fff" stroke="#333" stroke-width="2"/>
+  <text x="130" y="156" font-size="16" text-anchor="middle">a</text>
+  <text x="290" y="156" font-size="16" text-anchor="middle">b</text>
+  <text x="450" y="156" font-size="16" text-anchor="middle">c</text>
+  <ellipse cx="290" cy="150" rx="46" ry="42" fill="none" stroke="#a46" stroke-width="2" stroke-dasharray="7 5"/>
+  <text x="290" y="214" font-size="14" fill="#a46" text-anchor="middle">交 = ⟨b⟩：又是一条线路</text>
+  <text x="280" y="262" font-size="12" fill="#666" text-anchor="middle">先各自平移（共轭）再取交、甚至取无穷多条，结论依然成立——主定理</text>
+</svg>
+
+</div>
+
+**为什么值得关心**
+
+它补上了 Artin 群理论的核心缺口，还附带证明：任何有限秩 Artin 群的字问题都有统一算法可判定——"两个词是否相同"从此原则上一定能算出来。
+
+> 暂无形式化证明（AI 结果待核验）
+
 ## 一句话结论
 
 证明了任意有限秩 Artin 群（Artin group）中任意一族抛物子群（parabolic subgroup）的交仍是抛物子群，肯定地解决抛物交猜想（Parabolic Intersection Conjecture），并附带给出一般有限秩 Artin 群字问题的统一可判定算法。

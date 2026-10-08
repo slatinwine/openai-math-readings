@@ -13,6 +13,33 @@ pdfname: ""
 
 > 结果族 104：Quasipolynomial algorithms for mean-payoff, stochastic and parity games　·　学科：Theoretical computer science　·　验证状态：暂无形式化证明，请以社区核验为准
 
+## 入门导读 🐣
+
+一盘下不完的棋：你（Max）想让长期平均得分尽量高，对手（Min）想压低它，棋盘上还有几个格子由骰子决定去向。问哪些开局位置你能稳保平均分不亏？这篇论文给出确定性算法，运行时间只看输入的"位数"，与骰子概率、得分数字写得多大都无关。
+
+**关键词卡片**
+
+- 平均收益博弈（mean-payoff game）：在图上无穷对弈、比拼长期平均奖励的双人游戏。
+- 机会顶点（chance vertex）：不由任何玩家做主、按给定概率随机跳转的位置。
+- 值（value）：双方都下得完美时，某位置的期望长期平均得分。
+- 拟多项式时间（quasipolynomial time）：`@@M@@2^{O((\log L)^2)}@@` 级别的运行时间，远好于指数、略逊于多项式。
+
+**看个具体例子**
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 300"><text x="280" y="24" text-anchor="middle" font-size="15" fill="#222">回合制随机博弈：Max 与 Min 轮流走，骰子顶点随机跳</text><rect x="100" y="60" width="100" height="56" fill="#fbb" stroke="#933" stroke-width="2"/><text x="150" y="84" text-anchor="middle" font-size="14" fill="#222">Max</text><text x="150" y="102" text-anchor="middle" font-size="11" fill="#222">（想高分）</text><rect x="100" y="185" width="100" height="56" fill="#bcd" stroke="#369" stroke-width="2"/><text x="150" y="209" text-anchor="middle" font-size="14" fill="#222">Min</text><text x="150" y="227" text-anchor="middle" font-size="11" fill="#222">（想压低）</text><circle cx="410" cy="150" r="44" fill="#dfd" stroke="#3a3" stroke-width="2"/><text x="410" y="146" text-anchor="middle" font-size="13" fill="#222">机会顶点</text><text x="410" y="164" text-anchor="middle" font-size="11" fill="#222">（掷骰子）</text><line x1="150" y1="116" x2="150" y2="185" stroke="#556" stroke-width="2"/><polygon points="150,185 144,173 156,173" fill="#556"/><text x="162" y="155" font-size="12" fill="#333">+1</text><line x1="200" y1="210" x2="372" y2="167" stroke="#556" stroke-width="1.5"/><text x="285" y="178" font-size="12" fill="#333">−1 →</text><line x1="372" y1="133" x2="200" y2="95" stroke="#556" stroke-width="1.5"/><text x="285" y="103" font-size="12" fill="#333">→ 3/4</text><line x1="372" y1="180" x2="200" y2="232" stroke="#556" stroke-width="1.5"/><text x="285" y="225" font-size="12" fill="#333">→ 1/4</text><text x="280" y="285" text-anchor="middle" font-size="13" fill="#333">问：双方都最优时，哪些顶点的长期平均分 ≥ 0？算法精确输出这个集合</text></svg>
+
+</div>
+
+主定理：算法精确输出所有值 `@@M@@\ge0@@` 的顶点（含恰好为零者），代价 `@@M@@2^{C(\log_2(L+2))^2}@@` 次位操作，`@@M@@L@@` 是输入总位数。比如 `@@M@@L@@` 为一千位时 `@@M@@\log_2 L\approx10@@`，运算量在 `@@M@@2^{O(100)}@@` 量级——看似巨大，但旧方法会随概率分母、奖励数值增大而指数膨胀，新界彻底与数值脱钩。推论：简单随机博弈"可达概率是否 `@@M@@\ge1/2@@`"同样获得拟多项式算法。
+
+**为什么值得关心**
+
+此类博弈长期搁在 NP∩coNP 中，拟多项式已是已知最好量级；本文首次在含随机转移的一般情形做到复杂度只依赖输入长度。
+
+> 暂无形式化证明（AI 结果待核验）
+
 ## 一句话结论
 
 证明了：带机会顶点的回合制随机平均收益博弈中，期望下极限平均收益非负（含恰为零）的顶点集合，可被确定性算法在完整二进制输入长度 `@@M@@L@@` 下用 `@@M@@2^{O((\log(L+2))^2)}@@` 次位操作精确求出，概率分母与奖励的数值大小不再进入复杂度。

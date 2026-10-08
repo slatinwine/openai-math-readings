@@ -13,6 +13,34 @@ pdfname: ""
 
 > 结果族 237：The three-quarter exponent for honeycomb self-avoiding walk　·　学科：Probability and statistical mechanics　·　验证状态：暂无形式化证明，请以社区核验为准
 
+## 入门导读 🐣
+
+数橡皮筋也有陷阱：一根蜷在小盒子里的橡皮筋可以绕极多圈，单看"根数"根本压不住它。所以想证明"长链条终会摊开"，得先回答：直径不超过 `@@M@@H@@` 的橡皮筋，按"长度的平方"打分，总分最多多大？这篇论文给出天花板：`@@M@@H^{2/3}@@`。
+
+**关键词卡片**
+
+- 简单多边形（simple polygon）：蜂窝格点上首尾相接、全程不自交的闭合圈。
+- 平移类（translation class）：整体平移后重合的圈只算一次，避免无限重复计数。
+- 临界顶点活性（critical vertex activity）`@@M@@\rho_{\rm v}@@`：每个顶点乘以 `@@M@@(2+\sqrt2)^{-1/2}@@`，恰好处于收敛与发散的分界点。
+- 平方长度权重 `@@M@@|P|^2@@`：在圈上同时标两个"检查点"，每个圈恰被数 `@@M@@|P|^2@@` 次——用两点相关恢复出长度平方。
+- 单弧界（one-arc bound）：对只含一段弧的构型的多项式上界，且两墙周期可任意悬殊时仍一致成立。
+
+**看个具体例子**
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280"><rect x="60" y="70" width="150" height="150" fill="#f7f4ec" stroke="#889" stroke-width="2"/><ellipse cx="135" cy="145" rx="58" ry="58" fill="none" stroke="#7dc7a3" stroke-width="1.6"/><ellipse cx="135" cy="145" rx="40" ry="46" fill="none" stroke="#7dc7a3" stroke-width="1.6"/><ellipse cx="135" cy="145" rx="24" ry="32" fill="none" stroke="#7dc7a3" stroke-width="1.6"/><ellipse cx="135" cy="145" rx="12" ry="18" fill="none" stroke="#7dc7a3" stroke-width="1.6"/><text x="62" y="60" font-size="13" fill="#333">直径 ≤ H 的小盒子</text><text x="72" y="245" font-size="13" fill="#1a7a4a">长而蜷的圈藏在里面</text><line x1="230" y1="145" x2="270" y2="145" stroke="#666" stroke-width="2"/><text x="285" y="120" font-size="14" fill="#333" font-weight="bold">总分（按 |P|² 打分）</text><text x="285" y="148" font-size="15" fill="#c0392b" font-weight="bold">≤ H^(2/3+η)</text><text x="285" y="180" font-size="13" fill="#555">直径放大 1000 倍，总分至多放大 100 倍</text><text x="90" y="272" font-size="12" fill="#666">"小而肥"的蜷缩圈在临界权下翻不了天</text></svg>
+
+</div>
+
+数字版定理：`@@M@@\sum_{\operatorname{diam}P\le H}\rho_{\rm v}^{|P|}\,|P|^2\le C_\eta H^{2/3+\eta}@@`。代入比较：直径从 `@@M@@10^3@@` 放大到 `@@M@@10^6@@`（1000 倍），上界只放大 `@@M@@1000^{2/3}=100@@` 倍——无论圈怎么蜷，其平方长度加权的总质量都被压在很低的增长速度下。
+
+**为什么值得关心**
+
+它是 3/4 直径定理的守门员：没有这道天花板，"行走极长却缩成一团"的怪物构型就无法排除，Nienhuis 指数的严格化就会卡壳。
+
+> 暂无形式化证明（AI 结果待核验）
+
 ## 一句话结论
 
 在蜂窝点阵 (honeycomb lattice) 临界顶点活性下，直径不超过 `@@M@@H@@` 的简单多边形 (simple polygon) 按平移类计数、以长度平方加权，总质量至多 `@@M@@H^{2/3+o(1)}@@`；配套的双标记圆柱估计与单弧多项式界，是证明自回避行走直径指数 `@@M@@3/4@@` 时控制"大质量多边形"的关键输入。

@@ -13,6 +13,50 @@ pdfname: ""
 
 > 结果族 358：A three-manifold without conjugate points or nonpositive curvature　·　学科：Differential geometry　·　验证状态：主结果已 Lean 形式化
 
+## 入门导读 🐣
+
+在地球仪上，从北极出发的所有经线会在南极重新相遇——这种"重逢"叫共轭点。曲率非正的空间里永不重逢，所以"无共轭点"听上去像"非正曲率"的温和版本。这篇论文造出一个封闭三维空间：里面永不重逢，却根本找不到任何非正曲率的度量——两件事被干净地分开了。
+
+**关键词卡片**
+
+- 共轭点（conjugate points）：同一条测地线上，一束相邻变分先散开又重新汇聚之处（球面上的南北极）。
+- 雅可比场（Jacobi field）：描述测地线束如何散开、汇聚的方程的解。
+- 截面曲率非正（nonpositive sectional curvature）：每个方向都不向内凹，是远强于"无共轭点"的条件。
+- 图流形（graph manifold）：把"带边甜甜圈 × 圆"沿边界环面粘出的三维空间，本文的试验场。
+- CAT(0)：比"存在非正曲率度量"更广义的"广义非正弯曲"性质。
+
+**看个具体例子**
+
+构造取两块 `@@M@@\Sigma\times S^1@@`（`@@M@@\Sigma@@` 是带一条边界分支的亏格一曲面积，再乘一个圆因子），沿边界环面按 `@@M@@h_2=h_1+f_1,\ f_2=h_1@@` 粘合，粘合矩阵行列式为 `@@M@@-1@@`：
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280">
+<circle cx="130" cy="140" r="85" fill="none" stroke="#889" stroke-width="2.5"/>
+<circle cx="130" cy="55" r="7" fill="#333"/>
+<circle cx="130" cy="225" r="7" fill="#333"/>
+<path d="M75 78 C 100 110, 100 170, 75 202" fill="none" stroke="#e33" stroke-width="2"/>
+<line x1="130" y1="62" x2="130" y2="218" stroke="#e33" stroke-width="2"/>
+<path d="M185 78 C 160 110, 160 170, 185 202" fill="none" stroke="#e33" stroke-width="2"/>
+<text x="55" y="30" font-size="14">球面：经线在南极重逢</text>
+<ellipse cx="420" cy="140" rx="105" ry="72" fill="none" stroke="#889" stroke-width="2.5"/>
+<circle cx="352" cy="140" r="6" fill="#333"/>
+<line x1="360" y1="132" x2="470" y2="80" stroke="#1a6" stroke-width="2"/>
+<line x1="362" y1="140" x2="500" y2="130" stroke="#1a6" stroke-width="2"/>
+<line x1="360" y1="150" x2="460" y2="205" stroke="#1a6" stroke-width="2"/>
+<text x="310" y="30" font-size="14">本文空间：散开永不再聚</text>
+</svg>
+
+</div>
+
+而且阻碍是拓扑级的：`@@M@@\pi_1(M)@@` 无法在任何 CAT(0) 空间上真且余紧地作用，连"广义非正弯曲"都装不下；由 Ivanov–Kapovitch 的等价定理，它也不存在无焦点的度量。
+
+**为什么值得关心**
+
+它否定回答 Ivanov–Kapovitch 2014 年提出的三维存在性问题：无共轭点推不出非正曲率。二维的答案是肯定的（单值化定理），反例自三维才开始存在。
+
+> 已 Lean 形式化
+
 ## 一句话结论
 
 本文构造出一个闭连通可定向的三维光滑流形：它带有无共轭点（without conjugate points）的黎曼度量，却不存在任何截面曲率非正的度量，对 Ivanov–Kapovitch 的三维存在性问题给出否定回答。

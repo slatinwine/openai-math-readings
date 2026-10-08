@@ -13,6 +13,58 @@ pdfname: ""
 
 > 结果族 238：Optimal logarithmic mixing of the Thorp shuffle　·　学科：Probability and statistical mechanics　·　验证状态：暂无形式化证明，请以社区核验为准
 
+## 入门导读 🐣
+
+把 1024 张牌的座位号改写成 32×32 的棋盘，你会突然看懂这种洗牌：一半的掷币只在同一行里换牌，另一半只在同一列里换。这篇论文就靠这个"行列分解"视角，证明了 Thorp 洗牌只需 `@@M@@\Theta(\log N)@@` 次物理洗牌就能把整副牌洗匀——把悬置多年的 `@@M@@O(d^3)@@` 上界一步改进到理论最优。
+
+**关键词卡片**
+
+- Thorp 洗牌（Thorp shuffle）：`@@M@@N=2^d@@` 张牌两两配对、掷币换牌的模型，位置可看作 `@@M@@d@@` 位二进制编号
+- 行列分解（row–column split）：把 `@@M@@d@@` 个坐标对半分，座位排成 `@@M@@\sqrt N\times\sqrt N@@` 棋盘，前半扫在行内、后半在列内
+- 相对熵（relative entropy）：信息论中两个分布差异的度量；论文证明行列两套随机性的"交叠税"只由删掉的格子数决定
+- Schatten 范数（Schatten norm）：给矩阵"大小"定标的尺子，用以度量洗牌算子在每个成分上的收缩
+- 杨图（Young diagram）：对称群不可约表示的形状"身份证"，形状决定维数
+
+**看个具体例子**
+
+`@@M@@N=2^{10}=1024@@` 时棋盘为 32×32：前 5 个方向＝每行内部的小扫掠，后 5 个方向＝每列内部（下图是其缩影）。证明对 `@@M@@d@@` 归纳：小棋盘上已经收缩，"交叠熵"估计保证行、列两半拼回大棋盘时不损失太多，专门设计的权重 `@@M@@W_\lambda@@` 恰好支付"补回删掉格子"的账。结论：固定次数扫掠后全变差趋于 0，混合时间 `@@M@@\Theta(d)@@`，与计数下界 `@@M@@2d-O(1)@@` 同阶。
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280">
+  <text x="280" y="24" text-anchor="middle" font-size="15">坐标对半分：位置变成 √N×√N 棋盘</text>
+  <line x1="130" y1="45" x2="130" y2="265" stroke="#333" stroke-width="1.5"/>
+  <line x1="185" y1="45" x2="185" y2="265" stroke="#333" stroke-width="1.5"/>
+  <line x1="240" y1="45" x2="240" y2="265" stroke="#333" stroke-width="1.5"/>
+  <line x1="295" y1="45" x2="295" y2="265" stroke="#333" stroke-width="1.5"/>
+  <line x1="350" y1="45" x2="350" y2="265" stroke="#333" stroke-width="1.5"/>
+  <line x1="130" y1="45" x2="350" y2="45" stroke="#333" stroke-width="1.5"/>
+  <line x1="130" y1="100" x2="350" y2="100" stroke="#333" stroke-width="1.5"/>
+  <line x1="130" y1="155" x2="350" y2="155" stroke="#333" stroke-width="1.5"/>
+  <line x1="130" y1="210" x2="350" y2="210" stroke="#333" stroke-width="1.5"/>
+  <line x1="130" y1="265" x2="350" y2="265" stroke="#333" stroke-width="1.5"/>
+  <circle cx="212" cy="127" r="6" fill="#333"/>
+  <circle cx="267" cy="182" r="6" fill="#333"/>
+  <circle cx="157" cy="237" r="6" fill="#333"/>
+  <line x1="145" y1="72" x2="335" y2="72" stroke="#1f77b4" stroke-width="3"/>
+  <polygon points="155,67 143,72 155,77" fill="#1f77b4"/>
+  <polygon points="325,67 337,72 325,77" fill="#1f77b4"/>
+  <line x1="322" y1="68" x2="322" y2="242" stroke="#d62728" stroke-width="3"/>
+  <polygon points="317,78 322,66 327,78" fill="#d62728"/>
+  <polygon points="317,232 322,244 327,232" fill="#d62728"/>
+  <text x="240" y="38" text-anchor="middle" font-size="13" fill="#1f77b4">前半扫：行内掷币换牌</text>
+  <text x="365" y="155" font-size="13" fill="#d62728">后半扫：列内换牌</text>
+  <text x="365" y="180" font-size="13" fill="#555">●＝坐在格里的牌</text>
+</svg>
+
+</div>
+
+**为什么值得关心**
+
+它与同族另外两条技术路线（相容熵、随机子平面）各自独立证得同一最优阶，互为印证——一个难题被三把不同的钥匙同时打开。
+
+> 暂无形式化证明（AI 结果待核验）
+
 ## 一句话结论
 
 本文证明：`@@M@@N=2^d@@` 张牌的 Thorp 洗牌（Thorp shuffle）只需 `@@M@@\Theta(\log N)@@`（即 `@@M@@\Theta(d)@@`）次物理洗牌即可让**整副排列**在全变差（total variation）意义下混合到均匀分布，与计数下界 `@@M@@2d-O(1)@@` 同阶，把此前 `@@M@@O(d^3)@@` 的最好上界一举改进到最优阶。

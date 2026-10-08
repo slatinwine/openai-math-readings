@@ -13,6 +13,38 @@ pdfname: ""
 
 > 结果族 010：Unrestricted pro-modularity at the prime two　·　学科：Number theory　·　验证状态：暂无形式化证明，请以社区核验为准
 
+## 入门导读 🐣
+
+数论的中心信念之一："来自几何的密码机（伽罗瓦表示）都来自模形式。"Fontaine–Mazur 猜想把这句话精确化，此前在奇素数处已全部解决，只剩素数 2 这段河面没能合龙——因为剩余表示可能是标量或可约的，传统造桥术全部失灵。本文架起最后一段桥：在 2 处正则的奇表示，必然来自经典尖点特征形式。
+
+**关键词卡片**
+
+- 伽罗瓦表示（Galois representation）：把有理数域的对称群连续地映成 `@@M@@2@@`-adic 矩阵的同态 `@@M@@r@@`。
+- de Rham 条件与 Hodge–Tate 权重（de Rham, Hodge–Tate weights）：表示在素数 2 处的"光滑度"条件；两个权重互异称为正则（regular）。
+- 模性（modularity）：表示同构于某个尖点特征形式给出的表示（允许差一个 Tate 扭转）。
+- 剩余表示（residual representation）：`@@M@@r@@` 模 2 后的粗糙版本；标量、可约情形是最后的硬骨头，本文全覆盖。
+- Tate 扭转（Tate twist）：把表示统一乘上分圆特征的幂，相当于换一个单位。
+
+**看个具体例子**
+
+定理：若 `@@M@@r@@` 连续、不可约、奇、只在有限多处分歧、在 2 处 de Rham 且两个 Hodge–Tate 权重互异，则
+
+`@@M@@Dr\ \cong\ \rho_f\otimes\varepsilon^{m},@@`
+
+其中 `@@M@@\rho_f@@` 是某个经典尖点特征形式 `@@M@@f@@` 的 Deligne 表示，扭转幂 `@@M@@m@@` 由原始权重决定。逐素数"对账"：两边对几乎所有 `@@M@@\ell@@` 给出同样的 `@@M@@\operatorname{tr}r(\mathrm{Frob}_\ell)@@`。
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280"><rect x="20" y="150" width="150" height="60" fill="none" stroke="#333" stroke-width="2.5"/><text x="95" y="180" font-size="14" text-anchor="middle" fill="#222">伽罗瓦表示世界</text><text x="95" y="200" font-size="12" text-anchor="middle" fill="#555">r : G_Q → GL₂</text><rect x="390" y="150" width="150" height="60" fill="none" stroke="#333" stroke-width="2.5"/><text x="465" y="180" font-size="14" text-anchor="middle" fill="#222">模形式世界</text><text x="465" y="200" font-size="12" text-anchor="middle" fill="#555">尖点特征形式</text><line x1="170" y1="150" x2="390" y2="150" stroke="#8a5a2a" stroke-width="5"/><line x1="250" y1="150" x2="330" y2="150" stroke="#d64545" stroke-width="8"/><line x1="210" y1="150" x2="210" y2="212" stroke="#8a5a2a" stroke-width="3"/><line x1="250" y1="150" x2="250" y2="216" stroke="#8a5a2a" stroke-width="3"/><line x1="330" y1="150" x2="330" y2="216" stroke="#8a5a2a" stroke-width="3"/><line x1="370" y1="150" x2="370" y2="212" stroke="#8a5a2a" stroke-width="3"/><path d="M180 240 q 20 -9 40 0 t 40 0 t 40 0 t 40 0 t 40 0" fill="none" stroke="#7fb3d5" stroke-width="3"/><text x="206" y="130" font-size="13" text-anchor="middle" fill="#555">奇素数（已有）</text><text x="292" y="126" font-size="15" text-anchor="middle" fill="#d64545">p = 2（本文）</text><line x1="200" y1="90" x2="360" y2="90" stroke="#333" stroke-width="2"/><polygon points="196,85 184,90 196,95" fill="#333"/><polygon points="364,85 376,90 364,95" fill="#333"/><text x="280" y="80" font-size="14" text-anchor="middle" fill="#222">模性</text><text x="280" y="266" font-size="13" text-anchor="middle" fill="#555">"河流"：p = 2 处的剩余表示可为标量或可约</text><text x="280" y="30" font-size="16" text-anchor="middle" fill="#222">模性之桥最后合龙（示意）</text></svg>
+
+</div>
+
+**为什么值得关心**
+
+至此正则二维奇 Fontaine–Mazur 模性对所有素数成立；论文还指出，它为希尔伯特第十问题在 `@@M@@\mathbb Q@@` 上不可判定性的证明提供权 2 模性输入。
+
+> 暂无形式化证明（AI 结果待核验）
+
 ## 一句话结论
 
 每个奇的、二维、在有限个素数外非分歧、在 2 处 de Rham 且 Hodge–Tate 权重互异的 2-adic 伽罗瓦表示，都在相差一个 Tate 扭转的意义下来自经典尖点特征形式。这解决了 `@@M@@\mathbb Q@@` 上正则二维奇 Fontaine–Mazur 猜想在 `@@M@@p=2@@` 的最后情形，且对剩余表示不作任何限制。

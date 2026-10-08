@@ -13,6 +13,44 @@ pdfname: ""
 
 > 结果族 350：Yau's nodal bounds: surfaces and higher dimensions　·　学科：Differential geometry　·　验证状态：主结果已 Lean 形式化
 
+## 入门导读 🐣
+
+还是"鼓面上安静线能有多长"的问题，但鼓换成了三维、四维的"鼓"。作者精心造出一种鼓面：音调升高时，安静线的总量比 √λ 涨得越来越快、毫无封顶迹象——丘成桐猜想的"上界"一半，在光滑高维世界第一次被当场击穿。更惊人的是三维反例与球面的标准度量任意接近：最正派的鼓，轻轻一捏也能变怪。
+
+**关键词卡片**
+
+- 反例（counterexample）：一个具体实例，直接判某猜想"不成立"。
+- 光滑度量（smooth metric）：鼓面形状的数学描述，处处无限可微、没有棱角。
+- 节点测度（nodal measure）：安静集的面积（三维）或体积（四维）。
+- 精确化（exactification）：把近似解修正成真正的特征函数、同时保住全部正负号证据的技术。
+- 嵌套邻域（nested neighborhoods）：证据一份份叠进越来越小的度量邻域，极限处收拢成同一个度量。
+
+**看个具体例子**
+
+定理一：在三维球面标准度量的任意光滑邻域内，存在度量 g∞ 与特征函数列 u_j，使得 `@@M@@\mathcal H^2(Z_{u_j})/\sqrt{\lambda_j}\to\infty@@`；定理二在 `@@M@@S^2\times\mathbb T^2@@` 上同样成立。用 `@@M@@u=\sin(2x)@@` 的世界作对比：那里比值恒为 4π；而在反例度量上，λ 每上一个数量级，比值就再翻一截，永不回头。
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280">
+<text x="280" y="28" font-size="16" text-anchor="middle" fill="#333">节点测度 ÷ √λ：二维封顶，三、四维冲顶</text>
+<line x1="80" y1="230" x2="510" y2="230" stroke="#333" stroke-width="2"/>
+<line x1="80" y1="230" x2="80" y2="50" stroke="#333" stroke-width="2"/>
+<line x1="100" y1="190" x2="500" y2="185" stroke="#4a86c8" stroke-width="2.5"/>
+<path d="M100,205 C220,200 320,190 400,140 C450,105 480,70 500,55" fill="none" stroke="#c84a4a" stroke-width="2.5"/>
+<text x="150" y="215" font-size="13" fill="#4a86c8">二维曲面：比值有上界 C</text>
+<text x="345" y="70" font-size="13" fill="#c84a4a">三、四维反例：比值 → ∞</text>
+<text x="505" y="255" font-size="13" text-anchor="end" fill="#333">特征值 λ →</text>
+<text x="88" y="45" font-size="13" fill="#333">节点测度/√λ</text>
+</svg>
+
+</div>
+
+**为什么值得关心**
+
+与曲面正向定理合并，得到一条干脆的维数分界线：上界对所有闭光滑流形成立，当且仅当维数为 2。
+
+> 已 Lean 形式化
+
 ## 一句话结论
 论文构造出与三维球面标准度量任意接近的光滑度量，以及 `@@M@@S^2\times\mathbb T^2@@` 上的光滑度量，使得同一个固定度量下存在精确特征函数序列，其节点测度除以 `@@M@@\sqrt\lambda@@` 趋于无穷——Yau 节点上界猜想在光滑情形的三、四维被推翻。
 

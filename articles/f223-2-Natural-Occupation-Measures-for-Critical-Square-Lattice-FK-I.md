@@ -13,6 +13,55 @@ pdfname: ""
 
 > 结果族 223：Random-cluster interfaces: critical, disordered, thermal, and natural-time scaling　·　学科：Probability and statistical mechanics　·　验证状态：暂无形式化证明，请以社区核验为准
 
+## 入门导读 🐣
+
+前几篇只回答了分界线长什么"形状"；这篇问的是更朴素的问题：走完这条形状一共要迈多少格点步、每一段路各花多少步——相当于给极限随机曲线装上一把"里程表"。论文证明：格点曲线按步数计数、经一个普适常数缩放后，恰好收敛成极限曲线上的一个天然测度。
+
+**关键词卡片**
+
+- 占据测度（occupation measure）：把"曲线在某处停留了几步"变成一个可以称重的测度。
+- Minkowski 内容（Minkowski content）：给分形曲线"称重"的数学工具——r 邻域面积乘 `@@M@@r^{-(2-d)}@@` 后取极限。
+- 分形维数 d（fractal dimension）：`@@M@@d=1+\kappa/8@@`，衡量曲线比直线"皱"多少。
+- 归一化常数 c(q)（normalization constant）：一个只依赖 q 的确定性数，把步数换算成质量。
+- 自然参数化（natural parametrization）：按曲线自身的"长度"而非外部时钟行走的计时方式。
+
+**看个具体例子**
+
+代入 q=1（渗流）：κ=6，维数 `@@M@@d=1+6/8=7/4@@`。定理说 `@@M@@c(1)n^{-7/4}N_n\Rightarrow\mu_\eta(\bar D)@@`，即穿过 n×n 方格的界面总步数约为 `@@M@@n^{7/4}@@` 量级——比直线的 n 步多得多（曲线很皱），又远小于铺满全格的 n² 步；且每一步落在哪一段，收敛后都由 Minkowski 内容测度如实记账。
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280">
+  <text x="20" y="26" font-size="15" fill="#333">步数计数测度 → 极限曲线上的 Minkowski 内容</text>
+  <rect x="150" y="50" width="260" height="200" fill="#f7f7f7" stroke="#333" stroke-width="2"/>
+  <path d="M150,250 C180,235 200,205 230,195 C265,183 255,150 285,140 C315,130 340,105 410,50" fill="none" stroke="#c33" stroke-width="3"/>
+  <circle cx="162" cy="242" r="4" fill="#c33"/>
+  <circle cx="178" cy="232" r="4" fill="#c33"/>
+  <circle cx="196" cy="210" r="4" fill="#c33"/>
+  <circle cx="222" cy="197" r="4" fill="#c33"/>
+  <circle cx="250" cy="182" r="4" fill="#c33"/>
+  <circle cx="270" cy="170" r="4" fill="#c33"/>
+  <circle cx="283" cy="148" r="4" fill="#c33"/>
+  <circle cx="300" cy="140" r="4" fill="#c33"/>
+  <circle cx="320" cy="128" r="4" fill="#c33"/>
+  <circle cx="345" cy="110" r="4" fill="#c33"/>
+  <circle cx="370" cy="90" r="4" fill="#c33"/>
+  <circle cx="395" cy="65" r="4" fill="#c33"/>
+  <text x="128" y="272" font-size="14" fill="#333">a</text>
+  <text x="416" y="46" font-size="14" fill="#333">b</text>
+  <text x="428" y="150" font-size="13" fill="#555">点密度＝该段的</text>
+  <text x="428" y="168" font-size="13" fill="#555">里程质量（示意）</text>
+  <text x="20" y="262" font-size="14" fill="#333">q=1：κ=6，d=7/4，总步数 ∼ n 的 7/4 次方</text>
+</svg>
+
+</div>
+
+**为什么值得关心**
+
+它是"形状收敛"之后更深一层的"时间收敛"：SLE 曲线从此有了可严格计算的里程表，也让格点界面的总步数第一次有了标度极限。
+
+> 暂无形式化证明（AI 结果待核验）
+
 ## 一句话结论
 本文证明：单位方格上临界 FK 随机簇 Dobrushin 界面的步数计数测度经 `@@M@@c(q)n^{-d}@@` 归一后收敛到其 `@@M@@\mathrm{SLE}_\kappa@@` 极限曲线的 Minkowski 内容测度（`@@M@@1\le q<4@@`），单一确定性常数给出归一化，且收敛与曲线联合、含总质量——即界面总步数有了标度极限。
 

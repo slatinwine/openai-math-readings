@@ -13,6 +13,52 @@ pdfname: ""
 
 > 结果族 104：Quasipolynomial algorithms for mean-payoff, stochastic and parity games　·　学科：Theoretical computer science　·　验证状态：暂无形式化证明，请以社区核验为准
 
+## 入门导读 🐣
+
+想象一盘永不结束的桌游：你和对手轮流把棋子从一个据点挪到下一个，每个据点写着"路过赚 3 元"或"路过亏 5 元"，还挂着一个编号。你要同时办成两件事：长期平均下来不亏钱，而且最常经过的据点之中编号最小的那个是偶数。这篇论文造出一台"电子裁判"，能算清从哪些据点出发你必有办法双管齐下，而且判得飞快——拟多项式时间。
+
+**关键词卡片**
+
+- 平均收益奇偶博弈（mean-payoff parity game）：在图上永远走下去，既比长期平均收益、又比"常访最小编号是否为偶"的二人博弈
+- 取胜集（winning set）：先手能同时锁定两个目标的全部出发点；算法的任务就是画出这条分界线
+- 拟多项式时间（quasipolynomial time）：步数形如 `@@M@@2^{O((\log L)^2)}@@`——只把"输入长度的对数"送上指数
+- 优先级（priority）：顶点上挂的编号；无穷对局里频繁出现的最小编号之奇偶定胜负
+- 策略（strategy）："走到哪、下一步怎么走"的完整手册；本文中赢家的手册可能厚到需要无限记忆
+
+**看个具体例子**
+
+最小例子只需两个据点：A（奖励 +3，优先级 4）、B（奖励 −5，优先级 2），棋子在两者间无限往返。
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280">
+<circle cx="160" cy="110" r="38" fill="#e8eef8" stroke="#345" stroke-width="2"/>
+<text x="160" y="102" text-anchor="middle" font-size="16" fill="#123">A</text>
+<text x="160" y="124" text-anchor="middle" font-size="12" fill="#123">奖励 +3 · 优先级 4</text>
+<circle cx="400" cy="110" r="38" fill="#f8e8e8" stroke="#843" stroke-width="2"/>
+<text x="400" y="102" text-anchor="middle" font-size="16" fill="#702">B</text>
+<text x="400" y="124" text-anchor="middle" font-size="12" fill="#702">奖励 −5 · 优先级 2</text>
+<line x1="200" y1="98" x2="360" y2="98" stroke="#345" stroke-width="2"/>
+<polygon points="362,98 350,92 350,104" fill="#345"/>
+<line x1="366" y1="132" x2="200" y2="132" stroke="#843" stroke-width="2"/>
+<polygon points="198,132 210,126 210,138" fill="#843"/>
+<text x="280" y="88" text-anchor="middle" font-size="12" fill="#345">A→B</text>
+<text x="280" y="154" text-anchor="middle" font-size="12" fill="#843">B→A</text>
+<text x="280" y="192" text-anchor="middle" font-size="14">循环一圈：平均 = (3 + (−5))/2 = −1 &lt; 0 ⇒ Max 输</text>
+<text x="280" y="220" text-anchor="middle" font-size="14">把 B 的奖励改为 −2：平均 = +1/2 ≥ 0，常访最小编号 2 为偶 ⇒ Max 赢</text>
+<text x="280" y="252" text-anchor="middle" font-size="12" fill="#567">圈中标注：每路过一次的收益与优先级编号</text>
+</svg>
+
+</div>
+
+原始数字下，一圈的平均收益是 `@@M@@(3+(-5))/2=-1<0@@`，"不亏"目标破产，A 不在取胜集；把 B 的奖励改成 `@@M@@-2@@`，平均变 `@@M@@+1/2@@`，且常访最小编号 2 恰是偶数，A 立刻翻盘。算法要做的，就是对着任意大的图把这条胜负线一刀切清。
+
+**为什么值得关心**
+
+这类博弈是电路验证与反应式系统合成的理论核心，带数值版本此前只有"伪拟多项式"算法；本文首次把它整体压进拟多项式。
+
+> 暂无形式化证明（AI 结果待核验）
+
 ## 一句话结论
 
 给出平均收益奇偶博弈（mean-payoff parity game）取胜集的确定性拟多项式算法：在完整二进制输入长度 `@@M@@L@@` 下用 `@@M@@2^{O((\log(L+2))^2)}@@` 次位操作，精确算出 Max 能同时强制非负下极限平均收益与奇偶条件的全部顶点；优先级个数与奖励数值均不受限。

@@ -13,6 +13,34 @@ pdfname: ""
 
 > 结果族 235：Limiting random SAT thresholds, sharp variance and computability　·　学科：Probability and statistical mechanics　·　验证状态：暂无形式化证明，请以社区核验为准
 
+## 入门导读 🐣
+
+想象一台抽奖机不停吐出"三选一"的逻辑谜题，每题都能判对错——题少时你总能全部答对，题多到某个密度后就必然顾此失彼。这篇论文研究这条"从能对到必错"的分界线：它不仅存在，而且是一台普通计算机就能逐位算出的数。
+
+**关键词卡片**
+
+- 随机 3-SAT（random 3-SAT）：随机生成的逻辑填空卷——每道子句涉及 3 个变量、要求至少一个取值满足；问整份卷子是否存在完美答案。
+- 子句密度（clause density）：子句数除以变量数，衡量"卷子有多挤"。
+- 可满足性阈值（satisfiability threshold）：临界密度——比它稀疏的卷子几乎总有解，比它稠密的几乎必然无解。
+- 可计算实数（computable real）：存在一段程序，你要多少位精度，它就停机并给出精确到那个程度的数，不需要任何"神谕"常数。
+- 证书（certificate）：可机械验证的证据——下证书证明"阈值至少这么大"，上证书证明"至多这么大"，两边夹逼出真值。
+
+**看个具体例子**
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280"><line x1="60" y1="230" x2="500" y2="230" stroke="#333" stroke-width="2"/><line x1="60" y1="230" x2="60" y2="30" stroke="#333" stroke-width="2"/><text x="470" y="253" font-size="14" fill="#333">子句密度 α</text><text x="18" y="26" font-size="14" fill="#333">可满足概率</text><text x="40" y="247" font-size="12" fill="#333">0</text><text x="42" y="38" font-size="12" fill="#333">1</text><path d="M 85 52 C 230 53, 285 58, 318 115 C 350 172, 405 202, 485 212" fill="none" stroke="#1a7a4a" stroke-width="3"/><line x1="318" y1="230" x2="318" y2="45" stroke="#c0392b" stroke-width="2" stroke-dasharray="6 4"/><text x="300" y="38" font-size="15" fill="#c0392b" font-weight="bold">α₃</text><text x="90" y="85" font-size="13" fill="#1a7a4a">稀疏：几乎必有解</text><text x="365" y="185" font-size="13" fill="#1a7a4a">稠密：几乎必无解</text><text x="130" y="272" font-size="12" fill="#666">变量数 n 越大，S 形拐弯越陡，最终聚成一个临界点 α₃</text></svg>
+
+</div>
+
+代入数字：1000 个变量的卷子，平均每变量摊 3 道子句时几乎必可满足，摊 5 道时几乎必无解；分界点 `@@M@@\alpha_3@@` 被严格夹在 3.52 与 4.4898 之间（物理方法预言约 4.267）。主定理保证：一台程序收到精度 `@@M@@10^{-3}@@` 的请求就停机，输出 `@@M@@\alpha_3\pm 0.001@@`；收到 `@@M@@2^{-r}@@` 就精确到 `@@M@@2^{-r}@@`。
+
+**为什么值得关心**
+
+"存在"不等于"可算"（收敛序列可以收敛到不可计算的数），而本文跨过了这道沟：这个著名的相变点是可以被逐位确定的数学对象。
+
+> 暂无形式化证明（AI 结果待核验）
+
 ## 一句话结论
 
 证明了均匀随机 3-SAT 的极限可满足性阈值（satisfiability threshold）`@@M@@\alpha_3@@` 存在，且是可计算实数（computable real）：一台不用神谕、不带任何不可计算常数的确定性图灵机就能把它算到任意指定精度。

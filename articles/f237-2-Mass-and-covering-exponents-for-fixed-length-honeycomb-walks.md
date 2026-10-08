@@ -13,6 +13,34 @@ pdfname: ""
 
 > 结果族 237：The three-quarter exponent for honeycomb self-avoiding walk　·　学科：Probability and statistical mechanics　·　验证状态：暂无形式化证明，请以社区核验为准
 
+## 入门导读 🐣
+
+把一根 `@@M@@n@@` 节的链条随手扔在格子上，规矩是不许踩自己的脚印：它摊多开？局部多挤？要用几块小圆毯才能盖住？这篇论文对每一个足够大的长度 `@@M@@n@@` 同时回答这三个问题，全部答案只靠两个数：`@@M@@3/4@@` 和 `@@M@@4/3@@`。
+
+**关键词卡片**
+
+- 自避行走（self-avoiding walk）：从格点出发、永不重复访问顶点的路径，二维聚合物的标准模型。
+- 均匀测度（uniform measure）：固定长度 `@@M@@n@@` 的所有自避路径一视同仁、等可能抽取。
+- 直径（diameter）：路径访问过的顶点中相距最远两点的直线距离。
+- 局部质量（local mass）：半径 `@@M@@s@@` 的球内路径访问了多少个顶点，衡量"局部有多挤"。
+- 覆盖数（covering number）：盖住整条路径最少需要几个半径 `@@M@@s@@` 的球。
+
+**看个具体例子**
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280"><path d="M 60 200 L 120 200 L 120 150 L 190 150 L 190 220 L 260 220 L 260 120 L 330 120 L 330 190 L 400 190 L 400 90 L 470 90" fill="none" stroke="#1a7a4a" stroke-width="3" stroke-linejoin="round"/><circle cx="190" cy="185" r="58" fill="none" stroke="#336" stroke-width="1.8" stroke-dasharray="6 4"/><text x="115" y="95" font-size="13" fill="#336">半径 s 的球内约有 s^(4/3) 个访问点</text><circle cx="95" cy="200" r="40" fill="none" stroke="#c0392b" stroke-width="1.2" stroke-dasharray="3 3"/><circle cx="185" cy="185" r="40" fill="none" stroke="#c0392b" stroke-width="1.2" stroke-dasharray="3 3"/><circle cx="285" cy="170" r="40" fill="none" stroke="#c0392b" stroke-width="1.2" stroke-dasharray="3 3"/><circle cx="370" cy="150" r="40" fill="none" stroke="#c0392b" stroke-width="1.2" stroke-dasharray="3 3"/><circle cx="445" cy="105" r="40" fill="none" stroke="#c0392b" stroke-width="1.2" stroke-dasharray="3 3"/><text x="130" y="252" font-size="13" fill="#c0392b">盖住全程约需 1+n/s^(4/3) 个球</text><text x="150" y="272" font-size="12" fill="#666">整体直径约 n^(3/4)：比普通随机行走（n^(1/2)）更摊开</text></svg>
+
+</div>
+
+代入 `@@M@@n=10^{12}@@` 步：直径约 `@@M@@n^{3/4}=10^9@@`；任何半径 `@@M@@s=10^6@@` 的球内访问点数约 `@@M@@s^{4/3}=10^8@@`；盖住全程约需 `@@M@@n/s^{4/3}=10^4@@` 个球。定理更强：这些关系对每个整数长度同时成立，失败概率可压到任意多项式小——`@@M@@\mathbb P(n^{3/4-\delta}\le D\le n^{3/4+\delta})\ge1-Cn^{-k}@@`。
+
+**为什么值得关心**
+
+Nienhuis 的 3/4 预言此前只在加权总体层面部分成立；本文首次让它在每个整数长度、上下双向、多尺度同时严格的概率意义下成立，给出了这根"理想聚合物链条"从整体到局部的完整几何画像，也为同族其它定理铺好了地基。
+
+> 暂无形式化证明（AI 结果待核验）
+
 ## 一句话结论
 
 本文证明：蜂窝格点上每个足够大的固定长度 `@@M@@n@@` 的均匀自避行走，以任意高多项式概率同时满足直径为 `@@M@@n^{3/4+o(1)}@@`、局部质量与覆盖数均呈 `@@M@@4/3@@` 指数。Nienhuis 的 `@@M@@3/4@@` 指数预言首次在"每个整数长度、上下双向、多尺度同时"的意义下成立。

@@ -13,6 +13,42 @@ pdfname: ""
 
 > 结果族 081：Riesz transforms and rectifiability in higher codimension　·　学科：Real and complex analysis　·　验证状态：主结果已 Lean 形式化
 
+## 入门导读 🐣
+
+医生用 X 光片判断骨骼是否健康：片子读数温和，骨头内部多半平整。数学里也有这样的"透视仪"——Riesz 变换，它作用于一个点集（测度）时，能读出其内部的几何皱褶。这篇论文证明：在高维空间（`@@M@@d\ge4@@`）里，只要这台仪器对所有观察精度都给出一致温和的读数，集合在局部就必定"大块地像"平面的 Lipschitz 图像——像一张揉皱了却没撕破的纸。
+
+**关键词卡片**
+
+- Riesz 变换（Riesz transform）：带奇异核 `@@M@@\frac{x-y}{|x-y|^{n+1}}@@` 的积分算子，测度的"透视仪"
+- AD 正则（Ahlfors–David regular）：测度在每个球里的质量都与半径 `@@M@@n@@` 次幂同阶，均匀铺开
+- 一致可矫正（uniformly rectifiable）：每个球内都有固定比例质量落在某张 Lipschitz 图像上，量化版"像张曲面"
+- 高余维（higher codimension）：集合维数 `@@M@@n@@` 比所在空间维数 `@@M@@d@@` 至少低 2，如 `@@M@@\mathbb R^4@@` 中的二维膜
+- 硬截断（hard truncation）：挖掉奇点附近 `@@M@@\varepsilon@@` 半径的贡献，要求算子界与 `@@M@@\varepsilon@@` 无关
+
+**看个具体例子**
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280">
+<path d="M60,140 C100,60 150,220 200,100 C250,50 300,200 350,90" stroke="#c33" stroke-width="2.5" fill="none"/>
+<circle cx="205" cy="108" r="50" fill="none" stroke="#369" stroke-width="2"/>
+<line x1="168" y1="122" x2="245" y2="98" stroke="#369" stroke-width="3"/>
+<text x="70" y="40" font-size="14" fill="#c33">皱巴巴的集合（支撑测度）</text>
+<text x="272" y="185" font-size="14" fill="#369">放大镜内：近似一段</text>
+<text x="272" y="205" font-size="14" fill="#369">Lipschitz 图像（直线段）</text>
+<text x="110" y="252" font-size="14" fill="#333">结论：每个球内都有固定比例质量落在这样的"平块"上</text>
+</svg>
+
+</div>
+
+数字版结论：取 `@@M@@d=4@@`、`@@M@@n=2@@`。若 `@@M@@\mathbb R^4@@` 中二维 AD 正则测度 `@@M@@\mu@@` 的 Riesz 变换满足 `@@M@@\|R_{\mu,\varepsilon}f\|_{L^2(\mu)}\le C_{\rm R}\|f\|_{L^2(\mu)}@@` 对一切 `@@M@@\varepsilon>0@@`，则存在 `@@M@@\theta>0@@` 与 `@@M@@M<\infty@@`：每个球 `@@M@@B(x,r)@@` 内至少有 `@@M@@\theta r^2@@` 的质量落在某 `@@M@@M@@`-Lipschitz 图像上。分析读数强迫出几何形状。
+
+**为什么值得关心**
+
+这正面回答了 David–Semmes 三十年前的著名问题在最后剩余的高余维范围，实现"用分析性质读出几何结构"的核心纲领；常数只依赖 `@@M@@d,n@@` 与两个输入界，完全定量。
+
+> 已 Lean 形式化
+
 ## 一句话结论
 
 在最后未解的高余维范围 `@@M@@d\ge4@@`、`@@M@@2\le n\le d-2@@` 内，论文证明：只要 `@@M@@n@@` 维 Ahlfors–David 正则测度的 Riesz 变换（Riesz transform）在所有正硬截断下共享一个 `@@M@@L^2@@` 算子界，其支撑就必定一致 `@@M@@n@@`-可矫正（uniformly `@@M@@n@@`-rectifiable），这正面回答了 David–Semmes 问题的剩余部分。

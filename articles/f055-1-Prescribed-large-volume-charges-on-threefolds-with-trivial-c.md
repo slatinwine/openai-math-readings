@@ -13,6 +13,32 @@ pdfname: ""
 
 > 结果族 055：Gepner symmetry and large-volume stability on threefolds　·　学科：Algebraic and complex geometry　·　验证状态：暂无形式化证明，请以社区核验为准
 
+## 入门导读 🐣
+
+物理学家预言过一个极限：当"体积参数" `@@M@@t@@` 无限增大时，对象之秤（稳定性条件的中心荷）应趋向一个漂亮的指数公式。数学家追问：不能只要极限——能否在每个足够大的有限 `@@M@@t@@` 处都精确实现这个公式，并配上整套合法的排序系统（心、切片、支撑界）？本文在典则丛平凡的三维流形上给出肯定答案，而且一个阈值就管住一整片参数。
+
+**关键词卡片**
+
+- 典则丛平凡（trivial canonical bundle）：`@@M@@K_X\simeq\mathcal O_X@@`，例如 Calabi–Yau 型三维流形。
+- 中心荷（central charge）：把导出范畴对象称成复数的线性函数，稳定性排序的秤。
+- 大体积荷（large-volume charge）：形如 `@@M@@-\int_X e^{-B-itH}\mathrm{ch}(E)\sqrt{\mathrm{td}(X)}@@` 的物理预言公式。
+- Todd 类（Todd class）：Riemann–Roch 公式里的修正项；`@@M@@K_X@@` 平凡时 `@@M@@\sqrt{\mathrm{td}(X)}=1+\tfrac{c_2(X)}{24}@@`。
+- 支撑性质（support property）：数值类被中心荷的大小控制，使稳定性条件牢靠、可连续变形。
+
+**看个具体例子**
+
+数字版定理（设 `@@M@@K_X\simeq\mathcal O_X@@`）：存在同一阈值 `@@M@@T@@`，对所有 `@@M@@t\ge T@@` 及 `@@M@@B,H@@` 在固定开邻域内的取值，中心荷精确等于大体积公式
+
+`@@M@@Z^{\mathrm{LV}}_{B,tH}(E)=-\int_X e^{-B-itH}\,\mathrm{ch}(E)\bigl(1+\tfrac{c_2(X)}{24}\bigr)@@`，
+
+且在整个数值 Grothendieck 群上满足支撑性质、点层稳定；普通荷 `@@M@@Z_{B,tH}(E)=-\mathrm{ch}_3^B(E)+\tfrac{t^2}{2}H^2\mathrm{ch}_1^B(E)+i\bigl(tH\,\mathrm{ch}_2^B(E)-\tfrac{t^3}{6}H^3\mathrm{ch}_0(E)\bigr)@@` 也同样精确成立。
+
+**为什么值得关心**
+
+"指定荷问题"此前是空白：以往只能在渐近或多项式意义下排序，本文首次在一切典则丛平凡三维流形上逐点精确实现大体积荷，并附赠一条任意三维流上都成立的一致强倾斜不等式。
+
+> 暂无形式化证明（AI 结果待核验）
+
 ## 一句话结论
 在每个典则丛平凡（`@@M@@K_X\simeq\OO_X@@`）的光滑投影复三维流上，作者对一切足够大的体积参数构造出中心荷精确等于普通与平方根 Todd 大体积荷的数值 Bridgeland 稳定性条件，且一个阈值统管实扭曲与丰富方向的一个开集；另在任意三维流上证明了一致强倾斜不等式。
 

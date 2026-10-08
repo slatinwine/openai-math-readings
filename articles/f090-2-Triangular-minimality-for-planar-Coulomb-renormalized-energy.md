@@ -13,6 +13,30 @@ pdfname: ""
 
 > 结果族 090：Triangular-lattice optimality, long-range Riesz and Coulomb energies, and spherical logarithmic energy　·　学科：Convex and metric geometry　·　验证状态：暂无形式化证明，请以社区核验为准
 
+## 入门导读 🐣
+
+超导体里的磁通涡旋像一群同极小磁铁，被一层均匀的正面"中和背景"包裹后，会自发排成整齐的三角阵——物理课本里的 Abrikosov 格子。这篇论文证明：在一切可能的排法中，三角阵的静电能确实最低；顺带还精确锁定了"球面上撒电荷"能量公式里的一个神秘常数。
+
+**关键词卡片**
+
+- 重整化能量（renormalized energy）：无穷电荷系统的总能量发散，先扣除每个电荷的对数"自能"再取极限，剩下的净能量。
+- Abrikosov 格子（Abrikosov lattice）：超导涡旋自发排成的三角周期点阵，实验照片里的六角花纹。
+- Voronoi 胞腔（Voronoi cell）：每个点独占的"地盘"，即平面上离它最近的区域。
+- 格林函数（Green function）：环面上对数库仑相互作用的位势。
+- 渐近展开（asymptotic expansion）：粒子数 `@@M@@n\to\infty@@` 时最小能量公式的逐项精确表达。
+
+**看个具体例子**
+
+公式卡（数字版定理）：球面 `@@M@@S^2@@` 上放 `@@M@@n@@` 个点，两两对数能量之和的最小值满足
+`@@M@@DE_{\log}(n)=\Big(\tfrac12-\log 2\Big)n^2-\tfrac n2\log n+C_{\mathrm{BHS}}\,n+o(n),\qquad C_{\mathrm{BHS}}=2\log 2+\tfrac12\log\tfrac23+3\log\tfrac{\sqrt\pi}{\Gamma(1/3)}\approx-0.056 .@@`
+比如 `@@M@@n=10^6@@` 时线性项约贡献 `@@M@@-5.6\times10^4@@`——这个系数完全由"平面上三角阵是否能量最低"决定，本文给出了肯定答案。平面这边的证明思路是：先靠周期逼近把整个平面的问题化归到方环面，再给每个电荷划出 Voronoi"地盘"，逐格与三角格的六边形地盘比能量，最后两个关键的标量不等式交给区间算术程序严格验证——连一点浮点误差都不许有。
+
+**为什么值得关心**
+
+它一举解决 Sandier–Serfaty 猜想（超导涡旋的能量基态）与 Brauchart–Hardin–Saff 猜想的二维情形，把物理直觉变成严格定理。
+
+> 暂无形式化证明（AI 结果待核验）
+
 ## 一句话结论
 
 证明 Sandier–Serfaty 猜想：在单位均匀背景的二维库仑（对数）重整化能量中，协体积为一的三角形格子的周期场达到最小，任何容许无旋场的能量都不低于它；结合 Bétermin–Sandier 渐近公式，还确定了球面对数能量最优值的线性项常数，解决 Brauchart–Hardin–Saff 猜想的二维情形。

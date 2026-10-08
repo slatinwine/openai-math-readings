@@ -13,6 +13,56 @@ pdfname: ""
 
 > 结果族 238：Optimal logarithmic mixing of the Thorp shuffle　·　学科：Probability and statistical mechanics　·　验证状态：暂无形式化证明，请以社区核验为准
 
+## 入门导读 🐣
+
+一台老式洗牌机：把 `@@M@@2^d@@` 张牌对半分开、前后对齐配成对，每一对掷一枚公平硬币——正面就交换、反面就不动——再交错合拢。单张牌很快就洗匀了，但所有牌共用同一批硬币，整副牌的"秩序"顽固得多。这篇论文给出最终答案：恰好 `@@M@@\Theta(d)@@` 次完整洗牌，不多不少（就数量级而言）。
+
+**关键词卡片**
+
+- Thorp 洗牌（Thorp shuffle）：上述"配对掷硬币"式洗牌，1973 年为分析 Faro 牌技而提出。
+- 混合时间（mixing time）：牌序分布与均匀分布的距离首次降到 `@@M@@1/4@@` 以下所需的洗牌次数。
+- 总变差（total variation）：衡量两个分布相差多远的量，`@@M@@\|\mu-\nu\|_{\mathrm{TV}}=\frac12\sum_g|\mu(g)-\nu(g)|@@`。
+- 支撑计数（support counting）：下界论证——`@@M@@t@@` 次洗牌至多产生 `@@M@@2^{tn/2}@@` 种硬币结果，远少于 `@@M@@n!@@` 种排列。
+
+**看个具体例子**
+
+取 `@@M@@n=2^{10}=1024@@` 张牌：每次洗牌只消耗 `@@M@@n/2=512@@` 个随机比特，硬币结果的总数远不够区分 `@@M@@n!@@` 种排列，故 `@@M@@t\ge 2d-O(1)\approx 20@@` 次；另一端，数字版定理给出 `@@M@@\|q_d^{*(1600d)}-U_n\|_{\mathrm{TV}}=\|q^{*16000}-U\|_{\mathrm{TV}}\to 0@@`，即一万六千次后任何初始牌序都被洗匀。
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280">
+  <rect x="90" y="88" width="60" height="36" fill="none" stroke="#555" stroke-width="1.5"/>
+  <rect x="190" y="88" width="60" height="36" fill="none" stroke="#555" stroke-width="1.5"/>
+  <rect x="290" y="88" width="60" height="36" fill="none" stroke="#555" stroke-width="1.5"/>
+  <rect x="390" y="88" width="60" height="36" fill="none" stroke="#555" stroke-width="1.5"/>
+  <rect x="90" y="176" width="60" height="36" fill="none" stroke="#555" stroke-width="1.5"/>
+  <rect x="190" y="176" width="60" height="36" fill="none" stroke="#555" stroke-width="1.5"/>
+  <rect x="290" y="176" width="60" height="36" fill="none" stroke="#555" stroke-width="1.5"/>
+  <rect x="390" y="176" width="60" height="36" fill="none" stroke="#555" stroke-width="1.5"/>
+  <path d="M103 128 L137 172" fill="none" stroke="#c0392b" stroke-width="2"/>
+  <path d="M137 128 L103 172" fill="none" stroke="#c0392b" stroke-width="2"/>
+  <line x1="220" y1="124" x2="220" y2="176" stroke="#ccc" stroke-width="1.5" stroke-dasharray="4 3"/>
+  <line x1="320" y1="124" x2="320" y2="176" stroke="#ccc" stroke-width="1.5" stroke-dasharray="4 3"/>
+  <line x1="420" y1="124" x2="420" y2="176" stroke="#ccc" stroke-width="1.5" stroke-dasharray="4 3"/>
+  <circle cx="220" cy="150" r="10" fill="none" stroke="#666" stroke-width="1.5"/>
+  <circle cx="320" cy="150" r="10" fill="none" stroke="#666" stroke-width="1.5"/>
+  <circle cx="420" cy="150" r="10" fill="none" stroke="#666" stroke-width="1.5"/>
+  <text x="34" y="110" font-size="14" fill="#333">上半副</text>
+  <text x="34" y="200" font-size="14" fill="#333">下半副</text>
+  <text x="150" y="155" font-size="13" fill="#c0392b">交换</text>
+  <text x="446" y="155" font-size="13" fill="#666">掷硬币</text>
+  <text x="46" y="252" font-size="13" fill="#333">每对独立掷公平硬币：正=交换（红），反=保持</text>
+  <text x="46" y="270" font-size="13" fill="#333">之后交错合拢，完成一次完整洗牌</text>
+</svg>
+
+</div>
+
+**为什么值得关心**
+
+此前最好结果是 `@@M@@O(d^3)@@`，对数阶是悬置多年的目标；本文首次达到并配上同阶下界。常数 `@@M@@1600@@` 是证明里的显式选择而非最优值，更小的领先常数与切断现象留作公开问题。顺带还得到：用 `@@M@@O(n\log n)@@` 个公平比特即可生成近似均匀的随机排列，且这个比特数已是必需。
+
+> 暂无形式化证明（AI 结果待核验）
+
 ## 一句话结论
 
 证明 `@@M@@2^d@@` 张牌的 Thorp 洗牌经 `@@M@@1600d@@` 次完整洗牌后，整副牌的排列律在总变差（total variation）意义下收敛到均匀分布，而支撑计数给出 `@@M@@2d-O(1)@@` 的下界，从而把该洗牌的最优混合阶确定为 `@@M@@\Theta(d)=\Theta(\log N)@@`。

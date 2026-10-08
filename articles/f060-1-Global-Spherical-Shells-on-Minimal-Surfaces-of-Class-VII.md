@@ -13,6 +13,43 @@ pdfname: ""
 
 > 结果族 060：The Global Spherical Shell conjecture　·　学科：Algebraic and complex geometry　·　验证状态：暂无形式化证明，请以社区核验为准
 
+## 入门导读 🐣
+
+数学家给"曲面"分类时，有一批最难透视的另类包裹——VII 类曲面。四十多年来大家只能猜：它们是不是都由同一款标准零件改装出来的？这篇论文证实了猜想的最后缺口（全局球壳猜想）：这批曲面里，个个都内嵌着同一款零件——一个三维球面的"壳"。
+
+**关键词卡片**
+
+- VII 类曲面（class VII surface）：无法配上凯勒这种好度量的紧复曲面，最基本的"另类"曲面家族。
+- 全局球壳（global spherical shell）：曲面里一块全纯嵌入的 S³ 邻域；找到它就能把曲面拆解成"标准件＋改装"。
+- 第二 Betti 数 b₂（second Betti number）：曲面上二维"洞"的个数，衡量它离最简单情形有多远。
+- 爆破（blowup）：把一个点撑开成一条曲线的"打孔"手术，改装包裹的基本操作。
+
+**看个具体例子**
+
+标准包裹是 Hopf 曲面：把 `@@M@@\mathbb C^2\setminus\{0\}@@` 中相差 2 倍的点视为同一个点（`@@M@@b_2=0@@`）。将它爆破一次（打一个孔），`@@M@@b_2@@` 变为 1，单位球面 `@@M@@|z|=1@@` 的像正是全局球壳。定理断言：任何 `@@M@@b_2>0@@` 的极小 VII 类曲面都含这样的壳；推论还把拓扑完全锁死——它必微分同胚于 `@@M@@(S^1\times S^3)\#b_2@@` 个反向 `@@M@@\mathbb{CP}^2@@`，并能连续形变到"打过孔的 Hopf 曲面"。
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280">
+  <ellipse cx="280" cy="158" rx="248" ry="102" fill="#eaf2fb" stroke="#35618f" stroke-width="2"/>
+  <circle cx="280" cy="148" r="88" fill="#f5c88a"/>
+  <circle cx="280" cy="148" r="58" fill="#eaf2fb"/>
+  <circle cx="280" cy="148" r="73" fill="none" stroke="#8a4b00" stroke-width="2" stroke-dasharray="7 5"/>
+  <text x="280" y="26" text-anchor="middle" font-size="17" fill="#204060">VII 类曲面 X（实四维，此图为其二维投影）</text>
+  <text x="40" y="62" font-size="14" fill="#7a3d00">球壳 Σ：S³ 的邻域</text>
+  <line x1="228" y1="96" x2="184" y2="70" stroke="#8a4b00" stroke-width="1.5"/>
+  <text x="280" y="222" text-anchor="middle" font-size="14" fill="#204060">橙色带＝壳 Σ（虚线圆为 S³ 本体）</text>
+  <text x="280" y="246" text-anchor="middle" font-size="14" fill="#204060">蓝色＝余集 X∖Σ，在四维中连成一块（连通）</text>
+</svg>
+
+</div>
+
+**为什么值得关心**
+
+它补上了非凯勒曲面分类悬置四十余年的最后一块拼图：这批曲面从此有完整"户口"，形变类型与微分拓扑全部确定。
+
+> 暂无形式化证明（AI 结果待核验）
+
 ## 一句话结论
 
 论文证明了全局球壳猜想：第二个 Betti 数为正的极小 VII 类紧复曲面必含一个全局球壳。这补上了非 Kähler 曲面分类缺了四十余年的最后一块拼图，并完全确定这类曲面的形变类型与微分拓扑。

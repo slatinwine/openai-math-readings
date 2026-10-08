@@ -13,6 +13,34 @@ pdfname: ""
 
 > 结果族 362：Global smoothness for relativistic Vlasov–Maxwell　·　学科：Partial differential equations　·　验证状态：主结果已 Lean 形式化
 
+## 入门导读 🐣
+
+一团带电气体（等离子体）在真空里"自导自演"：粒子的运动产生电磁场，电磁场又回过头来推动粒子，两套方程互相咬合。悬了四十年的问题是：当初始气体任意大、毫无对称性时，解会不会在有限时间内失去光滑、"算不下去"？这篇论文给出否定的回答：永远不会——任意大数据的整体经典解存在且唯一。
+
+**关键词卡片**
+
+- Vlasov–Maxwell 系统（relativistic Vlasov–Maxwell system）：带电粒子密度与自生电磁场耦合的方程组，等离子体的基本模型。
+- 相对论效应（relativistic）：粒子越接近光速越难加速，速度永不超光速。
+- 动量支撑（momentum support）：粒子动量所处的范围；它若在有限时间内爆到无穷，经典解就失效。
+- 延拓准则（continuation criterion）：Glassey–Strauss 定理——只要动量支撑有界，解就能继续往下算。
+- 推迟场（retarded field）：电磁影响以光速传播，此刻的受力只来自"向后光锥"面上经过的粒子。
+
+**看个具体例子**
+
+证明的骨架是一本"翻倍账"。记 `@@M@@t_n@@` 为全体粒子能量最大值首次达到 `@@M@@2^n@@` 的时刻，关键估计给出每次翻倍至少耗时 `@@M@@\Delta_n\ge c/\log(2^n)=c/(n\ln 2)@@`；而 `@@M@@\sum_n 1/n=\infty@@`（调和级数发散），所以无穷多次翻倍需要无穷长的时间——爆炸时刻被推到无穷远。图示为这套"光锥记账"的舞台：此刻的力只由虚线锥面上的源决定。
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280"><line x1="380" y1="80" x2="380" y2="235" stroke="#333" stroke-width="2.5"/><circle cx="380" cy="80" r="4" fill="#333"/><text x="392" y="78" font-size="15" fill="#333">接收者（此刻）</text><line x1="380" y1="80" x2="230" y2="235" stroke="#888" stroke-width="1.8"/><line x1="380" y1="80" x2="530" y2="235" stroke="#888" stroke-width="1.8"/><text x="395" y="205" font-size="15" fill="#555">向后光锥</text><line x1="190" y1="150" x2="330" y2="250" stroke="#333" stroke-width="2"/><text x="146" y="140" font-size="15" fill="#333">源粒子</text><circle cx="261" cy="201" r="4" fill="none" stroke="#333" stroke-width="2"/><text x="80" y="264" font-size="15" fill="#333">力只来自光锥过去</text></svg>
+
+</div>
+
+**为什么值得关心**
+
+无小性假设、无对称性的三维大数据整体正则性是等离子体数学最著名的公开问题之一，本文彻底解决。
+
+> 已 Lean 形式化
+
 ## 一句话结论
 
 论文对三维单粒子种类的相对论 Vlasov–Maxwell 系统（relativistic Vlasov–Maxwell system）证明：任意紧支撑的光滑初值——不设大小、不加对称性限制——都生成唯一的整体经典解，且在每个有限时间段上保持光滑，解决了这一等离子体核心模型悬置四十年的大数据整体正则性问题。

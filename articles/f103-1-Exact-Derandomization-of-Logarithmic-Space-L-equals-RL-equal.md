@@ -13,6 +13,33 @@ pdfname: ""
 
 > 结果族 103：Exact derandomization of logarithmic space: `@@M@@\mathsf L=\mathsf{RL}=\mathsf{BPL}@@`　·　学科：Theoretical computer science　·　验证状态：暂无形式化证明，请以社区核验为准
 
+## 入门导读 🐣
+
+一个只带一张便签记忆的机器人走迷宫，每到岔口就掷硬币选路。复杂性理论问：硬币能省掉吗？这篇论文给出彻底的肯定答案：存在同样只带一张便签、从不掷硬币的机器人，能完成硬币机器人的一切任务——随机性在"便签级记忆"下是完全免费的。
+
+**关键词卡片**
+
+- 对数空间（logarithmic space，`@@M@@\mathsf L@@`）：内存只有输入长度对数倍的确定性计算模型。
+- 单侧/双侧错误（`@@M@@\mathsf{RL}/\mathsf{BPL}@@`）：掷硬币机器"只在回答'是'时可能出错"与"两种回答都可能出错"两档。
+- 去随机化（derandomization）：为随机机器造出等价的确定性机器。
+- 分支程序（branching program）：把机器运行画成的状态转移图；接受概率就是图上随机游走到达终点的概率。
+
+**看个具体例子**
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 300"><text x="280" y="24" text-anchor="middle" font-size="15" fill="#222">掷硬币的分支程序 → 不掷硬币的等价机器</text><line x1="104" y1="141" x2="188" y2="98" stroke="#556" stroke-width="1.5"/><line x1="104" y1="159" x2="188" y2="202" stroke="#556" stroke-width="1.5"/><line x1="212" y1="84" x2="298" y2="56" stroke="#556" stroke-width="1.5"/><line x1="212" y1="96" x2="298" y2="124" stroke="#556" stroke-width="1.5"/><line x1="212" y1="204" x2="298" y2="166" stroke="#556" stroke-width="1.5"/><line x1="212" y1="216" x2="298" y2="244" stroke="#556" stroke-width="1.5"/><text x="120" y="112" font-size="11" fill="#555">硬币 0/1</text><text x="120" y="205" font-size="11" fill="#555">硬币 0/1</text><circle cx="90" cy="150" r="14" fill="#fbb" stroke="#933"/><text x="90" y="155" text-anchor="middle" font-size="12">S</text><circle cx="200" cy="90" r="12" fill="#ffd" stroke="#996"/><circle cx="200" cy="210" r="12" fill="#ffd" stroke="#996"/><circle cx="310" cy="50" r="12" fill="#dfd" stroke="#3a3"/><circle cx="310" cy="50" r="7" fill="none" stroke="#3a3"/><circle cx="310" cy="130" r="12" fill="#fdd" stroke="#933"/><text x="310" y="135" text-anchor="middle" font-size="12">✗</text><circle cx="310" cy="170" r="12" fill="#dfd" stroke="#3a3"/><circle cx="310" cy="170" r="7" fill="none" stroke="#3a3"/><circle cx="310" cy="250" r="12" fill="#fdd" stroke="#933"/><text x="310" y="255" text-anchor="middle" font-size="12">✗</text><line x1="330" y1="150" x2="375" y2="150" stroke="#888" stroke-width="1.5" stroke-dasharray="6,5"/><text x="352" y="140" text-anchor="middle" font-size="11" fill="#555">替代</text><rect x="380" y="105" width="160" height="90" fill="#f7f7ff" stroke="#667"/><text x="460" y="135" text-anchor="middle" font-size="13" fill="#333">确定性模拟器</text><text x="460" y="158" text-anchor="middle" font-size="12" fill="#333">同用 O(log n) 内存</text><text x="460" y="181" text-anchor="middle" font-size="12" fill="#333">误差 ≤ (n+2)^-3</text><text x="280" y="288" text-anchor="middle" font-size="13" fill="#333">绿圈=接受；确定性机器算出的接受概率足够准，即可替机器人做对所有决定</text></svg>
+
+</div>
+
+核心是条数值化的定理：确定性机器能算出每个输入的接受概率 `@@M@@p(x)@@`，误差 `@@M@@\le(n+2)^{-d}@@`。取 `@@M@@d=3@@`：误差 `@@M@@\le 1/8@@`；而随机机器承诺接受概率要么 `@@M@@\ge 2/3@@` 要么 `@@M@@\le 1/3@@`，两者相隔 `@@M@@1/3@@`，远大于 `@@M@@1/8@@`，所以拿算出的数与 `@@M@@1/2@@` 比大小即可正确判定。
+
+**为什么值得关心**
+
+`@@M@@\mathsf L@@`、`@@M@@\mathsf{RL}@@`、`@@M@@\mathsf{BPL}@@` 三者是否相等是复杂性理论的基础问题之一，本文不仅给出肯定回答，还附上带显式时空界的编译器。
+
+> 暂无形式化证明（AI 结果待核验）
+
 ## 一句话结论
 
 证明了 `@@M@@\mathsf L=\mathsf{RL}=\mathsf{BPL}@@`：多项式时间的对数空间随机计算，无论单侧错误还是双侧错误，都能被确定性对数空间 (logarithmic space) 机器等价模拟，并给出带显式多项式时间界的有效编译器，彻底解决该去随机化 (derandomization) 问题。

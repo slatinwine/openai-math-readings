@@ -13,6 +13,34 @@ pdfname: ""
 
 > 结果族 031：Uchida's conjecture for open homomorphisms of Galois groups　·　学科：Number theory　·　验证状态：暂无形式化证明，请以社区核验为准
 
+## 入门导读 🐣
+
+每个数域出厂时都带一份"密码本"——伽罗瓦群。著名的 Neukirch–内田定理说：密码本几乎完全决定产品本身，两个数域的伽罗瓦群同构，数域就同构。内田 1981 年进一步猜：连密码本之间的"单向翻译"（开同态，不要求一一对应）也必然来自反向的真实域嵌入。这篇论文证明他猜对了：翻译的"开性"自动携带全部所需算术相容性。
+
+**关键词卡片**
+
+- 伽罗瓦群（Galois group）：域的对称群，记录所有保持运算的换名方式。
+- 可解闭扩张（solvably closed extension）：不能再做非平凡阿贝尔扩张的"封顶"域，如代数闭包与最大可解扩张。
+- 开同态（open homomorphism）：像为开子群的连续同态——一种"足够厚"的翻译。
+- 等变域嵌入（equivariant embedding）：与群作用匹配、方向与同态相反的域嵌入。
+- 分圆特征（cyclotomic character）：伽罗瓦群作用在单位根上的旋转记录，本文证明它自动被保持。
+
+**看个具体例子**
+
+最直观的样本是限制映射：固定代数闭包，则 Gal(Q̄/K) → Gal(Q̄/Q)（把自同构限制回 Q 上）是开同态，由嵌入 Q ↪ K 反向诱导。定理断言：所有开同态无一例外都长这样——核可以任意，也无需任何附加假设。
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280"><rect x="80" y="46" width="150" height="46" rx="8" fill="#eef3ee" stroke="#333" stroke-width="2"/><rect x="330" y="46" width="150" height="46" rx="8" fill="#eef3ee" stroke="#333" stroke-width="2"/><rect x="80" y="186" width="150" height="46" rx="8" fill="#f7eef2" stroke="#333" stroke-width="2"/><rect x="330" y="186" width="150" height="46" rx="8" fill="#f7eef2" stroke="#333" stroke-width="2"/><line x1="232" y1="69" x2="322" y2="69" stroke="#1e8449" stroke-width="3"/><polygon points="330,69 317,63 317,75" fill="#1e8449"/><line x1="328" y1="209" x2="238" y2="209" stroke="#c0392b" stroke-width="3"/><polygon points="230,209 243,203 243,215" fill="#c0392b"/><line x1="155" y1="94" x2="155" y2="184" stroke="#999" stroke-width="2" stroke-dasharray="5 4"/><line x1="405" y1="94" x2="405" y2="184" stroke="#999" stroke-width="2" stroke-dasharray="5 4"/><text x="155" y="74" font-size="15" text-anchor="middle" fill="#333">数域 E₂</text><text x="405" y="74" font-size="15" text-anchor="middle" fill="#333">数域 E₁</text><text x="155" y="214" font-size="14" text-anchor="middle" fill="#333">Gal(E₂/F₂)</text><text x="405" y="214" font-size="14" text-anchor="middle" fill="#333">Gal(E₁/F₁)</text><text x="280" y="60" font-size="14" text-anchor="middle" fill="#1e8449">域嵌入 j（反向）</text><text x="280" y="200" font-size="14" text-anchor="middle" fill="#c0392b">开同态 α</text><text x="280" y="145" font-size="13" text-anchor="middle" fill="#777">上：域的世界　下：群的世界</text><text x="280" y="262" font-size="14" text-anchor="middle" fill="#333">定理：每个 α 都由唯一的 j 诱导（g∘j = j∘α(g)）</text></svg>
+
+</div>
+
+**为什么值得关心**
+
+它补上了"数域由伽罗瓦群决定"这一定理家族的最后一块拼图；结论之干净，连提出者本人当年都只证出特殊情形。
+
+> 暂无形式化证明（AI 结果待核验）
+
 ## 一句话结论
 
 完整证明了内田（Uchida）1981 年的猜想：数域的可解闭伽罗瓦扩张之伽罗瓦群之间的任何连续开同态，都由反向唯一的等变域嵌入诱导；"开性"本身即蕴含全部所需算术相容性，对核与分圆特征不作任何限制。

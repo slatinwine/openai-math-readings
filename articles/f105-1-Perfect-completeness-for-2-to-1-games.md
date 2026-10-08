@@ -13,6 +13,56 @@ pdfname: ""
 
 > 结果族 105：Perfect completeness for 2-to-1 games　·　学科：Theoretical computer science　·　验证状态：主结果已 Lean 形式化
 
+## 入门导读 🐣
+
+想象一场巨型配对考试：左边一排答题人、右边一排审题人，每张考卷规定"审题人 a 的答案只能配答题人 1 或 2，审题人 b 只能配 3 或 4"——每个右侧答案恰好有两个候选。问：全对到什么程度？论文证明，判断"能否人人配对成功"还是"怎么做都至少九成配错"，与最难的 NP 问题一样难。
+
+**关键词卡片**
+
+- 2-to-1 博弈（2-to-1 game）：约束都是投影映射、每个右答案恰有两个原像的配对问题
+- 完美完备性（perfect completeness）："全对"情形要求百分之百满足，一条不许欠
+- 值（value）：任何答题方案能同时满足的约束比例之上确界
+- NP 难（NP-hard）：与 3-SAT 同级；若有多项式算法则 P=NP
+- 逼近难度（hardness of approximation）：不只求最优难，连"近似到 99%"也难
+
+**看个具体例子**
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280">
+<text x="280" y="34" text-anchor="middle" font-size="14">每个右答案恰有 2 个原像——“2-to-1”的由来</text>
+<line x1="180" y1="88" x2="112" y2="204" stroke="#843" stroke-width="2"/>
+<line x1="180" y1="88" x2="248" y2="204" stroke="#843" stroke-width="2"/>
+<line x1="390" y1="88" x2="322" y2="204" stroke="#843" stroke-width="2"/>
+<line x1="390" y1="88" x2="458" y2="204" stroke="#843" stroke-width="2"/>
+<circle cx="180" cy="88" r="24" fill="#e8eef8" stroke="#345" stroke-width="2"/>
+<text x="180" y="94" text-anchor="middle" font-size="15">a</text>
+<circle cx="390" cy="88" r="24" fill="#e8eef8" stroke="#345" stroke-width="2"/>
+<text x="390" y="94" text-anchor="middle" font-size="15">b</text>
+<text x="180" y="46" text-anchor="middle" font-size="12" fill="#345">右答案</text>
+<text x="390" y="46" text-anchor="middle" font-size="12" fill="#345">右答案</text>
+<circle cx="112" cy="204" r="22" fill="#f8e8e8" stroke="#843" stroke-width="2"/>
+<text x="112" y="210" text-anchor="middle" font-size="14">1</text>
+<circle cx="248" cy="204" r="22" fill="#f8e8e8" stroke="#843" stroke-width="2"/>
+<text x="248" y="210" text-anchor="middle" font-size="14">2</text>
+<circle cx="322" cy="204" r="22" fill="#f8e8e8" stroke="#843" stroke-width="2"/>
+<text x="322" y="210" text-anchor="middle" font-size="14">3</text>
+<circle cx="458" cy="204" r="22" fill="#f8e8e8" stroke="#843" stroke-width="2"/>
+<text x="458" y="210" text-anchor="middle" font-size="14">4</text>
+<text x="280" y="240" text-anchor="middle" font-size="13">π(a) = {1, 2}，π(b) = {3, 4}：一条约束就是一张投影表</text>
+<text x="280" y="264" text-anchor="middle" font-size="13">目标：左右各选标签，让所有约束同时被满足</text>
+</svg>
+
+</div>
+
+定理的数字版：取 `@@M@@\delta=1\%@@`——存在多项式时间变换，把可满足的 3-SAT 变成值为 `@@M@@1@@`（全部约束满足）的 2-to-1 博弈，把不可满足的变成值至多 `@@M@@0.01@@` 的博弈，且区分二者是 NP-难的。注意"每个右答案恰有两个候选"的刚性：多一个少一个都会破坏证明结构，这正是它名字里"2-to-1"的含义。
+
+**为什么值得关心**
+
+这是 Khot 2002 年提出的 2-to-1 猜想的完美完备性版本，长期缺口被补上，而它正是图着色等一大片"近似也难"结论的钥匙。
+
+> 已 Lean 形式化
+
 ## 一句话结论
 
 证明了 Khot 的 2-to-1 博弈猜想（2-to-1 Games Conjecture）的完美完备性（perfect completeness）版本：对任意固定有理数 `@@M@@\delta\in(0,1)@@`，区分"完全可满足"与"值至多 `@@M@@\delta@@`"的 2-to-1 博弈是 NP 难的。这是逼近难度理论的基石结果。

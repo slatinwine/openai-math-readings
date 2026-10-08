@@ -13,6 +13,60 @@ pdfname: ""
 
 > 结果族 104：Quasipolynomial algorithms for mean-payoff, stochastic and parity games　·　学科：Theoretical computer science　·　验证状态：主结果已 Lean 形式化
 
+## 入门导读 🐣
+
+同一道"长期平均输赢"的博弈题，这次给算法发一枚硬币。它像一位边答边开收据的会计师：先猜出答案，再附上一张任何人都能快速核验的证明；验不过就把账撕掉重来，绝不把错账交出去。整个流程仍是拟多项式时间，一次就猜对的概率至少 7/8。
+
+**关键词卡片**
+
+- 随机算法（randomized algorithm）：内部掷硬币做决定的算法，允许小概率失手
+- 零阈值取胜集（zero-threshold winning set）：Max 能保证长期平均收益 `@@M@@\ge 0@@` 的全部出发点
+- 证书（certificate）：随答案附带的证据，多项式时间即可机器验真
+- Las Vegas 算法：反复重跑直到证书通过——永远正确，期望时间不涨价
+- 位置策略（positional strategy）：只看脚下、不用记事本的走法；双方的最优走法都可以是这种
+
+**看个具体例子**
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280">
+<rect x="30" y="50" width="140" height="50" rx="8" fill="#e8eef8" stroke="#345" stroke-width="2"/>
+<text x="100" y="70" text-anchor="middle" font-size="14">输入博弈</text>
+<text x="100" y="90" text-anchor="middle" font-size="12" fill="#567">L 个比特</text>
+<line x1="172" y1="75" x2="212" y2="75" stroke="#345" stroke-width="2"/>
+<polygon points="216,75 204,69 204,81" fill="#345"/>
+<rect x="218" y="50" width="140" height="50" rx="8" fill="#efe8f8" stroke="#53c" stroke-width="2"/>
+<text x="288" y="70" text-anchor="middle" font-size="14">随机算法</text>
+<text x="288" y="90" text-anchor="middle" font-size="12" fill="#567">内部掷硬币</text>
+<line x1="360" y1="75" x2="400" y2="75" stroke="#345" stroke-width="2"/>
+<polygon points="404,75 392,69 392,81" fill="#345"/>
+<rect x="406" y="50" width="140" height="50" rx="8" fill="#e8f8e8" stroke="#383" stroke-width="2"/>
+<text x="476" y="70" text-anchor="middle" font-size="14">取胜集</text>
+<text x="476" y="90" text-anchor="middle" font-size="12" fill="#567">附双方策略证书</text>
+<line x1="476" y1="102" x2="476" y2="140" stroke="#383" stroke-width="2"/>
+<polygon points="476,144 470,132 482,132" fill="#383"/>
+<rect x="406" y="146" width="140" height="50" rx="8" fill="#f8f8d8" stroke="#a83" stroke-width="2"/>
+<text x="476" y="166" text-anchor="middle" font-size="14">多项式时间检验</text>
+<text x="476" y="186" text-anchor="middle" font-size="12" fill="#567">绝不放过错误答案</text>
+<line x1="404" y1="171" x2="360" y2="171" stroke="#383" stroke-width="2"/>
+<polygon points="356,171 368,165 368,177" fill="#383"/>
+<text x="350" y="176" text-anchor="end" font-size="13" fill="#383">✓ 通过 → 采纳</text>
+<line x1="476" y1="198" x2="476" y2="228" stroke="#a83" stroke-width="2"/>
+<polygon points="476,232 470,220 482,220" fill="#a83"/>
+<text x="476" y="252" text-anchor="middle" font-size="13" fill="#a83">✗ 失败 → 重跑一次</text>
+<text x="200" y="252" text-anchor="middle" font-size="13">正确概率 ≥ 7/8，时间恒有 2^((log L)²) 级上界</text>
+</svg>
+
+</div>
+
+一次运行全错的概率 `@@M@@\le 1/8@@`，独立重跑三次仍全军覆没的概率 `@@M@@\le(1/8)^3=1/512@@`；每次通过检验的输出还附带双方的位置策略，检票口在多项式时间内放行。
+
+**为什么值得关心**
+
+它与同族的确定性结果从两条独立路线登上同一高度、互相印证，而且自带证书，错了能被当场抓住。对悬置四十余年的多项式可解性问题而言，这是又一个坚实的里程碑。
+
+> 已 Lean 形式化
+
 ## 一句话结论
 
 为权重按二进制编码的平均支付博弈（mean-payoff game）给出随机拟多项式算法：在每条随机带上只用 `@@M@@2^{O((\log(L+2))^2)}@@` 次位运算（`@@M@@L@@` 为显式输入总长），就以至少 `@@M@@7/8@@` 的概率输出完整零阈值获胜集，并附多项式时间可验证的证书。

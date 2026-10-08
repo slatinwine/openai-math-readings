@@ -13,6 +13,36 @@ pdfname: ""
 
 > 结果族 271：Bloch's law, its lattice correction, and the spherical magnetization law　·　学科：Mathematical physics　·　验证状态：暂无形式化证明，请以社区核验为准
 
+## 入门导读 🐣
+
+想象一盒指南针被冷却到极低温：无数小磁针会自发排向同一个方向，像阅兵方阵一样整齐。但盒子本身并不偏爱任何朝向，所以方阵"指向哪儿"纯属随机。这篇论文证明的正是这幅图像的严格量子版：三维量子磁体在低温下的总磁化，方向均匀乱指，长度却精确等于一个固定值 m。
+
+**关键词卡片**
+
+- 自发磁化（spontaneous magnetization）：没有外加磁场时，材料自己长出的整体磁性。
+- 吉布斯态（Gibbs state）：热平衡系统的"统计说明书"，给出各物理量的平均值。
+- 体积极限（volume limit）：把周期盒子无限变大，看平均量是否稳定下来。
+- 矩收敛（convergence in moments）：不看单次实验，而看各阶平均值怎样收敛。
+- 压强（pressure）：统计力学的核心泛函，它在零场处的右导数恰好就是 m。
+
+**看个具体例子**
+
+把结论画出来：总磁化是一根从球心射出的箭，长度恒为 m，方向在球面上均匀分布。
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280"><circle cx="200" cy="140" r="100" fill="none" stroke="#333" stroke-width="2"/><ellipse cx="200" cy="140" rx="100" ry="35" fill="none" stroke="#999" stroke-width="1" stroke-dasharray="4 3"/><circle cx="200" cy="140" r="3.5" fill="#333"/><line x1="200" y1="140" x2="290" y2="70" stroke="#c0392b" stroke-width="2.5"/><polygon points="290,70 278,74 283,81" fill="#c0392b"/><line x1="200" y1="140" x2="120" y2="80" stroke="#c0392b" stroke-width="2.5"/><polygon points="120,80 132,84 127,90" fill="#c0392b"/><line x1="200" y1="140" x2="150" y2="210" stroke="#c0392b" stroke-width="2.5"/><polygon points="150,210 160,203 154,198" fill="#c0392b"/><line x1="200" y1="140" x2="265" y2="195" stroke="#c0392b" stroke-width="2.5"/><polygon points="265,195 253,190 258,184" fill="#c0392b"/><text x="300" y="62" font-size="15" fill="#c0392b">箭长恒为 m</text><text x="52" y="62" font-size="15" fill="#333">方向均匀分布</text><text x="40" y="256" font-size="14" fill="#333">矩母函数收敛到 sinh(m|t|)/(m|t|)，二阶矩恰为 m²</text></svg>
+
+</div>
+
+翻译成公式：对称零场态满足 `@@M@@\lim_{L\to\infty}\langle e^{t\cdot M_L/V}\rangle=\sinh(m|t|)/(m|t|)@@`，右边正是"长度 m 的箭均匀取方向"的球面平均。比如 m=0.9 时，磁化平方的平均恰为 0.81——长度不撒谎，只有方向随机。
+
+**为什么值得关心**
+
+它把"低温有序相"的物理直觉（方向均匀、长度确定）升格为定理，且全程只用自洽的自伴观测量，避开不对易量联合测量的陷阱；与族内前两篇合读，闭合了量子铁磁体的完整图像。
+
+> 暂无形式化证明（AI 结果待核验）
+
 ## 一句话结论
 
 证明三维近邻各向同性量子海森堡铁磁体在固定低温下，对称零场 Gibbs 态的磁化按矩收敛到"方向均匀、长度确定"的球面分布，长度恰为压强零场右导数 `@@M@@m@@`，且全程无需联合测量不对易观测量。

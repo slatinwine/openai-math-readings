@@ -13,6 +13,47 @@ pdfname: ""
 
 > 结果族 260：Spacetime Penrose inequalities: enclosing area, charge, rotation, and anti-de Sitter extensions　·　学科：Mathematical physics　·　验证状态：暂无形式化证明，请以社区核验为准
 
+## 入门导读 🐣
+
+想象给黑洞"称重"：广义相对论里有个著名断言——黑洞边界的面积越大，整个时空的总质量就必须越大（Penrose 不等式）。直接证明极难，于是有人想出"改衣服"的招：把手里这张剪裁复杂、还缝着隐形衬里的时空切片，重新裁成一件款式简单的外衣，让一条早已证明好的现成定理直接套上量出质量下界；前提是裁剪中既不许缩水边界面积，也不许虚增体重。这篇论文就是这位裁缝，在三维与四维空间都给出了完整裁法。
+
+**关键词卡片**
+
+- 初值数据（initial data）：一张时空切片的空间快照，记录各点距离与曲率信息。
+- 陷获边界（trapped surface）：连光都无法向外逃逸的临界曲面，黑洞边界的候选。
+- ADM 能量（ADM energy）：退到无穷远处才能读出的时空总质量。
+- 图形形变（graph deformation）：把切片改写成高一维空间里的"图像曲面"，吸收衬里的影响。
+- 共形形变（conformal deformation）：逐点按比例微调距离，误差因子可压到任意小。
+
+**看个具体例子**
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280">
+  <text x="45" y="50" font-size="13" fill="#333">原切片：带衬里 K 的外部区域</text>
+  <line x1="42" y1="72" x2="42" y2="185" stroke="#222" stroke-width="3"/>
+  <text x="16" y="205" font-size="13">陷获边界 S</text>
+  <path d="M42 120 C 85 75, 130 165, 205 112" fill="none" stroke="#369" stroke-width="2"/>
+  <line x1="215" y1="115" x2="250" y2="115" stroke="#555" stroke-width="2"/>
+  <polygon points="262,115 248,108 248,122" fill="#555"/>
+  <text x="204" y="98" font-size="13">图形＋共形形变</text>
+  <line x1="322" y1="72" x2="322" y2="185" stroke="#222" stroke-width="3"/>
+  <path d="M322 120 C 390 35, 470 55, 528 108" fill="none" stroke="#c33" stroke-width="2"/>
+  <text x="342" y="55" font-size="13">新度量：数量曲率非负</text>
+  <text x="38" y="236" font-size="14">裁衣保障：新面积 ≥ e^(−4ε)·A*，新能量 ≤ E + o(1)</text>
+  <text x="38" y="262" font-size="14">套用已证的黎曼 Penrose：E ≥ √(A*/16π)；例 A* = 16π ⇒ E ≥ 1</text>
+</svg>
+
+</div>
+
+代入数字：若包围面积 `@@M@@A_*=16\pi@@`，三维定理给出 `@@M@@E\ge\sqrt{16\pi/(16\pi)}=1@@`——面积这把卷尺直接定出质量的最低刻度。
+
+**为什么值得关心**
+
+时空 Penrose 不等式是广义相对论最著名的公开难题之一；本文铺出一条"从时空数据通往已证定理"的边界路线，与两篇姊妹篇合成完整论证链。
+
+> 暂无形式化证明（AI 结果待核验）
+
 ## 一句话结论
 
 本文在空间维数 3 与 4 构造了保持内边界的"图像 + 共形"形变，把带陷获边界的时空初值数据改造成满足黎曼 Penrose 不等式前提的纯度量外部区域，从而给出 `@@M@@m_{\rm ADM}\ge\sqrt{A_*/(16\pi)}@@`（三维）与 `@@M@@m\ge\frac12(A_*/\omega_3)^{2/3}@@`（四维）的边界路线证明，其中四维还含一个保留衰减第二基本形式的直接极大（maximal）构造。

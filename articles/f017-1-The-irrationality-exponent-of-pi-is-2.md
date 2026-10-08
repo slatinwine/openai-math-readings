@@ -13,6 +13,55 @@ pdfname: ""
 
 > 结果族 017：The irrationality exponent of π is 2　·　学科：Number theory　·　验证状态：暂无形式化证明，请以社区核验为准
 
+## 入门导读 🐣
+
+π 像钉在数轴上的一颗小米粒，分数则是一把把精度不同的镊子。这篇论文解决了悬置七十余年的大问题：用分数夹 π，精度顶多到"分母平方"那一档；想再精细哪怕一点点，全世界的分数合起来也只有有限几次侥幸。著名的 Flint–Hills 级数收敛问题也随之落定。
+
+**关键词卡片**
+
+- 无理数指数（irrationality exponent）：给"一个实数能被分数逼近到多近"定等级；等级越高，说明存在越疯狂的巧合逼近。
+- 有理逼近（rational approximation）：用分数 p/q 去近似无理数，分母越大通常越准。
+- 抽屉原理（pigeonhole principle）：它保证每个无理数都有无穷多个精度约 1/q² 的好逼近，所以指数至少是 2；本文证明 π 恰好取这个最小值。
+- Flint–Hills 级数（Flint–Hills series）：∑1/(n³sin²n)（弧度制），当 n 撞上 π 的整数倍附近时分母骤减，收敛与否悬置多年。
+
+**看个具体例子**
+
+祖冲之的密率 355/113 是一次著名的"超常命中"：`@@M@@|\pi-355/113|\approx 2.7\times10^{-7}@@`，比 `@@M@@1/113^3\approx 6.9\times10^{-7}@@` 还小——它精进了 1/q³ 一档。定理说：对任何 ν>2（比如 ν=3），这样的好运总共只有有限次；分母足够大之后，所有分数都满足 |π−p/q| ≥ 1/q^ν，即 μ(π)=2。
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280">
+  <text x="280" y="30" text-anchor="middle" font-size="16" fill="#333">数轴放大镜：分数能离 π 多近？</text>
+  <line x1="70" y1="90" x2="490" y2="90" stroke="#999" stroke-width="2"/>
+  <text x="70" y="112" font-size="12" fill="#666">3.14</text>
+  <text x="490" y="112" font-size="12" fill="#666" text-anchor="end">3.15</text>
+  <rect x="144" y="76" width="12" height="28" fill="none" stroke="#888" stroke-dasharray="4 3"/>
+  <circle cx="150" cy="90" r="5" fill="#c0392b"/>
+  <text x="150" y="66" text-anchor="middle" font-size="13" fill="#c0392b">π = 3.14159…</text>
+  <circle cx="200" cy="90" r="5" fill="#2874a6"/>
+  <text x="200" y="132" text-anchor="middle" font-size="13" fill="#2874a6">22/7 = 3.14286</text>
+  <line x1="150" y1="106" x2="70" y2="186" stroke="#aaa" stroke-dasharray="4 3"/>
+  <line x1="150" y1="106" x2="490" y2="186" stroke="#aaa" stroke-dasharray="4 3"/>
+  <line x1="70" y1="210" x2="490" y2="210" stroke="#999" stroke-width="2"/>
+  <text x="70" y="232" font-size="12" fill="#666">3.1415925</text>
+  <text x="490" y="232" font-size="12" fill="#666" text-anchor="end">3.1415930</text>
+  <circle cx="196" cy="210" r="5" fill="#c0392b"/>
+  <text x="196" y="196" text-anchor="middle" font-size="13" fill="#c0392b">π</text>
+  <circle cx="423" cy="210" r="5" fill="#2874a6"/>
+  <text x="423" y="240" text-anchor="middle" font-size="13" fill="#2874a6">355/113</text>
+  <line x1="203" y1="204" x2="416" y2="204" stroke="#2874a6" stroke-dasharray="3 3"/>
+  <text x="310" y="196" text-anchor="middle" font-size="12" fill="#555">距离≈0.00000027</text>
+  <text x="280" y="266" text-anchor="middle" font-size="13" fill="#333">放大百万倍后 355/113 仍差一点；定理：超过 1/q² 的"超常命中"总共只有有限次</text>
+</svg>
+
+</div>
+
+**为什么值得关心**
+
+无理数指数是数学常数的"身份证字段"之一。π 的这一栏从 1953 年 Mahler 的 42 一路压到 7.1，如今精确定格为 2；与它绑定的 Flint–Hills 级数收敛也一并解决。
+
+> 暂无形式化证明（AI 结果待核验）
+
 ## 一句话结论
 
 论文证明了 `@@M@@\mu(\pi)=2@@`：对任何 `@@M@@\nu>2@@`，只要分母 `@@M@@q@@` 充分大，一切有理数都满足 `@@M@@|\pi-p/q|\ge q^{-\nu}@@`。这一悬置七十余年的无理数指数（irrationality exponent）问题就此解决，经典 Flint–Hills 级数 `@@M@@\sum_{n\ge1}1/(n^3\sin^2 n)@@` 的收敛性随之获证。

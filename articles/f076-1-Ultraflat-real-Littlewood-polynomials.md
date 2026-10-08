@@ -13,6 +13,46 @@ pdfname: ""
 
 > 结果族 076：Real ultraflat Littlewood polynomials and unbounded binary merit factors　·　学科：Real and complex analysis　·　验证状态：暂无形式化证明，请以社区核验为准
 
+## 入门导读 🐣
+
+掷 `@@M@@N@@` 次硬币：正面记 `@@M@@+1@@`，反面记 `@@M@@-1@@`，拼成多项式 `@@M@@P(z)=\pm1\pm z\pm\cdots\pm z^{N-1}@@`。让 `@@M@@z@@` 沿单位圆转一圈，`@@M@@|P|@@` 的图像通常像心电图一样大起大落。这篇论文证明：硬币可以"掷得足够聪明"，让整条曲线几乎变成水平线——上下误差不超过百分之几，而且只要长度够大，每个整数长度都做得到。
+
+**关键词卡片**
+
+- Littlewood 多项式（Littlewood polynomial）：系数只有 `@@M@@\pm1@@` 的多项式。
+- 单位圆（unit circle）：`@@M@@|z|=1@@` 的圆周，多项式对所有"角度"的响应都在这里看。
+- Parseval 下界：圆周上均方模恰为 `@@M@@\sqrt N@@`，故最大模不可能低于 `@@M@@\sqrt N@@`——天然地板。
+- 超平坦（ultraflat）：归一化模 `@@M@@|P(z)|/\sqrt N@@` 在整圆上一致趋于 1，上下同时贴住 1。
+
+**看个具体例子**
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280">
+  <text x="80" y="30" font-size="13" fill="#c0392b">随机符号：大起大落</text>
+  <text x="300" y="30" font-size="13" fill="#1a7f37">存在选法：被夹进绿带</text>
+  <line x1="70" y1="42" x2="70" y2="240" stroke="#333" stroke-width="2"/>
+  <line x1="70" y1="240" x2="515" y2="240" stroke="#333" stroke-width="2"/>
+  <rect x="70" y="112" width="440" height="16" fill="#d9f2dd"/>
+  <line x1="70" y1="112" x2="510" y2="112" stroke="#1a7f37" stroke-width="1.5" stroke-dasharray="6 4"/>
+  <line x1="70" y1="128" x2="510" y2="128" stroke="#1a7f37" stroke-width="1.5" stroke-dasharray="6 4"/>
+  <polyline points="70,150 88,92 108,182 130,112 152,198 175,80 196,162 220,102 242,190 264,120 285,70 308,170 332,106 354,196 378,84 402,166 428,116 448,186 472,94 496,152 510,132" fill="none" stroke="#c0392b" stroke-width="2"/>
+  <text x="18" y="117" font-size="11" fill="#1a7f37">1010</text>
+  <text x="18" y="131" font-size="11" fill="#1a7f37">990</text>
+  <text x="110" y="262" font-size="12" fill="#1a7f37">绿带 = (1±0.01)√N，即 990~1010</text>
+  <text x="466" y="262" font-size="12" fill="#333">角度 θ</text>
+</svg>
+
+</div>
+
+数字版定理（示意）：`@@M@@N=10^6@@`、`@@M@@\varepsilon=0.01@@` 时，`@@M@@\sqrt N=1000@@`，存在一组符号使 `@@M@@990\le|P(z)|\le1010@@` 对一切 `@@M@@|z|=1@@` 成立——连 `@@M@@z=\pm1@@` 两个"实端点"也不例外。
+
+**为什么值得关心**
+
+Erdős 1957 年提出、Littlewood 1966 年讨论的老问题得到肯定回答：仅用实符号也能造出超平坦多项式，且长度无需满足任何整除条件。
+
+> 暂无形式化证明（AI 结果待核验）
+
 ## 一句话结论
 证明了实 Littlewood 多项式（系数全为 `@@M@@\pm1@@`）可以是"超平坦"的：对每个足够大的长度 `@@M@@N@@`，都能选一组符号，使多项式在单位圆上每一点的模都落在 `@@M@@(1\pm\varepsilon)\sqrt N@@` 之间，包括 `@@M@@z=\pm1@@` 这两个实端点，回应了 Erdős 与 Littlewood 的著名问题。
 

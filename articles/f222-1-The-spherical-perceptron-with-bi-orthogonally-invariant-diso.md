@@ -13,6 +13,59 @@ pdfname: ""
 
 > 结果族 222：Perceptron free energies and microscopic jamming exponents　·　学科：Probability and statistical mechanics　·　验证状态：暂无形式化证明，请以社区核验为准
 
+## 入门导读 🐣
+
+还是那个"旋钮裁判"，但这次旋钮可以任意转动，只要求整体长度固定——像一个只能转、不能伸缩的指针。考卷也不再是纯随机噪点：出题的"透镜"会把某些方向放大、某些方向缩小，只是不带任何特定的坐标轴偏好。这篇论文算出了这种一般考卷下，指针系统自由能的精确极限公式。
+
+**关键词卡片**
+
+- 球面感知机（spherical perceptron）：权重连续可调、但总长度固定的最简神经网络模型。
+- 双正交不变（bi-orthogonally invariant）：随机考卷矩阵在任意旋转下分布不变，对所有方向一视同仁。
+- 奇异值（singular values）：矩阵对各方向的放大倍数，好比透镜的不同屈光度档位。
+- 角压强（angular pressure）：在完全随机朝向的子空间里，仅由指针"方向"贡献的那部分配分函数。
+- 离群值（outlier）：个别特别大的奇异值；本文要求没有，保证放大档位整体平稳。
+
+**看个具体例子**
+
+公式像做预算：设透镜有三档放大率 `@@M@@s_1>s_2>s_3@@`，各占输出比例 `@@M@@v_j=\alpha p_j@@`。先把指针固定的长度平方按份额 `@@M@@\rho_1+\rho_2+\rho_3=N@@` 分给三档（大档多分还是小档多分，取决于奖惩规则 `@@M@@f@@`），再在各档内取角压强，最后在所有分配方案里取最优——这就是自由能的值。
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280">
+  <text x="20" y="26" font-size="15" fill="#333">长度预算在奇异值谱块间最优分配</text>
+  <circle cx="100" cy="130" r="46" fill="#eef" stroke="#333" stroke-width="2"/>
+  <line x1="100" y1="130" x2="138" y2="98" stroke="#333" stroke-width="3"/>
+  <polygon points="142,95 132,96 137,105" fill="#333"/>
+  <text x="52" y="196" font-size="14" fill="#333">球面 ‖x‖²=N</text>
+  <rect x="220" y="60" width="26" height="52" fill="#fff" stroke="#c33" stroke-width="2"/>
+  <rect x="252" y="60" width="26" height="52" fill="#fff" stroke="#c33" stroke-width="2"/>
+  <rect x="284" y="60" width="26" height="52" fill="#fff" stroke="#c33" stroke-width="2"/>
+  <rect x="220" y="126" width="26" height="40" fill="#fff" stroke="#363" stroke-width="2"/>
+  <rect x="252" y="126" width="26" height="40" fill="#fff" stroke="#363" stroke-width="2"/>
+  <rect x="284" y="126" width="26" height="40" fill="#fff" stroke="#363" stroke-width="2"/>
+  <rect x="220" y="180" width="26" height="28" fill="#fff" stroke="#36c" stroke-width="2"/>
+  <rect x="252" y="180" width="26" height="28" fill="#fff" stroke="#36c" stroke-width="2"/>
+  <rect x="284" y="180" width="26" height="28" fill="#fff" stroke="#36c" stroke-width="2"/>
+  <text x="212" y="50" font-size="13" fill="#c33">高档 s₁（占比 p₁）</text>
+  <text x="212" y="118" font-size="13" fill="#363">中档 s₂（占比 p₂）</text>
+  <text x="212" y="226" font-size="13" fill="#36c">低档 s₃（占比 p₃）</text>
+  <line x1="146" y1="104" x2="216" y2="86" stroke="#c33" stroke-width="2"/>
+  <line x1="146" y1="122" x2="216" y2="146" stroke="#363" stroke-width="2"/>
+  <line x1="146" y1="140" x2="216" y2="194" stroke="#36c" stroke-width="2"/>
+  <text x="158" y="92" font-size="13" fill="#c33">ρ₁</text>
+  <text x="158" y="140" font-size="13" fill="#363">ρ₂</text>
+  <text x="158" y="180" font-size="13" fill="#36c">ρ₃</text>
+  <text x="20" y="262" font-size="14" fill="#333">分配 ρ₁+ρ₂+ρ₃=N，取使总压强最大的方案</text>
+</svg>
+
+</div>
+
+**为什么值得关心**
+
+自由能公式从"独立高斯考卷"推广到任意紧谱、无离群值的随机矩阵——机器学习中带谱结构的随机特征正属此类。
+
+> 暂无形式化证明（AI 结果待核验）
+
 ## 一句话结论
 
 本文把球面感知机自由能的严格变分公式推广到双正交不变（bi-orthogonally invariant）、奇异谱紧支撑且无离群值的随机矩阵：极限由 Haar 子空间上的角压强与输入范数在谱块间的最优分配显式给出，谱可为任意紧分布。

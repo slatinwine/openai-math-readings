@@ -13,6 +13,48 @@ pdfname: ""
 
 > 结果族 205：Saxl's conjecture and universal tensor squares　·　学科：Algebra　·　验证状态：暂无形式化证明，请以社区核验为准
 
+## 入门导读 🐣
+
+n 张牌的一切洗牌方式可以归成若干"基本节奏型"（不可约表示）。论文找到一把万能钥匙：某个表示 `@@M@@\lambda@@` 与自己相乘（张量平方），乘积里能找齐全部基本节奏型——只有 `@@M@@n=2,4,9@@` 三个例外。这肯定地解决了 2013 年提出的对称群张量平方猜想。
+
+**关键词卡片**
+
+- 对称群 `@@M@@S_n@@`（symmetric group）：`@@M@@n@@` 个符号的全部置换组成的群。
+- 分拆（partition）：把 `@@M@@n@@` 拆成递减正整数之和的方式，一一标记 `@@M@@S_n@@` 的不可约表示，可画成 Young 图。
+- 张量平方（tensor square）：表示与自身相乘得到的大表示。
+- Kronecker 系数（Kronecker coefficient）：张量积里每种基本型出现的份数，至今没有一般组合公式。
+- 自共轭（self-conjugate）：Young 图沿对角虚线翻折后不变；万能钥匙必须自共轭，否则符号表示装不进来。
+
+**看个具体例子**
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280">
+  <rect x="90" y="60" width="44" height="44" fill="#fff" stroke="#555" stroke-width="2"/>
+  <rect x="134" y="60" width="44" height="44" fill="#fff" stroke="#555" stroke-width="2"/>
+  <rect x="178" y="60" width="44" height="44" fill="#fff" stroke="#555" stroke-width="2"/>
+  <rect x="90" y="104" width="44" height="44" fill="#fff" stroke="#555" stroke-width="2"/>
+  <rect x="134" y="104" width="44" height="44" fill="#fff" stroke="#555" stroke-width="2"/>
+  <rect x="90" y="148" width="44" height="44" fill="#fff" stroke="#555" stroke-width="2"/>
+  <line x1="90" y1="60" x2="222" y2="192" stroke="#c33" stroke-width="2" stroke-dasharray="7,5"/>
+  <text x="80" y="225" font-size="14" fill="#333">自共轭示例 ρ₃=(3,2,1)：沿虚线翻折不变</text>
+  <text x="290" y="80" font-size="15" fill="#333">n=6 时，S₆ 的不可约表示</text>
+  <text x="290" y="105" font-size="15" fill="#333">= 全部 11 种分拆</text>
+  <text x="290" y="140" font-size="14" fill="#a33">定理：存在 λ⊢6（先固定，不随目标变）</text>
+  <text x="290" y="165" font-size="14" fill="#a33">使 λ 的张量平方装下全部 11 种</text>
+  <text x="290" y="205" font-size="13" fill="#555">例外度数只有：n = 2、4、9</text>
+</svg>
+
+</div>
+
+以 `@@M@@n=6@@` 为例（6 不在例外名单里）：`@@M@@S_6@@` 恰有 11 种分拆即 11 个不可约表示，定理保证存在 `@@M@@\lambda\vdash 6@@` 使 `@@M@@S^\lambda\otimes S^\lambda@@` 一次装齐。附赠推论：同样的分拆标签还给出 `@@M@@\mathrm{GL}_n(\mathbb F_q)@@` 上单幂歧表示的普适张量平方，对所有素数幂 `@@M@@q@@` 成立。
+
+**为什么值得关心**
+
+Kronecker 系数是表示论著名的老大难；"一个平方覆盖一切"是极强的结构信息，此前连三角度数之外的情形都无人攻克，且本文大范围借助了计算机可复现验证。
+
+> 暂无形式化证明（AI 结果待核验）
+
 ## 一句话结论
 
 本文证明：除 `@@M@@n\in\{2,4,9\}@@` 外，对称群 `@@M@@S_n@@` 都存在一个不可约表示，其张量平方包含该群的全部不可约表示，从而肯定地解决了 Pak–Panova–Vallejo 提出的对称群张量平方猜想（tensor square conjecture）。

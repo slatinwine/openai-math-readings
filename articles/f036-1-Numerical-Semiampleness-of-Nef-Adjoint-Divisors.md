@@ -13,6 +13,34 @@ pdfname: ""
 
 > 结果族 036：Numerical semiampleness and generalized minimal models　·　学科：Algebraic and complex geometry　·　验证状态：暂无形式化证明，请以社区核验为准
 
+## 入门导读 🐣
+
+裁缝量衣：nef 是"量哪儿都不吃亏"，半丰富是"真能照尺寸裁出衣服"——给出到射影空间的映射。这篇论文证明：给奇点温和的形状加上任意"不吃亏"的附加项 `@@M@@M@@`，只要总尺寸不吃亏，就一定数值等价于一件真能裁的版型。读数对，就能换出好版型。
+
+**关键词卡片**
+
+- nef 除子（nef divisor）：与每条曲线相交度都非负的除子
+- 半丰富（semiample）：某个正倍数的截面处处生成，从而定义映射
+- 数值等价（numerical equivalence）：在所有曲线上读数都相同的两件除子
+- klt 对（klt pair）：奇点温和的带边界形状
+- 广义丰富性猜想（Generalised Abundance Conjecture）：Lazić–Peternell 表述的上述断言
+
+**看个具体例子**
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280"><line x1="280" y1="62" x2="280" y2="185" stroke="#333333" stroke-width="4"/><line x1="100" y1="82" x2="460" y2="82" stroke="#333333" stroke-width="4"/><line x1="100" y1="82" x2="62" y2="132" stroke="#333333" stroke-width="1.5"/><line x1="100" y1="82" x2="138" y2="132" stroke="#333333" stroke-width="1.5"/><line x1="460" y1="82" x2="422" y2="132" stroke="#333333" stroke-width="1.5"/><line x1="460" y1="82" x2="498" y2="132" stroke="#333333" stroke-width="1.5"/><rect x="32" y="138" width="152" height="42" rx="8" fill="#e8eef7" stroke="#4a6fa5" stroke-width="2"/><rect x="378" y="138" width="152" height="42" rx="8" fill="#e9f5ec" stroke="#3d8b57" stroke-width="2"/><text x="52" y="164" font-size="15" fill="#4a6fa5">K+B+M（nef）</text><text x="400" y="164" font-size="15" fill="#3d8b57">L（半丰富）</text><polygon points="272,215 288,215 280,200" fill="#c0504d"/><text x="165" y="248" font-size="16" fill="#333">读数相同：K+B+M ≡ L（数值等价）</text><text x="180" y="42" font-size="15" fill="#666666">nef 的总和总能换成"能裁衣"的版型</text></svg>
+
+</div>
+
+数字版：`@@M@@M=0@@` 的特例正是普通丰度——它是本文的输入而非推论；直接推论则是：`@@M@@K_X+B\equiv 0@@` 时，形状上每个 nef 除子都数值半丰富。"数值等价"这一步不可再省：复椭圆曲线上一个非挠的零度线丛 nef 且读数为零，却没有任何正幂次拿得出截面，所以只能指望换成同读数的好版型。天平读数相同，左右可以互换。
+
+**为什么值得关心**
+
+特征零射影 klt 情形的广义丰富性猜想由此解决，补上极小模型纲领"从 nef 到半丰富"的一环；Kähler 姊妹篇正是把它当引擎使用。
+
+> 暂无形式化证明（AI 结果待核验）
+
 ## 一句话结论
 论文在特征零代数闭域上的射影 klt 对上证明了 Lazić–Peternell 广义丰富性猜想：若 `@@M@@K_X+B@@` 伪有效、`@@M@@M@@` nef 且 `@@M@@K_X+B+M@@` nef，则 `@@M@@K_X+B+M@@` 必数值等价于一个半丰富 `@@M@@\mathbb{Q}@@`-Cartier 除子。这补上了极小模型纲领中"从 nef 到半丰富"的关键一环。
 

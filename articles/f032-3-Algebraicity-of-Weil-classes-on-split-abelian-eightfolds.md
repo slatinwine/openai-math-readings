@@ -13,6 +13,54 @@ pdfname: ""
 
 > 结果族 032：Hodge and Kuga–Satake results for all projective K3 surfaces　·　学科：Algebraic and complex geometry　·　验证状态：暂无形式化证明，请以社区核验为准
 
+## 入门导读 🐣
+
+Hodge 猜想最著名的"钉子户"叫 Weil 类：在带虚数乘法的八维甜甜圈上，它们像藏在第八维里的两页例外笔记，用最简单的骨头（除子）怎么乘都拼不出来。本文证明：对"分裂型"的八维 Weil 簇，这两页笔记全部由货真价实的代数闭链写出。
+
+**关键词卡片**
+
+- Weil 型八重簇（abelian eightfold of Weil type）：八维阿贝尔簇，坐标可被虚二次域 `@@M@@K=\Q(\sqrt{-d})@@` 相乘，且 Hodge 型恰好对半分。
+- Weil 空间（Weil space）：那两页例外笔记——二维的 `@@M@@(4,4)@@` 型影子空间 `@@M@@\bigwedge_K^8 H^1(A,\Q)@@`。
+- 分裂（split）：`@@M@@H_1@@` 里含一个四维 `@@M@@K@@`-子空间，其上度量型恒为零——一块完全"躺平"的切片。
+- 代数闭链（algebraic cycle）：子簇按有理系数的组合，"真骨头"。
+- 镜像对称（mirror symmetry）：来自弦论的对偶技巧，证明在特殊纤维处用到它。
+
+**看个具体例子**
+
+把八维簇上所有 `@@M@@(4,4)@@` 型影子画成一间大房子：除子类的杯积只能照亮一角，而二维的 Weil 平面 `@@M@@W_K@@` 恰恰伸在照亮区之外。
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280">
+<rect x="40" y="34" width="330" height="196" rx="14" fill="none" stroke="#333" stroke-width="1.8"/>
+<text x="205" y="58" font-size="14" text-anchor="middle">H⁴,⁴(A, Q)：全部 (4,4) 型影子的大房子</text>
+<rect x="58" y="76" width="190" height="128" rx="8" fill="none" stroke="#999" stroke-width="1.6" stroke-dasharray="6,5"/>
+<text x="153" y="146" font-size="13" text-anchor="middle" fill="#666">除子类杯积</text>
+<text x="153" y="166" font-size="13" text-anchor="middle" fill="#666">能照亮的角落</text>
+<polygon points="258,96 332,118 332,176 258,154" fill="#f2f2f2" stroke="#111" stroke-width="2.2"/>
+<text x="295" y="132" font-size="13" text-anchor="middle">Weil</text>
+<text x="295" y="150" font-size="13" text-anchor="middle">平面</text>
+<circle cx="270" cy="112" r="4.5" fill="#111"/>
+<circle cx="316" cy="162" r="4.5" fill="#111"/>
+<text x="392" y="102" font-size="13.5">W_K：二维例外空间</text>
+<text x="392" y="122" font-size="13.5">（恰好两页）</text>
+<line x1="334" y1="110" x2="386" y2="98" stroke="#888" stroke-width="1.2"/>
+<text x="392" y="162" font-size="13.5">两个余维 4 代数闭链</text>
+<text x="392" y="182" font-size="13.5">（本文构造）</text>
+<line x1="318" y1="164" x2="386" y2="158" stroke="#888" stroke-width="1.2"/>
+<text x="280" y="258" font-size="14" text-anchor="middle">定理：K 任取、极化任取，W_K 整个由代数闭链类张成</text>
+</svg>
+
+</div>
+
+主定理代入：对每个分裂 Weil 型八重簇（`@@M@@K@@` 任取、相容极化类型任取、连带额外自同态的成员也算），`@@M@@W_K(A)\subset\mathrm{im}\bigl(\CH^4(A)\otimes\Q\to H^8(A,\Q)\bigr)@@`——两页笔记各有真骨头代笔。四维簇与分裂六维簇是 Markman 早先拿下的，分裂八重簇正是这条路线公开的下一站。
+
+**为什么值得关心**
+
+它是这条经典路线图上悬着的"下一关"，本文攻克之余还把一切虚二次域、一切极化类型与特殊成员一次扫清。
+
+> 暂无形式化证明（AI 结果待核验）
+
 ## 一句话结论
 
 论文证明了：每个"分裂"（split）Weil 型复阿贝尔八重簇上的全体有理 Weil 类皆为代数闭链类，对一切虚二次域、一切相容极化及带额外自同态的成员成立，从而在该族中彻底解决这一 Hodge 猜想的经典检验问题。

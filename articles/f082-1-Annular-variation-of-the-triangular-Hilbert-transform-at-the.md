@@ -13,6 +13,45 @@ pdfname: ""
 
 > 结果族 082：Annular variation and dyadic absolute bounds for the triangular Hilbert transform　·　学科：Real and complex analysis　·　验证状态：暂无形式化证明，请以社区核验为准
 
+## 入门导读 🐣
+
+医生看心电图，不只看某一刻的读数，还要看整条曲线的"起伏总量"——起伏有限，心跳才规律。这篇论文研究一个著名奇异积分（三角 Hilbert 变换）在所有可能截断下的读数序列，证明其 `@@M@@r@@`-变差（起伏总量）能被输入牢牢控制——读数不但有界，而且收敛得非常安分，不会反复横跳。
+
+**关键词卡片**
+
+- 三角 Hilbert 变换（triangular Hilbert transform）：`@@M@@\int F(x{+}t,y)G(x,y{+}t)\frac{dt}{t}@@`，两个函数沿两个方向平移后以 `@@M@@1/t@@` 为核纠缠在一起
+- 环形截断（annular truncation）：只积分 `@@M@@\varepsilon<|t|<R@@` 的"圆环"部分以避开奇点
+- r-变差（r-variation）：把序列切成若干段，各段增量绝对值的 `@@M@@r@@` 次方和开 `@@M@@r@@` 次方，衡量抖动的剧烈程度
+- 极大算子（maximal operator）：一切截断读数中的最大值，"一把尺子管住所有时刻"
+- 主值（principal value）：截断端点 `@@M@@\varepsilon\to0@@`、`@@M@@R\to\infty@@` 时的极限值
+
+**看个具体例子**
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280">
+<line x1="60" y1="150" x2="500" y2="150" stroke="#bbb"/>
+<path d="M60,150 C110,60 160,230 210,110 C260,40 300,220 350,120 C400,60 440,200 490,140" stroke="#369" stroke-width="2.5" fill="none"/>
+<line x1="150" y1="90" x2="150" y2="215" stroke="#c33" stroke-width="2"/>
+<line x1="260" y1="70" x2="260" y2="205" stroke="#c33" stroke-width="2"/>
+<line x1="380" y1="70" x2="380" y2="185" stroke="#c33" stroke-width="2"/>
+<text x="128" y="245" font-size="13" fill="#c33">|Δ₁|</text>
+<text x="248" y="245" font-size="13" fill="#c33">|Δ₂|</text>
+<text x="368" y="245" font-size="13" fill="#c33">|Δ₃|</text>
+<text x="80" y="40" font-size="14" fill="#333">读数随截断参数变化的"心电图"</text>
+<text x="80" y="265" font-size="13" fill="#333">变差 = (|Δ₁|ʳ+|Δ₂|ʳ+…)^(1/r) 被输入控制 ⟹ 读数收敛</text>
+</svg>
+
+</div>
+
+数字版定理：对一切 `@@M@@r>2@@` 与复值 `@@M@@F,G\in L^3(\mathbb R^2)@@`，`@@M@@\|V_r(F,G)\|_{L^{3/2}}\le C_r\|F\|_3\|G\|_3@@`；分割可随输出点任取，段数不加限制。有限变差强于收敛：由此免费得到双端点极大估计与联合主值，并解决 Thiele 问题 13 的对称点情形。
+
+**为什么值得关心**
+
+三角圈不是二部图，此前的 Bellman 函数框架明确处理不了它，是纠缠奇异积分领域公认的硬骨头；变差估计是比有界性、极大值都更强的一揽子结论，一个定理收编三样。
+
+> 暂无形式化证明（AI 结果待核验）
+
 ## 一句话结论
 
 证明了三角 Hilbert 变换的环形 `@@M@@r@@`-变差（annular `@@M@@r@@`-variation）估计：对一切 `@@M@@r>2@@`，变差算子 `@@M@@V_r@@` 从复 `@@M@@L^3\times L^3@@` 有界映到 `@@M@@L^{3/2}@@`，且变差分割可随输出点任取。由此得到双端点极大估计与联合主值，并在对称点解决了 Thiele 的标量三角 Hilbert 变换问题。

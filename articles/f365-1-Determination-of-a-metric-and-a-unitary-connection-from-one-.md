@@ -13,6 +13,34 @@ pdfname: ""
 
 > 结果族 365：Joint metric and connection recovery from one boundary patch　·　学科：Partial differential equations　·　验证状态：暂无形式化证明，请以社区核验为准
 
+## 入门导读 🐣
+
+想象一位医生只在手腕一小块皮肤上"打信号、收信号"，就要推断出全身骨骼的形状和神经传导的规则。这篇论文证明这在数学上可行：在高维空间体上，只用边界任意一小块补丁上的测量，就能同时恢复内部的"距离结构"（度量）与向量的"平行输运规则"（酉联络）——看不见的内部，被一小块边界彻底照亮。
+
+**关键词卡片**
+
+- Calderón 逆问题（Calderón inverse problem）：从边界上的输入—响应数据反推内部系数的一大类问题的总称。
+- 黎曼度量（Riemannian metric）：规定内部每一点各方向"长度与夹角"的几何量。
+- 酉联络（unitary connection）：向量值解在空间中移动时如何旋转、如何配对的规则。
+- 边界补丁（boundary patch）：边界上任意一小块开区域；输入与观测都被限制在这里。
+- 微分同胚歧义（diffeomorphism ambiguity）：光滑坐标重排造成的原理性不可分辨，是唯一无法消除的歧义。
+
+**看个具体例子**
+
+定理代入：若两组 `@@M@@(g_1,A_1)@@` 与 `@@M@@(g_2,A_2)@@` 在同一补丁 `@@M@@\Gamma@@` 上的能量型测量相等，则存在 `@@M@@\Phi@@` 与 `@@M@@U@@` 使 `@@M@@g_2=\Phi^*g_1@@`、`@@M@@A_2=U^{-1}(\Phi^*A_1)U+U^{-1}dU@@`，且 `@@M@@\Phi|_\Gamma=\mathrm{Id}@@`、`@@M@@U|_\Gamma=I@@`。这两个变换恰好保持测量不变，所以结论描述的就是全部歧义；联络无需满足任何场方程，补丁也不必连通。
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280"><ellipse cx="290" cy="135" rx="140" ry="75" fill="none" stroke="#333" stroke-width="2"/><path d="M172,95 Q150,135 172,175" fill="none" stroke="#333" stroke-width="7"/><text x="60" y="62" font-size="15" fill="#333">边界补丁 Γ</text><ellipse cx="310" cy="135" rx="80" ry="45" fill="none" stroke="#999" stroke-width="1.5" stroke-dasharray="6 5"/><ellipse cx="310" cy="135" rx="40" ry="22" fill="none" stroke="#999" stroke-width="1.5" stroke-dasharray="6 5"/><text x="352" y="176" font-size="15" fill="#555">度量 g</text><text x="240" y="100" font-size="15" fill="#555">联络 A</text><line x1="110" y1="115" x2="158" y2="127" stroke="#888" stroke-width="2"/><polygon points="158,127 147,128 149,121" fill="#888"/><line x1="158" y1="150" x2="110" y2="162" stroke="#888" stroke-width="2"/><polygon points="110,162 121,163 119,156" fill="#888"/><text x="55" y="205" font-size="15" fill="#555">输入与输出都在 Γ 上</text></svg>
+
+</div>
+
+**为什么值得关心**
+
+此前光滑范畴的"度量＋联络"联合恢复只在实解析或全边界测量下已知；本文同时去掉这两个限制，把测量压缩到任意小的一块补丁。
+
+> 暂无形式化证明（AI 结果待核验）
+
 ## 一句话结论
 在 `@@M@@n\ge 3@@` 维紧流形上，仅用一个任意小的边界开补丁做零频率测量（输入与观测都限制在该补丁上），就能同时确定光滑黎曼度量和秩二埃尔米特丛上的光滑酉联络，且只差一个在该补丁上恒为恒等的微分同胚与酉规范变换。
 

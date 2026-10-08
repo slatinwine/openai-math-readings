@@ -13,6 +13,33 @@ pdfname: ""
 
 > 结果族 244：The Partition Principle does not imply Choice　·　学科：Mathematical logic　·　验证状态：主结果已 Lean 形式化
 
+## 入门导读 🐣
+
+把无穷多张牌全部发进若干非空的堆。"分割原理"说：只要发得完，就总能从牌里挑出一组互不相同的牌、与堆一一对应。乍看这就是"每堆各挑一张"的选择公理；本文证明它其实更弱——两者并不等价。这个 1902 年提出的问题悬置一百二十余年后，终于有了答案。
+
+**关键词卡片**
+
+- 分割原理（Partition Principle, PP）：若存在满射 `@@M@@X\to Y@@`，则存在单射 `@@M@@Y\to X@@`。
+- 选择公理（Axiom of Choice, AC）：从任意一族非空集合里各选出一个元素总是可能的。
+- 满射／单射（surjection/injection）：满射把 `@@M@@X@@`"铺满"`@@M@@Y@@`，每个目标都被打到；单射不重复地嵌入。
+- 相对一致性（relative consistency）：若 ZF 无矛盾，则 ZF+PP+¬AC 也无矛盾。
+
+**看个具体例子**
+
+微妙之处在于：PP 保证的单射不必"从每堆里挑自家的牌"——落点完全自由（见下图红线）。定理断言：若 ZF 一致，则"分割原理＋对良序指标族的选择＋否定选择公理"也一致；换句话说，仅凭 PP 永远推不出 AC。
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280"><text x="190" y="40" font-size="14" fill="#333" text-anchor="middle">X（原集合：5 个元素）</text><circle cx="80" cy="80" r="9" fill="#2c7fb8"/><circle cx="145" cy="80" r="9" fill="#2c7fb8"/><circle cx="210" cy="80" r="9" fill="#2c7fb8"/><circle cx="275" cy="80" r="9" fill="#2c7fb8"/><circle cx="340" cy="80" r="9" fill="#2c7fb8"/><rect x="50" y="200" width="90" height="44" fill="none" stroke="#2c7fb8" stroke-width="2"/><rect x="185" y="200" width="90" height="44" fill="none" stroke="#2c7fb8" stroke-width="2"/><rect x="320" y="200" width="90" height="44" fill="none" stroke="#2c7fb8" stroke-width="2"/><text x="95" y="227" font-size="13" fill="#2c7fb8" text-anchor="middle">块 B1</text><text x="230" y="227" font-size="13" fill="#2c7fb8" text-anchor="middle">块 B2</text><text x="365" y="227" font-size="13" fill="#2c7fb8" text-anchor="middle">块 B3</text><line x1="80" y1="90" x2="95" y2="190" stroke="#666" stroke-width="1.6"/><line x1="145" y1="90" x2="100" y2="190" stroke="#666" stroke-width="1.6"/><line x1="210" y1="90" x2="230" y2="190" stroke="#666" stroke-width="1.6"/><line x1="275" y1="90" x2="235" y2="190" stroke="#666" stroke-width="1.6"/><line x1="340" y1="90" x2="365" y2="190" stroke="#666" stroke-width="1.6"/><polygon points="95,200 91,190 99,190" fill="#666"/><polygon points="100,200 96,190 104,190" fill="#666"/><polygon points="230,200 226,190 234,190" fill="#666"/><polygon points="235,200 231,190 239,190" fill="#666"/><polygon points="365,200 361,190 369,190" fill="#666"/><line x1="95" y1="198" x2="212" y2="94" stroke="#c0392b" stroke-width="2" stroke-dasharray="6 4"/><line x1="230" y1="198" x2="84" y2="94" stroke="#c0392b" stroke-width="2" stroke-dasharray="6 4"/><line x1="365" y1="198" x2="150" y2="94" stroke="#c0392b" stroke-width="2" stroke-dasharray="6 4"/><polygon points="212,86 207,96 217,96" fill="#c0392b"/><polygon points="84,86 79,96 89,96" fill="#c0392b"/><polygon points="150,86 145,96 155,96" fill="#c0392b"/><text x="468" y="120" font-size="13" fill="#666" text-anchor="middle">灰线：满射 f</text><text x="468" y="145" font-size="13" fill="#c0392b" text-anchor="middle">红线：单射 j</text><text x="280" y="266" font-size="13" fill="#666" text-anchor="middle">j 不必取本块元素——这份自由正是 PP 弱于 AC 的空隙</text></svg>
+
+</div>
+
+**为什么值得关心**
+
+这是无选择集合论中最著名的公开问题之一，答案出乎多数人预料；配套的传递对称模型还保持序数不变、不新增基模型元素的可数序列。更弱的两个推论——对偶 Cantor–Schröder–Bernstein 原理与弱分割原理——也随之与选择公理分离。
+
+> 已 Lean 形式化
+
 ## 一句话结论
 
 本文证明分割原理不蕴含选择公理：若 ZF 一致，则 `@@M@@\ZF+\PP+\ACwo+\neg\AC@@` 一致，否定了自 1902 年 Beppo Levi 提出后悬置百余年的公开问题。

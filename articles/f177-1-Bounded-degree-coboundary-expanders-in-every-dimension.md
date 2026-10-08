@@ -13,6 +13,74 @@ pdfname: ""
 
 > 结果族 177：Bounded-degree coboundary expanders　·　学科：Combinatorics　·　验证状态：暂无形式化证明，请以社区核验为准
 
+## 入门导读 🐣
+
+好的路网没有死角：任何一小片社区都有成比例多的路通向外界，所以堵不住、消息传得快——这就是"扩张图"。数学家进一步想问：能不能在三维、四维乃至任意维的"高维积木世界"里也搭出这种无死角的结构，而且每块积木只挨着固定数目的邻居？这篇论文给出肯定答案。
+
+**关键词卡片**
+
+- 单纯复形（simplicial complex）：由点、边、三角形、四面体……逐层拼粘而成的高维图形。
+- 上边缘扩张（coboundary expansion）：高维版"无死角"：低维面上的取值模式，要么边界很大，要么本身近乎平凡。
+- 有界度（bounded degree）：每个顶点所属的最高维面数有统一上限，局部结构保持简单。
+- 𝔽₂（field with two elements）：只有 0 和 1、加法不进位只看奇偶的数系。
+
+**看个具体例子**
+
+一维时"无死角"就是：任意一半顶点与另一半之间有许多边相连，见下图右。主定理把它推广到一切维数 d≥3：存在顶点度一致有界、规模可任意大的复形，使所有低维"切口"满足 `@@M@@\|\delta_i f\|\ge\eps\,\mathrm{dist}(f,B^i)@@`——想只切一点点，办不到。
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280">
+<line x1="150" y1="40" x2="150" y2="215" stroke="#999" stroke-width="1.8" stroke-dasharray="7,5"/>
+<line x1="430" y1="40" x2="430" y2="215" stroke="#999" stroke-width="1.8" stroke-dasharray="7,5"/>
+<line x1="182" y1="172" x2="140" y2="190" stroke="#d62728" stroke-width="3.5"/>
+<line x1="140" y1="70" x2="182" y2="88" stroke="#d62728" stroke-width="3.5"/>
+<line x1="80" y1="130" x2="98" y2="88" stroke="#bbb" stroke-width="2"/>
+<line x1="98" y1="88" x2="140" y2="70" stroke="#bbb" stroke-width="2"/>
+<line x1="140" y1="190" x2="98" y2="172" stroke="#bbb" stroke-width="2"/>
+<line x1="98" y1="172" x2="80" y2="130" stroke="#bbb" stroke-width="2"/>
+<line x1="182" y1="88" x2="200" y2="130" stroke="#bbb" stroke-width="2"/>
+<line x1="200" y1="130" x2="182" y2="172" stroke="#bbb" stroke-width="2"/>
+<line x1="462" y1="172" x2="420" y2="190" stroke="#bbb" stroke-width="2"/>
+<line x1="420" y1="190" x2="378" y2="172" stroke="#bbb" stroke-width="2"/>
+<line x1="378" y1="172" x2="360" y2="130" stroke="#bbb" stroke-width="2"/>
+<line x1="360" y1="130" x2="378" y2="88" stroke="#bbb" stroke-width="2"/>
+<line x1="480" y1="130" x2="462" y2="172" stroke="#d62728" stroke-width="3.5"/>
+<line x1="420" y1="70" x2="462" y2="88" stroke="#d62728" stroke-width="3.5"/>
+<line x1="462" y1="88" x2="480" y2="130" stroke="#bbb" stroke-width="2"/>
+<line x1="480" y1="130" x2="360" y2="130" stroke="#d62728" stroke-width="3.5"/>
+<line x1="462" y1="172" x2="378" y2="88" stroke="#d62728" stroke-width="3.5"/>
+<line x1="420" y1="190" x2="420" y2="70" stroke="#d62728" stroke-width="3.5"/>
+<line x1="378" y1="172" x2="462" y2="88" stroke="#d62728" stroke-width="3.5"/>
+<circle cx="200" cy="130" r="5.5" fill="#fff" stroke="#333" stroke-width="2"/>
+<circle cx="182" cy="172" r="5.5" fill="#fff" stroke="#333" stroke-width="2"/>
+<circle cx="140" cy="190" r="5.5" fill="#fff" stroke="#333" stroke-width="2"/>
+<circle cx="98" cy="172" r="5.5" fill="#fff" stroke="#333" stroke-width="2"/>
+<circle cx="80" cy="130" r="5.5" fill="#fff" stroke="#333" stroke-width="2"/>
+<circle cx="98" cy="88" r="5.5" fill="#fff" stroke="#333" stroke-width="2"/>
+<circle cx="140" cy="70" r="5.5" fill="#fff" stroke="#333" stroke-width="2"/>
+<circle cx="182" cy="88" r="5.5" fill="#fff" stroke="#333" stroke-width="2"/>
+<circle cx="480" cy="130" r="5.5" fill="#fff" stroke="#333" stroke-width="2"/>
+<circle cx="462" cy="172" r="5.5" fill="#fff" stroke="#333" stroke-width="2"/>
+<circle cx="420" cy="190" r="5.5" fill="#fff" stroke="#333" stroke-width="2"/>
+<circle cx="378" cy="172" r="5.5" fill="#fff" stroke="#333" stroke-width="2"/>
+<circle cx="360" cy="130" r="5.5" fill="#fff" stroke="#333" stroke-width="2"/>
+<circle cx="378" cy="88" r="5.5" fill="#fff" stroke="#333" stroke-width="2"/>
+<circle cx="420" cy="70" r="5.5" fill="#fff" stroke="#333" stroke-width="2"/>
+<circle cx="462" cy="88" r="5.5" fill="#fff" stroke="#333" stroke-width="2"/>
+<text x="140" y="238" fill="#555" font-size="13" text-anchor="middle">圈：切一刀只断 2 条</text>
+<text x="420" y="238" fill="#555" font-size="13" text-anchor="middle">扩张图：切一刀断 5 条</text>
+<text x="280" y="264" fill="#555" font-size="13" text-anchor="middle">一维直观；论文把这种"无死角"推广到一切维数 d ≥ 3</text>
+</svg>
+
+</div>
+
+**为什么值得关心**
+
+高维扩张结构是拓扑组合与理论计算机科学的基础建材；此前三维以上的构造要么顶点度随规模增长，要么只能保证较弱的性质、排除不了非平凡的上同调，本文同时守住度数与扩张两条线，补齐了所有维数。
+
+> 暂无形式化证明（AI 结果待核验）
+
 ## 一句话结论
 
 对每个维数 `@@M@@d\ge 3@@`，论文构造出顶点数可任意增大、顶点度一致有界、且在所有低于 `@@M@@d@@` 的维数上具有一致 `@@M@@\mathbb F_2@@` 上边缘扩张（coboundary expansion）的有限单纯复形；与已知的图和二维情形合并，在有界度约束下覆盖了全部正维数。

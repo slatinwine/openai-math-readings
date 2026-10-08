@@ -13,6 +13,44 @@ pdfname: ""
 
 > 结果族 218：Conformal universality for weakly interacting and random-bond Ising models　·　学科：Probability and statistical mechanics　·　验证状态：暂无形式化证明，请以社区核验为准
 
+## 入门导读 🐣
+
+把磁铁想成一张格子布，每个格子住着一枚小箭头，相邻箭头爱保持一致。现在故意把格与格之间的"胶水"随机调稠调稀一点点：强度 `@@M@@1.1@@` 或 `@@M@@0.9@@` 各占一半。问：从边界裂开的那条蜿蜒大缝，放大之后还认得出完美格子里的那条随机曲线吗？本文证明：只要扰动足够小，认得出——裂缝的极限规律与无扰动情形是同一条曲线。
+
+**关键词卡片**
+
+- 伊辛模型（Ising model）：格子上的箭头模型，相邻箭头倾向同向，是研究磁铁相变的经典玩具。
+- 随机键（random bond）：相邻箭头间的耦合强度独立随机地取 `@@M@@1\pm\varepsilon@@` 两个值，好比胶水稠稀不均。
+- 临界温度（critical temperature）：磁铁"集体性格"突变的温度点，界面在此最摇晃。
+- 弦 SLE₃（chordal SLE₃）：连接区域边界两点的随机曲线，纯 Ising 界面的已知极限。
+- 固定环境（quenched）：先定死一套随机胶水取值再看规律；定理的收敛按环境概率成立。
+
+**看个具体例子**
+
+取 `@@M@@\varepsilon=0.1@@`。临界点由自对偶方程 `@@M@@(e^{2\beta\cdot1.1}-1)(e^{2\beta\cdot0.9}-1)=2@@` 解出，得 `@@M@@\beta_c\approx0.442@@`，比纯模型的 `@@M@@0.441@@` 略高。在此温度下，从 `@@M@@a@@` 到 `@@M@@b@@` 的界面虽在随机键上跌跌撞撞，宏观形状却收敛到同一条弦 SLE₃：
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280">
+  <rect x="60" y="40" width="440" height="200" fill="none" stroke="#333" stroke-width="2"/>
+  <text x="150" y="64" font-size="18" fill="#c0392b">＋＋＋＋＋＋＋＋</text>
+  <text x="150" y="228" font-size="18" fill="#2980b9">－ － － － － －</text>
+  <text x="32" y="250" font-size="16" fill="#333">a</text>
+  <text x="508" y="250" font-size="16" fill="#333">b</text>
+  <path d="M60,240 C120,160 180,220 240,120 C300,60 360,180 430,120 C460,95 480,150 500,240" fill="none" stroke="#27ae60" stroke-width="3"/>
+  <text x="330" y="200" font-size="15" fill="#27ae60">界面 → 弦 SLE₃</text>
+</svg>
+
+</div>
+
+上边界的＋与下边界的－对峙，绿色界面随机漫游却整体可辨认：随机键只留下对数量级的痕迹，不足以改变极限曲线。
+
+**为什么值得关心**
+
+它把物理学家"二维弱无序处于边缘、不改变普适类"的重整化直觉，第一次升级成整条曲线层面的严格定理。
+
+> 暂无形式化证明（AI 结果待核验）
+
 ## 一句话结论
 
 对键强度取 `@@M@@1\pm\epsilon@@`（对称二值、独立同分布）的方格 Ising 模型，证明了只要 `@@M@@\epsilon@@` 足够小且固定，在自发磁化定义的临界温度处，固定环境下的 Dobrushin 自旋接口收敛到弦 `@@M@@\mathrm{SLE}_3@@`，并给出临界点的自对偶刻画。

@@ -13,6 +13,54 @@ pdfname: ""
 
 > 结果族 283：Polynomial-time unitary synthesis from a Boolean Oracle　·　学科：Mathematical physics　·　验证状态：暂无形式化证明，请以社区核验为准
 
+## 入门导读 🐣
+
+一个 `@@M@@n@@` 比特量子操作像一本 `@@M@@2^n\times2^n@@` 页的巨型操作手册，根本没法整本塞进电路。本文的回答很妙：电路只按 `@@M@@n@@` 生成（很小），把手册的全部内容做成一个"查询窗口"（布尔 oracle）——机器边干活边提问，就能把任意手册执行到误差不超过 `@@M@@\tfrac12@@` 的水准。
+
+**关键词卡片**
+
+- 幺正（unitary）：保持长度不变的量子操作，量子世界里的"旋转"
+- 布尔 oracle：可供量子线路相干查询的布尔函数，像无限耐心的答疑窗口
+- 菱范数（diamond norm）：衡量两个量子通道相差多远的距离
+- 固定门集 `@@M@@\{H,T,\mathrm{CNOT}\}@@`：仅有的几种基本积木
+- 多项式规模（polynomial size）：比特数、门数、提问次数都只是 `@@M@@n@@` 的多项式
+
+**看个具体例子**
+
+数字版定理：`@@M@@n=10@@` 时手册有 `@@M@@2^{10}\times2^{10}\approx10^6@@` 格，而线路规模仍只是 `@@M@@n@@` 的某个固定多项式；对每个目标 `@@M@@U@@`，存在一个布尔函数 `@@M@@f@@`（手册的"编码"），使输出通道与 `@@M@@U@@` 的菱范数距离 `@@M@@\le\tfrac12@@`。注意量词：线路不认识 `@@M@@U@@`，认识 `@@M@@U@@` 的是 oracle。
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280">
+  <text x="28" y="32" font-size="13" fill="#000">目标 U：2^n × 2^n 的巨型手册</text>
+  <rect x="28" y="45" width="180" height="130" fill="none" stroke="#333" stroke-width="1.5"/>
+  <line x1="88" y1="45" x2="88" y2="175" stroke="#999" stroke-width="1"/>
+  <line x1="148" y1="45" x2="148" y2="175" stroke="#999" stroke-width="1"/>
+  <line x1="28" y1="88" x2="208" y2="88" stroke="#999" stroke-width="1"/>
+  <line x1="28" y1="131" x2="208" y2="131" stroke="#999" stroke-width="1"/>
+  <rect x="300" y="50" width="130" height="46" fill="none" stroke="#c00" stroke-width="2"/>
+  <text x="316" y="78" font-size="13" fill="#c00">布尔 oracle f</text>
+  <line x1="215" y1="105" x2="292" y2="76" stroke="#000" stroke-width="1.5"/>
+  <path d="M292 76 l-11 -1 v11 z" fill="#000"/>
+  <rect x="300" y="150" width="232" height="66" fill="none" stroke="#333" stroke-width="1.5"/>
+  <text x="314" y="177" font-size="13" fill="#000">电路 A_n（只由 n 生成）</text>
+  <text x="314" y="200" font-size="12" fill="#666">门集只有 {H, T, CNOT}</text>
+  <line x1="365" y1="100" x2="365" y2="145" stroke="#000" stroke-width="1.5"/>
+  <path d="M365 145 l-5 -10 h10 z" fill="#000"/>
+  <path d="M365 100 l-5 10 h10 z" fill="#000"/>
+  <text x="382" y="128" font-size="12" fill="#000">边问边做</text>
+  <text x="58" y="235" font-size="13" fill="#000">手册不必装进电路；</text>
+  <text x="58" y="257" font-size="13" fill="#000">oracle 替它保管，电路只需提问</text>
+</svg>
+
+</div>
+
+**为什么值得关心**
+
+它正面解决了 Aaronson–Kuperberg 在 2007 年提出的幺正合成问题（常数误差版本），也标明了代价：不给出从 `@@M@@U@@` 高效构造 oracle 的经典算法。
+
+> 暂无形式化证明（AI 结果待核验）
+
 ## 一句话结论
 
 在常数误差意义下正面解决了 Aaronson–Kuperberg 幺正合成问题：仅由 `@@M@@n@@` 生成的多项式规模量子 oracle 线路，配上一个依目标幺正而定的布尔函数，即可把任意 `@@M@@n@@` 比特幺正通道实现到菱范数误差 `@@M@@\le 1/2@@`。

@@ -13,6 +13,48 @@ pdfname: ""
 
 > 结果族 197：A torsion-free group algebra that is not directly finite　·　学科：Algebra　·　验证状态：主结果已 Lean 形式化
 
+## 入门导读 🐣
+
+可逆的整数方阵，行列式的绝对值至少是 1——行列式是整数，不为零就得是 ±1、±2……这篇论文研究给"无限群上的矩阵"量出的一个类似行列式的数，直觉认为它同样不该小于 1，作者却造出一个严格落在 0 与 1 之间的例子。就像给一栋无限大的房子量面积，结果量出了 0.7 个单位。这个"平均对数"版行列式在有限交换情形就退化为普通行列式的绝对值，可视为"体积缩放率"向无穷维的推广。
+
+**关键词卡片**
+
+- 群环（group ring）：系数配在群元素上的有限和，可以相加相乘
+- Fuglede–Kadison 行列式（Fuglede–Kadison determinant）：把行列式推广到无限维的办法：先取对数、再对群求平均
+- 幂等元（idempotent）：满足 `@@M@@p^2=p@@` 的元素，像投影仪，把整个空间投出一块"影子"
+- sofic 群（sofic group）：能用有限图案逼近的好群；sofic 群上这个行列式的下界已知成立
+
+**看个具体例子**
+
+定理造出整数群环上的方阵 `@@M@@A@@`：它在有理群环上可逆，但其 Fuglede–Kadison 行列式
+
+`@@M@@D\det_{\mathcal N(G)}(T_A)=q^{-\theta},\qquad 0<q^{-\theta}<1 ,@@`
+
+缺口 `@@M@@\theta=\frac13\left(\frac23\right)^{|S|}>0@@` 来自一个投影的"实际迹"比它的列数多出的部分。矩阵有有界逆、谱远离零点，说明出问题的正是下界本身，而不是行列式的定义。放到数轴上看：
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280">
+<line x1="60" y1="160" x2="500" y2="160" stroke="#555" stroke-width="3"/>
+<line x1="60" y1="145" x2="60" y2="175" stroke="#555" stroke-width="3"/>
+<line x1="500" y1="145" x2="500" y2="175" stroke="#555" stroke-width="3"/>
+<text x="54" y="205" font-size="18" fill="#222">0</text>
+<text x="494" y="205" font-size="18" fill="#222">1</text>
+<circle cx="280" cy="160" r="8" fill="#d33"/>
+<text x="196" y="125" font-size="17" fill="#d33">q^(−θ) 落在这里</text>
+<line x1="262" y1="132" x2="278" y2="152" stroke="#d33" stroke-width="1.5"/>
+<text x="70" y="60" font-size="15" fill="#888">普通整数矩阵：|det| ≥ 1</text>
+<text x="315" y="240" font-size="15" fill="#888">本例：严格落在 0 与 1 之间</text>
+</svg>
+
+</div>
+
+**为什么值得关心**
+
+这是无限制版群环行列式猜想（Lück 下界）的首个反例，且失败的是下界本身、不是计算方式；反例群自然又是非 sofic 群。它与两篇姊妹篇互为犄角，构成对直接有限性、满射性、行列式三大猜想的连环否定。
+
+> 已 Lean 形式化
+
 ## 一句话结论
 
 构造出整群环矩阵 `@@M@@A\in\mathrm{Mat}_n(\mathbb Z[G_D])@@`，它在有理群环上可逆，而其 Fuglede–Kadison 行列式严格介于 `@@M@@0@@` 与 `@@M@@1@@` 之间（精确值 `@@M@@q^{-\theta}@@`），否定无限制版本的群环行列式猜想。

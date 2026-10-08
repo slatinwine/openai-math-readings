@@ -13,6 +13,54 @@ pdfname: ""
 
 > 结果族 110：Optimal-order randomized k-server on arbitrary metrics　·　学科：Theoretical computer science　·　验证状态：暂无形式化证明，请以社区核验为准
 
+## 入门导读 🐣
+
+想象一家只有 k 辆车的代驾公司：订单一个接一个冒出来，调度员必须立刻派一辆车过去，而且永远猜不到下一单在哪。这篇论文回答一个憋了三十多年的问题：会掷骰子的随机调度，最坏会比"开了上帝视角、早就知道全部订单"的完美调度贵多少倍？答案是至多约 (log k)² 倍——并且证明了这个倍数已经不可能再有本质改进。
+
+**关键词卡片**
+
+- k-服务器问题（k-server problem）：k 个服务员待命，请求逐个到来，每次必须派一人前往，代价是移动距离。
+- 竞争比（competitive ratio）：在线算法的期望花费除以事后最优花费，越接近 1 越好。
+- 随机化策略（randomized policy）：允许调度掷骰子，对手事先看不到骰子结果。
+- 度量空间（metric space）：一张带距离的抽象地图，任何形状都行，包括无限大。
+- 不经意对手（oblivious adversary）：必须事先写死请求序列、不能临场换招的对手。
+
+**看个具体例子**
+
+取 k=15 辆车：经典的确定性最优策略约 2k−1=29 倍；本文的随机策略期望只需 `@@M@@C\cdot(\log_2 16)^2=C\cdot 16@@` 倍（C 为绝对常数），而且对每张地图、每组起点、之后的一切订单序列都由同一个策略包办。2023 年已有人造出地图，逼任何随机策略都付出约 log²k 倍——所以"平方对数"这个阶刚好卡在最优。
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280">
+  <text x="280" y="26" text-anchor="middle" font-size="15" fill="#333333">抽象地图：3 个服务器（蓝）迎击新请求（红）</text>
+  <line x1="90" y1="210" x2="210" y2="130" stroke="#cccccc" stroke-width="2"/>
+  <line x1="210" y1="130" x2="350" y2="190" stroke="#cccccc" stroke-width="2"/>
+  <line x1="210" y1="130" x2="270" y2="70" stroke="#cccccc" stroke-width="2"/>
+  <line x1="270" y1="70" x2="430" y2="95" stroke="#cccccc" stroke-width="2"/>
+  <line x1="350" y1="190" x2="480" y2="150" stroke="#cccccc" stroke-width="2"/>
+  <line x1="90" y1="210" x2="150" y2="80" stroke="#cccccc" stroke-width="2"/>
+  <line x1="150" y1="80" x2="270" y2="70" stroke="#cccccc" stroke-width="2"/>
+  <circle cx="90" cy="210" r="8" fill="#3b82c4"/>
+  <text x="90" y="240" text-anchor="middle" font-size="13" fill="#3b82c4">服务器1</text>
+  <circle cx="210" cy="130" r="8" fill="#3b82c4"/>
+  <text x="182" y="126" text-anchor="middle" font-size="13" fill="#3b82c4">服务器2</text>
+  <circle cx="350" cy="190" r="8" fill="#3b82c4"/>
+  <text x="350" y="220" text-anchor="middle" font-size="13" fill="#3b82c4">服务器3</text>
+  <circle cx="430" cy="95" r="10" fill="#e0592a"/>
+  <text x="452" y="80" text-anchor="middle" font-size="13" fill="#e0592a">新请求</text>
+  <line x1="220" y1="123" x2="412" y2="98" stroke="#e0592a" stroke-width="2" stroke-dasharray="7 5"/>
+  <polygon points="420,97 413,92 411,104" fill="#e0592a"/>
+  <text x="280" y="263" text-anchor="middle" font-size="13" fill="#555555">派哪辆车由骰子决定：期望总里程 ≤ C·(log(k+1))² × 上帝视角最优</text>
+</svg>
+
+</div>
+
+**为什么值得关心**
+
+k-server 是缓存置换、云资源调度等在线问题的共同骨架；本文确定了随机化竞争比的精确阶数，为这条争论多年的战线画上句号。
+
+> 暂无形式化证明（AI 结果待核验）
+
 ## 一句话结论
 
 证明了在任意度量空间上，随机化 `@@M@@k@@`-server 对不经意请求序列可达竞争比 `@@M@@O((\log(k+1))^2)@@`，与已知最坏情形下界 `@@M@@\Omega(\log^2 k)@@` 同阶，首次锁定了这一基本在线问题随机竞争比的精确阶数。

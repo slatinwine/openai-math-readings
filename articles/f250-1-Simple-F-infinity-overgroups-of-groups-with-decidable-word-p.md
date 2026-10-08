@@ -13,6 +13,49 @@ pdfname: ""
 
 > 结果族 250：Boone–Higman embeddings with higher finiteness　·　学科：Group theory　·　验证状态：暂无形式化证明，请以社区核验为准
 
+## 入门导读 🐣
+
+上一篇导读说，字问题可判定的群能搬进"说明书有限"的单群；这一篇把装修标准推向极致：房子不仅说明书有限，而且每一层楼（每一个维数）只用了有限块砖，楼层却可以无限向上。论文证明：任何字问题可判定的有限生成群，都能搬进这样一栋"每层都精简"的通透公寓——即类型 `@@M@@F_\infty@@` 的单群。
+
+**关键词卡片**
+
+- 类型 F∞（type F∞）：拥有"每维只含有限多胞腔"的分类空间；`@@M@@F_1@@` 即有限生成、`@@M@@F_2@@` 即有限呈现
+- 单群（simple group）：没有非平凡正规子群、"内部无隔间"的群
+- 字问题（word problem）：算法能否判定一个词代表单位元
+- 高传递作用（highly transitive action）：任意长度的互异有序点组都能被搬到任一同长点组的作用
+- 扭曲 Brin–Thompson 群（twisted Brin–Thompson group）：由高传递作用组装出的单群，证明的终点站
+
+**看个具体例子**
+
+`@@M@@\mathbb{Z}@@` 的分类空间是圆周：一个 0 维砖块加一个 1 维砖块，更高维一块不用，所以 `@@M@@\mathbb{Z}@@` 是 `@@M@@F_\infty@@`。而输入群 `@@M@@G@@` 可能连有限呈现都不是（关系无穷多）。定理数字版：这样的 `@@M@@G@@` 照样嵌入某个非平凡单群 `@@M@@H@@`，且 `@@M@@H@@` 的分类空间每一维只有有限个胞腔；`@@M@@H@@` 甚至可由两个有限阶元素生成。作为推论，"字问题可判定的有限生成群"恰好就是 `@@M@@F_\infty@@` 单群的全部有限生成子群。
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280">
+  <text x="20" y="30" font-size="15" fill="#333333">F∞ 单群 H：每层砖块有限，楼层无限</text>
+  <rect x="110" y="60" width="230" height="34" fill="#eceff1" stroke="#546e7a"/>
+  <text x="122" y="82" font-size="13" fill="#455a64">3 维：5 块砖（关系之间的关系）</text>
+  <rect x="110" y="94" width="230" height="34" fill="#e3f2fd" stroke="#1565c0"/>
+  <text x="122" y="116" font-size="13" fill="#0d47a1">2 维：3 块砖（有限呈现）</text>
+  <rect x="110" y="128" width="230" height="34" fill="#e8f5e9" stroke="#2e7d32"/>
+  <text x="122" y="150" font-size="13" fill="#1b5e20">1 维：2 块砖（有限生成）</text>
+  <line x1="225" y1="60" x2="225" y2="42" stroke="#90a4ae" stroke-dasharray="4 3"/>
+  <text x="240" y="54" font-size="12" fill="#78909c">更高维继续，每层仍有限</text>
+  <circle cx="450" cy="150" r="52" fill="#fff3e0" stroke="#ef6c00" stroke-width="2"/>
+  <text x="420" y="144" font-size="13" fill="#e65100">任意字问题</text>
+  <text x="420" y="162" font-size="13" fill="#e65100">可判定的群 G</text>
+  <line x1="398" y1="150" x2="348" y2="150" stroke="#ef6c00" stroke-width="2"/>
+  <polygon points="348,150 360,144 360,156" fill="#ef6c00"/>
+</svg>
+
+</div>
+
+**为什么值得关心**
+
+`@@M@@F_\infty@@` 蕴含有限呈现，故它顺手给出 Boone–Higman 猜想的另一证明，并把"单群能造得多精简"推到理论极限；此前除若干特殊群族外，一般情形无从下手。
+
+> 暂无形式化证明（AI 结果待核验）
+
 ## 一句话结论
 证明了 Boone–Higman 猜想的高阶有限性强化：每个字问题（word problem）可判定的有限生成群，都嵌入一个 `@@M@@F_\infty@@` 型的非平凡单群——即拥有每维只含有限多个胞腔的分类空间。由于 `@@M@@F_\infty@@` 蕴涵有限呈现，这同时给出了原猜想的另一条证明，并把单超群的有限性推到同伦的每一维。
 

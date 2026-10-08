@@ -13,6 +13,34 @@ pdfname: ""
 
 > 结果族 229：Exact three- and four-state reconstruction thresholds and four-state tree capacity　·　学科：Probability and statistical mechanics　·　验证状态：暂无形式化证明，请以社区核验为准
 
+## 入门导读 🐣
+
+还是传话游戏，但家谱不再整齐：有的支系代代单传，有的枝繁叶茂、增长时快时慢。什么时候全体后代仍能拼出祖宗的颜色？这篇论文给出一个漂亮的"体检指标"——把家谱当电线网络，算一个叫"容量"的量：容量为正就能重构，为零就不能。
+
+**关键词卡片**
+
+- 有界度确定性树（bounded-degree deterministic tree）：孩子数有上限、形状固定且已知的家谱。
+- 流到无穷（flow to infinity）：从根出发、每个节点流入等于流出的非负"信息流"。
+- 边阻 λ^(-2|e|)（edge resistance）：第 |e| 层的边阻力为 λ^(-2|e|)——越深处的水管越细。
+- L³ 容量（L³ capacity）：在"每条无穷路径的平方损耗不超过 1"约束下能送出的最大流量。
+- 重构优势（reconstruction advantage）：后代的猜测比随机猜好出的那一截。
+
+**看个具体例子**
+
+取 λ=1/2：第 k 层边阻为 4^k，第 3 层已是 64。一条代代单传的链：容量为 0，无法重构；换成满二叉树，d·λ^2=2×0.25=0.5，仍小于 1，容量仍为 0；把 λ 提到 0.8，则 d·λ^2=1.28，超过 1，容量变正，重构成立。主定理：重构当且仅当容量为正，对任意形状的有界度树都成立——判据只看树的"电学性质"，连增长时快时慢的怪树也能一次判明。
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280"><text x="280" y="26" font-size="14" fill="#333" text-anchor="middle">同一把"容量尺"量两棵树</text><line x1="140" y1="64" x2="140" y2="96" stroke="#333" stroke-width="2"/><line x1="140" y1="114" x2="140" y2="146" stroke="#333" stroke-width="2"/><line x1="140" y1="164" x2="140" y2="196" stroke="#333" stroke-width="2"/><circle cx="140" cy="55" r="9" fill="#333"/><circle cx="140" cy="105" r="8" fill="none" stroke="#333" stroke-width="2"/><circle cx="140" cy="155" r="8" fill="none" stroke="#333" stroke-width="2"/><circle cx="140" cy="205" r="8" fill="none" stroke="#333" stroke-width="2"/><text x="140" y="228" font-size="16" fill="#333" text-anchor="middle">⋮</text><text x="158" y="84" font-size="11" fill="#777">阻 4</text><text x="158" y="134" font-size="11" fill="#777">阻 16</text><text x="158" y="184" font-size="11" fill="#777">阻 64</text><text x="140" y="252" font-size="12" fill="#333" text-anchor="middle">单传链：容量 0，无法重构</text><line x1="410" y1="59" x2="340" y2="101" stroke="#333" stroke-width="1.5"/><line x1="410" y1="59" x2="480" y2="101" stroke="#333" stroke-width="1.5"/><line x1="340" y1="118" x2="305" y2="162" stroke="#333" stroke-width="1.5"/><line x1="340" y1="118" x2="375" y2="162" stroke="#333" stroke-width="1.5"/><line x1="480" y1="118" x2="445" y2="162" stroke="#333" stroke-width="1.5"/><line x1="480" y1="118" x2="515" y2="162" stroke="#333" stroke-width="1.5"/><circle cx="410" cy="50" r="9" fill="#333"/><circle cx="340" cy="110" r="8" fill="none" stroke="#333" stroke-width="2"/><circle cx="480" cy="110" r="8" fill="none" stroke="#333" stroke-width="2"/><circle cx="305" cy="170" r="7" fill="none" stroke="#333" stroke-width="2"/><circle cx="375" cy="170" r="7" fill="none" stroke="#333" stroke-width="2"/><circle cx="445" cy="170" r="7" fill="none" stroke="#333" stroke-width="2"/><circle cx="515" cy="170" r="7" fill="none" stroke="#333" stroke-width="2"/><text x="410" y="200" font-size="14" fill="#333" text-anchor="middle">⋯</text><text x="410" y="226" font-size="12" fill="#333" text-anchor="middle">二叉树 λ=0.8：d·λ^2 = 1.28 &gt; 1</text><text x="410" y="248" font-size="12" fill="#333" text-anchor="middle">容量为正，可以重构</text><text x="300" y="272" font-size="11" fill="#777" text-anchor="middle">（左例 λ=1/2：第 k 层边阻 4^k）</text></svg>
+
+</div>
+
+**为什么值得关心**
+
+不需要任何正则性或增长率假设的精确判据，连"指数临界边界"上的怪树也能判定，把 Ising 情形的 Pemantle–Peres 容量定理推广到了四态 Potts。
+
+> 暂无形式化证明（AI 结果待核验）。
+
 ## 一句话结论
 对 `@@M@@0<\lambda<1@@` 的铁磁四态 Potts 广播模型，证明在有界度确定性生根树上重构当且仅当树的带边阻 `@@M@@\lambda^{-2|e|}@@` 的 `@@M@@L^3@@` 容量为正：一个不依赖正则性或增长率假设的精确判据，连指数临界边界也能判定。
 

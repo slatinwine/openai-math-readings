@@ -13,6 +13,49 @@ pdfname: ""
 
 > 结果族 114：Approximate counting of common integer polymatroid bases　·　学科：Theoretical computer science　·　验证状态：主结果已 Lean 形式化
 
+## 入门导读 🐣
+
+一桌宝物，两位鉴定师各有一套"哪些组合算合格"的标准——两套标准都讲道理：某组合合格则它的任何一部分也合格，且合格的组合总能在桌上换一件、扩充成件数拿满的组合。要数的是"两位都点头、件数拿满"的组合总数。二部图的完美匹配就是一例：两条标准分别是"每行至多一件、每列至多一件"。数这种公共组合，此前连快速的随机算法都没有，本文给出了 FPRAS。
+
+**关键词卡片**
+
+- 拟阵（matroid）：独立性的公理化抽象；基（basis）是元素个数拿满的合格组合。
+- 公共基（common bases）：同时是两个拟阵的基的集合。
+- 独立集预言机（independence oracle）：只回答"这个子集合格吗"的黑箱。
+- FPRAS：多项式时间随机近似计数格式，误差 ε、失败率 δ 可控，计数值为 0 时必输出 0。
+- 退火与马尔可夫链（annealing / Markov chain）：随机游走加逐级收紧，逐级估比值连乘出计数。
+
+**看个具体例子**
+
+2×2 完全二部图：行方 a₁、a₂，列方 b₁、b₂。约束一"每行恰取一条边"、约束二"每列恰取一条边"，公共基恰是完美匹配：红色对角配对 {a₁b₁, a₂b₂} 与紫色交叉配对 {a₁b₂, a₂b₁}，故 Z=2，算法输出 `@@M@@2(1\pm\epsilon)@@` 附近的估计。一般拟阵没有图画，但算法只需向预言机问"合格吗"，从不要求拟阵的显式清单。
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280">
+  <text x="280" y="26" text-anchor="middle" font-size="15" fill="#333333">2×2 二部图的两个完美匹配＝两个拟阵的公共基</text>
+  <circle cx="120" cy="100" r="9" fill="#3b82c4"/>
+  <text x="120" y="82" text-anchor="middle" font-size="13" fill="#3b82c4">行1</text>
+  <circle cx="120" cy="200" r="9" fill="#3b82c4"/>
+  <text x="120" y="228" text-anchor="middle" font-size="13" fill="#3b82c4">行2</text>
+  <circle cx="440" cy="100" r="9" fill="#2e8b57"/>
+  <text x="440" y="82" text-anchor="middle" font-size="13" fill="#2e8b57">列1</text>
+  <circle cx="440" cy="200" r="9" fill="#2e8b57"/>
+  <text x="440" y="228" text-anchor="middle" font-size="13" fill="#2e8b57">列2</text>
+  <line x1="129" y1="100" x2="431" y2="100" stroke="#e0592a" stroke-width="4"/>
+  <line x1="129" y1="200" x2="431" y2="200" stroke="#e0592a" stroke-width="4"/>
+  <line x1="129" y1="106" x2="431" y2="194" stroke="#7a4fd1" stroke-width="3" stroke-dasharray="8 6"/>
+  <line x1="129" y1="194" x2="431" y2="106" stroke="#7a4fd1" stroke-width="3" stroke-dasharray="8 6"/>
+  <text x="280" y="250" text-anchor="middle" font-size="13" fill="#555555">红实线＝{行1-列1, 行2-列2}；紫虚线＝{行1-列2, 行2-列1}；公共基共 Z=2</text>
+</svg>
+
+</div>
+
+**为什么值得关心**
+
+拟阵交的"优化"1970 年代就多项式可解，"计数"却一直缺算法；本文肯定回答了 Liu 博士论文记录的公开问题，还连带解决任意公共独立集的计数与采样。
+
+> 已 Lean 形式化
+
 ## 一句话结论
 
 本文在独立集预言机模型下，对任意两个同秩拟阵的公共基计数给出 FPRAS，每次执行的预言机调用与比特运算均多项式有界，肯定回答了 Liu 博士论文记录的公开问题，并连带解决公共独立集的计数与采样。

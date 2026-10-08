@@ -13,6 +13,52 @@ pdfname: ""
 
 > 结果族 214：The Benjamini–Schramm nonuniqueness conjecture　·　学科：Probability and statistical mechanics　·　验证状态：暂无形式化证明，请以社区核验为准
 
+## 入门导读 🐣
+
+在方格渔网上，一旦网眼接通得够多，无穷大的连通块通常只有一片。但在"越分叉越宽"的网络上——比如无限家谱树——情况可以很不一样：中等接通概率下，可能同时存在很多片各自无穷大的网。本文证明：任何扩张得足够快（"非顺从"）的规则网络上，这种"群雄并起"的局面必然出现。
+
+**关键词卡片**
+
+- 非顺从（nonamenable）：图扩张太快、边界与体积同阶，无限树是原型；方格网不具备。
+- 唯一性阈值 p_u：超过它，无穷开簇变成唯一。
+- 非唯一性（nonuniqueness）：p_c 与 p_u 之间同时存在无穷多个无穷簇。
+- 连接核阈值 p₂→₂：两点连接概率作为算子是否保持有界的分界线。
+
+**看个具体例子**
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280">
+  <text x="280" y="70" font-size="14" text-anchor="middle" fill="#222">非顺从规则图（如无限树）上的渗流相图</text>
+  <line x1="60" y1="140" x2="180" y2="140" stroke="#9aa0a6" stroke-width="9"/>
+  <line x1="180" y1="140" x2="400" y2="140" stroke="#3a7ca5" stroke-width="9"/>
+  <line x1="400" y1="140" x2="500" y2="140" stroke="#c0392b" stroke-width="9"/>
+  <line x1="60" y1="126" x2="60" y2="154" stroke="#333" stroke-width="2"/>
+  <line x1="180" y1="126" x2="180" y2="154" stroke="#333" stroke-width="2"/>
+  <line x1="260" y1="126" x2="260" y2="154" stroke="#333" stroke-width="2"/>
+  <line x1="400" y1="126" x2="400" y2="154" stroke="#333" stroke-width="2"/>
+  <line x1="500" y1="126" x2="500" y2="154" stroke="#333" stroke-width="2"/>
+  <text x="60" y="115" font-size="14" text-anchor="middle" font-style="italic" fill="#333">0</text>
+  <text x="180" y="115" font-size="14" text-anchor="middle" font-style="italic" fill="#333">p_c</text>
+  <text x="260" y="115" font-size="14" text-anchor="middle" font-style="italic" fill="#333">p₂→₂</text>
+  <text x="400" y="115" font-size="14" text-anchor="middle" font-style="italic" fill="#333">p_u</text>
+  <text x="500" y="115" font-size="14" text-anchor="middle" font-style="italic" fill="#333">1</text>
+  <text x="118" y="175" font-size="13" text-anchor="middle" fill="#666">无无穷簇</text>
+  <text x="290" y="175" font-size="13" text-anchor="middle" fill="#3a7ca5">同时存在无穷多个无穷簇</text>
+  <text x="452" y="175" font-size="13" text-anchor="middle" fill="#c0392b">唯一无穷簇</text>
+  <text x="280" y="225" font-size="12.5" text-anchor="middle" fill="#222">定理：p_c &lt; p₂→₂ ≤ p_u，区间内几乎必然无穷多无穷簇</text>
+</svg>
+
+</div>
+
+定理给出的完整相图如上：`@@M@@p_c<p_{2\to2}\le p_u@@`，于是 `@@M@@(p_c,p_u)@@` 是一段非空区间，其间几乎必然同时出现无穷多个无穷簇。作为推论，任何非顺从有限生成群、任何生成元集给出的 Cayley 图都落入此范围；论文还顺带确立了平均场临界行为，例如敏感度 `@@M@@\chi(p)\asymp(p_c-p)^{-1}@@`。
+
+**为什么值得关心**
+
+仅凭"非顺从"这一个几何条件就打开相变区间，解决了悬置三十年的 Benjamini–Schramm 非唯一性猜想，并一并证明了更强的 Hutchcroft 算子阈值猜想。
+
+> 暂无形式化证明（AI 结果待核验）
+
 ## 一句话结论
 
 证明 Benjamini–Schramm 1996 年渗流非唯一性猜想：任何无限、连通、局部有限、非顺从而拟传递的图上，Bernoulli 键渗流必有一段参数使几乎必然同时出现无穷多个无穷开簇；并证得更强的 Hutchcroft 算子阈值猜想 `@@M@@p_c<p_{2\to2}\le p_u@@`。

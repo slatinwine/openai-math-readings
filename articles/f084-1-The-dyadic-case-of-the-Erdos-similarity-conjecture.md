@@ -13,6 +13,62 @@ pdfname: ""
 
 > 结果族 084：The geometric case of the Erdős similarity conjecture　·　学科：Real and complex analysis　·　验证状态：暂无形式化证明，请以社区核验为准
 
+## 入门导读 🐣
+
+想象你在一条一米长的街道上铺地砖，可以铺到占街长的 99%，但有条刁钻的规矩：不许完整装下一串按 1/2、1/4、1/8……排布的小石子——哪怕有人把这串石子整体平移、拉长压短、甚至翻面再放，也必须至少有一颗掉进你没铺的砖缝里。这篇论文造出了这样的铺法，从而证明 Erdős 相似猜想的"二进数列"情形。
+
+**关键词卡片**
+
+- 二进数列（dyadic sequence）：`@@M@@\{2^{-n}\}@@`，即 1/2、1/4、1/8、…，每次对折取一半的无穷数列。
+- 仿射拷贝（affine copy）：把数列整体平移再伸缩（正负皆可）得到的新数列 `@@M@@x+s\cdot2^{-n}@@`（`@@M@@s\neq0@@`）。
+- 勒贝格测度（Lebesgue measure）：直线图形"总长度"的严格数学定义，用来精确说出"铺了 99%"。
+- 度量普适（measure universal）：若一个无穷集合的每种拷贝都能塞进任何正长度集合，它就"普适"；Erdős 猜想没有任何无穷数列是普适的。
+- 紧集（compact set）：闭且有界的集合；本构造的砖块集合是紧的，极限点不会跑丢。
+
+**看个具体例子**
+
+代入数字：取 `@@M@@\eta=1\%@@`，存在紧集 `@@M@@E\subset[0,1]@@`，总长超过 `@@M@@0.99@@`，使得对任何平移 `@@M@@x@@` 与任何非零伸缩 `@@M@@s@@`，数列 `@@M@@x+s\cdot2^{-n}@@` 中至少一项落在 `@@M@@E@@` 之外。下图画出一个拷贝（`@@M@@x=0.3@@`，`@@M@@s=-0.2@@`）：它的点 0.2、0.25、0.275、… 逐渐挤向 0.3，而第一颗恰好掉进砖缝。
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280">
+<text x="40" y="36" font-size="18" fill="#333">区间 [0,1] 上的集合 E（蓝色块，总长 &gt; 1−η）</text>
+<text x="40" y="62" font-size="15" fill="#777">白色竖缝是挖掉的空隙；任何拷贝总有一颗石子掉进缝里</text>
+<text x="152" y="124" font-size="14" fill="#c0392b">砖缝</text>
+<line x1="150" y1="128" x2="138" y2="132" stroke="#c0392b" stroke-width="1.5"/>
+<rect x="42" y="134" width="43" height="14" fill="#7fb3d5"/>
+<rect x="90" y="134" width="44" height="14" fill="#7fb3d5"/>
+<rect x="141" y="134" width="125" height="14" fill="#7fb3d5"/>
+<rect x="270" y="134" width="116" height="14" fill="#7fb3d5"/>
+<rect x="390" y="134" width="106" height="14" fill="#7fb3d5"/>
+<rect x="501" y="134" width="19" height="14" fill="#7fb3d5"/>
+<line x1="40" y1="158" x2="520" y2="158" stroke="#333" stroke-width="2"/>
+<line x1="40" y1="152" x2="40" y2="164" stroke="#333" stroke-width="2"/>
+<line x1="280" y1="152" x2="280" y2="164" stroke="#333" stroke-width="2"/>
+<line x1="520" y1="152" x2="520" y2="164" stroke="#333" stroke-width="2"/>
+<text x="34" y="182" font-size="14" fill="#333">0</text>
+<text x="270" y="182" font-size="14" fill="#333">1/2</text>
+<text x="510" y="182" font-size="14" fill="#333">1</text>
+<circle cx="136" cy="212" r="7" fill="#e74c3c"/>
+<circle cx="160" cy="212" r="5" fill="#e67e22"/>
+<circle cx="172" cy="212" r="4" fill="#e67e22"/>
+<circle cx="178" cy="212" r="3" fill="#e67e22"/>
+<circle cx="182" cy="212" r="2.5" fill="#e67e22"/>
+<circle cx="184" cy="212" r="2" fill="#e67e22"/>
+<line x1="146" y1="212" x2="183" y2="212" stroke="#e67e22" stroke-width="1" stroke-dasharray="2 2"/>
+<text x="200" y="217" font-size="14" fill="#777">拷贝的点，逐渐挤向 x = 0.3</text>
+<line x1="137" y1="203" x2="137" y2="160" stroke="#e74c3c" stroke-width="1.5" stroke-dasharray="4 3"/>
+<text x="40" y="252" font-size="15" fill="#e74c3c">n=1 的那颗石子（0.2 处红点）恰在砖缝里 → 这个拷贝没被 E 完整包含</text>
+</svg>
+
+</div>
+
+**为什么值得关心**
+
+有限图案总能塞进任何正长度集合，困难全在无穷；而衰减最快的二进数列恰好躲过了此前所有判据（慢衰减判据、有限间隙判据、Rajchman 测度判据），本文用"周期阻断集＋随机路由＋例外修复"的新机器首次把它挡住。
+
+> 暂无形式化证明（AI 结果待核验）
+
 ## 一句话结论
 
 本文构造出测度可任意接近 `@@M@@1@@` 的紧集 `@@M@@E\subseteq[0,1]@@`，使其不含二进数列 `@@M@@\{2^{-n}:n\ge1\}@@` 的任何平移与任意非零实伸缩（正负皆可）的仿射拷贝：二进数列不是度量普适集，Erdős 相似猜想的二进情形获证。

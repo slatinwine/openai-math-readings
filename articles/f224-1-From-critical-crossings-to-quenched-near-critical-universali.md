@@ -13,6 +13,36 @@ pdfname: ""
 
 > 结果族 224：Critical and quenched near-critical universality for Poisson–Voronoi percolation　·　学科：Probability and statistical mechanics　·　验证状态：暂无形式化证明，请以社区核验为准
 
+## 入门导读 🐣
+
+一锅水恰好烧开是"临界点"；把火拧小一点点，沸腾的样子多久才变？这篇论文研究的是"随机炉子"版本：把平面按随机撒下的种子切成不规则拼图、逐格染黑白，然后问——染黑概率偏离临界值 `@@M@@1/2@@` 多少时，"从左连到右"的宏观现象开始响应？答案惊人：与最经典的三角格点模型完全同步。
+
+**关键词卡片**
+
+- 沃罗诺伊渗流（Poisson–Voronoi percolation）：平面上撒随机种子点，每处归最近种子，切出不规则胞，每胞独立染黑白。
+- 近临界（near-critical）：染黑概率从临界值偏离一点点时，宏观连通如何变化的学问。
+- 淬火（quenched）：先把随机拼图固定死，只对染色随机性取平均。
+- pivotal 位点（pivotal site）：翻转这一个格子的颜色，就会翻转"左右是否连通"这一事实的格子。
+- 单调耦合（monotone coupling）：每格预先藏一个均匀随机数 `@@M@@U@@`，密度 `@@M@@p@@` 时染黑当且仅当 `@@M@@U\le p@@`，让不同 `@@M@@p@@` 能在同一画面上比较。
+
+**看个具体例子**
+
+每个模型用自己的尺子：把密度写成 `@@M@@p=\frac12+\lambda r@@`，其中 `@@M@@r=1/\mathbb E[N]@@`（`@@M@@\mathbb E[N]@@` 是该模型单位方块跨越的期望 pivotal 数）；四边形 `@@M@@Q@@` 的跨越阈值 `@@M@@\tau(Q)@@` 就是让 `@@M@@Q@@` 首次被穿越的 `@@M@@\lambda@@`。定理说：固定拼图、只对颜色平均，所有 `@@M@@\tau(Q)@@` 的联合定律在几何随机性下依概率收敛到与三角格点完全相同的极限 `@@M@@\nu_\triangle@@`。
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280"><rect x="40" y="40" width="360" height="200" fill="none" stroke="#333" stroke-width="2"/><polygon points="40,40 190,60 170,150 40,165" fill="#555" stroke="#222"/><polygon points="190,60 400,45 400,120 170,150" fill="#555" stroke="#222"/><polygon points="40,165 170,150 400,120 400,240 40,240" fill="#fff" stroke="#222"/><path d="M190,60 L400,45 L400,120 L170,150 Z" fill="none" stroke="#c0392b" stroke-width="3" stroke-dasharray="6 4"/><text x="12" y="108" font-size="15">左</text><text x="406" y="70" font-size="15">右</text><text x="228" y="92" font-size="13" fill="#fff">pivotal 胞</text><text x="420" y="150" font-size="13">黑格连成</text><text x="420" y="170" font-size="13">左右通道</text><text x="420" y="200" font-size="13">只翻红胞：</text><text x="420" y="220" font-size="13">通道断开</text></svg>
+
+</div>
+
+图中灰色两胞连成一条从左到右的通道；虚线标出的 pivotal 胞是"一票定乾坤"者：只翻转它，通道就会断开（或接通）。近临界理论正是以这类格子的数量为尺子来度量偏离。
+
+**为什么值得关心**
+
+这是首次对"几何本身完全随机"的模型证明近临界极限与经典格点一致——普适性跨越了随机几何。
+
+> 暂无形式化证明（AI 结果待核验）
+
 ## 一句话结论
 
 在承认姊妹篇证明的 Cardy 公式后，本文证明泊松–沃罗诺伊渗流的淬火近临界普适性：固定随机镶嵌、只平均颜色，各四边形的跨越阈值经模型自身期望 pivotal 数归一化后，在几何概率下依概率收敛到与三角格点完全相同的极限定律。

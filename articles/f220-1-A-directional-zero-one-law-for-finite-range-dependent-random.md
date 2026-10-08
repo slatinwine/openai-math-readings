@@ -13,6 +13,48 @@ pdfname: ""
 
 > 结果族 220：Directional zero–one laws beyond iid environments and iid ballisticity　·　学科：Probability and statistical mechanics　·　验证状态：暂无形式化证明，请以社区核验为准
 
+## 入门导读 🐣
+
+在陌生城市散步，每个路口的红绿灯配时各不相同，而且相邻路口的灯还互相牵连（隔远了才互不干扰）。你最终会不会整体上朝某个指定方向走出城？本文证明：只要灯的影响范围有限，你朝任一方向"走出去"的概率非 0 即 1，绝不会一半对一半——此前这只在完全独立的红绿灯下成立。
+
+**关键词卡片**
+
+- 随机环境中的游走（RWRE, random walk in random environment）：每个格点自带一套转移概率，走到哪就用哪套。
+- 退火概率（annealed probability）：把环境平均掉之后的事件概率 `@@M@@P_0(A_\ell)@@`。
+- 平稳遍历（stationary ergodic）：环境的统计规律平移不变、无隐藏周期。
+- 一致椭圆（uniform ellipticity）：每步每个方向的概率都不低于某个 `@@M@@\kappa>0@@`。
+- 有限程依赖（finite-range dependence）：相隔超过固定距离的环境块相互独立。
+
+**看个具体例子**
+
+（示意图：三维格点取一个二维截面）
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280">
+  <path d="M70,40 L70,240 M140,40 L140,240 M210,40 L210,240 M280,40 L280,240 M350,40 L350,240 M420,40 L420,240 M490,40 L490,240" stroke="#e0e0e0" stroke-width="1"/>
+  <path d="M40,70 L520,70 M40,120 L520,120 M40,170 L520,170 M40,220 L520,220" stroke="#e0e0e0" stroke-width="1"/>
+  <polygon points="60,190 520,150 520,38 60,38" fill="#d6eaf8"/>
+  <text x="140" y="52" font-size="15" fill="#2471a3">半空间 {x·ℓ &gt; 0}</text>
+  <path d="M100,235 C150,225 180,200 230,185 C280,170 300,140 350,130 C400,120 420,90 470,75" fill="none" stroke="#c0392b" stroke-width="3"/>
+  <circle cx="100" cy="235" r="5" fill="#333"/>
+  <text x="60" y="254" font-size="14" fill="#333">起点 0</text>
+  <line x1="300" y1="135" x2="345" y2="65" stroke="#8e44ad" stroke-width="2"/>
+  <path d="M337,66 L347,62 L344,73" fill="none" stroke="#8e44ad" stroke-width="2"/>
+  <text x="352" y="80" font-size="15" fill="#8e44ad">方向 ℓ</text>
+  <text x="75" y="270" font-size="14" fill="#333">A_ℓ：路径最终驶入蓝色区域不再回头；P_0(A_ℓ) ∈ {0,1}</text>
+</svg>
+
+</div>
+
+定理要求维度 `@@M@@d\ge 3@@`；方向 `@@M@@\ell@@` 可以任意"歪"（无理方向也行），逃逸概率只有全有全无两种结局。图中把格点画成平面网格只是示意，论证真正发生在高维；环境的相互牵连也只允许局限在固定半径的小圈子内。
+
+**为什么值得关心**
+
+多项式混合的环境曾被构造出"双向都正概率逃逸"的反例，有限程依赖恰是安全的分界线——本文把方向 0-1 律推进到这条自然边界上。
+
+> 暂无形式化证明（AI 结果待核验）
+
 ## 一句话结论
 证明了 `@@M@@\mathbb{Z}^d@@`（`@@M@@d\ge3@@`）上平稳、遍历、有限程依赖（finite-range-dependent）且一致椭圆的环境中，最近邻随机游走沿任一固定非零方向逃逸的退火概率只能是 0 或 1，把此前仅在独立环境成立的方向 0-1 律推广到了相依环境。
 

@@ -13,6 +13,49 @@ pdfname: ""
 
 > 结果族 365：Joint metric and connection recovery from one boundary patch　·　学科：Partial differential equations　·　验证状态：主结果已 Lean 形式化
 
+## 入门导读 🐣
+
+医生做 CT：从体外发信号、在体外接收，反推身体内部长什么样。这篇论文研究"电学版 CT"——在三维物体表面加电压、测电流，想推断内部材料导电的难易。结论出人意料：只要材料足够"粗糙"，就存在两种内部截然不同的材料，任何边界电学测量都分不出它们。
+
+**关键词卡片**
+
+- 电导率（conductivity）：材料各处导电的难易程度，正是想探测的内部信息。
+- Dirichlet–to–Neumann 算子（Dirichlet-to-Neumann operator）：边界的"电压–电流对照表"，记录每种边界电压对应的全部电流响应。
+- Calderón 问题（Calderón problem）：只凭这张对照表能否唯一重建内部电导率。
+- 有界可测（bounded measurable）：最弱一档正则性：系数被夹在两个正数之间，可以剧烈震荡，不需要任何导数。
+- 非唯一性（nonuniqueness）：不同材料给出逐字相同的对照表。
+
+**看个具体例子**
+
+在半径 3 的球里构造出两个电导率 `@@M@@\gamma_0\ne\gamma_1@@`：都取值于 `@@M@@[c,C]@@`、都在边界附近恒等于 1、在正测度集上不同，却满足 `@@M@@\Lambda_{\gamma_0}=\Lambda_{\gamma_1}@@`。更强的计数版本：区域内放 `@@M@@m@@` 个互不相交的小球，可造出 `@@M@@2^m@@` 个两两不同、共享同一张对照表的电导率——`@@M@@m=3@@` 时便有 8 种"电学双胞胎"。
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280">
+  <text x="280" y="32" text-anchor="middle" font-size="16" fill="#333">边界的"电压–电流"测量完全相同</text>
+  <circle cx="150" cy="150" r="92" fill="none" stroke="#333" stroke-width="2"/>
+  <circle cx="150" cy="150" r="80" fill="none" stroke="#999" stroke-width="1" stroke-dasharray="5 4"/>
+  <circle cx="135" cy="132" r="15" fill="none" stroke="#c0392b" stroke-width="2"/>
+  <circle cx="172" cy="168" r="11" fill="none" stroke="#c0392b" stroke-width="2"/>
+  <path d="M118 178 q16 -12 32 -2 q16 10 32 0" fill="none" stroke="#c0392b" stroke-width="2"/>
+  <text x="150" y="265" text-anchor="middle" font-size="14" fill="#333">材料 γ₀（内部结构不同）</text>
+  <circle cx="410" cy="150" r="92" fill="none" stroke="#333" stroke-width="2"/>
+  <circle cx="410" cy="150" r="80" fill="none" stroke="#999" stroke-width="1" stroke-dasharray="5 4"/>
+  <ellipse cx="398" cy="146" rx="36" ry="13" fill="none" stroke="#2471a3" stroke-width="2"/>
+  <ellipse cx="422" cy="160" rx="18" ry="26" fill="none" stroke="#2471a3" stroke-width="2"/>
+  <text x="410" y="265" text-anchor="middle" font-size="14" fill="#333">材料 γ₁</text>
+  <text x="280" y="145" text-anchor="middle" font-size="22" fill="#333">=</text>
+  <text x="280" y="205" text-anchor="middle" font-size="12" fill="#666">虚线圈：边界附近两者都恒等于 1</text>
+</svg>
+
+</div>
+
+**为什么值得关心**
+
+它给"电学 CT"划出能力红线：光滑材料可被唯一重建，降到有界可测就彻底失效，反问题的正则性门槛由此定界。
+
+> 已 Lean 形式化
+
 ## 一句话结论
 在三维球上构造出两个不同的有界可测标量电导率（一致正、都在边界附近等于 1），它们的完整 Dirichlet–to–Neumann 算子却完全相同：仅有有界可测正则性时，标量 Calderón 唯一性在三维即告失败。
 

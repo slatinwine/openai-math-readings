@@ -13,6 +13,52 @@ pdfname: ""
 
 > 结果族 320：Nonhomeomorphic closed aspherical four-manifolds　·　学科：Topology　·　验证状态：暂无形式化证明，请以社区核验为准
 
+## 入门导读 🐣
+
+两个橡皮膜宇宙，若允许慢慢弯折但不许撕破，它们能变成彼此（同伦等价）；若要求逐点严格对应地相同（同胚），却做不到。Borel 猜想断言：对一类"内部没有空腔"的流形，这两种标准永远一致。本文在四维找到第一对反例，把猜想的这一表述推翻。
+
+**关键词卡片**
+
+- 非球面流形（aspherical manifold）：万有覆盖可缩的空间——没有"空心腔"，全部形状信息编码在基本群里。
+- 同伦等价（homotopy equivalence）：可弯不可撕意义下的等价，较宽松的"同类"标准。
+- 同胚（homeomorphism）：逐点对应、严格相同的拓扑等价。
+- Borel 猜想（Borel conjecture）：同伦等价的闭非球面流形应当同胚。
+- 词双曲群（word-hyperbolic group）：带负曲率特征的基本群，此前被公认最安全。
+
+**看个具体例子**
+
+构造出的 M 与 N 都是闭的四维"无腔"流形，公共基本群还是词双曲群：
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280">
+<path d="M 60,150 C 55,95 130,60 185,85 C 240,110 245,175 195,205 C 145,235 65,210 60,150 Z" fill="none" stroke="black" stroke-width="2"/>
+<path d="M 320,150 C 315,95 390,60 445,85 C 500,110 505,175 455,205 C 405,235 325,210 320,150 Z" fill="none" stroke="black" stroke-width="2"/>
+<text x="125" y="150" font-size="18" text-anchor="middle" font-weight="bold">M</text>
+<text x="385" y="150" font-size="18" text-anchor="middle" font-weight="bold">N</text>
+<line x1="245" y1="105" x2="312" y2="105" stroke="black" stroke-width="2"/>
+<line x1="312" y1="105" x2="300" y2="99" stroke="black" stroke-width="2"/>
+<line x1="312" y1="105" x2="300" y2="111" stroke="black" stroke-width="2"/>
+<text x="278" y="92" font-size="13" text-anchor="middle" fill="green">同伦等价 ✓</text>
+<line x1="312" y1="190" x2="245" y2="190" stroke="black" stroke-width="2" stroke-dasharray="6,4"/>
+<line x1="257" y1="184" x2="245" y2="190" stroke="black" stroke-width="2"/>
+<line x1="257" y1="196" x2="245" y2="190" stroke="black" stroke-width="2"/>
+<line x1="270" y1="180" x2="286" y2="200" stroke="red" stroke-width="3"/>
+<line x1="286" y1="180" x2="270" y2="200" stroke="red" stroke-width="3"/>
+<text x="278" y="222" font-size="13" text-anchor="middle" fill="red">不存在同胚 ✗</text>
+<text x="280" y="255" font-size="13" text-anchor="middle">四维·闭·非球面；公共基本群是词双曲群</text>
+</svg>
+
+</div>
+
+二维、三维都有定理保证两种标准一致，五维以上也有大范围正面结果；这对反例说明四维恰是缺口，而且祸根不在群（仍在安全名单内），在四维拓扑本身。同一个 M 上还存在不由任何同胚实现的自同伦等价。
+
+**为什么值得关心**
+
+Borel 猜想的同胚存在性表述在四维失效，流形刚性版图从此改写。
+
+> 暂无形式化证明（AI 结果待核验）
+
 ## 一句话结论
 
 构造出闭、连通、非球面（aspherical，即万有覆盖可缩）的四维拓扑流形 `@@M@@M@@` 与 `@@M@@N@@`：二者同伦等价（homotopy equivalent）却不存在任何同胚（homeomorphism），公共基本群还是词双曲（word-hyperbolic）群。这推翻了 Borel 猜想在四维的同胚存在性表述，并附带一个不由任何同胚实现的自同伦等价。

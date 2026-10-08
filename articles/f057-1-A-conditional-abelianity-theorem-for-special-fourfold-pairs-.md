@@ -13,6 +13,56 @@ pdfname: ""
 
 > 结果族 057：Fundamental groups of special complex varieties and root orbifolds　·　学科：Algebraic and complex geometry　·　验证状态：暂无形式化证明，请以社区核验为准
 
+## 入门导读 🐣
+
+前两篇管的是"封闭温和空间"的绕圈目录；但几何里还有"半圈空间"——沿一块曲面绕一圈只算半圈，目录得重写。这篇论文为四维的半圈空间（二阶根 orbifold）搭了一座桥：先造一个八维的普通流形当替身，让"温和"与群论信息都能搬过去，再借姊妹篇的交换性定理把结论搬回来。
+
+**关键词卡片**
+
+- orbifold 基本群（orbifold fundamental group）：把"绕除子半圈"也编进目录的推广基本群
+- 二阶根 orbifold（root orbifold）：把除子附近的坐标开平方（z₁=w₁²）得到的翻倍空间
+- 经线（meridian）：紧贴除子绕一圈的小环
+- 除子（divisor）：高维空间里余一维的"曲面"
+- special（特殊）：不含一般型成分的温和判定，与同族论文统一口径
+
+**看个具体例子**
+
+先用一维缩微版看懂"绕两圈算零"：挖去圆心的圆盘，π₁ 由经线 γ 生成；令 γ²=1 就得 ℤ/2。定理处理的是四维版本：若二阶根 orbifold special，则 `@@M@@G=\pi_1(X\setminus D)/\langle\!\langle\gamma^2\rangle\!\rangle@@` 虚拟交换。证明的核心是下面这条"替身流水线"：
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280">
+  <defs>
+    <marker id="ar" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+      <path d="M0,0 L7,3 L0,6 z" fill="#34506e"/>
+    </marker>
+  </defs>
+  <rect x="145" y="16" width="270" height="46" rx="8" fill="#eef3fb" stroke="#34506e" stroke-width="2"/>
+  <text x="280" y="35" text-anchor="middle" font-size="14" fill="#1a2433">Y：八维光滑射影流形（替身）</text>
+  <text x="280" y="54" text-anchor="middle" font-size="12" fill="#445368">π₁(Y) 虚拟交换（套用姊妹篇定理）</text>
+  <line x1="280" y1="62" x2="280" y2="100" stroke="#34506e" stroke-width="2" marker-end="url(#ar)"/>
+  <text x="290" y="88" font-size="12" fill="#445368">一般纤维 = 四条椭圆曲线之积</text>
+  <rect x="145" y="104" width="270" height="46" rx="8" fill="#f3eefb" stroke="#6a4a9e" stroke-width="2"/>
+  <text x="280" y="123" text-anchor="middle" font-size="14" fill="#2a1a4e">二阶根 orbifold：D 附近 z₁=w₁²</text>
+  <text x="280" y="142" text-anchor="middle" font-size="12" fill="#445368">绕 D 一圈的经线 γ 变成"半圈"</text>
+  <line x1="280" y1="150" x2="280" y2="188" stroke="#34506e" stroke-width="2" marker-end="url(#ar)"/>
+  <text x="290" y="176" font-size="12" fill="#445368">粗化（忘掉开方结构）</text>
+  <rect x="145" y="192" width="270" height="46" rx="8" fill="#eefbef" stroke="#3a7d44" stroke-width="2"/>
+  <text x="280" y="211" text-anchor="middle" font-size="14" fill="#1f4a26">X：四维光滑射影簇</text>
+  <text x="280" y="230" text-anchor="middle" font-size="12" fill="#445368">带光滑连通除子 D，系数 1/2</text>
+  <text x="280" y="262" text-anchor="middle" font-size="13" fill="#1a2433">群流向：π₁(Y) ↠ G，交换性顺流而下传给 G</text>
+</svg>
+
+</div>
+
+构造替身的算术很讲究：取四个带符号方程的完全交，纤维恰是余切平凡的亏格一曲线，四份并列正好消掉所有对称性障碍。
+
+**为什么值得关心**
+
+它把交换性猜想的适用范围从流形推进到 orbifold 群；"造高维替身"这一思想本身也漂亮——直接的路走不通时，修一条能走的路再回来。
+
+> 暂无形式化证明（AI 结果待核验）
+
 ## 一句话结论
 以姊妹篇"任意维 special 紧 Kähler 流形基本群虚拟交换"为输入，证明：光滑射影四维簇 `@@M@@X@@` 配系数 `@@M@@\tfrac12@@` 的光滑连通除子 `@@M@@D@@`，若其二阶根 orbifold special，则其 orbifold 基本群（即 `@@M@@\pi_1(X\setminus D)@@` 模经线平方）虚拟交换。
 

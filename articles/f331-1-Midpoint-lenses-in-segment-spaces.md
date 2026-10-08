@@ -13,6 +13,49 @@ pdfname: ""
 
 > 结果族 331：Reflexive midpoint convexity and diamond distortion　·　学科：Functional analysis　·　验证状态：主结果已 Lean 形式化
 
+## 入门导读 🐣
+
+两枚同样大的硬币交叠，公共部分是一枚"透镜"。在无穷维空间里，透镜收集的是所有"以 `@@M@@x@@` 为中点、两端都不越出半径 `@@M@@R@@`"的位移。这篇论文对两棵无穷大的家谱树造出的空间证明了一条干净的几何事实：中心 `@@M@@x@@` 越贴近球面，透镜在扔掉任意有限多个坐标之后剩下的"尾巴"就越薄，按平方根的速度收缩。这条尾巴不等式是整个结果族的发动机。
+
+**关键词卡片**
+
+- 对称透镜（symmetric lens）：`@@M@@\{y:\|x+y\|\le R,\ \|x-y\|\le R\}@@`，两个球相交的公共部分。
+- 尾部估计（tail estimate）：投影掉有限头部坐标 `@@M@@H@@` 后，剩余部分 `@@M@@Q_Hy@@` 的大小上界。
+- 线段范数（segment norm）：用两两不相交线段上取值的平方和定义长度，James 树空间的刻度。
+- 渐近中点一致凸（AMUC）：透镜随中心贴近球面而（渐近地）变薄，即中点版圆度。
+- 渐近一致凸（AUC）：更强的单向圆度；本文两个空间都换不出等价的 AUC 范数。
+
+**看个具体例子**
+
+主不等式 `@@M@@\|Q_Hy\|\le2\sqrt{R^2-\|x\|^2}@@`，取 `@@M@@R=1@@` 代入具体数字：`@@M@@\|x\|=0.8@@` 时尾部 `@@M@@\le2\sqrt{0.36}=1.2@@`；`@@M@@\|x\|=0.99@@` 时尾部 `@@M@@\le2\sqrt{1-0.9801}\approx0.28@@`；`@@M@@\|x\|\to1@@` 时尾部趋于 `@@M@@0@@`。中心只差百分之一贴到球面，尾巴就被压掉四分之三以上——无论位移 `@@M@@y@@` 怎么选、扔掉的坐标集 `@@M@@H@@` 怎么选都成立。
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280">
+  <text x="20" y="28" font-size="15" fill="#222">对称透镜：中心 x 越贴近球面，远处越薄</text>
+  <circle cx="200" cy="150" r="95" fill="none" stroke="#2f5fd0" stroke-width="2"/>
+  <circle cx="310" cy="150" r="95" fill="none" stroke="#2f5fd0" stroke-width="2"/>
+  <path d="M 200 55 A 95 95 0 0 1 200 245 A 95 95 0 0 1 200 55" fill="#dce8fb" fill-opacity="0.8"/>
+  <circle cx="255" cy="150" r="5" fill="#d64545"/>
+  <text x="262" y="143" font-size="14" fill="#d64545">中点 x</text>
+  <line x1="255" y1="150" x2="255" y2="62" stroke="#d64545" stroke-width="1.5" stroke-dasharray="5 4"/>
+  <line x1="255" y1="150" x2="255" y2="238" stroke="#d64545" stroke-width="1.5" stroke-dasharray="5 4"/>
+  <text x="130" y="55" font-size="13" fill="#2f5fd0">半径 R 的球</text>
+  <text x="360" y="55" font-size="13" fill="#2f5fd0">半径 R 的球</text>
+  <text x="340" y="255" font-size="14" fill="#222">透镜 = 两球公共部分</text>
+  <text x="20" y="200" font-size="13" fill="#666">尾部 ≤ 2√(R²−‖x‖²)</text>
+  <text x="20" y="222" font-size="13" fill="#666">R=1，‖x‖=0.99：</text>
+  <text x="20" y="244" font-size="13" fill="#666">尾部 ≤ 0.28</text>
+</svg>
+
+</div>
+
+**为什么值得关心**
+
+这条尾部不等式正是姊妹篇把菱形失真下界改进到 `@@M@@\sqrt{1+k/4}@@` 的直接输入；AMUC 与 AUC 的分界线又被精确地画深了一笔。
+
+> 主结果已 Lean 形式化
+
 ## 一句话结论
 
 对有限高线段森林对偶 `@@M@@X=J^*@@` 与无穷高坐标预对偶 `@@M@@B_\infty@@` 两个 James 树型空间，证明对称透镜中任意位移的尾部满足 `@@M@@\|Q_Hy\|\le2\sqrt{R^2-\|x\|^2}@@`；两个范数均渐近中点一致凸，却都无等价渐近一致凸范数。

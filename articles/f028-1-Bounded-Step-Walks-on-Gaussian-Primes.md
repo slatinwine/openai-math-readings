@@ -13,6 +13,34 @@ pdfname: ""
 
 > 结果族 028：Uniformly bounded components of Gaussian-prime graphs　·　学科：Number theory　·　验证状态：主结果已 Lean 形式化
 
+## 入门导读 🐣
+
+把复数 a+bi 看成平面上的格子点，其中"素数格子"是可以落脚的石头，其余全是护城河。1962 年有人提问：能不能踩着石头、每步跨度不超过固定长度 D，永远跳下去而不落水？这篇论文证明：不能——而且不论从哪块石头出发，你能踏遍的石头总数有一个统一上限 B_D。
+
+**关键词卡片**
+
+- 高斯整数（Gaussian integer）：形如 a+bi 的复数，铺满一张方形格网。
+- 高斯素数（Gaussian prime）：高斯整数中不可再分解的元素，即格子里能踩的石头。
+- 高斯护城河猜想（Gaussian moat conjecture）：不存在步长有界的无穷素数跳跃，悬置六十余年。
+- 连通分量（connected component）：图中互相能跳到的点组成的"朋友圈"。
+- 一致有界（uniform bound）：上限 B_D 只依赖步长 D，与出发点无关，连坐标轴上的素数也算在内。
+
+**看个具体例子**
+
+此前的计算表明：从原点出发、步长不超过 6 时能走到的范围有限——但那只是一个起点的经验。新定理覆盖一切有限步长 D：每个连通分量至多含 B_D 个素数，起点任选（界存在但未给出具体数值）。数轴上 4k+3 型素数（3、7、11、19…）也是石头，同样被管住。
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280"><circle cx="60" cy="45" r="2.5" fill="#bbb"/><circle cx="115" cy="45" r="2.5" fill="#bbb"/><circle cx="170" cy="45" r="2.5" fill="#bbb"/><circle cx="280" cy="45" r="2.5" fill="#bbb"/><circle cx="335" cy="45" r="2.5" fill="#bbb"/><circle cx="445" cy="45" r="2.5" fill="#bbb"/><circle cx="500" cy="45" r="2.5" fill="#bbb"/><circle cx="60" cy="100" r="2.5" fill="#bbb"/><circle cx="115" cy="100" r="2.5" fill="#bbb"/><circle cx="225" cy="100" r="2.5" fill="#bbb"/><circle cx="280" cy="100" r="2.5" fill="#bbb"/><circle cx="335" cy="100" r="2.5" fill="#bbb"/><circle cx="390" cy="100" r="2.5" fill="#bbb"/><circle cx="445" cy="100" r="2.5" fill="#bbb"/><circle cx="500" cy="100" r="2.5" fill="#bbb"/><circle cx="60" cy="155" r="2.5" fill="#bbb"/><circle cx="115" cy="155" r="2.5" fill="#bbb"/><circle cx="170" cy="155" r="2.5" fill="#bbb"/><circle cx="225" cy="155" r="2.5" fill="#bbb"/><circle cx="280" cy="155" r="2.5" fill="#bbb"/><circle cx="335" cy="155" r="2.5" fill="#bbb"/><circle cx="390" cy="155" r="2.5" fill="#bbb"/><circle cx="445" cy="155" r="2.5" fill="#bbb"/><circle cx="500" cy="155" r="2.5" fill="#bbb"/><circle cx="60" cy="210" r="2.5" fill="#bbb"/><circle cx="115" cy="210" r="2.5" fill="#bbb"/><circle cx="170" cy="210" r="2.5" fill="#bbb"/><circle cx="225" cy="210" r="2.5" fill="#bbb"/><circle cx="280" cy="210" r="2.5" fill="#bbb"/><circle cx="335" cy="210" r="2.5" fill="#bbb"/><circle cx="390" cy="210" r="2.5" fill="#bbb"/><circle cx="445" cy="210" r="2.5" fill="#bbb"/><circle cx="500" cy="210" r="2.5" fill="#bbb"/><ellipse cx="340" cy="140" rx="105" ry="60" fill="none" stroke="#c0392b" stroke-width="2" stroke-dasharray="8 5"/><line x1="66" y1="204" x2="106" y2="164" stroke="#1e8449" stroke-width="3"/><polygon points="115,155 104,161 109,170" fill="#1e8449"/><line x1="121" y1="149" x2="160" y2="110" stroke="#1e8449" stroke-width="3"/><polygon points="170,100 159,106 164,115" fill="#1e8449"/><circle cx="60" cy="210" r="6.5" fill="#333"/><circle cx="115" cy="155" r="6.5" fill="#333"/><circle cx="170" cy="100" r="6.5" fill="#333"/><circle cx="280" cy="45" r="6.5" fill="#333"/><circle cx="390" cy="45" r="6.5" fill="#333"/><circle cx="500" cy="45" r="6.5" fill="#333"/><circle cx="455" cy="155" r="6.5" fill="#333"/><circle cx="500" cy="210" r="6.5" fill="#333"/><circle cx="390" cy="210" r="6.5" fill="#333"/><circle cx="280" cy="210" r="6.5" fill="#333"/><text x="340" y="146" font-size="16" text-anchor="middle" fill="#c0392b">护城河</text><text x="340" y="166" font-size="12" text-anchor="middle" fill="#c0392b">（无素数区）</text><text x="60" y="232" font-size="12" text-anchor="middle" fill="#333">起点</text><text x="175" y="84" font-size="12" text-anchor="middle" fill="#c0392b">无路可走</text><text x="300" y="256" font-size="13" text-anchor="middle" fill="#333">示意：步长有界的行走迟早被"无素数区"拦住，且能走的石头总数有统一上限</text></svg>
+
+</div>
+
+**为什么值得关心**
+
+六十年老问题一步关闭，而且"分量一致有界"远强于"没有无穷路径"；周期筛法加信息论计数的组合拳本身就是新方法。
+
+> 已 Lean 形式化
+
 ## 一句话结论
 
 证明了高斯护城河猜想（Gaussian moat conjecture）：不存在步长一致有界、经过两两不同高斯素数的无穷游走；更强的是，对每个步长上界 `@@M@@D@@`，高斯素数图的连通分支（connected component）大小有一致上界 `@@M@@B_D@@`，与起点无关——悬置六十余年的问题得到完整解决。

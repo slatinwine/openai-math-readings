@@ -13,6 +13,57 @@ pdfname: ""
 
 > 结果族 002：The full BSD formula from low Selmer corank　·　学科：Number theory　·　验证状态：暂无形式化证明，请以社区核验为准
 
+## 入门导读 🐣
+
+鉴定一件古董，正规做法是"看证书"（解析侧的 L 函数）推断实物（曲线上的有理点）。这篇论文反着来：只看实物这边的粗略盘点表——某个素数处的 Selmer 余秩是 0 还是 1——就能断定证书上必然写着什么，对任何素数、任何椭圆曲线都灵。顺手还解决了一类素数的"两块立方体积木拼图"问题。
+
+**关键词卡片**
+
+- 椭圆曲线（elliptic curve）：`@@M@@y^2=x^3+ax+b@@` 形状的曲线，其有理点可做加法、构成群。
+- Selmer 群余秩（Selmer corank）：代数侧的"人数仪表"，读数 0 或 1 即满足定理前提。
+- Selmer 逆命题（Selmer converse）：由 Selmer 余秩反推解析秩与代数秩都等于它的逆方向定理。
+- Tate–Shafarevich 群（Tate–Shafarevich group）：椭圆曲线的"账目误差项"，定理证其有限。
+- 根数（root number）：`@@M@@L@@` 函数在中心点的正负号，决定零点个数的奇偶。
+
+**看个具体例子**
+
+把主定理代入素数 `@@M@@\ell=7@@`（满足 `@@M@@\ell\equiv 7\pmod 9@@`）：三次曲线 `@@M@@X^3+Y^3=7Z^3@@` 的秩为 1、误差项有限，故必有有理解。7 这一个体例子肉眼可凑，如下方拼图：
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280">
+  <text x="280" y="28" font-size="17" text-anchor="middle" fill="#222">两个有理立方数拼出一个素数：取 ℓ = 7</text>
+  <rect x="70" y="95" width="80" height="80" fill="none" stroke="#333" stroke-width="2"/>
+  <rect x="105" y="70" width="80" height="80" fill="none" stroke="#333" stroke-width="2"/>
+  <line x1="70" y1="95" x2="105" y2="70" stroke="#333" stroke-width="2"/>
+  <line x1="150" y1="95" x2="185" y2="70" stroke="#333" stroke-width="2"/>
+  <line x1="70" y1="175" x2="105" y2="150" stroke="#333" stroke-width="2"/>
+  <line x1="150" y1="175" x2="185" y2="150" stroke="#333" stroke-width="2"/>
+  <text x="128" y="207" font-size="15" text-anchor="middle" fill="#222">2³ = 8</text>
+  <text x="245" y="142" font-size="26" text-anchor="middle" fill="#222">+</text>
+  <rect x="300" y="125" width="34" height="34" fill="none" stroke="#333" stroke-width="2"/>
+  <rect x="314" y="111" width="34" height="34" fill="none" stroke="#333" stroke-width="2"/>
+  <line x1="300" y1="125" x2="314" y2="111" stroke="#333" stroke-width="2"/>
+  <line x1="334" y1="125" x2="348" y2="111" stroke="#333" stroke-width="2"/>
+  <line x1="300" y1="159" x2="314" y2="145" stroke="#333" stroke-width="2"/>
+  <line x1="334" y1="159" x2="348" y2="145" stroke="#333" stroke-width="2"/>
+  <text x="324" y="192" font-size="15" text-anchor="middle" fill="#222">(−1)³ = −1</text>
+  <text x="408" y="142" font-size="26" text-anchor="middle" fill="#222">=</text>
+  <text x="468" y="152" font-size="40" text-anchor="middle" fill="#222">7</text>
+  <text x="280" y="240" font-size="14" text-anchor="middle" fill="#555">于是 X³ + Y³ = 7Z³ 有有理解 (2, −1, 1)</text>
+  <text x="280" y="264" font-size="14" text-anchor="middle" fill="#555">定理的威力：每个素数 ℓ ≡ 4, 7, 8 (mod 9) 都能这样拼出</text>
+</svg>
+
+</div>
+
+7 的分解一眼可见，单靠定理并不稀奇；稀奇的是它对所有 `@@M@@\ell\equiv4,7,8\pmod 9@@` 的素数一律成立——包括在最难的"加性素数 3"上运用定理推出的那些。
+
+**为什么值得关心**
+
+它一举解决了 Sylvester 立方和问题的一整类情形（哪些素数是两个有理立方数之和），而且对约化类型、复乘、剩余表示一概零假设。
+
+> 暂无形式化证明（AI 结果待核验）
+
 ## 一句话结论
 
 对 `@@M@@\Q@@` 上任意椭圆曲线与任意素数 `@@M@@p@@`：只要全 `@@M@@p@@` 幂 Selmer 群的 `@@M@@\Z_p@@`-余秩为 `@@M@@0@@` 或 `@@M@@1@@`，则 `@@M@@L@@`-函数的解析秩与 Mordell–Weil 秩都恰等于它，且整个 Tate–Shafarevich 群有限；由此统一推出每个素数 `@@M@@\ell\equiv4,7,8\pmod9@@` 都是两个有理立方数之和。

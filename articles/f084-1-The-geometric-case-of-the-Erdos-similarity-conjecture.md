@@ -13,6 +13,52 @@ pdfname: ""
 
 > 结果族 084：The geometric case of the Erdős similarity conjecture　·　学科：Real and complex analysis　·　验证状态：暂无形式化证明，请以社区核验为准
 
+## 入门导读 🐣
+
+玩"踩脚印"游戏：几何数列 `@@M@@\{q,q^2,q^3,\dots\}@@`（比如 `@@M@@1/2,1/4,1/8,\dots@@`）像一串越走步子越小的脚印。现在问：能否在 `@@M@@[0,1]@@` 里保留几乎全部地面（测度超过 `@@M@@1-\eta@@`），却让这串脚印的任何一份"平移＋伸缩"拷贝（放大、缩小、镜像都算）至少踩空一步？这篇论文构造出这样的躲避集，证明几何数列不是"度量普适"的，Erdős 相似猜想的几何数列情形就此解决。
+
+**关键词卡片**
+
+- 度量普适集（measure universal set）：任何正测度集都含有它的一份仿射拷贝的"万能图案"
+- 仿射拷贝（affine copy）：`@@M@@x+sA@@`，`@@M@@s\ne0@@`，平移加非零伸缩（正负均可）
+- 几何数列（geometric progression）：`@@M@@\{q^n:n\ge1\}@@`，公比 `@@M@@q\in(0,1)@@`，步子指数式变小
+- 概率方法（probabilistic method）：随机造一个集合并证明它以正概率具有所需性质，存在性得证
+- 选择器表（selector table）：构造中挂在树每条边上的随机比特表，决定点沿哪条路下行
+
+**看个具体例子**
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280">
+<rect x="60" y="120" width="440" height="26" fill="#dcedd8" stroke="#369"/>
+<rect x="292" y="120" width="16" height="26" fill="#fff" stroke="#369"/>
+<rect x="420" y="120" width="12" height="26" fill="#fff" stroke="#369"/>
+<circle cx="90" cy="133" r="5" fill="#c33"/>
+<circle cx="140" cy="133" r="5" fill="#c33"/>
+<circle cx="185" cy="133" r="5" fill="#c33"/>
+<circle cx="219" cy="133" r="5" fill="#c33"/>
+<circle cx="244" cy="133" r="5" fill="#c33"/>
+<circle cx="264" cy="133" r="5" fill="#c33"/>
+<circle cx="279" cy="133" r="5" fill="#c33"/>
+<circle cx="288" cy="133" r="5" fill="#c33"/>
+<circle cx="300" cy="133" r="6" fill="#c33"/>
+<line x1="300" y1="141" x2="300" y2="156" stroke="#c33" stroke-width="1.5"/>
+<text x="70" y="100" font-size="14" fill="#333">绿色：测度 &gt; 1−η 的集合 E；白缝：预留的洞</text>
+<text x="240" y="175" font-size="14" fill="#c33">这一点落在洞里，拷贝被截断</text>
+<text x="70" y="205" font-size="14" fill="#333">红点：某份拷贝 x+s·{qⁿ}，间距指数缩小</text>
+<text x="130" y="250" font-size="14" fill="#333">任何拷贝必有至少一点踩进洞 ⟹ 无法整体藏进 E</text>
+</svg>
+
+</div>
+
+数字版结论：取 `@@M@@q=1/2@@`、`@@M@@\eta=0.01@@`，存在紧集 `@@M@@E\subseteq[0,1]@@`，测度大于 `@@M@@0.99@@`，使任何 `@@M@@x+s\cdot\{\tfrac{1}{2^n}\}@@`（`@@M@@s\ne0@@`）都不能整体落入 `@@M@@E@@`。集合可以依赖 `@@M@@q@@`；论文不对不同公比作同时断言。
+
+**为什么值得关心**
+
+任何有限图案都是普适的（小的平移拷贝总能塞进正测度集），无穷图案是否必然失效正是 Erdős 1974 年的原问题；几何数列因衰减太快恰好躲过此前所有判据，本文补上了这块最显眼的缺口。
+
+> 暂无形式化证明（AI 结果待核验）
+
 ## 一句话结论
 
 对每个固定公比 `@@M@@q\in(0,1)@@`，本文构造出测度大于 `@@M@@1-\eta@@` 的紧集 `@@M@@E_{q,\eta}\subseteq[0,1]@@`，使其不含几何数列 `@@M@@\{q^n:n\ge1\}@@` 的任何"平移＋非零伸缩"拷贝（伸缩可正可负）。几何数列因此不是度量普适集，Erdős 相似猜想的几何数列情形获证。

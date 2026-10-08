@@ -13,6 +13,34 @@ pdfname: ""
 
 > 结果族 147：The near-boundary Birkhoff conjecture　·　学科：Dynamical systems and ergodic theory　·　验证状态：暂无形式化证明，请以社区核验为准
 
+## 入门导读 🐣
+
+台球在凸桌面上弹跳时，贴着边框附近可能出现一片"温柔区"：每条弹道各自缠着一条看不见的内圈曲线转圈，谁也不打扰谁。数学家猜了将近百年：只要一个光滑凸桌的近边界处出现这种"各走各道"的连续分层，桌面就只能被逼成椭圆。本文证明的正是这条证明链的第一环：分层会自动把边界打磨成"解析级光滑"，并造出一层层解析的护栏曲线。
+
+**关键词卡片**
+
+- 台球映射（billiard map）：记录"碰撞点位置 + 反弹角度"的一步演化规则
+- 焦散（caustic）：与一族弹道相切的内圈曲线，像球路的隐形护栏
+- 叶状结构（foliation）：把一个环带连续切成一层层互不相交的曲线"叶片"
+- 掠射带（grazing annulus）：几乎贴着边界擦过去的那些弹道所在的区域
+- 实解析（analytic）：比"光滑"更强的正则性，函数可展开成幂级数
+
+**看个具体例子**
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280"><text x="280" y="28" font-size="16" text-anchor="middle">椭圆桌：层层嵌套的焦散圈与相切弹道</text><ellipse cx="280" cy="150" rx="200" ry="95" fill="none" stroke="black" stroke-width="2"/><ellipse cx="280" cy="150" rx="165" ry="70" fill="none" stroke="black"/><ellipse cx="280" cy="150" rx="130" ry="48" fill="none" stroke="black"/><ellipse cx="280" cy="150" rx="95" ry="27" fill="none" stroke="black"/><path d="M130 210 L400 75 L455 195 L200 235 Z" fill="none" stroke="black" stroke-dasharray="7 5"/><circle cx="130" cy="210" r="3" fill="black"/><circle cx="400" cy="75" r="3" fill="black"/><circle cx="455" cy="195" r="3" fill="black"/><circle cx="200" cy="235" r="3" fill="black"/><text x="280" y="268" font-size="13" text-anchor="middle">虚线弹道每段都与某条内圈相切；这些内圈就是焦散（护栏）</text></svg>
+
+</div>
+
+椭圆是最标准的例子：与内圈相切的球，弹一辈子都保持相切。主定理说：只要掠射带被一族"每条叶各自不变"的连续曲线填满，边界就实解析，且这些叶其实就是层层解析焦散拼成的"领圈"——这恰好喂给姊妹篇，由它收官得出桌面必为椭圆。
+
+**为什么值得关心**
+
+Birkhoff 猜想是台球动力学的百年名片，本文在"只假设连续、不假设可微"的最弱条件下打通了几何与解析之间的关键一环。
+
+> 暂无形式化证明（AI 结果待核验）
+
 ## 一句话结论
 
 证明：光滑正曲率凸台球桌上，只要掠射相环被一族"每条叶各自不变"的连续本质曲线叶状结构填满，边界就必实解析，并自动生成联合解析的凸焦散领圈；结合姊妹篇刚性定理即得台球桌是椭圆。

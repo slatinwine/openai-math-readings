@@ -13,6 +13,33 @@ pdfname: ""
 
 > 结果族 348：Nonnegative-curvature Einstein classification and an L² topological gap　·　学科：微分几何（Differential geometry）　·　验证状态：暂无形式化证明，请以社区核验为准
 
+## 入门导读 🐣
+
+爱因斯坦度量是广义相对论里"均匀到极致"的形状：每一点的里奇曲率与度规成正比，没有内部偏心。这篇论文研究四维、曲率非负的爱因斯坦空间，结论像一句侦探台词：只要在某个点上发现一个方向"平得毫无曲率"，整个空间就必定是两个等半径球面的乘积——别无可能。
+
+**关键词卡片**
+
+- Einstein 度量（Einstein metric）：满足 `@@M@@\operatorname{Ric}=\lambda g@@` 的度量，本文取归一 `@@M@@\lambda=3@@`。
+- 截面曲率（sectional curvature）：过一点沿某个二维方向切一小片，这一片的弯曲程度。
+- 零曲率平面（zero-curvature plane）：截面曲率恰好为零的切平面，本文的唯一假设。
+- 通用覆盖（universal Riemannian cover）：把空间摊开、去掉"绕圈"结构后的最大展开。
+
+**看个具体例子**
+
+想象 `@@M@@S^2\times S^2@@` 上的一点：完全沿第一个球面切一小片，它是半径 `@@M@@1/\sqrt3@@` 的球面的一块，曲率为正；但方向一半取自第一个球、一半取自第二个球的"混合平面"，因两球各自演化互不牵扯，曲率恰好为零。定理说反过去也对：出现一个零平面，通用覆盖必等距于 `@@M@@S^2(1/\sqrt3)\times S^2(1/\sqrt3)@@`。于是此类流形的分类只剩三种：圆球 `@@M@@S^4@@`、`@@M@@\mathbb{CP}^2@@`、球面乘积。
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280"><circle cx="170" cy="158" r="78" fill="none" stroke="#2980b9" stroke-width="2"/><circle cx="390" cy="158" r="78" fill="none" stroke="#2980b9" stroke-width="2"/><ellipse cx="170" cy="80" rx="26" ry="9" fill="none" stroke="#c0392b" stroke-width="2"/><line x1="170" y1="38" x2="170" y2="68" stroke="#c0392b" stroke-width="1"/><polygon points="228,118 332,118 332,198 228,198" fill="none" stroke="#27ae60" stroke-width="2"/><text x="118" y="28" font-size="13" fill="#c0392b">切向小片：K＞0（弯）</text><text x="226" y="252" font-size="13" fill="#27ae60">混合平面：K＝0（平）</text><text x="96" y="264" font-size="13" fill="#2980b9">球面 S²(1/√3)</text><text x="318" y="264" font-size="13" fill="#2980b9">球面 S²(1/√3)</text></svg>
+
+</div>
+
+**为什么值得关心**
+
+它以最少假设补全了非负曲率 Einstein 四维流形的完整分类，并为同族 `@@M@@L^2@@` 间隙定理提供分类前提。附录还给出全部关键多项式不等式的有理系数证书，可逐条机械复核。
+
+> 暂无形式化证明（AI 结果待核验）
+
 ## 一句话结论
 证明零平面刚性定理：闭 Einstein 四维流形若具非负截面曲率且存在一个零曲率平面，其通用黎曼覆盖必等距于等半径球面乘积 `@@M@@S^2(1/\sqrt3)\times S^2(1/\sqrt3)@@`；由此补全非负截面曲率 Einstein 四维流形的完整三分类。
 

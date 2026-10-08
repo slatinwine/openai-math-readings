@@ -13,6 +13,53 @@ pdfname: ""
 
 > 结果族 014：Restricted geometric Langlands, global Arthur enhancements, and generic Ramanujan　·　学科：Number theory　·　验证状态：暂无形式化证明，请以社区核验为准
 
+## 入门导读 🐣
+
+几何朗兰兹纲领是一部"双语词典"：左边是曲线上的 `@@M@@G@@`-丛与层（自守侧），右边是局部系统（谱侧），纲领断言两侧可以逐词互译。特征为零时词典已经编成；在正特征下，Gaitsgory–Raskin 编出了词典的主体，却只能保证它覆盖右侧的一部分——可能存在"漏译的页"。这篇论文证明：一页都不缺。
+
+**关键词卡片**
+
+- 几何朗兰兹（geometric Langlands）：把数论的朗兰兹对应搬进层与范畴世界的总纲领。
+- `@@M@@G@@`-丛（`@@M@@G@@`-bundle）：曲线上的"扭曲对称结构"，自守侧的基本对象。
+- 局部系统（local system）：谱侧的基本对象，可理解为带对称群的平坦联络。
+- 受限理论（restricted theory）：AGKRRV 在正特征建立的、附加幂零支集约束的版本。
+- 满支撑（full support）：谱侧没有任何连通分量在词典中缺失。
+
+**看个具体例子**
+
+结论可写成一行"词典等式"：`@@M@@\mathrm{Shv}_{\mathrm{Nilp}}(\mathrm{Bun}_G)\simeq\mathrm{IndCoh}_{\mathrm{Nilp}}(LS^{\mathrm{restr}}_{\check G})@@`。此前的等价只定义在谱侧某个开闭子集 `@@M@@Y'\subseteq Y@@` 上；主定理证明 `@@M@@Y'=Y@@`：右侧每个"房间"都住着自守侧的"住户"，翻译是严格的范畴等价。推论还保证：任意参数都存在非零的 Hecke 特征对象。
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280">
+  <text x="280" y="34" font-size="15" text-anchor="middle">词典两侧一一对应：定理证明谱侧无缺失分量（Y'=Y）</text>
+  <text x="110" y="60" font-size="14" text-anchor="middle">自守侧（层）</text>
+  <text x="450" y="60" font-size="14" text-anchor="middle">谱侧（局部系统）</text>
+  <rect x="60" y="74" width="100" height="34" fill="#e8eef8" stroke="#345"/>
+  <rect x="60" y="120" width="100" height="34" fill="#e8eef8" stroke="#345"/>
+  <rect x="60" y="166" width="100" height="34" fill="#e8eef8" stroke="#345"/>
+  <rect x="60" y="212" width="100" height="34" fill="#e8eef8" stroke="#345"/>
+  <rect x="400" y="74" width="100" height="34" fill="#f2e3ea" stroke="#345"/>
+  <rect x="400" y="120" width="100" height="34" fill="#f2e3ea" stroke="#345"/>
+  <rect x="400" y="166" width="100" height="34" fill="#f2e3ea" stroke="#345"/>
+  <rect x="400" y="212" width="100" height="34" fill="#f2e3ea" stroke="#345"/>
+  <text x="450" y="234" font-size="14" text-anchor="middle">？</text>
+  <line x1="160" y1="91" x2="400" y2="91" stroke="#889"/>
+  <line x1="160" y1="137" x2="400" y2="137" stroke="#889"/>
+  <line x1="160" y1="183" x2="400" y2="183" stroke="#889"/>
+  <line x1="160" y1="229" x2="400" y2="229" stroke="#d0842a" stroke-width="2.5"/>
+  <text x="280" y="222" font-size="12" text-anchor="middle">原疑缺失，定理证明存在对应</text>
+  <text x="280" y="262" font-size="13" text-anchor="middle">满支撑：谱侧每个连通分量都有自守对象，等价在整体成立</text>
+</svg>
+
+</div>
+
+**为什么值得关心**
+
+它把正特征几何朗兰兹从"部分等价"推进到"完整等价"，证明了 Gaitsgory–Raskin 的满支撑猜想（1.3.10），是纲领在有限域世界落地的关键一步。
+
+> 暂无形式化证明（AI 结果待核验）
+
 ## 一句话结论
 
 论文在特征 `@@M@@p>0@@`、`@@M@@\ell\ne p@@` 的曲线上证明了受限几何朗兰兹等价（restricted geometric Langlands equivalence）的"满支撑"（full support）：谱侧局部系统栈没有任何连通分量缺失，从而把 Gaitsgory–Raskin 已构造的部分等价升级为整体等价，在他们设定的两个特征制度下解决了其满支撑猜想。

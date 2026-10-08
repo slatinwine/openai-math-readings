@@ -13,6 +13,34 @@ pdfname: ""
 
 > 结果族 289：Strong Kadison–Kastler stability and its spatial boundaries　·　学科：Operator algebras　·　验证状态：暂无形式化证明，请以社区核验为准
 
+## 入门导读 🐣
+
+两张几乎重合的透明胶片，只差一丝角度。Kadison–Kastler 猜想问：只要误差足够小，能否"轻轻一转"（角度小于 `@@M@@\varepsilon@@`）让它们完全重合？本文证明能，而且"多接近才算够"的门槛 `@@M@@\delta@@` 只依赖你要求的 `@@M@@\varepsilon@@`，与胶片本身多大多复杂毫无关系——不管是哪一类代数、放在什么表示里、空间是几维，门槛一刀切。
+
+**关键词卡片**
+
+- von Neumann 代数（von Neumann algebra）：算子在弱拓扑下的闭包世界
+- Kadison–Kastler 距离（Kadison–Kastler distance）：两代数单位球之间的 Hausdorff 距离
+- 酉算子（unitary）：保长度的旋转，`@@M@@uMu^*=N@@` 即转正对齐
+- 强稳定性（strong stability）：不仅要对齐，实现对齐的 `@@M@@u@@` 还须贴近恒等
+- 一致容差 `@@M@@\delta(\varepsilon)@@`：对一切代数、表示、空间维数通用的门槛
+
+**看个具体例子**
+
+数字版定理：`@@M@@d(M,N)<\delta(\varepsilon)\Rightarrow@@` 存在 `@@M@@u@@` 使 `@@M@@uMu^*=N@@` 且 `@@M@@\|u-I\|<\varepsilon@@`。比如要求 `@@M@@\varepsilon=0.1@@`，就存在统一的 `@@M@@\delta(0.1)@@`：任何一对代数，不管什么类型、作用在多大的 Hilbert 空间上，只要距离小于它，就能用偏离恒等不到 0.1 的旋转对齐。此前所有正面结果都要附加"可均""特定类型"等条件，普适版本是五十多年来的悬案。
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280"><rect x="60" y="110" width="190" height="120" fill="#eef" stroke="#369" stroke-width="2"/><text x="155" y="252" text-anchor="middle" font-size="13">M（胶片一）</text><polygon points="100,60 290,76 290,196 100,180" fill="none" stroke="#c33" stroke-width="2"/><text x="195" y="48" text-anchor="middle" font-size="13" fill="#c33">N（胶片二，只差一丝）</text><path d="M 320 110 Q 365 130 320 165" fill="none" stroke="#333" stroke-width="2"/><polygon points="320,170 328,154 312,156" fill="#333"/><text x="400" y="138" text-anchor="middle" font-size="13">u（‖u−I‖＜ε）</text><text x="280" y="272" text-anchor="middle" font-size="13">距离 d(M,N)＜δ(ε) ⟹ 轻转 u 即完全重合</text></svg>
+
+</div>
+
+**为什么值得关心**
+
+1972 年提出的问题以最强的普适形式解决；族内两篇姊妹反例恰好圈出它的边界——单侧逼近不行，C* 层面也不行，三篇合璧画出稳定性的完整疆域：什么时候"接近"必然意味着"同一个"，什么时候恰恰相反。
+
+> 暂无形式化证明（AI 结果待核验）
+
 ## 一句话结论
 
 证明了强 Kadison–Kastler 猜想：对任意 `@@M@@\varepsilon>0@@` 存在仅依赖 `@@M@@\varepsilon@@` 的 `@@M@@\delta>0@@`，使同一 Hilbert 空间上 Kadison–Kastler 距离小于 `@@M@@\delta@@` 的 von Neumann 代数必可被 `@@M@@\|u-I\|<\varepsilon@@` 的酉算子共轭，容差对所有代数、类型、表示与空间维数一律通用。

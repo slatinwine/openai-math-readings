@@ -13,6 +13,57 @@ pdfname: ""
 
 > 结果族 165：The Harary–Hill and Zarankiewicz crossing-number formulas　·　学科：Combinatorics　·　验证状态：主结果已 Lean 形式化
 
+## 入门导读 🐣
+
+1944 年，数学家 Turán 在布达佩斯附近的一家砖厂里盯着铁轨出神：m 座窑炉和 n 个货场要两两铺轨，轨道交叉处就得建桥。桥最少要几座？这就是完全二部图 `@@M@@K_{m,n}@@` 的交叉数问题。Zarankiewicz 在 1955 年给出"沿两条垂直坐标轴摆点"的构图并宣称最优，但证明有漏洞。这篇论文把漏洞补上了：那个直觉构图真的无懈可击。
+
+**关键词卡片**
+
+- 完全二部图 `@@M@@K_{m,n}@@`（complete bipartite graph）：顶点分两摞，只有跨摞的两两连边；窑炉×货场。
+- 交叉数（crossing number）：所有画法中交叉点的最小个数。
+- Zarankiewicz 构图（axis construction）：顶点摆在两条垂直数轴上、直线连边的画法。
+- 秩不等式（rank inequality）：把"交叉够不够多"翻译成"矩阵秩够不够大"的代数工具。
+
+**看个具体例子**
+
+定理：`@@M@@\operatorname{cr}(K_{m,n})=\lfloor\frac m2\rfloor\lfloor\frac{m-1}2\rfloor\lfloor\frac n2\rfloor\lfloor\frac{n-1}2\rfloor@@`。代入 `@@M@@m=n=3@@` 得 1：下图正是轴构图，三条横轨对三条竖轨，九条连线只有一个交叉；`@@M@@m=n=4@@` 时公式给出 4。
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280">
+  <line x1="60" y1="140" x2="500" y2="140" stroke="#dddddd" stroke-width="2"/>
+  <line x1="280" y1="25" x2="280" y2="255" stroke="#dddddd" stroke-width="2"/>
+  <line x1="100" y1="140" x2="280" y2="50" stroke="#8899aa" stroke-width="2"/>
+  <line x1="100" y1="140" x2="280" y2="105" stroke="#8899aa" stroke-width="2"/>
+  <line x1="100" y1="140" x2="280" y2="235" stroke="#8899aa" stroke-width="2"/>
+  <line x1="190" y1="140" x2="280" y2="50" stroke="#8899aa" stroke-width="2"/>
+  <line x1="190" y1="140" x2="280" y2="105" stroke="#8899aa" stroke-width="2"/>
+  <line x1="190" y1="140" x2="280" y2="235" stroke="#8899aa" stroke-width="2"/>
+  <line x1="420" y1="140" x2="280" y2="50" stroke="#8899aa" stroke-width="2"/>
+  <line x1="420" y1="140" x2="280" y2="105" stroke="#8899aa" stroke-width="2"/>
+  <line x1="420" y1="140" x2="280" y2="235" stroke="#8899aa" stroke-width="2"/>
+  <circle cx="212" cy="118" r="11" fill="none" stroke="#e0a000" stroke-width="2.5"/>
+  <circle cx="100" cy="140" r="8" fill="#4a6fa5"/>
+  <circle cx="190" cy="140" r="8" fill="#4a6fa5"/>
+  <circle cx="420" cy="140" r="8" fill="#4a6fa5"/>
+  <circle cx="280" cy="50" r="8" fill="#c0642c"/>
+  <circle cx="280" cy="105" r="8" fill="#c0642c"/>
+  <circle cx="280" cy="235" r="8" fill="#c0642c"/>
+  <text x="52" y="122" font-size="13" fill="#4a6fa5">窑炉（横轴）</text>
+  <text x="292" y="40" font-size="13" fill="#c0642c">货场（纵轴）</text>
+  <text x="280" y="268" font-size="14" text-anchor="middle" fill="#333333">K₃,₃ 的九条轨道只有 1 个交叉（黄圈）——恰是公式的最小值</text>
+</svg>
+
+</div>
+
+下界证明把画法的几何信息压进带号交叉矩阵：二部图的四边形结构导出矩阵间的循环差关系，再用拉格朗日插值造出"秩探测器"，最后由子空间维数不等式收网——交叉若少于公式值，线性代数就会自相矛盾。
+
+**为什么值得关心**
+
+Turán 的砖厂之问悬挂八十余年后闭合，与完全图姊妹篇互相印证，且已 Lean 形式化。
+
+> 已 Lean 形式化
+
 ## 一句话结论
 
 论文证明了 Zarankiewicz 猜想、解决了 Turán 1944 年提出的砖厂问题（brickyard problem）：完全二部图 `@@M@@K_{m,n}@@` 的普通交叉数恰为 `@@M@@\lfloor\frac m2\rfloor\lfloor\frac{m-1}2\rfloor\lfloor\frac n2\rfloor\lfloor\frac{n-1}2\rfloor@@`，经典的"坐标轴构图"在一切连续弧画法中被证明全局最优。

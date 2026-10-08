@@ -13,6 +13,45 @@ pdfname: ""
 
 > 结果族 014：Restricted geometric Langlands, global Arthur enhancements, and generic Ramanujan　·　学科：Number theory　·　验证状态：暂无形式化证明，请以社区核验为准
 
+## 入门导读 🐣
+
+用一把带无理数刻度的尺子搭好一排书架，事后却发现：每层隔板的位置都恰好落在整数格点上。这篇论文就是数论版的这一幕：自守函数空间上有一套用 `@@M@@\ell@@`-进工具搭出的、层层嵌套的"滤过"结构，作者证明这套结构其实完全定义在有理数 `@@M@@\mathbb Q@@` 之上——解决了 Gaitsgory–Lafforgue–Raskin 的有理性猜想。
+
+**关键词卡片**
+
+- 滤过（filtration）：把空间排成逐层嵌套、越来越大的子空间序列，像滤网从细到粗。
+- 幂零轨道（nilpotent orbit）：李代数中幂零元素按共轭关系分出的"标签"，用来给每一层命名。
+- `@@M@@\ell@@`-进系数（`@@M@@\ell@@`-adic coefficients）：几何朗兰兹里代替复数系使用的系数系统，本定理证明可降回有理数。
+- 有理性（rationality）：结构能由有理系数的方程与基定义，本领域判别"结构是否本源"的标尺。
+- 奇异支集（singular support）：AGKRRV 引入的几何量，编码表示偏离温和的"Arthur 方向"。
+
+**看个具体例子**
+
+玩具版滤过：`@@M@@\{0\}\subset@@`（一条直线）`@@M@@\subset\mathbb R^2@@`。有理性问的是：每层能否由"坐标全为有理数"的向量张成？例如由 `@@M@@(1,\sqrt2)@@` 张成的直线就不是有理的。主定理的结论是 `@@M@@E\otimes_{\mathbb Q}(\mathcal A_{\mathbb Q}\cap\mathcal F_Y)\cong\mathcal F_Y@@`：把 `@@M@@\ell@@`-进滤层交回有理数、再重新扩张，严丝合缝、一分不差。
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280">
+  <text x="280" y="34" font-size="15" text-anchor="middle">Arthur 滤过：逐层嵌套，每层都定义在 ℚ 上</text>
+  <rect x="60" y="58" width="440" height="182" fill="none" stroke="#345" stroke-width="2"/>
+  <text x="76" y="80" font-size="13">全部函数空间</text>
+  <rect x="100" y="96" width="360" height="128" fill="none" stroke="#567"/>
+  <text x="116" y="116" font-size="13">较大轨道的层</text>
+  <rect x="150" y="132" width="260" height="80" fill="none" stroke="#789"/>
+  <text x="166" y="152" font-size="13">较小轨道的层</text>
+  <rect x="200" y="166" width="150" height="36" fill="#fdf6e3" stroke="#9ab"/>
+  <text x="275" y="189" font-size="13" text-anchor="middle">{0}（最温和）</text>
+  <text x="280" y="262" font-size="14" text-anchor="middle">定理：每一层都能用有理系数的基张成（GLR 有理性猜想成立）</text>
+</svg>
+
+</div>
+
+**为什么值得关心**
+
+两套来源迥异的构造（`@@M@@\ell@@`-进范畴迹与有理函数空间）竟能在 `@@M@@\mathbb Q@@` 上完全对齐——这种"意外的有理性"通常预示更深的算术结构，且结论覆盖非尖点部分、无需尖点性假设。
+
+> 暂无形式化证明（AI 结果待核验）
+
 ## 一句话结论
 
 在受限几何朗兰兹理论的特征假设下，证明分裂半单群的非分歧（unramified）自守函数空间上按幂零轨道（nilpotent orbit）递增的典范 Arthur 滤过（canonical Arthur filtration）定义在 `@@M@@\mathbb Q@@` 上，正面解决 Gaitsgory–Lafforgue–Raskin 的有理性猜想，且无需尖点性或 Hecke 有限性假设。

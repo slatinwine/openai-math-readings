@@ -13,6 +13,56 @@ pdfname: ""
 
 > 结果族 120：Almost-linear-time exact matching and prescribed-degree factors in general graphs　·　学科：Theoretical computer science　·　验证状态：暂无形式化证明，请以社区核验为准
 
+## 入门导读 🐣
+
+舞会上想给同学们配舞伴，每人只能牵一个人，怎样配出最多对？这个"最大匹配"问题自 1965 年起就有了多项式算法，但速度长期停在"边数 × 根号顶点数"的台阶上。这篇论文一步跨到近乎线性——几乎和把图读进电脑一样快。
+
+**关键词卡片**
+
+- 匹配（matching）：一组互不共享端点的边，没有人被重复占用。
+- 最大匹配（maximum matching）：边数最多的匹配。
+- `@@M@@f@@`-因子（`@@M@@f@@`-factor）：给每个顶点规定度数的生成子图问题。
+- 近乎线性时间（almost-linear time）：`@@M@@(n+m)^{1+o(1)}@@`，几乎与输入规模同阶。
+- 奇集合约束（odd-set constraints）：一般图匹配特有的结构障碍，二部图没有，是提速的拦路虎。
+
+**看个具体例子**
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280">
+  <line x1="150" y1="90" x2="150" y2="190" stroke="#333" stroke-width="5"/>
+  <line x1="280" y1="90" x2="280" y2="190" stroke="#333" stroke-width="5"/>
+  <line x1="410" y1="90" x2="410" y2="190" stroke="#333" stroke-width="5"/>
+  <line x1="170" y1="70" x2="260" y2="70" stroke="#333" stroke-width="2"/>
+  <line x1="300" y1="70" x2="390" y2="70" stroke="#333" stroke-width="2"/>
+  <line x1="170" y1="210" x2="260" y2="210" stroke="#333" stroke-width="2"/>
+  <line x1="300" y1="210" x2="390" y2="210" stroke="#333" stroke-width="2"/>
+  <circle cx="150" cy="70" r="20" fill="none" stroke="#333" stroke-width="2"/>
+  <text x="150" y="76" text-anchor="middle" font-size="15">1</text>
+  <circle cx="150" cy="210" r="20" fill="none" stroke="#333" stroke-width="2"/>
+  <text x="150" y="216" text-anchor="middle" font-size="15">2</text>
+  <circle cx="280" cy="70" r="20" fill="none" stroke="#333" stroke-width="2"/>
+  <text x="280" y="76" text-anchor="middle" font-size="15">3</text>
+  <circle cx="280" cy="210" r="20" fill="none" stroke="#333" stroke-width="2"/>
+  <text x="280" y="216" text-anchor="middle" font-size="15">4</text>
+  <circle cx="410" cy="70" r="20" fill="none" stroke="#333" stroke-width="2"/>
+  <text x="410" y="76" text-anchor="middle" font-size="15">5</text>
+  <circle cx="410" cy="210" r="20" fill="none" stroke="#333" stroke-width="2"/>
+  <text x="410" y="216" text-anchor="middle" font-size="15">6</text>
+  <text x="60" y="250" font-size="14">粗边 = 匹配边：{1-2, 3-4, 5-6}</text>
+  <text x="60" y="272" font-size="13">6 个点、7 条边的小图里，这是一份最大匹配（3 对）</text>
+</svg>
+
+</div>
+
+数一数：粗边 `@@M@@\{1\text{-}2,\ 3\text{-}4,\ 5\text{-}6\}@@` 共 3 条且互不碰头，已是最大匹配。定理保证：对任何 `@@M@@n@@` 点 `@@M@@m@@` 边的简单图，单一随机算法在每条计算路径上都于 `@@M@@(n+m)^{1+o(1)}@@` 时间停机，至少以 `@@M@@2/3@@` 的概率输出显式最大匹配；答案输出前必被验证，绝不谎报。同一框架还近乎线性地解决 `@@M@@f@@`-因子的判定与构造。
+
+**为什么值得关心**
+
+此前最快的组合方法是 Micali–Vazirani 算法；前几年借近乎线性流算法，二部图率先突破到近乎线性，一般图却因"花"结构迟迟未动。本文把它扛过奇集合约束这道最难的门槛，推广到任意简单图，刷新了五十年的老纪录。
+
+> 暂无形式化证明（AI 结果待核验）
+
 ## 一句话结论
 
 证明任一无权简单图的最大匹配（maximum-cardinality matching）可用单一随机算法在 `@@M@@(n+m)^{1+o(1)}@@` 时间内精确求出，成功概率至少 `@@M@@2/3@@`，且时间界在每条计算路径上成立；同一方法把 `@@M@@f@@`-因子判定与构造也做到近乎线性，将一般图精确匹配从 `@@M@@O(m\sqrt n)@@` 推进到近乎线性。

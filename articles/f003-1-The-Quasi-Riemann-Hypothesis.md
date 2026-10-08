@@ -13,6 +13,60 @@ pdfname: ""
 
 > 结果族 003：The quasi-Riemann hypothesis　·　学科：Number theory（数论）　·　验证状态：主结果已 Lean 形式化
 
+## 入门导读 🐣
+
+素数分布是否安稳，取决于黎曼 ζ 函数的零点藏在哪里——零点像乐曲里的杂音源，越靠近"右侧边界线" `@@M@@s=1@@`，素数的波动越诡异。黎曼猜想断言所有杂音都精确排在中线上，至今没人能证。这篇论文先拿下一个弱得多却压倒性的一步：右侧 7/8 以后，一根杂音都没有。
+
+**关键词卡片**
+
+- 黎曼 ζ 函数（Riemann zeta function）：`@@M@@\zeta(s)=1+1/2^s+1/3^s+\cdots@@`，编码素数分布的核心函数。
+- 临界带（critical strip）：竖直条带 `@@M@@0<\Re s<1@@`，ζ 的非平凡零点全部落在其中。
+- 无零点半平面（zero-free half-plane）：`@@M@@\Re s>7/8@@` 的区域，本文证明这里没有任何零点。
+- Dirichlet L-函数（Dirichlet L-function）：ζ 的"带符号打分"版本，同样的禁区对它们全体成立。
+- 最小二次非剩余（least quadratic nonresidue）：模 `@@M@@p@@` 下第一个不是平方数的正整数；本文顺带证明了 Vinogradov 关于它的猜想。
+
+**看个具体例子**
+
+把结论画在 `@@M@@s@@` 平面上：横轴是实部。所有非平凡零点只能住在临界带内，已知零点都排在中线 `@@M@@\Re s=1/2@@` 上（黎曼猜想：全部如此）；本文证明右侧灰色禁区 `@@M@@\Re s>7/8@@` 内没有零点（`@@M@@s=1@@` 处是极点，不计）。
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280">
+  <text x="280" y="26" font-size="17" text-anchor="middle" fill="#222">ζ(s) 的临界带与论文证明的无零点禁区</text>
+  <rect x="370" y="56" width="40" height="160" fill="#dddddd" stroke="none"/>
+  <rect x="90" y="56" width="320" height="160" fill="none" stroke="#333" stroke-width="2"/>
+  <line x1="250" y1="56" x2="250" y2="216" stroke="#888" stroke-width="1.5" stroke-dasharray="6,5"/>
+  <circle cx="250" cy="82" r="4" fill="#333"/>
+  <circle cx="250" cy="106" r="4" fill="#333"/>
+  <circle cx="250" cy="130" r="4" fill="#333"/>
+  <circle cx="250" cy="154" r="4" fill="#333"/>
+  <circle cx="250" cy="178" r="4" fill="#333"/>
+  <circle cx="250" cy="202" r="4" fill="#333"/>
+  <text x="240" y="70" font-size="14" text-anchor="end" fill="#222">Re s = 1/2（临界线）</text>
+  <text x="100" y="180" font-size="14" fill="#555">已知零点都在虚线上</text>
+  <text x="100" y="200" font-size="14" fill="#555">黎曼猜想：全部如此</text>
+  <text x="452" y="128" font-size="15" fill="#222">Re s &gt; 7/8</text>
+  <text x="452" y="150" font-size="15" fill="#222">无零点禁区</text>
+  <text x="90" y="240" font-size="14" text-anchor="middle" fill="#222">0</text>
+  <text x="250" y="240" font-size="14" text-anchor="middle" fill="#222">1/2</text>
+  <text x="370" y="240" font-size="14" text-anchor="middle" fill="#222">7/8</text>
+  <text x="410" y="240" font-size="14" text-anchor="middle" fill="#222">1</text>
+  <line x1="90" y1="256" x2="500" y2="256" stroke="#333" stroke-width="1.5"/>
+  <polygon points="500,251 510,256 500,261" fill="#333"/>
+  <text x="510" y="274" font-size="13" fill="#555">实部</text>
+  <text x="290" y="274" font-size="13" text-anchor="middle" fill="#555">s = 1 处是 ζ 的极点，不计为零点</text>
+</svg>
+
+</div>
+
+禁区离边界只剩 1/8，看似很小，却是质变：1896 年素数定理以来的经典无零点区域会随导子增大而缩向直线 `@@M@@\Re s=1@@`，而这是第一个固定的半平面。
+
+**为什么值得关心**
+
+"零点离 1 有多远"直接控制素数分布的误差；固定禁区还顺带导出最小二次非剩余的多项式对数上界与求平方根的快速确定性算法。
+
+> 主结果（7/8 无零点半平面）已 Lean 形式化；同族 11/12 备择证明路线暂无形式化证明（AI 结果待核验）
+
 ## 一句话结论
 
 本文证明 `@@M@@\mathbb Q(\sqrt{-3})@@` 上全体有限阶 Hecke `@@M@@L@@`-函数及全体 Dirichlet `@@M@@L@@`-函数（含 `@@M@@\zeta(s)@@`）在半平面 `@@M@@\Re s>7/8@@` 内无零点（仅允许主特征在 `@@M@@s=1@@` 的极点），从而肯定地解决拟黎曼猜想，并连带证明 Vinogradov 最小二次非剩余猜想。

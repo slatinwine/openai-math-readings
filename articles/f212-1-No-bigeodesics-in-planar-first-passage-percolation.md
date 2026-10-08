@@ -13,6 +13,83 @@ pdfname: ""
 
 > 结果族 212：Planar first-passage geometry and the absence of bigeodesics　·　学科：Probability and statistical mechanics　·　验证状态：暂无形式化证明，请以社区核验为准
 
+## 入门导读 🐣
+
+把一座城市每条道路的拥堵程度随机指定，司机自然想知道任意两点之间哪条路最快。这篇论文研究一个更刁钻的问题：会不会存在一条两头都无限延伸的"永远最快"之路——它途经的每一段，都是那段起止点间的最快选择？结论是：在平面方格路网上，这样的路几乎必然不存在。
+
+**关键词卡片**
+
+- 首达渗流（first-passage percolation）：给方格网每条边独立赋予随机"通行时间"的经典模型。
+- 测地线（geodesic）：连接两点、总通行时间最小的路径。
+- 双无穷测地线（bigeodesic）：向两头无限延伸，且任意有限段都是测地线的路径。
+- 极限形状（limit shape）：时间放长后"可达区域"趋近的确定性轮廓。
+
+**看个具体例子**
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280">
+  <text x="280" y="40" font-size="13" text-anchor="middle" fill="#222">每条边有随机『通行时间』，红色是起点 0 到终点 A 的最快路线</text>
+  <line x1="90" y1="80" x2="410" y2="80" stroke="#bbb" stroke-width="1.5"/>
+  <line x1="90" y1="125" x2="410" y2="125" stroke="#bbb" stroke-width="1.5"/>
+  <line x1="90" y1="170" x2="410" y2="170" stroke="#bbb" stroke-width="1.5"/>
+  <line x1="90" y1="215" x2="410" y2="215" stroke="#bbb" stroke-width="1.5"/>
+  <line x1="90" y1="80" x2="90" y2="215" stroke="#bbb" stroke-width="1.5"/>
+  <line x1="170" y1="80" x2="170" y2="215" stroke="#bbb" stroke-width="1.5"/>
+  <line x1="250" y1="80" x2="250" y2="215" stroke="#bbb" stroke-width="1.5"/>
+  <line x1="330" y1="80" x2="330" y2="215" stroke="#bbb" stroke-width="1.5"/>
+  <line x1="410" y1="80" x2="410" y2="215" stroke="#bbb" stroke-width="1.5"/>
+  <text x="128" y="74" font-size="11" fill="#888">7</text>
+  <text x="208" y="74" font-size="11" fill="#888">9</text>
+  <text x="288" y="74" font-size="11" fill="#888">8</text>
+  <text x="368" y="74" font-size="11" fill="#888">5</text>
+  <text x="208" y="119" font-size="11" fill="#888">8</text>
+  <text x="288" y="119" font-size="11" fill="#888">6</text>
+  <text x="368" y="119" font-size="11" fill="#888">9</text>
+  <text x="98" y="152" font-size="11" fill="#888">9</text>
+  <text x="256" y="152" font-size="11" fill="#888">6</text>
+  <text x="416" y="152" font-size="11" fill="#888">7</text>
+  <path d="M 90 125 L 170 125 L 170 170 L 250 170 L 330 170 L 330 215 L 410 215" fill="none" stroke="#c0392b" stroke-width="4.5"/>
+  <text x="126" y="118" font-size="12" fill="#c0392b">2</text>
+  <text x="178" y="152" font-size="12" fill="#c0392b">1</text>
+  <text x="206" y="163" font-size="12" fill="#c0392b">3</text>
+  <text x="286" y="163" font-size="12" fill="#c0392b">1</text>
+  <text x="338" y="196" font-size="12" fill="#c0392b">2</text>
+  <text x="366" y="209" font-size="12" fill="#c0392b">1</text>
+  <circle cx="90" cy="80" r="3" fill="#777"/>
+  <circle cx="170" cy="80" r="3" fill="#777"/>
+  <circle cx="250" cy="80" r="3" fill="#777"/>
+  <circle cx="330" cy="80" r="3" fill="#777"/>
+  <circle cx="410" cy="80" r="3" fill="#777"/>
+  <circle cx="250" cy="125" r="3" fill="#777"/>
+  <circle cx="330" cy="125" r="3" fill="#777"/>
+  <circle cx="410" cy="125" r="3" fill="#777"/>
+  <circle cx="90" cy="170" r="3" fill="#777"/>
+  <circle cx="170" cy="170" r="3" fill="#777"/>
+  <circle cx="250" cy="170" r="3" fill="#777"/>
+  <circle cx="330" cy="170" r="3" fill="#777"/>
+  <circle cx="410" cy="170" r="3" fill="#777"/>
+  <circle cx="90" cy="215" r="3" fill="#777"/>
+  <circle cx="170" cy="215" r="3" fill="#777"/>
+  <circle cx="250" cy="215" r="3" fill="#777"/>
+  <circle cx="330" cy="215" r="3" fill="#777"/>
+  <circle cx="90" cy="125" r="5.5" fill="#c0392b"/>
+  <circle cx="410" cy="215" r="5.5" fill="#c0392b"/>
+  <text x="90" y="108" font-size="11" text-anchor="middle" fill="#c0392b">起点 0</text>
+  <text x="410" y="240" font-size="11" text-anchor="middle" fill="#c0392b">终点 A</text>
+  <text x="280" y="268" font-size="12.5" text-anchor="middle" fill="#222">红色路线总耗时 10；两头无限延伸且每段都最快的路线（bigeodesic）几乎必然不存在</text>
+</svg>
+
+</div>
+
+图中从起点 0 到终点 A，红色路径总耗时 2+1+3+1+2+1=10，是所有走法中最省的，它就是一条测地线。定理说的是更强的"全场否定"：几乎必然不存在任何一条向两头无限延伸、且每一段都拿到这种"最快认证"的路线——连例外方向也不许依赖随机路况。证明的卡点正在于量词交换：对每个固定方向成立，不等于对所有随机可选的方向同时成立。
+
+**为什么值得关心**
+
+这是 Furstenberg 时代遗留、由 Damron–Hanson 表述的平面无测地线猜想，在四条独立边权最小值二阶矩有限这一温和条件下的完全解决，且不需要对极限形状作任何正则性假设。
+
+> 暂无形式化证明（AI 结果待核验）
+
 ## 一句话结论
 在边权独立同分布、非负、无原子且四条独立边权最小值二阶矩有限的条件下，证明了平面首达渗流几乎必然不存在任何双无穷测地线，一举解决该条件下的平面无测地线猜想，且完全不需要极限形状的正则性假设。
 

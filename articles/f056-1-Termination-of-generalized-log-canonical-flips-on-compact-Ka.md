@@ -13,6 +13,57 @@ pdfname: ""
 
 > 结果族 056：Termination of projective and Kähler fourfold minimal model programs　·　学科：Algebraic and complex geometry　·　验证状态：暂无形式化证明，请以社区核验为准
 
+## 入门导读 🐣
+
+极小模型纲领像给高维空间做"减法整容"：反复收缩多余的皱褶，遇到不能直接切除的皱褶，就先做一次"翻转"手术把它换成能切的形状。整个纲领最怕的是手术无限做下去。本文证明：在四维的紧 Kähler 世界——一个可以非射影、没有整体丰富线丛的更大舞台——上，广义 log canonical 配对的翻转序列必定在有限步内停止。
+
+**关键词卡片**
+
+- 极小模型纲领（minimal model program, MMP）：反复收缩与翻转、把簇化为极小模型的纲领。
+- 翻转（flip）：把"伴随除子为负"的小收缩换成"为正"的小双有理手术。
+- 小态射（small morphism）：例外轨迹不含任何除子、只动低维部分的映射。
+- 广义配对（generalized pair）：形如 `@@M@@(X,B+\mathbf M)@@`，正性数据 `@@M@@\mathbf M@@` 允许记在更高的双有理模型上。
+- 终止性（termination of flips）：翻转序列不能无限延续，MMP 的核心难题。
+
+**看个具体例子**
+
+设 `@@M@@X_0@@` 是整体 Weil `@@M@@\mathbb Q@@`-因子化的紧 Kähler 四重态，配对 `@@M@@(X_0,B_0+\mathbf M)@@` 广义 log canonical。若 `@@M@@X_0\dashrightarrow X_1\dashrightarrow X_2\dashrightarrow\cdots@@` 每步都是规定丰富符号的射影小翻转图，定理断言序列有限——边界系数允许取到一（log canonical 奇点），不需要缩放规则，也不需要伪有效性假设，而此前代数界的终止性结果多带这类硬条件；取 `@@M@@\mathbf M=0@@` 即得普通 log canonical 情形。
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280">
+  <rect x="35" y="105" width="80" height="55" rx="10" fill="none" stroke="#333" stroke-width="2"/>
+  <text x="75" y="138" text-anchor="middle" font-size="14" fill="#333">X₀</text>
+  <line x1="120" y1="132" x2="150" y2="132" stroke="#333" stroke-width="2"/>
+  <polygon points="156,132 146,127 146,137" fill="#333"/>
+  <text x="138" y="120" text-anchor="middle" font-size="11" fill="#666">翻转</text>
+  <rect x="160" y="105" width="80" height="55" rx="10" fill="none" stroke="#333" stroke-width="2"/>
+  <text x="200" y="138" text-anchor="middle" font-size="14" fill="#333">X₁</text>
+  <line x1="245" y1="132" x2="275" y2="132" stroke="#333" stroke-width="2"/>
+  <polygon points="281,132 271,127 271,137" fill="#333"/>
+  <text x="263" y="120" text-anchor="middle" font-size="11" fill="#666">翻转</text>
+  <rect x="285" y="105" width="80" height="55" rx="10" fill="none" stroke="#333" stroke-width="2"/>
+  <text x="325" y="138" text-anchor="middle" font-size="14" fill="#333">X₂</text>
+  <line x1="370" y1="132" x2="382" y2="132" stroke="#333" stroke-width="2"/>
+  <line x1="404" y1="132" x2="420" y2="132" stroke="#333" stroke-width="2"/>
+  <polygon points="426,132 416,127 416,137" fill="#333"/>
+  <text x="393" y="120" text-anchor="middle" font-size="14" fill="#333">⋯</text>
+  <rect x="428" y="105" width="100" height="55" rx="10" fill="none" stroke="#080" stroke-width="2"/>
+  <text x="478" y="128" text-anchor="middle" font-size="13" fill="#080">有限步后</text>
+  <text x="478" y="148" text-anchor="middle" font-size="13" fill="#080">停止，再无翻转</text>
+  <text x="280" y="70" text-anchor="middle" font-size="13" fill="#333">四维紧 Kähler 世界：广义 log canonical 翻转链</text>
+  <text x="280" y="210" text-anchor="middle" font-size="13" fill="#333">无需缩放规则、无需伪有效性假设</text>
+  <text x="280" y="238" text-anchor="middle" font-size="12" fill="#666">（定理只保证已存在的序列会停，不保证翻转存在）</text>
+</svg>
+
+</div>
+
+**为什么值得关心**
+
+Kähler 空间没有丰富线丛，代数工具大多失效；这是该环境下四维终止性的关键进展，为非射影极小模型纲领铺路。
+
+> 暂无形式化证明（AI 结果待核验）
+
 ## 一句话结论
 证明了紧 Kähler 四重折叠上任何广义 log canonical 翻转序列必在有限步内终止（每步为具规定丰富符号的射影小双有理图），无需缩放规则或伪有效性假设，补上了非射影复几何四维极小模型纲领的关键缺口。
 

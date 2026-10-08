@@ -13,6 +13,66 @@ pdfname: ""
 
 > 结果族 268：The spin-one Haldane gap　·　学科：Mathematical physics　·　验证状态：暂无形式化证明，请以社区核验为准
 
+## 入门导读 🐣
+
+把一串小磁铁珠连成首尾相接的圆环，相邻磁铁彼此"较劲"（反铁磁）。想把环从最安稳的状态扰动一下，得迈过一道能量门槛。Haldane 在 1983 年猜：自旋为整数的长环，这道门槛不会随环变长而塌到零。本文首次对纯自旋 1 模型完整证明了这个悬置四十多年的猜想。
+
+**关键词卡片**
+
+- 海森堡链（Heisenberg chain）：相邻自旋两两耦合的一维磁体模型
+- 反铁磁（antiferromagnetic）：相邻自旋倾向反向排列的耦合方式
+- 自旋（spin）：粒子的内禀磁性；这里每颗取整数 1
+- 谱隙（spectral gap）：基态与上一能级的能量差，正的隙就是那道门槛
+- 配分函数（partition function）：把一切能量按统计权重加起来的总和，本文证明的枢纽
+
+**看个具体例子**
+
+环长 L=2304 时，定理给出谱隙 γ_L>log20/784≈0.0038，且对一切更长的偶数环同样成立，基态还唯一。数值物理约 0.41——定理的 0.0038 小得多，但它的价值在于"对任意长度一致为正且完全显式"。
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280">
+<circle cx="140" cy="150" r="72" fill="none" stroke="#999" stroke-width="2" stroke-dasharray="6 5"/>
+<circle cx="212" cy="150" r="6" fill="#333"/>
+<circle cx="198" cy="108" r="6" fill="#333"/>
+<circle cx="162" cy="82" r="6" fill="#333"/>
+<circle cx="118" cy="82" r="6" fill="#333"/>
+<circle cx="82" cy="108" r="6" fill="#333"/>
+<circle cx="68" cy="150" r="6" fill="#333"/>
+<circle cx="82" cy="192" r="6" fill="#333"/>
+<circle cx="118" cy="218" r="6" fill="#333"/>
+<circle cx="162" cy="218" r="6" fill="#333"/>
+<circle cx="198" cy="192" r="6" fill="#333"/>
+<line x1="212" y1="150" x2="230" y2="150" stroke="#c0392b" stroke-width="2.5"/>
+<line x1="198" y1="108" x2="184" y2="118" stroke="#333" stroke-width="2.5"/>
+<line x1="162" y1="82" x2="168" y2="65" stroke="#c0392b" stroke-width="2.5"/>
+<line x1="118" y1="82" x2="124" y2="99" stroke="#333" stroke-width="2.5"/>
+<line x1="82" y1="108" x2="67" y2="97" stroke="#c0392b" stroke-width="2.5"/>
+<line x1="68" y1="150" x2="86" y2="150" stroke="#333" stroke-width="2.5"/>
+<line x1="82" y1="192" x2="67" y2="203" stroke="#c0392b" stroke-width="2.5"/>
+<line x1="118" y1="218" x2="124" y2="201" stroke="#333" stroke-width="2.5"/>
+<line x1="162" y1="218" x2="168" y2="235" stroke="#c0392b" stroke-width="2.5"/>
+<line x1="198" y1="192" x2="184" y2="182" stroke="#333" stroke-width="2.5"/>
+<text x="46" y="260" font-size="14" fill="#333">自旋 1 反铁磁环：相邻箭头交替</text>
+<line x1="330" y1="120" x2="540" y2="120" stroke="#333" stroke-width="2.5"/>
+<line x1="330" y1="220" x2="540" y2="220" stroke="#333" stroke-width="2.5"/>
+<line x1="500" y1="120" x2="500" y2="220" stroke="#c0392b" stroke-width="2"/>
+<polygon points="496,128 504,128 500,120" fill="#c0392b"/>
+<polygon points="496,212 504,212 500,220" fill="#c0392b"/>
+<text x="330" y="108" font-size="14" fill="#333">激发态 E₁</text>
+<text x="330" y="242" font-size="14" fill="#333">基态 E₀（唯一）</text>
+<text x="334" y="168" font-size="13" fill="#c0392b">谱隙 γ_L ≥ log20/784</text>
+<text x="334" y="188" font-size="13" fill="#c0392b">≈ 0.0038，与 L 无关</text>
+</svg>
+
+</div>
+
+**为什么值得关心**
+
+整数与半整数自旋的一维磁体低温行为截然不同，这是量子磁性最基本的分野。半整数一侧早有严格的无隙定理，整数一侧却始终缺一块拼图；如今纯模型上的猜想成为定理，两种行为同框对比终成完整的数学事实。
+
+> 暂无形式化证明（AI 结果待核验）
+
 ## 一句话结论
 
 证明了纯反铁磁自旋 1 海森堡链的偶周期 Haldane 猜想：偶数 `@@M@@L\ge60@@` 时基态唯一，谱隙有与长度无关的显式正下界，无穷体积隙 `@@M@@\Delta_1\ge\log(20)/784>0@@`。这一悬置四十余年的猜想首次在纯双线性模型上获得完整数学证明。

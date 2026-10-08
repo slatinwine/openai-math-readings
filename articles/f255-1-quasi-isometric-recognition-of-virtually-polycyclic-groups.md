@@ -13,6 +13,53 @@ pdfname: ""
 
 > 结果族 255：Quasi-isometric recognition of virtually polycyclic groups　·　学科：Group theory　·　验证状态：暂无形式化证明，请以社区核验为准
 
+## 入门导读 🐣
+
+把地图缩成邮票大小：街道细节糊掉了，但城市是长条还是方块仍一目了然。拟等距就是数学里的"缩略图"——允许固定误差，只保留无穷远处的形状。这篇论文证明：远看像"层层套娃循环塔"的群，自己必定也是这种塔，一个都逃不掉。
+
+**关键词卡片**
+
+- 拟等距（quasi-isometry）：允许"乘一个倍数、加一个误差"的粗略对应，只看大尺度形状。
+- 多循环群（polycyclic group）：像俄罗斯套娃一样层层嵌套、每层商群都是循环群的群。
+- 殆多循环（virtually polycyclic）：拥有一个有限指标的多循环子群。
+- 格（lattice）：李群中离散且商体积有限的子群，像铺满空间的地砖。
+- 高度（exponential height）：论文给群元素标的"楼层数"，是控制误差的核心坐标。
+
+**看个具体例子**
+
+把方格纸的每个竖列整体弯折、错动（右图），任意两点的距离顶多改变一个固定误差——从无穷远处看，"歪格纸"与"正格纸"无法区分，二者拟等距。最经典的具体定理（Gromov）：远看像 `@@M@@\mathbb{Z}^2@@` 的群，取有限指标子群后就是 `@@M@@\mathbb{Z}^2@@`。本文把这条结论一举推广到所有殆多循环塔，还允许"格所在的那个可解李群可以换一个"——这正是 Eskin–Fisher–Whyte 格识别猜想的全部内容。
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280">
+  <text x="145" y="40" font-size="14" fill="#333" text-anchor="middle">正格纸（Z² 的地图）</text>
+  <path d="M40 60V220M70 60V220M100 60V220M130 60V220M160 60V220M190 60V220M220 60V220M250 60V220M40 60H250M40 92H250M40 124H250M40 156H250M40 188H250M40 220H250" stroke="#99a" fill="none"/>
+  <text x="445" y="40" font-size="14" fill="#333" text-anchor="middle">整列弯折的歪格纸</text>
+  <path d="M340 60C362 120 322 175 340 220" stroke="#99a" fill="none"/>
+  <path d="M370 60C352 125 388 170 370 220" stroke="#99a" fill="none"/>
+  <path d="M400 60C412 120 390 175 400 220" stroke="#99a" fill="none"/>
+  <path d="M430 60C405 125 455 170 430 220" stroke="#99a" fill="none"/>
+  <path d="M460 60C476 120 444 175 460 220" stroke="#99a" fill="none"/>
+  <path d="M490 60C478 125 502 170 490 220" stroke="#99a" fill="none"/>
+  <path d="M520 60C542 120 498 175 520 220" stroke="#99a" fill="none"/>
+  <path d="M550 60C532 125 568 170 550 220" stroke="#99a" fill="none"/>
+  <path d="M340 60C420 72 470 50 550 60" stroke="#99a" fill="none"/>
+  <path d="M340 140C430 154 460 124 550 140" stroke="#99a" fill="none"/>
+  <path d="M340 220C420 206 480 232 550 220" stroke="#99a" fill="none"/>
+  <line x1="262" y1="140" x2="322" y2="140" stroke="#556" stroke-width="2"/>
+  <polygon points="322,134 334,140 322,146" fill="#556"/>
+  <text x="293" y="126" font-size="13" fill="#556" text-anchor="middle">远看一样</text>
+  <text x="280" y="262" font-size="12" fill="#666" text-anchor="middle">误差固定有界 ⟹ 拟等距：两张图在无穷远处不可区分</text>
+</svg>
+
+</div>
+
+**为什么值得关心**
+
+"大尺度几何反推代数结构"是几何群论的主旋律，这篇论文为可解方向补上最重的一块基石：与殆多循环群远看相同的群，代数上就是殆多循环的。
+
+> 暂无形式化证明（AI 结果待核验）
+
 ## 一句话结论
 
 证明了与有限生成殆多循环群（virtually polycyclic）拟等距（quasi-isometric）的任意有限生成群必自身殆多循环，彻底解决 Eskin–Fisher–Whyte 的格识别猜想：这类群都虚拟地是某个连通单连通可解李群（允许换一个）中的一致格。

@@ -13,6 +13,34 @@ pdfname: ""
 
 > 结果族 034：Log abundance for compact Kähler spaces under logarithmic Iitaka subadditivity　·　学科：Algebraic and complex geometry　·　验证状态：暂无形式化证明，请以社区核验为准
 
+## 入门导读 🐣
+
+还是"账面不亏 ⟹ 真有现金"的丰度故事，但这次没有附加条件：在特征零的任何维数、任何代数闭域上，温和奇性空间的账面不亏（nef）必然兑现成现金（截面生成）。此前这类"无条件全额兑现"只在低维成立；本文一次付清全维数，是极小模型纲领两大支柱之一的收官级结果。
+
+**关键词卡片**
+
+- 丰度猜想（abundance conjecture）：nef 的伴随除子必半丰富的断言。
+- log canonical 配对（log canonical pair）：带边界、奇性温和的标准研究对象。
+- 多重典范截面（pluricanonical section）：`@@M@@m(K_X+B)@@` 的整体截面，"现金"的具体形式。
+- 非消失（nonvanishing）：找到第一个非零多重典范截面。
+- 半丰富（semiample）：某倍数由整体截面生成并定义纤维化。
+
+**看个具体例子**
+
+证明是按维数爬楼梯的链条：低维好模型 ⟹ `@@M@@n@@` 维非消失 ⟹ `@@M@@n@@` 维好模型 ⟹ `@@M@@n@@` 维半丰富。代入 `@@M@@n=4@@`：用三维的已知好模型，先在四维找到第一个截面，再造成四维好模型，最后得出 nef 伴随除子半丰富——维数每加一，链条重演一遍。
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280"><rect x="60" y="210" width="230" height="55" fill="none" stroke="#333" stroke-width="1.8"/><text x="95" y="242" font-size="14" fill="#333">n−1 维：好模型</text><line x1="175" y1="207" x2="175" y2="173" stroke="#555" stroke-width="1.8"/><polygon points="175,170 170,181 180,181" fill="#555"/><rect x="60" y="112" width="230" height="55" fill="none" stroke="#333" stroke-width="1.8"/><text x="88" y="144" font-size="14" fill="#333">n 维：典范非消失</text><line x1="175" y1="109" x2="175" y2="75" stroke="#555" stroke-width="1.8"/><polygon points="175,72 170,83 180,83" fill="#555"/><rect x="60" y="14" width="230" height="55" fill="none" stroke="#333" stroke-width="1.8"/><text x="80" y="46" font-size="14" fill="#333">n 维：半丰富（丰度）</text><text x="330" y="140" font-size="13" fill="#777">维数每 +1</text><text x="330" y="162" font-size="13" fill="#777">链条重演一遍</text></svg>
+
+</div>
+
+**为什么值得关心**
+
+有理边界 log 丰度猜想在全维数、特征零无条件成立，还附带任意维数的光滑典范非消失；主定理之外另有一串推论：好极小模型的存在性、`@@M@@\kappa=0@@` 时数值平凡推出线性平凡、有理 lc 配对典范环的有限生成等。同族姊妹篇为其供给解析与四维侧的关键输入。
+
+> 暂无形式化证明（AI 结果待核验）
+
 ## 一句话结论
 在特征零的任意维数上证明了有理边界的对数丰性（log abundance）猜想：射影 log canonical pair 上 nef 的 `@@M@@\mathbb{Q}@@`-Cartier 伴随除子必半充盈；在 `@@M@@\mathbb{C}@@` 上还证明了任意维数光滑射影簇的典范非消失，补齐了极小模型纲领两大支柱之一的最后一块。
 

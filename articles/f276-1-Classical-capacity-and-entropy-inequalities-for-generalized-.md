@@ -13,6 +13,34 @@ pdfname: ""
 
 > 结果族 276：Classical capacity of generalized amplitude damping　·　学科：Mathematical physics　·　验证状态：主结果已 Lean 形式化
 
+## 入门导读 🐣
+
+一个发光的量子比特泡在热环境里：激发会衰变掉，环境的热又会把它往回泵。沿这条"最熟悉的噪声管道"，经典信息最多能传多快？发送方可以把消息编成整块纠缠的量子态、接收方做联合测量，但本文证明这样做毫无增益——答案是算一个一元函数的最大值即可，量子信息论里少见的"一锤定音"。
+
+**关键词卡片**
+
+- 广义振幅阻尼（generalized amplitude damping）：量子比特与定温热环境相互作用的噪声信道，参数 γ 与 ν。
+- 经典容量（classical capacity）：无误传信速率的上限。
+- Holevo 容量（Holevo capacity）：单次使用信道时最优编码的平均信息量。
+- 可加性（additivity）：多次使用不比单次更高效的性质，Hastings 已证一般不成立。
+- 最小输出熵（minimum output entropy）：信道输出最"纯"时的熵。
+
+**看个具体例子**
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280"><line x1="150" y1="80" x2="330" y2="80" stroke="#333" stroke-width="2.5"/><text x="344" y="85" font-size="15" fill="#333">|1⟩ 激发态</text><line x1="150" y1="200" x2="330" y2="200" stroke="#333" stroke-width="2.5"/><text x="344" y="205" font-size="15" fill="#333">|0⟩ 基态</text><line x1="200" y1="90" x2="200" y2="190" stroke="#c0392b" stroke-width="2.5"/><polygon points="200,190 194,178 206,178" fill="#c0392b"/><text x="60" y="145" font-size="14" fill="#c0392b">衰减 γ(1−ν)</text><line x1="280" y1="190" x2="280" y2="90" stroke="#2980b9" stroke-width="2.5"/><polygon points="280,90 274,102 286,102" fill="#2980b9"/><text x="392" y="145" font-size="14" fill="#2980b9">热泵回 γν</text><text x="60" y="252" font-size="14" fill="#333">γ：衰减强度　ν：环境热占据——两个参数定义整条信道</text></svg>
+
+</div>
+
+容量的数字版：`@@M@@C=\frac{1}{\ln 2}\max_{0\le p\le1}\{h(t)-g(v(p))\}@@`，其中 `@@M@@t=(1-\gamma)p+\gamma\nu@@`。代入边界看：γ=0（无噪声）时 C=1 比特；γ=1（全坏）时 C=0；ν=1/2、γ=1/2 时 `@@M@@C=1-g(\gamma/4)/\ln 2\approx0.13@@` 比特。最优信号就是等概率、反相位的两个纯态。环境越热（ν 越大），泵回越猛，容量越低；且容量在 ν 换成 1−ν 时保持不变。
+
+**为什么值得关心**
+
+普通阻尼（ν=0）的公式二十多年前就有人算出，而正阻尼加热占据的这一格此前无人能解。它关上了 Leditzky 等 2018 年公开问题清单上的最后一格：这条基础噪声信道的容量从此有闭式答案，且它与任意信道并联时容量与熵量全部可加。
+
+> 已 Lean 形式化
+
 ## 一句话结论
 
 本文彻底确定了量子比特广义振幅阻尼信道（generalized amplitude damping channel）的经典容量（classical capacity）：它恰等于单次使用的 Holevo 容量，由一个单变量最大化显式给出，纠缠块编码没有任何增益，且与任意有限维信道并联使用时容量与熵量全部可加。

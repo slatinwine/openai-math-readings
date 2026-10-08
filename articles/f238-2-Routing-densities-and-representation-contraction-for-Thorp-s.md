@@ -13,6 +13,68 @@ pdfname: ""
 
 > 结果族 238：Optimal logarithmic mixing of the Thorp shuffle　·　学科：Probability and statistical mechanics　·　验证状态：主结果已 Lean 形式化
 
+## 入门导读 🐣
+
+赌场荷官有一种极简洗牌法：把牌对半分、两两一摞、每摞掷一枚硬币决定换不换。硬币看着乱来，但究竟要洗多少轮，整副牌才和"彻底洗匀"分不出差别？这篇论文给出精确回答：`@@M@@N=2^d@@` 张牌只需**固定次数**的整轮扫描就够了——而且这个速度已碰到理论天花板，一步都不能再省。
+
+**关键词卡片**
+
+- Thorp 洗牌（Thorp shuffle）：对半分、两两配对、每对按掷币结果决定交换与否的洗牌模型
+- 坐标扫掠（coordinate sweep）：沿全部 `@@M@@d@@` 个二进制方向各配对交换一轮，等于 `@@M@@d@@` 次物理洗牌
+- 总变差距离（total variation distance）：两个分布"差多远"的尺子，为 0 表示任何统计检验都分不出来
+- 混合时间（mixing time）：把最坏初始牌序洗到与均匀分布几乎一样所需的最少步数
+- 不可约表示（irreducible representation）：对称群的"基本成分"，逐个控制住它们就控制住整副牌
+
+**看个具体例子**
+
+取 `@@M@@N=2^{10}=1024@@` 张牌。硬币数给出下界：`@@M@@t@@` 次物理洗牌至多产生 `@@M@@2^{tN/2}@@` 种牌序，远小于 `@@M@@1024!@@`，所以至少约 `@@M@@2d=20@@` 次。本文证明：存在与 `@@M@@N@@` 无关的常数次扫掠，使任何起点的总变差随 `@@M@@N@@` 增大趋于零，上界与下界夹出 `@@M@@t_{\rm mix}=\Theta(\log N)@@`。证明图景是把"扫＋反扫"看成下面的开关网络，两张牌的路线若共用开关就会"牵手"，密度估计于是变成数圈。
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280">
+  <text x="280" y="24" text-anchor="middle" font-size="15">一扫＋反扫 ≈ 一张掷币开关网络</text>
+  <line x1="50" y1="70" x2="185" y2="97" stroke="#aaa" stroke-width="1.5"/>
+  <line x1="50" y1="125" x2="185" y2="97" stroke="#aaa" stroke-width="1.5"/>
+  <line x1="50" y1="180" x2="185" y2="207" stroke="#aaa" stroke-width="1.5"/>
+  <line x1="50" y1="235" x2="185" y2="207" stroke="#aaa" stroke-width="1.5"/>
+  <line x1="185" y1="97" x2="375" y2="97" stroke="#aaa" stroke-width="1.5"/>
+  <line x1="185" y1="97" x2="375" y2="207" stroke="#aaa" stroke-width="1.5"/>
+  <line x1="185" y1="207" x2="375" y2="97" stroke="#aaa" stroke-width="1.5"/>
+  <line x1="185" y1="207" x2="375" y2="207" stroke="#aaa" stroke-width="1.5"/>
+  <line x1="375" y1="97" x2="510" y2="70" stroke="#aaa" stroke-width="1.5"/>
+  <line x1="375" y1="97" x2="510" y2="125" stroke="#aaa" stroke-width="1.5"/>
+  <line x1="375" y1="207" x2="510" y2="180" stroke="#aaa" stroke-width="1.5"/>
+  <line x1="375" y1="207" x2="510" y2="235" stroke="#aaa" stroke-width="1.5"/>
+  <path d="M50,70 L185,97 L375,207 L510,235" fill="none" stroke="#d62728" stroke-width="3"/>
+  <path d="M50,235 L185,207 L375,97 L510,70" fill="none" stroke="#d62728" stroke-width="3"/>
+  <circle cx="185" cy="97" r="11" fill="#fff" stroke="#333" stroke-width="2"/>
+  <circle cx="185" cy="207" r="11" fill="#fff" stroke="#333" stroke-width="2"/>
+  <circle cx="375" cy="97" r="11" fill="#fff" stroke="#333" stroke-width="2"/>
+  <circle cx="375" cy="207" r="11" fill="#fff" stroke="#333" stroke-width="2"/>
+  <circle cx="50" cy="70" r="5" fill="#333"/>
+  <circle cx="50" cy="125" r="5" fill="#333"/>
+  <circle cx="50" cy="180" r="5" fill="#333"/>
+  <circle cx="50" cy="235" r="5" fill="#333"/>
+  <circle cx="510" cy="70" r="5" fill="#333"/>
+  <circle cx="510" cy="125" r="5" fill="#333"/>
+  <circle cx="510" cy="180" r="5" fill="#333"/>
+  <circle cx="510" cy="235" r="5" fill="#333"/>
+  <text x="50" y="52" text-anchor="middle" font-size="13">输入牌</text>
+  <text x="510" y="52" text-anchor="middle" font-size="13">输出位</text>
+  <text x="185" y="74" text-anchor="middle" font-size="12" fill="#555">子网A</text>
+  <text x="375" y="74" text-anchor="middle" font-size="12" fill="#555">子网B</text>
+  <text x="280" y="136" text-anchor="middle" font-size="13" fill="#b03030">两条路线交叉：是否共用○是计数关键</text>
+  <text x="280" y="264" text-anchor="middle" font-size="13" fill="#555">○＝掷币开关（换/不换）；红＝两张牌各自的路线</text>
+</svg>
+
+</div>
+
+**为什么值得关心**
+
+洗牌是"局部随机操作如何搅浑全局信息"的基准模型，本文把悬置多年的多项式鸿沟一步填平到最优阶，主结果还通过了计算机形式化验证。
+
+> 已 Lean 形式化
+
 ## 一句话结论
 
 证明对 `@@M@@N=2^d@@` 张牌，绝对常数次坐标"扫"即可使整副牌排列律与均匀律的总变差趋于零，Thorp 洗牌混合时间具最优阶 `@@M@@\Theta(\log N)@@`；主结果已有 Lean 形式化证明。

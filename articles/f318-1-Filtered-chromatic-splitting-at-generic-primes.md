@@ -13,6 +13,61 @@ pdfname: ""
 
 > 结果族 318：Chromatic splitting: filtrations and counterexamples　·　学科：Topology　·　验证状态：暂无形式化证明，请以社区核验为准
 
+## 入门导读 🐣
+
+Hopkins 的色谱分裂猜想曾预言：球面在相邻两个"色度高度"之间的搭接部分，能像拆乐高一样干脆利落地分成 2ⁿ 块。后来发现高度三根本拆不开。这篇论文给出修正版答案：清单上的 2ⁿ 块零件一块不少，照样能按固定顺序逐层揭开，只是层与层之间的胶水被如实保留——拆不成一堆散件，但能一层层掀开看。
+
+**关键词卡片**
+
+- 色谱分裂猜想（chromatic splitting conjecture）：断言重叠 `@@M@@L_{n-1}L_{K(n)}S@@` 分裂成 2ⁿ 块低高度局部球面之楔和的猜想。
+- 局部化（K(n)-localization）：只保留第 n 层色度信息的手术；`@@M@@L_{n-1}@@` 则保留前 n−1 层。
+- 滤过（filtration）：按固定顺序逐层剥开的塔 `@@M@@0=F_0\to F_1\to\cdots\to F_{2^n}\cong X@@`。
+- 余纤维（cofiber）：映射的"锥"；滤过每升一层掉出来的正是那块零件。
+- 典范单位（canonical localization unit）：对象进入自身局部化的标准入场映射。
+
+**看个具体例子**
+
+n=3、p≥5 时 2³=8 层，自下而上依次是：L₂S、Σ⁻¹L₂S、Σ⁻³L₁S、Σ⁻⁴L₁S、Σ⁻⁵HQ_p、Σ⁻⁶HQ_p、Σ⁻⁸HQ_p、Σ⁻⁹HQ_p——两块高度二、两块高度一、四块有理，块数与位移全对上猜想的清单；第一层到顶的复合恰是典范单位。定理对一切 n≥1、p>n+1 成立，但明确不给楔和分解：
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280">
+<text x="280" y="30" text-anchor="middle" font-size="18" fill="#222">n = 3、p ≥ 5：八层有序滤过（自下而上）</text>
+<rect x="210" y="44" width="220" height="20" fill="#e8e8e8" stroke="#222"/>
+<text x="320" y="59" text-anchor="middle" font-size="13" fill="#222">Σ⁻⁹ HQ_p</text>
+<rect x="210" y="68" width="220" height="20" fill="#e8e8e8" stroke="#222"/>
+<text x="320" y="83" text-anchor="middle" font-size="13" fill="#222">Σ⁻⁸ HQ_p</text>
+<rect x="210" y="92" width="220" height="20" fill="#e8e8e8" stroke="#222"/>
+<text x="320" y="107" text-anchor="middle" font-size="13" fill="#222">Σ⁻⁶ HQ_p</text>
+<rect x="210" y="116" width="220" height="20" fill="#e8e8e8" stroke="#222"/>
+<text x="320" y="131" text-anchor="middle" font-size="13" fill="#222">Σ⁻⁵ HQ_p</text>
+<rect x="210" y="140" width="220" height="20" fill="#d5d5e8" stroke="#222"/>
+<text x="320" y="155" text-anchor="middle" font-size="13" fill="#222">Σ⁻⁴ L₁S</text>
+<rect x="210" y="164" width="220" height="20" fill="#d5d5e8" stroke="#222"/>
+<text x="320" y="179" text-anchor="middle" font-size="13" fill="#222">Σ⁻³ L₁S</text>
+<rect x="210" y="188" width="220" height="20" fill="#c8dcc8" stroke="#222"/>
+<text x="320" y="203" text-anchor="middle" font-size="13" fill="#222">Σ⁻¹ L₂S</text>
+<rect x="210" y="212" width="220" height="20" fill="#c8dcc8" stroke="#222"/>
+<text x="320" y="227" text-anchor="middle" font-size="13" fill="#222">L₂S（第一层）</text>
+<line x1="186" y1="46" x2="186" y2="134" stroke="#666" stroke-width="2"/>
+<line x1="186" y1="142" x2="186" y2="182" stroke="#666" stroke-width="2"/>
+<line x1="186" y1="190" x2="186" y2="230" stroke="#666" stroke-width="2"/>
+<text x="90" y="94" font-size="14" fill="#666">有理（4 块）</text>
+<text x="84" y="166" font-size="14" fill="#666">高度 1（2 块）</text>
+<text x="84" y="214" font-size="14" fill="#666">高度 2（2 块）</text>
+<line x1="460" y1="238" x2="460" y2="254" stroke="#222" stroke-width="2"/>
+<polygon points="454,252 466,252 460,262" fill="#222"/>
+<text x="474" y="256" font-size="13" fill="#666">逐层装配</text>
+</svg>
+
+</div>
+
+**为什么值得关心**
+
+在"强分裂已被推翻"的废墟上抢救出猜想的正确内核：碎片清单全对、只是黏合不可忽略——为色谱分裂指明了正确的弱化形式。
+
+> 暂无形式化证明（AI 结果待核验）
+
 ## 一句话结论
 
 证明当 `@@M@@n\geq1@@`、素数 `@@M@@p\gt n+1@@` 时，色谱重叠对象 `@@M@@L_{n-1}L_{K(n)}S_p^\wedge@@` 具有 `@@M@@2^n@@` 个阶段的有序滤过，逐层余纤维恰为强色谱分裂猜想预言的全部局部球面碎片，且保留黏合映射——碎片清单正确，只是未必能裂成楔和。

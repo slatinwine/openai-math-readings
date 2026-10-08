@@ -13,6 +13,51 @@ pdfname: ""
 
 > 结果族 318：Chromatic splitting: filtrations and counterexamples　·　学科：Topology　·　验证状态：暂无形式化证明，请以社区核验为准
 
+## 入门导读 🐣
+
+想象你有一盒三种基础积木，规则允许你任意叠加、平移、复制和取"补块"，拼任意有限多步。这篇论文证明：在素数 3 对应的"三楼"，有一个叫色重叠加的关键零件，无论怎么拼都拼不出来——不是难度问题，是原则上拼不出。稳定同伦论里悬置多年的"有限拼装"问题就此得到否定回答。
+
+**关键词卡片**
+
+- 色重叠加（chromatic overlap）：球面同时在相邻两层"放大镜"下观察时留下的粘合数据，是复原整体的关键零件。
+- 局部球面（local sphere）：只保留某一层信息看到的球面；低层的 `@@M@@L_0S@@`、`@@M@@L_1S@@`、`@@M@@L_2S@@` 就是三块基础积木。
+- 厚子范畴（thick subcategory）：从给定积木出发，经求和、移位、余纤维、收缩四种操作、有限步内能造出的全部对象。
+- 色高度（chromatic height）：同伦论按周期复杂度划分的"楼层"；本文出事的位置是素数 3、高度 3。
+
+**看个具体例子**
+
+把主定理代入具体数字 `@@M@@p=3@@`：三块积木加上四种允许操作，步数任意但必须有限；目标是色重叠加 `@@M@@L_2L_{K(3)}S@@`。定理说它"不在厚子范畴里"，画成图就是：
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280">
+<rect x="30" y="212" width="130" height="36" fill="none" stroke="black"/>
+<text x="95" y="235" font-size="14" text-anchor="middle">L₀S（有理化）</text>
+<rect x="215" y="212" width="130" height="36" fill="none" stroke="black"/>
+<text x="280" y="235" font-size="14" text-anchor="middle">L₁S（高度一）</text>
+<rect x="400" y="212" width="130" height="36" fill="none" stroke="black"/>
+<text x="465" y="235" font-size="14" text-anchor="middle">L₂S（高度二）</text>
+<line x1="300" y1="200" x2="378" y2="122" stroke="black" stroke-width="2"/>
+<line x1="378" y1="122" x2="364" y2="126" stroke="black" stroke-width="2"/>
+<line x1="378" y1="122" x2="372" y2="136" stroke="black" stroke-width="2"/>
+<line x1="322" y1="156" x2="342" y2="176" stroke="red" stroke-width="3"/>
+<line x1="342" y1="156" x2="322" y2="176" stroke="red" stroke-width="3"/>
+<circle cx="424" cy="78" r="44" fill="none" stroke="black" stroke-width="2"/>
+<text x="424" y="72" font-size="14" text-anchor="middle">色重叠加</text>
+<text x="424" y="92" font-size="13" text-anchor="middle">p=3，高度 3</text>
+<text x="140" y="120" font-size="13" text-anchor="middle">任意有限次操作：</text>
+<text x="140" y="140" font-size="13" text-anchor="middle">求和·移位·余纤维·收缩</text>
+<text x="424" y="150" font-size="14" text-anchor="middle" fill="red">拼不出来</text>
+</svg>
+
+</div>
+
+**为什么值得关心**
+
+它给"低层数据能否重建高层粘合信息"这条色理论主线画出了正式界线：至少在 `@@M@@p=3@@`、高度 3 处答案是否定的，今后任何分裂公式都得绕开这个障碍。
+
+> 暂无形式化证明（AI 结果待核验）
+
 ## 一句话结论
 
 本文证明在 `@@M@@p=3@@`、高度三处，色重叠加（chromatic overlap）`@@M@@L_2L_{K(3)}S@@` 不属于由 `@@M@@L_0S,L_1S,L_2S@@` 生成的厚子范畴（thick subcategory）：无论多少次求和、移位、取余纤维与收缩，都无法从低高度局部球面拼装出它。这个比任何分裂公式都更弱的"有限拼装"问题就此得到否定回答。

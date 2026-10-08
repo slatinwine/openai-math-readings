@@ -13,6 +13,68 @@ pdfname: ""
 
 > 结果族 213：Critical percolation on every quasi-transitive graph　·　学科：Probability and statistical mechanics　·　验证状态：暂无形式化证明，请以社区核验为准
 
+## 入门导读 🐣
+
+把方格渔网换成蜂窝网、无限家谱树，或任何"从对称性看只有有限种顶点"的规则无限网络，"临界点处有没有无穷连通块"这个问题依然可以问。本文证明：只要 p_c<1，答案统一是"没有"。这正是 Benjamini 与 Schramm 在 1996 年提出的临界性猜想的键渗流版本。
+
+**关键词卡片**
+
+- 拟传递图（quasi-transitive graph）：图的对称性把顶点分成有限多类，方格网、蜂窝网、Cayley 图都算。
+- 临界性猜想：p_c<1 的拟传递图在 p_c 处没有无穷开簇。
+- Cayley 图：用群和生成元集画出的规则网络。
+- 次指数增长：球体积涨得比任何指数都慢的图，是此前所有方法都够不着的最后空白。
+
+**看个具体例子**
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280">
+  <text x="280" y="40" font-size="14" text-anchor="middle" fill="#222">对一大类『规则无限网络』都成立</text>
+  <line x1="65" y1="95" x2="135" y2="95" stroke="#333" stroke-width="1.5"/>
+  <line x1="65" y1="130" x2="135" y2="130" stroke="#333" stroke-width="1.5"/>
+  <line x1="65" y1="165" x2="135" y2="165" stroke="#333" stroke-width="1.5"/>
+  <line x1="65" y1="95" x2="65" y2="165" stroke="#333" stroke-width="1.5"/>
+  <line x1="100" y1="95" x2="100" y2="165" stroke="#333" stroke-width="1.5"/>
+  <line x1="135" y1="95" x2="135" y2="165" stroke="#333" stroke-width="1.5"/>
+  <circle cx="65" cy="95" r="2.5" fill="#333"/>
+  <circle cx="100" cy="95" r="2.5" fill="#333"/>
+  <circle cx="135" cy="95" r="2.5" fill="#333"/>
+  <circle cx="65" cy="130" r="2.5" fill="#333"/>
+  <circle cx="100" cy="130" r="2.5" fill="#333"/>
+  <circle cx="135" cy="130" r="2.5" fill="#333"/>
+  <circle cx="65" cy="165" r="2.5" fill="#333"/>
+  <circle cx="100" cy="165" r="2.5" fill="#333"/>
+  <circle cx="135" cy="165" r="2.5" fill="#333"/>
+  <path d="M 280 96 L 309.4 113 L 309.4 147 L 280 164 L 250.6 147 L 250.6 113 Z" fill="none" stroke="#333" stroke-width="1.8"/>
+  <line x1="309.4" y1="113" x2="338" y2="113" stroke="#333" stroke-width="1.8"/>
+  <line x1="250.6" y1="147" x2="222" y2="147" stroke="#333" stroke-width="1.8"/>
+  <line x1="280" y1="164" x2="280" y2="193" stroke="#333" stroke-width="1.8"/>
+  <circle cx="280" cy="96" r="2.5" fill="#333"/>
+  <circle cx="309.4" cy="147" r="2.5" fill="#333"/>
+  <circle cx="250.6" cy="147" r="2.5" fill="#333"/>
+  <line x1="460" y1="175" x2="425" y2="130" stroke="#333" stroke-width="1.8"/>
+  <line x1="460" y1="175" x2="495" y2="130" stroke="#333" stroke-width="1.8"/>
+  <line x1="425" y1="130" x2="405" y2="90" stroke="#333" stroke-width="1.8"/>
+  <line x1="425" y1="130" x2="445" y2="90" stroke="#333" stroke-width="1.8"/>
+  <line x1="495" y1="130" x2="475" y2="90" stroke="#333" stroke-width="1.8"/>
+  <line x1="495" y1="130" x2="515" y2="90" stroke="#333" stroke-width="1.8"/>
+  <circle cx="460" cy="175" r="3" fill="#333"/>
+  <text x="100" y="218" font-size="13" text-anchor="middle" fill="#333">方格网 ℤ^d</text>
+  <text x="280" y="218" font-size="13" text-anchor="middle" fill="#333">蜂窝网</text>
+  <text x="460" y="218" font-size="13" text-anchor="middle" fill="#333">无限树</text>
+  <text x="280" y="252" font-size="13" text-anchor="middle" fill="#222">只要『拟传递』且 p_c &lt; 1，临界处都没有无穷开簇</text>
+</svg>
+
+</div>
+
+定理一句话：`@@M@@\mathbb{P}_{p_c}(\text{存在无穷开簇})=0@@`。特别地，把图取为 `@@M@@\mathbb{Z}^d@@`（一切 `@@M@@d\ge 2@@`），就免费得到所有方格网的临界熄灭。注意条件 `@@M@@p_c<1@@` 不可省略：p=1 时整张图全开，"无穷簇"当然存在。
+
+**为什么值得关心**
+
+它把渗流临界理论从"逐个图攻坚"升级为"一类图通吃"：指数增长的图 2016 年已解决，此次攻下的是剩下的次指数增长、又无平面几何与花边展开可用的图类。证明按体积增长速度分成两种情形：增长快于一切幂次的走纯概率路线，多项式尺度的则借助群论加几何的"走廊"论证。
+
+> 暂无形式化证明（AI 结果待核验）
+
 ## 一句话结论
 
 论文证明：凡 `@@M@@p_c<1@@` 的无限连通局部有限拟传递图，其临界 Bernoulli 键渗流几乎必然没有无穷开簇——正面解决 Benjamini–Schramm 1996 年临界性猜想的键形式，特别涵盖一切 `@@M@@\mathbb{Z}^d@@`。

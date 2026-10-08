@@ -13,6 +13,61 @@ pdfname: ""
 
 > 结果族 173：Seymour's second-neighborhood conjecture　·　学科：Combinatorics　·　验证状态：主结果已 Lean 形式化
 
+## 入门导读 🐣
+
+把"单向关注"画成一张图。每个人看两类人：你直接关注的一步圈，和"你关注的人所关注、但你没直接关注"的两步圈。Seymour 猜想：任何单向关系网中，总有一个人他的两步圈不小于一步圈。这个 1995 年被正式记录的猜想，本文给出了完整证明。
+
+**关键词卡片**
+
+- 定向图（oriented graph）：每条边只许单向通行、不许成对互指的有向图
+- 出邻域（out-neighborhood）`@@M@@N_1^+@@`：一步直接指向的顶点集合
+- 第二邻域（second neighborhood）`@@M@@N_2^+@@`：恰好两步才能到达的顶点集合
+- 竞赛图（tournament）：任意两点恰有一条单向边的图，特例 1996 年已被解决
+- 极小反例（minimal counterexample）：假设坏图存在，挑顶点最少的它层层逼出矛盾
+
+**看个具体例子**
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280">
+  <text x="280" y="30" text-anchor="middle" font-size="16" fill="#333">总有好顶点：|N₁⁺(v)| ≤ |N₂⁺(v)|</text>
+  <line x1="143" y1="145" x2="267" y2="95" stroke="#333" stroke-width="1.8"/>
+  <polygon points="267,95 260,102 257,95" fill="#333"/>
+  <line x1="143" y1="155" x2="267" y2="205" stroke="#333" stroke-width="1.8"/>
+  <polygon points="267,205 260,198 257,205" fill="#333"/>
+  <line x1="294" y1="87" x2="427" y2="53" stroke="#333" stroke-width="1.8"/>
+  <polygon points="427,53 419,59 417,52" fill="#333"/>
+  <line x1="294" y1="94" x2="427" y2="131" stroke="#333" stroke-width="1.8"/>
+  <polygon points="427,131 417,132 420,126" fill="#333"/>
+  <line x1="294" y1="212" x2="427" y2="228" stroke="#333" stroke-width="1.8"/>
+  <polygon points="427,228 418,231 419,224" fill="#333"/>
+  <circle cx="130" cy="150" r="14" fill="#ffe8e5" stroke="#c0392b" stroke-width="1.8"/>
+  <circle cx="280" cy="90" r="14" fill="#fff" stroke="#333" stroke-width="1.5"/>
+  <circle cx="280" cy="210" r="14" fill="#fff" stroke="#333" stroke-width="1.5"/>
+  <circle cx="440" cy="50" r="13" fill="#fff" stroke="#333" stroke-width="1.5"/>
+  <circle cx="440" cy="135" r="13" fill="#fff" stroke="#333" stroke-width="1.5"/>
+  <circle cx="440" cy="230" r="13" fill="#fff" stroke="#333" stroke-width="1.5"/>
+  <text x="130" y="155" text-anchor="middle" font-size="14" font-weight="bold" fill="#c0392b">v</text>
+  <text x="280" y="95" text-anchor="middle" font-size="14" fill="#333">a</text>
+  <text x="280" y="215" text-anchor="middle" font-size="14" fill="#333">b</text>
+  <text x="440" y="55" text-anchor="middle" font-size="14" fill="#333">c</text>
+  <text x="440" y="140" text-anchor="middle" font-size="14" fill="#333">d</text>
+  <text x="440" y="235" text-anchor="middle" font-size="14" fill="#333">e</text>
+  <text x="280" y="152" text-anchor="middle" font-size="13" fill="#c0392b">一步圈 {a, b}：2 人</text>
+  <text x="440" y="185" text-anchor="middle" font-size="13" fill="#2471a3">两步圈 {c, d, e}：3 人</text>
+  <text x="280" y="268" text-anchor="middle" font-size="14" fill="#555">本例 2 ≤ 3：v 就是那个好顶点</text>
+</svg>
+
+</div>
+
+这个 6 顶点小网中，`@@M@@v@@` 的一步圈是 `@@M@@\{a,b\}@@` 共 2 人，两步圈是 `@@M@@\{c,d,e\}@@` 共 3 人，`@@M@@2\le 3@@`。定理保证：无论网多大、方向多刁钻，好顶点必然存在；加权版也对——按任意非负"人气权"加权，仍有人一步圈权重不超过两步圈。它还顺带导出若干有向圈推论，例如最小入度、出度都不低于 `@@M@@n/3@@` 的定向图必含有向三角形。
+
+**为什么值得关心**
+
+一般定向图情形悬置三十年，此前所有结果都要附加结构假设或放松结论；本文无条件解决，且已通过机器核验。
+
+> 已 Lean 形式化
+
 ## 一句话结论
 
 论文正面证明了 Seymour 第二邻域猜想：任何非空有限定向图中必有顶点 `@@M@@v@@` 满足 `@@M@@|N_1^+(v)|\le|N_2^+(v)|@@`，即有向距离恰为二的顶点数不少于出邻点数。这一自 1995 年记录以来悬置三十余年的有向图基本问题就此解决，主结果并已通过 Lean 形式化验证。

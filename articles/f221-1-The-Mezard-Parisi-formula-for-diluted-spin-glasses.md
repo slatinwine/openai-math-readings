@@ -13,6 +13,55 @@ pdfname: ""
 
 > 结果族 221：The Mézard–Parisi formula for diluted spin glasses　·　学科：Probability and statistical mechanics　·　验证状态：暂无形式化证明，请以社区核验为准
 
+## 入门导读 🐣
+
+想象一所超大规模的学校：每个学生只参加随机分配的几个小组项目，小组配合得好坏决定大家的"心情分"。学生多到无穷时，全校平均心情分会稳定在哪个数？这篇论文证明了物理学家二十多年前提出的"作弊小抄"——空腔方法——所算出的答案，恰好就是真实答案，不多不少。
+
+**关键词卡片**
+
+- 自旋玻璃（spin glass）：一堆既随机又互相较劲的变量组成的系统，像谁跟谁合得来毫无规律的班级。
+- 稀释（diluted）：每个自旋只与有限个邻居相互作用，不是人人两两相连，像稀疏的朋友圈。
+- 空腔方法（cavity method）：从系统里挖掉一个自旋，看"洞口"传来的消息（局部场的分布），再拼回全局的算法。
+- 层级（hierarchy）：消息分布的分布、再取分布……层层嵌套的序参量，刻画多群"心情"共存的局面。
+- 压强（pressure）：每个自旋平均分到的对数配分函数，可理解为系统的"总成绩单"。
+
+**看个具体例子**
+
+主定理说：极限压强 `@@M@@=\inf_r\Phi_r@@`，即在所有有限深度的层级试探中挑最优，恰好取等。举个落点：加权随机偶-K-SAT 在零温极限下，公式直接给出"平均每个变量最少违反多少条子句"的精确极限值——先算上界、再证下界追平，二十年的缺口就这样补上。
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280">
+  <text x="20" y="28" font-size="15" fill="#333">稀释图：每个自旋只连少数邻居</text>
+  <line x1="139" y1="109" x2="201" y2="77" stroke="#888" stroke-width="2"/>
+  <line x1="136" y1="117" x2="232" y2="166" stroke="#888" stroke-width="2"/>
+  <line x1="109" y1="193" x2="231" y2="181" stroke="#888" stroke-width="2"/>
+  <line x1="106" y1="117" x2="97" y2="191" stroke="#888" stroke-width="2"/>
+  <circle cx="120" cy="100" r="19" fill="#fff" stroke="#333" stroke-width="2"/>
+  <text x="112" y="106" font-size="15" fill="#333">+1</text>
+  <circle cx="220" cy="68" r="19" fill="#fff" stroke="#333" stroke-width="2"/>
+  <text x="212" y="74" font-size="15" fill="#333">−1</text>
+  <circle cx="250" cy="180" r="19" fill="#fff" stroke="#333" stroke-width="2"/>
+  <text x="242" y="186" font-size="15" fill="#333">+1</text>
+  <circle cx="90" cy="210" r="19" fill="#fff" stroke="#333" stroke-width="2"/>
+  <text x="82" y="216" font-size="15" fill="#333">−1</text>
+  <circle cx="395" cy="110" r="19" fill="none" stroke="#999" stroke-width="2" stroke-dasharray="5 4"/>
+  <text x="345" y="155" font-size="14" fill="#555">挖掉一个自旋＝空腔</text>
+  <line x1="412" y1="100" x2="462" y2="80" stroke="#c33" stroke-width="2"/>
+  <polygon points="466,78 455,75 459,86" fill="#c33"/>
+  <text x="470" y="70" font-size="14" fill="#c33">消息：局部场分布</text>
+  <text x="20" y="235" font-size="14" fill="#333">消息的分布再取分布 → 层级（逐层嵌套）</text>
+  <text x="20" y="260" font-size="14" fill="#333">层级代回试探公式取最优 → 精确压强</text>
+</svg>
+
+</div>
+
+**为什么值得关心**
+
+它了结了 Panchenko–Talagrand 在 2004 年提出的变分取等猜想，把物理直觉升格为定理，也是理解随机 SAT 等组合优化问题极限性能的钥匙。
+
+> 暂无形式化证明（AI 结果待核验）
+
 ## 一句话结论
 
 本文证明了稀释自旋玻璃的 Mézard–Parisi 层级空腔变分公式：极限压强恰等于有限层级试探泛函在一切深度与试探律上的下确界，解决了 Panchenko–Talagrand（2004）提出的取等猜想，且仅要求相互作用与外场的一阶矩。

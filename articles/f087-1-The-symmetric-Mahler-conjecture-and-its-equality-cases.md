@@ -13,6 +13,48 @@ pdfname: ""
 
 > 结果族 087：The Mahler conjectures, functional inequalities and polar-product symplectic width　·　学科：Convex and metric geometry　·　验证状态：主结果已 Lean 形式化
 
+## 入门导读 🐣
+
+把一个凸块想成"允许购买的商品组合"：块内每一点是一种配方。再定义它的"价格对偶块"：所有不会让任何配方总价超过 1 的价格向量。商品空间越扁，价格空间就越胖——两者体积的乘积能被压到多小？Mahler 1939 年猜：对称凸块的乘积有最小值 `@@M@@4^n/n!@@`，恰好由方块家族取得。这篇论文在一切维度上证明了这个猜想，并找出全部取等号的形状。
+
+**关键词卡片**
+
+- 凸体（convex body）：有界、有内点、不含洞的凸集合，实心的"几何块"。
+- 极体（polar body）：`@@M@@K^\circ=\{y:\langle x,y\rangle\le1,\ \forall x\in K\}@@`，与 `@@M@@K@@` 对偶的价格块。
+- 体积乘积（volume product）：`@@M@@P(K)=|K|\cdot|K^\circ|@@`，在任何线性拉伸下不变。
+- Hanner 多胞体（Hanner polytope）：从线段出发反复"取乘积"或"取凸包拼接"生成的对称块，方块与八面体都是成员。
+- 中心对称（origin-symmetric）：`@@M@@x\in K@@` 当且仅当 `@@M@@-x\in K@@`，图形关于原点镜像对称。
+
+**看个具体例子**
+
+取二维最熟悉的例子：正方形 `@@M@@K=[-1,1]^2@@`，面积 4；它的极体是菱形 `@@M@@K^\circ=\{|x|+|y|\le1\}@@`，面积 2。
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280">
+<text x="155" y="42" font-size="18" fill="#333" text-anchor="middle">K：正方形</text>
+<rect x="90" y="60" width="130" height="130" fill="#aed6f1" stroke="#2e6da4" stroke-width="2.5"/>
+<text x="155" y="130" font-size="15" fill="#1a4d7a" text-anchor="middle">面积 4</text>
+<text x="155" y="215" font-size="14" fill="#555555" text-anchor="middle">[-1,1]²</text>
+<text x="280" y="118" font-size="16" fill="#777777" text-anchor="middle">⟷ 取极</text>
+<text x="280" y="142" font-size="14" fill="#777777" text-anchor="middle">（对偶）</text>
+<text x="415" y="42" font-size="18" fill="#333" text-anchor="middle">K°：菱形</text>
+<polygon points="415,60 480,125 415,190 350,125" fill="#f5cba7" stroke="#b96a20" stroke-width="2.5"/>
+<text x="415" y="130" font-size="15" fill="#7a4a10" text-anchor="middle">面积 2</text>
+<text x="415" y="215" font-size="14" fill="#555555" text-anchor="middle">|x|+|y| ≤ 1</text>
+<text x="280" y="255" font-size="16" fill="#333" text-anchor="middle">体积乘积 4 × 2 = 8 = 4²/2!（n=2 的最小值）</text>
+</svg>
+
+</div>
+
+乘积 `@@M@@4\times2=8=\dfrac{4^2}{2!}@@`，正是 `@@M@@n=2@@` 时的最小值；高维同理，立方体与八面体互为极体，乘积同为 `@@M@@\dfrac{4^n}{n!}@@`。定理说：任何维度、任何对称凸体都有 `@@M@@|K|\,|K^\circ|\ge\dfrac{4^n}{n!}@@`，且等号恰好属于 Hanner 多胞体的可逆变线性像。
+
+**为什么值得关心**
+
+这个 1939 年提出的问题悬置八十余年，此前连三维都到 2020 年才被攻克；论文同时拿下精确下界与全部等号情形，还顺带推出泛函版 Mahler 不等式与熵–运输不等式。
+
+> 已 Lean 形式化
+
 ## 一句话结论
 论文在一切维数上证明了中心对称 Mahler 猜想（symmetric Mahler conjecture）：原点对称凸体 `@@M@@K\subset\mathbb R^n@@` 的体积乘积满足 `@@M@@|K|\,|K^\circ|\ge 4^n/n!@@`，等号当且仅当 `@@M@@K@@` 是 Hanner 多胞体的可逆变线性像，下界与全部等号情形一并解决。
 

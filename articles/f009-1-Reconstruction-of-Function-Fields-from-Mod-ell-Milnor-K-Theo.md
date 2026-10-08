@@ -13,6 +13,38 @@ pdfname: ""
 
 > 结果族 009：Function-field reconstruction from Milnor K-theory and Galois data　·　学科：Number theory　·　验证状态：暂无形式化证明，请以社区核验为准
 
+## 入门导读 🐣
+
+一个域像一个人，它的 Milnor K 群像两张 X 光片：一阶的记录"乘法元素模 `@@M@@\ell@@` 之后剩什么"，二阶的再补一点加法信息（Steinberg 关系）。片子模糊得厉害——重数能被 `@@M@@\ell@@` 整除的除子会直接隐身。Bogomolov 学派的长远问题是：只靠这两张片子能认出这个人吗？本文给出肯定答案：对超越次数至少 2 的函数域，两张片子加上乘法结构，足以重建域的完美闭包和它的常数域。
+
+**关键词卡片**
+
+- 函数域（function field）：像 `@@M@@k(x,y)@@` 这样由有理函数组成的域，几何上对应曲面或更高维的空间。
+- Milnor K 群（Milnor K-group）：`@@M@@K^{\mathrm M}_1/\ell=F^\times/(F^\times)^\ell@@` 与 `@@M@@K^{\mathrm M}_2/\ell@@`，域的简化快照。
+- Steinberg 关系（Steinberg relation）：`@@M@@[x]\otimes[1-x]=0@@`；这类关系张成的子空间就是加法漏进快照的通道。
+- 相容同构（compatible isomorphism）：保持 Steinberg 关系的线性同构 `@@M@@\Theta:V_K\to V_L@@`，即两张片子的"对齐方式"。
+- 完美闭包（perfect closure）：把所有 `@@M@@p^r@@` 次根都添进去的域；正特征下重建只能到这一步。
+
+**看个具体例子**
+
+以 `@@M@@\ell=3@@`、`@@M@@F=k(x,y)@@` 为例：`@@M@@[x^3]=3[x]=0@@`——除子重数被 3 整除就"隐身"，这正是困难所在。主定理断言典范映射
+
+`@@M@@D\operatorname{Isom}^i_{\mathrm F}(K,L)\ \longrightarrow\ \operatorname{Isom}_{\mathrm M}(V_K,V_L)/\mathbb F_\ell^{\times}@@`
+
+是双射：每个相容 `@@M@@\Theta@@` 都等于某个域同构诱导的映射乘上一个 `@@M@@\mathbb F_\ell^\times@@` 整体标量；正特征下域同构还剩 Frobenius 幂这点自由，`@@M@@\ell=2@@` 时连标量歧义也消失。
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280"><rect x="40" y="60" width="180" height="90" fill="none" stroke="#333" stroke-width="2.5"/><text x="130" y="98" font-size="17" text-anchor="middle" fill="#222">域 K</text><text x="130" y="124" font-size="13" text-anchor="middle" fill="#555">无限多元素、加法与乘法</text><rect x="340" y="50" width="190" height="110" fill="none" stroke="#333" stroke-width="2.5"/><text x="435" y="85" font-size="14" text-anchor="middle" fill="#222">V_K：一阶"影子"</text><text x="435" y="112" font-size="14" text-anchor="middle" fill="#222">W_K：二阶"影子"</text><text x="435" y="139" font-size="14" text-anchor="middle" fill="#222">双线性乘积</text><line x1="225" y1="85" x2="328" y2="85" stroke="#333" stroke-width="2"/><polygon points="328,79 340,85 328,91" fill="#333"/><text x="282" y="74" font-size="14" text-anchor="middle" fill="#222">取影子</text><line x1="335" y1="145" x2="232" y2="145" stroke="#d64545" stroke-width="2.5"/><polygon points="232,139 220,145 232,151" fill="#d64545"/><text x="282" y="168" font-size="14" text-anchor="middle" fill="#d64545">重建</text><text x="130" y="186" font-size="14" text-anchor="middle" fill="#222">恢复：完美闭包 Kⁱ 与常数域 k</text><text x="280" y="238" font-size="14" text-anchor="middle" fill="#555">歧义仅一个 F_ℓ^× 标量；正特征下另有 Frobenius 幂</text><text x="280" y="28" font-size="16" text-anchor="middle" fill="#222">两张"片子"还原一个域（示意）</text></svg>
+
+</div>
+
+**为什么值得关心**
+
+它把 anabelian 几何的重建从 pro-ℓ 世界压缩到有限系数、且不需要任何额外输入，覆盖 `@@M@@\ell=2@@`、曲面等此前无法处理的全部情形。
+
+> 暂无形式化证明（AI 结果待核验）
+
 ## 一句话结论
 
 本文证明：特征不等于 `@@M@@\ell@@` 的代数闭常数域上、超越次数至少为 2 的函数域，可由 mod-`@@M@@\ell@@` Milnor K 群 `@@M@@K^{\mathrm M}_1/\ell@@`、`@@M@@K^{\mathrm M}_2/\ell@@` 及其双线性乘积重建出完美闭包与常数域；每个相容同构都来自域同构，歧义仅一个整体标量与 Frobenius 幂。

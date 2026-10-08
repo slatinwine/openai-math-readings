@@ -13,6 +13,60 @@ pdfname: ""
 
 > 结果族 199：Counterexamples to Auslander–Reiten, Tachikawa and related homological conjectures　·　学科：Algebra　·　验证状态：主结果已 Lean 形式化
 
+## 入门导读 🐣
+
+乐器若完全不会自我干扰（没有杂音回授），直觉上它该是一件"标准乐器"。Tachikawa 在 1973 年猜想在"自带完美隔音房"的自内射代数里，无自我干扰的模块必是标准件。这篇论文造出一件不标准却毫无自我杂音的乐器，还让一排相连的猜想像多米诺骨牌般接连倒下。
+
+**关键词卡片**
+
+- 对称代数（symmetric algebra）：与自身对偶同构的有限维代数，天然自内射
+- 自内射代数（self-injective algebra）：每个内射模都投射的代数，"自带隔音房"
+- 自正交模（self-orthogonal module）：所有正阶 `@@M@@\operatorname{Ext}(M,M)@@` 为零的模块，即无自我干扰
+- 支配维数（dominant dimension）：衡量代数离自内射有多远的刻度，反例的推论里它可无穷大
+
+**看个具体例子**
+
+构造是一条层层放大的流水线：从 10 维出发代数 `@@M@@C@@`，做平凡扩张得 20 维对称代数 `@@M@@T@@`，张量起来得 400 维对称代数 `@@M@@E@@`，最终造出对称代数 `@@M@@A@@` 与非投射模 `@@M@@M@@`，满足
+
+`@@M@@D\operatorname{Ext}^i_A(M,M)=0\quad\text{对一切 } i>0 .@@`
+
+由于对称代数自内射，`@@M@@\operatorname{Ext}^i_A(M,A)@@` 自动为零，同一例子也是 Auslander–Reiten 猜想对称情形的反例。
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280">
+<text x="55" y="55" font-size="14" fill="#888">系数域 k = F₂(q,H₁,H₂) 全程不变</text>
+<rect x="30" y="105" width="95" height="60" fill="#eef3ff" stroke="#35a"/>
+<text x="52" y="130" font-size="15" fill="#235">C：10 维</text>
+<text x="52" y="150" font-size="12" fill="#556">出发代数</text>
+<line x1="125" y1="135" x2="163" y2="135" stroke="#555" stroke-width="2"/>
+<polygon points="165,135 155,130 155,140" fill="#555"/>
+<rect x="168" y="105" width="95" height="60" fill="#f2f7ee" stroke="#4a3"/>
+<text x="186" y="130" font-size="15" fill="#253">T：20 维</text>
+<text x="183" y="150" font-size="12" fill="#455">平凡扩张</text>
+<line x1="263" y1="135" x2="301" y2="135" stroke="#555" stroke-width="2"/>
+<polygon points="303,135 293,130 293,140" fill="#555"/>
+<rect x="306" y="105" width="105" height="60" fill="#fdf3ee" stroke="#c53"/>
+<text x="316" y="130" font-size="14" fill="#532">E=T⊗T：400 维</text>
+<text x="330" y="150" font-size="12" fill="#655">对称代数</text>
+<line x1="411" y1="135" x2="449" y2="135" stroke="#555" stroke-width="2"/>
+<polygon points="451,135 441,130 441,140" fill="#555"/>
+<rect x="454" y="105" width="80" height="60" fill="#f6f0fa" stroke="#84a"/>
+<text x="474" y="130" font-size="15" fill="#53a">A：反例</text>
+<text x="468" y="150" font-size="12" fill="#75a">对称代数</text>
+<text x="55" y="210" font-size="14" fill="#888">成果：Ext^i_A(M,M)=0 对一切 i＞0，但 M 非投射</text>
+<text x="55" y="235" font-size="14" fill="#888">多米诺倒下：经典/广义/强 Nakayama、Auslander–Gorenstein、</text>
+<text x="55" y="258" font-size="14" fill="#888">Wakamatsu tilting 猜想接连失败</text>
+</svg>
+
+</div>
+
+**为什么值得关心**
+
+一个模块同时击倒 Tachikawa 第二猜想与 Auslander–Reiten 猜想的对称情形，其自同态代数又推倒一整排 Nakayama 型猜想——同调猜想之间的联动从未如此清晰。
+
+> 已 Lean 形式化
+
 ## 一句话结论
 本文否定 Tachikawa 第二猜想：在 `@@M@@k=\mathbb F_2(q,H_1,H_2)@@` 上构造有限维对称代数 `@@M@@A@@` 与非投射模 `@@M@@M@@`，使 `@@M@@\Ext^i_A(M,M)=0@@` 对一切 `@@M@@i>0@@`；其自同态代数进而使经典、广义、强 Nakayama 猜想、Auslander–Gorenstein 猜想与 Wakamatsu tilting 猜想一并失败，且对一切域扩张稳健。
 

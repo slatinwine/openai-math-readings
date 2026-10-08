@@ -13,6 +13,36 @@ pdfname: ""
 
 > 结果族 303：Weak pure infiniteness and Cuntz-algebra absorption　·　学科：Operator algebras　·　验证状态：暂无形式化证明，请以社区核验为准
 
+## 入门导读 🐣
+
+设想一台"无限复印机"。C*-代数里的正元素像一张张可测大小的纸；如果一张纸复印成两份后仍塞得进原来的位置，就叫真无限——一种"内在无穷"的感觉。Kirchberg–Rørdam 在 2002 年给纯无限性分了三档：弱档（先固定一个数 n，每张纸复印 n 份后才无限）、普通档（每张纸复印一份就无限）、强档（任意两张纸能同时各自复印且互不干扰）。他们证明了强⇒普通⇒弱，反方向是否成立成为著名的比较问题。本文给出肯定答案：普通⇒强；对满足"精确性"的代数，连弱档也直达强档。
+
+**关键词卡片**
+
+- 正元素（positive element）：自伴且谱非负的代数元素，"大小"可以测量
+- 真无限（properly infinite）：h⊕h≲h，一份的位置装得下两份
+- 强纯无限（strongly purely infinite）：任意两个正元可同时自我复制，混合项任意小
+- 精确性（exactness）：极小张量积保持短正合列的正则性质
+- Cuntz 代数（Cuntz algebra `@@M@@\mathcal{O}_\infty@@`）：无穷生成元的纯无限代数；核代数吸收它等价于强纯无限
+
+**看个具体例子**
+
+"一变二"示意（定理 A 的几何内核）：
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280"><text x="280" y="34" font-size="15" text-anchor="middle">真无限：一份的位置装得下两份</text><rect x="70" y="100" width="80" height="80" fill="none" stroke="#333" stroke-width="2"/><text x="110" y="145" font-size="16" text-anchor="middle">h</text><text x="110" y="205" font-size="13" text-anchor="middle">原尺寸</text><line x1="165" y1="140" x2="282" y2="140" stroke="#333" stroke-width="2"/><polygon points="298,140 282,133 282,147" fill="#333"/><rect x="300" y="85" width="180" height="110" fill="none" stroke="#b33" stroke-width="2"/><rect x="313" y="95" width="68" height="68" fill="none" stroke="#333" stroke-width="1.5"/><rect x="395" y="112" width="68" height="68" fill="none" stroke="#333" stroke-width="1.5"/><text x="347" y="132" font-size="14" text-anchor="middle">h</text><text x="429" y="149" font-size="14" text-anchor="middle">h</text><text x="390" y="215" font-size="13" text-anchor="middle">同样的外框，装下两个正交拷贝</text><text x="280" y="252" font-size="13" text-anchor="middle">h⊕h ≾ h：一变二还装得下，就是真无限</text></svg>
+
+</div>
+
+数值化表述：任给正元 a、b、任意混合元 c 与 ε>0，存在 s,t 使 ‖s*as−a‖<ε、‖t*bt−b‖<ε、‖s*ct‖<ε；取 c=xy 即得强纯无限的定义。推论：可分核代数只要满足某个固定 n 的弱条件，便自动 A≅A⊗`@@M@@\mathcal{O}_\infty@@`——在最大常用范畴内，三档纯无限与 O∞-吸收完全是同一件事。
+
+**为什么值得关心**
+
+它解决了 Kirchberg–Rørdam 比较问题的"普通→强"部分，把纯无限性的等级壁垒一举夷平。
+
+> 暂无形式化证明（AI 结果待核验）
+
 ## 一句话结论
 
 论文证明：复 `@@M@@C^*@@`-代数中每个正元都真无限（properly infinite）即蕴含强纯无限（strongly purely infinite），解决了 Kirchberg–Rørdam 比较问题的"普通→强"部分；对精确代数，固定放大 `@@M@@n@@` 的弱条件即足够，从而可分核代数必吸收 `@@M@@\mathcal O_\infty@@`。

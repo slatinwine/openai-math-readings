@@ -13,6 +13,51 @@ pdfname: ""
 
 > 结果族 329：A counterexample to metric-entropy duality　·　学科：Functional analysis　·　验证状态：主结果已 Lean 形式化
 
+## 入门导读 🐣
+
+盖住一块地砖最少要几张小纸片？这个"最少张数"叫覆盖数，是衡量图形复杂程度的计数器。1972 年 Pietsch 猜想：高维空间里一个"胖块"盖另一个的难度，与它换成对偶描述（极体）后的难度，应该只差一个与维数无关的固定倍数。本文证明这是错的：维数够高时，两种难度可以悬殊到任意倍——悬置五十多年的度量熵对偶猜想被推翻。
+
+**关键词卡片**
+
+- 覆盖数（covering number）：用 `@@M@@B@@` 的平移盖住 `@@M@@A@@` 所需的最少份数 `@@M@@N(A,B)@@`，集合复杂度的计数器。
+- 极体（polar body）：凸体的对偶画像——改用各方向的"支撑刻度"描述同一形状。
+- 对偶猜想（duality conjecture）：Pietsch 1972 年问：取极前后 `@@M@@\log N@@` 是否只差普适常数倍。
+- 中心对称凸体（origin-symmetric convex body）：关于原点对称、含线段的 `@@M@@n@@` 维实心块。
+- 度量熵（metric entropy）：`@@M@@\log N@@`，覆盖复杂度的对数刻度，维数越高账单越贵。
+
+**看个具体例子**
+
+先热身：用边长 `@@M@@\frac{1}{10}@@` 的小方片盖单位方片要 `@@M@@10^2=100@@` 片；`@@M@@n@@` 维则要 `@@M@@(1/\varepsilon)^n@@` 片——`@@M@@\log N@@` 就是"维数 × 精度"的账单。定理的数字版：任凭你把倍数 `@@M@@b@@` 定得多大（哪怕一百万），总存在足够高的维数 `@@M@@n@@` 与凸体 `@@M@@K@@`，使得用立方体 `@@M@@L=[-1,1]^n@@` 盖 `@@M@@K@@` 的账单，超过盖极体账单的 `@@M@@b@@` 倍：
+
+`@@M@@D\log N(K,L)>b\cdot\log N(L^\circ,a^{-1}K^\circ)@@`
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280">
+  <text x="20" y="28" font-size="15" fill="#222">同一形状的两本账：盖法难度可以悬殊（示意）</text>
+  <rect x="40" y="60" width="200" height="200" fill="none" stroke="#2f5fd0" stroke-width="2"/>
+  <line x1="90" y1="60" x2="90" y2="260" stroke="#9db8e8" stroke-width="1"/>
+  <line x1="140" y1="60" x2="140" y2="260" stroke="#9db8e8" stroke-width="1"/>
+  <line x1="190" y1="60" x2="190" y2="260" stroke="#9db8e8" stroke-width="1"/>
+  <line x1="40" y1="110" x2="240" y2="110" stroke="#9db8e8" stroke-width="1"/>
+  <line x1="40" y1="160" x2="240" y2="160" stroke="#9db8e8" stroke-width="1"/>
+  <line x1="40" y1="210" x2="240" y2="210" stroke="#9db8e8" stroke-width="1"/>
+  <text x="40" y="50" font-size="13" fill="#222">盖 K：需要 16 片（示意）</text>
+  <polygon points="425,90 486,125 486,195 425,230 364,195 364,125" fill="#f2f2f2" stroke="#2f5fd0" stroke-width="2"/>
+  <circle cx="395" cy="160" r="52" fill="#7fc97f" fill-opacity="0.4" stroke="#2f8f4e" stroke-width="1.5"/>
+  <circle cx="455" cy="160" r="52" fill="#7fc97f" fill-opacity="0.4" stroke="#2f8f4e" stroke-width="1.5"/>
+  <text x="330" y="50" font-size="13" fill="#222">盖极体 K°：2 片够用（示意）</text>
+  <text x="300" y="255" font-size="13" fill="#666">维数升高，悬殊程度可任意大</text>
+</svg>
+
+</div>
+
+**为什么值得关心**
+
+覆盖数是学习理论、压缩感知与算子理论通用的"复杂度货币"；反例说明换一种对偶描述会彻底改变标价，此后的熵估计必须绕开这个坑。
+
+> 主结果已 Lean 形式化
+
 ## 一句话结论
 
 本文推翻了 Pietsch 1972 年提出的度量熵对偶猜想：对任意提议的普适常数 `@@M@@a,b\ge1@@`，都能构造中心对称凸体 `@@M@@K@@` 与立方体 `@@M@@L=[-1,1]^n@@`，使 `@@M@@\log N(K,L)>b\log N(L^\circ,a^{-1}K^\circ)@@`。这一悬置五十余年的猜想由此得到否定的回答。

@@ -13,6 +13,54 @@ pdfname: ""
 
 > 结果族 281：QAOA attains the SK optimum in the thermodynamic-first limit　·　学科：Mathematical physics　·　验证状态：暂无形式化证明，请以社区核验为准
 
+## 入门导读 🐣
+
+设想一场巨大聚会，任意两位客人合不合得来完全随机，你要安排所有人的座位使总冲突最小——这就是 SK 自旋玻璃模型。QAOA 是一台量子"调解机"：轮流做两件事，先顺着冲突能量演化，再随机晃一晃跳出局部最优。本文证明：先让聚会无限大、再让调解机的层数加深，它能做到理论极限的最优安排。
+
+**关键词卡片**
+
+- SK 自旋玻璃（Sherrington–Kirkpatrick spin glass）：所有点对随机相互作用，能量地形布满山谷
+- QAOA（Quantum Approximate Optimization Algorithm）：交替执行"代价演化"与"横场混合"的量子优化线路
+- 深度 p（depth）：交替演化的层数，越深越接近真正的退火
+- Parisi 值 P*（Parisi formula）：SK 基态能量的精确理论极限
+- 热力学优先极限（thermodynamic-first limit）：先取系统数 `@@M@@n\to\infty@@`、再取深度 `@@M@@p\to\infty@@` 的极限次序
+
+**看个具体例子**
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280">
+  <line x1="60" y1="235" x2="520" y2="235" stroke="#000" stroke-width="1.5"/>
+  <line x1="60" y1="235" x2="60" y2="40" stroke="#000" stroke-width="1.5"/>
+  <text x="470" y="258" font-size="13" fill="#000">深度 p →</text>
+  <text x="16" y="46" font-size="13" fill="#000">每自旋能量</text>
+  <line x1="62" y1="70" x2="515" y2="70" stroke="#c00" stroke-width="1.5" stroke-dasharray="7,5"/>
+  <text x="390" y="62" font-size="13" fill="#c00">Parisi 理论最优 P*</text>
+  <circle cx="150" cy="192" r="5" fill="#000"/>
+  <circle cx="230" cy="152" r="5" fill="#000"/>
+  <circle cx="310" cy="122" r="5" fill="#000"/>
+  <circle cx="390" cy="102" r="5" fill="#000"/>
+  <circle cx="468" cy="86" r="5" fill="#000"/>
+  <path d="M150 192 Q 310 128 468 86" fill="none" stroke="#666" stroke-width="1" stroke-dasharray="3,4"/>
+  <text x="150" y="222" font-size="13" fill="#000">Q₁</text>
+  <text x="230" y="182" font-size="13" fill="#000">Q₂</text>
+  <text x="310" y="152" font-size="13" fill="#000">Q₃</text>
+  <text x="390" y="132" font-size="13" fill="#000">Q₄</text>
+  <text x="443" y="116" font-size="13" fill="#000">Q₅</text>
+  <text x="88" y="120" font-size="13" fill="#000">深度增加，</text>
+  <text x="88" y="140" font-size="13" fill="#000">Q_p 逼近 P*</text>
+</svg>
+
+</div>
+
+公式卡（数字版定理）：`@@M@@\lim_{p\to\infty}Q_p=P_*@@`。等价地，任给精度 `@@M@@\varepsilon>0@@`，存在有限深度 `@@M@@p@@` 与一组固定的角度 `@@M@@(\gamma,\beta)@@`——不随 `@@M@@n@@`、不随随机耦合 `@@M@@J@@` 改变——使每自旋期望能量 `@@M@@v_p(\gamma,\beta)\ge P_*-\varepsilon@@`。
+
+**为什么值得关心**
+
+它证实了 Basso 等人"QAOA 终将 Parisi 最优"的猜想，但也坦承不给所需深度的定量上界、也没有高效的选角度程序——是定性层面的一锤定音。
+
+> 暂无形式化证明（AI 结果待核验）
+
 ## 一句话结论
 
 证明了量子近似优化算法（QAOA）在"先取热力学极限、再增加线路深度"的次序下能逼近 SK 自旋玻璃的 Parisi 基态能量：对任意精度，都存在与系统规模和无序实现无关的确定性角度的有限深度线路达到该精度，证实了 Basso 等人的"最终 Parisi 最优"猜想。

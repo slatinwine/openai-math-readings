@@ -13,6 +13,51 @@ pdfname: ""
 
 > 结果族 039：Nagata's conjecture and maximal Seshadri constants　·　学科：Algebraic and complex geometry　·　验证状态：主结果已 Lean 形式化
 
+## 入门导读 🐣
+
+把曲面想成一匹总能量为 `@@M@@L^2@@` 的布料：往上戳 `@@M@@r@@` 个点，每个点都会消耗布料的强度。定理说，只要点数够多、位置一般，每点恰好分到平均的能量份额，谁也占不到便宜——衡量剩余强度的 Seshadri 常数，不多不少正是 `@@M@@\sqrt{L^2/r}@@`。
+
+**关键词卡片**
+
+- Seshadri 常数（Seshadri constant）：曲线穿过这组点时，单位重数至少要付的"过路费"。
+- 丰富线丛（ample line bundle）：能量随倍数增长的强光源系统。
+- 体积上界（volume bound）：能量守恒给出的天花板 `@@M@@\sqrt{L^2/r}@@`。
+- 爆开（blow-up）：在每个点架一座"收费站"（例外除子）的改造手术。
+- 非常一般点组（very general points）：位于可数个特殊闭集之外的点组。
+
+**看个具体例子**
+
+取 `@@M@@S=\mathbb P^2@@`、`@@M@@L=\mathcal O(2)@@`：总能量 `@@M@@L^2=4@@`。戳 `@@M@@r=16@@` 个一般点，每点分到 `@@M@@4/16=1/4@@`，这块"小份额"的边长 `@@M@@\sqrt{1/4}=1/2@@` 正是 Seshadri 常数。即使点数不是平方数、各点重数参差不齐，均分规则照样成立。定理保证：存在只依赖 `@@M@@(S,L)@@` 的阈值 `@@M@@r_0@@`，此后每个整数点数都精确取到平均值——曲面上的定性 Nagata–Biran 猜想就此落定。此前的路各有缺口：辛几何的堆满稳定性不固定复结构，转移方法又要借助平面常数的极大性，本文绕开了这些依赖，对任意丰富极化直接证明。
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280">
+  <text x="280" y="30" text-anchor="middle" font-size="15" fill="#334455">布料均分图：P² 上 L = O(2)，r = 16 个点</text>
+  <rect x="90" y="50" width="200" height="200" fill="#eef4fa" stroke="#4a90c4" stroke-width="2"/>
+  <rect x="240" y="50" width="50" height="50" fill="#fde9d9" stroke="#d08030" stroke-width="1.5"/>
+  <line x1="140" y1="50" x2="140" y2="250" stroke="#9db8d2" stroke-width="1"/>
+  <line x1="190" y1="50" x2="190" y2="250" stroke="#9db8d2" stroke-width="1"/>
+  <line x1="240" y1="50" x2="240" y2="250" stroke="#9db8d2" stroke-width="1"/>
+  <line x1="90" y1="100" x2="290" y2="100" stroke="#9db8d2" stroke-width="1"/>
+  <line x1="90" y1="150" x2="290" y2="150" stroke="#9db8d2" stroke-width="1"/>
+  <line x1="90" y1="200" x2="290" y2="200" stroke="#9db8d2" stroke-width="1"/>
+  <circle cx="265" cy="75" r="4" fill="#c0504d"/>
+  <line x1="295" y1="75" x2="350" y2="75" stroke="#d08030" stroke-width="1.5"/>
+  <text x="358" y="80" font-size="13" fill="#d08030">每格 = 1/4</text>
+  <text x="358" y="105" font-size="13" fill="#d08030">边长 = 1/2 = ε</text>
+  <text x="358" y="140" font-size="13" fill="#666666">总能量 L² = 4</text>
+  <text x="358" y="165" font-size="13" fill="#666666">16 点各占一格</text>
+  <text x="280" y="272" text-anchor="middle" font-size="13" fill="#666666">r ≥ r₀ 后，ε = √(L²/r) 精确成立</text>
+</svg>
+
+</div>
+
+**为什么值得关心**
+
+"多点正性"是研究截面、辛堆满与插值的基础量；取到最大值意味着这些曲面上不存在任何更刁钻的"抄近路"曲线。
+
+> 已 Lean 形式化
+
 ## 一句话结论
 对任意光滑整复射影曲面 `@@M@@S@@` 与丰富线丛 `@@M@@L@@`，本文证明当点数 `@@M@@r@@` 超过仅依赖 `@@M@@(S,L)@@` 的阈值后，`@@M@@r@@` 个非常一般点处的多点 Seshadri 常数恰等于体积上界 `@@M@@\sqrt{L^2/r}@@`，正面解决曲面上的定性 Nagata–Biran 猜想。
 

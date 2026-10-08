@@ -13,6 +13,36 @@ pdfname: ""
 
 > 结果族 301：Trace cones and Razak–Jacelon stabilization　·　学科：Operator algebras　·　验证状态：暂无形式化证明，请以社区核验为准
 
+## 入门导读 🐣
+
+给数学对象做"体检表"是分类的经典思路：表相同，对象就相同。对核型 C*-代数，Elliott 纲领用"K-理论加迹"当体检表；可一旦代数没有投影，K-理论就哑了。Jacelon 找到一种"万能溶剂"代数 W：与它混合再稳定化后，K-理论被彻底抹去，只剩"迹"（一种求平均的尺寸函数，允许取值无穷）还能发言。本文证明：全体迹构成的迹锥，本身就是完整的体检表——两个代数的迹锥相同，它们与 W 混合后就必然同构。这肯定回答了 Robert 十余年前的问题，且对任意理想结构成立。
+
+**关键词卡片**
+
+- 迹权（tracial weight）：满足 τ(ab)=τ(ba) 的"求平均"式尺寸函数，可取值 0 到 ∞
+- 迹锥（trace cone）：全体迹权构成的集合，能相加、能按正实数放大，天然长成圆锥
+- Razak–Jacelon 代数（Razak–Jacelon algebra）：简单、唯一迹、无投影的"万能溶剂"
+- 紧算子（compact operators）：让代数"稳定化"的标准配件，记作 K
+- 下半连续（lower semicontinuous）：元素序列取极限时，迹的值只会下落、不会上冒
+
+**看个具体例子**
+
+锥长什么样？以连续函数代数为例，每个正测度 μ 给出一个迹 τ_μ(f)=∫f dμ；全体这种迹，加上只取 0/∞ 的极端"理想权"，就摆成一个以零迹为顶点的圆锥。
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280"><text x="280" y="34" font-size="15" text-anchor="middle">全体迹权摆成一个锥</text><path d="M110 150 L500 70" fill="none" stroke="#333" stroke-width="2"/><path d="M110 150 L500 220" fill="none" stroke="#333" stroke-width="2"/><path d="M500 70 Q538 145 500 220" fill="none" stroke="#333" stroke-width="2"/><path d="M110 150 L500 105" fill="none" stroke="#aaa" stroke-dasharray="5 4"/><path d="M110 150 L500 150" fill="none" stroke="#aaa" stroke-dasharray="5 4"/><path d="M110 150 L500 195" fill="none" stroke="#b33" stroke-dasharray="5 4"/><circle cx="110" cy="150" r="4" fill="#333"/><text x="88" y="168" font-size="13" text-anchor="end">0（零迹）</text><text x="520" y="240" font-size="13" fill="#b33" text-anchor="end">理想权：只取 0 或 ∞</text><text x="280" y="266" font-size="13" text-anchor="middle">迹可相加、可放大 ⇒ 天然成锥</text></svg>
+
+</div>
+
+主定理：T(A)≅T(B)（保加法与正标量乘法的同胚）蕴含 A⊗W⊗K≅B⊗W⊗K，且同构能实现事先指定的锥映射。连理想结构也被锥悄悄编码：哪些迹在哪个理想上有限，都写在锥的几何里。
+
+**为什么值得关心**
+
+它把"无投影世界"的分类归结为一个纯凸几何式的不变量，是 Elliott 纲领在该方向的收官一步。
+
+> 暂无形式化证明（AI 结果待核验）
+
 ## 一句话结论
 
 证明了全体取值于 `@@M@@[0,\infty]@@` 的下半连续迹权构成的全迹锥，作为拓扑锥能完全分类可分核型 C*-代数的 Razak–Jacelon 稳定化：`@@M@@T(A)\cong T(B)@@` 蕴含 `@@M@@A\otimes\mathcal W\otimes\mathcal K\cong B\otimes\mathcal W\otimes\mathcal K@@`，肯定回答了 Robert 的迹锥分类问题，且不限制理想结构。

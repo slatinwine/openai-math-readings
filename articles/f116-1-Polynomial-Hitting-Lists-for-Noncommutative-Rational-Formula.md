@@ -13,6 +13,57 @@ pdfname: ""
 
 > 结果族 116：Uniform black-box noncommutative identity testing across characteristics　·　学科：Theoretical computer science　·　验证状态：主结果已 Lean 形式化
 
+## 入门导读 🐣
+
+这篇的电路多了"除法"键——矩阵世界的除法是求逆，一旦代进去的矩阵不可逆，整个求值就地卡死。于是单个万能钥匙不够用了，论文改配一整串钥匙：只要公式本身"有救"（存在合法求值），钥匙串里总有一把既不把锁芯卡死、还能拧出非零的转动。
+
+**关键词卡片**
+
+- 有理非交换公式（noncommutative rational formula）：在加减乘之外允许"求逆门"的计算电路。
+- 求逆门（inverse gate）：对中间结果取逆的一元门；矩阵不可逆时该处求值无定义。
+- 可采纳（admissible）：公式至少存在一处代入，使求值有定义。
+- 打击列表（hitting list）：一列矩阵元组；非零可采纳公式必在某个元组处求值有定义且取值可逆。
+- 黑盒（black-box）：只许代入求值、不许看内部描述的访问方式。
+
+**看个具体例子**
+
+先看一个带除法的迷你公式长什么样：
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 300">
+  <text x="25" y="40" font-size="15">Φ = x₁ + (x₂·x₃)⁻¹</text>
+  <circle cx="280" cy="55" r="22" fill="none" stroke="#333" stroke-width="2"/>
+  <text x="280" y="61" text-anchor="middle" font-size="18">⊕</text>
+  <circle cx="130" cy="145" r="20" fill="none" stroke="#333" stroke-width="2"/>
+  <text x="130" y="151" text-anchor="middle" font-size="15">x₁</text>
+  <rect x="383" y="120" width="74" height="50" rx="12" fill="none" stroke="#333" stroke-width="2"/>
+  <text x="420" y="151" text-anchor="middle" font-size="15">(·)⁻¹</text>
+  <circle cx="420" cy="222" r="22" fill="none" stroke="#333" stroke-width="2"/>
+  <text x="420" y="228" text-anchor="middle" font-size="18">⊗</text>
+  <circle cx="330" cy="272" r="20" fill="none" stroke="#333" stroke-width="2"/>
+  <text x="330" y="278" text-anchor="middle" font-size="15">x₂</text>
+  <circle cx="510" cy="272" r="20" fill="none" stroke="#333" stroke-width="2"/>
+  <text x="510" y="278" text-anchor="middle" font-size="15">x₃</text>
+  <line x1="263" y1="70" x2="147" y2="130" stroke="#333" stroke-width="2"/>
+  <line x1="297" y1="70" x2="402" y2="120" stroke="#333" stroke-width="2"/>
+  <line x1="420" y1="170" x2="420" y2="200" stroke="#333" stroke-width="2"/>
+  <line x1="403" y1="237" x2="347" y2="260" stroke="#333" stroke-width="2"/>
+  <line x1="437" y1="237" x2="493" y2="260" stroke="#333" stroke-width="2"/>
+  <text x="25" y="225" font-size="13">圆 = 加/乘门，圆角方框 = 求逆门：</text>
+  <text x="25" y="248" font-size="13">代入的 x₂·x₃ 不可逆时，求值就地卡死</text>
+</svg>
+
+</div>
+
+论文定理：只凭 `@@M@@n@@` 和 `@@M@@s@@`，确定性机器在多项式比特时间内输出一份多项式长的有理矩阵元组列表；任何规模 `@@M@@\le s@@` 的非零可采纳公式，必在列表中某处取到有定义且可逆的值——与公式里有理常数的位数、逆门嵌套多深都无关。
+
+**为什么值得关心**
+
+它把含除法门的黑盒非交换恒等测试从拟多项式打击集降到多项式大小的列表，解决了 Garg–Gurvits–Oliveira–Wigderson 提出的黑盒 SINGULAR 构造问题的有理系数版本。
+
+> 已 Lean 形式化
+
 ## 一句话结论
 对含求逆门的有理非交换公式，确定性生成器仅凭变量数 `@@M@@n@@` 与规模 `@@M@@s@@`，在多项式比特时间内输出多项式大小的有理矩阵列表，使每个非零且可采纳的公式在某个元组处求值有定义且取值可逆，把黑盒有理恒等测试的打击集从拟多项式降到多项式规模。
 

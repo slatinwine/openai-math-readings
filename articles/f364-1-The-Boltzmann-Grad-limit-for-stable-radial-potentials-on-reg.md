@@ -13,6 +13,34 @@ pdfname: ""
 
 > 结果族 364：Kinetic limits and fluctuations over the Boltzmann lifespan　·　学科：Partial differential equations　·　验证状态：暂无形式化证明，请以社区核验为准
 
+## 入门导读 🐣
+
+1872 年玻尔兹曼为气体写下方程时，心里想的是无数小球按牛顿定律撞来撞去。把"无数小球"这件事严格化，人类花了将近一百年，而且严格担保只在极短的一瞬间有效。这篇论文把担保延长到方程解正常存在的整个时间段，分子间的相互作用还允许"又吸又斥"的软势——微观与宏观之间的这座桥，比以往任何一座都长、都宽。
+
+**关键词卡片**
+
+- Boltzmann–Grad 极限（Boltzmann–Grad limit）：球径 `@@M@@\varepsilon\to0@@`、粒子活动度 `@@M@@\varepsilon^{-2}@@` 时，牛顿多体系统收敛到玻尔兹曼方程。
+- 巨正则初态（grand-canonical ensemble）：粒子数目随机、按活动度生成的初始分布。
+- 热力学稳定性（thermodynamic stability）：任意粒子组态的总势能有与组数成正比的下界；吸引势阱因此被允许。
+- 碰撞树（collision tree）：把粒子的碰撞历史向后追溯长出的树，分支数随时间指数爆炸——严格化的头号敌人。
+- 整组相互作用分量（interaction component）：同时相互接触的一整群粒子，能量账按整组结算。
+
+**看个具体例子**
+
+定理代入：设玻尔兹曼方程的解在 `@@M@@[0,T]@@`（例如 `@@M@@T=10@@`）上保持高斯衰减，则对每个固定阶 `@@M@@s=1,2,\dots@@`，第 `@@M@@s@@` 阶缩放阶乘密度满足 `@@M@@\sup_{0\le t\le T}\|F_s^\varepsilon(t)-f(t)^{\otimes s}\|_{L^1}\to0@@`。机制：把 `@@M@@[0,T]@@` 切成 `@@M@@L@@` 个宏观层，跨层的能量预算让含 `@@M@@p@@` 个粒子的历史计数只付 `@@M@@(CT/\sqrt L)^p@@`——取定足够大的 `@@M@@L@@` 即可压小，突破了短时收敛的壁垒。
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280"><line x1="70" y1="90" x2="490" y2="90" stroke="#333" stroke-width="2"/><polygon points="490,90 480,86 480,94" fill="#333"/><text x="56" y="78" font-size="15" fill="#333">t=0</text><text x="496" y="78" font-size="15" fill="#333">T</text><line x1="154" y1="84" x2="154" y2="96" stroke="#333" stroke-width="2"/><line x1="238" y1="84" x2="238" y2="96" stroke="#333" stroke-width="2"/><line x1="322" y1="84" x2="322" y2="96" stroke="#333" stroke-width="2"/><line x1="406" y1="84" x2="406" y2="96" stroke="#333" stroke-width="2"/><text x="150" y="58" font-size="15" fill="#555">时间轴切成 L 个宏观层</text><circle cx="280" cy="140" r="3" fill="#333"/><line x1="280" y1="140" x2="225" y2="180" stroke="#333" stroke-width="1.5"/><line x1="280" y1="140" x2="335" y2="180" stroke="#333" stroke-width="1.5"/><circle cx="225" cy="180" r="3" fill="#333"/><circle cx="335" cy="180" r="3" fill="#333"/><line x1="225" y1="180" x2="195" y2="220" stroke="#333" stroke-width="1.5"/><line x1="225" y1="180" x2="255" y2="220" stroke="#333" stroke-width="1.5"/><line x1="335" y1="180" x2="305" y2="220" stroke="#333" stroke-width="1.5"/><line x1="335" y1="180" x2="365" y2="220" stroke="#333" stroke-width="1.5"/><circle cx="195" cy="220" r="3" fill="#333"/><circle cx="255" cy="220" r="3" fill="#333"/><circle cx="305" cy="220" r="3" fill="#333"/><circle cx="365" cy="220" r="3" fill="#333"/><line x1="355" y1="210" x2="375" y2="230" stroke="#888" stroke-width="2"/><line x1="375" y1="210" x2="355" y2="230" stroke="#888" stroke-width="2"/><text x="400" y="152" font-size="15" fill="#555">向后碰撞历史</text><text x="150" y="258" font-size="15" fill="#555">能量预算裁掉多余分支</text></svg>
+
+</div>
+
+**为什么值得关心**
+
+从 Lanford 的"一瞬间"到"整个正则寿命"，是稀薄气体微观严格基础的里程碑，且首次覆盖带吸引势与动力学团簇的一般稳定径向势。
+
+> 暂无形式化证明（AI 结果待核验）
+
 ## 一句话结论
 
 本文把 Lanford 的玻尔兹曼方程推导从"极短时间"推进到"正则时间区间"：对允许吸引势阱与排斥奇点的稳定径向位势，在整个玻尔兹曼解保持高斯衰减的有限区间上，从三维巨正则牛顿气体严格导出非线性玻尔兹曼方程，一切固定阶阶乘边缘一致收敛。

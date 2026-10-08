@@ -13,6 +13,35 @@ pdfname: ""
 
 > 结果族 155：A counterexample to periodic tiling in dimension three　·　学科：Combinatorics　·　验证状态：主结果已 Lean 形式化
 
+## 入门导读 🐣
+
+贴瓷砖时，如果花纹能周期性重复，活儿就轻松：找到一小段基本单元，平移复制即可铺满整面墙。周期铺砌猜想猜的就是"能铺满的瓷砖必有周期铺法"。这篇论文在三维造出一块叛逆瓷砖：它铺得满三维格点空间，却不存在任何周期铺法。
+
+**关键词卡片**
+
+- 平移铺砌（translational tiling）：只用平移（不旋转、不翻转）把瓷砖不重不漏地盖满空间。
+- 周期铺法（periodic tiling）：存在平移向量，挪完后整幅图案与原来重合。
+- 全周期（fully periodic）：平移集在某个有限指标子群下不变的严格说法。
+- 格 ℤ³：三维整数坐标点组成的空间，即铺砌发生的"棋盘"。
+
+**看个具体例子**
+
+示意图：同样的方砖与长砖，上排按周期排列，平移一个周期图案重合；下排打乱后，任何平移都对不上：
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280"><text x="280" y="32" text-anchor="middle" font-size="16">同样的砖，两种铺法（示意）</text><text x="70" y="100" font-size="14">周期铺法：</text><rect x="160" y="80" width="40" height="40" fill="#e8e8e8" stroke="#333"/><rect x="210" y="80" width="80" height="40" fill="#c9c9c9" stroke="#333"/><rect x="300" y="80" width="40" height="40" fill="#e8e8e8" stroke="#333"/><rect x="350" y="80" width="80" height="40" fill="#c9c9c9" stroke="#333"/><rect x="440" y="80" width="40" height="40" fill="#e8e8e8" stroke="#333"/><line x1="160" y1="62" x2="280" y2="62" stroke="#2e7d32"/><polygon points="160,62 168,58 168,66" fill="#2e7d32"/><polygon points="280,62 272,58 272,66" fill="#2e7d32"/><text x="330" y="52" font-size="13" fill="#2e7d32">平移一个周期，图案重合</text><text x="70" y="180" font-size="14">无周期铺法：</text><rect x="160" y="160" width="80" height="40" fill="#c9c9c9" stroke="#333"/><rect x="250" y="160" width="40" height="40" fill="#e8e8e8" stroke="#333"/><rect x="300" y="160" width="40" height="40" fill="#e8e8e8" stroke="#333"/><rect x="350" y="160" width="80" height="40" fill="#c9c9c9" stroke="#333"/><rect x="440" y="160" width="80" height="40" fill="#c9c9c9" stroke="#333"/><text x="280" y="230" text-anchor="middle" font-size="14" fill="#c0392b">任何平移都无法让整幅图案重合</text><text x="280" y="260" text-anchor="middle" font-size="13" fill="#555">论文：三维格点中存在只能无周期铺砌的有限瓷砖</text></svg>
+
+</div>
+
+论文的瓷砖是 ℤ³ 里一组有限格点 T：存在平移集 A 使 A⊕T=ℤ³（每点恰被盖一次），但任何铺法的平移集都不是全周期的；把它加厚成实体 Ω=T+[0,1]³ 后，在 ℝ³ 中允许任意实数平移，结论不变。
+
+**为什么值得关心**
+
+一维（Newman）与二维（Bhattacharya）的答案都是"必有周期"，三维是第一个失败维度——猜想在最小可能的维度被否定。
+
+> 已 Lean 形式化
+
 ## 一句话结论
 
 本文在 `@@M@@\Z^3@@` 中构造出一块有限平移瓷砖（translational tile）`@@M@@T@@`：它能铺满 `@@M@@\Z^3@@`，却没有任何全周期铺法；其单位立方体加厚在 `@@M@@\R^3@@` 中同样如此，即便允许任意实数平移向量。周期铺砌猜想由此在最小可能的维度三被否定。

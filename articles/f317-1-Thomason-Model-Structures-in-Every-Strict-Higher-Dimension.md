@@ -13,6 +13,54 @@ pdfname: ""
 
 > 结果族 317：Thomason model structures in all strict higher dimensions　·　学科：Topology　·　验证状态：暂无形式化证明，请以社区核验为准
 
+## 入门导读 🐣
+
+描述一个形状有两种语言：直接画图（拓扑空间），或写一份层层嵌套的目录（范畴）。1980 年 Thomason 证明：只有一层深度的目录——普通范畴——就足以编码任何形状的同伦。这篇论文把结论推到每一种嵌套深度：目录深到 2 层、3 层、任意 n 层乃至无穷层，全都够用。
+
+**关键词卡片**
+
+- 严格球状 n-范畴（strict globular n-category）：点、箭头、面、体按层严格组织的高阶目录，不许"差不多"。
+- Street 神经（Street nerve）：把 n-范畴翻译成单纯集的编码器 N_n，逐维记录目录信息。
+- 模型结构（model structure）：范畴上的一套同伦演算规则，指明哪些映射算弱等价、如何做构造。
+- Quillen 等价（Quillen equivalence）：两个模型范畴之间的无损翻译词典。
+- 细分与扩张（subdivision / extension）：把单纯形切细、再补全的打磨工序；本文用二次版 Ex²N_n 做检测。
+
+**看个具体例子**
+
+n=1 的经典一幕：范畴 {0→1}（两个对象、一条箭头）的神经是一条线段。主定理说：对每个 n（含 ∞），用"Street 神经＋两次打磨"判弱等价，n-范畴世界就自带一个"真且组合式"的模型结构，并且词典 `@@M@@L_n=c_n\mathrm{Sd}^2\dashv R_n=\mathrm{Ex}^2N_n@@` 是与空间世界（单纯集）的 Quillen 等价——嵌套深度不影响翻译质量：
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280">
+<text x="280" y="34" text-anchor="middle" font-size="18" fill="#222">所有深度 n 的无损词典</text>
+<rect x="60" y="90" width="170" height="70" fill="#fff" stroke="#222" stroke-width="2"/>
+<text x="145" y="118" text-anchor="middle" font-size="16" fill="#222">严格 n-范畴</text>
+<text x="145" y="142" text-anchor="middle" font-size="14" fill="#666">n = 1, 2, 3, …, ∞</text>
+<rect x="330" y="90" width="170" height="70" fill="#fff" stroke="#222" stroke-width="2"/>
+<text x="415" y="118" text-anchor="middle" font-size="16" fill="#222">单纯集</text>
+<text x="415" y="142" text-anchor="middle" font-size="14" fill="#666">（空间的同伦模型）</text>
+<line x1="328" y1="103" x2="234" y2="103" stroke="#222" stroke-width="2"/>
+<polygon points="236,97 236,109 224,103" fill="#222"/>
+<text x="280" y="94" text-anchor="middle" font-size="13" fill="#444">cₙSd²</text>
+<line x1="232" y1="148" x2="326" y2="148" stroke="#222" stroke-width="2"/>
+<polygon points="324,142 324,154 336,148" fill="#222"/>
+<text x="280" y="168" text-anchor="middle" font-size="13" fill="#444">Ex²Nₙ</text>
+<circle cx="140" cy="235" r="5" fill="#222"/>
+<circle cx="290" cy="235" r="5" fill="#222"/>
+<line x1="146" y1="235" x2="284" y2="235" stroke="#222" stroke-width="2"/>
+<text x="140" y="262" text-anchor="middle" font-size="14" fill="#666">0</text>
+<text x="290" y="262" text-anchor="middle" font-size="14" fill="#666">1</text>
+<text x="310" y="240" font-size="14" fill="#666">← 范畴 {0→1} 的神经 = 线段</text>
+</svg>
+
+</div>
+
+**为什么值得关心**
+
+补上 Ara–Maltsiniotis 转移框架悬置多年的最后一环（等价在推出下的保持性），一举宣告：严格性在任何维度都不损失表达力，严格高阶范畴就是合格的"空间语言"。
+
+> 暂无形式化证明（AI 结果待核验）
+
 ## 一句话结论
 
 证明 Ara–Maltsiniotis 高维 Thomason 猜想：对每个 `@@M@@1\le n\le\infty@@`，小严格球状（globular）`@@M@@n@@`-范畴上存在真（proper）的组合式模型结构，弱等价由 Street 神经检测，并与单纯集 Quillen 等价——严格高阶范畴在一切维度都实现空间的同伦理论。

@@ -13,6 +13,46 @@ pdfname: ""
 
 > 结果族 014：Restricted geometric Langlands, global Arthur enhancements, and generic Ramanujan　·　学科：Number theory　·　验证状态：暂无形式化证明，请以社区核验为准
 
+## 入门导读 🐣
+
+同族前作解决了"绳上打一个结、而且结要打得最紧"的情形。这篇把条件大幅放宽：绳上可以同时打两个甚至更多结，每个结可松可紧——甚至可以完全不打结。论文对 `@@M@@\mathrm{SL}_n@@` 证明：这种宽松条件下"纯音"依然存在，而且几条旋钮腿撞到同一点时，音色关系仍然自洽。
+
+**关键词卡片**
+
+- 单幂单值 (unipotent monodromy)：绕标记点一圈的矩阵形如 `@@M@@\exp(tN)@@`，其中 `@@M@@N@@` 幂零（反复自乘会变成零）
+- Jordan 型 (Jordan type)：幂零矩阵按"块大小"分类的清单，直观描述结的松紧
+- Borel 水平结构 (Borel level structure)：在标记点给丛附加"阶梯形标架"数据，用来感知结
+- 融合 (fusion)：两条 Hecke 修正腿撞到同一点时，本征关系仍须保持相容
+- 奇异支集 (singular support)：层"变化最剧烈"的方向集合；定理证它落在幂零锥内
+
+**看个具体例子**
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 290">
+  <text x="280" y="26" font-size="15" text-anchor="middle" fill="#333">两个结、松紧任意：SL₂ 上照样有"纯音"</text>
+  <path d="M30 150 C 160 40, 380 240, 530 110" fill="none" stroke="#2a7" stroke-width="3"/>
+  <circle cx="140" cy="104" r="6" fill="#d33"/>
+  <circle cx="140" cy="104" r="26" fill="none" stroke="#d33" stroke-dasharray="5 4" stroke-width="1.5"/>
+  <text x="140" y="66" font-size="13" text-anchor="middle" fill="#d33">标记点 x₁</text>
+  <circle cx="400" cy="176" r="6" fill="#d33"/>
+  <circle cx="400" cy="176" r="26" fill="none" stroke="#d33" stroke-dasharray="5 4" stroke-width="1.5"/>
+  <text x="400" y="224" font-size="13" text-anchor="middle" fill="#d33">标记点 x₂</text>
+  <text x="140" y="240" font-size="12" text-anchor="middle" fill="#333">x₁：N₁=(0 1; 0 0)，结最紧（正则）</text>
+  <text x="400" y="240" font-size="12" text-anchor="middle" fill="#333">x₂：N₂=0，没有结</text>
+  <text x="280" y="268" font-size="13" text-anchor="middle" fill="#333">定理："一紧一无"的参数仍有非零本征层 M</text>
+</svg>
+
+</div>
+
+图中 `@@M@@\mathrm{SL}_2@@` 曲线上有两个标记点：`@@M@@x_1@@` 处 `@@M@@N_1=\left(\begin{smallmatrix}0&1\\0&0\end{smallmatrix}\right)@@`（最大的 Jordan 块，结最紧），`@@M@@x_2@@` 处 `@@M@@N_2=0@@`（完全没结）。定理保证"一紧一无"的参数照样配得非零本征层，且张量、置换、融合结构一样不少——"正则"从此不再是必需品。
+
+**为什么值得关心**
+
+带分歧的几何朗兰兹此前的存在性结果被"单点＋正则单值"卡死；本文一次放开了点的个数和 Jordan 型两道闸门，参数范围大幅扩张。
+
+> 暂无形式化证明（AI 结果待核验）
+
 ## 一句话结论
 
 在特征 `@@M@@p>n@@` 的域上，本文对带有至少两个标记点、亏格 `@@M@@\ge 2@@` 的曲线，为任意单幺（unipotent）tame 边界单值、Zariski 稠密的 `@@M@@\PGL_n@@`-局部系统构造了非零的反常（perverse）Hecke 本征层，且本征同构保留完整的张量与融合（fusion）结构。

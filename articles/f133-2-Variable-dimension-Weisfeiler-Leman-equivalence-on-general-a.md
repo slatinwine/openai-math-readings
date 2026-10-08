@@ -13,6 +13,35 @@ pdfname: ""
 
 > 结果族 133：The computational complexity of Weisfeiler–Leman refinement　·　学科：Theoretical computer science　·　验证状态：暂无形式化证明，请以社区核验为准
 
+## 入门导读 🐣
+
+WL 对话的"维数 `@@M@@k@@`"以前都被当成固定的小常数；这篇论文让 `@@M@@k@@` 成为输入的一部分，用二进制写在数据里——30 个比特就能写下十亿维，而熟悉的 `@@M@@n^{O(k)}@@` 算法随之变成货真价实的指数时间。论文证明：此时判定两图是否 `@@M@@k@@`-WL 等价恰好是 EXPTIME 完全，哪怕图限制到每个点至多 3 条边，正面回答了 Berkholz 的公开问题。
+
+**关键词卡片**
+
+- 变维数（variable dimension）：`@@M@@k@@` 随输入给出、用二进制编码。
+- 双射博弈（bijective game）：`@@M@@k@@`-WL 等价的等价刻画——Dup 必须先亮出整张双射表，Spo 再选点考验。
+- EXPTIME 完全（EXPTIME-complete）：指数时间可解，且其中最难。
+- 子立方图（subcubic graphs）：最大度至多 3 的图。
+
+**看个具体例子**
+
+归约的骨架是把一台指数时间机器的计算，压进一对多项式规模的小图：
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280"><text x="280" y="30" text-anchor="middle" font-size="15" fill="#333">把指数长的计算压进多项式大的图对</text><rect x="20" y="80" width="150" height="76" rx="8" fill="#eef" stroke="#345"/><text x="95" y="112" text-anchor="middle" font-size="13" fill="#123">任意图灵机 M</text><text x="95" y="134" text-anchor="middle" font-size="13" fill="#123">输入 w，跑 2^d 步</text><line x1="174" y1="118" x2="214" y2="118" stroke="#666" stroke-width="2"/><polygon points="214,118 203,112 203,124" fill="#666"/><rect x="218" y="80" width="150" height="76" rx="8" fill="#efe" stroke="#253"/><text x="293" y="104" text-anchor="middle" font-size="13" fill="#121">图对 G, H</text><text x="293" y="124" text-anchor="middle" font-size="13" fill="#121">多项式规模</text><text x="293" y="144" text-anchor="middle" font-size="13" fill="#121">维数 k = 2d（二进制）</text><line x1="372" y1="118" x2="412" y2="118" stroke="#666" stroke-width="2"/><polygon points="412,118 401,112 401,124" fill="#666"/><rect x="416" y="80" width="130" height="76" rx="8" fill="#fdf" stroke="#534"/><text x="481" y="108" text-anchor="middle" font-size="13" fill="#312">判定 G ≡ₖ H ？</text><text x="481" y="132" text-anchor="middle" font-size="13" fill="#312">答案对应</text><text x="481" y="152" text-anchor="middle" font-size="13" fill="#312">"机器拒绝 w"？</text><text x="60" y="200" font-size="13" fill="#666">时间与带头位置各占 d 位二进制，地址长 r=2d，输出维数 k=r；</text><text x="60" y="224" font-size="13" fill="#666">一般构造图阶约 (r+1)¹²，亚三次版约 (r+2)¹⁶，多项式时间可写出。</text><text x="60" y="248" font-size="13" fill="#666">上界：k≥n 时等价即同构，换 min{k,n} 后标准细化只需 2^O(n log n)。</text></svg>
+
+</div>
+
+代入数字：`@@M@@d=20@@`（机器跑约一百万步）时 `@@M@@k=40@@`，图对约有 `@@M@@41^{12}\approx 2\times10^{19}@@` 个顶点。两头夹起来，判定问题恰好落在 EXPTIME 完全的位置上。
+
+**为什么值得关心**
+
+Luks 已证明固定最大度图的同构测试是多项式的，而本文说明"按指定维数做 WL"即使在同样的图上也指数时间完全——这是与同构测试本质不同的问题。
+
+> 暂无形式化证明（AI 结果待核验）
+
 ## 一句话结论
 
 证明当维数 `@@M@@k@@` 以二进制编码作为输入时，判定联合更新 `@@M@@k@@` 维 Weisfeiler–Leman 等价（`@@M@@G\equiv_k H@@`）是 `@@M@@\mathsf{EXPTIME}@@`-完全的，即使在连通、无色、最大度至多 3 的简单图上亦然，正面回答了 Berkholz 的公开问题。

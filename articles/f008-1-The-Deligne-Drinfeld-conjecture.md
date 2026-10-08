@@ -13,6 +13,34 @@ pdfname: ""
 
 > 结果族 008：The Deligne–Drinfeld conjecture　·　学科：Number theory　·　验证状态：主结果已 Lean 形式化
 
+## 入门导读 🐣
+
+数学里有一间神秘房间：里面的"家具"是满足三条极短方程（反对称、三词、五边形）的多项式解，它们刻画"带括号辫子"的无穷小对称。房间看似住着无数件家具，Deligne 与 Drinfeld 却猜：真正独立的家具只在权重 `@@M@@3,5,7,\ldots@@` 各出现一件，其余家具全是它们的括号组合。本文证明：房间确实这么简洁。
+
+**关键词卡片**
+
+- Grothendieck–Teichmüller 李代数（Grothendieck–Teichmüller Lie algebra）：上述三条方程的解空间 `@@M@@W@@` 配上 Ihara 括号得到的代数。
+- 权重（weight）：多项式中 `@@M@@x,y@@` 的字数，用来给解分层；三条方程同时压在所有权重上。
+- Ihara 括号（Ihara bracket）：解之间的一种特殊乘法 `@@M@@\{\psi,\phi\}@@`；"`@@M@@W@@` 对它封闭"本身就是定理的结论之一。
+- 自由李代数（free Lie algebra）：没有任何多余关系的李代数，"一件独立家具配一个旋钮"的代数化身。
+- 权重完备化（weight completion）：允许无穷权重级数后的极限版本；同构在完备化后仍连续成立。
+
+**看个具体例子**
+
+定理给出同构 `@@M@@\Lie_{\Q}\langle e_3,e_5,e_7,\ldots\rangle\cong(W,\{,\})@@`，每个奇权一个生成元 `@@M@@\sigma_{2k+1}@@`。括号让权重相加：`@@M@@\{\sigma_3,\sigma_5\}@@` 落在权重 `@@M@@3+5=8@@`，而 `@@M@@\{\sigma_3,\sigma_3\}=0@@`。生成元真实存在来自显式构造：其深度一分量 `@@M@@[x^{n-1}y]@@` 的系数在奇权 `@@M@@n@@` 处等于 `@@M@@2\lambda^n\zeta(n)\neq0@@`——例如权重 3 处是 `@@M@@2\lambda^3\zeta(3)@@`（`@@M@@\zeta(3)\approx1.202@@`），一个不折不扣的非零数。
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280"><line x1="60" y1="190" x2="510" y2="190" stroke="#333" stroke-width="2"/><line x1="80" y1="184" x2="80" y2="196" stroke="#333" stroke-width="2"/><line x1="130" y1="184" x2="130" y2="196" stroke="#333" stroke-width="2"/><line x1="180" y1="184" x2="180" y2="196" stroke="#333" stroke-width="2"/><line x1="230" y1="184" x2="230" y2="196" stroke="#333" stroke-width="2"/><line x1="280" y1="184" x2="280" y2="196" stroke="#333" stroke-width="2"/><line x1="330" y1="184" x2="330" y2="196" stroke="#333" stroke-width="2"/><line x1="380" y1="184" x2="380" y2="196" stroke="#333" stroke-width="2"/><line x1="430" y1="184" x2="430" y2="196" stroke="#333" stroke-width="2"/><line x1="480" y1="184" x2="480" y2="196" stroke="#333" stroke-width="2"/><text x="80" y="213" font-size="15" text-anchor="middle" fill="#222">3</text><text x="130" y="213" font-size="15" text-anchor="middle" fill="#222">5</text><text x="180" y="213" font-size="15" text-anchor="middle" fill="#222">6</text><text x="230" y="213" font-size="15" text-anchor="middle" fill="#222">7</text><text x="280" y="213" font-size="15" text-anchor="middle" fill="#222">8</text><text x="330" y="213" font-size="15" text-anchor="middle" fill="#222">9</text><text x="380" y="213" font-size="15" text-anchor="middle" fill="#222">10</text><text x="430" y="213" font-size="15" text-anchor="middle" fill="#222">11</text><text x="480" y="213" font-size="15" text-anchor="middle" fill="#222">12</text><circle cx="80" cy="100" r="11" fill="none" stroke="#2a9d4f" stroke-width="3"/><circle cx="130" cy="100" r="11" fill="none" stroke="#2a9d4f" stroke-width="3"/><circle cx="230" cy="100" r="11" fill="none" stroke="#2a9d4f" stroke-width="3"/><circle cx="330" cy="100" r="11" fill="none" stroke="#2a9d4f" stroke-width="3"/><text x="420" y="106" font-size="16" fill="#2a9d4f">……</text><text x="80" y="72" font-size="15" text-anchor="middle" fill="#222">σ₃</text><text x="130" y="72" font-size="15" text-anchor="middle" fill="#222">σ₅</text><text x="230" y="72" font-size="15" text-anchor="middle" fill="#222">σ₇</text><text x="330" y="72" font-size="15" text-anchor="middle" fill="#222">σ₉</text><rect x="270" y="140" width="20" height="20" fill="none" stroke="#2a5fd6" stroke-width="2.5"/><rect x="370" y="140" width="20" height="20" fill="none" stroke="#2a5fd6" stroke-width="2.5"/><line x1="172" y1="142" x2="188" y2="158" stroke="#d64545" stroke-width="2.5"/><line x1="172" y1="158" x2="188" y2="142" stroke="#d64545" stroke-width="2.5"/><text x="280" y="132" font-size="13" text-anchor="middle" fill="#2a5fd6">{σ₃,σ₅}</text><text x="380" y="132" font-size="13" text-anchor="middle" fill="#2a5fd6">{σ₃,σ₇}</text><text x="180" y="132" font-size="13" text-anchor="middle" fill="#d64545">{σ₃,σ₃}=0</text><line x1="88" y1="110" x2="268" y2="140" stroke="#bbb" stroke-width="1.5" stroke-dasharray="4 3"/><line x1="128" y1="110" x2="290" y2="140" stroke="#bbb" stroke-width="1.5" stroke-dasharray="4 3"/><line x1="92" y1="110" x2="368" y2="140" stroke="#bbb" stroke-width="1.5" stroke-dasharray="4 3"/><line x1="238" y1="110" x2="388" y2="140" stroke="#bbb" stroke-width="1.5" stroke-dasharray="4 3"/><text x="285" y="243" font-size="15" text-anchor="middle" fill="#222">权重（= 多项式的字数）</text><text x="285" y="30" font-size="16" text-anchor="middle" fill="#222">每个奇权一个生成元，括号让权重相加（示意）</text></svg>
+
+</div>
+
+**为什么值得关心**
+
+它一举刻画了这个对称空间的全部结构，并（经 Willwacher 的同构）顺带算清图复形的 `@@M@@H^0(\mathrm{GC}_2)@@`；结论还通过了机器检验，属于最可靠的一类新定理。
+
+> 已 Lean 形式化
+
 ## 一句话结论
 
 论文证明了 Deligne–Drinfeld 猜想：有理 Grothendieck–Teichmüller 李代数（Grothendieck–Teichmüller Lie algebra）——带括号辫子的无穷小对称代数——在 Ihara 括号（Ihara bracket）下由权重 `@@M@@3,5,7,\ldots@@` 各一个生成元自由生成，且权重完备化后同构依然成立。

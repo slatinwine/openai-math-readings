@@ -13,6 +13,57 @@ pdfname: ""
 
 > 结果族 198：A counterexample to finitistic-dimension finiteness　·　学科：Algebra　·　验证状态：主结果已 Lean 形式化
 
+## 入门导读 🐣
+
+把一个代数对象"拆解"成标准零件（投射模）时，有的永远拆不完，有的拆有限步就停。Bass 在 1960 年猜想：凡是能拆完的，步数该有个统一上限——好比说"这家公司所有能结清的账，结算轮数总有个天花板"。这篇论文造出一家没有天花板的"公司"：同一个代数里，总有账单要拆任意多轮才能结清。
+
+**关键词卡片**
+
+- 有限维代数（finite-dimensional algebra）：作为向量空间只有有限维的乘法系统
+- 投射模（projective module）：最像"标准件"的模块，其他模块都能借助它来分解
+- 投射维数（projective dimension）：把模块拆成标准件所需的最短分解长度
+- 小有限维数（little finitistic dimension）：所有"拆得完"的模块中投射维数的上确界；Bass 猜想它总有限
+
+**看个具体例子**
+
+定理：存在复数域上一个固定的有限维代数 `@@M@@A@@`，使得对每个 `@@M@@m\ge1@@` 都有有限维模 `@@M@@N_m@@` 满足
+
+`@@M@@D2m-2\ \le\ \operatorname{pd}_A N_m\ <\ \infty .@@`
+
+关键在量词顺序：`@@M@@A@@` 先固定，`@@M@@m@@` 可以任意大——"拆得完，但要多拆有多拆"：
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280">
+<line x1="60" y1="230" x2="510" y2="230" stroke="#555" stroke-width="2"/>
+<line x1="60" y1="230" x2="60" y2="40" stroke="#555" stroke-width="2"/>
+<rect x="90" y="215" width="50" height="15" fill="#48a"/>
+<rect x="180" y="185" width="50" height="45" fill="#48a"/>
+<rect x="270" y="150" width="50" height="80" fill="#48a"/>
+<rect x="360" y="110" width="50" height="120" fill="#48a"/>
+<rect x="450" y="65" width="50" height="165" fill="#48a"/>
+<text x="95" y="252" font-size="14" fill="#222">N₁</text>
+<text x="185" y="252" font-size="14" fill="#222">N₂</text>
+<text x="275" y="252" font-size="14" fill="#222">N₃</text>
+<text x="365" y="252" font-size="14" fill="#222">N₄</text>
+<text x="455" y="252" font-size="14" fill="#222">N₅…</text>
+<text x="120" y="48" font-size="14" fill="#d33">没有天花板</text>
+<line x1="115" y1="53" x2="160" y2="53" stroke="#d33" stroke-width="1.5" stroke-dasharray="6 5"/>
+<line x1="195" y1="53" x2="240" y2="53" stroke="#d33" stroke-width="1.5" stroke-dasharray="6 5"/>
+<line x1="275" y1="53" x2="320" y2="53" stroke="#d33" stroke-width="1.5" stroke-dasharray="6 5"/>
+<line x1="355" y1="53" x2="400" y2="53" stroke="#d33" stroke-width="1.5" stroke-dasharray="6 5"/>
+<line x1="435" y1="53" x2="480" y2="53" stroke="#d33" stroke-width="1.5" stroke-dasharray="6 5"/>
+<text x="310" y="205" font-size="14" fill="#888">拆解步数 ≥ 2m−2，可任意大</text>
+</svg>
+
+</div>
+
+**为什么值得关心**
+
+小有限维数猜想悬置六十余年，是同调代数最著名的公开问题之一；此反例宣告它在有限维代数上整体失败，并连带说明该代数上"内射生成"性质失效。同一构造思路还带出极端不对称的姊妹结论：存在另一个代数，其左侧的小、大维数均为无穷，右侧却均为零。
+
+> 已 Lean 形式化
+
 ## 一句话结论
 
 构造出一个复数域上的有限维代数 `@@M@@A@@`：对任意 `@@M@@m\ge1@@` 都有有限维模 `@@M@@N_m@@` 满足 `@@M@@2m-2\le\pd_A N_m<\infty@@`。同一个代数上有限投射维数无上界，Bass 提出的有限维代数小有限维数猜想（little finitistic-dimension conjecture）被否定。

@@ -13,6 +13,51 @@ pdfname: ""
 
 > 结果族 050：A counterexample to Griffiths' positivity conjecture　·　学科：Algebraic and complex geometry　·　验证状态：主结果已 Lean 形式化
 
+## 入门导读 🐣
+
+判断一个"向量丛"够不够"正"，数学家有两种打分表：代数表看它的截面（多项式式的切片）够不够多，多到能把整个空间嵌进射影空间，叫充足；几何表看能否给它配一把光滑的尺子（度量），让曲率沿任何非零方向配对都为正，叫 Griffiths 正。就像评价班级可以看"平均分"也可以看"是否人人都开心"，Griffiths 在 1969 年猜想两种指标总是一致。这篇论文造出一个反例：平均分满分，却怎么排座位都做不到人人开心——两种"正"并不等价。
+
+**关键词卡片**
+
+- 向量丛（vector bundle）：附在空间每点上的向量空间束，随点平滑变化，像每处地面立着的"箭头架"。
+- 充足（ample）：截面足够多，某个幂的截面能把空间整体嵌入射影空间——代数意义的"正"。
+- Hermitian 度量（Hermitian metric）：给丛中向量量长度、随点光滑变化的"尺子"。
+- Griffiths 正（Griffiths-positive）：用这把尺子算出的曲率与任何非零切向、丛向配对都严格为正——微分几何意义的"正"。
+- 反例（counterexample）：满足猜想前提却违反结论的具体对象，一个即可宣判猜想不成立。
+
+**看个具体例子**
+
+舞台是最简单的二次曲面 `@@M@@\mathbb P^1\times\mathbb P^1@@`（两个球面配成的对）。论文显式造出秩为 2 的丛 `@@M@@G@@`：把两个球面坐标各自取 `@@M@@m@@` 次幂（球面自我包裹 `@@M@@m@@` 层）拉回，再扭上 `@@M@@\mathcal O(1,1)@@`，得到一族 `@@M@@E_m@@`。结论：`@@M@@m=1,2,3,\dots@@` 时每个 `@@M@@E_m@@` 都充足；但存在 `@@M@@m_0@@`，从它起所有 `@@M@@E_m@@` 都没有严格 Griffiths 正的光滑度量。
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280">
+  <rect x="30" y="80" width="200" height="80" rx="12" fill="none" stroke="#333" stroke-width="2"/>
+  <text x="130" y="112" text-anchor="middle" font-size="16" fill="#333">充足（ample）</text>
+  <text x="130" y="138" text-anchor="middle" font-size="12" fill="#666">代数正：截面够多</text>
+  <rect x="330" y="80" width="200" height="80" rx="12" fill="none" stroke="#333" stroke-width="2"/>
+  <text x="430" y="112" text-anchor="middle" font-size="16" fill="#333">Griffiths 正度量</text>
+  <text x="430" y="138" text-anchor="middle" font-size="12" fill="#666">微分正：曲率处处正</text>
+  <text x="284" y="62" text-anchor="middle" font-size="12" fill="#333">已知：度量正 → 充足</text>
+  <line x1="326" y1="100" x2="252" y2="100" stroke="#333" stroke-width="2"/>
+  <polygon points="244,100 256,94 256,106" fill="#333"/>
+  <line x1="248" y1="150" x2="316" y2="150" stroke="#c00" stroke-width="2"/>
+  <polygon points="324,150 312,144 312,156" fill="#c00"/>
+  <line x1="266" y1="138" x2="300" y2="162" stroke="#c00" stroke-width="2"/>
+  <line x1="300" y1="138" x2="266" y2="162" stroke="#c00" stroke-width="2"/>
+  <text x="284" y="185" text-anchor="middle" font-size="12" fill="#c00">本文反例：充足推不出度量正</text>
+  <text x="280" y="230" text-anchor="middle" font-size="13" fill="#333">对象：P¹×P¹ 上显式秩二丛 G 的幂拉回族 E_m</text>
+  <text x="280" y="254" text-anchor="middle" font-size="13" fill="#333">每个 E_m 都充足，充分大的 m 全都没有 Griffiths 正度量</text>
+</svg>
+
+</div>
+
+**为什么值得关心**
+
+它推翻了 Griffiths 猜想在秩二的情形：充足推不出曲率正，代数正性与度量正性之间隔着真实的鸿沟，后续微分几何研究必须绕开这座断桥。
+
+> 已 Lean 形式化
+
 ## 一句话结论
 
 本文在二次曲面 `@@M@@\mathbb P^1\times\mathbb P^1@@` 上构造显式秩二向量丛 `@@M@@G@@`：沿坐标取幂映射拉回并扭 `@@M@@\mathcal O(1,1)@@` 得到的 `@@M@@E_m@@` 对每个 `@@M@@m@@` 都充足，却对充分大的 `@@M@@m@@` 都不容许严格 Griffiths 正的光滑度量，在秩二情形推翻 Griffiths 正性猜想。

@@ -13,6 +13,30 @@ pdfname: ""
 
 > 结果族 260：Spacetime Penrose inequalities: enclosing area, charge, rotation, and anti-de Sitter extensions　·　学科：Mathematical physics　·　验证状态：暂无形式化证明，请以社区核验为准
 
+## 入门导读 🐣
+
+在标准的喇叭宇宙黑洞上轻轻撒一层"引力涟漪"（共形扰动），质量会不会跌破下界？这篇论文回答：不会——只要扰动足够小。更妙的是算得极细：涟漪若是纯径向的（旋转不变），质量恰好压线、精确取等；带角向结构的涟漪则把质量严格抬到线上方。
+
+**关键词卡片**
+
+- 共形扰动（conformal perturbation）：按一个比例因子整体拉伸度规的小改动，涟漪的大小由参数 `@@M@@\varepsilon@@` 控制。
+- 横向无迹种子（transverse-traceless seed）：无迹、散度为零的张量模板，决定涟漪的形状。
+- 边际外陷捕面（marginally outer trapped surface, MOTS）：黑洞边界的数学替身，扰动后它仍是边界。
+- 亏损（deficit）：质量与下界之差 `@@M@@m_{AH}-b_*(A)@@`；证明目标就是证它非负。
+- 体–边占优条件（bulk-versus-boundary domination）：旧文献需要的额外积分假设，本文彻底删去。
+
+**看个具体例子**
+
+**公式卡**：记下界函数 `@@M@@b_*(A)=\sqrt{A/16\pi}\,\bigl(1+A/4\pi\bigr)@@`。对视界半径 `@@M@@a=1@@` 的背景黑洞，`@@M@@b_*=\frac{1+1}{2}=1@@`，背景恰好压线。扰动后把亏损展开成 `@@M@@\varepsilon@@` 的幂级数：
+`@@M@@D\mathfrak D(\varepsilon)=m_{AH}(\varepsilon)-b_*(A_\varepsilon)=c_2\varepsilon^2+c_4\varepsilon^4+\cdots\ \ge\ 0,@@`
+径向种子：一切系数为零，精确取等；非径向种子：至少一个系数严格为正。每个系数都是一串非负项之和，符号一目了然。
+
+**为什么值得关心**
+
+它删掉了 Khuri–Kopiński（2023）定理所需的占优附加条件，把局部 Penrose 不等式做成对任意种子、任意解分支普适的结论，并给出径向/非径向的精确二分。旧条件两边都随 `@@M@@\varepsilon@@` 二次缩放，缩小 `@@M@@\varepsilon@@` 也消不掉，删掉它是实质进步。
+
+> 暂无形式化证明（AI 结果待核验）
+
 ## 一句话结论
 对正质量 Schwarzschild–反德西特外部的极大真空共形扰动类证明了精确 Penrose 不等式：任意固定横向无迹种子、任意解分支，参数足够小时质量不低于由边界面积给出的最佳下界；径向种子取等、非径向严格。
 

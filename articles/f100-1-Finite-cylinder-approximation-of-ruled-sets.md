@@ -13,6 +13,64 @@ pdfname: ""
 
 > 结果族 100：Cylinder coverings below the half-area bound　·　学科：Convex and metric geometry　·　验证状态：暂无形式化证明，请以社区核验为准
 
+## 入门导读 🐣
+
+铁屑撒在磁场里，排成一条条方向随位置连续变化的线段。想用有限根方向固定的管子（圆柱）把它们全盖住，会不会付出多得多的截面面积？本文定理回答：几乎不会——有限根圆柱的总成本可以任意逼近连续变向的理论下限"积分投影成本"。它是本结果族推翻半面积猜想的"有限化机器"。
+
+**关键词卡片**
+
+- 直纹集（ruled set）：每个标签点 `@@M@@p@@` 配一条方向由 `@@M@@V(p)@@` 决定、半长 `@@M@@L@@` 的线段，全体线段扫出的集合。
+- 速度场（velocity field）：给出每条线段方向的 `@@M@@C^1@@` 矢量场。
+- 平方零微分（square-zero differential）：`@@M@@(DV)^2=0@@` 的场，允许任意大的剪切。
+- 积分投影成本：`@@M@@\int_DJ_h(V)\,dp@@`，方向连续变化时的理想最低成本。
+
+**看个具体例子**
+
+**数字版定理**：`@@M@@E(D,V,L)\subset\bigcup_i\Cyl(T_i,g_i)@@` 且 `@@M@@\sum_i|T_i|J_h(g_i)\le\int_DJ_h(V)\,dp+\varepsilon@@`，`@@M@@\varepsilon@@` 任意小。条件是 `@@M@@\operatorname{tr}DV=0@@`、`@@M@@\det DV\le0@@` 且特征值 `@@M@@\pm\lambda@@` 满足 `@@M@@0\le L\lambda<1@@`。例如场 `@@M@@V=(p_2,\ p_1^3/3)@@` 在 `@@M@@p_1=0@@` 处平方零、其余处双曲，两类区域共存也照样适用。定理不要求边界面积零、不要求 `@@M@@\lVert DV\rVert@@` 小，甚至允许标签集面积为零；关键引理是"变形方格覆盖"——方砖永不变形、面积不变，动的只是中心。
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280">
+  <rect x="40" y="30" width="60" height="60" fill="none" stroke="#345" stroke-width="1.2"/>
+  <rect x="150" y="30" width="60" height="60" fill="none" stroke="#345" stroke-width="1.2"/>
+  <rect x="260" y="30" width="60" height="60" fill="none" stroke="#345" stroke-width="1.2"/>
+  <rect x="370" y="30" width="60" height="60" fill="none" stroke="#345" stroke-width="1.2"/>
+  <rect x="40" y="108" width="60" height="60" fill="none" stroke="#345" stroke-width="1.2"/>
+  <rect x="150" y="108" width="60" height="60" fill="none" stroke="#345" stroke-width="1.2"/>
+  <rect x="260" y="108" width="60" height="60" fill="none" stroke="#345" stroke-width="1.2"/>
+  <rect x="370" y="108" width="60" height="60" fill="none" stroke="#345" stroke-width="1.2"/>
+  <rect x="40" y="186" width="60" height="60" fill="none" stroke="#345" stroke-width="1.2"/>
+  <rect x="150" y="186" width="60" height="60" fill="none" stroke="#345" stroke-width="1.2"/>
+  <rect x="260" y="186" width="60" height="60" fill="none" stroke="#345" stroke-width="1.2"/>
+  <rect x="370" y="186" width="60" height="60" fill="none" stroke="#345" stroke-width="1.2"/>
+  <line x1="50.6" y1="70.3" x2="89.4" y2="49.7" stroke="#c00" stroke-width="2"/>
+  <line x1="158.9" y1="66.1" x2="201.1" y2="53.9" stroke="#c00" stroke-width="2"/>
+  <line x1="268.1" y1="61.9" x2="311.9" y2="58.1" stroke="#c00" stroke-width="2"/>
+  <line x1="378.2" y1="57.3" x2="421.8" y2="62.7" stroke="#c00" stroke-width="2"/>
+  <line x1="48.9" y1="131.9" x2="91.1" y2="144.1" stroke="#c00" stroke-width="2"/>
+  <line x1="50.6" y1="127.7" x2="89.4" y2="148.3" stroke="#c00" stroke-width="2"/>
+  <line x1="268.5" y1="133.4" x2="311.5" y2="142.6" stroke="#c00" stroke-width="2"/>
+  <line x1="378" y1="138" x2="422" y2="138" stroke="#c00" stroke-width="2"/>
+  <line x1="48.5" y1="220.6" x2="91.5" y2="211.4" stroke="#c00" stroke-width="2"/>
+  <line x1="158.2" y1="219.1" x2="201.8" y2="212.9" stroke="#c00" stroke-width="2"/>
+  <line x1="268.1" y1="213.7" x2="311.9" y2="218.3" stroke="#c00" stroke-width="2"/>
+  <line x1="379.1" y1="209.2" x2="420.9" y2="222.8" stroke="#c00" stroke-width="2"/>
+  <text x="445" y="62" font-size="13" fill="#123">每小片冻结</text>
+  <text x="445" y="82" font-size="13" fill="#123">一个方向</text>
+  <text x="445" y="102" font-size="13" fill="#123">＝一根圆柱</text>
+  <text x="445" y="140" font-size="13" fill="#456">方砖不变形</text>
+  <text x="445" y="160" font-size="13" fill="#456">面积不变</text>
+  <text x="40" y="262" font-size="14" fill="#123">实际构造：粗网格上冻结方向，细网格加密，误差任意小</text>
+</svg>
+
+</div>
+
+**为什么值得关心**
+
+它把"连续变化的线段族"到"有限根圆柱"的最后一步补齐成带精确面积因子的黑盒定理；姊妹篇的正四面体反例正是拿它当工具实现的。
+
+> 暂无形式化证明（AI 结果待核验）
+
 ## 一句话结论
 
 本文证明一个"直纹集有限圆柱逼近"定理：由迹零、行列式非正的 `@@M@@C^1@@` 速度场（特征值 `@@M@@\pm\lambda@@` 且 `@@M@@0\le L\lambda<1@@`，含无剪切上限的平方零微分）导出的紧线段连续族，可用有限个方形砖圆柱覆盖，垂直底面积至多为其积分投影成本加任意正误差——它是本族推翻半面积猜想的"有限化机器"。

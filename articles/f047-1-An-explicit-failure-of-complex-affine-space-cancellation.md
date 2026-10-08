@@ -13,6 +13,34 @@ pdfname: ""
 
 > 结果族 047：Zariski cancellation and affine fibrations over the complex numbers　·　学科：Algebraic and complex geometry　·　验证状态：主结果已 Lean 形式化
 
+## 入门导读 🐣
+
+整理行李箱时有个直觉：如果一个箱子再塞进一根标准长杆后恰好拼成标准五层柜，那箱子本身八成就是标准四层柜。Zariski 消去问题问的就是这种"约分"对多项式空间是否总成立。本文在复数域上写出第一个明确反例：塞一根杆能拼成标准，箱子本身却不是。
+
+**关键词卡片**
+
+- 仿射空间（affine space）：由多项式函数描述的平直空间 Aⁿ，可看作 Cⁿ 的代数化身。
+- Zariski 消去问题（cancellation problem）：若 X×A¹≅A⁵，是否必有 X≅A⁴。
+- 坐标（coordinate）：能充当某个多项式自同构一个分量的多项式。
+- 局部幂零导子（locally nilpotent derivation）：反复作用有限次必归零的方向导数，制造自同构的发动机。
+- 仿射纤维化（affine fibration）：每根纤维都是 A³ 的"面条束"，可能整体扭曲而放不平。
+
+**看个具体例子**
+
+论文给出完全显式的方程。令 x=s²+u³+p²F，在五变量多项式环中取商 A=C[p,s,u,F,J]/(H)，其中
+
+`@@M@@H=x^2F-(1+2sx)J-p^2J^2-pu@@`
+
+主定理（数字版）：`@@M@@A[w]\cong\C[x_1,\dots,x_5]@@`，但 `@@M@@A\not\cong\C[x_1,\dots,x_4]@@`。换句话说，"X 乘一条仿射线后能拼成标准空间"并不能反推出 X 本身标准——消去这步"约分"在维数四宣告失效。
+
+同一个方程连带推翻两条猜想：H 添一个变量后是坐标、本身却不是（稳定坐标猜想失败）；由 p 给出的纤维化每根纤维都 ≅ A³，却不是 Zariski 局部平凡的（Dolgachev–Weisfeiler 猜想失败）。
+
+**为什么值得关心**
+
+特征零、维数 ≥3 的消去问题悬置多年，2026 年 7 月的综述仍将其列为公开；此反例一次否定三条猜想，而且多项式完全显式、主定理已被机器验证。
+
+> 已 Lean 形式化
+
 ## 一句话结论
 
 论文在复数域上显式构造出四维仿射簇 `@@M@@X@@`：乘一条仿射线后 `@@M@@X\times\mathbb A^1\cong\mathbb A^5@@`，但 `@@M@@X\not\cong\mathbb A^4@@`。这否定了特征 `@@M@@0@@` 下维数 `@@M@@4@@` 的 Zariski 消去问题，顺带推翻稳定坐标猜想与 Dolgachev–Weisfeiler 仿射纤维化猜想。

@@ -13,6 +13,47 @@ pdfname: ""
 
 > 结果族 076：Real ultraflat Littlewood polynomials and unbounded binary merit factors　·　学科：Real and complex analysis　·　验证状态：主结果已 Lean 形式化
 
+## 入门导读 🐣
+
+系数全为 `@@M@@\pm1@@` 的多项式，在单位圆上的模长最高能压到多低？Parseval 恒等式定下地板 `@@M@@\sqrt N@@`；这篇论文证明地板真的摸得到——所有符号选择中最大模的最小值就是 `@@M@@(1+o(1))\sqrt N@@`，而且沿一切整数长度成立，不只在 2 的幂次。顺带，它宣告了雷达与通信序列理论里的 Turyn 猜想是错的。
+
+**关键词卡片**
+
+- 归一化最大模（normalized maximum modulus）：长度 `@@M@@N@@` 的全部 `@@M@@\pm1@@` 多项式中，最大模的最小值除以 `@@M@@\sqrt N@@`，记作 `@@M@@m_N@@`；本文证 `@@M@@m_N\to1@@`。
+- Parseval 下界：圆周均方根恰为 `@@M@@\sqrt N@@`，故 `@@M@@m_N\ge1@@`，1 是不可逾越的地板。
+- 自相关（autocorrelation）：二元字与自身错位对比的求和 `@@M@@C_u@@`，衡量序列的"自干扰"。
+- 优值因子（merit factor）：`@@M@@F=N^2/(2\sum_uC_u^2)@@`，越大越好；Turyn 猜它有界，本文证 `@@M@@\mathcal F_N\to\infty@@`。
+
+**看个具体例子**
+
+把 `@@M@@m_N@@` 的宿命画成图：经典构造 Rudin–Shapiro 停在 `@@M@@\sqrt2\approx1.414@@`（且只对二进长度），本文把曲线一路压到 1。
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280">
+  <line x1="70" y1="50" x2="70" y2="220" stroke="#333" stroke-width="2"/>
+  <line x1="70" y1="220" x2="520" y2="220" stroke="#333" stroke-width="2"/>
+  <text x="26" y="54" font-size="12" fill="#333">m_N</text>
+  <text x="34" y="224" font-size="12" fill="#333">1.0</text>
+  <text x="34" y="64" font-size="12" fill="#333">1.5</text>
+  <line x1="70" y1="88" x2="520" y2="88" stroke="#bbb" stroke-width="1.5" stroke-dasharray="6 4"/>
+  <text x="80" y="80" font-size="12" fill="#888">Rudin–Shapiro：√2 ≈ 1.414（仅二进长度）</text>
+  <polyline points="90,105 150,122 210,142 270,160 330,176 390,190 450,201 508,210" fill="none" stroke="#2c6fbb" stroke-width="2.5"/>
+  <text x="238" y="126" font-size="13" fill="#2c6fbb">本文：m_N → 1（一切整数长度）</text>
+  <text x="90" y="246" font-size="12" fill="#1a7f37">地板：m_N ≥ 1（Parseval）</text>
+  <text x="330" y="246" font-size="12" fill="#777">横轴：长度 N →</text>
+</svg>
+
+</div>
+
+数字版定理：任意给定 `@@M@@\eta>0@@`（例如 `@@M@@0.001@@`），一切足够大的 `@@M@@N@@` 都有符号使 `@@M@@\max_{|z|=1}|P(z)|\le1.001\sqrt N@@`；且长度 `@@M@@N@@` 的二元字优值因子最终可超过任何预定数（比如 `@@M@@10^6@@`）。
+
+**为什么值得关心**
+
+一石二鸟：推翻 Erdős 固定相对间隙猜想的实符号版本，同时推翻 Turyn 猜想；它还是本结果族中唯一已被 Lean 形式化的一篇。
+
+> 已 Lean 形式化
+
 ## 一句话结论
 证明了长度为 `@@M@@N@@`、系数全为 `@@M@@\pm1@@` 的实 Littlewood 多项式在单位圆上的最大模最小值是 `@@M@@(1+o(1))\sqrt N@@`，恰好取到 Parseval 下界的渐近值，推翻了 Erdős 固定相对间隙猜想的实符号版本；由此二元字的最大 merit factor（优值因子）随长度趋于无穷，推翻了 Turyn 猜想。
 

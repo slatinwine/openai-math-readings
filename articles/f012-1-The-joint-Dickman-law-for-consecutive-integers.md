@@ -13,6 +13,57 @@ pdfname: ""
 
 > 结果族 012：Independent largest prime factors of consecutive integers　·　学科：Number theory　·　验证状态：暂无形式化证明，请以社区核验为准
 
+## 入门导读 🐣
+
+问一栋楼里的两户邻居：各自家里"最大的一件家具"有多大？知道第一家的情况，能帮你猜第二家吗？这篇论文证明：对相邻整数 `@@M@@n@@` 与 `@@M@@n+1@@` 各自的最大素因子而言，答案是完全帮不上忙——两者渐近独立，像独立抛硬币。这正面解决了 Erdős–Pomerance 在 1978 年提出的联合猜想。
+
+**关键词卡片**
+
+- 最大素因子（largest prime factor `@@M@@P^+(n)@@`）：`@@M@@n@@` 的素数分解里最大的那个素数。
+- 光滑数（smooth number）：所有素因子都不超过某个界的数，如 `@@M@@72=2^3\times3^2@@`。
+- Dickman 函数（Dickman function `@@M@@\rho@@`）：衡量随机整数"足够光滑"概率的函数，`@@M@@\rho(2)=1-\ln 2@@`。
+- 渐近独立（asymptotic independence）：样本趋于无穷时，两组统计量互不提供信息。
+- 自然密度（natural density）：不加权、按普通比例取的极限频率，数论中最强的密度概念。
+
+**看个具体例子**
+
+具体数字：不超过 `@@M@@X@@` 的整数中约 `@@M@@30.7\%@@` 没有超过 `@@M@@\sqrt{X}@@` 的素因子（即 `@@M@@\rho(2)\approx0.307@@`）。定理给出乘积律：相邻两数同时这么光滑的比例趋于 `@@M@@\rho(2)^2\approx9.4\%@@`，恰是两个百分比相乘；由此还得到 `@@M@@P^+(n)<P^+(n+1)@@` 的密度恰为 `@@M@@\tfrac12@@`。
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280">
+  <text x="280" y="34" font-size="15" text-anchor="middle">n=20 与 n+1=21：各自的最大素因子（深色块）</text>
+  <rect x="110" y="76" width="90" height="34" fill="#f0b95a" stroke="#345"/>
+  <text x="155" y="98" font-size="15" text-anchor="middle">5</text>
+  <rect x="110" y="112" width="90" height="34" fill="#dfe3e8" stroke="#345"/>
+  <text x="155" y="134" font-size="15" text-anchor="middle">2</text>
+  <rect x="110" y="148" width="90" height="34" fill="#dfe3e8" stroke="#345"/>
+  <text x="155" y="170" font-size="15" text-anchor="middle">2</text>
+  <line x1="95" y1="184" x2="215" y2="184" stroke="#345"/>
+  <text x="155" y="210" font-size="14" text-anchor="middle">n=20</text>
+  <text x="155" y="230" font-size="13" text-anchor="middle">P⁺(20)=5</text>
+  <rect x="350" y="76" width="90" height="34" fill="#f0b95a" stroke="#345"/>
+  <text x="395" y="98" font-size="15" text-anchor="middle">7</text>
+  <rect x="350" y="112" width="90" height="34" fill="#dfe3e8" stroke="#345"/>
+  <text x="395" y="134" font-size="15" text-anchor="middle">3</text>
+  <line x1="335" y1="148" x2="455" y2="148" stroke="#345"/>
+  <text x="395" y="174" font-size="14" text-anchor="middle">n+1=21</text>
+  <text x="395" y="194" font-size="13" text-anchor="middle">P⁺(21)=7</text>
+  <line x1="235" y1="150" x2="330" y2="150" stroke="#889" stroke-dasharray="6,5"/>
+  <polygon points="235,150 247,145 247,155" fill="#889"/>
+  <polygon points="330,150 318,145 318,155" fill="#889"/>
+  <text x="282" y="138" font-size="13" text-anchor="middle">互不影响</text>
+  <text x="280" y="262" font-size="14" text-anchor="middle">定理：相邻整数的最大素因子渐近独立，且 P⁺(n)＜P⁺(n+1) 的密度 = 1/2</text>
+</svg>
+
+</div>
+
+**为什么值得关心**
+
+这种"邻居互不干扰"在纯随机模型里天经地义，但在确定性的整数世界里证明它极难：此前近五十年人们只得到各种"正下界"或需附加猜想的版本，本文首次无条件地、在所有尺度上给出完整极限律——"相邻整数的因子结构各过各的"从此是定理。
+
+> 暂无形式化证明（AI 结果待核验）
+
 ## 一句话结论
 
 无条件证明了相邻整数 `@@M@@n@@` 与 `@@M@@n+1@@` 的最大素因子在对数尺度上按自然密度渐近独立、边际均为 Dickman 分布，正面解决 Erdős–Pomerance 联合猜想，并得到 `@@M@@P^+(n)<P^+(n+1)@@` 的密度恰为 1/2。

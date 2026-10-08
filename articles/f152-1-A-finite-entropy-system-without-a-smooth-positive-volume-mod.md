@@ -13,6 +13,34 @@ pdfname: ""
 
 > 结果族 152：Zero entropy does not guarantee a smooth positive-volume model　·　学科：Dynamical systems and ergodic theory　·　验证状态：暂无形式化证明，请以社区核验为准
 
+## 入门导读 🐣
+
+给你一本抽象的"抽签规则手册"——一个零熵的测度保持变换——问：能不能造一台真实的机械装置，也就是某个光滑流形上保持体积密度的微分同胚，把它原样演出来？此前对"允许密度奇异"的情形答案是可以；本文造出一本任何正规机械都演不出的手册：零熵、遍历，却与任何有限维流形上的光滑正体积模型都对不上号，一个例子同时封死所有维数。
+
+**关键词卡片**
+
+- 测度保持变换（measure-preserving transformation）：保概率的抽象"演化规则"
+- Kolmogorov–Sinai 熵：系统每步平均新增的信息量，本文反例的熵恰为零
+- 可测共轭（measurable conjugacy）：两个系统只差一套"改名规则"的等价说法
+- 光滑正体积模型（smooth positive-volume model）：流形上保光滑正密度 `@@M@@f\,dx@@` 的 `@@M@@C^\infty@@` 微分同胚
+- 影子化（shadowing）：一条真轨道前半程贴着甲、后半程贴着乙走的拼接技术
+
+**看个具体例子**
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280"><text x="280" y="30" font-size="16" text-anchor="middle">一个零熵系统，与所有光滑正体积模型"对不上号"</text><rect x="35" y="95" width="185" height="95" rx="10" fill="none" stroke="black" stroke-width="2"/><text x="128" y="133" font-size="14" text-anchor="middle">抽象概率空间上</text><text x="128" y="158" font-size="14" text-anchor="middle">的遍历变换 T，熵 0</text><rect x="345" y="95" width="185" height="95" rx="10" fill="none" stroke="black" stroke-width="2"/><text x="438" y="133" font-size="14" text-anchor="middle">任意维流形上的</text><text x="438" y="158" font-size="14" text-anchor="middle">C∞ 保体积微分同胚</text><line x1="228" y1="142" x2="338" y2="142" stroke="black" stroke-width="2"/><path d="M338 142 l -13 -7 v 14 z" fill="black"/><line x1="252" y1="118" x2="312" y2="167" stroke="black" stroke-width="3"/><line x1="312" y1="118" x2="252" y2="167" stroke="black" stroke-width="3"/><text x="280" y="235" font-size="13" text-anchor="middle">结论：不存在可测共轭——一个例子同时排除一切有限维数</text></svg>
+
+</div>
+
+数字版：`@@M@@h_\mu(T)=0@@`，且对每个维数 `@@M@@d=2,3,4,\dots@@`、每个带光滑边界或不带的（甚至不可定向的）紧流形、每个保光滑正密度 `@@M@@\nu=f\,dx@@` 的 `@@M@@C^\infty@@` 微分同胚 `@@M@@S@@`，`@@M@@T@@` 与 `@@M@@S@@` 都不可测共轭。改名规则只要求可测、不要求连续，尺度论证把依赖模型的常数全部吸收——所以一个反例就够。
+
+**为什么值得关心**
+
+光滑实现问题是遍历论与几何的交界难题：零熵曾被认为是"最容易被实现"的温和情形，本文表明即便如此，光滑正体积实现也可能整体失败。
+
+> 暂无形式化证明（AI 结果待核验）
+
 ## 一句话结论
 
 论文构造了一个零 Kolmogorov–Sinai 熵、遍历、可逆的测度保持变换，并证明它不与任何紧有限维流形上保持严格正光滑概率密度的 `@@M@@C^\infty@@` 微分同胚可测共轭——单个反例同时排除一切有限维数，说明"零熵"之下光滑正体积实现仍可整体失败。

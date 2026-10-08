@@ -13,6 +13,46 @@ pdfname: ""
 
 > 结果族 216：Critical and near-critical XY scaling and BKT universality　·　学科：Probability and statistical mechanics　·　验证状态：暂无形式化证明，请以社区核验为准
 
+## 入门导读 🐣
+
+水烧开时，气泡的"特征尺寸"按温和的幂律变大：离沸点差 1 度变 2 倍，差 0.1 度变 20 倍。BKT 型相变却是悬崖式的：越靠近临界温度，箭头"还记得彼此"的典型距离以 `@@M@@\exp(\text{常数}/\sqrt{\text{温度差}})@@` 的速度爆炸，比任何幂律都快。本文对最原始的 XY 模型严格证明了这一点。
+
+**关键词卡片**
+
+- 关联长度（correlation length）：箭头之间"还记得彼此"的典型距离，记作 `@@M@@\xi@@`
+- 本质奇性（essential singularity）：`@@M@@\xi\sim\exp(A/\sqrt{b_c-b})@@` 型发散，猛过任何幂律
+- 涡旋（vortex）：箭头绕小圈转满 `@@M@@2\pi@@` 的旋涡；升温后涡旋对解绑引发相变
+- 重整化群（renormalization group）：逐尺度迭代观察参数流向的方法，Kosterlitz 1974 年据此预言本结论
+- 逆温度（inverse temperature）：参数 `@@M@@b@@` 越大系统越冷，`@@M@@b_c@@` 是临界值
+
+**看个具体例子**
+
+把 `@@M@@\xi(b)\approx\exp(A/\sqrt{b_c-b})@@` 代入示意数字（`@@M@@A=1@@`）：距临界 `@@M@@0.01@@` 时 `@@M@@\xi\approx e^{10}\approx 2@@` 万格距；距临界 `@@M@@10^{-4}@@` 时 `@@M@@\xi\approx e^{100}\approx 10^{43}@@` 格距——天文数字。
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280">
+<line x1="60" y1="240" x2="530" y2="240" stroke="#444444" stroke-width="2"/>
+<line x1="60" y1="240" x2="60" y2="30" stroke="#444444" stroke-width="2"/>
+<line x1="470" y1="240" x2="470" y2="40" stroke="#c0392b" stroke-width="2" stroke-dasharray="6,5"/>
+<path d="M 90 233 C 260 231 350 222 408 196 C 434 182 452 140 462 62" fill="none" stroke="#1a6faa" stroke-width="3"/>
+<path d="M 90 234 C 230 227 330 205 400 165 C 428 148 448 130 462 112" fill="none" stroke="#888888" stroke-width="2" stroke-dasharray="7,5"/>
+<text x="476" y="262" font-size="15" fill="#c0392b">b_c</text>
+<text x="230" y="266" font-size="15" fill="#333333">逆温度 b 增大方向 →</text>
+<text x="66" y="46" font-size="15" fill="#333333">关联长度 ξ</text>
+<text x="285" y="85" font-size="14" fill="#1a6faa">本质奇性 exp(A/√(b_c−b))</text>
+<text x="140" y="190" font-size="14" fill="#666666">幂律发散（对比）</text>
+<text x="80" y="20" font-size="15" fill="#333333">越靠近临界点，比任何幂律爆炸得都快</text>
+</svg>
+
+</div>
+
+**为什么值得关心**
+
+Kosterlitz 五十年前的重整化群预言，第一次对原始余弦相互作用得到证明；此前严格结果只到"指数–多项式二分法"，精确奇性无人触及。证明把"确定特征尺度"与"把它解释为关联长度"拆成两个任务：重整化流在重标坐标下收敛到一个可显式求解的微分方程，其解在有限时刻到达极点，极点时刻恰好给出发散尺度；再用随机环表示从两端夹逼出关联长度。它与族内另两篇合成"临界指数、对数修正、近临界奇性"的完整 BKT 图景。
+
+> 暂无形式化证明（AI 结果待核验）
+
 ## 一句话结论
 
 本文严格证明了方格最近邻 XY 模型的 BKT 本质奇性（essential singularity）：从低温侧逼近临界点时 `@@M@@\sqrt{b_c-b}\,\log\xi(b)\to A_{\mathrm{XY}}\in(0,\infty)@@`，即相关长度（correlation length）按 `@@M@@\exp(A_{\mathrm{XY}}/\sqrt{b_c-b})@@` 型速度发散，首次对原始余弦相互作用证实了 Kosterlitz 1974 年的重整化预言。

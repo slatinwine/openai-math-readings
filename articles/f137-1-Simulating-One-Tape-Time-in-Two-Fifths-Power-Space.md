@@ -13,6 +13,34 @@ pdfname: ""
 
 > 结果族 137：One-tape time simulation in two-fifths-power space　·　学科：Theoretical computer science　·　验证状态：暂无形式化证明，请以社区核验为准
 
+## 入门导读 🐣
+
+像复盘一局长达 `@@M@@T@@` 步的棋：允许你无限次倒带重看，唯一受限的是手里的草稿纸。要算出这盘棋最终谁赢，草稿纸最小得多小？经典答案是 `@@M@@\sqrt T@@` 量级，本文把它压到 `@@M@@T^{2/5}@@`——单带图灵机模拟的这道"平方根壁垒"第一次被撬动。
+
+**关键词卡片**
+
+- 图灵机（Turing machine）：一条带子加一个磁头的理论计算机。
+- 可写带（writable tape）：唯一能涂改的那条带，另可配固定数目的只读输入头。
+- 工作空间（work space）：模拟器自己用的"草稿纸"比特数。
+- 时间上限（time cap）：只问前 `@@M@@T@@` 步的停机与状态结果，模拟时间不设限。
+- 分块（blocking）：把长带切成等宽块，逐块重放、块间只传小卡片。
+
+**看个具体例子**
+
+取 `@@M@@T=10^{10}@@`（百亿步）：经典模拟约需 `@@M@@\sqrt T=10^5@@` 比特，新结果 `@@M@@\widetilde O(T^{2/5})@@` 约 `@@M@@10^4@@` 比特（忽略对数因子）——再省一个数量级。模拟器最后并不落盘整条带，只报告 `@@M@@T@@` 步内的停机与状态结局；若机器自己提前停了，把上限逐次翻倍即可。由于 `@@M@@2/5<1/2-1/10@@`，这正是 Williams 公开问题所要的"把空间指数压低一个固定正常数"。
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280"><text x="280" y="26" text-anchor="middle" font-size="15" fill="#333">分块重放：块间只传一张小卡片</text><rect x="30" y="100" width="500" height="46" fill="#fff" stroke="#345" stroke-width="2"/><line x1="130" y1="100" x2="130" y2="146" stroke="#345" stroke-width="1.5"/><line x1="230" y1="100" x2="230" y2="146" stroke="#345" stroke-width="1.5"/><line x1="330" y1="100" x2="330" y2="146" stroke="#345" stroke-width="1.5"/><line x1="430" y1="100" x2="430" y2="146" stroke="#345" stroke-width="1.5"/><text x="80" y="129" text-anchor="middle" font-size="13" fill="#345">块 1</text><text x="180" y="129" text-anchor="middle" font-size="13" fill="#345">块 2</text><text x="280" y="129" text-anchor="middle" font-size="13" fill="#345">块 3</text><text x="380" y="129" text-anchor="middle" font-size="13" fill="#345">块 4</text><text x="480" y="129" text-anchor="middle" font-size="13" fill="#345">块 5</text><path d="M 330 78 L 322 92 L 338 92 Z" fill="#933"/><text x="330" y="64" text-anchor="middle" font-size="13" fill="#933">磁头</text><rect x="140" y="185" width="280" height="40" rx="8" fill="#fff7e8" stroke="#a73" stroke-width="2"/><text x="280" y="211" text-anchor="middle" font-size="13" fill="#642">控制器卡片：状态＋位置＋时刻 ≈ log T 比特</text><line x1="280" y1="146" x2="280" y2="185" stroke="#a73" stroke-width="2" stroke-dasharray="5,4"/><text x="40" y="258" font-size="14" fill="#333">块宽取 b ≈ T^(2/5)：访问加重放的笔记总量在此最省。</text></svg>
+
+</div>
+
+**为什么值得关心**
+
+它肯定回答了 Williams 的单带模拟公开问题，还带来层级分离推论：空间 `@@M@@s@@` 能分辨的语言，单带时间 `@@M@@s^{5/2-\epsilon}@@` 分辨不全。
+
+> 暂无形式化证明（AI 结果待核验）
+
 ## 一句话结论
 
 一台固定的单可写带图灵机在时间 `@@M@@T@@` 内的停机与状态结果，可用 `@@M@@\widetilde O(T^{2/5})@@` 个工作比特（模拟时间不限）确定性算出，首次把单带模拟的空间指数从经典的 `@@M@@1/2@@` 压到 `@@M@@2/5@@`，肯定回答了 Williams 的公开问题。

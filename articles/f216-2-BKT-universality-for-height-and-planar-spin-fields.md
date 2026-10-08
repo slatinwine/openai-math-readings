@@ -13,6 +13,32 @@ pdfname: ""
 
 > 结果族 216：Critical and near-critical XY scaling and BKT universality　·　学科：Probability and statistical mechanics　·　验证状态：暂无形式化证明，请以社区核验为准
 
+## 入门导读 🐣
+
+不同品牌的咖啡机内部零件天差地别，煮水时读出的临界压强却完全一致——这叫普适性。本文研究"高度模型"：把格点想成一级级台阶，记录每个位置台阶面的高度。结论是：一整类高度模型在"粗糙相"里的大尺度长相都收敛到同一座随机山峦（高斯自由场），而且无论哪种零件，阈值处的有效温度读数都是普适常数 `@@M@@8\pi@@`。
+
+**关键词卡片**
+
+- 高度模型（height model）：每个格点取 `@@M@@2\pi@@` 整数倍"台阶高度"的统计模型
+- 高斯自由场（Gaussian free field）：每个尺度都有起伏的"随机地貌"，高度模型的极限
+- 粗化相（rough phase）：高度方差无穷大、地貌永远起伏的温度区间
+- 普适性（universality）：微观规则不同、宏观极限相同的现象
+- 有效温度（effective temperature）：归一化后衡量地貌"软硬"的参数 `@@M@@\beta_{\mathrm{eff}}@@`
+
+**看个具体例子**
+
+定理的数字版：在阈值 `@@M@@\beta_c@@` 处，`@@M@@\beta_{\mathrm{eff}}(J,\beta_c)=8\pi\,v_J^2@@`。最近邻模型 `@@M@@v_J^2=\tfrac14@@`，代入得 `@@M@@8\pi\times\tfrac14=2\pi@@`。再走 Villain 系数桥：刚度 `@@M@@K=\beta_{\mathrm{eff}}/\pi^2@@`，端点处
+
+`@@M@@DK=\frac{2\pi}{\pi^2}=\frac2\pi\approx 0.637@@`
+
+正是 Nelson–Kosterlitz 预言的无量纲刚度值。
+
+**为什么值得关心**
+
+此前严格结果只覆盖系数严格大于 `@@M@@8\pi@@` 或高温的情形，"从任意原始模型走进重整化论域"的进入问题一直是空白；本文还证明了充分低温的 Villain 与 XY 自旋场收敛到高斯自由场的虚指数。阈值由高度方差是否无界来定义，右导数为无穷、充分高温时有效温度回到裸值等细节也一并证出，并因此证明了 Bauerschmidt–Park–Rodriguez 的猜想。
+
+> 暂无形式化证明（AI 结果待核验）
+
 ## 一句话结论
 
 本文证明离散高斯高度模型在整个粗化相（rough phase，含粗糙化阈值本身）收敛到高斯自由场，且临界有效温度的归一化值普适地为 `@@M@@8\pi@@`；并证明充分低温的 Villain 与 XY 模型的自旋场收敛到 Dirichlet 高斯自由场的虚指数（虚乘性混沌），Villain 系数桥在端点给出 Nelson–Kosterlitz 刚度值 `@@M@@2/\pi@@`。

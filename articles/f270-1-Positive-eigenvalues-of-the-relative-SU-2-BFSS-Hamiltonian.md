@@ -13,6 +13,52 @@ pdfname: ""
 
 > 结果族 270：Threshold and positive-energy bound states of the BFSS matrix model　·　学科：Mathematical physics　·　验证状态：暂无形式化证明，请以社区核验为准
 
+## 入门导读 🐣
+
+一个平静的游泳池，水面可以被搅起任意小的涟漪——能量从零到无穷都能被"散射波"带走。直觉说：既然任何正能量都会被带走，就不该有稳稳钉在某个固定能量上的驻波。论文证明恰恰相反：有无穷多个这样的驻波，钉在一路升高的能量上；BFSS 原文当年断言"不可能"，本文在 N=2 处推翻了它。
+
+**关键词卡片**
+
+- 嵌入特征值（embedded eigenvalue）：藏在连续谱内部、却带平方可积波函数的能量级
+- 连续谱（continuous spectrum）：可取任意正能量的散射态集合，这里覆盖 [0,∞)
+- 相对哈密顿量（relative Hamiltonian）：去掉自由质心后剩下的相互作用部分
+- 超荷形式（supercharge form）：把能量定义为 16 个超荷平方和的方式
+- 同型分解（isotypic decomposition）：按旋转对称性把态空间切成互不串门的小间
+
+**看个具体例子**
+
+定理：存在规范正交的波函数序列 Ψ₁,Ψ₂,… 与能量 E₁<E₂<…→∞，使 HΨ_j=E_jΨ_j。它们像插进水面的一根根固定桩：能量越来越高、有无穷多根，每一根都是货真价实的束缚态。
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280">
+<line x1="60" y1="170" x2="520" y2="170" stroke="#b8b8b8" stroke-width="12"/>
+<text x="70" y="200" font-size="14" fill="#888">连续谱 [0,∞)：任意正能量的散射态</text>
+<line x1="110" y1="170" x2="110" y2="125" stroke="#c0392b" stroke-width="3"/>
+<line x1="175" y1="170" x2="175" y2="88" stroke="#c0392b" stroke-width="3"/>
+<line x1="245" y1="170" x2="245" y2="138" stroke="#c0392b" stroke-width="3"/>
+<line x1="320" y1="170" x2="320" y2="62" stroke="#c0392b" stroke-width="3"/>
+<line x1="395" y1="170" x2="395" y2="105" stroke="#c0392b" stroke-width="3"/>
+<line x1="470" y1="170" x2="470" y2="75" stroke="#c0392b" stroke-width="3"/>
+<circle cx="110" cy="125" r="5" fill="#c0392b"/>
+<circle cx="175" cy="88" r="5" fill="#c0392b"/>
+<circle cx="245" cy="138" r="5" fill="#c0392b"/>
+<circle cx="320" cy="62" r="5" fill="#c0392b"/>
+<circle cx="395" cy="105" r="5" fill="#c0392b"/>
+<circle cx="470" cy="75" r="5" fill="#c0392b"/>
+<text x="120" y="45" font-size="14" fill="#c0392b">嵌入特征值 E₁,E₂,E₃,… 趋于无穷</text>
+<line x1="60" y1="170" x2="60" y2="60" stroke="#333" stroke-width="2"/>
+<text x="30" y="55" font-size="14" fill="#333">0</text>
+</svg>
+
+</div>
+
+**为什么值得关心**
+
+它回答了 de Wit–Lüscher–Nicolai 1989 年留下的老问题，并纠正 BFSS 原文的断言：SU(2) 模除一个零能阈值态外，还有无穷多个正能量束缚态。与姊妹篇合起来看，N=2 的完整图像是"唯一阈值态＋无穷嵌入正能级"。
+
+> 暂无形式化证明（AI 结果待核验）
+
 ## 一句话结论
 
 证明由规范不变超荷形式的闭包定义的相对 `@@M@@\mathrm{SU}(2)@@` BFSS 哈密顿量有无穷多个趋于无穷、带平方可积特征向量的正特征值，从而在 `@@M@@N=2@@` 处推翻了 BFSS 原文"除零能阈值态外无其他可归一化束缚态"的断言。

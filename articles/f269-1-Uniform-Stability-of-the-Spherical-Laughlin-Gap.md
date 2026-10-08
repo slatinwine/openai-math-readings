@@ -13,6 +13,54 @@ pdfname: ""
 
 > 结果族 269：Uniform Laughlin gap and stability under bounded scalar disorder　·　学科：Mathematical physics　·　验证状态：暂无形式化证明，请以社区核验为准
 
+## 入门导读 🐣
+
+分数量子霍尔效应里的电子，像在球面上跳一支规矩极严的华尔兹——彼此保持距离的 Laughlin 舞步；舞步与一切"乱跳"之间隔着一道能量沟。真实样品总有杂质，地面坑坑洼洼。论文证明：只要坑足够浅（与形状无关），这道沟不会被填平，舞步仍是唯一最省能量的跳法。
+
+**关键词卡片**
+
+- Laughlin 态（Laughlin state）：1/3 填充的分数量子霍尔基态，电子互相严格避让
+- 谱隙（spectral gap）：基态与激发态之间的能量差，像一道保护沟
+- 最低朗道能级（lowest Landau level）：强磁场下电子被限制其中的最低能层
+- 无序势（disorder potential）：样品杂质造成的能量起伏，本文允许任意形状
+- Toeplitz 扰动（Toeplitz perturbation）：无序势投影到最低能级后的量子算子形式
+
+**看个具体例子**
+
+N 个电子、磁通 q=3(N−1)，无序势幅度不超过 1（归一化），耦合 |λ|≤λ*。定理：对一切充分大的 N，扰动后最低两个能级之差仍不小于 Δ*（=1/50），基态依旧唯一。粒再多、势形再怪，沟的深度有保底。
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280">
+<circle cx="130" cy="115" r="72" fill="none" stroke="#333" stroke-width="2"/>
+<circle cx="130" cy="43" r="5" fill="#23527c"/>
+<circle cx="166" cy="53" r="5" fill="#23527c"/>
+<circle cx="68" cy="79" r="5" fill="#23527c"/>
+<circle cx="68" cy="151" r="5" fill="#23527c"/>
+<circle cx="130" cy="187" r="5" fill="#23527c"/>
+<circle cx="192" cy="151" r="5" fill="#23527c"/>
+<text x="48" y="225" font-size="14" fill="#333">球面上的电子：严格避让的</text>
+<text x="48" y="245" font-size="14" fill="#333">Laughlin 舞步（1/3 填充）</text>
+<line x1="300" y1="150" x2="540" y2="150" stroke="#333" stroke-width="2.5"/>
+<line x1="300" y1="245" x2="540" y2="245" stroke="#333" stroke-width="2.5"/>
+<path d="M 310 197 q 12 -14 24 0 t 24 0 t 24 0 t 24 0 t 24 0 t 24 0 t 24 0 t 24 0" fill="none" stroke="#e67e22" stroke-width="2.5"/>
+<text x="300" y="175" font-size="13" fill="#e67e22">弱无序势（幅度 ≤ 1，形状任意）</text>
+<line x1="510" y1="150" x2="510" y2="245" stroke="#c0392b" stroke-width="2"/>
+<polygon points="506,158 514,158 510,150" fill="#c0392b"/>
+<polygon points="506,237 514,237 510,245" fill="#c0392b"/>
+<text x="300" y="138" font-size="14" fill="#333">激发态 E₁</text>
+<text x="300" y="266" font-size="14" fill="#333">基态 E₀（唯一）</text>
+<text x="520" y="202" font-size="14" fill="#c0392b">Δ*</text>
+</svg>
+
+</div>
+
+**为什么值得关心**
+
+真实量子霍尔样品必有杂质，"间隙在弱无序下存活"是从理想模型走向现实的必答题。证明的关键不是硬碰硬地控制扰动总大小，而是让杂质项与相互作用能量"就地比价"——这也是连续投影子模型上第一个此类稳定性定理。
+
+> 暂无形式化证明（AI 结果待核验）
+
 ## 一句话结论
 
 证明球面上 1/3 填充的费米 Laughlin `@@M@@V_1@@` 哈密顿量在弱有界标量无序势下仍保有唯一基态与一致谱隙，且谱隙与无序阈值对所有充分大的粒子数、一切归一化势剖面一致成立。

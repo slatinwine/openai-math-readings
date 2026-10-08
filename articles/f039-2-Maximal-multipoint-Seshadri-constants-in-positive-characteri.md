@@ -13,6 +13,44 @@ pdfname: ""
 
 > 结果族 039：Nagata's conjecture and maximal Seshadri constants　·　学科：Algebraic and complex geometry　·　验证状态：暂无形式化证明，请以社区核验为准
 
+## 入门导读 🐣
+
+前面这套"能量均分"定理的证明大量使用复数世界专属的量尺——解析极限、无穷小退化。这篇把同样的结论搬到"特征 `@@M@@p@@` 世界"：那里数字像时钟，加到 `@@M@@p@@` 就归零，老量尺全部失灵。作者改用纯代数工具（插值、形式幂级数、Hensel 提升）把整座房子在新地基上重盖一遍。
+
+**关键词卡片**
+
+- 特征 `@@M@@p@@`（positive characteristic）：运算按模 `@@M@@p@@` 归零的算术世界。
+- 几何一般点组（geometric generic tuple）："绝对一般位置"的代数化精确说法。
+- 中国剩余定理（Chinese remainder theorem）：在多个点独立下指令的插值引擎，任意特征可用。
+- 结点（node）：曲线上两支交叉的最简奇点；特征 2 下经典样本退化，作者换了新样本。
+- Hensel 提升（Hensel lifting）：从近似解提炼出精确形式分支的方法。
+
+**看个具体例子**
+
+结论同形：特征 `@@M@@p@@` 的代数闭域上，阈值之后每个点数 `@@M@@r@@` 都有 `@@M@@\varepsilon=(L^n/r)^{1/n}@@`，二维也一并覆盖。技术上最妙的一步是特征 2 的结点：经典样本在特征 2 会两支粘死，作者改用 `@@M@@y^2+xy-x^3=\xi\eta@@`——两支是否分开取决于 `@@M@@Z^2+Z-x@@` 的根，而 `@@M@@0@@` 与 `@@M@@1@@` 在特征 2 里依然不同，两支保住了，整套几何机制得以继续运转。
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280">
+  <text x="280" y="30" text-anchor="middle" font-size="15" fill="#334455">特征 2 的结点：两支不塌缩</text>
+  <line x1="280" y1="50" x2="280" y2="235" stroke="#cccccc" stroke-width="1"/>
+  <line x1="70" y1="145" x2="490" y2="145" stroke="#cccccc" stroke-width="1"/>
+  <path d="M110 60 Q 280 145 450 230" fill="none" stroke="#c0504d" stroke-width="3"/>
+  <path d="M110 230 Q 280 145 450 60" fill="none" stroke="#4a90c4" stroke-width="3"/>
+  <circle cx="280" cy="145" r="6" fill="#333333"/>
+  <text x="130" y="55" font-size="13" fill="#c0504d">支 1</text>
+  <text x="130" y="248" font-size="13" fill="#4a90c4">支 2</text>
+  <text x="280" y="272" text-anchor="middle" font-size="13" fill="#666666">两根 0 与 1 在特征 2 下仍不同，结点不退化</text>
+</svg>
+
+</div>
+
+**为什么值得关心**
+
+特征 `@@M@@p@@` 是数论与算术几何的主场；定理在那里成立，说明"正性均分"不是复分析的幻影，而是代数本质。
+
+> 暂无形式化证明（AI 结果待核验）
+
 ## 一句话结论
 
 在特征 `@@M@@p>0@@` 代数闭域上，光滑射影簇配丰富线丛存在阈值 `@@M@@r_0@@`：`@@M@@r\ge r_0@@` 时几何一般点组的多点 Seshadri 常数恰为体积上界 `@@M@@(L^n/r)^{1/n}@@`，Nagata–Biran–Szemberg 断言在正特征成立。

@@ -13,6 +13,53 @@ pdfname: ""
 
 > 结果族 211：The geometric phase diagram, diffusion, and spectra of random planar maps　·　学科：Probability and statistical mechanics　·　验证状态：暂无形式化证明，请以社区核验为准
 
+## 入门导读 🐣
+
+在一块随机生成的"皱地图"（随机平面地图）上放一个醉汉，每步等概率挑一条出边走。地图越来越大、又被整体缩到固定大小，醉汉的脚印越来越碎。问：把他的行走录像快进多少倍，画面才会收敛成一部稳定的"极限电影"？答案干净得出奇——恰好快进 `@@M@@n@@` 倍（`@@M@@n@@` 是边数），极限电影是量子球上的刘维尔布朗运动。
+
+**关键词卡片**
+
+- 随机平面地图（random planar map）：随机粘合多边形得到的离散随机曲面，二维量子引力的玩具模型。
+- FK–Ising 模型（FK–Ising model）：给地图的边随机开/关以模拟铁磁关联的统计力学模型，此处取临界点。
+- 量子球（quantum sphere）：由随机场定义的球面，面积分布极不均匀，本文参数为 `@@M@@\gamma=\sqrt3@@`。
+- 刘维尔布朗运动（Liouville Brownian motion）：在这种随机曲面上自然定义的布朗运动。
+- 平稳分布（stationary distribution）：走很久后所在位置的概率分布；这里是"角测度"，质量正比于顶点度数。
+
+**看个具体例子**
+
+设地图有 `@@M@@n=10^6@@` 条边，快进倍数就取 `@@M@@10^6@@`，一个不多一个不少。此前在别的模型上只知存在渐近线性的快进倍数、常数无法识别；本文把常数钉死为 1，且极限对"给定地图再走路"的淬火意义成立。
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280">
+  <text x="125" y="45" font-size="14" text-anchor="middle" fill="#333">离散：随机地图＋随机游走</text>
+  <polygon points="200,150 171,104 125,72 68,93 55,150 73,202 125,216 176,201" fill="#f6f6f6" stroke="#999" stroke-width="1.5"/>
+  <line x1="125" y1="150" x2="200" y2="150" stroke="#bbb" stroke-width="1"/>
+  <line x1="125" y1="150" x2="171" y2="104" stroke="#bbb" stroke-width="1"/>
+  <line x1="125" y1="150" x2="68" y2="93" stroke="#bbb" stroke-width="1"/>
+  <line x1="125" y1="150" x2="55" y2="150" stroke="#bbb" stroke-width="1"/>
+  <line x1="125" y1="150" x2="176" y2="201" stroke="#bbb" stroke-width="1"/>
+  <line x1="125" y1="150" x2="125" y2="216" stroke="#bbb" stroke-width="1"/>
+  <polyline points="90,145 140,115 115,180 165,155 105,195" fill="none" stroke="#c0392b" stroke-width="2.5"/>
+  <text x="125" y="248" font-size="13" text-anchor="middle" fill="#333">n 边 FK–Ising 地图</text>
+  <line x1="230" y1="150" x2="325" y2="150" stroke="#333" stroke-width="2"/>
+  <polygon points="325,144 339,150 325,156" fill="#333"/>
+  <text x="282" y="130" font-size="13" text-anchor="middle" fill="#333">时间 × n</text>
+  <text x="282" y="174" font-size="13" text-anchor="middle" fill="#333">n → ∞</text>
+  <path d="M 492,150 Q 511,116 474,106 Q 464,69 430,88 Q 396,69 386,106 Q 349,116 368,150 Q 349,184 386,194 Q 396,231 430,212 Q 464,231 474,194 Q 511,184 492,150 Z" fill="#f6f6f6" stroke="#333" stroke-width="1.5"/>
+  <path d="M 400,150 C 420,120 460,130 470,160 C 475,180 440,190 415,175" fill="none" stroke="#2e6bd6" stroke-width="2.5"/>
+  <text x="430" y="45" font-size="14" text-anchor="middle" fill="#333">√3-量子球</text>
+  <text x="430" y="258" font-size="13" text-anchor="middle" fill="#2e6bd6">刘维尔布朗运动</text>
+</svg>
+
+</div>
+
+**为什么值得关心**
+
+首次在有限 FK–Ising 球面模型上得到常数恰为 1 的精确线性时钟，补上"从算子收敛到整条运动路径"的最后一环。
+
+> 暂无形式化证明（AI 结果待核验）
+
 ## 一句话结论
 证明了临界球面 FK–Ising 地图上的平稳简单随机游走，在时间恰好加速 `@@M@@n@@`（边数）倍后，连同随机曲面一起收敛到 `@@M@@\sqrt3@@`-量子球上的刘维尔布朗运动——首次在该模型得到常数恒为 1 的精确线性时钟。
 

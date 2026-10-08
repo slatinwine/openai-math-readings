@@ -13,6 +13,36 @@ pdfname: ""
 
 > 结果族 127：Average sensitivity of polynomial threshold functions　·　学科：Theoretical computer science　·　验证状态：主结果已 Lean 形式化
 
+## 入门导读 🐣
+
+想象一场只答"是/否"的电子投票:规则先给选票打分,再看分数正负定结论。如果随机改一票就常让结论翻盘,这规则就太"神经质"。论文证明:凡是由 `@@M@@d@@` 次多项式打分的规则,其神经质程度(平均灵敏度)至多 `@@M@@8d\sqrt n@@`——这正是悬了三十多年的 Gotsman–Linial 猜想的渐近形式。
+
+**关键词卡片**
+
+- 多项式阈值函数(polynomial threshold function):用至多 `@@M@@d@@` 次多项式打分、按符号输出是/否的函数 `@@M@@f=\operatorname{sgn}(p)@@`。
+- 平均灵敏度(average sensitivity):随机输入下,翻转单个坐标会改变输出的坐标数期望,又叫总影响。
+- 布尔立方体(Boolean cube):所有 `@@M@@n@@` 位 0/1 串组成的集合,函数的定义域。
+- 半空间(halfspace):`@@M@@d=1@@` 的特例,最常见的线性打分规则。
+- 噪声灵敏度(noise sensitivity):输入被随机扰动后结论翻转的概率,由主定理直接控制。
+
+**看个具体例子**
+
+三人多数票 `@@M@@f=@@`"至少两票为 1",画在三维布尔立方体上:
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280"><text x="330" y="24" text-anchor="middle" font-size="15" fill="#333">三人多数票函数,画在三维布尔立方体上</text><circle cx="28" cy="50" r="7" fill="#fff" stroke="#333" stroke-width="2"/><text x="44" y="55" font-size="12" fill="#333">输出 0</text><circle cx="28" cy="72" r="7" fill="#333"/><text x="44" y="77" font-size="12" fill="#333">输出 1</text><line x1="20" y1="94" x2="42" y2="94" stroke="#c0392b" stroke-width="4"/><text x="48" y="99" font-size="12" fill="#c0392b">敏感边(共 6 条)</text><line x1="190" y1="215" x2="310" y2="215" stroke="#aaa" stroke-width="2"/><line x1="310" y1="215" x2="310" y2="95" stroke="#c0392b" stroke-width="4"/><line x1="310" y1="95" x2="190" y2="95" stroke="#c0392b" stroke-width="4"/><line x1="190" y1="95" x2="190" y2="215" stroke="#aaa" stroke-width="2"/><line x1="250" y1="170" x2="370" y2="170" stroke="#c0392b" stroke-width="4"/><line x1="370" y1="170" x2="370" y2="50" stroke="#aaa" stroke-width="2"/><line x1="370" y1="50" x2="250" y2="50" stroke="#aaa" stroke-width="2"/><line x1="250" y1="50" x2="250" y2="170" stroke="#c0392b" stroke-width="4"/><line x1="190" y1="215" x2="250" y2="170" stroke="#aaa" stroke-width="2"/><line x1="310" y1="215" x2="370" y2="170" stroke="#c0392b" stroke-width="4"/><line x1="310" y1="95" x2="370" y2="50" stroke="#aaa" stroke-width="2"/><line x1="190" y1="95" x2="250" y2="50" stroke="#c0392b" stroke-width="4"/><circle cx="190" cy="215" r="15" fill="#fff" stroke="#333" stroke-width="2"/><text x="190" y="219" text-anchor="middle" font-size="9">000</text><circle cx="310" cy="215" r="15" fill="#fff" stroke="#333" stroke-width="2"/><text x="310" y="219" text-anchor="middle" font-size="9">100</text><circle cx="310" cy="95" r="15" fill="#333"/><text x="310" y="99" text-anchor="middle" font-size="9" fill="#fff">110</text><circle cx="190" cy="95" r="15" fill="#fff" stroke="#333" stroke-width="2"/><text x="190" y="99" text-anchor="middle" font-size="9">010</text><circle cx="250" cy="170" r="15" fill="#fff" stroke="#333" stroke-width="2"/><text x="250" y="174" text-anchor="middle" font-size="9">001</text><circle cx="370" cy="170" r="15" fill="#333"/><text x="370" y="174" text-anchor="middle" font-size="9" fill="#fff">101</text><circle cx="370" cy="50" r="15" fill="#333"/><text x="370" y="54" text-anchor="middle" font-size="9" fill="#fff">111</text><circle cx="250" cy="50" r="15" fill="#333"/><text x="250" y="54" text-anchor="middle" font-size="9" fill="#fff">011</text><text x="280" y="252" text-anchor="middle" font-size="14" fill="#333">I(多数票) = 6/4 = 1.5 ≤ 8·1·√3 ≈ 13.9(定理上界)</text><text x="280" y="274" text-anchor="middle" font-size="13" fill="#666">红边两端恰好"一票之差",翻转该票即改变结论</text></svg>
+
+</div>
+
+红边是敏感边:恰好 6 条,故 `@@M@@I(f)=6/2^{3-1}=1.5@@`,远低于定理的 `@@M@@8\cdot1\cdot\sqrt3\approx13.9@@`。而取"中间 `@@M@@d@@` 层符号乘积"这类对称函数,灵敏度真能达到 `@@M@@\asymp d\sqrt n@@`,所以 `@@M@@d\sqrt n@@` 这个阶无法再改进。
+
+**为什么值得关心**
+
+多项式阈值函数是神经网络输出层、投票规则的数学缩影,灵敏度直接控制它们的可学习性与抗噪性。1994 年提出的猜想,精确形式已于 2018 年被反例推翻,渐近形式由本文完全确立。
+
+> 已 Lean 形式化
+
 ## 一句话结论
 
 本文证明：`@@M@@n@@` 维布尔立方体上次数至多 `@@M@@d@@` 的多项式阈值函数（polynomial threshold function），其平均灵敏度（average sensitivity）不超过 `@@M@@8d\sqrt n@@`，常数绝对、`@@M@@d@@` 可随 `@@M@@n@@` 增长。这确立了 Gotsman–Linial 猜想的渐近形式，并首次去掉了此前最佳界中的多对数损失。

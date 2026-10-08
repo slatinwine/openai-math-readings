@@ -13,6 +13,47 @@ pdfname: ""
 
 > 结果族 038：Fujita's freeness conjecture　·　学科：Algebraic and complex geometry　·　验证状态：暂无形式化证明，请以社区核验为准
 
+## 入门导读 🐣
+
+把高维空间想成一座大厅，线丛的截面是一支支手电筒，"全球生成"就是每个角落都至少被一支照到。藤田 1987 年猜想：哪怕光源 `@@M@@L@@` 本身一支手电都派不出，只要它足够"丰富"，配上空间的固有曲率 `@@M@@K_X@@`、乘上 `@@M@@n+1@@` 份，就足以照亮整座大厅。本文在所有维数一并证明，而且这 `@@M@@n+1@@` 节电池一节也不能少。
+
+**关键词卡片**
+
+- 线丛（line bundle）：附着在空间上的截面系统，可以当成光源配备来理解。
+- 丰富（ample）：能量随倍数增长的强正性，"电池够劲"的数学说法。
+- 全球生成（globally generated）：每一点都有不灭的截面值班。
+- 伴随丛（adjoint bundle）`@@M@@K_X+mL@@`：固有曲率叠加 `@@M@@m@@` 份光源的组合。
+- 界的尖锐性（sharpness）：`@@M@@n+1@@` 不能再降，射影空间的反例顶住了下限。
+
+**看个具体例子**
+
+取大厅 `@@M@@X=\mathbb P^n@@`、`@@M@@L=\mathcal O(1)@@`。此时 `@@M@@K_X+(n+1)L=\mathcal O(0)@@` 是平凡线丛，常数函数 `@@M@@1@@` 就是它的截面，处处不灭——全厅照亮；而少一档的 `@@M@@K_X+nL=\mathcal O(-1)@@` 连一个非零截面都没有。二维时即 `@@M@@\mathbb P^2@@` 上 `@@M@@K+3L@@` 生成、`@@M@@K+2L@@` 全黑，反差一目了然。
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280">
+  <text x="280" y="32" text-anchor="middle" font-size="15" fill="#334455">乘数 m 与"照亮能力"（以 Pⁿ 配 O(1) 为试金石）</text>
+  <rect x="70" y="120" width="180" height="26" fill="#f6e3e3"/>
+  <rect x="250" y="120" width="240" height="26" fill="#e2f0e2"/>
+  <line x1="60" y1="185" x2="505" y2="185" stroke="#667788" stroke-width="2"/>
+  <polygon points="513,185 501,180 501,190" fill="#667788"/>
+  <line x1="250" y1="175" x2="250" y2="195" stroke="#444444" stroke-width="2"/>
+  <text x="238" y="215" text-anchor="middle" font-size="14" fill="#444444">m = n</text>
+  <line x1="330" y1="175" x2="330" y2="195" stroke="#444444" stroke-width="2"/>
+  <text x="330" y="215" text-anchor="middle" font-size="14" fill="#444444">m = n+1</text>
+  <text x="160" y="112" text-anchor="middle" font-size="13" fill="#a05050">m ≤ n：可能全黑（O(−1) 无截面）</text>
+  <text x="385" y="112" text-anchor="middle" font-size="13" fill="#3a8a3a">m ≥ n+1：定理保证必照亮</text>
+  <text x="280" y="250" text-anchor="middle" font-size="13" fill="#666666">Pⁿ 上：K+nL 无截面，K+(n+1)L 平凡且处处非零</text>
+</svg>
+
+</div>
+
+**为什么值得关心**
+
+曲线靠 Riemann–Roch、曲面靠 Reider 定理、三四维与五维被逐一攻克后，一般维数停摆多年：此前最好的界约是 `@@M@@1.78n@@`，离 `@@M@@n+1@@` 总差一步。伴随丛的生成性是做投影、分类、嵌入等几何操作的通用燃料；最优界悬置近四十年后终于落地，等于把这块常数表上的最后一个空格填死。
+
+> 暂无形式化证明（AI 结果待核验）
+
 ## 一句话结论
 
 本文在最优界上证明了藤田自由性猜想（Fujita's freeness conjecture）：`@@M@@n@@` 维光滑射影复簇 `@@M@@X@@` 上，任意丰富线丛 `@@M@@L@@` 拉伸 `@@M@@n+1@@` 倍即可使伴随丛 `@@M@@K_X+(n+1)L@@` 全球生成，且界不可改进。这个 1987 年提出的猜想首次在所有维数一并成立。

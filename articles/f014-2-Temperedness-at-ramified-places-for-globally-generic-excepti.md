@@ -13,6 +13,52 @@ pdfname: ""
 
 > 结果族 014：Restricted geometric Langlands, global Arthur enhancements, and generic Ramanujan　·　学科：Number theory　·　验证状态：暂无形式化证明，请以社区核验为准
 
+## 入门导读 🐣
+
+一套音响的"健康标准"是：没有任何频段被异常放大。函数域上的自守表示也有类似标准，叫"温和"（tempered）；广义拉马努金猜想断言好的表示处处达标。此前"主干道"（非分歧位）的检查已由姊妹篇完成，这篇论文把五个最特殊的例外群 `@@M@@G_2,F_4,E_6,E_7,E_8@@` 的大街小巷——包括最刁钻的"岔路"分歧位——全部查完：处处温和。
+
+**关键词卡片**
+
+- 温和表示（tempered representation）：不发生异常放大的局部分量，拉马努金猜想的终极目标。
+- 例外群（exceptional groups `@@M@@G_2,\dots,E_8@@`）：不属于四大经典家族的五个特殊单群。
+- 分歧位（ramified place）：表示在那里行为复杂、需要额外参数的位，好比"坏素数"。
+- 整体泛型（globally generic）：带非平凡 Whittaker 系数的"一般位置"表示，不退化。
+- 单项算子（monodromy operator `@@M@@N@@`）：分歧位参数中记录额外结构的部分，以往的难点。
+
+**看个具体例子**
+
+证明所用局部判别法有个漂亮图景：特征值的绝对值允许偏离 1，但沿 Jordan 链必须对称分布——例如 `@@M@@Q,1,Q^{-1}@@`，像天平一样平衡（"权零纯"）。只要表示的参数容许这种对称的完备化，表示就温和。全局纯性提供对称，判别法逐位收割，即得每个 `@@M@@\pi_v@@` 都温和。
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280">
+  <text x="280" y="34" font-size="15" text-anchor="middle">权零纯：绝对值可偏离 1，但沿 Jordan 链对称分布</text>
+  <circle cx="220" cy="160" r="72" fill="none" stroke="#345" stroke-width="2"/>
+  <line x1="110" y1="160" x2="390" y2="160" stroke="#aab" stroke-dasharray="6,5"/>
+  <circle cx="220" cy="160" r="3" fill="#345"/>
+  <circle cx="256" cy="160" r="5" fill="#d0842a"/>
+  <circle cx="292" cy="160" r="5" fill="#2a7de1"/>
+  <circle cx="325" cy="160" r="5" fill="#7db02a"/>
+  <text x="256" y="140" font-size="14" text-anchor="middle">Q⁻¹</text>
+  <text x="292" y="140" font-size="14" text-anchor="middle">1</text>
+  <text x="325" y="140" font-size="14" text-anchor="middle">Q</text>
+  <text x="256" y="182" font-size="11" text-anchor="middle">内侧</text>
+  <text x="292" y="182" font-size="11" text-anchor="middle">圆上</text>
+  <text x="325" y="182" font-size="11" text-anchor="middle">外侧</text>
+  <text x="405" y="142" font-size="13">权零纯完备化</text>
+  <text x="405" y="162" font-size="13">⇒ 表示温和</text>
+  <text x="220" y="230" font-size="12" text-anchor="middle">单位圆（半径 1）</text>
+  <text x="280" y="262" font-size="13" text-anchor="middle">全局纯性 + 局部判别法 ⇒ 例外群每个局部分量都温和</text>
+</svg>
+
+</div>
+
+**为什么值得关心**
+
+经典群的情形由 Drinfeld、L. Lafforgue、Lomelí 等完成，例外群此前只有带附加假设的部分结果；本文补齐这块拼图，且对特征与分歧深度毫无限制。
+
+> 暂无形式化证明（AI 结果待核验）
+
 ## 一句话结论
 
 对函数域上 `@@M@@G_2,F_4,E_6,E_7,E_8@@` 型分裂伴随例外单群，论文证明广义拉马努金猜想：整体泛型（globally generic）尖点自守表示的每个局部分量都温和（tempered），无任何特征与分歧深度限制，把姊妹篇的非分歧定理推进到全部分歧位。

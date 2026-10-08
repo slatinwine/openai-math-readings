@@ -13,6 +13,48 @@ pdfname: ""
 
 > 结果族 197：A torsion-free group algebra that is not directly finite　·　学科：Algebra　·　验证状态：主结果已 Lean 形式化
 
+## 入门导读 🐣
+
+同族的特征二姊妹篇已经用"双面扑克"表演过一套读心魔术；这篇论文证明：换一副奇数张的牌，魔术照样演得成。作者明确写出用哪个素数 `@@M@@p@@`、哪个域、哪个群，造出同样"单方向完美、反方向露馅"的乘法反例，把 Kaplansky 猜想在奇特征一侧的缺口也补上了否定答案。
+
+**关键词卡片**
+
+- 特征 p 的域（field of characteristic p）：运算中任何数的 `@@M@@p@@` 倍都等于 0 的数系，像"mod p 余数世界"
+- 含挠群（group with torsion）：含有有限阶元素的群——有的元素原地转几圈就回到起点
+- 有限生成群（finitely generated group）：只需有限个"种子元素"不断相乘就能长出来的群
+- 元胞自动机（cellular automaton）：格子按邻居颜色同步变色的规则，本文反例同时给出"单射却不满射"的变色规则
+
+**看个具体例子**
+
+素数是显式可算的：令 `@@M@@m=\binom{1200}{600}@@`，取 `@@M@@(m!)^2+1@@` 的最小素因子 `@@M@@p@@`（它是奇素数）。域 `@@M@@K@@` 则由两次"添平方根"逐层造出，共 `@@M@@p^4@@` 个元素：
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280">
+<rect x="150" y="35" width="270" height="55" fill="#eef3ff" stroke="#35a"/>
+<text x="190" y="68" font-size="17" fill="#235">顶层 K：p⁴ 个元素</text>
+<line x1="285" y1="90" x2="285" y2="118" stroke="#555" stroke-width="2"/>
+<polygon points="285,120 280,110 290,110" fill="#555"/>
+<text x="305" y="112" font-size="14" fill="#555">添加 ν，ν² = ξ</text>
+<rect x="150" y="120" width="270" height="55" fill="#f2f7ee" stroke="#4a3"/>
+<text x="205" y="153" font-size="17" fill="#253">中层：p² 个元素</text>
+<line x1="285" y1="175" x2="285" y2="203" stroke="#555" stroke-width="2"/>
+<polygon points="285,205 280,195 290,195" fill="#555"/>
+<text x="305" y="197" font-size="14" fill="#555">添加 ξ，ξ² = η</text>
+<rect x="150" y="205" width="270" height="55" fill="#fdf3ee" stroke="#c53"/>
+<text x="205" y="238" font-size="17" fill="#532">底层 F_p：p 个元素</text>
+</svg>
+
+</div>
+
+在这个域上的群代数里，有限和 `@@M@@a,b@@` 满足 `@@M@@ab=1@@` 而 `@@M@@ba\ne1@@`。注意结论只针对这一个显式素数，并未声称对所有奇素数成立。
+
+**为什么值得关心**
+
+它说明特征二的漏洞并非偶然：奇特征的世界同样藏有反例；同组元素再次给出单而不满的元胞自动机，Gottschalk 猜想又遭一击。由 Elek–Szabó 定理反推，这个含挠群必定不是 sofic 群；论文还强调所有选取都落在显式有限集内，可逐项核验。
+
+> 已 Lean 形式化
+
 ## 一句话结论
 
 对一个显式确定的奇素数 `@@M@@p@@`，本文构造出 `@@M@@p^4@@` 元域 `@@M@@K@@`、含挠（torsion）的有限生成群 `@@M@@G@@` 及群代数元素 `@@M@@a,b\in K[G]@@`，满足 `@@M@@ab=1@@` 而 `@@M@@ba\ne1@@`，否定 Kaplansky 直接有限性猜想；同一组元素还给出单射而不满射的元胞自动机，连带否定 Gottschalk 猜想。

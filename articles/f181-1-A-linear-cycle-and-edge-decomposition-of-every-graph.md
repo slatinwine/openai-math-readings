@@ -13,6 +13,52 @@ pdfname: ""
 
 > 结果族 181：The Erdős–Gallai cycle-decomposition conjecture　·　学科：Combinatorics　·　验证状态：主结果已 Lean 形式化
 
+## 入门导读 🐣
+
+一团乱麻般的电线，总能理成一圈圈的"环"再剩几根单线吗？1966 年 Erdős 等人猜测：任何 n 个顶点的图，其边总能拆成至多"常数 × n"个圈与单边。此后近六十年，最好的结果总差一个缓慢增长的尾巴；这篇论文终于把尾巴剪掉，证明了最优的线性界。为什么必须允许单边？因为森林里一个圈也没有；为什么线性阶不能再降？因为一棵树就得用上 n−1 条单边。
+
+**关键词卡片**
+
+- 简单圈（simple cycle）：不重复经过任何顶点的闭合路径。
+- 圈分解（cycle decomposition）：把边集划分成若干圈与单边，每条边恰属一块。
+- Euler 图（Eulerian graph）：所有顶点度数均为偶数的图，可以完全拆成圈、不剩单边。
+- 线性上界 Cn（linear bound）：部件数不超过顶点数的常数倍；树需要 n−1 条单边，说明这个阶数无法再降。
+
+**看个具体例子**
+
+主定理的数字版：`@@M@@E(G)@@` 可划分成至多 `@@M@@Cn@@` 个简单圈与单边。看 `@@M@@K_5@@`：5 个顶点、10 条边、每点度数 4，可完全拆成红、蓝两个 5 圈（下图），2 个部件远小于 C·5；而一棵树只能全用单边，恰好说明线性阶是最优的。
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280">
+<text x="280" y="34" fill="#555" font-size="14" text-anchor="middle">把 K5 的边拆成两个圈</text>
+<line x1="280" y1="60" x2="347" y2="108" stroke="#d62728" stroke-width="3.5"/>
+<line x1="347" y1="108" x2="321" y2="187" stroke="#d62728" stroke-width="3.5"/>
+<line x1="321" y1="187" x2="239" y2="187" stroke="#d62728" stroke-width="3.5"/>
+<line x1="239" y1="187" x2="213" y2="108" stroke="#d62728" stroke-width="3.5"/>
+<line x1="213" y1="108" x2="280" y2="60" stroke="#d62728" stroke-width="3.5"/>
+<line x1="280" y1="60" x2="321" y2="187" stroke="#1f77b4" stroke-width="3.5"/>
+<line x1="321" y1="187" x2="213" y2="108" stroke="#1f77b4" stroke-width="3.5"/>
+<line x1="213" y1="108" x2="347" y2="108" stroke="#1f77b4" stroke-width="3.5"/>
+<line x1="347" y1="108" x2="239" y2="187" stroke="#1f77b4" stroke-width="3.5"/>
+<line x1="239" y1="187" x2="280" y2="60" stroke="#1f77b4" stroke-width="3.5"/>
+<circle cx="280" cy="60" r="6.5" fill="#fff" stroke="#333" stroke-width="2"/>
+<circle cx="347" cy="108" r="6.5" fill="#fff" stroke="#333" stroke-width="2"/>
+<circle cx="321" cy="187" r="6.5" fill="#fff" stroke="#333" stroke-width="2"/>
+<circle cx="239" cy="187" r="6.5" fill="#fff" stroke="#333" stroke-width="2"/>
+<circle cx="213" cy="108" r="6.5" fill="#fff" stroke="#333" stroke-width="2"/>
+<text x="280" y="230" fill="#555" font-size="13" text-anchor="middle">红 = 外圈五边形，蓝 = 内圈五角星：合计 10 条边 = K5 的全部边</text>
+<text x="280" y="254" fill="#555" font-size="13" text-anchor="middle">每点度数 4（Euler 图），无需任何单边部件</text>
+</svg>
+
+</div>
+
+**为什么值得关心**
+
+Erdős–Goodman–Pósa 猜想就此解决；推论还给出 Euler 图的线性圈分解，经典图论的一块拼图就此归位。从 `@@M@@O(n\log\log n)@@` 到 `@@M@@O(n\log^* n)@@`，前人一步步逼近，本文终于摘下了挂在"线性"上的那颗果子。
+
+> 已 Lean 形式化
+
 ## 一句话结论
 
 证明了任何 `@@M@@n@@` 个顶点的有限简单无向图的边集都能划分成至多 `@@M@@Cn@@` 个简单圈（simple cycle）与单边，`@@M@@C@@` 为绝对常数。这正面解决了 Erdős–Gallai 圈分解猜想，把此前最好的 `@@M@@O(n\log^* n)@@` 上界推进到猜想所需的最优线性阶。

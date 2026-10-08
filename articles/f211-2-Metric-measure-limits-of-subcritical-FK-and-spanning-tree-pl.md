@@ -13,6 +13,32 @@ pdfname: ""
 
 > 结果族 211：The geometric phase diagram, diffusion, and spectra of random planar maps　·　学科：Probability and statistical mechanics　·　验证状态：暂无形式化证明，请以社区核验为准
 
+## 入门导读 🐣
+
+像素照片越来越高清，最终显影出一张连续的地形图。随机地图上的"图距离"（数几条边能从 A 走到 B）就是像素粒度：论文证明 FK 加权图与生成树图的距离经统一缩放后，连同按度数分配的质量，收敛成一张连续的"量子地形图"——LQG 量子球及其内蕴度量。
+
+**关键词卡片**
+
+- 图距离（graph distance）：每条边长为 1 的最短路步数。
+- Gromov–Hausdorff–Prokhorov 收敛：比较带测度的紧度量空间的标准收敛模式。
+- LQG 度量（LQG metric）：由随机场决定的内蕴距离 `@@M@@D_h@@`，分形般崎岖。
+- 顶点测度（vertex measure）：`@@M@@\mu_n(v)=\deg(v)/(2n)@@`，即均匀撒一个"角"落在各顶点的概率。
+- 参数对照：`@@M@@q=2+2\cos(\pi\gamma^2/2)@@`，把 FK 温度计换算成曲面的粗糙度 `@@M@@\gamma@@`。
+
+**看个具体例子**
+
+公式卡（数字版定理＋换算表）：
+
+`@@M@@D(V(M_n),\,a_n d_n,\,\mu_n)\;\Longrightarrow\;(S,\,D_h,\,\mu_h),\qquad q=1\Rightarrow\gamma=\sqrt{8/3},\ \ q=2\Rightarrow\gamma=\sqrt3,\ \ \text{生成树}\Rightarrow\gamma=\sqrt2.@@`
+
+例如 `@@M@@q=2@@`（Ising）时，缩放后任两顶点的步数距离稳定趋近 `@@M@@\sqrt3@@`-量子球上的 `@@M@@D_h@@`；`@@M@@q=1@@` 时地图退化为均匀地图，极限与经典的 Brownian map 理论吻合——新定理把旧结果作为特例收入囊中。收敛对每个正整数边数 `@@M@@n@@` 都成立，不必沿子列取极限；距离用每条原始边（含环与重边）计算。证明骨架三步走：识别局部距离、控制每一个顶点、保留测度。
+
+**为什么值得关心**
+
+解决了 Gwynne–Miller 图度量猜想的有限球面情形（`@@M@@q\in(0,4)@@` 与生成树两个家族），并充当族内另外两篇论文的度量支柱；定理不主张对 `@@M@@q@@` 的一致性、端点值或 `@@M@@a_n@@` 的幂律。
+
+> 暂无形式化证明（AI 结果待核验）
+
 ## 一句话结论
 
 对每个固定 `@@M@@q\in(0,4)@@` 的临界 FK 球面图以及一致生成树装饰图，本文证明了 Gwynne–Miller 图度量猜想的有限球面情形：图距离经确定性重标后，连同度数比例的顶点测度，在 Gromov–Hausdorff–Prokhorov 意义下收敛到对应的单位面积 LQG 球面。

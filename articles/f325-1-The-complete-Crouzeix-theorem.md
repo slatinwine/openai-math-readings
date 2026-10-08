@@ -13,6 +13,50 @@ pdfname: ""
 
 > 结果族 325：The complete Crouzeix conjecture　·　学科：Functional analysis　·　验证状态：主结果已 Lean 形式化
 
+## 入门导读 🐣
+
+把矩阵想成一台机器：向量进去，向量出来。这台机器的"脾气"可以画成复平面上的一块凸区域——数值域：各个方向进去的向量，其"瞬时放大率"（含旋转）都落在这块区域里。这篇论文解决了悬置二十多年的 Crouzeix 猜想：多项式在这块小地图上的最大取值乘以 2，就足以罩住机器版本的输出；而且倍数 2 是紧的，再也压不小了。
+
+**关键词卡片**
+
+- 数值域（numerical range）：各方向"瞬时放大率"在复平面上扫出的凸区域，是矩阵脾气的完整画像。
+- 谱集（spectral set）：一块平面区域，若函数在区域上有界，矩阵版函数也自动有界——矩阵的"安全地图"。
+- 相似变换（similarity）：给矩阵换一套坐标系；换法有多"别扭"用条件数（拉伸 ÷ 压缩）衡量。
+- 压缩（contraction）：换好坐标系后任何方向都不放大的矩阵，范数 ≤ 1。
+- 完全 2-谱集（complete 2-spectral set）：连系数也换成小矩阵的"加强版函数"一起被常数 2 控制。
+
+**看个具体例子**
+
+取最小的坏例子 `@@M@@A=\begin{pmatrix}0&1\\0&0\end{pmatrix}@@`，它的数值域恰是圆盘 `@@M@@|z|\le\frac12@@`。取 `@@M@@P(z)=z@@`：机器端 `@@M@@\|P[A]\|=\|A\|=1@@`，地图端 `@@M@@\sup_{W(A)}|z|=\frac12@@`，比值恰好是 `@@M@@2@@`——这个小矩阵把常数 2"顶满"，说明定理的倍数不多不少。
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280">
+  <text x="20" y="28" font-size="15" fill="#222">例：A = (0 1; 0 0)，其数值域 W(A) 是圆盘 |z| ≤ 1/2</text>
+  <line x1="30" y1="175" x2="330" y2="175" stroke="#999" stroke-width="1"/>
+  <line x1="120" y1="55" x2="120" y2="268" stroke="#999" stroke-width="1"/>
+  <circle cx="120" cy="175" r="70" fill="#dce8fb" stroke="#2f5fd0" stroke-width="2"/>
+  <line x1="120" y1="175" x2="190" y2="175" stroke="#d64545" stroke-width="2" stroke-dasharray="6 4"/>
+  <text x="132" y="167" font-size="13" fill="#d64545">1/2</text>
+  <text x="196" y="193" font-size="13" fill="#2f5fd0">W(A)</text>
+  <text x="30" y="70" font-size="13" fill="#666">复平面</text>
+  <line x1="352" y1="80" x2="545" y2="80" stroke="#ccc" stroke-width="1"/>
+  <text x="352" y="108" font-size="15" fill="#222">取 P(z) = z：</text>
+  <text x="352" y="138" font-size="15" fill="#222">机器端 ‖A‖ = 1</text>
+  <text x="352" y="168" font-size="15" fill="#222">地图端 max |z| = 1/2</text>
+  <text x="352" y="202" font-size="16" fill="#b0348f" font-weight="bold">比值 = 2，恰好顶满</text>
+  <text x="352" y="236" font-size="13" fill="#666">定理保证比值 ≤ 2；这个矩阵</text>
+  <text x="352" y="256" font-size="13" fill="#666">说明 2 无法再降</text>
+</svg>
+
+</div>
+
+**为什么值得关心**
+
+"读懂地图就能控制机器"从此是严格成立的定理，最优常数、最优换坐标系方案一次给全。这是数值分析、算子理论与控制论共用的基石工具。
+
+> 主结果已 Lean 形式化
+
 ## 一句话结论
 
 本文以"最优相似＋公共正边界密度"的结构路线证明：任意复 Hilbert 空间上的有界算子 `@@M@@A@@` 与任意矩阵值多项式 `@@M@@P@@` 满足 `@@M@@\|P[A]\|\le 2\sup_{z\in W(A)}\|P(z)\|@@`，数值域闭包是完全 2-谱集，常数 2 最优——完整 Crouzeix 猜想成立。

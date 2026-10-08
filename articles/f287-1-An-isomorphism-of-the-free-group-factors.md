@@ -13,6 +13,34 @@ pdfname: ""
 
 > 结果族 287：Isomorphism of the free group factors　·　学科：Operator algebras　·　验证状态：暂无形式化证明，请以社区核验为准
 
+## 入门导读 🐣
+
+把"没有任何关系的字母世界"（自由群）扔进搅拌机，会得到一锅算子浓汤。从 1943 年起数学家就在争论：两副牌数不同的浓汤——两根生成元与三根生成元——味道到底一样吗？这篇论文给出最终裁决：一模一样。难处在于搅拌几乎洗掉一切可数痕迹——"生成元个数"在汤里还留不留味道，八十年没人说得清。
+
+**关键词卡片**
+
+- 自由群 `@@M@@\mathbb F_n@@`（free group）：字母与其逆自由拼词、别无额外关系的群
+- 群冯·诺依曼代数 `@@M@@L(\mathbb F_n)@@`（group von Neumann algebra）：左平移生成的算子系统
+- `@@M@@\mathrm{II}_1@@` 因子（`@@M@@\mathrm{II}_1@@` factor）：中心只有标量、还自带一把有限"秤"的算子世界
+- 基本群（fundamental group）：因子与自身各种尺寸切角同构的尺度集合
+- 自由熵维数（free entropy dimension）：曾被寄望用来量"汤的浓淡"的指标
+
+**看个具体例子**
+
+套放大公式 `@@M@@N_s^t\cong N_{1+(s-1)/t^2}@@`，取 `@@M@@t=\sqrt2@@`：`@@M@@N_3^{\sqrt2}\cong N_{1+2/2}=N_2@@`，`@@M@@N_5^{\sqrt2}\cong N_{1+4/2}=N_3@@`。又相邻秩同构给 `@@M@@N_3\cong N_4\cong N_5@@`，代换即得主定理 `@@M@@N_2\cong N_3@@`。（记 `@@M@@N_n=L(\mathbb F_n)@@`，上标 `@@M@@t@@` 表示切下迹为 `@@M@@t@@` 的一"角"。）
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280"><circle cx="90" cy="150" r="34" fill="#eef" stroke="#369" stroke-width="2"/><text x="90" y="156" text-anchor="middle" font-size="16">N₂</text><circle cx="230" cy="150" r="34" fill="#eef" stroke="#369" stroke-width="2"/><text x="230" y="156" text-anchor="middle" font-size="16">N₃</text><circle cx="370" cy="150" r="34" fill="#eef" stroke="#369" stroke-width="2"/><text x="370" y="156" text-anchor="middle" font-size="16">N₄</text><circle cx="510" cy="150" r="34" fill="#eef" stroke="#369" stroke-width="2"/><text x="510" y="156" text-anchor="middle" font-size="16">N₅</text><text x="160" y="144" text-anchor="middle" font-size="15">≅</text><text x="300" y="144" text-anchor="middle" font-size="15">≅</text><text x="440" y="144" text-anchor="middle" font-size="15">≅</text><path d="M 238 114 Q 160 40 100 112" fill="none" stroke="#c33" stroke-width="2"/><polygon points="98,116 112,104 114,120" fill="#c33"/><text x="168" y="44" text-anchor="middle" font-size="13" fill="#c33">放大 √2 后复合</text><text x="280" y="235" text-anchor="middle" font-size="15">全部是同一个因子，基本群 = 全体正实数</text></svg>
+
+</div>
+
+**为什么值得关心**
+
+Kadison 的秩问题悬置八十年后告破，自由群的"秩"之谜以最戏剧性的方式收场；由"二择一"机制，全部插值自由群因子（含无穷秩）一起坍缩为同一个。顺带宣判：在同一个 `@@M@@L(\mathbb F_2)@@` 里，四种自由熵维数随生成元选取可取遍每个不小于 2 的整数，因此都不是生成元不变量——指望它数生成元行不通。
+
+> 暂无形式化证明（AI 结果待核验）
+
 ## 一句话结论
 
 本文肯定地解答了自由群因子同构问题：构造出保迹正规 *-同构 `@@M@@L(\mathbb F_2)\cong L(\mathbb F_3)@@`。结合经典二择一，全体插值自由群因子（含 `@@M@@L(\mathbb F_\infty)@@`）彼此同构、基本群均为 `@@M@@\mathbb R_{>0}@@`，且四种自由熵维数都不随生成元选取不变。

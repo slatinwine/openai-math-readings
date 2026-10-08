@@ -13,6 +13,49 @@ pdfname: ""
 
 > 结果族 354：The isoperimetric profile of the cubic three-torus　·　学科：Differential geometry　·　验证状态：暂无形式化证明，请以社区核验为准
 
+## 入门导读 🐣
+
+走进一间三组对面都相通的立方体房间，朝任何方向直走都会绕回出发点——这就是三环面。现在用指定体积的橡皮泥在这间房里捏形状，怎样表面最省料？普通空间答案是球；在这间环绕房间里，论文给出完整答案，而且分三段"换挡"。
+
+**关键词卡片**
+
+- 等周问题（isoperimetric problem）：固定体积，求边界面积最小的形状。
+- 三环面（cubic flat three-torus）：立方体三组对面粘合成的封闭平坦宇宙 `@@M@@\mathbb R^3/\mathbb Z^3@@`。
+- 圆管（solid circular tube）：缠在最短闭合直道上的"香肠"。
+- 坐标板（slab）：两张平行"环球墙"之间的整层夹层。
+- 转变体积（transition volumes）：`@@M@@4\pi/81\approx0.155@@` 与 `@@M@@1/\pi\approx0.318@@`，最优形状在这两处切换。
+
+**看个具体例子**
+
+最小周长有闭式公式：`@@M@@I(V)=\min\{(36\pi)^{1/3}v^{2/3},\ 2\sqrt{\pi v},\ 2\}@@`，其中 `@@M@@v=\min(V,1-V)@@`。代入三个真实体积（`@@M@@V\le 1/2@@`，更大就取补集）：`@@M@@V=0.05@@` 时最优是球，半径 `@@M@@(3V/4\pi)^{1/3}\approx0.23@@`；`@@M@@V=0.25@@` 时最优是圆管，半径 `@@M@@\sqrt{V/\pi}\approx0.28@@`；`@@M@@V=0.45@@` 时最优是宽 `@@M@@0.45@@` 的板。
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280">
+<circle cx="95" cy="120" r="45" fill="none" stroke="#1a6" stroke-width="3"/>
+<text x="58" y="200" font-size="15" fill="#1a6">小体积：球</text>
+<text x="46" y="222" font-size="13">0&lt;V≤4π/81</text>
+<rect x="200" y="98" width="160" height="50" rx="25" fill="none" stroke="#26d" stroke-width="3"/>
+<line x1="212" y1="123" x2="348" y2="123" stroke="#26d" stroke-width="1.5" stroke-dasharray="6 5"/>
+<text x="215" y="168" font-size="12" fill="#777">缠着最短闭测地线（虚线）</text>
+<text x="212" y="200" font-size="15" fill="#26d">中体积：圆管</text>
+<text x="204" y="222" font-size="13">4π/81≤V≤1/π</text>
+<line x1="440" y1="55" x2="440" y2="195" stroke="#e33" stroke-width="3"/>
+<line x1="486" y1="55" x2="486" y2="195" stroke="#e33" stroke-width="3"/>
+<text x="398" y="222" font-size="15" fill="#e33">大体积：板（夹层）</text>
+<text x="405" y="244" font-size="13">1/π≤V≤1/2</text>
+</svg>
+
+</div>
+
+体积从小到大，最优形状依次是球、圆管、板；相邻区间端点处两类并列最优，别无其他等号情形。
+
+**为什么值得关心**
+
+它完整证明了 Hauswirth–Pérez–Romon–Ros 提出的三环面等周猜想，把所有最小化子连同两个换挡点的全部等号情形穷尽——这份"最优形状说明书"从此定稿。
+
+> 暂无形式化证明（AI 结果待核验）
+
 ## 一句话结论
 
 本文完整证明了立方平坦三环面 `@@M@@\mathbb{R}^3/\mathbb{Z}^3@@` 上的等周猜想：任何体积下最小周长区域必为球、绕最短闭测地线的圆管、坐标板或其补，并在两个转变体积 `@@M@@4\pi/81@@` 与 `@@M@@1/\pi@@` 处穷尽全部等号情形。

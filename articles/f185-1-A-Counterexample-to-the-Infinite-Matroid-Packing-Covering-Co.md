@@ -13,6 +13,53 @@ pdfname: ""
 
 > 结果族 185：Counterexamples to infinite matroid intersection and packing/covering　·　学科：Combinatorics　·　验证状态：主结果已 Lean 形式化
 
+## 入门导读 🐣
+
+拟阵把"哪些东西算互相独立"抽象成几条公理，有限世界里的"交定理"和"装箱/覆盖定理"都是经典。搬到无穷集合上，大家猜它们照样成立——这篇论文在 ZFC 里造出一对"双胞胎反例"，一石三鸟：同时推翻无限拟阵的装箱/覆盖猜想、交猜想，并否定回答 Joó 的问题。
+
+**关键词卡片**
+
+- 拟阵（matroid）：把"独立集"公理化的结构，原型是矩阵中线性无关的列向量族
+- 自对偶（self-dual）：拟阵等于自己的对偶，即 M* = M
+- 分拆拟阵（partitional matroid）：把地面集切成小块、每块内取至多若干元素的拟阵
+- packing/covering（装箱/覆盖）：把地面集拆成两半，一半让两个拟阵各放一把不交生成集，另一半被两族独立集覆盖
+- 独立覆盖（independent cover）：两个拟阵各自的独立集并起来铺满整个地面集
+
+**看个具体例子**
+
+反例的骨架是一条"双向无穷路"：把同一个自对偶一致拟阵 Q 的拷贝铺在每个整数格点上，偶数格并成 M₀，奇数格并成 M₁。
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280">
+<line x1="60" y1="140" x2="500" y2="140" stroke="#333" stroke-width="2"/>
+<rect x="75" y="110" width="50" height="60" rx="8" fill="#dbe9ff" stroke="#1a6feb" stroke-width="2"/>
+<rect x="165" y="110" width="50" height="60" rx="8" fill="#e6f4ea" stroke="#2da44e" stroke-width="2"/>
+<rect x="255" y="110" width="50" height="60" rx="8" fill="#dbe9ff" stroke="#1a6feb" stroke-width="2"/>
+<rect x="345" y="110" width="50" height="60" rx="8" fill="#e6f4ea" stroke="#2da44e" stroke-width="2"/>
+<rect x="435" y="110" width="50" height="60" rx="8" fill="#dbe9ff" stroke="#1a6feb" stroke-width="2"/>
+<text x="100" y="145" font-size="14" fill="#1a6feb" text-anchor="middle">Q</text>
+<text x="190" y="145" font-size="14" fill="#2da44e" text-anchor="middle">Q</text>
+<text x="280" y="145" font-size="14" fill="#1a6feb" text-anchor="middle">Q</text>
+<text x="370" y="145" font-size="14" fill="#2da44e" text-anchor="middle">Q</text>
+<text x="460" y="145" font-size="14" fill="#1a6feb" text-anchor="middle">Q</text>
+<text x="70" y="95" font-size="15" fill="#1a6feb">偶数格 → M₀</text>
+<text x="360" y="95" font-size="15" fill="#2da44e">奇数格 → M₁</text>
+<text x="60" y="215" font-size="14" fill="#555">反设存在独立覆盖：从中央束向外逐格递推，</text>
+<text x="60" y="240" font-size="14" fill="#555">序数秩被迫无穷严格下降——不可能，矛盾。</text>
+<text x="280" y="268" font-size="13" fill="#888" text-anchor="middle">每个方格是同一份自对偶一致拟阵 Q（示意）</text>
+</svg>
+
+</div>
+
+这对 M₀、M₁ 自对偶、既非 finitary 也非 cofinitary，既无独立覆盖也无 packing/covering 划分；构造还顺带在 ZFC 中造出可数的自对偶一致拟阵——这本身就是一个此前的公开问题。
+
+**为什么值得关心**
+
+它给无限拟阵理论划出硬边界：Nash-Williams 的 finitary 猜想不受影响，但无限制版本彻底失败；这类否定性结论最怕算错，而它有机器验证背书。
+
+> 已 Lean 形式化
+
 ## 一句话结论
 
 在 ZFC 中构造出可数无穷集上一对自对偶的分拆拟阵 (partitional matroids)：它们既没有独立覆盖，也没有 packing/covering 划分，从而同时推翻无限拟阵 packing/covering 猜想与无限制拟阵交 (Matroid Intersection) 猜想，并否定回答 Joó 的问题。

@@ -13,6 +13,55 @@ pdfname: ""
 
 > 结果族 052：Tangent splittings and product decompositions　·　学科：Algebraic and complex geometry　·　验证状态：主结果已 Lean 形式化
 
+## 入门导读 🐣
+
+一张地图如果每个局部都画成方格网——横路一族、竖路一族各自成体系——那么把地图完全摊开（数学上叫取万有覆盖）之后，它整体是否真是"横坐标 × 竖坐标"的标准网格？Beauville 在 2000 年猜想：是的。本文证明了这个猜想的两个和项版本：只要每点都有两种独立且各自封闭的全纯运动方向，展开后必定是一个乘积，两个因子恰好就是那两个方向。
+
+**关键词卡片**
+
+- 切丛（tangent bundle）：把每点的切向量空间打包成的丛，记录全部无穷小运动方向。
+- 可积（integrable）：子丛的截面做李括号不出界——一族方向能织成真正的"面"。
+- 叶（leaf）：沿着一个可积方向一直走出来的最大曲面。
+- 万有覆盖（universal cover）：把空间所有"洞"剪开后得到的单连通展开，像把纸盒完全摊平。
+- 双全纯（biholomorphic）：全纯且逆也全纯的同构，复世界里的"全等"。
+
+**看个具体例子**
+
+设紧 Kähler 流形 `@@M@@X@@` 的切丛分解 `@@M@@T_X=E_1\oplus E_2@@`，两个和项都可积、秩都为正。定理：万有覆盖 `@@M@@\widetilde X@@` 双全纯同构于乘积 `@@M@@Y_1\times Y_2@@`，且 `@@M@@E_1,E_2@@` 恰好提升为两因子的切丛；`@@M@@Y_i@@` 正是两张叶的万有覆盖，允许非紧。注意结论只针对万有覆盖，不断言 `@@M@@X@@` 的有限覆盖是乘积。
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280">
+  <ellipse cx="130" cy="130" rx="95" ry="70" fill="none" stroke="#333" stroke-width="2"/>
+  <path d="M 50 115 Q 130 85 210 115" fill="none" stroke="#06c" stroke-width="1.5"/>
+  <path d="M 45 145 Q 130 115 215 145" fill="none" stroke="#06c" stroke-width="1.5"/>
+  <path d="M 60 175 Q 130 150 200 175" fill="none" stroke="#06c" stroke-width="1.5"/>
+  <path d="M 100 70 Q 80 130 100 190" fill="none" stroke="#c00" stroke-width="1.5"/>
+  <path d="M 135 65 Q 115 130 135 195" fill="none" stroke="#c00" stroke-width="1.5"/>
+  <path d="M 170 72 Q 155 130 170 188" fill="none" stroke="#c00" stroke-width="1.5"/>
+  <text x="130" y="240" text-anchor="middle" font-size="13" fill="#333">X：两组叶交叉，局部像乘积</text>
+  <line x1="245" y1="130" x2="305" y2="130" stroke="#333" stroke-width="2"/>
+  <polygon points="313,130 301,124 301,136" fill="#333"/>
+  <text x="280" y="115" text-anchor="middle" font-size="12" fill="#333">万有覆盖</text>
+  <text x="280" y="152" text-anchor="middle" font-size="12" fill="#333">（完全展开）</text>
+  <rect x="330" y="65" width="190" height="130" fill="none" stroke="#333" stroke-width="2"/>
+  <line x1="393" y1="65" x2="393" y2="195" stroke="#999" stroke-width="1"/>
+  <line x1="456" y1="65" x2="456" y2="195" stroke="#999" stroke-width="1"/>
+  <line x1="330" y1="97" x2="520" y2="97" stroke="#999" stroke-width="1"/>
+  <line x1="330" y1="130" x2="520" y2="130" stroke="#999" stroke-width="1"/>
+  <line x1="330" y1="163" x2="520" y2="163" stroke="#999" stroke-width="1"/>
+  <text x="425" y="52" text-anchor="middle" font-size="13" fill="#333">Y₁ × Y₂（真正的乘积）</text>
+  <text x="425" y="225" text-anchor="middle" font-size="12" fill="#666">蓝叶提升为 Y₁ 方向，红叶提升为 Y₂ 方向</text>
+</svg>
+
+</div>
+
+**为什么值得关心**
+
+这是复几何版的"局部乘积 ⇒ 整体乘积"，与黎曼几何的 de Rham 分解定理遥相呼应；而全纯世界此前一直没有一般办法，本文补上了这块拼图。
+
+> 已 Lean 形式化
+
 ## 一句话结论
 
 证明了 Beauville 兼容分裂猜想（compatible splitting conjecture）的双和项形式：紧凯勒流形的切丛若分解为两个可积全纯子丛，则其万有覆盖必与乘积双全纯同构，且因子切丛恰是提升后的两个指定子丛。

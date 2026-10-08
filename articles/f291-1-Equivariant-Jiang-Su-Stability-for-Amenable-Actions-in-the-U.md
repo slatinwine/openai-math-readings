@@ -13,6 +13,53 @@ pdfname: ""
 
 > 结果族 291：Cuntz comparison, nuclear dimension, and equivariant Jiang–Su stability　·　学科：Operator algebras　·　验证状态：暂无形式化证明，请以社区核验为准
 
+## 入门导读 🐣
+
+想象一锅味道已经完美的汤，现在必须往里兑"完全没有味道的水"——汤的口感不能有任何变化；更麻烦的是，汤面上还摆着必须原样保留的装饰图案。这篇论文证明：只要搬动图案的规则足够温和，"兑水不换味、图案也不乱"就自动成立，不需要任何额外条件。
+
+**关键词卡片**
+
+- Jiang–Su 代数 `@@M@@\mathcal Z@@`（Jiang–Su algebra）：一种"无味的水"——无穷维，却像乘以 1 一样不改变代数的核心性质。
+- `@@M@@\mathcal Z@@`-稳定性（Z-stability）：`@@M@@A\cong A\otimes\mathcal Z@@`，即"兑过水之后与原来的汤等价"。
+- 群作用（group action）：一组变换按规则搬动代数里的元素，好比图案的各种对称操作。
+- 循环上同调共轭（cocycle conjugacy）：两个作用"本质相同"的精确说法，允许差一个可修正的酉因子 `@@M@@u_g@@`。
+- 顺从群（amenable group）：可用有限平均逼近的温和群，比如整数加法群。
+
+**看个具体例子**
+
+主定理说：在满足一列良性条件的代数上，任何群作用 `@@M@@\alpha@@` 都与"原作用配上无味填充"的版本 `@@M@@\beta_g=\alpha_g\otimes\mathrm{id}_{\mathcal Z}@@` 循环上同调共轭。证明的关键一步，是造出两两正交、总和为 1、对一切群元素 `@@M@@g@@` 都不变的投影 `@@M@@p_1,\dots,p_k@@`，使 `@@M@@\tau(ap_i)=\tau(a)/k@@`：把"总量"均分成 `@@M@@k@@` 份，而且怎么搬都不变。
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280">
+<rect x="60" y="110" width="440" height="56" fill="none" stroke="#222" stroke-width="2"/>
+<line x1="170" y1="110" x2="170" y2="166" stroke="#222" stroke-width="2"/>
+<line x1="280" y1="110" x2="280" y2="166" stroke="#222" stroke-width="2"/>
+<line x1="390" y1="110" x2="390" y2="166" stroke="#222" stroke-width="2"/>
+<text x="98" y="146" font-size="18" fill="#000">p1</text>
+<text x="208" y="146" font-size="18" fill="#000">p2</text>
+<text x="318" y="146" font-size="18" fill="#000">p3</text>
+<text x="428" y="146" font-size="18" fill="#000">p4</text>
+<text x="88" y="192" font-size="14" fill="#555">τ(a)/4</text>
+<text x="198" y="192" font-size="14" fill="#555">τ(a)/4</text>
+<text x="308" y="192" font-size="14" fill="#555">τ(a)/4</text>
+<text x="418" y="192" font-size="14" fill="#555">τ(a)/4</text>
+<path d="M 90 72 C 200 24, 360 24, 470 72" fill="none" stroke="#777" stroke-width="2"/>
+<polyline points="456,66 470,72 460,84" fill="none" stroke="#777" stroke-width="2"/>
+<text x="170" y="42" font-size="15" fill="#777">群元素 g 搬动，各段份额不变</text>
+<text x="120" y="238" font-size="15" fill="#000">四个投影两两正交、总和为 1，每份精确为 1/k</text>
+</svg>
+
+</div>
+
+如图，把迹 `@@M@@\tau@@` 想成一根总长为 1 的尺子，切成 4 段、每段恰占四分之一；群元素 `@@M@@g@@` 无论怎么搬动，各段份额纹丝不动。这样的"不变均分"一旦造好，已发表的吸收定理便自动收尾。
+
+**为什么值得关心**
+
+它证明了 Szabó 猜想的单酉稳定有限情形：正则性条件在群作用下自动保持，代数分类纲领因此能覆盖带对称性的系统。
+
+> 暂无形式化证明（AI 结果待核验）
+
 ## 一句话结论
 
 证明了 Szabó 猜想 A 的单酉稳定有限情形：可数离散顺从群在简单、可分、单酉、无穷维、核、稳定有限且已 `@@M@@\mathcal Z@@`-稳定的 C*-代数上的任意作用，都在循环上同调共轭意义下自动吸收 Jiang–Su 代数上的平凡作用，对迹动力学毫无限制。

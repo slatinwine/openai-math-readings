@@ -13,6 +13,33 @@ pdfname: ""
 
 > 结果族 245：Weak normalization implies strong normalization in pure type systems　·　学科：Mathematical logic　·　验证状态：暂无形式化证明，请以社区核验为准
 
+## 入门导读 🐣
+
+化简 (2+3)×4 时，可以先算括号再乘，也可以先分配展开——不同走法都到 20。"每个式子至少有一条路能算到底"叫弱规范化；"随便怎么乱走都必然算到底"叫强规范化。本文证明：对纯类型系统这一大类类型系统，前者一旦成立，后者自动成立。
+
+**关键词卡片**
+
+- 纯类型系统（pure type system, PTS）：统一描述一大类 λ 演算类型系统的框架，简单类型 λ 演算、System F、构造演算都是特例。
+- β-归约（β-reduction）：把 (λx.M)N 一步代入化简的基本动作。
+- 弱／强规范化（weak/strong normalization）：存在某条归约路径到达范式／任何归约序列都必然终止。
+- 范式（normal form）：再也化不动的最简形态。
+
+**看个具体例子**
+
+看玩具：下图中两条化简走法都终止于同一个范式。定理说，只要系统中每个合法表达式都"有路可走"（弱），就不存在任何能无限走下去的表达式（强）——哪怕专挑刁钻顺序乱化简。这解决了 Geuvers 1993 年提出的 β-Barendregt–Geuvers–Klop 猜想，此前所有结果都需要分层、泛函性等附加条件。
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280"><rect x="200" y="28" width="160" height="42" fill="none" stroke="#2c7fb8" stroke-width="2"/><text x="280" y="54" font-size="14" fill="#333" text-anchor="middle">(λx.x+x)(2+1)</text><rect x="60" y="118" width="150" height="42" fill="none" stroke="#2c7fb8" stroke-width="2"/><text x="135" y="144" font-size="14" fill="#333" text-anchor="middle">(2+1)+(2+1)</text><rect x="350" y="118" width="150" height="42" fill="none" stroke="#2c7fb8" stroke-width="2"/><text x="425" y="144" font-size="14" fill="#333" text-anchor="middle">(λx.x+x)3</text><text x="140" y="102" font-size="13" fill="#666" text-anchor="middle">先分配展开</text><text x="425" y="102" font-size="13" fill="#666" text-anchor="middle">先算括号</text><rect x="205" y="196" width="150" height="42" fill="none" stroke="#2c7fb8" stroke-width="2"/><text x="280" y="222" font-size="14" fill="#333" text-anchor="middle">3+3</text><line x1="245" y1="70" x2="182" y2="114" stroke="#666" stroke-width="1.8"/><line x1="315" y1="70" x2="378" y2="114" stroke="#666" stroke-width="1.8"/><line x1="185" y1="160" x2="247" y2="194" stroke="#666" stroke-width="1.8"/><line x1="375" y1="160" x2="313" y2="194" stroke="#666" stroke-width="1.8"/><line x1="280" y1="238" x2="280" y2="252" stroke="#666" stroke-width="1.8"/><polygon points="280,260 276,250 284,250" fill="#666"/><text x="280" y="276" font-size="14" fill="#c0392b" text-anchor="middle">6（范式）</text></svg>
+
+</div>
+
+**为什么值得关心**
+
+强规范化是证明助手类型检查必然终止的逻辑基石；此结果在最大的一般性下把"弱"与"强"之间的鸿沟填平。
+
+> 暂无形式化证明（AI 结果待核验）
+
 ## 一句话结论
 
 证明了对任意纯类型系统（pure type system），只要每个合法表达式都弱 β-规范化，就必然强 β-规范化：一切 β-归约序列终止。这一举解决了 Geuvers 1993 年提出的 β-Barendregt–Geuvers–Klop 猜想，且对公理与乘积规则不加任何泛函性假设。

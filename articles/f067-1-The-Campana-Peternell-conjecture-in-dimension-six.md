@@ -13,6 +13,45 @@ pdfname: ""
 
 > 结果族 067：The Campana–Peternell conjecture in dimension six　·　学科：Algebraic and complex geometry　·　验证状态：暂无形式化证明，请以社区核验为准
 
+## 入门导读 🐣
+
+有一类高维空间"处处顺滑不粘滞"（切丛 nef：朝任何方向移动都不亏），猜想说：这样顺滑的正曲率空间必然高度对称，是李群轨道式的标准空间。Campana–Peternell 猜想在五维以下早已解决，本文攻克六维：六维顺滑 Fano 流形只能是有理齐性空间；最难的一个缺口被精确识别为 Grassmannian `@@M@@\operatorname{Gr}(2,5)@@`。
+
+**关键词卡片**
+
+- nef 切丛（nef tangent bundle）：切丛在每条曲线上度数非负，"处处顺滑不粘滞"。
+- 有理齐性空间（rational homogeneous variety）：李群陪集空间 `@@M@@G/P@@`，如射影空间、Grassmannian，完美对称的标准空间。
+- 伪指标（pseudoindex）：有理曲线反典范度的最小值，顺滑空间的"身材尺码"。
+- VMRT（variety of minimal rational tangents）：过一点的最小有理曲线方向集合，识别空间的指纹。
+
+**看个具体例子**
+
+`@@M@@\operatorname{Gr}(2,5)@@` 是"五维复空间中所有二维平面"组成的空间：维数 `@@M@@2\times(5-2)=6@@`，伪指标 5、Picard 数 1——正是六维最后剩下的缺口情形。论文算出：若六维 `@@M@@X@@` 伪指标为 5，过一般点的 VMRT 必是 `@@M@@\mathbb P^5@@` 里的 Segre 三维体 `@@M@@\mathbb P^1\times\mathbb P^2@@`，而这恰是 `@@M@@\operatorname{Gr}(2,5)@@` 的指纹，于是 `@@M@@X\simeq\operatorname{Gr}(2,5)@@`。关键一步是一串交点数逼出 `@@M@@(u-4)(3u-8)=0@@`，再排除 `@@M@@u=4@@` 得 `@@M@@u=8/3@@`、`@@M@@L^3=3@@`；这部分有限消元附有可执行证书（矩阵秩在有限域上逐点核验），属"机器辅助、证书可查"的类型。
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280">
+  <text x="240" y="44" text-anchor="middle" font-size="16" fill="#204060">C⁵（五维复空间）</text>
+  <polygon points="80,90 360,60 480,120 200,150" fill="#eaf2fb" stroke="#35618f" stroke-width="2"/>
+  <polygon points="215,100 335,88 390,112 270,124" fill="#f5c88a" stroke="#8a4b00" stroke-width="2"/>
+  <path d="M 335 88 Q 362 96 356 116" stroke="#8a4b00" stroke-width="2" fill="none"/>
+  <polygon points="356,116 348,106 361,105" fill="#8a4b00"/>
+  <path d="M 215 100 Q 193 108 201 127" stroke="#8a4b00" stroke-width="2" fill="none"/>
+  <polygon points="201,127 204,113 213,120" fill="#8a4b00"/>
+  <line x1="270" y1="122" x2="150" y2="176" stroke="#8a4b00" stroke-width="1.5"/>
+  <text x="52" y="192" font-size="14" fill="#7a3d00">一个二维平面</text>
+  <text x="280" y="230" text-anchor="middle" font-size="15" fill="#204060">Gr(2,5)＝所有这种二维平面的集合</text>
+  <text x="280" y="256" text-anchor="middle" font-size="15" fill="#204060">维数 2×3=6，伪指标 5：六维缺口 ⇒ X≅Gr(2,5)</text>
+</svg>
+
+</div>
+
+**为什么值得关心**
+
+"数值正性推出极大对称性"是几何学的母题；六维落地后，顺滑 Kähler 流形的万有覆盖分解（单值化型定理）随之推进到差距不超过 6 的情形。
+
+> 暂无形式化证明（AI 结果待核验）
+
 ## 一句话结论
 
 本文证明：切丛为 nef 的光滑复射影 Fano 六维流形必定是有理齐性空间 `@@M@@G/P@@`，从而解决六维 Campana–Peternell 猜想；核心新步骤是伪指标为 `@@M@@5@@` 的情形，最终识别出 `@@M@@X\simeq\operatorname{Gr}(2,5)@@`，并附带 nef 切丛紧 Kähler 流形的万有覆盖分解定理。

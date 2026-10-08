@@ -13,6 +13,47 @@ pdfname: ""
 
 > 结果族 260：Spacetime Penrose inequalities: enclosing area, charge, rotation, and anti-de Sitter extensions　·　学科：Mathematical physics　·　验证状态：暂无形式化证明，请以社区核验为准
 
+## 入门导读 🐣
+
+时空切片的"远方"有两种造型：像喇叭口一样越张越开，或像跑道一样平直延伸。已经证明好的质量不等式只认第二种。这篇论文便当一回换装师：把喇叭口整段换成平直跑道——内部一针不动、包裹黑洞的最小面积几乎不缩、新跑道尽头的质量读数恰好等于换装前在喇叭口读出的那个数——于是现成定理立刻生效，得到一条取等可达的尖锐不等式。
+
+**关键词卡片**
+
+- Bondi 质量（Bondi mass）：在喇叭口式无穷远处读出的质量，扣除了辐射带走的能量。
+- 渐近双曲端（hyperboloidal end）：远处像喇叭口那样张开的切片端，CKS 类数据的标志。
+- 最小包围面积（minimal enclosing area）：所有能包住边界的"包裹纸"里面积最小的一张。
+- 主能量条件（dominant energy condition）：能量不许跑得比光快的物理底线，换装全程保持。
+- ADM 质量（ADM mass）：平直跑道尽头的标准质量读数。
+
+**看个具体例子**
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280">
+  <text x="55" y="30" font-size="13">原数据的端：渐近双曲（喇叭口），读数 = Bondi 质量</text>
+  <circle cx="150" cy="78" r="22" fill="none" stroke="#333" stroke-width="2"/>
+  <path d="M172 66 C 260 50, 380 34, 512 24" fill="none" stroke="#369" stroke-width="2"/>
+  <path d="M172 90 C 260 106, 380 122, 512 132" fill="none" stroke="#369" stroke-width="2"/>
+  <text x="98" y="120" font-size="13">内部与边界 S 原封不动</text>
+  <line x1="280" y1="138" x2="280" y2="152" stroke="#555" stroke-width="2"/>
+  <polygon points="280,164 274,152 286,152" fill="#555"/>
+  <text x="55" y="186" font-size="13">替换后的端：渐近平坦（远处衬里清零），读数 E_R → 原读数</text>
+  <circle cx="150" cy="234" r="22" fill="none" stroke="#333" stroke-width="2"/>
+  <path d="M172 222 C 270 218, 380 214, 512 210" fill="none" stroke="#c33" stroke-width="2"/>
+  <path d="M172 246 C 270 250, 380 254, 512 258" fill="none" stroke="#c33" stroke-width="2"/>
+  <text x="38" y="274" font-size="13">面积保障：新最小包围面积 ≥ (1−ε_R)·原面积，ε_R → 0</text>
+</svg>
+
+</div>
+
+数字版定理：`@@M@@\sqrt{E_B^2-|P_B|^2}\ge\sqrt{A_{\min}/16\pi}@@`；Schwarzschild 外域取等——`@@M@@A_{\min}=16\pi m^2@@`、Bondi 质量 `@@M@@=m@@`，代入 `@@M@@m=1@@` 得两边同为 `@@M@@1@@`，不多不少。
+
+**为什么值得关心**
+
+带一般曲率的时空 Penrose 不等式至今是公开难题；本文在 CKS 类数据上首次证得尖锐 Bondi 型不等式，"换端"构造本身也是新工具。
+
+> 暂无形式化证明（AI 结果待核验）
+
 ## 一句话结论
 
 本文把三维 Cha–Khuri–Sakovich（CKS）双曲端初值数据整体替换为渐平端：保持主能量条件、不动紧内部、最小包围面积几乎不损失，且新数据的 ADM 质量收敛于原数据的 Bondi 质量 `@@M@@m_B@@`，据此在该类数据上证得尖锐的 Bondi 型 Penrose 不等式。

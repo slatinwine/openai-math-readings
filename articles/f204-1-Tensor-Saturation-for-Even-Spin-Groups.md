@@ -13,6 +13,56 @@ pdfname: ""
 
 > 结果族 204：Tensor saturation for even spin groups　·　学科：Algebra　·　验证状态：暂无形式化证明，请以社区核验为准
 
+## 入门导读 🐣
+
+三股绳能不能首尾相接围成闭合三角形？把表示的"权"当成三段绳长，张量积里出现不变量就等于三边恰好闭合。这篇论文证明的"饱和"现象是：只要三股绳同时放大正整数 `@@M@@N@@` 倍后能闭合，原来的长度就能闭合——前提是三条边的矢量和落在一张固定的整数网格（根格）上。
+
+**关键词卡片**
+
+- 旋群 `@@M@@\mathrm{Spin}(2n)@@`（spin group）：高维旋转群的"双覆盖表亲"，本文研究偶数维版本。
+- 支配整权（dominant integral weight）：给表示贴的规格标签，决定表示的形状。
+- 根格（root lattice）：权的坐标必须对齐的整数网格，是闭合的必要同余条件。
+- 张量不变量（tensor invariant）：三个表示相乘后藏在里面的"不动向量"。
+- 饱和（saturation）："放大后存在则原尺度也存在"，放大倍数不制造虚假的可行性。
+
+**看个具体例子**
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280">
+  <defs>
+    <marker id="ar" markerWidth="8" markerHeight="8" refX="5" refY="3" orient="auto">
+      <path d="M0,0 L6,3 L0,6 z" fill="#555"/>
+    </marker>
+  </defs>
+  <text x="30" y="34" font-size="15" fill="#333">三个权首尾相接 = 张量积中出现不变量</text>
+  <line x1="150" y1="70" x2="70" y2="190" stroke="#555" stroke-width="2" marker-end="url(#ar)"/>
+  <line x1="70" y1="190" x2="230" y2="190" stroke="#555" stroke-width="2" marker-end="url(#ar)"/>
+  <line x1="230" y1="190" x2="150" y2="70" stroke="#555" stroke-width="2" marker-end="url(#ar)"/>
+  <text x="88" y="125" font-size="15" fill="#a33">λ</text>
+  <text x="145" y="215" font-size="15" fill="#a33">μ</text>
+  <text x="205" y="125" font-size="15" fill="#a33">ν</text>
+  <text x="150" y="245" font-size="13" fill="#555" text-anchor="middle">原尺度：λ+μ+ν 落在根格上</text>
+  <text x="248" y="140" font-size="13" fill="#333">同时放大 N 倍</text>
+  <text x="248" y="160" font-size="13" fill="#333">后闭合 ⇒</text>
+  <line x1="420" y1="60" x2="330" y2="230" stroke="#555" stroke-width="2" marker-end="url(#ar)"/>
+  <line x1="330" y1="230" x2="510" y2="230" stroke="#555" stroke-width="2" marker-end="url(#ar)"/>
+  <line x1="510" y1="230" x2="420" y2="60" stroke="#555" stroke-width="2" marker-end="url(#ar)"/>
+  <text x="345" y="140" font-size="15" fill="#a33">Nλ</text>
+  <text x="412" y="256" font-size="15" fill="#a33">Nμ</text>
+  <text x="487" y="140" font-size="15" fill="#a33">Nν</text>
+</svg>
+
+</div>
+
+论文特别提醒放大倍数必须是正整数：取 `@@M@@\lambda=\mu=\nu=2e_1@@`、`@@M@@N=\tfrac12@@`，"缩小"后三权之和 `@@M@@3e_1@@` 逃出根格，不变量随即消失——所以这不是反例，而是定理边界。
+
+**为什么值得关心**
+
+`@@M@@D@@` 型（`@@M@@\mathrm{Spin}(2n)@@`）是单边型饱和猜想的大缺口，此前最好结果只能保证放大 4 倍；本文把饱和因子压到 1，还连通了矩阵特征值不等式等实几何问题。
+
+> 暂无形式化证明（AI 结果待核验）
+
 ## 一句话结论
 
 论文证明了偶旋群 `@@M@@\mathop{\mathrm{Spin}}\nolimits(2n)@@` 的饱和猜想：三个支配整权之和落在根格（root lattice）中时，只要某个正整数倍 `@@M@@N@@` 处有张量不变量，原权处就有。这解决了单边型（simply laced）饱和猜想的 `@@M@@D@@` 型情形，饱和因子恰为 `@@M@@1@@`。

@@ -13,6 +13,50 @@ pdfname: ""
 
 > 结果族 218：Conformal universality for weakly interacting and random-bond Ising models　·　学科：Probability and statistical mechanics　·　验证状态：暂无形式化证明，请以社区核验为准
 
+## 入门导读 🐣
+
+蒸馏水掺了微量杂质，冻出的冰花形状会变吗？这篇论文处理数学版的同一个问题：把伊辛磁铁的作用规则添上可正可负的微小"佐料"（有限程扰动，精确可解性随之破坏），临界时那条蜿蜒的相变边界线，放大后是否仍是同一条随机曲线。答案是肯定的——佐料不改变冰花。
+
+**关键词卡片**
+
+- 回路表示（contour representation）：把自旋构型改画成对偶格上的闭合回路，界面是其中一段。
+- 有限程扰动（finite-range perturbation）：作用在有限大小自旋集团上的额外小作用项，可正可负。
+- 弦 SLE₃（chordal SLE₃）：由布朗驱动 `@@M@@\sqrt3\,B_t@@` 经洛纳方程生成的随机曲线。
+- 逆温度（inverse temperature）：温度的倒数；定理保证存在与区域无关的唯一临界值 `@@M@@\beta_c@@`。
+- 共形不变（conformal invariance）：区域形状经共形映射改变后，曲线律按规则相应变形。
+
+**看个具体例子**
+
+两种微观规则，一条极限曲线（区域甚至不必光滑，任何若尔当域都行）：
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280">
+  <rect x="30" y="30" width="220" height="150" fill="none" stroke="#333" stroke-width="2"/>
+  <path d="M40,170 C80,100 130,150 160,80 C190,60 210,120 240,60" fill="none" stroke="#27ae60" stroke-width="3"/>
+  <text x="55" y="200" font-size="15" fill="#333">最近邻规则（可解）</text>
+  <rect x="310" y="30" width="220" height="150" fill="none" stroke="#333" stroke-width="2"/>
+  <rect x="340" y="50" width="26" height="26" fill="none" stroke="#e67e22" stroke-width="2"/>
+  <rect x="470" y="120" width="26" height="26" fill="none" stroke="#e67e22" stroke-width="2"/>
+  <path d="M320,170 C360,110 410,160 440,80 C470,60 500,120 520,70" fill="none" stroke="#27ae60" stroke-width="3"/>
+  <text x="335" y="200" font-size="15" fill="#333">加扰动（橙色小块）</text>
+  <path d="M150,212 L150,236" stroke="#333" stroke-width="2"/>
+  <path d="M144,228 L150,240 L156,228" fill="none" stroke="#333" stroke-width="2"/>
+  <path d="M410,212 L410,236" stroke="#333" stroke-width="2"/>
+  <path d="M404,228 L410,240 L416,228" fill="none" stroke="#333" stroke-width="2"/>
+  <text x="120" y="266" font-size="15" fill="#8e44ad">两种微观规则 → 同一条弦 SLE₃</text>
+</svg>
+
+</div>
+
+数字版基准：`@@M@@\beta_c(J,U,0)=\ln(1+\sqrt2)/(2J)\approx 0.441/J@@`；扰动后 `@@M@@\beta_c@@` 会移动，但不再依赖区域形状与边界数据。
+
+**为什么值得关心**
+
+不可积模型的临界界面共形不变性是 Smirnov 纲领的终极考验之一，本文不依赖任何可积结构就抵达了 SLE₃。这也说明共形不变性并不是可解模型的专利，而是临界现象的内在属性。
+
+> 暂无形式化证明（AI 结果待核验）
+
 ## 一句话结论
 
 证明了：平面伊辛回路能量加上充分小、平方对称、可正可负的有限程扰动后，存在与域无关的逆温度 `@@M@@\beta_c@@`，使自旋界面按完整定向曲线律收敛到弦 `@@M@@\mathrm{SLE}_3@@`——不可积情形的临界界面共形不变普适性成立。

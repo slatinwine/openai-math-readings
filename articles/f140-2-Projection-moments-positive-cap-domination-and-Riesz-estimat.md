@@ -13,6 +13,36 @@ pdfname: ""
 
 > 结果族 140：Memory–sample lower bounds for noiseless Gaussian regression　·　学科：Theoretical computer science　·　验证状态：主结果已 Lean 形式化
 
+## 入门导读 🐣
+
+考试只许带一张小抄：小抄越小，你就得做越多的题才能过关。这篇论文给"小抄大小"与"做题数量"之间的兑换率开出了定量账单，而且用三条互不相干的路（投影矩、正支配、Riesz 估计）各推导一遍——像三个互不通气的审计员算出了同一个数。
+
+**关键词卡片**
+
+- 内存–样本权衡（memory–sample tradeoff）：记得越少，看得越多，本文给出精确汇率
+- 无噪高斯观测（noiseless Gaussian observation）：一条精确成立的线性方程，毫无测量误差
+- 球冠（spherical cap）：球面上一顶"小帽子"邻域；估计准就是猜进信号所在的小帽子
+- 局部质量条件（ball mass growth）：概率质量在任何小球上都不超过 `@@M@@Kt^\beta@@`——"不许聚堆"
+- 随机正交投影（random orthogonal projection）：把高维对象随机压到低维，看它的影子
+
+**看个具体例子**
+
+学习器要猜 `@@M@@d=1000@@` 维球面上的均匀随机单位向量，角精度 `@@M@@\epsilon=10^{-6}@@`、成功率 `@@M@@2/3@@`。定理的兑换率长这样：
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280"><line x1="70" y1="230" x2="500" y2="230" stroke="#333" stroke-width="2"/><line x1="70" y1="230" x2="70" y2="45" stroke="#333" stroke-width="2"/><text x="498" y="252" font-size="14" fill="#333" text-anchor="end">记忆 M（比特）</text><text x="14" y="40" font-size="14" fill="#333">样本数 T</text><path d="M 92 62 Q 170 66 235 95 T 400 170 485 200" fill="none" stroke="#c0392b" stroke-width="3"/><line x1="70" y1="62" x2="92" y2="62" stroke="#c0392b" stroke-dasharray="4 3"/><text x="100" y="52" font-size="13" fill="#c0392b">T ≥ c·d·log(1/ε) / (1 + M/d²)</text><text x="6" y="58" font-size="12" fill="#c0392b">13800·c</text><circle cx="92" cy="62" r="4" fill="#c0392b"/><text x="150" y="88" font-size="13" fill="#333">M≈0：也要 13800·c 条观测</text><text x="250" y="145" font-size="13" fill="#333">记忆越多越省</text><text x="320" y="205" font-size="13" fill="#333">但 M 远小于 d² 时省不了多少</text></svg>
+
+</div>
+
+代入数字：`@@M@@\log(1/\epsilon)=\log(10^6)\approx 13.8@@`，故 `@@M@@T\ge c\cdot 1000\cdot 13.8\approx 13800\,c@@` 条；只要内存 `@@M@@M=o(d^2)@@`（远小于 `@@M@@d^2@@`），这个量级纹丝不动。三条证明各有分工：投影矩路线盯着低维影子的密度，正支配路线把概率质量拆成一顶顶球冠帽子，Riesz 路线则借逆距离位势兜底——三条路殊途同归，都落在同一条兑换率曲线上。
+
+**为什么值得关心**
+
+这是首个对"精确无噪声数据"成立的完整记忆–样本下界，三条独立证明互相兜底，显著降低了单一路径出错的风险。
+
+> 已 Lean 形式化
+
 ## 一句话结论
 
 本文证明：只有 `@@M@@o(d^2)@@` 比特持久记忆的单遍学习器，要从无噪高斯线性观测中以角精度 `@@M@@0<\epsilon\le1/10@@`、成功概率 `@@M@@2/3@@` 恢复均匀随机单位向量，必需 `@@M@@\Omega(d\log(1/\epsilon))@@` 个样本；支撑它的随机正交投影矩估计、球冠正支配与 Riesz 位势三套工具给出三个独立证明。

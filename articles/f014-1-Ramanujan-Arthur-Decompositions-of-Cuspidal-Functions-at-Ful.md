@@ -13,6 +13,48 @@ pdfname: ""
 
 > 结果族 014：Restricted geometric Langlands, global Arthur enhancements, and generic Ramanujan　·　学科：Number theory　·　验证状态：暂无形式化证明，请以社区核验为准
 
+## 入门导读 🐣
+
+白光穿过棱镜，会被分解成秩序井然的一排色光。这篇论文证明：函数域上的尖点自守函数空间同样能被完整"分光"——按对偶群的幂零轨道分成互不重叠的通道，而且整排通道都定义在有理数上。作为应用，它还在同一框架里推出了广义拉马努金猜想的非分歧部分。
+
+**关键词卡片**
+
+- 尖点自守函数（cuspidal automorphic function）：函数域上最"基本"的一类对称函数，好比模形式里的尖点形式。
+- 幂零轨道（nilpotent orbit）：给每条"色光通道"贴的标签，度量偏离温和的程度。
+- 温和（tempered）：Hecke 特征值绝对值恰到好处、不超标，表示的"健康"状态。
+- 广义 Ramanujan 猜想（generalized Ramanujan conjecture）：断言整体泛型的尖点表示在每个位都温和。
+- Satake 参数（Satake parameter）：每个"好点"上携带谱信息的对偶群元素。
+
+**看个具体例子**
+
+经典类比：Ramanujan 的 `@@M@@\tau@@` 函数满足 `@@M@@|\tau(p)|\le 2p^{11/2}@@`（Deligne 定理），上限恰好落在"温和"刻度上。本文主定理是直和分解 `@@M@@C_{D,\mathbb Q}=\bigoplus_{\mathcal O}C_{D,\mathcal O,\mathbb Q}@@`：每个尖点函数按其"非温和程度"归入唯一通道；推论说，只要表示在某个非分歧位泛型，就必落入 `@@M@@\mathcal O=\{0\}@@` 的纯温和通道——非分歧 Ramanujan 成立。
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280">
+  <text x="280" y="34" font-size="15" text-anchor="middle">尖点函数空间像白光，被"幂零轨道"棱镜分光</text>
+  <line x1="40" y1="150" x2="190" y2="150" stroke="#345" stroke-width="5"/>
+  <text x="95" y="130" font-size="14" text-anchor="middle">尖点函数空间</text>
+  <polygon points="210,84 210,216 310,150" fill="#eef3fa" stroke="#345" stroke-width="2"/>
+  <text x="245" y="155" font-size="13">幂零轨道</text>
+  <line x1="310" y1="150" x2="430" y2="80" stroke="#2a7de1" stroke-width="3"/>
+  <text x="436" y="78" font-size="12">O={0}：温和</text>
+  <text x="436" y="94" font-size="11">（Ramanujan）</text>
+  <line x1="310" y1="150" x2="430" y2="145" stroke="#7db02a" stroke-width="3"/>
+  <text x="436" y="149" font-size="12">小轨道：轻偏离</text>
+  <line x1="310" y1="150" x2="430" y2="210" stroke="#d0842a" stroke-width="3"/>
+  <text x="436" y="214" font-size="12">更大轨道……</text>
+  <text x="280" y="262" font-size="13" text-anchor="middle">主定理：分解为各轨道通道的有理直和；泛型 ⇒ 落入 O={0} ⇒ 处处温和</text>
+</svg>
+
+</div>
+
+**为什么值得关心**
+
+它无条件证明了 Gaitsgory–Lafforgue–Raskin 的分解猜想（3.4.5、3.4.6），并充当整族结果的基石：另两篇姊妹篇分别以它为前提或与之衔接。
+
+> 暂无形式化证明（AI 结果待核验）
+
 ## 一句话结论
 
 对函数域上的分裂半单群，论文证明了尖点自守函数空间按对偶群幂零轨道指标的有理与 `@@M@@\overline{\mathbb Q}_\ell@@` 直和分解在任意整有限水平成立，验证了 Gaitsgory–Lafforgue–Raskin 的猜想，并在伴随绝对单群情形由单点 generic 性导出广义 Ramanujan 猜想的非分歧部分。

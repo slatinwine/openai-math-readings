@@ -13,6 +13,40 @@ pdfname: ""
 
 > 结果族 154：Pointwise multiple ergodic averages for mixing transformations　·　学科：Dynamical systems and ergodic theory　·　验证状态：暂无形式化证明，请以社区核验为准
 
+## 入门导读 🐣
+
+往咖啡里滴一滴奶，使劲搅匀：搅得够"乱"之后，不管什么时候去看，奶的分布都稳定——这就是混合系统。论文研究：在这种系统里沿等差时刻 n, 2n, …, nk 给几个量同时"拍照"，再把照片按 n 平均，会不会收敛？结论：几乎对每个起点都收敛，极限恰是各自平均值的乘积。
+
+**关键词卡片**
+
+- 保测变换（measure-preserving transformation）：保持各事件"所占比例"不变的变换，像公平洗牌。
+- 混合（mixing）：搅匀——隔得越远的两次观测，越像彼此独立的掷硬币。
+- 多重遍历平均（multiple ergodic averages）：在时刻 n, 2n, …, nk 的观测之积对 n 取长平均。
+- 几乎处处收敛：除零测度的一小撮例外点外，每条轨道各自收敛。
+- 逐点 vs 范数收敛：前者要求每条轨道安分，后者只要求平均意义安分，前者难得多。
+
+**看个具体例子**
+
+对每个 n，在轨道的第 n, 2n, 3n, 4n 格拍照，再把 n=1…N 的照片全部平均：
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280"><text x="280" y="32" text-anchor="middle" font-size="16">在等差时刻给轨道拍照</text><text x="70" y="75" font-size="14">n = 3：</text><line x1="120" y1="70" x2="520" y2="70" stroke="#bbb"/><circle cx="170" cy="70" r="7" fill="#c0392b"/><circle cx="245" cy="70" r="7" fill="#c0392b"/><circle cx="320" cy="70" r="7" fill="#c0392b"/><circle cx="395" cy="70" r="7" fill="#c0392b"/><text x="170" y="92" text-anchor="middle" font-size="12" fill="#c0392b">3</text><text x="245" y="92" text-anchor="middle" font-size="12" fill="#c0392b">6</text><text x="320" y="92" text-anchor="middle" font-size="12" fill="#c0392b">9</text><text x="395" y="92" text-anchor="middle" font-size="12" fill="#c0392b">12</text><text x="70" y="135" font-size="14">n = 4：</text><line x1="120" y1="130" x2="520" y2="130" stroke="#bbb"/><circle cx="195" cy="130" r="7" fill="#2471a3"/><circle cx="295" cy="130" r="7" fill="#2471a3"/><circle cx="395" cy="130" r="7" fill="#2471a3"/><circle cx="495" cy="130" r="7" fill="#2471a3"/><text x="195" y="152" text-anchor="middle" font-size="12" fill="#2471a3">4</text><text x="295" y="152" text-anchor="middle" font-size="12" fill="#2471a3">8</text><text x="395" y="152" text-anchor="middle" font-size="12" fill="#2471a3">12</text><text x="495" y="152" text-anchor="middle" font-size="12" fill="#2471a3">16</text><text x="280" y="195" text-anchor="middle" font-size="15">轨道刻度：1 2 3 4 5 …（每格一次变换）</text><text x="280" y="228" text-anchor="middle" font-size="15">把 n=1…N 的照片全部平均</text><text x="280" y="258" text-anchor="middle" font-size="14" fill="#555">混合使远时刻观测近乎独立，极限是均值之积</text></svg>
+
+</div>
+
+代入具体系统：猫映射 T(x,y)=(2x+y, x+y) mod 1 在单位正方形上保面积、可逆且混合；取 f 为左下四分之一方块 A 的指示函数（测度 1/4），则
+
+`@@M@@\dfrac1N\sum_{n=1}^N f(T^nx)\,f(T^{2n}x)\,f(T^{3n}x)\,f(T^{4n}x)\longrightarrow\big(\tfrac14\big)^4=\tfrac1{256}@@`
+
+对几乎每个起点成立——长度换成任意 k 也照样收敛。
+
+**为什么值得关心**
+
+"三个及以上函数的逐点收敛"是卡了三十多年的公开难题，此前都要附加结构假设，本文只凭混合这一个自然假设就解决了任意长度。
+
+> 暂无形式化证明（AI 结果待核验）
+
 ## 一句话结论
 
 证明可逆混合保测变换的任意有限长度连续多重遍历平均几乎处处收敛到各函数积分之积，不需要混合速率与标准概率空间假设，把逐点多重遍历收敛从两重情形一举推进到一切长度。

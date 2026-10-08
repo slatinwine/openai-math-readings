@@ -13,6 +13,56 @@ pdfname: ""
 
 > 结果族 033：Iitaka subadditivity, variation, and logarithmic additivity　·　学科：Algebraic and complex geometry　·　验证状态：暂无形式化证明，请以社区核验为准
 
+## 入门导读 🐣
+
+数一个代数簇能朝几个独立方向"生长"（Kodaira 维数），是双有理几何的第一课。Iitaka 半个世纪前猜想：把 `@@M@@X@@` 压到底 `@@M@@Z@@`、每点上方长一根纤维 `@@M@@F@@`，则 `@@M@@X@@` 的生长方向数至少是 `@@M@@F@@` 的加 `@@M@@Z@@` 的。这句直觉是分类纲领的顶梁柱之一，此前却只有分情形的零星进展；本文在射影范畴、特征零下把它完整证明。
+
+**关键词卡片**
+
+- Kodaira 维数（Kodaira dimension）：用 `@@M@@|mK|@@` 的映射像维数度量的复杂度，从 `@@M@@-\infty@@` 到空间维数。
+- 几何一般纤维（geometric generic fiber）：一般位置的那根纤维。
+- 典范丛公式（canonical bundle formula）：把 `@@M@@K_X@@` 拆成"基 + 边界 + 模除子"的会计工具。
+- Hodge 结构变分（variation of Hodge structures）：随基点流动的影子系统，本文从中榨出正性。
+- 伴随正性（adjoint positivity）：周期理论给出的"`@@M@@K_S+jL@@` 很大"型结论，证明的引擎。
+
+**看个具体例子**
+
+取一个曲面纤维化：底是亏格 2 曲线（`@@M@@\kappa(Z)=1@@`），纤维是亏格 3 曲线（`@@M@@\kappa(F)=1@@`）——任何这样的纤维化都适用，不必是乘积，最简单的实例是乘积 `@@M@@C_3\times C_2@@`。
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280">
+<ellipse cx="280" cy="212" rx="185" ry="42" fill="none" stroke="#333" stroke-width="1.8"/>
+<text x="280" y="266" font-size="14" text-anchor="middle">底 Z：亏格 2 曲线，κ(Z) = 1</text>
+<line x1="170" y1="176" x2="170" y2="196" stroke="#aaa" stroke-width="1.4"/>
+<line x1="280" y1="170" x2="280" y2="188" stroke="#aaa" stroke-width="1.4"/>
+<line x1="390" y1="176" x2="390" y2="196" stroke="#aaa" stroke-width="1.4"/>
+<ellipse cx="170" cy="140" rx="30" ry="28" fill="none" stroke="#333" stroke-width="1.8"/>
+<circle cx="161" cy="134" r="5.5" fill="none" stroke="#333" stroke-width="1.3"/>
+<circle cx="176" cy="132" r="5.5" fill="none" stroke="#333" stroke-width="1.3"/>
+<circle cx="169" cy="150" r="5.5" fill="none" stroke="#333" stroke-width="1.3"/>
+<ellipse cx="280" cy="132" rx="32" ry="28" fill="none" stroke="#333" stroke-width="1.8"/>
+<circle cx="270" cy="126" r="5.5" fill="none" stroke="#333" stroke-width="1.3"/>
+<circle cx="287" cy="124" r="5.5" fill="none" stroke="#333" stroke-width="1.3"/>
+<circle cx="279" cy="142" r="5.5" fill="none" stroke="#333" stroke-width="1.3"/>
+<ellipse cx="390" cy="140" rx="30" ry="28" fill="none" stroke="#333" stroke-width="1.8"/>
+<circle cx="381" cy="134" r="5.5" fill="none" stroke="#333" stroke-width="1.3"/>
+<circle cx="396" cy="132" r="5.5" fill="none" stroke="#333" stroke-width="1.3"/>
+<circle cx="389" cy="150" r="5.5" fill="none" stroke="#333" stroke-width="1.3"/>
+<text x="280" y="52" font-size="14" text-anchor="middle">每根纤维 F：亏格 3 曲线（三孔），κ(F) = 1</text>
+<text x="280" y="80" font-size="14" text-anchor="middle">定理：κ(X) ≥ 1 + 1 = 2；曲面至多 2 ⇒ 恰为 2</text>
+</svg>
+
+</div>
+
+代入数字：定理给出 `@@M@@\kappa(X)\ge 1+1=2@@`；而曲面的复杂度至多是 2，所以恰好等于 2（一般型）。若底或纤维的复杂度是 `@@M@@-\infty@@`，不等式按约定 `@@M@@(-\infty)+a=-\infty@@` 读取。主定理对特征零任意代数闭域上的光滑射影纤维化一律成立。
+
+**为什么值得关心**
+
+这是双有理几何最核心的不等式之一，本文在射影范畴一次做满；证明还把 Hodge 理论的正性接进了经典极小模型工具箱。
+
+> 暂无形式化证明（AI 结果待核验）
+
 ## 一句话结论
 
 论文完整证明了经典 Iitaka 子可加性猜想：特征零代数闭域上任意光滑射影代数纤维空间 `@@M@@f:X\to Z@@` 都满足 `@@M@@\kappa(X)\ge\kappa(F)+\kappa(Z)@@`（`@@M@@F@@` 为几何一般纤维）。此前仅有分情形与低维进展的这一双有理几何核心不等式，由此在射影范畴内获得完整解答。

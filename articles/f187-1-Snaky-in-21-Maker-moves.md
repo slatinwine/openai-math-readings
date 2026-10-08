@@ -13,6 +13,45 @@ pdfname: ""
 
 > 结果族 187：Snaky in 21 Maker moves　·　学科：Combinatorics　·　验证状态：暂无形式化证明，请以社区核验为准
 
+## 入门导读 🐣
+
+想象五子棋的亲戚：双方在方格纸上轮流占格，只有你（Maker）追求拼出一条固定的六格形状"Snaky"，对手（Breaker）专职堵你。此前人们只在"先手首回合下两子"的让子规则下会赢；这篇论文证明：不用任何让子，Maker 有一条 21 步内必胜的策略——悬置多年的平面无让子问题就此解决。
+
+**关键词卡片**
+
+- Maker–Breaker 游戏（Maker–Breaker game）：只有一方追求目标、另一方专职阻挠的"弱游戏"
+- 六格骨牌（hexomino）：6 个单位方格边相连拼成的形状，Snaky 是其中一种
+- 允许拷贝（allowed copy）：目标形状的平移、旋转、反射版本，拼出任意一种都算赢
+- 让子（handicap）：给 Maker 的补偿（如首回合下两子）；本文的胜利不需要让子
+- 必胜策略（winning strategy）：无论对手怎么应对都保证取胜的完整方案
+
+**看个具体例子**
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280">
+<text x="180" y="55" font-size="16" fill="#333" text-anchor="middle">Snaky：一横四格，右端上方再接两格</text>
+<path d="M 80 100 h 200 M 80 140 h 200 M 80 180 h 200 M 80 220 h 200" stroke="#bbb" stroke-width="1" fill="none"/>
+<path d="M 80 100 v 120 M 120 100 v 120 M 160 100 v 120 M 200 100 v 120 M 240 100 v 120 M 280 100 v 120" stroke="#bbb" stroke-width="1" fill="none"/>
+<rect x="81" y="181" width="38" height="38" fill="#1a6feb"/>
+<rect x="121" y="181" width="38" height="38" fill="#1a6feb"/>
+<rect x="161" y="181" width="38" height="38" fill="#1a6feb"/>
+<rect x="201" y="181" width="38" height="38" fill="#1a6feb"/>
+<rect x="201" y="141" width="38" height="38" fill="#1a6feb"/>
+<rect x="241" y="141" width="38" height="38" fill="#1a6feb"/>
+<text x="280" y="252" font-size="13" fill="#555" text-anchor="middle">结论：Maker 至多 21 步落子拼成；全部落子可限制在 17×17 棋盘内</text>
+</svg>
+
+</div>
+
+论文附上 728 张"必胜卡片"作为机器可查的证书（含校验和），并证明一条几何事实：当 Maker 手握一条四连、且对手在其邻域内至多占 3 格时，已胜或可强制取胜——这解释了一条四连为何压力巨大。251 格的固定落子区域与 17×17 棋盘上的同样结论一并给出。
+
+**为什么值得关心**
+
+一个具体博弈问题被彻底解决，其"数据证书 + 独立重构程序核验"的写法为计算机辅助证明提供了范式；步数与棋盘大小未必最优，强游戏（双方抢形状）也仍开放。
+
+> 暂无形式化证明（AI 结果待核验）
+
 ## 一句话结论
 
 在无限空棋盘上的 Snaky 六格骨牌 Maker–Breaker 游戏中，先手 Maker 有一条固定策略，无论 Breaker 如何应对，都能在自己的第 21 步落子之内拼出 Snaky 的允许拷贝；同一界在 `@@M@@17\times17@@` 棋盘上也成立。这解决了悬置多年的平面无让子问题。

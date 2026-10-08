@@ -13,6 +13,58 @@ pdfname: ""
 
 > 结果族 331：Reflexive midpoint convexity and diamond distortion　·　学科：Functional analysis　·　验证状态：主结果已 Lean 形式化
 
+## 入门导读 🐣
+
+给向量"量长度"的规则（范数）本身就是一件可以设计的东西。这篇论文在一棵能无穷分叉的树上立规矩：任何一条从根出发的路径，沿途系数的累加和都必须夹在 `@@M@@[-1,1]@@` 里。用这条规矩当尺子，造出一批新的无穷维空间。反直觉的结论是：这些尺子在"中点"意义下是凸的，可无论换成哪把功能等价的新尺子，都得不到更强的"渐近一致凸"——两种凸性被证明可以彻底分家，而且分家发生在最温和的自反空间里。
+
+**关键词卡片**
+
+- 范数（norm）：给向量量长度的规则；同一个空间可以配许多把不同的尺子
+- 渐近一致凸（AUC, asymptotically uniformly convex）：一种很强的凸性——单位球在任何高维"远方"方向都严格鼓着，常能靠换尺子获得
+- 渐近中点一致凸（AMUC）：只在线段中点处检验的凸性，条件看起来弱一截
+- 再赋范（renorming）：给空间换一把等价的新尺子，不改变收敛与连续
+- 自反空间（reflexive space）：泛函分析中最"规矩"的一类空间，本文的反例连它也没放过
+
+**看个具体例子**
+
+在有限高的树上，这套尺子有一本干净的账：向量 `@@M@@x@@` 的长度 `@@M@@L_n(x)=\inf\big(\|h\|_2+\|\mu\|_1\big)@@`，即把 `@@M@@x@@` 拆成"一个欧氏向量加若干条根路径"的最小总成本。中点凸性则有显式曲线：取 `@@M@@t=0.8@@`，中点模 `@@M@@\widehat\delta(0.8)\ge\sqrt{1+0.8^2/4}-1\approx 0.077@@`，也就是说中点至少往球内压这么多。
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280">
+<text x="20" y="30" font-size="16" fill="#333">无穷分叉的树：红色路径的系数一路累加</text>
+<circle cx="80" cy="150" r="7" fill="#333"/>
+<text x="62" y="180" font-size="14" fill="#333">根</text>
+<line x1="87" y1="144" x2="210" y2="70" stroke="#c33" stroke-width="3"/>
+<line x1="87" y1="150" x2="210" y2="150" stroke="#aaa"/>
+<line x1="87" y1="156" x2="210" y2="230" stroke="#aaa"/>
+<circle cx="210" cy="70" r="7" fill="#c33"/>
+<circle cx="210" cy="150" r="5" fill="#aaa"/>
+<circle cx="210" cy="230" r="5" fill="#aaa"/>
+<line x1="217" y1="64" x2="340" y2="30" stroke="#c33" stroke-width="3"/>
+<line x1="217" y1="76" x2="340" y2="110" stroke="#aaa"/>
+<circle cx="340" cy="30" r="7" fill="#c33"/>
+<text x="96" y="92" font-size="14" fill="#c33">系数 f₁</text>
+<text x="248" y="26" font-size="14" fill="#c33">系数 f₂</text>
+<text x="298" y="62" font-size="14" fill="#c33">位势 P=f₁+f₂</text>
+<text x="30" y="250" font-size="14" fill="#333">约束：任何一条路径上，位势 P 都被夹住：</text>
+<line x1="400" y1="180" x2="540" y2="180" stroke="#333" stroke-width="2"/>
+<line x1="400" y1="170" x2="400" y2="190" stroke="#333" stroke-width="2"/>
+<line x1="540" y1="170" x2="540" y2="190" stroke="#333" stroke-width="2"/>
+<text x="392" y="212" font-size="13" fill="#333">-1</text>
+<text x="536" y="212" font-size="13" fill="#333">1</text>
+<line x1="470" y1="160" x2="470" y2="180" stroke="#c33" stroke-width="4"/>
+<text x="442" y="152" font-size="13" fill="#c33">P 在这里</text>
+</svg>
+
+</div>
+
+**为什么值得关心**
+
+"弱凸性能否靠换尺子升级成强凸性"是 2016 年提出的公开问题，本文给出了包含自反反例在内的一族最干净答案，把两种凸性的分离推进到自反世界。
+
+> 已 Lean 形式化
+
 ## 一句话结论
 本文用可数分支树上的有界位势（bounded tree potential）显式构造出多个 Banach 空间：它们的平均渐近中点模满足 `@@M@@\widehat\delta(t)\ge\sqrt{1+t^2/4}-1@@`，却都不容许任何等价的渐近一致凸范数；其中二次路径空间与线段起点空间还是自反的，把 Baudier 的 AMUC/AUC 分离现象推进到自反空间。
 

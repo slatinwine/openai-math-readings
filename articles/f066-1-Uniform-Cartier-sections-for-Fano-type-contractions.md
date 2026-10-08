@@ -13,6 +13,31 @@ pdfname: ""
 
 > 结果族 066：Bounded klt complements for Fano contractions　·　学科：Algebraic and complex geometry　·　验证状态：暂无形式化证明，请以社区核验为准
 
+## 入门导读 🐣
+
+在一张曲面上过指定点切一刀，切口有深有浅；切得太"陡"，曲面的奇异性就会恶化。这篇论文证明：只要曲面毛病不太大（ε-lc 的 Fano 型收缩），过任何指定点总能挑出一刀干净的切口，其"危险读数"不低于一条只看维数和 ε 的统一及格线——这正是 Birkar–Shokurov 的 Cartier 除子猜想。
+
+**关键词卡片**
+
+- Cartier 除子（Cartier divisor）：局部由单个方程干净切出的超曲面，一把标准手术刀。
+- log canonical 阈值（log canonical threshold）：往边界添加这份切口时，奇异性恶化前能承受的最大系数，即危险读数。
+- Fano 型收缩（Fano type contraction）：正曲率型的收缩映射，定理的适用舞台。
+- 一致下界 τ(d,ε)：危险读数的及格线，只依赖维数与奇异性参数。
+
+**看个具体例子**
+
+危险读数能有多小？在光滑曲线上取 `@@M@@D=m[z]@@`（在点 `@@M@@z@@` 处叠 `@@M@@m@@` 层），其阈值仅为 `@@M@@1/m@@`——随手乱切会让读数无限跌落，说明必须精心挑刀。定理的数字版：
+
+存在 `@@M@@\tau=\tau(d,\epsilon)>0@@`：过指定基点可选 Cartier 除子 `@@M@@D@@`，使阈值 `@@M@@\ge\tau(d,\epsilon)@@`。
+
+例如光滑点上，过该点的光滑切口阈值恰为 1，可见好刀确实存在；定理保证在一切 ε-lc Fano 型收缩上都有这般好刀，有理边界在特征零成立，实边界在 `@@M@@\mathbb C@@` 上成立。
+
+**为什么值得关心**
+
+阈值的一致下界是奇点理论长期缺失的环节，它与有界 klt 补经 Chen 的约化互相等价——两篇姊妹工作共同补上高维奇点"体检标准"的两面。
+
+> 暂无形式化证明（AI 结果待核验）
+
 ## 一句话结论
 
 证明了 Birkar–Shokurov 的 Cartier 除子猜想：`@@M@@\epsilon@@`-lc 的 Fano type 收缩过任一指定基点，都能取到经过该点的 Cartier 除子，其拉回的 log canonical threshold 有只依赖维数 `@@M@@d@@` 与 `@@M@@\epsilon@@` 的下界；有理边界在特征零成立，实边界在 `@@M@@\mathbb C@@` 上成立。

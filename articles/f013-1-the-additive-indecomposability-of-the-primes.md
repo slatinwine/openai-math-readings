@@ -13,6 +13,60 @@ pdfname: ""
 
 > 结果族 013：Ostmann's inverse Goldbach conjecture　·　学科：Number theory　·　验证状态：暂无形式化证明，请以社区核验为准
 
+## 入门导读 🐣
+
+Goldbach 猜想说每个大偶数都能写成两个素数之和；Ostmann 在 1956 年反过来问：素数集合本身能否"开膛破肚"——找两个集合 `@@M@@A@@`、`@@M@@B@@`，让两两求和的结果不多不少恰好是全体素数？就像声称俱乐部的完整名单能由两个分组名单两两相加复制出来。本文证明：办不到，素数在加法世界里是不可再分的"原子"。
+
+**关键词卡片**
+
+- 和集（sumset `@@M@@A+B@@`）：从 `@@M@@A@@` 和 `@@M@@B@@` 各取一个数相加，所有可能结果组成的集合。
+- 逆 Goldbach 问题（inverse Goldbach problem）：Ostmann 提出的反问题——素数集是否等于某两个集合之和。
+- 有限改动（finite modification）：允许增添或删去有限个元素后再比较，比严格相等宽松。
+- 大筛法（large sieve）：利用模素数的剩余类信息给集合规模设限的经典工具。
+- 渐近不可分解（additively indecomposable）：无法写成两个真子集之和，本文对素数集确立了这一性质。
+
+**看个具体例子**
+
+玩一个最小规模的尝试：`@@M@@A=\{0,1,2\}@@`，`@@M@@B=\{3,4\}@@`，则 `@@M@@A+B=\{3,4,5,6\}@@`——既混进了合数 4 和 6，又漏掉了 7、11……定理说这种"顾此失彼"无法修补：只要 `@@M@@|A|,|B|\ge2@@`，`@@M@@A+B@@` 要么漏掉某个大素数，要么含无穷多个合数；哪怕允许对素数集做有限改动也不行。
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280">
+  <text x="280" y="34" font-size="15" text-anchor="middle">和集 A+B 网格（例：A={0,1,2}，B={3,4}）</text>
+  <text x="178" y="64" font-size="14" text-anchor="middle">+3</text>
+  <text x="236" y="64" font-size="14" text-anchor="middle">+4</text>
+  <text x="125" y="96" font-size="14" text-anchor="middle">0</text>
+  <text x="125" y="138" font-size="14" text-anchor="middle">1</text>
+  <text x="125" y="180" font-size="14" text-anchor="middle">2</text>
+  <rect x="150" y="72" width="56" height="40" fill="#e2f0dd" stroke="#345"/>
+  <text x="178" y="97" font-size="15" text-anchor="middle">3</text>
+  <rect x="208" y="72" width="56" height="40" fill="#f7dada" stroke="#a55"/>
+  <text x="236" y="97" font-size="15" text-anchor="middle">4</text>
+  <rect x="150" y="114" width="56" height="40" fill="#f7dada" stroke="#a55"/>
+  <text x="178" y="139" font-size="15" text-anchor="middle">4</text>
+  <rect x="208" y="114" width="56" height="40" fill="#e2f0dd" stroke="#345"/>
+  <text x="236" y="139" font-size="15" text-anchor="middle">5</text>
+  <rect x="150" y="156" width="56" height="40" fill="#e2f0dd" stroke="#345"/>
+  <text x="178" y="181" font-size="15" text-anchor="middle">5</text>
+  <rect x="208" y="156" width="56" height="40" fill="#f7dada" stroke="#a55"/>
+  <text x="236" y="181" font-size="15" text-anchor="middle">6</text>
+  <rect x="320" y="76" width="20" height="20" fill="#f7dada" stroke="#a55"/>
+  <text x="350" y="92" font-size="13">合数：素数集里不该有</text>
+  <rect x="320" y="112" width="20" height="20" fill="#e2f0dd" stroke="#345"/>
+  <text x="350" y="128" font-size="13">素数</text>
+  <text x="320" y="164" font-size="13">A+B={3,4,5,6}：混入合数，</text>
+  <text x="320" y="184" font-size="13">又漏掉 7、11……</text>
+  <text x="280" y="262" font-size="14" text-anchor="middle">定理：只要 |A|,|B|≥2，任何有限修补都无法让 A+B 恰好等于素数集</text>
+</svg>
+
+</div>
+
+**为什么值得关心**
+
+这是 1956 年提出、悬置近七十年的 Ostmann 逆 Goldbach 猜想的完整证明，且不依赖任何未经证实的逆筛猜想。
+
+> 暂无形式化证明（AI 结果待核验）
+
 ## 一句话结论
 
 本文完整证明了 Ostmann 逆 Goldbach 猜想：素数集经任意有限改动后，都不可能写成两个各含至少两个元素的非负整数集之和 `@@M@@A+B@@`——素数在加法意义下不可分解。

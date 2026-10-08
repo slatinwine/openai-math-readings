@@ -13,6 +13,45 @@ pdfname: ""
 
 > 结果族 293：Invariant projections, hyperinvariant subspaces, and transitive algebras　·　学科：Operator algebras　·　验证状态：暂无形式化证明，请以社区核验为准
 
+## 入门导读 🐣
+
+钟表指针按无理角度旋转时，永远回不到出发点，表盘上每一点都会被扫到。现在给表盘挂上一个"重量"：只在一点归零，而且塌陷得极其陡峭。这篇论文证明：对任意事先指定的无理角，都能造出这样一个重量，使得加权后的旋转在算子世界里找不到任何非平凡的"不变留影区"。
+
+**关键词卡片**
+
+- 无理旋转（irrational rotation）：转角占整圈的比值是无理数，轨道永不重复。
+- 超有限 II₁ 因子（hyperfinite II₁ factor）：自带"概率秤"的算子世界，记作 `@@M@@R_\theta@@`。
+- 不变投影（invariant projection）：随算子演化保持不变的正交"子区域"。
+- Fuglede–Kadison 判别式（determinant）：`@@M@@\Delta(f)=\exp(\int\log|f|\,\mathrm dm)@@`，归零意味着重量塌陷。
+- 范数拟幂零（norm-quasinilpotent）：`@@M@@\|T^n\|^{1/n}\to0@@`，幂次被重量越压越扁。
+
+**看个具体例子**
+
+定理选的重量 `@@M@@f:\mathbb T\to[0,1]@@` 连续、只在点 `@@M@@1@@` 处为零，且 `@@M@@\int_{\mathbb T}\log f\,\mathrm dm=-\infty@@`——塌陷陡到对数积分发散。
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280">
+<circle cx="250" cy="150" r="88" fill="none" stroke="#222" stroke-width="2"/>
+<circle cx="250" cy="62" r="7" fill="#222"/>
+<text x="170" y="36" font-size="15" fill="#000">唯一零点：f(1) = 0</text>
+<path d="M 322 96 A 100 100 0 0 1 322 204" fill="none" stroke="#777" stroke-width="2"/>
+<polyline points="321,205 314,216 326,212" fill="none" stroke="#777" stroke-width="2"/>
+<text x="350" y="150" font-size="15" fill="#777">旋转角 θ（无理）</text>
+<text x="52" y="240" font-size="15" fill="#000">重量只在 1 点归零，且 ∫ log f = −∞（塌陷极陡）</text>
+<text x="52" y="266" font-size="15" fill="#000">加权旋转 T_f 在 R_θ 中无非平凡不变投影</text>
+</svg>
+
+</div>
+
+于是加权旋转 `@@M@@T_f=Uf(V)@@` 的不变投影只能是 0 或 1；同时 `@@M@@\|T_f^n\|@@` 被轨道乘积指数压制，谱半径为 0。老理论（Haagerup–Schultz）只能为谱测度非点质量的算子找到不变投影，而这里判别式为零使谱测度塌缩成点质量，老路全被封死，只能另起炉灶。结论对每个无理角都成立，角度可以先点名、后构造。
+
+**为什么值得关心**
+
+它否定回答了 Zhu–Fang–Shi 的公开问题，并推出：存在没有非平凡超不变子空间的非零拟幂零算子。
+
+> 暂无形式化证明（AI 结果待核验）
+
 ## 一句话结论
 
 对任意事先指定的无理角 `@@M@@\theta@@`，本文构造了仅在一点为零、对数积分为 `@@M@@-\infty@@` 的连续圆权 `@@M@@f@@`，使超有限 `@@M@@\mathrm{II}_1@@` 因子中的加权旋转 `@@M@@T_f=Uf(V)@@` 没有任何非平凡不变投影，否定回答了 Zhu–Fang–Shi 的公开问题。

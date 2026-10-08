@@ -13,6 +13,49 @@ pdfname: ""
 
 > 结果族 209：Integral counterexamples to Gersten's conjecture　·　学科：Algebra　·　验证状态：暂无形式化证明，请以社区核验为准
 
+## 入门导读 🐣
+
+把环想成一间规整的仓库，每件货物都登记在账本上；分式域则是把整间仓库摊平成"什么都能除"的大市场。Gersten 猜想断言：只要仓库足够规整，账本上的货物摊平后一件也不会凭空消失。这篇论文造出一间完全规整的仓库，却逮到一件"幽灵货物"——摊平之后它真的不见了。
+
+**关键词卡片**
+
+- 代数 K 理论（algebraic K-theory）：给环的线性代数结构分层记账的工具，`@@M@@K_n@@` 是第 `@@M@@n@@` 层账本。
+- 正则局部环（regular local ring）：局部看像多项式环一样光滑的环，"足够规整"的严格说法。
+- 混合特征（mixed characteristic）：环里同时住着素数 `@@M@@5@@` 与变量 `@@M@@x,y@@`，夹在整数世界与有理数世界之间。
+- 分歧（ramified）：素数 `@@M@@5@@` 在环里被"开方"，落进极大理想的平方；所有已知正面定理都恰好绕开这种环。
+- 核（kernel）：映射之后被压成零的元素全体；核非零即"有货物消失"。
+
+**看个具体例子**
+
+取 `@@M@@V@@` 为 `@@M@@\Q_5@@` 八次非分歧扩张的整数环，令 `@@M@@A=(V[x,y]/(5+x^4+y^4))_{(5,x,y)}@@`：这是一个二维正则局部环、混合特征 `@@M@@(0,5)@@`，且 `@@M@@5\in(x,y)^4@@`，严重分歧。定理：存在整类 `@@M@@\gamma\in K_5(A)@@`，它住在一条闭除子上，一到分式域就整体消失，但自身非零——像住在仓库角落的货物，摊平成"只剩一个一般点"的市场后无影无踪。
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280">
+  <text x="125" y="42" font-size="15" text-anchor="middle" fill="#333">Spec A：正则局部环</text>
+  <rect x="30" y="62" width="190" height="158" fill="#f6f6f6" stroke="#333" stroke-width="2" rx="10"/>
+  <path d="M 60 195 Q 115 80 185 165" fill="none" stroke="#c0392b" stroke-width="3"/>
+  <circle cx="119" cy="128" r="6" fill="#c0392b"/>
+  <text x="140" y="124" font-size="14" fill="#c0392b">γ ≠ 0</text>
+  <text x="125" y="244" font-size="13" text-anchor="middle" fill="#c0392b">闭除子：γ 的住处</text>
+  <line x1="248" y1="145" x2="325" y2="145" stroke="#333" stroke-width="2"/>
+  <polygon points="325,139 339,145 325,151" fill="#333"/>
+  <text x="293" y="126" font-size="13" text-anchor="middle" fill="#333">局部化</text>
+  <text x="293" y="170" font-size="13" text-anchor="middle" fill="#333">进入分式域</text>
+  <circle cx="450" cy="145" r="50" fill="none" stroke="#333" stroke-width="2" stroke-dasharray="6 4"/>
+  <circle cx="450" cy="145" r="5" fill="#bbb"/>
+  <text x="450" y="85" font-size="15" text-anchor="middle" fill="#333">Frac A：只剩一个点</text>
+  <text x="450" y="215" font-size="14" text-anchor="middle" fill="#999">γ ↦ 0（消失）</text>
+</svg>
+
+</div>
+
+**为什么值得关心**
+
+Gersten 猜想 1973 年提出，本文首次在整系数、无限制的原始形式下给出反例，把"正面定理必须绕开分歧环"这条分界线精确地画了出来。
+
+> 暂无形式化证明（AI 结果待核验）
+
 ## 一句话结论
 
 本文显式构造混合特征 `@@M@@(0,5)@@` 的二维分歧正则局部环 `@@M@@A=(V[x,y]/(5+x^4+y^4))_{(5,x,y)}@@`，证明 `@@M@@K_5(A)\to K_5(\operatorname{Frac}A)@@` 有非零核，推翻了无限制整系数版本的 Gersten 猜想，而此前所有正面结果都恰好绕开了这类分歧环。

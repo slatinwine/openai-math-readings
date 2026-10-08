@@ -13,6 +13,56 @@ pdfname: ""
 
 > 结果族 089：Bounded-distortion <i>L</i><sub>1</sub> embeddings of planar and bounded-treewidth graphs　·　学科：Convex and metric geometry　·　验证状态：主结果已 Lean 形式化
 
+## 入门导读 🐣
+
+地铁图上两站的"距离"是最短路长度。想象把整张图改画成棋盘街道（只能横平竖直地走），希望改画后的路程与真实路程只差一个固定倍数，而且这个倍数不随城市扩大而变差。论文证明：任何平面图（能画在平面上、线不交叉的网络）都能做到——失真被一个与图的大小无关的普适常数封顶。
+
+**关键词卡片**
+
+- 平面图（planar graph）：能画在平面上、任何两条边不交叉的网络。
+- 最短路度量（shortest-path metric）：`@@M@@d_G(x,y)@@`＝沿边走的最短总长。
+- `@@M@@L^1@@`／曼哈顿距离（Manhattan distance）：各坐标差绝对值之和，棋盘街道上的车程。
+- 失真（distortion）：嵌入后所有点对的距离落在原距离与其 `@@M@@C@@` 倍之间，`@@M@@C@@` 就是失真。
+- 流—割间隙（flow–cut gap）：多商品流与割的比值，被经典定理证明恰等于 `@@M@@L^1@@` 失真。
+
+**看个具体例子**
+
+最小的非平凡例子：单位正方形 `@@M@@A@@`–`@@M@@B@@`–`@@M@@C@@`–`@@M@@D@@` 加一条对角线 `@@M@@B@@`–`@@M@@D@@`（边长 `@@M@@\sqrt2@@`）。嵌入 `@@M@@\ell_1^2@@`：`@@M@@A=(0,0),\ B=(1,0),\ C=(1,1),\ D=(0,1)@@`。核对：`@@M@@d_G(A,C)=2=\|A-C\|_1@@`；`@@M@@d_G(B,D)=\sqrt2@@` 而 `@@M@@\|B-D\|_1=2=\sqrt2\cdot\sqrt2@@`——这个小图的失真恰为 `@@M@@\sqrt2@@`。
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280">
+<text x="40" y="30" font-size="18" fill="#333">单位正方形＋对角线：一条割把 {A,D} 与 {B,C} 分开</text>
+<line x1="90" y1="60" x2="350" y2="60" stroke="#555555" stroke-width="2.5"/>
+<line x1="350" y1="60" x2="350" y2="220" stroke="#555555" stroke-width="2.5"/>
+<line x1="350" y1="220" x2="90" y2="220" stroke="#555555" stroke-width="2.5"/>
+<line x1="90" y1="220" x2="90" y2="60" stroke="#555555" stroke-width="2.5"/>
+<line x1="350" y1="60" x2="90" y2="220" stroke="#555555" stroke-width="2.5"/>
+<circle cx="90" cy="60" r="7" fill="#2e86c1"/>
+<circle cx="350" cy="60" r="7" fill="#2e86c1"/>
+<circle cx="350" cy="220" r="7" fill="#e67e22"/>
+<circle cx="90" cy="220" r="7" fill="#e67e22"/>
+<text x="72" y="52" font-size="16" fill="#2e86c1">A</text>
+<text x="360" y="52" font-size="16" fill="#2e86c1">B</text>
+<text x="360" y="240" font-size="16" fill="#e67e22">C</text>
+<text x="72" y="240" font-size="16" fill="#e67e22">D</text>
+<text x="196" y="52" font-size="14" fill="#777777">边长 1</text>
+<text x="240" y="120" font-size="14" fill="#777777">√2</text>
+<line x1="220" y1="36" x2="220" y2="246" stroke="#c0392b" stroke-width="2" stroke-dasharray="7 5"/>
+<text x="232" y="86" font-size="14" fill="#c0392b">割</text>
+<text x="40" y="266" font-size="15" fill="#333">L1 距离＝把点对分开的所有割的权重之和</text>
+</svg>
+
+</div>
+
+定理保证：任何平面图、任意正实数边长，都能以普适常数 `@@M@@C@@` 的失真进入 `@@M@@L^1@@`；由于 `@@M@@L^1@@` 度量就是带权割的叠加，图上还自动得到多商品流—割间隙的一致上界。
+
+**为什么值得关心**
+
+GNRS 猜想（2004）预言所有"禁用固定子式"的图族都有常数失真；平面情形此前最好的界随顶点数增长，本文首次把它钉死在常数上。
+
+> 已 Lean 形式化
+
 ## 一句话结论
 
 证明了任何带任意正实数边长的有限连通平面图，其最短路度量（shortest-path metric）都能以一个普适常数 `@@M@@C@@` 的失真（distortion）嵌入实 `@@M@@L_1@@`，肯定地解决 Gupta–Newman–Rabinovich–Sinclair 嵌入猜想的平面情形，并给出平面图上多商品流—割间隙的一致上界。

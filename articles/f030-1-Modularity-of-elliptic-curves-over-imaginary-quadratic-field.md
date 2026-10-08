@@ -13,6 +13,34 @@ pdfname: ""
 
 > 结果族 030：Modularity of elliptic curves over imaginary quadratic fields　·　学科：Number theory　·　验证状态：暂无形式化证明，请以社区核验为准
 
+## 入门导读 🐣
+
+椭圆曲线是方程 y² = x³ + … 描出的一条优雅弧线，数论学家靠它加密、解题，它随身带着一本"履历表"（L 函数）。模性猜想说：这本履历表必然与另一族叫自守形式的周期波完全吻合——两套看似无关的数学长出一模一样的档案。Wiles 用有理数上的版本征服了费马大定理；这篇把定理推广到虚二次域上的所有椭圆曲线。
+
+**关键词卡片**
+
+- 椭圆曲线（elliptic curve）：形如 y² = x³ + ax + b 的光滑曲线，自带加法运算。
+- 模性（modularity）：曲线的对称性档案来自自守形式——履历表与波形逐点吻合。
+- 虚二次域（imaginary quadratic field）：形如 Q(√−d) 的数系，高斯整数所在的 Q(i) 是一例。
+- 自守表示（automorphic representation）：高维对称世界里的"周期波基本粒子"。
+- 局部参数（local parameters）：在每个"位"逐点核对的信息，比整体相等更精细。
+
+**看个具体例子**
+
+取 K = Q(i)，任取其上一条椭圆曲线 E。定理给出一个权为零的自守表示 π_E：在每个好素数处，它的 Hecke 多项式恰好还原 E 模该素数约化后的点数；两侧拼出的 L 函数逐位相等：L(E, s) = L(π_E, s − 1/2)。无 CM 时 π_E 还是尖点表示。
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280"><path d="M 118 150 C 118 106 182 106 182 150 C 182 194 118 194 118 150" fill="none" stroke="#1e8449" stroke-width="3"/><path d="M 205 150 C 242 114 252 76 254 48" fill="none" stroke="#1e8449" stroke-width="3"/><path d="M 205 150 C 242 186 252 224 254 252" fill="none" stroke="#1e8449" stroke-width="3"/><text x="293" y="160" font-size="30" text-anchor="middle" fill="#333">=</text><path d="M 330 150 q 22 -58 44 0 t 44 0 t 44 0 t 44 0" fill="none" stroke="#c0392b" stroke-width="3"/><text x="280" y="32" font-size="15" text-anchor="middle" fill="#333">L(E, s) = L(π_E, s − 1/2)：逐位相等</text><text x="150" y="268" font-size="14" text-anchor="middle" fill="#1e8449">椭圆曲线 E</text><text x="430" y="268" font-size="14" text-anchor="middle" fill="#c0392b">自守形式 π_E</text></svg>
+
+</div>
+
+**为什么值得关心**
+
+模性是朗兰兹纲领的支柱；此前在虚二次域上总要对曲线或域附加限制，本文首次对所有椭圆曲线、所有虚二次域无条件成立，而且好素数、坏素数与无穷远处的局部参数逐一精确配对。
+
+> 暂无形式化证明（AI 结果待核验）
+
 ## 一句话结论
 
 本文证明虚二次域上椭圆曲线的模性猜想（modularity conjecture）：任何虚二次域上的任何椭圆曲线都是模的，且逐位匹配局部参数，把有理数域上的 Wiles–BCDT 定理推广到所有虚二次域。

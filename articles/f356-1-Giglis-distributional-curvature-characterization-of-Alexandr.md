@@ -13,6 +13,43 @@ pdfname: ""
 
 > 结果族 356：Gigli's characterization of Alexandrov curvature　·　学科：Differential geometry　·　验证状态：暂无形式化证明，请以社区核验为准
 
+## 入门导读 🐣
+
+要判断一块空间"弯得有多厉害"，有两套完全不同的语言：几何派量三角形——看它够不够"胖"；分析派看搬运成本——熵沿运输路线够不够凸。这篇论文证明：在根本不光滑的空间上，两套语言说的是同一件事，Gigli 2019 年立下的刻画猜想就此解决。
+
+**关键词卡片**
+
+- Alexandrov 空间（Alexandrov space）：用"测地三角形比常曲率模型面更胖"定义曲率下界的空间。
+- 截面曲率（sectional curvature）：每个方向切一刀的弯曲程度。
+- RCD 空间（RCD space）：用最优传输中熵的凸性合成的"Ricci 曲率下界"空间。
+- 最优传输（optimal transport）：把一堆土以最小总代价搬到指定处的数学。
+- 分布曲率（distributional curvature）：不求逐点导数、只用积分定义的曲率张量。
+
+**看个具体例子**
+
+定理：`@@M@@n\ge2@@` 时，"曲率 `@@M@@\ge\kappa@@` 的 `@@M@@n@@` 维 Alexandrov 空间"，当且仅当"满支撑 `@@M@@\mathrm{RCD}((n-1)\kappa,n)@@` 且分布截面曲率 `@@M@@\ge\kappa@@`"。三角形比较长这样（示意）：
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280">
+<polygon points="120,60 80,205 265,205" fill="none" stroke="#1a6" stroke-width="3"/>
+<text x="70" y="45" font-size="15" fill="#1a6">空间里的三角形（更胖）</text>
+<ellipse cx="430" cy="150" rx="112" ry="88" fill="none" stroke="#999" stroke-width="1.5" stroke-dasharray="7 5"/>
+<polygon points="430,115 365,200 495,200" fill="none" stroke="#e33" stroke-width="3"/>
+<text x="352" y="45" font-size="15" fill="#e33">κ 模型面三角形（更瘦）</text>
+<text x="88" y="250" font-size="14">同样三条边：空间角 ≥ 模型角 ⇒ 曲率 ≥ κ</text>
+</svg>
+
+</div>
+
+左边量角、右边算熵加分布曲率，两条路从此完全等价。
+
+**为什么值得关心**
+
+它把 Alexandrov 的纯几何世界与 RCD 的分析世界在一切维数 `@@M@@n\ge2@@` 上焊接成一体，两套工具从此可以互相借用。
+
+> 暂无形式化证明（AI 结果待核验）
+
 ## 一句话结论
 
 证明 Gigli 2019 年的刻画猜想：完备可分度量空间是曲率至少 `@@M@@\kappa@@` 的 `@@M@@n@@` 维 Alexandrov 空间，当且仅当以 `@@M@@\mathcal H^n@@` 为参考测度时它是满支撑的 `@@M@@\mathrm{RCD}((n-1)\kappa,n)@@` 空间、且分布截面曲率至少 `@@M@@\kappa@@`——截面曲率下界与三角形比较自此在非光滑框架下等价。

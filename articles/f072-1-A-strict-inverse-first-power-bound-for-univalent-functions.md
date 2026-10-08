@@ -13,6 +13,50 @@ pdfname: ""
 
 > 结果族 072：Brennan's conjecture and the integral-means spectrum　·　学科：Real and complex analysis　·　验证状态：主结果已 Lean 形式化
 
+## 入门导读 🐣
+
+想象一张圆形橡皮膜，被无重叠地拉伸成任意形状。越靠近边缘，变形可以越疯狂。这篇论文精确回答：把"压缩程度"沿靠近边缘的薄圈平均之后，最多能以多快的速度增长？结论：严格慢于 `@@M@@(1-r)^{-1/4}@@` 这条公认分界线，从而推翻了一个流行近三十年的谱公式。
+
+**关键词卡片**
+
+- 单叶函数（univalent function）：圆盘上一一对应的全纯映射，即"无折叠"的保形变形。
+- 积分均值（integral means）：把 `@@M@@|f'|^p@@` 沿半径 `@@M@@r@@` 的圆周取平均，度量变形在边缘附近的集中速度。
+- 普适积分均值谱（universal integral-means spectrum）：对整类映射取最大可能增长指数，记作 `@@M@@B(p)@@`；本文主角是 `@@M@@p=-1@@` 处的 `@@M@@B_b(-1)@@`。
+- Kraetzer 猜想：1996 年基于数值实验猜测 `@@M@@B_b(p)=p^2/4@@`，在 `@@M@@p=-1@@` 处预言恰为 `@@M@@1/4@@`。
+
+**看个具体例子**
+
+把猜测的谱画成图：Kraetzer 认为它是抛物线 `@@M@@p^2/4@@`，于是 `@@M@@p=-1@@` 处的高度恰为 `@@M@@1/4@@`（空心点）；本文证明真实高度严格更低（实心点）。
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280">
+  <line x1="60" y1="240" x2="510" y2="240" stroke="#333" stroke-width="2"/>
+  <line x1="280" y1="30" x2="280" y2="245" stroke="#333" stroke-width="2"/>
+  <path d="M80,40 Q280,440 480,40" fill="none" stroke="#999" stroke-width="2" stroke-dasharray="7 5"/>
+  <text x="96" y="34" font-size="13" fill="#777">Kraetzer 猜测：p²/4</text>
+  <text x="290" y="46" font-size="13" fill="#333">B_b(p)</text>
+  <text x="494" y="260" font-size="13" fill="#333">p</text>
+  <text x="166" y="260" font-size="13" fill="#333">−1</text>
+  <text x="274" y="260" font-size="13" fill="#333">0</text>
+  <circle cx="180" cy="190" r="5" fill="none" stroke="#c0392b" stroke-width="2.5"/>
+  <text x="196" y="188" font-size="13" fill="#c0392b">猜测 1/4</text>
+  <line x1="180" y1="197" x2="180" y2="207" stroke="#c0392b" stroke-width="2"/>
+  <polygon points="180,216 176,207 184,207" fill="#c0392b"/>
+  <circle cx="180" cy="222" r="4.5" fill="#1a7f37"/>
+  <text x="168" y="228" text-anchor="end" font-size="13" fill="#1a7f37">真值严格更低</text>
+</svg>
+
+</div>
+
+数字版定理：取 `@@M@@r=1-10^{-8}@@`。此前最佳上界的指数是 `@@M@@0.388@@`，允许均值涨到约 `@@M@@10^{3.1}@@` 倍；新定理保证增长因子的指数严格小于 `@@M@@1/4@@`，即不超过 `@@M@@10^{2}@@` 倍（不计常数）。
+
+**为什么值得关心**
+
+这是 Brennan 猜想家族的关键进展：首次把 `@@M@@p=-1@@` 处的指数严格压到 `@@M@@1/4@@` 之下，宣布 Kraetzer 谱公式不真，而这类指数与单叶函数泰勒系数的经典难题直接相关。
+
+> 已 Lean 形式化
+
 ## 一句话结论
 
 证明对所有标准化单叶函数一致成立的估计 `@@M@@M_{-1}[f'](r)\le C(1-r)^{-1/4+\varepsilon}@@`，从而有界单叶类的普适积分均值谱满足 `@@M@@B_b(-1)<1/4@@`，推翻了 Kraetzer 谱猜想在 `@@M@@p=-1@@` 处的预测值。

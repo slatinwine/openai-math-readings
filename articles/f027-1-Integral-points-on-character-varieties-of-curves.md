@@ -13,6 +13,34 @@ pdfname: ""
 
 > 结果族 027：Potential integral density on curve character varieties　·　学科：Number theory　·　验证状态：暂无形式化证明，请以社区核验为准
 
+## 入门导读 🐣
+
+给一个"带洞的曲面"（比如扎了孔的甜甜圈皮）编一本完整的对称性花名册，数学家把这本花名册本身看成一个几何空间，叫特征簇。论文问：花名册里的"整点"——坐标全是整数的条目——多不多？结论：换一个稍大的数系后，整点在花名册里到处都是，洞口还能贴上事先指定的标签。
+
+**关键词卡片**
+
+- 特征簇（character variety）：把曲面上圈的"矩阵对称性"打包参数化得到的空间。
+- 整点（integral point）：坐标属于整数环的点，是算术上最干净的点。
+- Zariski 稠密（Zariski dense）：一种严格的"到处都是"：不挤在任何低维曲面上，能撑满整个空间。
+- 拟幺幂（quasi-unipotent）：特征值全是单位根的矩阵，描述绕洞一圈的边界行为。
+- 潜在（potential）：允许先把系数域扩大一次，结论才成立。
+
+**看个具体例子**
+
+整点稠密并不寻常：单位圆 x² + y² = 1 上只有 (±1,0)、(0,±1) 四个整点，稀稀拉拉。本文证明：任何光滑复曲线的 SL_r-特征簇，在某个有限扩域的整数环上整点必然 Zariski 稠密，且在每个不可约分支里都稠密——洞口的共轭类还可指定为单位根型。
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280"><line x1="70" y1="40" x2="70" y2="240" stroke="#ddd" stroke-width="1"/><line x1="110" y1="40" x2="110" y2="240" stroke="#ddd" stroke-width="1"/><line x1="150" y1="40" x2="150" y2="240" stroke="#ddd" stroke-width="1"/><line x1="190" y1="40" x2="190" y2="240" stroke="#ddd" stroke-width="1"/><line x1="230" y1="40" x2="230" y2="240" stroke="#ddd" stroke-width="1"/><line x1="50" y1="60" x2="250" y2="60" stroke="#ddd" stroke-width="1"/><line x1="50" y1="100" x2="250" y2="100" stroke="#ddd" stroke-width="1"/><line x1="50" y1="140" x2="250" y2="140" stroke="#ddd" stroke-width="1"/><line x1="50" y1="180" x2="250" y2="180" stroke="#ddd" stroke-width="1"/><line x1="50" y1="220" x2="250" y2="220" stroke="#ddd" stroke-width="1"/><circle cx="150" cy="140" r="80" fill="none" stroke="#1e8449" stroke-width="3"/><circle cx="70" cy="140" r="6" fill="#c0392b"/><circle cx="230" cy="140" r="6" fill="#c0392b"/><circle cx="150" cy="60" r="6" fill="#c0392b"/><circle cx="150" cy="220" r="6" fill="#c0392b"/><line x1="285" y1="30" x2="285" y2="250" stroke="#ddd" stroke-width="1" stroke-dasharray="5 4"/><ellipse cx="430" cy="140" rx="90" ry="80" fill="none" stroke="#1e8449" stroke-width="3"/><circle cx="358" cy="140" r="3" fill="#c0392b"/><circle cx="382" cy="140" r="3" fill="#c0392b"/><circle cx="406" cy="140" r="3" fill="#c0392b"/><circle cx="430" cy="140" r="3" fill="#c0392b"/><circle cx="454" cy="140" r="3" fill="#c0392b"/><circle cx="478" cy="140" r="3" fill="#c0392b"/><circle cx="502" cy="140" r="3" fill="#c0392b"/><circle cx="370" cy="116" r="3" fill="#c0392b"/><circle cx="394" cy="116" r="3" fill="#c0392b"/><circle cx="418" cy="116" r="3" fill="#c0392b"/><circle cx="442" cy="116" r="3" fill="#c0392b"/><circle cx="466" cy="116" r="3" fill="#c0392b"/><circle cx="490" cy="116" r="3" fill="#c0392b"/><circle cx="370" cy="164" r="3" fill="#c0392b"/><circle cx="394" cy="164" r="3" fill="#c0392b"/><circle cx="418" cy="164" r="3" fill="#c0392b"/><circle cx="442" cy="164" r="3" fill="#c0392b"/><circle cx="466" cy="164" r="3" fill="#c0392b"/><circle cx="490" cy="164" r="3" fill="#c0392b"/><circle cx="376" cy="92" r="3" fill="#c0392b"/><circle cx="400" cy="92" r="3" fill="#c0392b"/><circle cx="424" cy="92" r="3" fill="#c0392b"/><circle cx="448" cy="92" r="3" fill="#c0392b"/><circle cx="472" cy="92" r="3" fill="#c0392b"/><circle cx="376" cy="188" r="3" fill="#c0392b"/><circle cx="400" cy="188" r="3" fill="#c0392b"/><circle cx="424" cy="188" r="3" fill="#c0392b"/><circle cx="448" cy="188" r="3" fill="#c0392b"/><circle cx="472" cy="188" r="3" fill="#c0392b"/><circle cx="382" cy="68" r="3" fill="#c0392b"/><circle cx="406" cy="68" r="3" fill="#c0392b"/><circle cx="430" cy="68" r="3" fill="#c0392b"/><circle cx="454" cy="68" r="3" fill="#c0392b"/><circle cx="478" cy="68" r="3" fill="#c0392b"/><circle cx="382" cy="212" r="3" fill="#c0392b"/><circle cx="406" cy="212" r="3" fill="#c0392b"/><circle cx="430" cy="212" r="3" fill="#c0392b"/><circle cx="454" cy="212" r="3" fill="#c0392b"/><circle cx="478" cy="212" r="3" fill="#c0392b"/><text x="150" y="264" font-size="14" text-anchor="middle" fill="#333">圆：整点只有 4 个（稀疏）</text><text x="430" y="264" font-size="14" text-anchor="middle" fill="#333">特征簇：整点稠密（扩域后）</text></svg>
+
+</div>
+
+**为什么值得关心**
+
+它肯定回答了 Litt 的潜在整密度问题在曲线情形的版本，并把此前只对秩 2（SL_2）成立的结论推广到任意秩 r 的 SL_r。
+
+> 暂无形式化证明（AI 结果待核验）
+
 ## 一句话结论
 
 论文证明：对任何光滑连通复代数曲线与任意秩 `@@M@@r@@`，其 `@@M@@\SL_r@@`-特征簇的整点在某个数域的全整数环上必然 Zariski 稠密，且允许在穿孔处指定任意拟幺幂边界共轭类（含非半单类），并在每一分支上成立——肯定回答了 Litt 整密度问题的曲线、行列式一情形。

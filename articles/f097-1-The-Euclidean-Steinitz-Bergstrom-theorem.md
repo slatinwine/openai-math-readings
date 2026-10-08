@@ -13,6 +13,42 @@ pdfname: ""
 
 > 结果族 097：The Euclidean Steinitz–Bergström bound　·　学科：Convex and metric geometry　·　验证状态：主结果已 Lean 形式化
 
+## 入门导读 🐣
+
+一场定向越野：教练按固定顺序喊出一串指令，每条指令是一段长度至多 1 的小步，但你可以自选"照走"或"反着走"。问：能否始终不远离起点？论文证明：在 `@@M@@d@@` 维空间里，无论指令有多少条，都存在一种选法，让你一直待在半径 `@@M@@C\sqrt d@@` 的球内——常数 `@@M@@C@@` 与指令条数完全无关。
+
+**关键词卡片**
+
+- 前缀和（prefix sum）：从第一条指令累加到当前的净位移。
+- 符号选择（signing）：给每条指令配 `@@M@@\pm1@@` 的自由度。
+- Steinitz 常数 `@@M@@S_2(d)@@`：`@@M@@d@@` 维欧氏空间里，最优重排下最坏部分和的最小可能上界。
+- 正则单纯形（regular simplex）：`@@M@@d+1@@` 个两两等距的点，用来证明 `@@M@@\sqrt d@@` 的量级压不下去。
+
+**看个具体例子**
+
+**数字版定理**：`@@M@@\max_k\lVert\sum_{i\le k}\varepsilon_iv_i\rVert\le C\sqrt d@@`。它有多紧？取正则单纯形的顶点，任意 `@@M@@k@@` 个之和的平方范数为 `@@M@@k(d+1-k)/d@@`；取 `@@M@@k=\lfloor(d+1)/2\rfloor@@` 得至少 `@@M@@d/4@@`，即任何策略都免不了 `@@M@@\tfrac12\sqrt d@@` 的漂移。两面夹住：`@@M@@S_2(d)=\Theta(\sqrt d)@@`。排序版随之而来：若向量总和为零，还存在重排使不带符号的部分和也守在同一个 `@@M@@C\sqrt d@@` 圈内。
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280">
+  <circle cx="280" cy="140" r="95" fill="none" stroke="#e08030" stroke-width="2" stroke-dasharray="7 6"/>
+  <polyline points="280,140 315,115 260,95 300,160 235,150 270,185 330,170 295,135 335,120 300,105" fill="none" stroke="#345" stroke-width="2.5"/>
+  <circle cx="280" cy="140" r="3.5" fill="#222"/>
+  <text x="230" y="34" font-size="14" fill="#123">安全圈半径 C√d</text>
+  <text x="20" y="115" font-size="14" fill="#123">每步 ≤1，顺序固定，</text>
+  <text x="20" y="137" font-size="14" fill="#123">任选 +vᵢ 或 −vᵢ</text>
+  <text x="392" y="225" font-size="14" fill="#123">步数任意多</text>
+  <text x="392" y="247" font-size="14" fill="#123">圈只随维度 d 变大</text>
+</svg>
+
+</div>
+
+**为什么值得关心**
+
+条件收敛级数重排问题的有限版本在欧氏空间就此闭环，`@@M@@\sqrt d@@` 这一量级早在 1954 年就被猜测；对偶的"规定次序选符号"问题也顺带去掉了界对序列长度的依赖——此前 Banaszczyk 的经典界还含 `@@M@@\sqrt{\log N}@@` 项。构造是存在性的：符号可以依赖整条序列来选，并非在线规则。
+
+> 已 Lean 形式化
+
 ## 一句话结论
 
 证明了欧氏单位球内任意有限向量列都存在一组符号，使全部带符号前缀和的范数不超过 `@@M@@C\sqrt d@@`（绝对常数 `@@M@@C@@` 与序列长度无关），进而解决 Steinitz–Bergström 猜想，将欧氏 Steinitz 常数确定为 `@@M@@S_2(d)=\Theta(\sqrt d)@@`。

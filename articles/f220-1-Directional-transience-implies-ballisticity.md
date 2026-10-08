@@ -13,6 +13,44 @@ pdfname: ""
 
 > 结果族 220：Directional zero–one laws beyond iid environments and iid ballisticity　·　学科：Probability and statistical mechanics　·　验证状态：主结果已 Lean 形式化
 
+## 入门导读 🐣
+
+一只随机蚂蚁整体上朝东永不回头，它是匀速直线前进，还是可能像蜗牛越爬越慢、方向却不变？这篇论文给出裁决：在高维（`@@M@@d\ge 2@@`）独立且一致椭圆的环境里，只要几乎必然朝某方向逃逸，就必存在只依赖环境分布的确定极限速度 `@@M@@v@@`，且 `@@M@@v@@` 在该方向上的投影为正——"永不回头"自动升级为"匀速前进"。
+
+**关键词卡片**
+
+- 方向瞬态（directional transience）：路径最终逃离每一个后向半空间。
+- 弹道性（ballisticity）：线性进展 `@@M@@X_n/n\to v@@` 且 `@@M@@v\cdot\ell>0@@`。
+- 再生结构（regeneration structure）：在路径创新高处切出的相互独立的"里程段"。
+- 更新大数定律（renewal law of large numbers）：独立里程段取平均后给出速度的依据。
+- 一致椭圆（uniform ellipticity）：每步各方向概率有统一的下界 `@@M@@\kappa@@`。
+
+**看个具体例子**
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280">
+  <line x1="60" y1="230" x2="520" y2="230" stroke="#333" stroke-width="2"/>
+  <line x1="60" y1="230" x2="60" y2="40" stroke="#333" stroke-width="2"/>
+  <line x1="60" y1="230" x2="500" y2="80" stroke="#27ae60" stroke-width="2" stroke-dasharray="7,5"/>
+  <path d="M60,230 C110,180 150,220 200,160 C250,110 290,150 340,120 C390,95 430,130 480,90" fill="none" stroke="#27ae60" stroke-width="3"/>
+  <path d="M60,230 C120,228 170,224 220,222 C280,219 330,215 390,212 C440,210 470,207 500,205" fill="none" stroke="#c0392b" stroke-width="3"/>
+  <text x="205" y="55" font-size="14" fill="#27ae60">d≥2 定理：X_n ≈ v·n（v·ℓ &gt; 0）</text>
+  <text x="150" y="262" font-size="14" fill="#c0392b">一维反例：瞬态却零速度（X_n→∞ 但 X_n/n→0）</text>
+  <text x="30" y="38" font-size="13" fill="#333">x·ℓ</text>
+  <text x="526" y="246" font-size="13" fill="#333">n</text>
+</svg>
+
+</div>
+
+数字版定理：`@@M@@P_0(A_\ell)=1\ \Rightarrow\ P_0\big(\lim_n X_n/n=v\big)=1@@` 且 `@@M@@v\cdot\ell>0@@`；当 `@@M@@d\ge 3@@` 时配合姊妹篇的 0-1 律，连"`@@M@@P_0(A_\ell)>0@@`"都自动升级为"`@@M@@=1@@`"。证明的关口在于："再生时间几乎必然有限"推不出"平均值有限"，而算速度恰恰需要平均值；论文补上的决定性一步，是证明首达高层的概率衰减得足够快，恰好填上这个缺口。
+
+**为什么值得关心**
+
+它以"单方向瞬态"为唯一假设正面解决弹道性猜想，而此前的所有判据都需要额外的定量出口条件。它也是族内唯一通过 Lean 形式化检验的主结果，可信度目前在三篇姊妹作之中最高。
+
+> 已 Lean 形式化
+
 ## 一句话结论
 证明了 `@@M@@\mathbb{Z}^d@@`（`@@M@@d\ge2@@`）iid 一致椭圆环境中，沿固定方向几乎必然逃逸的游走必有确定性极限速度 `@@M@@v@@` 且 `@@M@@v\cdot\ell>0@@`：方向瞬态与弹道性等价，正面解决了弹道性猜想（ballisticity conjecture）。
 

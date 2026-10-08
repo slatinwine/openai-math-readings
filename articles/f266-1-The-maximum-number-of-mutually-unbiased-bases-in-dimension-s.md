@@ -13,6 +13,45 @@ pdfname: ""
 
 > 结果族 266：Exactly three mutually unbiased bases in dimension six　·　学科：Mathematical physics　·　验证状态：暂无形式化证明，请以社区核验为准
 
+## 入门导读 🐣
+
+两套"互相猜不透"的量子骰子：用 A 套掷出任何一面，换 B 套去验，结果永远均匀——六个结果各六分之一。这样的测量基叫"互相无偏基"，套数越多越能榨出量子信息。这篇论文证明：六维空间里它们最多 3 套，悬了三十多年的 Zauner 猜想就此了结。
+
+**关键词卡片**
+
+- 互相无偏（mutually unbiased）：一个基的任何向量，在另一个基下测量概率全为 1/d。
+- N(d)：d 维复空间中两两无偏基的最大个数。
+- 复 Hadamard 矩阵（complex Hadamard matrix）：元素模长 1、行行正交的方阵——无偏基的坐标化身。
+- 认证计算（certified computation）：每次"排除"都留安全余量、算不准只记"未解决"的计算机证明。
+- 完备族（complete set）：素数幂维数可达的 d+1 个无偏基。
+
+**看个具体例子**
+
+对照小例子：五维是素数幂，存在完备族，`@@M@@N(5)=6=5+1@@`；六维不是素数幂，本文证明 `@@M@@N(6)=3@@`——恰好是张量积构造（2 维 × 3 维）能给出的数目，一个也多不出来。无偏性的具体含义就是 `@@M@@|\langle b,c\rangle|^2=1/6@@`：下图是用 B 基测量 A 基某个向量时六个结果的概率。
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280">
+  <text x="40" y="30" font-size="14">用 B 基测量 A 基的某个向量：六个结果的概率</text>
+  <line x1="100" y1="230" x2="510" y2="230" stroke="#333" stroke-width="1.5"/>
+  <line x1="100" y1="230" x2="100" y2="60" stroke="#333" stroke-width="1.5"/>
+  <line x1="100" y1="205" x2="510" y2="205" stroke="#999" stroke-width="1" stroke-dasharray="5 4"/>
+  <g fill="#4a7ebb">
+    <rect x="135" y="205" width="40" height="25"/><rect x="195" y="205" width="40" height="25"/><rect x="255" y="205" width="40" height="25"/><rect x="315" y="205" width="40" height="25"/><rect x="375" y="205" width="40" height="25"/><rect x="435" y="205" width="40" height="25"/>
+  </g>
+  <text x="516" y="209" font-size="13">1/6</text>
+  <text x="118" y="252" font-size="13">B₁ 到 B₆：无论换 A 的哪个向量，概率都均匀</text>
+  <text x="110" y="60" font-size="13">概率</text>
+</svg>
+
+</div>
+
+**为什么值得关心**
+
+这是第一个被精确敲定的非素数幂维数 N(d)；论文的诚实处理也自觉——结论显式条件于声明的 binary64 算术与编译器合约，并附全部源码、数据哈希与执行档案。
+
+> 暂无形式化证明（AI 结果待核验）
+
 ## 一句话结论
 
 本文证明 `@@M@@\C^6@@` 中两两无偏的正交基最多只有 3 个，即 `@@M@@N(6)=3@@`，解决了 Zauner 提出三十余年的六维 MUB 猜想：下界来自 `@@M@@\C^2\otimes\C^3@@` 的张量积构造，上界则由一次完整的认证计算排除 4 个基的存在。

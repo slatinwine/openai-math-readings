@@ -13,6 +13,60 @@ pdfname: ""
 
 > 结果族 171：The hypercube Ramsey conjecture　·　学科：Combinatorics　·　验证状态：暂无形式化证明，请以社区核验为准
 
+## 入门导读 🐣
+
+`@@M@@n@@` 维立方体像一排 `@@M@@n@@` 个开关的全部 `@@M@@2^n@@` 种组合状态。把一个足够大的完全图随意染成红蓝两色，问要多大才能保证"整只立方体"颜色纯正地现身？Burr 与 Erdős 1975 年猜测：顶点数的常数倍足矣。本文证明他们猜对了。
+
+**关键词卡片**
+
+- 超立方体（hypercube）`@@M@@Q_n@@`：`@@M@@n@@` 个 0/1 开关的全部 `@@M@@2^n@@` 种组合，相差一个开关就连边
+- 拉姆齐数（Ramsey number）`@@M@@R(H)@@`：保证任意红蓝染色含单色 `@@M@@H@@` 的最小完全图规模
+- L-set：拉姆齐数不超过"常数×顶点数"的图族
+- 退化度（degeneracy）：图处处稀疏的程度；`@@M@@Q_n@@` 的退化度等于 `@@M@@n@@`，随维度增长，旧定理用不上
+- 偏差对纯净（bias versus purity）：证明的核心引理——颜色密度一旦失衡，就逼出近乎单色的大块
+
+**看个具体例子**
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280">
+  <text x="280" y="28" text-anchor="middle" font-size="16" fill="#333">3 维立方体 Q_3：8 个顶点、12 条边</text>
+  <line x1="190" y1="110" x2="310" y2="110" stroke="#c0392b" stroke-width="2"/>
+  <line x1="310" y1="110" x2="310" y2="210" stroke="#c0392b" stroke-width="2"/>
+  <line x1="310" y1="210" x2="190" y2="210" stroke="#c0392b" stroke-width="2"/>
+  <line x1="190" y1="210" x2="190" y2="110" stroke="#c0392b" stroke-width="2"/>
+  <line x1="250" y1="80" x2="370" y2="80" stroke="#2471a3" stroke-width="2"/>
+  <line x1="370" y1="80" x2="370" y2="180" stroke="#2471a3" stroke-width="2"/>
+  <line x1="370" y1="180" x2="250" y2="180" stroke="#2471a3" stroke-width="2"/>
+  <line x1="250" y1="180" x2="250" y2="80" stroke="#2471a3" stroke-width="2"/>
+  <line x1="190" y1="110" x2="250" y2="80" stroke="#888" stroke-width="1.5" stroke-dasharray="5 4"/>
+  <line x1="310" y1="110" x2="370" y2="80" stroke="#888" stroke-width="1.5" stroke-dasharray="5 4"/>
+  <line x1="310" y1="210" x2="370" y2="180" stroke="#888" stroke-width="1.5" stroke-dasharray="5 4"/>
+  <line x1="190" y1="210" x2="250" y2="180" stroke="#888" stroke-width="1.5" stroke-dasharray="5 4"/>
+  <circle cx="190" cy="110" r="4.5" fill="#333"/>
+  <circle cx="310" cy="110" r="4.5" fill="#333"/>
+  <circle cx="310" cy="210" r="4.5" fill="#333"/>
+  <circle cx="190" cy="210" r="4.5" fill="#333"/>
+  <circle cx="250" cy="80" r="4.5" fill="#333"/>
+  <circle cx="370" cy="80" r="4.5" fill="#333"/>
+  <circle cx="370" cy="180" r="4.5" fill="#333"/>
+  <circle cx="250" cy="180" r="4.5" fill="#333"/>
+  <text x="415" y="95" font-size="13" fill="#2471a3">后面（蓝）</text>
+  <text x="415" y="115" font-size="13" fill="#c0392b">前面（红）</text>
+  <text x="280" y="252" text-anchor="middle" font-size="14" fill="#555">染色足够大的完全图，必出现单色的 n 维立方体</text>
+  <text x="280" y="272" text-anchor="middle" font-size="14" fill="#555">定理：R(Q_n) ≤ C·2^n，与经典下界合成 R(Q_n) = Θ(2^n)</text>
+</svg>
+
+</div>
+
+以 `@@M@@n=10@@` 为例：`@@M@@Q_{10}@@` 有 `@@M@@1024@@` 个顶点，经典两色下界给出 `@@M@@R(Q_{10})\ge 3\cdot 2^9-1=1535@@`，定理给出 `@@M@@R(Q_{10})\le 1024C@@`——也就是说，把超过 `@@M@@C\times1024@@` 个顶点的完全图随手染色，单色的十维立方体必然浮现。两边只差常数倍，故 `@@M@@R(Q_n)=\Theta(2^n)@@`：此前最好的上界是 `@@M@@2^{2n-cn}@@`，离线性还差整整一个指数。
+
+**为什么值得关心**
+
+1975 年提出的超立方体拉姆齐猜想彻底解决；立方体恰好卡在"线性拉姆齐数"必要条件的密度门槛上（边点比是允许值的上限），是最紧的一类测试图。
+
+> 暂无形式化证明（AI 结果待核验）
+
 ## 一句话结论
 
 证明了 `@@M@@n@@` 维超立方体图 `@@M@@Q_n@@` 的双色拉姆齐数满足 `@@M@@R(Q_n)\le C2^n@@`（`@@M@@C@@` 为绝对常数），结合经典下界 `@@M@@R(Q_n)\ge 3\cdot2^{n-1}-1@@` 得 `@@M@@R(Q_n)=\Theta(2^n)@@`，正面解决了 Burr 与 Erdős 1975 年提出的超立方体拉姆齐猜想。

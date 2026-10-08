@@ -13,6 +13,45 @@ pdfname: ""
 
 > 结果族 258：Gersten's conjecture and virtual compact specialness of one-relator groups　·　学科：Group theory　·　验证状态：暂无形式化证明，请以社区核验为准
 
+## 入门导读 🐣
+
+有的孩子整体看桀骜不驯，可只要"换个有限分之一的视角"（取一个有限指标子群），立刻规规矩矩、会把玩具整齐码进方格。这篇论文证明：所有双曲的单关系群都有这种"虚拟听话"——它的某个有限指标子群能搭成方砖空间，还能整块嵌进标准范例（右角 Artin 群的示例空间）里。
+
+**关键词卡片**
+
+- 虚拟性质（virtual property）：群本身未必有、但某个有限指标子群一定有的性质。
+- 立方复形（cube complex）：用方块粘成的空间，天然携带非正曲率。
+- 紧特殊（compact special）：能局部等距嵌入右角 Artin 群示例空间（Salvetti 复形）的方砖空间。
+- 右角 Artin 群（right-angled Artin group）：生成元之间只分"交换/不交换"的群，方砖世界的坐标群。
+- free-by-cyclic（`@@M@@F\rtimes\mathbb{Z}@@`）：自由群被循环群驱动的半直积，Wise 猜想的主角。
+
+**看个具体例子**
+
+先尝尝"虚拟"的滋味（迷你样本）：克莱因瓶群 `@@M@@\langle a,b\mid a^{-1}ba=b^{-1}\rangle@@` 是个单关系群，整体"拧了一个方向"。但取指标 2 子群 `@@M@@\langle a^{2},b\rangle@@`，拧劲消失，它就是平直的 `@@M@@\mathbb{Z}^{2}@@`，恰好铺成方格纸（下图）。主定理把这个现象推广到一切双曲单关系群：取某个有限分之一后必能铺方砖、嵌进标准范例；再配上 Kielak–Linton 定理，还得到 Wise 猜想——它们虚拟地是 free-by-cyclic。
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280">
+  <text x="180" y="46" font-size="14" fill="#333" text-anchor="middle">拧着劲的群 G</text>
+  <path d="M70 150 C70 90 150 62 210 78 C265 93 300 125 290 168 C280 215 200 238 140 224 C90 212 70 185 70 150 Z" fill="#f5f5fa" stroke="#667" stroke-width="2"/>
+  <path d="M120 152 C120 112 165 96 200 112 C235 128 246 158 232 182 C218 210 160 214 135 194 C118 180 120 165 120 152 Z" fill="#dcecdc" stroke="#2a8" stroke-width="2"/>
+  <text x="178" y="158" font-size="13" fill="#265" text-anchor="middle">指标 2 子群</text>
+  <line x1="305" y1="140" x2="352" y2="140" stroke="#445" stroke-width="2"/>
+  <polygon points="352,134 366,140 352,146" fill="#445"/>
+  <text x="334" y="124" font-size="12" fill="#445" text-anchor="middle">取有限分之一</text>
+  <text x="460" y="62" font-size="14" fill="#2a8" text-anchor="middle">子群 ≅ Z²：平直方格</text>
+  <path d="M380 80V200M420 80V200M460 80V200M500 80V200M540 80V200M380 80H540M380 120H540M380 160H540M380 200H540" stroke="#2a8" fill="none" stroke-width="1.8"/>
+  <text x="280" y="262" font-size="12" fill="#666" text-anchor="middle">虚拟性质：换个有限分之一的视角，群就"听话"地铺方格</text>
+</svg>
+
+</div>
+
+**为什么值得关心**
+
+"虚拟紧特殊"是打开剩余有限、矩阵线性、子群可分等宝库的万能钥匙；姊妹篇证明"无歪圆柱 ⟹ 双曲"，本文接力"双曲 ⟹ 虚拟听话"，链条就此闭合。
+
+> 暂无形式化证明（AI 结果待核验）
+
 ## 一句话结论
 
 证明每个词双曲的单关系群都是虚拟紧特殊的：存在有限指标子群，实现为有限非正曲率立方复形的基本群，并局部等距嵌入某个右角 Artin 群的 Salvetti 复形。结合 Kielak–Linton 定理，这解决了 Wise 虚拟 free-by-cyclic 猜想的双曲单关系群情形。

@@ -13,6 +13,68 @@ pdfname: ""
 
 > 结果族 316：Curtis's conjecture　·　学科：Topology　·　验证状态：暂无形式化证明，请以社区核验为准
 
+## 入门导读 🐣
+
+球面到球面的每一族映射都留下"同伦档案"；把这些档案送进一台叫 Hurewicz 的 X 光机，底片上会显出若干亮点。这篇论文把底片冲印得干干净净：正维数里的全部亮点只来自三个著名映射 η、ν、σ，外加寥寥几个 Kervaire 不变量一类——而且第 126 维之后，底片一片漆黑。
+
+**关键词卡片**
+
+- Hurewicz 像（Hurewicz image）：同伦群经 Hurewicz 同态映到同调里的那部分，是"底片上的亮点"。
+- 稳定同伦群（stable homotopy groups）：球面映射在充分高悬挂下的档案 π_d^S，本文取模 2 系数。
+- Hopf 不变量一类（Hopf-invariant-one classes）：Adams 定理圈定的三个映射 η、ν、σ，次数恰为 1、3、7。
+- Kervaire 不变量一类（Kervaire-invariant-one classes）：对应装配流形 Arf 不变量为 1 的映射类 θ_j，次数 `@@M@@2^{j+1}-2@@`。
+- 同调悬挂（homology suspension）：把同调类升高一维再投影的机器，其核恰是可分解元——证明的杠杆。
+
+**看个具体例子**
+
+正维像非零的次数只有九个：1、3、7（η、ν、σ），以及 2、6、14、30、62、126——它们形如 `@@M@@2^{j+1}-2@@`（j=1,…,6），对应 θ₁,…,θ₆；其中 126 维 θ₆ 的存在性由 Lin–Wang–Xu 2025 年独立给出，论文本身不断言任何 θ_j 存在。127 以上，底片全黑：
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280">
+<text x="280" y="34" text-anchor="middle" font-size="18" fill="#222">Hurewicz 像的九个亮点（横轴示意，非等距）</text>
+<line x1="50" y1="160" x2="520" y2="160" stroke="#222" stroke-width="2"/>
+<polygon points="520,154 520,166 532,160" fill="#222"/>
+<line x1="470" y1="60" x2="470" y2="250" stroke="#999" stroke-width="2" stroke-dasharray="7,5"/>
+<text x="478" y="74" font-size="14" fill="#666">127 以上：全为 0</text>
+<circle cx="70" cy="160" r="7" fill="#222"/>
+<circle cx="110" cy="160" r="7" fill="#222"/>
+<circle cx="150" cy="160" r="7" fill="#222"/>
+<circle cx="200" cy="160" r="7" fill="#222"/>
+<circle cx="240" cy="160" r="7" fill="#222"/>
+<circle cx="290" cy="160" r="7" fill="#222"/>
+<circle cx="350" cy="160" r="7" fill="#222"/>
+<circle cx="410" cy="160" r="7" fill="#222"/>
+<circle cx="452" cy="160" r="7" fill="#222"/>
+<text x="70" y="192" text-anchor="middle" font-size="14" fill="#222">1</text>
+<text x="110" y="142" text-anchor="middle" font-size="14" fill="#444">2</text>
+<text x="150" y="192" text-anchor="middle" font-size="14" fill="#222">3</text>
+<text x="200" y="142" text-anchor="middle" font-size="14" fill="#444">6</text>
+<text x="240" y="192" text-anchor="middle" font-size="14" fill="#222">7</text>
+<text x="290" y="142" text-anchor="middle" font-size="14" fill="#444">14</text>
+<text x="350" y="192" text-anchor="middle" font-size="14" fill="#222">30</text>
+<text x="410" y="142" text-anchor="middle" font-size="14" fill="#444">62</text>
+<text x="452" y="192" text-anchor="middle" font-size="14" fill="#222">126</text>
+<text x="70" y="214" text-anchor="middle" font-size="13" fill="#888">η</text>
+<text x="150" y="214" text-anchor="middle" font-size="13" fill="#888">ν</text>
+<text x="240" y="214" text-anchor="middle" font-size="13" fill="#888">σ</text>
+<text x="110" y="124" text-anchor="middle" font-size="13" fill="#888">θ₁</text>
+<text x="200" y="124" text-anchor="middle" font-size="13" fill="#888">θ₂</text>
+<text x="290" y="124" text-anchor="middle" font-size="13" fill="#888">θ₃</text>
+<text x="350" y="124" text-anchor="middle" font-size="13" fill="#888">θ₄</text>
+<text x="410" y="124" text-anchor="middle" font-size="13" fill="#888">θ₅</text>
+<text x="452" y="124" text-anchor="middle" font-size="13" fill="#888">θ₆</text>
+<text x="290" y="252" text-anchor="middle" font-size="14" fill="#666">球面同伦的底片：只有这九个次数感光</text>
+</svg>
+
+</div>
+
+**为什么值得关心**
+
+证明了 Curtis 1975 年提出、因证明漏洞悬置半个世纪的猜想，并顺带落实 Eccles 猜想对一切球面成立——球面同伦的"底片清单"从此完整。
+
+> 暂无形式化证明（AI 结果待核验）
+
 ## 一句话结论
 
 证明了悬置半个世纪的 Curtis 猜想：球面稳定同伦群到 `@@M@@QS^0@@` 模 2 同调的正维 Hurewicz 像，恰由 Hopf 不变量一类 `@@M@@\eta,\nu,\sigma@@` 与存在的 Kervaire 不变量一类 `@@M@@\theta_j@@` 的像张成，并推出 Eccles 猜想对所有球面成立。

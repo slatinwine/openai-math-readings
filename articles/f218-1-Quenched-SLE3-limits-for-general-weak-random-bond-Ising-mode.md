@@ -13,6 +13,52 @@ pdfname: ""
 
 > 结果族 218：Conformal universality for weakly interacting and random-bond Ising models　·　学科：Probability and statistical mechanics　·　验证状态：暂无形式化证明，请以社区核验为准
 
+## 入门导读 🐣
+
+用略有瑕疵的砖砌一面墙，退后二十步看，墙的轮廓跟好砖砌的没有差别。格点 Ising 磁铁的"砖"就是相邻格点间的耦合强度：这篇论文证明，即使每块砖的强度都带一点任意分布的随机误差，只要误差够小，临界温度下正负磁区之间的分界线放大后仍收敛到那条著名的随机曲线 SLE₃。
+
+**关键词卡片**
+
+- Ising 模型（Ising model）：格点箭头只有上下两种取向的经典磁体模型
+- 随机键（random bond）：耦合强度 `@@M@@J_e=1+\varepsilon\xi_e@@`，其中 `@@M@@\xi_e@@` 独立同分布、均值零
+- 接口（interface）：正负边界条件之间自发形成的分界曲线
+- SLE₃（Schramm–Loewner evolution）：共形不变的随机曲线，纯 Ising 临界接口的已知极限
+- 淬火收敛（quenched convergence）：固定每一份随机误差、逐份成立的收敛，比按平均意义更强
+
+**看个具体例子**
+
+临界温度本身也被定出：`@@M@@\beta_c^\rho(\varepsilon)=\tfrac12\log(1+\sqrt2)+O(\varepsilon^2)@@`，数字版：`@@M@@\varepsilon=0.1@@` 时，临界点相对纯模型只移动约百分之一量级（差一个常数因子）。接口曲线的极限则是 SLE₃：
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280">
+<rect x="150" y="40" width="270" height="210" fill="none" stroke="#444444" stroke-width="2"/>
+<line x1="150" y1="40" x2="150" y2="250" stroke="#1a6faa" stroke-width="6"/>
+<line x1="150" y1="250" x2="285" y2="250" stroke="#1a6faa" stroke-width="6"/>
+<line x1="285" y1="250" x2="420" y2="250" stroke="#c0392b" stroke-width="6"/>
+<line x1="420" y1="250" x2="420" y2="40" stroke="#c0392b" stroke-width="6"/>
+<line x1="420" y1="40" x2="285" y2="40" stroke="#c0392b" stroke-width="6"/>
+<line x1="285" y1="40" x2="150" y2="40" stroke="#1a6faa" stroke-width="6"/>
+<circle cx="285" cy="250" r="5" fill="#111111"/>
+<text x="293" y="268" font-size="15" fill="#111111">a</text>
+<circle cx="285" cy="40" r="5" fill="#111111"/>
+<text x="293" y="30" font-size="15" fill="#111111">b</text>
+<path d="M 285 250 C 258 226 318 208 288 188 C 258 168 238 158 268 138 C 298 118 322 108 292 90 C 264 74 305 56 285 40" fill="none" stroke="#2c8a3d" stroke-width="3"/>
+<text x="175" y="145" font-size="15" fill="#1a6faa">＋磁区</text>
+<text x="350" y="200" font-size="15" fill="#c0392b">－磁区</text>
+<text x="315" y="100" font-size="14" fill="#2c8a3d">接口曲线</text>
+<text x="40" y="272" font-size="14" fill="#333333">边界：a 到 b 一侧全为＋，另一侧全为－</text>
+<text x="40" y="22" font-size="15" fill="#333333">弱随机键不改变宏观接口形状</text>
+</svg>
+
+</div>
+
+**为什么值得关心**
+
+按 Harris 判据，二维无序恰处"边缘"情形——既不被排斥也不被放大，最微妙也最容易出意外。本文证明任意有界、均值零分布的弱无序不改变普适类：随机磁铁的临界接口与纯模型共用同一条极限曲线。
+
+> 暂无形式化证明（AI 结果待核验）
+
 ## 一句话结论
 
 证明了方格 Ising 模型的键强度即使带上任意有界、均值零的独立同分布（iid）无序，只要强度 `@@M@@\varepsilon@@` 足够小，在真正的物理临界温度处，固定环境（quenched）意义下的自旋接口仍收敛到弦 `@@M@@\mathrm{SLE}_3@@`：二维无序虽是边缘情形，却不改变普适类。

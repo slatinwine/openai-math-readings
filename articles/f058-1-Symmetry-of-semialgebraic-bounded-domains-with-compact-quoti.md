@@ -13,6 +13,47 @@ pdfname: ""
 
 > 结果族 058：Semialgebraic universal covers and bounded domains　·　学科：Algebraic and complex geometry　·　验证状态：主结果已 Lean 形式化
 
+## 入门导读 🐣
+
+一块由多项式不等式圈出来的有界复区域，如果有一群全纯变换能像铺瓷砖那样把它铺得不重叠、不留死角，这块区域会不会被迫长满"镜子"？Kollár 与 Pardon 猜会，本文证明确实会：半代数加上均匀铺贴，区域必是光滑的、且等价于高度对称的有界对称域。
+
+**关键词卡片**
+
+- 半代数（semialgebraic）：能用有限条多项式等式与不等式描述清楚
+- 纯不连续、余紧（properly discontinuous & cocompact）：群移动互不重叠、基本块有界——"均匀铺贴"
+- 有界对称域（bounded symmetric domain）：每点都恰是某个反射对称的不动点，如单位球
+- 双全纯（biholomorphic）：双方都全纯的等价映射
+
+**看个具体例子**
+
+证明把任何这样的域整理成"二次模型"：横轴取 z 的大小、纵轴取 Im w，域落在一张抛物面上方的锥形区域里。最简单的二维样例是 Siegel 域 `@@M@@\{(z,w)\in\mathbb{C}^2:\ \operatorname{Im}w>|z|^2\}@@`，做一次坐标分式变换（Cayley 型）就变有界对称。
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280">
+  <line x1="80" y1="178" x2="505" y2="178" stroke="#445368" stroke-width="1.5"/>
+  <line x1="80" y1="178" x2="80" y2="35" stroke="#445368" stroke-width="1.5"/>
+  <circle cx="80" cy="178" r="3" fill="#445368"/>
+  <path d="M 180,80 Q 280,236 380,80 L 380,58 L 180,58 Z" fill="#e8f0fe" stroke="none"/>
+  <path d="M 180,80 Q 280,236 380,80" fill="none" stroke="#34506e" stroke-width="2.5"/>
+  <text x="88" y="48" font-size="13" fill="#1a2433">Im w</text>
+  <text x="465" y="198" font-size="13" fill="#1a2433">|z|</text>
+  <text x="400" y="120" font-size="12" fill="#34506e">边界：Im w = H(z,z)</text>
+  <text x="280" y="98" text-anchor="middle" font-size="13" fill="#1a2433">域 U（截面示意）</text>
+  <text x="280" y="238" text-anchor="middle" font-size="13" fill="#1a2433">半代数 + 均匀铺贴 ⇒ U 光滑且双全纯于有界对称域</text>
+  <text x="280" y="262" text-anchor="middle" font-size="13" fill="#445368">不预设凸性、齐性或边界正则性</text>
+</svg>
+
+</div>
+
+证明是一条五步流水线：先证区域光滑，再做边界胞腔分解，接着排除"缩放后没有内部"的坍缩，然后加权缩放得到上述二次模型，最后调用经典的 Vey 定理收尾——每一步都只用初等的几何与实代数工具。
+
+**为什么值得关心**
+
+"弱均匀 ⟹ 强对称"是复几何中罕见的刚性现象：只凭一份有限代数说明书和铺贴均匀，就能逼出完整的对称性；本结果族中它的验证状态也最好。
+
+> 已 Lean 形式化
+
 ## 一句话结论
 肯定回答 Kollár–Pardon 有界域问题：复仿射簇中有界半代数（semialgebraic）开集若带有纯不连续、余紧（cocompact）的双全纯自同构群，则它必然光滑且双全纯于有界对称域——紧商带来的"均匀性"在半代数条件下自动升级为对称性。
 

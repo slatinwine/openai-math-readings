@@ -13,6 +13,36 @@ pdfname: ""
 
 > 结果族 300：Approximation and quadratic strong-operator paving　·　学科：Operator algebras　·　验证状态：暂无形式化证明，请以社区核验为准
 
+## 入门导读 🐣
+
+一张巨大的表格（矩阵）里，对角线是"分内账目"，对角线外全是"串门噪音"。铺陈（paving）问题问：能否把行列编号分成很少几组，使每组内部的串门噪音微不足道？2015 年 Marcus–Spielman–Srivastava 在最标准的坐标（对角 MASA）下解决了它——即著名的 Kadison–Singer 问题。但任换一套"坐标系统"（极大交换子代数），直接分组会失败。本文证明 Popa–Vaes 的折中方案普遍可行：先把算子换成一个范数至多三倍的近似替身，再分组铺陈，对任何坐标系统、任何冯·诺依曼代数都成立。
+
+**关键词卡片**
+
+- 冯·诺依曼代数（von Neumann algebra）：对取极限封闭的一类算子代数
+- 极大交换子代数（maximal abelian subalgebra, MASA）：代数内最大的一套两两交换的"坐标系统"
+- 铺陈（paving）：用坐标投影切分成少数块，令块间残留噪音很小
+- 块压缩（pinching）：C_P(y)=Σp_iyp_i，剪掉 y 的跨块联系只留块内部分
+- 条件期望（conditional expectation）：把算子压回坐标系统的"取平均"操作
+
+**看个具体例子**
+
+数值版主定理：任意 0<ε<1，投影个数不超过 C·ε^{-6}（C 为通用常数）；误差减半，分组数约增 64 倍。分块压缩的示意：
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280"><text x="280" y="32" font-size="15" text-anchor="middle">分成三组后逐块压缩</text><line x1="130" y1="48" x2="130" y2="240" stroke="#999"/><line x1="162" y1="48" x2="162" y2="240" stroke="#999"/><line x1="194" y1="48" x2="194" y2="240" stroke="#999"/><line x1="226" y1="48" x2="226" y2="240" stroke="#999"/><line x1="258" y1="48" x2="258" y2="240" stroke="#999"/><line x1="290" y1="48" x2="290" y2="240" stroke="#999"/><line x1="322" y1="48" x2="322" y2="240" stroke="#999"/><line x1="130" y1="48" x2="322" y2="48" stroke="#999"/><line x1="130" y1="80" x2="322" y2="80" stroke="#999"/><line x1="130" y1="112" x2="322" y2="112" stroke="#999"/><line x1="130" y1="144" x2="322" y2="144" stroke="#999"/><line x1="130" y1="176" x2="322" y2="176" stroke="#999"/><line x1="130" y1="208" x2="322" y2="208" stroke="#999"/><line x1="130" y1="240" x2="322" y2="240" stroke="#999"/><rect x="130" y="48" width="64" height="64" fill="none" stroke="#b33" stroke-width="3"/><rect x="194" y="112" width="64" height="64" fill="none" stroke="#b33" stroke-width="3"/><rect x="258" y="176" width="64" height="64" fill="none" stroke="#b33" stroke-width="3"/><text x="352" y="84" font-size="13">p1（块 1）</text><text x="352" y="148" font-size="13">p2（块 2）</text><text x="352" y="212" font-size="13">p3（块 3）</text><text x="280" y="264" font-size="13" text-anchor="middle">块压缩 C_P(y)=Σp_i y p_i 后，跨块噪音 ≤ ε·‖y‖</text></svg>
+
+</div>
+
+两个关键点：误差以替身自身的范数为尺度（相对误差），且定理不要求代数可分、也不要求存在条件期望——这是以往所有版本都迈不过去的一般性门槛。
+
+**为什么值得关心**
+
+它把 Kadison–Singer 问题的精神推广到任意坐标系统，完整兑现 Popa–Vaes 在 2015 年提出的逼近铺陈猜想。
+
+> 暂无形式化证明（AI 结果待核验）
+
 ## 一句话结论
 
 证明了 Popa–Vaes 的逼近铺陈（approximation paving）猜想：任何冯·诺依曼代数中的自伴算子，都可先在强算子拓扑下用范数至多三倍的算子逼近，再对任意极大交换子代数以相对误差 `@@M@@\varepsilon@@` 完成范数铺陈，投影个数不超过 `@@M@@C\varepsilon^{-6}@@`，且完全不需要可分性或条件期望假设。

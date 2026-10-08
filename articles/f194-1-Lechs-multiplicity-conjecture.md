@@ -13,6 +13,49 @@ pdfname: ""
 
 > 结果族 194：Lech's multiplicity conjecture　·　学科：Algebra　·　验证状态：暂无形式化证明，请以社区核验为准
 
+## 入门导读 🐣
+
+把一块面团均匀擀开（不撕破、不折叠）是"平坦"的直观；一个形状在某点的"重数"衡量它在那里有多厚——越接近"光滑平坦"，厚度越接近 1。Lech 在 1960 年代猜测：均匀擀开只会让厚度保持或增加，绝不会变薄。本文在完全不设限的条件下证明：确实只增不减。此前最好的结果也只在等特征下给出带常数因子的界，常数的帽子如今被彻底摘掉。
+
+**关键词卡片**
+
+- Hilbert–Samuel 重数：局部环在一点处无穷小邻域增长的"主阶系数"，即厚度。
+- 平坦局部同态（flat local homomorphism）：无扭、不撕破的环扩张，"均匀擀开"的代数化身。
+- Noether 局部环：理想升链稳定、聚焦在一点上的标准代数舞台。
+- Frobenius：特征 `@@M@@p@@` 世界的 `@@M@@p@@` 次幂自映射，证明里的放大镜。
+
+**看个具体例子**
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280">
+<text x="280" y="32" text-anchor="middle" font-size="14">平坦扩张 = 均匀擀开：厚度只许增，不许减</text>
+<rect x="50" y="105" width="110" height="70" fill="none" stroke="#3050a0" stroke-width="2.5"/>
+<text x="105" y="145" text-anchor="middle" font-size="14" fill="#3050a0">e(R) = 3</text>
+<text x="105" y="205" text-anchor="middle" font-size="13">原来的面团</text>
+<line x1="175" y1="140" x2="245" y2="140" stroke="#222" stroke-width="2"/>
+<polygon points="245,135 245,145 257,140" fill="#222"/>
+<text x="212" y="126" text-anchor="middle" font-size="12">平坦局部同态</text>
+<rect x="270" y="70" width="180" height="140" fill="none" stroke="#222" stroke-width="2"/>
+<text x="360" y="145" text-anchor="middle" font-size="14">e(S) = 6 ✓</text>
+<text x="360" y="240" text-anchor="middle" font-size="13">变厚：允许</text>
+<rect x="480" y="120" width="55" height="40" fill="none" stroke="#b03030" stroke-width="2"/>
+<text x="507" y="145" text-anchor="middle" font-size="13" fill="#b03030">e=1</text>
+<line x1="472" y1="112" x2="542" y2="168" stroke="#b03030" stroke-width="2.5"/>
+<line x1="472" y1="168" x2="542" y2="112" stroke="#b03030" stroke-width="2.5"/>
+<text x="507" y="205" text-anchor="middle" font-size="13" fill="#b03030">变薄：禁止</text>
+</svg>
+
+</div>
+
+定理数字版：`@@M@@e(R)\le e(S)@@`。若源环 `@@M@@e(R)=3@@`，则任何平坦局部目标 `@@M@@S@@` 必有 `@@M@@e(S)\ge3@@`——翻倍、翻千倍都行，变薄不行。此处 `@@M@@e(A)@@` 由 `@@M@@\lim_{N\to\infty}d!\,\ell_A(A/\mathfrak a^N)/N^d@@` 定义。证明的难点在于：平坦性直接比较的是一套滤过的商，而重数由另一套滤过定义，两者无法直接对表，本文转而统一估计自由复形才闭合缺口。
+
+**为什么值得关心**
+
+一个悬置六十余年、连特殊情形都难得惊人的猜想被完整解决，且对维数、特征、剩余域零限制。
+
+> 暂无形式化证明（AI 结果待核验）
+
 ## 一句话结论
 本文完整证明 Lech 重数猜想：非零 Noether 局部环之间的平坦局部同态不会使 Hilbert–Samuel 重数减少，即 `@@M@@e(R)\le e(S)@@`，且对维数、剩余域、特征均无限制，宣告这一悬置六十余年的问题彻底解决。
 

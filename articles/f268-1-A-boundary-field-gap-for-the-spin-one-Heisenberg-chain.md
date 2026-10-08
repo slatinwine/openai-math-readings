@@ -13,6 +13,58 @@ pdfname: ""
 
 > 结果族 268：The spin-one Haldane gap　·　学科：Mathematical physics　·　验证状态：暂无形式化证明，请以社区核验为准
 
+## 入门导读 🐣
+
+不围成环，把自旋 1 的磁铁珠拉成一条直线，再在两端各压一块同样大小的小磁铁（边界磁场 h=3/5）。论文证明：这条开链翻越基态的能量门槛也有一致下界，不随链长消失。这块拼图一到位，Tasaki 的拓扑定理立即启动，判定这条链处于"非平凡拓扑相"。
+
+**关键词卡片**
+
+- 开边界链（open chain）：不首尾相连、带有两个端点的自旋链
+- 边界磁场（boundary field）：只加在两端的小磁场，这里取固定值 3/5
+- 谱隙（spectral gap）：基态到第一激发态的能量差
+- 局域激发不等式（local excitation inequality）：无穷体积下"任何局域扰动至少耗能 γ"的严格表述
+- Tasaki 指标（Tasaki index）：给基态拓扑性质编号的量，−1 代表非平凡
+
+**看个具体例子**
+
+取 h=3/5、链长 2L+1（L≥960）：定理断言 E₁−E₀>log10/392≈0.0059，基态唯一。场强 3/5 不大不小，是证明里恰好合用的固定选择——两端加同样的场，正是为了让最不安分的端点"听话"。对无穷长的极限态，Tasaki 指标算出来是 −1——好比给这条链发了一张"拓扑非平凡"的身份证。
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280">
+<line x1="110" y1="70" x2="450" y2="70" stroke="#999" stroke-width="2"/>
+<circle cx="110" cy="70" r="11" fill="none" stroke="#333" stroke-width="2"/>
+<circle cx="160" cy="70" r="11" fill="none" stroke="#333" stroke-width="2"/>
+<circle cx="210" cy="70" r="11" fill="none" stroke="#333" stroke-width="2"/>
+<circle cx="260" cy="70" r="11" fill="none" stroke="#333" stroke-width="2"/>
+<circle cx="310" cy="70" r="11" fill="none" stroke="#333" stroke-width="2"/>
+<circle cx="360" cy="70" r="11" fill="none" stroke="#333" stroke-width="2"/>
+<circle cx="410" cy="70" r="11" fill="none" stroke="#333" stroke-width="2"/>
+<circle cx="450" cy="70" r="11" fill="none" stroke="#333" stroke-width="2"/>
+<line x1="110" y1="52" x2="110" y2="20" stroke="#c0392b" stroke-width="2.5"/>
+<polygon points="105,26 115,26 110,16" fill="#c0392b"/>
+<line x1="450" y1="52" x2="450" y2="20" stroke="#c0392b" stroke-width="2.5"/>
+<polygon points="445,26 455,26 450,16" fill="#c0392b"/>
+<text x="26" y="30" font-size="14" fill="#c0392b">边界磁场 h=3/5</text>
+<text x="160" y="106" font-size="14" fill="#333">开边界自旋 1 链（奇数个格点）</text>
+<line x1="110" y1="185" x2="510" y2="185" stroke="#333" stroke-width="2.5"/>
+<line x1="110" y1="255" x2="510" y2="255" stroke="#333" stroke-width="2.5"/>
+<line x1="460" y1="185" x2="460" y2="255" stroke="#c0392b" stroke-width="2"/>
+<polygon points="456,193 464,193 460,185" fill="#c0392b"/>
+<polygon points="456,247 464,247 460,255" fill="#c0392b"/>
+<text x="118" y="175" font-size="14" fill="#333">激发态 E₁</text>
+<text x="118" y="272" font-size="14" fill="#333">基态 E₀（唯一）</text>
+<text x="148" y="216" font-size="13" fill="#c0392b">E₁−E₀ &gt; log10/392 ≈ 0.0059（L ≥ 960）</text>
+</svg>
+
+</div>
+
+**为什么值得关心**
+
+它补上了 Tasaki 指标定理所缺的一致谱隙假设，使"纯自旋 1 海森堡链处于非平凡拓扑相"第一次成为严格定理。开链端点是数值模拟里最不安分的部分，如今也被管住了；并与姊妹篇的周期环结果相互咬合，同一套方法两头通吃。
+
+> 暂无形式化证明（AI 结果待核验）
+
 ## 一句话结论
 
 证明了奇数长度开边界自旋 1 海森堡链在两端加同一固定磁场 `@@M@@h=3/5@@` 时谱隙一致大于 `@@M@@\log(10)/392@@`（`@@M@@L\ge960@@`），从而验证了 Tasaki 拓扑指标定理的隙假设，并推出边界遴选无穷体积基态势的 Tasaki 指标为 `@@M@@-1@@`。

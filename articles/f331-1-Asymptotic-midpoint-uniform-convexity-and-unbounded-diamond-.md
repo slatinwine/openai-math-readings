@@ -13,6 +13,63 @@ pdfname: ""
 
 > 结果族 331：Reflexive midpoint convexity and diamond distortion　·　学科：Functional analysis　·　验证状态：主结果已 Lean 形式化
 
+## 入门导读 🐣
+
+球的"圆度"可以打分：球面上两个离得远的点，它们的中点应该明显陷进球里。无穷维空间里可以耍赖——往某些方向看是平的，但你每次只能检查有限多个方向。这篇论文造出一个非常正派的空间（自反、可分）：扔掉任意有限多个方向后，它始终保有"中点版"的圆度；可是无论怎么更换等价范数，都换不出更强的"单向版"圆度。两种圆度被彻底分开，顺带否定了自反情形的菱形反问题。
+
+**关键词卡片**
+
+- 一致凸（uniformly convex）：球面没有平边：远两点的中点显著陷入球内部。
+- 渐近中点一致凸（AMUC）：只要求扔掉任意有限维方向后，剩余几何仍有中点版圆度。
+- 渐近一致凸（AUC）：对应的单向加强版圆度；本文证明此空间换任何等价范数都得不到它。
+- 重赋范（renorming）：给同一向量空间换一套等价的长度刻度，看几何能改善多少。
+- 失真（distortion）：把一个图嵌入空间时边长被拉伸的倍数（取最优嵌入下的最小值）。
+
+**看个具体例子**
+
+两条定量结论，代入数字即可感受：平均中点模 `@@M@@\widehat\delta_X(t)\ge\sqrt{1+t^2/12}-1@@`（如 `@@M@@t=1@@` 时约 `@@M@@0.041@@`）；深度 `@@M@@k@@` 的可数分支菱形图嵌入 `@@M@@X@@` 的失真下界 `@@M@@\sqrt{1+k/12}@@`——`@@M@@k=12@@` 时 `@@M@@\ge\sqrt2\approx1.41@@`，`@@M@@k=36@@` 时 `@@M@@\ge2@@`。菱形越深，在这个空间里越"塞不平"，没有一致有界的嵌入。
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280">
+  <text x="20" y="28" font-size="15" fill="#222">深度 k 的菱形图：逐层全连接，失真随深度增长</text>
+  <circle cx="280" cy="60" r="6" fill="#d64545"/>
+  <text x="230" y="50" font-size="13" fill="#d64545">顶极点</text>
+  <circle cx="150" cy="130" r="5" fill="#2f5fd0"/>
+  <circle cx="240" cy="130" r="5" fill="#2f5fd0"/>
+  <circle cx="320" cy="130" r="5" fill="#2f5fd0"/>
+  <circle cx="410" cy="130" r="5" fill="#2f5fd0"/>
+  <circle cx="150" cy="200" r="5" fill="#2f8f4e"/>
+  <circle cx="240" cy="200" r="5" fill="#2f8f4e"/>
+  <circle cx="320" cy="200" r="5" fill="#2f8f4e"/>
+  <circle cx="410" cy="200" r="5" fill="#2f8f4e"/>
+  <circle cx="280" cy="255" r="6" fill="#d64545"/>
+  <line x1="280" y1="60" x2="150" y2="130" stroke="#888" stroke-width="1.5"/>
+  <line x1="280" y1="60" x2="240" y2="130" stroke="#888" stroke-width="1.5"/>
+  <line x1="280" y1="60" x2="320" y2="130" stroke="#888" stroke-width="1.5"/>
+  <line x1="280" y1="60" x2="410" y2="130" stroke="#888" stroke-width="1.5"/>
+  <line x1="150" y1="130" x2="240" y2="200" stroke="#bbb" stroke-width="1"/>
+  <line x1="240" y1="130" x2="320" y2="200" stroke="#bbb" stroke-width="1"/>
+  <line x1="320" y1="130" x2="410" y2="200" stroke="#bbb" stroke-width="1"/>
+  <line x1="410" y1="130" x2="150" y2="200" stroke="#bbb" stroke-width="1"/>
+  <line x1="150" y1="200" x2="280" y2="255" stroke="#888" stroke-width="1.5"/>
+  <line x1="240" y1="200" x2="280" y2="255" stroke="#888" stroke-width="1.5"/>
+  <line x1="320" y1="200" x2="280" y2="255" stroke="#888" stroke-width="1.5"/>
+  <line x1="410" y1="200" x2="280" y2="255" stroke="#888" stroke-width="1.5"/>
+  <text x="440" y="134" font-size="13" fill="#666">每层可数多个点</text>
+  <text x="330" y="248" font-size="13" fill="#d64545">底极点</text>
+  <text x="20" y="200" font-size="13" fill="#666">嵌入 X 的失真</text>
+  <text x="20" y="220" font-size="13" fill="#666">≥ √(1+k/12)</text>
+</svg>
+
+</div>
+
+**为什么值得关心**
+
+它回答了 Baudier–Lancien 书稿中的问题 39：即使加上自反性，中点凸性也不足以阻止菱形图被越嵌越歪。
+
+> 主结果已 Lean 形式化
+
 ## 一句话结论
 
 构造出可分自反 Banach 空间 `@@M@@X=J^*@@`：其天然范数渐近中点一致凸（模 `@@M@@\ge\sqrt{1+t^2/12}-1@@`），却无任何等价的渐近一致凸范数；深度 `@@M@@k@@` 的可数分支菱形图嵌入 `@@M@@X@@` 失真必 `@@M@@\ge\sqrt{1+k/12}@@`，否定自反情形的菱形反问题。

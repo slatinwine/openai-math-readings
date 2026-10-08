@@ -13,6 +13,36 @@ pdfname: ""
 
 > 结果族 297：A ZFC counterexample to Naimark's problem　·　学科：Operator algebras　·　验证状态：暂无形式化证明，请以社区核验为准
 
+## 入门导读 🐣
+
+一个代数系统有许多种把它"实现"成具体算子的基本方式，就像一座建筑有许多个拍摄机位。Naimark 在 1951 年问：如果一座"建筑"从任何机位拍出的照片都一模一样，它是否只能是那栋最普通的样板房（紧算子代数）？此前人们必须借助一条标准公理体系之外的集合论假设（钻石原理）才造得出反例，好比解题时偷偷多翻了一页规则书；本文证明：只用大家公认的规则（ZFC 公理），反例照样造得出来。
+
+**关键词卡片**
+
+- C*-代数（C*-algebra）：矩阵的无限维推广，元素可相乘、可取伴随，还带范数
+- 不可约表示（irreducible representation）：把代数实现成具体算子的基本"机位"，不能再拆成两个更简单的
+- 酉等价（unitary equivalence）：两个"机位"只差一次保距换镜头，拍出的照片本质相同
+- 紧算子（compact operators）：把单位球压得几乎有限维的算子，原问题中的"样板房"
+- ZFC（Zermelo–Fraenkel set theory with Choice）：数学界默认的集合论公理体系
+
+**看个具体例子**
+
+构造像一条超长流水线上的"焊接"：纯态（最极端的拍照状态）起初分成许多等价类，流水线每一站挑出两个类焊成一个。从无穷个 2×2 矩阵张量积拼成的 CAR 代数出发，经过长度为 c+ 的超穷轮次，最后只剩一个类。
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280"><text x="90" y="42" font-size="14" text-anchor="middle">开始：许多个纯态等价类</text><text x="185" y="55" font-size="13">焊接：两并一</text><circle cx="90" cy="70" r="8" fill="none" stroke="#333" stroke-width="2"/><circle cx="90" cy="105" r="8" fill="none" stroke="#333" stroke-width="2"/><circle cx="90" cy="140" r="8" fill="none" stroke="#333" stroke-width="2"/><circle cx="90" cy="175" r="8" fill="none" stroke="#333" stroke-width="2"/><circle cx="90" cy="210" r="8" fill="none" stroke="#333" stroke-width="2"/><circle cx="90" cy="245" r="8" fill="none" stroke="#333" stroke-width="2"/><path d="M98 70 Q190 66 272 85" fill="none" stroke="#888" stroke-width="1.5"/><path d="M98 105 Q190 108 272 91" fill="none" stroke="#888" stroke-width="1.5"/><path d="M98 140 Q190 140 272 155" fill="none" stroke="#888" stroke-width="1.5"/><path d="M98 175 Q190 178 272 161" fill="none" stroke="#888" stroke-width="1.5"/><path d="M98 210 Q190 210 272 225" fill="none" stroke="#888" stroke-width="1.5"/><path d="M98 245 Q190 248 272 231" fill="none" stroke="#888" stroke-width="1.5"/><circle cx="280" cy="88" r="8" fill="none" stroke="#333" stroke-width="2"/><circle cx="280" cy="158" r="8" fill="none" stroke="#333" stroke-width="2"/><circle cx="280" cy="228" r="8" fill="none" stroke="#333" stroke-width="2"/><path d="M288 88 Q380 88 462 152" fill="none" stroke="#888" stroke-width="1.5"/><path d="M288 158 L462 158" fill="none" stroke="#888" stroke-width="1.5"/><path d="M288 228 Q380 228 462 164" fill="none" stroke="#888" stroke-width="1.5"/><circle cx="470" cy="158" r="9" fill="none" stroke="#b33" stroke-width="2.5"/><text x="470" y="122" font-size="14" text-anchor="middle">最后只剩一个类</text><text x="280" y="266" font-size="13" text-anchor="middle">超长流水线逐对焊接，全程只用 ZFC 公理</text></svg>
+
+</div>
+
+终点得到的代数 A 有单位元、无穷维、"单纯"（无非平凡闭理想），还带忠实迹态 τ（一种求平均且能分辨非零元的尺寸函数），但它所有非零不可约表示都是同一张照片——这正是 Naimark 问题的否定回答。
+
+**为什么值得关心**
+
+一个悬置 70 余年的问题，从"答案可能取决于额外公理"的疑云中彻底走出：标准公理足以裁决它。
+
+> 暂无形式化证明（AI 结果待核验）
+
 ## 一句话结论
 
 在标准集合论公理体系 ZFC 内（不依赖连续统假设、钻石原理等任何附加假设），本文构造出一个带忠实迹态的单式无穷维单 `@@M@@C^*@@`-代数，其全部非零不可约表示彼此酉等价，从而对 Naimark 问题给出否定回答。

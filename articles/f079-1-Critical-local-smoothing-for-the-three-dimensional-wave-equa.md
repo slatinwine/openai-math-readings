@@ -13,6 +13,49 @@ pdfname: ""
 
 > 结果族 079：Local smoothing in three dimensions　·　学科：Real and complex analysis　·　验证状态：暂无形式化证明，请以社区核验为准
 
+## 入门导读 🐣
+
+往湖面丢一颗石子，涟漪向外扩散。只看某一瞬间的照片，水面波纹又尖又密；若把一小段时间的画面叠加曝光，波纹就被"抹匀"了不少。三维波动方程的局部光滑化猜想说：对时间取平均，确实能挽回固定瞬间的光滑性损失。这篇论文在最后缺失的临界指标 `@@M@@p=3@@` 上证明了它，彻底解决三维的 Sogge 猜想。
+
+**关键词卡片**
+
+- 半波演化（half-wave propagator）：让初始波形以固定速度自由传播的算子，频率乘子为 `@@M@@e^{it|\xi|}@@`
+- Sobolev 损失（Sobolev loss）：要控制输出，输入需要"预付"多少阶导数；付得越少越划算
+- 局部光滑化（local smoothing）：对时间积分后波显得更平缓，预付的导数可以打折
+- 临界点 p=3：三维中时间平均把固定时刻损失 `@@M@@1/3@@` 阶挽回到只剩任意小量的指标
+- 插值（interpolation）：从两端已知估计搭桥，推出中间全部指数
+
+**看个具体例子**
+
+时空图里，点源的光沿锥面展开：固定时刻切片是"尖"的，时间带 `@@M@@[1,2]@@` 上的积分把能量摊薄。
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280">
+<line x1="70" y1="240" x2="510" y2="240" stroke="#333"/>
+<line x1="290" y1="45" x2="150" y2="240" stroke="#369" stroke-width="2"/>
+<line x1="290" y1="45" x2="430" y2="240" stroke="#369" stroke-width="2"/>
+<polygon points="206,120 374,120 416,180 164,180" fill="#dde8f5"/>
+<line x1="70" y1="120" x2="510" y2="120" stroke="#c33" stroke-dasharray="5 4"/>
+<line x1="70" y1="180" x2="510" y2="180" stroke="#c33" stroke-dasharray="5 4"/>
+<text x="296" y="42" font-size="13" fill="#333">波源 t=0</text>
+<text x="440" y="115" font-size="13" fill="#c33">t=1</text>
+<text x="440" y="200" font-size="13" fill="#c33">t=2</text>
+<text x="120" y="155" font-size="13" fill="#369">时间带内叠加曝光，波被抹匀</text>
+<text x="60" y="262" font-size="13" fill="#333">空间 x</text>
+<text x="455" y="262" font-size="13" fill="#333">时间 t</text>
+</svg>
+
+</div>
+
+数字版定理：对任意 `@@M@@\varepsilon>0@@`，`@@M@@\|Uf\|_{L^3(\mathbb R^3\times[1,2])}\le C_\varepsilon\|J^\varepsilon f\|_{L^3}@@`。对比：固定时刻需要预付 `@@M@@1/3@@` 阶导数（Peral–Miyachi 定理），时间平均后只需任意小的 `@@M@@\varepsilon@@` 阶——几乎全额退款，但 `@@M@@\varepsilon=0@@` 的免费午餐仍不给。
+
+**为什么值得关心**
+
+这是 Sogge 1991 年提出的著名猜想在三维的完全解答，还顺带推出 Bochner–Riesz 极大函数有界、波几乎处处收敛等一串点态结论，堪称"时间平均换光滑"哲学的完胜。
+
+> 暂无形式化证明（AI 结果待核验）
+
 ## 一句话结论
 
 本文证明了三维欧氏空间中波动方程的临界 `@@M@@L^3@@` 局部光滑（local smoothing）估计：对任意 `@@M@@\varepsilon>0@@` 均有 `@@M@@\|Uf\|_{L^3(\mathbb{R}^3\times[1,2])}\le C_\varepsilon\|J^\varepsilon f\|_{L^3}@@`。这补上了 Sogge 猜想最后一个缺失的指数点，从而在三维彻底解决该猜想。

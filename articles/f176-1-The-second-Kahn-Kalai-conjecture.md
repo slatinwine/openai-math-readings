@@ -13,6 +13,66 @@ pdfname: ""
 
 > 结果族 176：The second Kahn–Kalai conjecture with an edge-count bound　·　学科：Combinatorics　·　验证状态：主结果已 Lean 形式化
 
+## 入门导读 🐣
+
+往池塘撒网捞一条指定的鱼，网要多密才捞得到？随机图理论问的是同款问题：每对顶点以概率 p 连边，p 多大时才能"捞到"指定图 H 的一份拷贝。这篇论文证明：真实所需密度不超过理论下限乘上一个只随边数对数增长的因子，常数固定——Kahn–Kalai 第二猜想就此收官。随机世界里这种"刚好够用"的现象叫阈值：p 跨过临界值，H 出现的概率会从接近 0 跳到接近 1，论文精确圈出了跳变发生的位置。
+
+**关键词卡片**
+
+- 随机图 G(n,p)（random graph）：每对顶点独立以概率 p 连边的抽签网络。
+- 期望阈值 p_E（expectation threshold）：让 H 的每个子图的期望拷贝数都至少为 1/2 的最小密度。
+- 包含阈值 p_c（containment threshold）：以至少 1/2 概率含有 H 的最小密度，恒有 p_E ≤ p_c。
+- 对数因子（logarithmic factor）：两者之间无法去除的差距来源，比如靠它消除宿主图的孤立顶点。
+
+**看个具体例子**
+
+主定理：`@@M@@p_c\le 2048\,e^{50}\,p_E\,(1+\log_2 h)@@`，其中 h 是 H 的边数。以完美匹配（h=n/2）为例：`@@M@@p_E\approx 1/n@@` 而真实阈值 `@@M@@p_c\approx\log n/n@@`——n=1000 时约 0.007，多出的对数恰好用来消除孤立顶点。下图以 H=三角形示意密度渐增的过程。
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280">
+<line x1="95" y1="55" x2="45" y2="100" stroke="#bbb" stroke-width="2"/>
+<line x1="45" y1="100" x2="67" y2="160" stroke="#bbb" stroke-width="2"/>
+<line x1="280" y1="55" x2="230" y2="100" stroke="#bbb" stroke-width="2"/>
+<line x1="280" y1="55" x2="330" y2="100" stroke="#bbb" stroke-width="2"/>
+<line x1="230" y1="100" x2="252" y2="160" stroke="#bbb" stroke-width="2"/>
+<line x1="252" y1="160" x2="308" y2="160" stroke="#bbb" stroke-width="2"/>
+<line x1="330" y1="100" x2="308" y2="160" stroke="#bbb" stroke-width="2"/>
+<line x1="415" y1="100" x2="437" y2="160" stroke="#bbb" stroke-width="2"/>
+<line x1="437" y1="160" x2="493" y2="160" stroke="#bbb" stroke-width="2"/>
+<line x1="493" y1="160" x2="515" y2="100" stroke="#bbb" stroke-width="2"/>
+<line x1="465" y1="55" x2="415" y2="100" stroke="#d62728" stroke-width="3.5"/>
+<line x1="465" y1="55" x2="515" y2="100" stroke="#d62728" stroke-width="3.5"/>
+<line x1="415" y1="100" x2="515" y2="100" stroke="#d62728" stroke-width="3.5"/>
+<circle cx="95" cy="55" r="5.5" fill="#fff" stroke="#333" stroke-width="2"/>
+<circle cx="45" cy="100" r="5.5" fill="#fff" stroke="#333" stroke-width="2"/>
+<circle cx="145" cy="100" r="5.5" fill="#fff" stroke="#333" stroke-width="2"/>
+<circle cx="67" cy="160" r="5.5" fill="#fff" stroke="#333" stroke-width="2"/>
+<circle cx="123" cy="160" r="5.5" fill="#fff" stroke="#333" stroke-width="2"/>
+<circle cx="280" cy="55" r="5.5" fill="#fff" stroke="#333" stroke-width="2"/>
+<circle cx="230" cy="100" r="5.5" fill="#fff" stroke="#333" stroke-width="2"/>
+<circle cx="330" cy="100" r="5.5" fill="#fff" stroke="#333" stroke-width="2"/>
+<circle cx="252" cy="160" r="5.5" fill="#fff" stroke="#333" stroke-width="2"/>
+<circle cx="308" cy="160" r="5.5" fill="#fff" stroke="#333" stroke-width="2"/>
+<circle cx="465" cy="55" r="5.5" fill="#fff" stroke="#333" stroke-width="2"/>
+<circle cx="415" cy="100" r="5.5" fill="#fff" stroke="#333" stroke-width="2"/>
+<circle cx="515" cy="100" r="5.5" fill="#fff" stroke="#333" stroke-width="2"/>
+<circle cx="437" cy="160" r="5.5" fill="#fff" stroke="#333" stroke-width="2"/>
+<circle cx="493" cy="160" r="5.5" fill="#fff" stroke="#333" stroke-width="2"/>
+<text x="95" y="200" fill="#555" font-size="13" text-anchor="middle">p 很小</text>
+<text x="280" y="200" fill="#555" font-size="13" text-anchor="middle">p 增大</text>
+<text x="465" y="200" fill="#555" font-size="13" text-anchor="middle">p 到阈值</text>
+<text x="280" y="240" fill="#555" font-size="13" text-anchor="middle">以 H = 三角形为例：密度渐增，红色拷贝 H 出现</text>
+</svg>
+
+</div>
+
+**为什么值得关心**
+
+它补上了 Kahn–Kalai 阈值纲领的最后一环：期望阈值与真实阈值之间，只差一个不得不有的对数因子。此前最好结果还带着平方乃至立方的对数，本文把它压到一次方，常数还完全显式。
+
+> 已 Lean 形式化
+
 ## 一句话结论
 
 证明了卡恩–卡莱第二猜想：任意有 `@@M@@h\ge1@@` 条边、至多 `@@M@@n@@` 个顶点的图 `@@M@@H@@`，其在 `@@M@@G(n,p)@@` 中的出现阈值不超过 `@@M@@C\,p_{\mathrm E}(n,H)(1+\log_2 h)@@`，`@@M@@C@@` 为普适常数——期望阈值与真实阈值只差一个依赖边数的对数因子。

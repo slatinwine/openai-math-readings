@@ -13,6 +13,50 @@ pdfname: ""
 
 > 结果族 014：Restricted geometric Langlands, global Arthur enhancements, and generic Ramanujan　·　学科：Number theory　·　验证状态：暂无形式化证明，请以社区核验为准
 
+## 入门导读 🐣
+
+前两篇造出的"纯音"是一张静态照片：它活在代数闭包里，对有限域自己的"心跳"——Frobenius 映射 `@@M@@x\mapsto x^q@@`——毫无反应。这篇论文给照片配上会动的底片：让本征层跟着心跳同步起舞，把纯几何对象升级成真正的算术对象。
+
+**关键词卡片**
+
+- Frobenius (Frobenius)：有限域上把 `@@M@@x@@` 升 `@@M@@q@@` 次幂的自映射，有限域世界的"心跳"
+- Weil 层 (Weil sheaf)：只需对 Frobenius 的某个幂自相容、不必对所有对称都迁就的层
+- 算术局部系统 (arithmetic local system)：直接定义在有限域（而非其代数闭包）上的局部系统
+- 正则单幂单值 (regular-unipotent monodromy)：标记点处"结打得最紧"的单值类型
+- 常域扩张 `@@M@@\mathbb F_{q^m}@@`：有时要等心跳跳 `@@M@@m@@` 次对象才回原地，须先放大常数域
+
+**看个具体例子**
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280">
+  <text x="280" y="26" font-size="15" text-anchor="middle" fill="#333">等"心跳"跳 m 次，点才回到原地</text>
+  <circle cx="230" cy="110" r="7" fill="#26b"/>
+  <circle cx="360" cy="110" r="7" fill="#26b"/>
+  <circle cx="295" cy="185" r="7" fill="#26b"/>
+  <path d="M242 102 Q295 72 348 102" fill="none" stroke="#333" stroke-width="1.5"/>
+  <polygon points="350,103 339,98 342,110" fill="#333"/>
+  <path d="M355 122 Q340 158 308 180" fill="none" stroke="#333" stroke-width="1.5"/>
+  <polygon points="306,182 316,173 317,185" fill="#333"/>
+  <path d="M282 181 Q245 155 234 126" fill="none" stroke="#333" stroke-width="1.5"/>
+  <polygon points="233,124 236,136 243,128" fill="#333"/>
+  <text x="230" y="92" font-size="13" text-anchor="middle" fill="#26b">点 s</text>
+  <text x="360" y="92" font-size="13" text-anchor="middle" fill="#26b">φ(s)</text>
+  <text x="295" y="212" font-size="13" text-anchor="middle" fill="#26b">φ²(s)</text>
+  <text x="295" y="56" font-size="13" text-anchor="middle" fill="#333">Frobenius φ：x ↦ x^q（每跳一次）</text>
+  <text x="280" y="250" font-size="13" text-anchor="middle" fill="#333">m=3：心跳三次回原地 ⇒ 层 M₀ 活在 q³ 元扩域上</text>
+</svg>
+
+</div>
+
+举例说，若构造中的辅助点只被心跳的三次幂固定（`@@M@@m=3@@`），就必须在 `@@M@@q^3@@` 元的扩域上工作。定理给出 `@@M@@\mathbb F_{q^m}@@` 上的 Weil 层 `@@M@@M_0@@`：拉回到代数闭包正好是姊妹篇的几何本征层，而 Hecke 本征值精确等于算术参数 `@@M@@\rho_m@@`——几何版与算术版严格咬合，不差分毫。值得强调的是，整套多腿本征结构（张量、置换、融合）都与 Frobenius 相容，而不是只照顾单个旋钮。
+
+**为什么值得关心**
+
+与 Frobenius 相容是从几何朗兰兹通往数论应用（迹公式、特征值问题）的门票；本文给"Borel 水平＋温和分歧"情形补上了这张票。
+
+> 暂无形式化证明（AI 结果待核验）
+
 ## 一句话结论
 
 在特征 `@@M@@p>n@@` 的有限域上，本文为带正则单幂零驯顺单值 (tame regular-unipotent monodromy) 的几何稠密算术 `@@M@@\PGL_n@@`-局部系统构造了 `@@M@@\SL_n@@` 的 Borel 级 Hecke 特征层 (Hecke eigensheaf)，并赋予与特征值整体相容的 Frobenius 结构，把驯顺几何 Langlands 从纯几何对象推进到算术设定。

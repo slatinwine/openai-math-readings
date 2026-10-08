@@ -13,6 +13,36 @@ pdfname: ""
 
 > 结果族 359：Negative Kähler curvature without bounded holomorphic coordinates　·　学科：Differential geometry　·　验证状态：主结果已 Lean 形式化
 
+## 入门导读 🐣
+
+一维复变里有个经典事实：完备、单连通、弯曲程度被负常数压住的黎曼面，必然能"装进"单位圆盘。高维是不是也这样？这篇论文造出反例：一个弯曲程度完美达标的复空间，却怎么也装不进任何有界域——单值化的美梦在高维被打碎。
+
+**关键词卡片**
+
+- Kähler 流形（Kähler manifold）：度量与复结构相容的空间，复几何的主舞台。
+- 截面曲率夹紧（negatively pinched）：`@@M@@-B\le K\le -A<0@@`，弯曲程度上下都有负常数兜底。
+- 全纯映射（holomorphic map）：复意义上可导的映射。
+- 有界域（bounded domain）：能整体装进某个大球里的区域。
+- Hartogs 域（Hartogs domain）：底面上每点顶着一只高度不等的圆盘，像一块"变高蛋糕"。
+
+**看个具体例子**
+
+反例就是一只变高蛋糕：
+
+`@@M@@DM=\{(z,w)\in\mathbb B\times\mathbb C:\ e^{\varphi(z)}|w|^{2}<1\},@@`
+
+底 `@@M@@\mathbb B@@` 是 `@@M@@\mathbb C^2@@` 的单位球，`@@M@@z@@` 上方圆盘的半径 `@@M@@e^{-\varphi(z)/2}@@` 随 `@@M@@\varphi@@` 起伏。配上特定的 `@@M@@\varphi@@` 与大参数 `@@M@@\lambda@@` 的 Calabi 型度量后：
+
+`@@M@@D-B\ \le\ K(\sigma)\ \le\ -A\ <\ 0\quad(\text{每点、每个平面 }\sigma),@@`
+
+却不存在 Jacobi 行列式处处非零的有界全纯映射 `@@M@@F:M\to\mathbb C^3@@`，因此 `@@M@@M@@` 不与任何有界域双全纯。妙在 `@@M@@M@@` 并非没有有界全纯函数——坐标 `@@M@@z_1,z_2@@` 本身就是——缺的恰恰只是"三个方向都好的有界坐标"。
+
+**为什么值得关心**
+
+它否定回答了 Wu–Yau 2019 年综述中的负夹紧 Kähler 单值化猜想：曲率两侧夹紧也不保证有界域结构，堵死了这条统一化路线。
+
+> 已 Lean 形式化
+
 ## 一句话结论
 
 在 `@@M@@\C^3@@` 中构造出可缩区域 (contractible domain)，配上完备 Kähler 度量后其实截面曲率 (sectional curvature) 被两个负常数上下夹紧，却不存在 Jacobi 行列式处处非零的有界全纯映射——"负夹紧 Kähler 流形必双全纯于有界域"的单值化问题由此得到否定回答。

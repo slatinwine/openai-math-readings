@@ -13,6 +13,33 @@ pdfname: ""
 
 > 结果族 240：Shelah's eventual categoricity and the prescribed-threshold obstruction　·　学科：Mathematical logic　·　验证状态：暂无形式化证明，请以社区核验为准
 
+## 入门导读 🐣
+
+想象一套桌游规则，棋盘可以换成任意大小。数学家早就发现一个漂亮的规律：只要在某个"足够大"的棋盘上，这套规则只容许唯一一种合法局面，那么在所有更大的棋盘上也都只有唯一一种。这篇论文证明的正是这个规律的最一般版本——而且不附加任何额外条件。
+
+**关键词卡片**
+
+- 抽象初等类（abstract elementary class, AEC）：一族满足某套"广义公理"的数学结构，允许比普通一阶逻辑更强的描述语言。
+- 范畴性（categoricity）：在某个"尺寸"（基数）上，这类结构的所有模型都长得一模一样（彼此同构）。
+- Löwenheim–Skolem 数：这类结构的"起步复杂度"上界，用来给阈值定价。
+- 最终范畴性（eventual categoricity）：只要在某个充分大的尺寸上唯一，就在所有更大的尺寸上都唯一。
+
+**看个具体例子**
+
+原型是 1965 年的 Morley 定理：可数语言的理论只要在一个不可数尺寸上范畴，就在所有不可数尺寸上范畴。本文把它推到最一般的 AEC：给定起步复杂度 `@@M@@\lambda@@`，存在统一阈值 `@@M@@\mu(\lambda)@@`——一旦跨过这条线，"一处唯一"立即升级为"处处唯一"，且同一复杂度的所有类共用同一个阈值。
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280"><line x1="40" y1="200" x2="512" y2="200" stroke="#333" stroke-width="2"/><polygon points="512,194 524,200 512,206" fill="#333"/><line x1="300" y1="166" x2="300" y2="234" stroke="#c0392b" stroke-width="3" stroke-dasharray="8 5"/><text x="300" y="258" font-size="15" fill="#c0392b" text-anchor="middle">统一阈值 μ(λ)</text><text x="500" y="230" font-size="14" fill="#333" text-anchor="end">结构的尺寸（基数）</text><circle cx="90" cy="115" r="18" fill="none" stroke="#2c7fb8" stroke-width="2"/><rect x="125" y="98" width="34" height="32" fill="none" stroke="#2c7fb8" stroke-width="2"/><polygon points="200,132 218,96 236,132" fill="none" stroke="#2c7fb8" stroke-width="2"/><text x="163" y="62" font-size="14" fill="#2c7fb8" text-anchor="middle">阈值以下：模型五花八门</text><circle cx="430" cy="112" r="22" fill="none" stroke="#2c7fb8" stroke-width="2"/><text x="430" y="62" font-size="14" fill="#2c7fb8" text-anchor="middle">阈值以上：模型唯一（范畴）</text><text x="280" y="272" font-size="13" fill="#666" text-anchor="middle">一处唯一，则处处唯一</text></svg>
+
+</div>
+
+**为什么值得关心**
+
+这是 Shelah 上世纪 70 年代提出的猜想；此前所有部分结果都要大基数、融合性等附加假设，本文首次在纯 ZFC 中无条件证明。
+
+> 暂无形式化证明（AI 结果待核验）
+
 ## 一句话结论
 
 在纯 ZFC 中证明了 Shelah 的"最终范畴性猜想"（eventual categoricity conjecture）：对每个无穷基数 `@@M@@\lambda@@` 存在统一阈值 `@@M@@\mu(\lambda)@@`，凡 Löwenheim–Skolem 数 `@@M@@\le\lambda@@` 的抽象初等类，只要在某个 `@@M@@\ge\mu(\lambda)@@` 的基数上范畴，就在所有 `@@M@@\ge\mu(\lambda)@@` 的基数上范畴，且不需融合性等任何附加结构假设。

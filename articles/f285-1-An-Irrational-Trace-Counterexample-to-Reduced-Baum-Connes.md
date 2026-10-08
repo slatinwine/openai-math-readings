@@ -13,6 +13,33 @@ pdfname: ""
 
 > 结果族 285：Counterexamples to Baum–Connes and Kadison–Kaplansky　·　学科：Operator algebras　·　验证状态：暂无形式化证明，请以社区核验为准
 
+## 入门导读 🐣
+
+有些数学猜想像公司的"对账制度"：断言两条完全不同的流水线——一条看几何，一条看代数——算出的库存清单必然一致。这篇论文精心造出一个群，让两条流水线的账对不上：无系数版本的 Baum–Connes 猜想就此被推翻。
+
+**关键词卡片**
+
+- 群 C*-代数（group C*-algebra）：把群的元素当成可相乘的变换算子后，生成的整个代数世界
+- 投影（projection）：满足 `@@M@@p^2=p@@` 的算子，像一个只会停在 0 和 1 的开关
+- 迹（trace）：给算子称重的秤，投影称出的重量类似图形面积
+- 装配映射（assembly map）：把几何侧清单搬进代数侧的对账通道，猜想称它为完美对账员
+
+**看个具体例子**
+
+决定性证据是一个投影 `@@M@@b_0@@`，它的迹是无理数。取 `@@M@@p=2@@`，这个迹形如 `@@M@@\sum_i 2^{-k_i}@@`：二进制小数里的 1 只出现在稀疏、间距越来越大的位置上，永不循环，所以无理。而 Lück 定理保证：装配映射像里所有元素称出来都只能是有理数。无理重量的 `@@M@@b_0@@`，进不了有理账本的门。
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280"><rect x="20" y="40" width="180" height="64" fill="none" stroke="#333" stroke-width="2"/><text x="110" y="68" text-anchor="middle" font-size="15">几何侧：分类空间 K-理论</text><text x="110" y="90" text-anchor="middle" font-size="12">（拓扑清单）</text><line x1="202" y1="72" x2="350" y2="72" stroke="#333" stroke-width="2"/><polygon points="362,72 348,65 348,79" fill="#333"/><text x="280" y="60" text-anchor="middle" font-size="14">装配映射 μ</text><rect x="360" y="40" width="180" height="64" fill="none" stroke="#333" stroke-width="2"/><text x="450" y="68" text-anchor="middle" font-size="15">代数侧：K₀(Cr*(G))</text><text x="450" y="90" text-anchor="middle" font-size="12">（算子清单）</text><ellipse cx="390" cy="200" rx="150" ry="55" fill="#eef" stroke="#369" stroke-width="2"/><text x="390" y="196" text-anchor="middle" font-size="14">μ 的像</text><text x="390" y="218" text-anchor="middle" font-size="12">迹全为有理数</text><circle cx="150" cy="228" r="7" fill="#c33"/><text x="150" y="258" text-anchor="middle" font-size="13" fill="#c33">b₀：τ=1/2+1/128+… 无理</text><path d="M 162 224 L 246 210" stroke="#c33" stroke-width="2" stroke-dasharray="6,4" fill="none"/><polygon points="250,209 236,205 238,219" fill="#c33"/><text x="185" y="195" text-anchor="middle" font-size="12" fill="#c33">进不了像</text></svg>
+
+</div>
+
+**为什么值得关心**
+
+从 Atiyah 1976 年追问"`@@M@@L^2@@` 不变量能否取无理值"起，无理迹一直是这类猜想的天然试金石；本文首次让这样的投影真正落进群 C*-代数，一个悬置多年的主流猜想被否定，算子代数与拓扑 K-理论的地图需要重画。
+
+> 暂无形式化证明（AI 结果待核验）
+
 ## 一句话结论
 
 本文构造了一个有限生成群 `@@M@@G_{\mathrm{sur}}@@`，其约化群 `@@M@@C^*@@`-代数中含有典范迹为无理数的投影 `@@M@@b_0@@`；由 Lück 迹定理，装配像中所有类的迹均为有理数，故 `@@M@@[b_0]@@` 落在装配映射的像之外——无系数约化 Baum–Connes 猜想对可数离散群被推翻（满射方向）。

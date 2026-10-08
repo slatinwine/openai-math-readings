@@ -13,6 +13,61 @@ pdfname: ""
 
 > 结果族 089：Bounded-distortion <i>L</i><sub>1</sub> embeddings of planar and bounded-treewidth graphs　·　学科：Convex and metric geometry　·　验证状态：主结果已 Lean 形式化
 
+## 入门导读 🐣
+
+一张大网络如果能拆成一串"小袋子"——每个袋只装少量节点、袋子沿一棵树相连——就说它树宽有界。论文证明：凡树宽有界的网络，无论多大、边长多离谱，其最短路距离都能嵌进棋盘距离（`@@M@@L^1@@`），误差倍数只依赖树宽，与网络规模无关。这解决了 GNRS 嵌入猜想的有界树宽情形。
+
+**关键词卡片**
+
+- 树分解（tree decomposition）：把图的顶点装进"袋"（bag），袋覆盖所有边、袋子连成一棵树、每个顶点所属的袋构成连通子树。
+- 树宽（treewidth）：袋子大小的最大值减一，衡量"图离树有多近"的小指标。
+- 最短路度量（shortest-path metric）：两点沿边走的最短总长。
+- 失真（distortion）：嵌入后距离至多放大固定倍数 `@@M@@C_k@@`。
+- 禁用子式（excluded minor）：删边、缩边后也不会出现的"障碍图"；禁用任一固定平面子式等价于树宽有界。
+
+**看个具体例子**
+
+一条"三角形串"：三角形 `@@M@@(a,b,c)@@` 与三角形 `@@M@@(c,d,e)@@` 共享顶点 `@@M@@c@@`。它的树分解只需两个袋：`@@M@@\{a,b,c\}@@` 与 `@@M@@\{c,d,e\}@@`，袋大小 3，树宽 2。
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280">
+<text x="40" y="30" font-size="18" fill="#333">三角形串图与它的树分解</text>
+<line x1="100" y1="50" x2="55" y2="130" stroke="#555555" stroke-width="2.5"/>
+<line x1="55" y1="130" x2="175" y2="90" stroke="#555555" stroke-width="2.5"/>
+<line x1="175" y1="90" x2="100" y2="50" stroke="#555555" stroke-width="2.5"/>
+<line x1="175" y1="90" x2="290" y2="50" stroke="#555555" stroke-width="2.5"/>
+<line x1="290" y1="50" x2="245" y2="130" stroke="#555555" stroke-width="2.5"/>
+<line x1="245" y1="130" x2="175" y2="90" stroke="#555555" stroke-width="2.5"/>
+<circle cx="100" cy="50" r="8" fill="#2e86c1"/>
+<circle cx="55" cy="130" r="8" fill="#2e86c1"/>
+<circle cx="175" cy="90" r="8" fill="#8e44ad"/>
+<circle cx="290" cy="50" r="8" fill="#27ae60"/>
+<circle cx="245" cy="130" r="8" fill="#27ae60"/>
+<text x="88" y="40" font-size="16" fill="#2e86c1">a</text>
+<text x="36" y="150" font-size="16" fill="#2e86c1">b</text>
+<text x="168" y="76" font-size="16" fill="#8e44ad">c</text>
+<text x="298" y="42" font-size="16" fill="#27ae60">d</text>
+<text x="250" y="154" font-size="16" fill="#27ae60">e</text>
+<line x1="175" y1="102" x2="175" y2="180" stroke="#aaaaaa" stroke-width="1.5" stroke-dasharray="4 3"/>
+<ellipse cx="125" cy="215" rx="78" ry="30" fill="none" stroke="#c0392b" stroke-width="2"/>
+<ellipse cx="345" cy="215" rx="78" ry="30" fill="none" stroke="#1a7a4c" stroke-width="2"/>
+<line x1="203" y1="215" x2="267" y2="215" stroke="#888888" stroke-width="2"/>
+<text x="125" y="221" font-size="15" fill="#c0392b" text-anchor="middle">袋1={a,b,c}</text>
+<text x="345" y="221" font-size="15" fill="#1a7a4c" text-anchor="middle">袋2={c,d,e}</text>
+<text x="235" y="268" font-size="14" fill="#777777">袋大小 − 1 = 树宽；这张图树宽为 2</text>
+</svg>
+
+</div>
+
+定理代入：凡有袋大小至多 `@@M@@k@@` 的树分解的图，对任意正实数边长，存在映射 `@@M@@F@@` 使 `@@M@@d_G(u,v)\le\|F(u)-F(v)\|_1\le C_k\,d_G(u,v)@@`，且 `@@M@@C_k@@` 与顶点数、边长比例全都无关。由 Robertson–Seymour 定理，凡禁用任一固定平面子式的图族自动获得一致失真界。
+
+**为什么值得关心**
+
+它补上了 GNRS 猜想的另一块试验田（平面情形由姊妹篇解决）：证明直接在树分解上构造割测度，"袋内状态有限"使误差不随分解深度累积，并连带给出流—割间隙与近似算法的推论。
+
+> 已 Lean 形式化
+
 ## 一句话结论
 
 证明了对每个固定的树宽（treewidth）上界，所有允许任意正实数边长的有限连通图都以仅依赖树宽的常数失真（distortion）嵌入 `@@M@@L_1@@`，肯定解决 Gupta–Newman–Rabinovich–Sinclair 猜想的有界树宽情形；由 Robertson–Seymour 定理，一切禁用固定平面子式的图族同时获得一致界。

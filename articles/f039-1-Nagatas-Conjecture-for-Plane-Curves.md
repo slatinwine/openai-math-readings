@@ -13,6 +13,50 @@ pdfname: ""
 
 > 结果族 039：Nagata's conjecture and maximal Seshadri constants　·　学科：Algebraic and complex geometry　·　验证状态：主结果已 Lean 形式化
 
+## 入门导读 🐣
+
+在一张大纸上钉 10 枚或更多图钉，再派一条 `@@M@@d@@` 次代数曲线去逐个"拜会"：第 `@@M@@i@@` 枚图钉要拜访 `@@M@@m_i@@` 遍。Nagata 在 1959 年猜：只要图钉摆得不特殊，拜会的总次数一定严格少于 `@@M@@d\sqrt r@@`——曲线想多绕几圈？账单有硬上限。本文对一切 `@@M@@r\ge 10@@` 完整证明了这个猜想，并顺带算清了爆炸曲面上相应的 Seshadri 常数。
+
+**关键词卡片**
+
+- 平面曲线（plane curve）：一个 `@@M@@d@@` 次齐次方程在射影平面里的零点集，允许可约。
+- 重数（multiplicity）：曲线在某点"打转"的圈数。
+- 非常一般点（very general points）：避开所有可数个特殊位置陷阱的摆放。
+- Nagata 猜想（Nagata's conjecture）：总重数账单 `@@M@@\sum_i m_i<d\sqrt r@@`。
+- Seshadri 常数（Seshadri constant）：曲线过点消耗正性的效率；本文算得 `@@M@@1/\sqrt r@@`。
+
+**看个具体例子**
+
+取 `@@M@@r=10@@`：上限为 `@@M@@d\sqrt{10}\approx 3.162\,d@@`。若 `@@M@@d=10@@`：每点重数 `@@M@@3@@` 时总账 `@@M@@30<31.6@@`，尚有可能；每点重数 `@@M@@4@@` 则 `@@M@@40>31.6@@`，必然无解。为什么从 10 开始？`@@M@@r=9@@` 时过 9 个一般点总有不为零的三次曲线，`@@M@@9=3\times\sqrt 9@@` 恰好卡在等号上，严格不等式无从谈起。Nagata 本人当年只证出点数为平方数（至少 16）的情形，此后六十多年的最好记录也停在略低于 `@@M@@\sqrt r@@` 的位置，本文终于触线。
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280">
+  <text x="280" y="30" text-anchor="middle" font-size="15" fill="#334455">10 枚图钉与一条曲线：总重数 30 &lt; 31.6</text>
+  <path d="M40 205 C 62 172, 76 147, 95 128 S 122 100, 152 86 S 185 62, 208 68 S 240 78, 262 92 S 285 112, 302 132 S 330 164, 356 186 S 388 218, 414 222 S 446 236, 466 232 S 492 210, 510 150" fill="none" stroke="#4a90c4" stroke-width="2.5"/>
+  <circle cx="40" cy="205" r="5" fill="#c0504d"/>
+  <circle cx="95" cy="128" r="5" fill="#c0504d"/>
+  <circle cx="152" cy="86" r="5" fill="#c0504d"/>
+  <circle cx="208" cy="68" r="5" fill="#c0504d"/>
+  <circle cx="262" cy="92" r="5" fill="#c0504d"/>
+  <circle cx="302" cy="132" r="5" fill="#c0504d"/>
+  <circle cx="356" cy="186" r="5" fill="#c0504d"/>
+  <circle cx="414" cy="222" r="5" fill="#c0504d"/>
+  <circle cx="466" cy="232" r="5" fill="#c0504d"/>
+  <circle cx="510" cy="150" r="5" fill="#c0504d"/>
+  <text x="90" y="250" font-size="13" fill="#c0504d">图钉：非常一般点</text>
+  <text x="440" y="70" font-size="13" fill="#4a90c4">d 次曲线</text>
+  <text x="280" y="272" text-anchor="middle" font-size="13" fill="#666666">每点重数 3 可以做到；重数 4 必然无曲线</text>
+</svg>
+
+</div>
+
+**为什么值得关心**
+
+它是多项式插值问题的地基，并精确钉死了爆炸曲面的多点 Seshadri 常数；而且整个主定理已通过计算机辅助的形式化证明验证，可信度极高。
+
+> 已 Lean 形式化
+
 ## 一句话结论
 证明了 `@@M@@r\ge 10@@` 个非常一般复点上，任何带任意重数 `@@M@@m_i@@` 的非零有效平面曲线必满足 `@@M@@\sum_i m_i\lt d\sqrt r@@`，以严格、非齐次的形式完全确立 Nagata 猜想，并给出爆炸曲面上多点 Seshadri 常数的精确值 `@@M@@1/\sqrt r@@`。
 

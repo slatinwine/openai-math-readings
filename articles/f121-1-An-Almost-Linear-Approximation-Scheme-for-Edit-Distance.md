@@ -13,6 +13,78 @@ pdfname: ""
 
 > 结果族 121：Almost-linear approximation of edit distance　·　学科：Theoretical computer science　·　验证状态：暂无形式化证明，请以社区核验为准
 
+## 入门导读 🐣
+
+把 "kitten" 改成 "sitting" 最少要几步操作？经典动态规划能精确回答，但要花"两串长度相乘"的时间；理论上又预示太快的精确算法恐怕不存在。这篇论文给出两头讨好的方案：允许百分之一的误差，时间立刻降到近乎"把字符串读一遍"。
+
+**关键词卡片**
+
+- 编辑距离（edit distance）：插入、删除、替换的最少总次数。
+- 动态规划（dynamic programming）：`@@M@@O(N^2)@@` 的经典精确算法。
+- 近似方案（approximation scheme）：对任意 `@@M@@\varepsilon@@` 输出 `@@M@@(1+\varepsilon)@@` 因子估计的算法。
+- 区间树（interval tree）：把字符串递归切块组织的骨架结构。
+- 精度采样（precision sampling）：把"测得准"的预算随机分配给关键位置的技术。
+
+**看个具体例子**
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280">
+  <text x="25" y="35" font-size="15">x = kitten</text>
+  <rect x="70" y="50" width="45" height="45" fill="none" stroke="#333" stroke-width="2"/>
+  <rect x="135" y="50" width="45" height="45" fill="none" stroke="#333" stroke-width="2"/>
+  <rect x="200" y="50" width="45" height="45" fill="none" stroke="#333" stroke-width="2"/>
+  <rect x="265" y="50" width="45" height="45" fill="none" stroke="#333" stroke-width="2"/>
+  <rect x="330" y="50" width="45" height="45" fill="none" stroke="#333" stroke-width="2"/>
+  <rect x="395" y="50" width="45" height="45" fill="none" stroke="#333" stroke-width="2"/>
+  <rect x="460" y="50" width="45" height="45" fill="none" stroke="#333" stroke-width="2" stroke-dasharray="6,5"/>
+  <text x="92" y="80" text-anchor="middle" font-size="16">k</text>
+  <text x="157" y="80" text-anchor="middle" font-size="16">i</text>
+  <text x="222" y="80" text-anchor="middle" font-size="16">t</text>
+  <text x="287" y="80" text-anchor="middle" font-size="16">t</text>
+  <text x="352" y="80" text-anchor="middle" font-size="16">e</text>
+  <text x="417" y="80" text-anchor="middle" font-size="16">n</text>
+  <line x1="92" y1="100" x2="92" y2="155" stroke="#999" stroke-width="1"/>
+  <line x1="157" y1="100" x2="157" y2="155" stroke="#999" stroke-width="1"/>
+  <line x1="222" y1="100" x2="222" y2="155" stroke="#999" stroke-width="1"/>
+  <line x1="287" y1="100" x2="287" y2="155" stroke="#999" stroke-width="1"/>
+  <line x1="352" y1="100" x2="352" y2="155" stroke="#999" stroke-width="1"/>
+  <line x1="417" y1="100" x2="417" y2="155" stroke="#999" stroke-width="1"/>
+  <line x1="482" y1="100" x2="482" y2="155" stroke="#999" stroke-width="1"/>
+  <text x="104" y="132" font-size="13">替换</text>
+  <text x="364" y="132" font-size="13">替换</text>
+  <text x="494" y="132" font-size="13">插入</text>
+  <text x="25" y="175" font-size="15">y = sitting</text>
+  <rect x="70" y="160" width="45" height="45" fill="none" stroke="#333" stroke-width="2"/>
+  <rect x="135" y="160" width="45" height="45" fill="none" stroke="#333" stroke-width="2"/>
+  <rect x="200" y="160" width="45" height="45" fill="none" stroke="#333" stroke-width="2"/>
+  <rect x="265" y="160" width="45" height="45" fill="none" stroke="#333" stroke-width="2"/>
+  <rect x="330" y="160" width="45" height="45" fill="none" stroke="#333" stroke-width="2"/>
+  <rect x="395" y="160" width="45" height="45" fill="none" stroke="#333" stroke-width="2"/>
+  <rect x="460" y="160" width="45" height="45" fill="none" stroke="#333" stroke-width="2"/>
+  <text x="92" y="190" text-anchor="middle" font-size="16">s</text>
+  <text x="157" y="190" text-anchor="middle" font-size="16">i</text>
+  <text x="222" y="190" text-anchor="middle" font-size="16">t</text>
+  <text x="287" y="190" text-anchor="middle" font-size="16">t</text>
+  <text x="352" y="190" text-anchor="middle" font-size="16">i</text>
+  <text x="417" y="190" text-anchor="middle" font-size="16">n</text>
+  <text x="482" y="190" text-anchor="middle" font-size="16">g</text>
+  <text x="25" y="235" font-size="13">竖线 = 对齐；虚线格表示 x 里对应的"空位"</text>
+  <text x="25" y="262" font-size="14">编辑距离 = 3（两次替换 + 一次插入）</text>
+</svg>
+
+</div>
+
+数字版：定理保证输出 `@@M@@\widehat D@@` 满足 `@@M@@\mathrm{ED}\le\widehat D\le(1+\varepsilon)\,\mathrm{ED}@@`，成功概率 `@@M@@\ge\tfrac23@@`，期望时间 `@@M@@N^{1+o(1)}@@`。取 `@@M@@\varepsilon=0.01@@`、真实距离为 3 时，输出被夹在 `@@M@@3@@` 与 `@@M@@3.03@@` 之间——整数答案恰好就是 3。
+
+算法内部像导航软件：先把一串字符递归切块成区间树，用精度采样造出粗糙的初步估计；核心新意是预测最优对齐路径的走向，把候选位置压缩成一条窄带，带内用在线预测逐段决策，最后多轮放大精度收尾。
+
+**为什么值得关心**
+
+速度与精度首次兼得：精确计算的二次壁垒被理论挡死，近似路线却在近线性时间里把误差压到任意小。
+
+> 暂无形式化证明（AI 结果待核验）
+
 ## 一句话结论
 
 本文证明：对任意固定有理数 `@@M@@\varepsilon\in(0,1)@@`，存在随机算法在 `@@M@@N^{1+o(1)}@@` 的最坏情形期望时间内，把总长 `@@M@@N@@` 的两串的编辑距离估计到 `@@M@@(1+\varepsilon)@@` 因子以内（成功概率 `@@M@@\ge 2/3@@`），把该精度下的最好时间纪录从 `@@M@@n^2/2^{\log^{\Omega(1)}n}@@` 推进到近线性。

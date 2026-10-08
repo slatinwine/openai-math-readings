@@ -13,6 +13,62 @@ pdfname: ""
 
 > 结果族 005：Irrationality of Catalan's constant　·　学科：Number theory　·　验证状态：暂无形式化证明，请以社区核验为准
 
+## 入门导读 🐣
+
+`@@M@@0.916\ldots@@` 这个数看着平平无奇：它是 `@@M@@1-\frac19+\frac1{25}-\frac1{49}+\cdots@@` 的和，叫卡塔兰常数 `@@M@@G@@`，从 1849 年起就排在"不知道是不是分数"的常数名单上。同族的奇数点值早知是 `@@M@@\pi@@` 幂的有理倍数，偏偏偶数点顽固至今。这篇论文给它定了性：`@@M@@G@@` 是无理数。办法很"会计"：构造一列行列式，同时记两本账，再证明只要 `@@M@@G@@` 是分数，两本账必然对不上。
+
+**关键词卡片**
+
+- 卡塔兰常数（Catalan's constant）：`@@M@@G=\sum_{j\ge0}(-1)^j/(2j+1)^2@@`，狄利克雷 beta 函数在 `@@M@@s=2@@` 的值。
+- 无理数（irrational number）：不能写成两个整数之比的数。
+- 素数赋值（p-adic valuation）：一个数里含多少个素数 `@@M@@p@@` 的因子——"分母账本"的精确刻度。
+- 行列式（determinant）：把一堆有理数打包成单个数的代数装置，是本文的主角。
+- 分母代价（denominator cost）：经典证无理套路（阿佩里式逼近）对 `@@M@@G@@` 失效的原因——通分后误差不趋于零，本文绕开了它。
+
+**看个具体例子**
+
+先看级数本身如何一上一下夹逼出 `@@M@@G\approx0.91597@@`：
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280">
+  <text x="280" y="26" font-size="17" text-anchor="middle" fill="#222">部分和一上一下夹逼出 G ≈ 0.91597</text>
+  <line x1="80" y1="60" x2="80" y2="224" stroke="#333" stroke-width="1.5"/>
+  <line x1="80" y1="224" x2="510" y2="224" stroke="#333" stroke-width="1.5"/>
+  <text x="72" y="65" font-size="13" text-anchor="end" fill="#555">1.00</text>
+  <text x="72" y="171" font-size="13" text-anchor="end" fill="#555">0.90</text>
+  <text x="72" y="228" font-size="13" text-anchor="end" fill="#555">0.85</text>
+  <line x1="80" y1="167" x2="510" y2="167" stroke="#eeeeee" stroke-width="1"/>
+  <line x1="80" y1="220" x2="510" y2="220" stroke="#eeeeee" stroke-width="1"/>
+  <line x1="80" y1="150" x2="500" y2="150" stroke="#c0392b" stroke-width="1.5" stroke-dasharray="7,5"/>
+  <text x="500" y="141" font-size="14" text-anchor="end" fill="#c0392b">极限 G ≈ 0.91597</text>
+  <polyline points="80,60 150,179 220,136 290,158 360,144 430,153" fill="none" stroke="#333" stroke-width="2"/>
+  <circle cx="80" cy="60" r="4" fill="#333"/>
+  <circle cx="150" cy="179" r="4" fill="#333"/>
+  <circle cx="220" cy="136" r="4" fill="#333"/>
+  <circle cx="290" cy="158" r="4" fill="#333"/>
+  <circle cx="360" cy="144" r="4" fill="#333"/>
+  <circle cx="430" cy="153" r="4" fill="#333"/>
+  <text x="88" y="50" font-size="13" fill="#555">S₁=1</text>
+  <text x="150" y="199" font-size="13" text-anchor="middle" fill="#555">S₂</text>
+  <text x="220" y="124" font-size="13" text-anchor="middle" fill="#555">S₃</text>
+  <text x="290" y="176" font-size="13" text-anchor="middle" fill="#555">S₄</text>
+  <text x="360" y="132" font-size="13" text-anchor="middle" fill="#555">S₅</text>
+  <text x="430" y="171" font-size="13" text-anchor="middle" fill="#555">S₆</text>
+  <text x="295" y="252" font-size="14" text-anchor="middle" fill="#555">G = 1 − 1/9 + 1/25 − 1/49 + 1/81 − 1/121 + …</text>
+  <text x="295" y="272" font-size="14" text-anchor="middle" fill="#555">论文证明：这个极限不是任何两个整数之比</text>
+</svg>
+
+</div>
+
+收敛不稀奇，稀奇在后手：论文造出 `@@M@@48N@@` 阶行列式 `@@M@@\Delta_N@@`，若 `@@M@@G@@` 是分数，`@@M@@\Delta_N@@` 必是有理数，于是"分母账"给出下界 `@@M@@\liminf\mathcal L_N>-2.29084@@`；而与假设无关的"实数账"给出上界 `@@M@@\limsup\mathcal L_N\le-2.290939875@@`。上界严格压过下界，两本账差之毫厘却绝不兼容——所以 `@@M@@G@@` 只能无理。
+
+**为什么值得关心**
+
+与 `@@M@@\pi@@`、`@@M@@\mathrm{e}@@`、`@@M@@\zeta(3)@@` 同级的"常数名单"又划掉一个；同一论证还推出某些双曲三维流形的最小体积是无理数。
+
+> 暂无形式化证明（AI 结果待核验）
+
 ## 一句话结论
 
 论文证明卡塔兰常数（Catalan's constant）`@@M@@G=\sum_{j\ge0}(-1)^j/(2j+1)^2@@` 是无理数（irrational）。做法是对一族 `@@M@@48N@@` 阶行列式同时给出"素数赋值下界"与"实侧上界"，两条界随 `@@M@@N@@` 增长必不相容，故 `@@M@@G@@` 不可能是有理数。

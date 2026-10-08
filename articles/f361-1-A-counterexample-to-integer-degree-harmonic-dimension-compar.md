@@ -13,6 +13,34 @@ pdfname: ""
 
 > 结果族 361：Failure of integer-degree harmonic dimension comparison　·　学科：Differential geometry　·　验证状态：主结果已 Lean 形式化
 
+## 入门导读 🐣
+
+在平地上，"无源无汇、平滑起伏"且增长不超过 k 次幂的函数只有调和多项式那么多，数目数得清。丘成桐曾猜测：凡是"里奇曲率非负"（不比平地更陡）的空间，这类函数的数目都不会超过平地。这篇论文造出一片 16 维的奇特地形，让同类函数的数目多得出格——猜想的整数版本被推翻。
+
+**关键词卡片**
+
+- 调和函数（harmonic function）：处处等于自身邻域平均值的函数，像无源稳态的温度分布。
+- 里奇曲率非负（nonnegative Ricci curvature）：空间在各方向平均意义下不比欧氏空间更弯的曲率条件。
+- 增长不超过 k（polynomial growth）：函数大小至多随"到原点的距离的 k 次幂"增长。
+- 无穷远切锥（tangent cone at infinity）：站到无穷远处回望时，空间呈现的极限形状。
+- Berger 度量（Berger metric）：把球面某个方向拉伸或压缩得到的度量的变体；本文让它随半径不断切换，是反例的发动机。
+
+**看个具体例子**
+
+欧氏空间的账本：在 `@@M@@\mathbb R^3@@` 中增长 `@@M@@\le k@@` 的调和函数恰好是次数 `@@M@@\le k@@` 的调和多项式，维数为 `@@M@@(k+1)^2@@`——比如 `@@M@@k=2@@` 时恰好 9 维。论文则在 `@@M@@\mathbb R^{16}@@` 上构造出 `@@M@@\operatorname{Ric}\ge 0@@` 的度量，使 `@@M@@k=50000@@` 时维数严格超过欧氏计数 `@@M@@\binom{16+49999}{49999}+\binom{16+49998}{49998}@@`。诀窍是"轮流驻留"：让同一个调和函数在不同半径段以不同的增长率生长，个别段超过 k 也无妨，只要按对数半径平均后低于 k。
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280"><line x1="70" y1="240" x2="500" y2="240" stroke="#333" stroke-width="2"/><line x1="70" y1="240" x2="70" y2="45" stroke="#333" stroke-width="2"/><text x="80" y="58" font-size="15" fill="#333">增长率</text><text x="380" y="264" font-size="15" fill="#333">log r（对数半径）</text><line x1="70" y1="110" x2="490" y2="110" stroke="#999" stroke-width="1.5" stroke-dasharray="8 6"/><text x="76" y="103" font-size="15" fill="#555">k</text><path d="M70,75 L115,75 L115,150 L155,150 L155,65 L195,65 L195,155 L235,155 L235,70 L275,70" fill="none" stroke="#333" stroke-width="2.5"/><line x1="70" y1="130" x2="490" y2="130" stroke="#555" stroke-width="1.5" stroke-dasharray="2 6"/><text x="300" y="152" font-size="15" fill="#333">平均增长率 &lt; k</text></svg>
+
+</div>
+
+**为什么值得关心**
+
+它说明仅凭"里奇非负"撑不起丘成桐的维数比较；反例在无穷远处没有唯一的切锥、渐近体积比严格小于 1，恰好点明以往正面定理里哪些假设是必不可少的。
+
+> 已 Lean 形式化
+
 ## 一句话结论
 
 论文在 `@@M@@\mathbb R^{16}@@`（一般地，某个偶数维 `@@M@@n\geq 8@@`）上构造了 `@@M@@\operatorname{Ric}\geq 0@@` 的完备光滑度量，使增长不超过 `@@M@@k=50000@@` 的调和函数空间维数严格超过欧氏计数，对丘成桐整数阶调和维数比较问题给出否定回答。

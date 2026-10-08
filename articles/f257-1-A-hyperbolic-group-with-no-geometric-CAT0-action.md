@@ -13,6 +13,43 @@ pdfname: ""
 
 > 结果族 257：A hyperbolic group without a geometric CAT(0) action　·　学科：Group theory　·　验证状态：主结果已 Lean 形式化
 
+## 入门导读 🐣
+
+有些群的内部世界像双曲马鞍面：处处下凹、三角形内角和小于 180°，迷路了也容易抄近路找回。数学家长期猜想，这样的"负曲率群"总能搬进某个真正的非正曲率空间安家，Gromov 本人找了多年。这篇论文造出反例：一个规规矩矩的负曲率群，任何维数的非正曲率新房都容不下它。
+
+**关键词卡片**
+
+- 字双曲群（word-hyperbolic group）：词语距离呈现负曲率行为的群（Gromov，1987）。
+- 等周不等式（isoperimetric inequality）：把一条回路用"面片"填平的代价上界；线性代价恰等同于双曲。
+- CAT(0) 空间（CAT(0) space）：曲率非正的度量空间，欧氏空间与双曲平面都是成员。
+- 几何作用（geometric action）：群等距、真且余紧地作用于空间——"用群铺满空间"。
+- 逐球复形（aspherical complex）：万有覆盖可缩的胞腔空间，分类空间的原型。
+
+**看个具体例子**
+
+双曲性的直观招牌是"回路便宜"：一条长 100 的迷路，在双曲群里用与周长同量级的窄带就能填平（左图）；在平面 `@@M@@\mathbb{Z}^2@@` 里，边长 100 的方框内部必须整块填满，代价约 100²（右图）。论文构造的复形 K 恰恰有线性填充（故其基本群是双曲群），却无论如何也造不出 CAT(0) 几何——"容易填平"并不保证"住得进平地"。
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280">
+  <text x="165" y="46" font-size="14" fill="#333" text-anchor="middle">双曲盘：窄带即可填平回路</text>
+  <rect x="50" y="80" width="230" height="115" rx="57" fill="#e4f0e4" stroke="#3a6" stroke-width="2"/>
+  <rect x="80" y="110" width="170" height="55" rx="27" fill="#fff" stroke="#3a6" stroke-width="2"/>
+  <text x="165" y="252" font-size="13" fill="#3a6" text-anchor="middle">填充面积 ≈ 常数 × 周长（线性）</text>
+  <text x="435" y="46" font-size="14" fill="#333" text-anchor="middle">欧氏方框：内部必须整块填满</text>
+  <rect x="360" y="72" width="150" height="150" fill="#fdeeda" stroke="#d54" stroke-width="2"/>
+  <text x="435" y="252" font-size="13" fill="#d54" text-anchor="middle">填充面积 ≈ 周长²（平方）</text>
+  <text x="280" y="270" font-size="12" fill="#666" text-anchor="middle">论文的群：回路永远线性可填（双曲），却找不到任何 CAT(0) 舞台</text>
+</svg>
+
+</div>
+
+**为什么值得关心**
+
+它否定了"群论负曲率总能实现为几何负曲率"的长期期待，给 Gromov 时代的实现问题画上句号：双曲与 CAT(0) 从此是真正不同的两类。
+
+> 已 Lean 形式化
+
 ## 一句话结论
 
 构造出一个带有限分类空间（finite classifying space）的字双曲群，它不容许在任何维数的真完备 `@@M@@\mathrm{CAT}(0)@@` 空间上有真且余紧的等距作用，从而对"每个双曲群都是 `@@M@@\mathrm{CAT}(0)@@` 群"这一长期公开的实现问题给出否定回答。

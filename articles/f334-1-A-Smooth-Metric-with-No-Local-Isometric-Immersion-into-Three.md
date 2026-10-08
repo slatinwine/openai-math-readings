@@ -13,6 +13,47 @@ pdfname: ""
 
 > 结果族 334：A smooth surface metric with no local isometric immersion in ℝ<sup>3</sup>　·　学科：Differential geometry　·　验证状态：主结果已 Lean 形式化
 
+## 入门导读 🐣
+
+想象一块神奇的布：在某个点处，无论放大多少倍，它看起来都和普通平面一模一样（各阶导数全部相同）；可整块布却怎么也无法不拉伸、不压缩地贴进三维空间。这篇论文就造出了这样一块布，从而否定了一个长期悬而未决的预期：光滑的"量长规则"总能局部实现成三维空间里的真实曲面。
+
+**关键词卡片**
+
+- 等距浸入（isometric immersion）：把曲面放进 `@@M@@\mathbb R^3@@` 且保持一切长度，不许拉伸压缩
+- 全阶 Taylor jet（Taylor jet）：函数在某点的全部导数信息；本文度量在原点与欧氏度量 jet 完全相同
+- 高斯曲率（Gaussian curvature）：由量长规则本身算出的内在弯曲度；本构造中央为负、外围为正
+- Darboux 方程（Darboux equation）：任何浸入的高度函数都必须满足的方程，证明只用到这条必要条件
+- Baire 纲论证（Baire category）：证明"绝大多数度量都不可实现"的存在性方法
+
+**看个具体例子**
+
+构造的曲率取 `@@M@@K=\kappa\,(x^2-h(y))@@`：曲线 `@@M@@x^2=h(y)@@` 围出的中央区域曲率为负（鞍形），外围为正（碗形），交界处曲率恰为零；再叠加越来越薄、越来越快的振荡脉冲，使原点的任何邻域内都导出矛盾。jet 条件的数字版：`@@M@@\partial^\alpha(g_{ij}-\delta_{ij})(0)=0@@` 对一切多重指标 `@@M@@\alpha@@` 成立。
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280">
+<text x="20" y="35" font-size="16" fill="#333">曲率布局：中央为负，外围为正</text>
+<rect x="60" y="60" width="240" height="180" fill="none" stroke="#333"/>
+<ellipse cx="180" cy="150" rx="45" ry="70" fill="#f2d5d5" stroke="#c33" stroke-dasharray="6 4"/>
+<circle cx="180" cy="150" r="4" fill="#333"/>
+<text x="196" y="146" font-size="13" fill="#333">原点</text>
+<text x="128" y="105" font-size="14" fill="#c33">K&lt;0（鞍形）</text>
+<text x="228" y="228" font-size="14" fill="#343">K&gt;0（碗形）</text>
+<text x="122" y="222" font-size="13" fill="#c33">边界：K=0</text>
+<text x="330" y="85" font-size="14" fill="#333">这块"布"在原点与平面</text>
+<text x="330" y="108" font-size="14" fill="#333">全阶相同（jet 一致），</text>
+<text x="330" y="131" font-size="14" fill="#333">但任何邻域都放不进 R³</text>
+<text x="330" y="175" font-size="22" fill="#c33">R³：无解</text>
+</svg>
+
+</div>
+
+**为什么值得关心**
+
+它说明局部可实现性不由基点处的全部导数信息决定，与解析情形的 Janet–Cartan 定理形成鲜明对照，给"光滑局部等距实现"问题画上否定句号。
+
+> 已 Lean 形式化
+
 ## 一句话结论
 
 本文构造了 `@@M@@(-1,1)^2@@` 上一个光滑正定黎曼度量：它在原点与欧氏度量有相同的全阶 Taylor jet，但原点的任何邻域都不容许到 `@@M@@\mathbb{R}^3@@` 的光滑等距浸入，对无限制的光滑局部等距实现问题给出否定回答。

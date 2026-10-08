@@ -13,6 +13,50 @@ pdfname: ""
 
 > 结果族 324：Lipschitz equivalent Banach spaces need not be linearly isomorphic　·　学科：Functional analysis　·　验证状态：主结果已 Lean 形式化
 
+## 入门导读 🐣
+
+一家旅馆明明没有某种"标准房型"，却能通过一番非线性改造，把带这种房型的整栋新楼塞回原有房间，任何两位住客间的距离几乎不变。本文构造出这样的"空间压缩魔术师"Z，回答了非线性几何里又一个公开问题。
+
+**关键词卡片**
+
+- c₀（c₀ space）：收敛到零的数列构成的空间，Banach 空间动物园的基础物种。
+- 双 Lipschitz 等价（bi-Lipschitz equivalence）：距离只差常数倍的一一对应。
+- 线性拷贝（linear copy）：作为闭线性子空间的同构像——"正版房型"。
+- 吸收判据（absorption criterion）：构造双 Lipschitz 双射的代数配方，核心恒等式 `@@M@@QK=g-P@@`。
+
+**看个具体例子**
+
+主定理说：存在到上的双 Lipschitz 映射 `@@M@@F\colon Z\oplus_\infty c_0\to Z@@`，而 Z 不含任何线性拷贝的 c₀。
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280">
+<rect x="30" y="90" width="200" height="100" fill="none" stroke="black" stroke-width="2"/>
+<text x="130" y="125" font-size="15" text-anchor="middle" font-weight="bold">Z ⊕∞ c₀</text>
+<text x="130" y="150" font-size="13" text-anchor="middle">旅馆 + 一栋新楼</text>
+<text x="130" y="172" font-size="13" text-anchor="middle">（新楼 = c₀ 房型）</text>
+<line x1="235" y1="140" x2="325" y2="140" stroke="black" stroke-width="2"/>
+<line x1="325" y1="140" x2="313" y2="134" stroke="black" stroke-width="2"/>
+<line x1="325" y1="140" x2="313" y2="146" stroke="black" stroke-width="2"/>
+<text x="280" y="122" font-size="13" text-anchor="middle">F：双 Lipschitz</text>
+<text x="280" y="163" font-size="13" text-anchor="middle">到上、距离只差常数倍</text>
+<rect x="330" y="90" width="200" height="100" fill="none" stroke="black" stroke-width="2"/>
+<text x="430" y="125" font-size="15" text-anchor="middle" font-weight="bold">Z</text>
+<text x="430" y="150" font-size="13" text-anchor="middle">不含任何线性 c₀</text>
+<text x="430" y="172" font-size="13" text-anchor="middle">（没有正版房型）</text>
+<text x="280" y="235" font-size="13" text-anchor="middle">新楼被"非线性吸收"进旧楼，两空间却不线性同构</text>
+</svg>
+
+</div>
+
+顺带的红利：由 Aharoni 定理"每个可分度量空间都能双 Lipschitz 嵌入 `@@M@@c_0@@`"，把嵌入与 F 复合，Z 成为一切可分度量空间的"万能收纳盒"。又因直和那侧含线性 c₀ 而 Z 不含，两空间自然不线性同构。
+
+**为什么值得关心**
+
+它解决 Kalton 2008 年综述中的问题 2：空间含有 c₀ 的非线性像，不必含有线性拷贝——"非线性吸收"是真的。
+
+> 已 Lean 形式化
+
 ## 一句话结论
 
 构造出可分实 Banach 空间 `@@M@@Z@@`：它不含任何线性拷贝的 `@@M@@c_0@@`，却与 `@@M@@Z\oplus_\infty c_0@@` 双 Lipschitz 等价——`@@M@@c_0@@` 被"非线性吸收"，且同一空间双 Lipschitz 包含一切可分度量空间。

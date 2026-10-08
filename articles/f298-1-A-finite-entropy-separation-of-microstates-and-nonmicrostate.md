@@ -13,6 +13,36 @@ pdfname: ""
 
 > 结果族 298：Two notions of free entropy differ even when both are finite　·　学科：Operator algebras　·　验证状态：暂无形式化证明，请以社区核验为准
 
+## 入门导读 🐣
+
+测量一个随机变量的"不确定性"，经典概率论只有一种熵，答案唯一。可在变量不满足乘法交换律的"自由世界"里，Voiculescu 给出两种测法：一是"数替身"——统计有多少组有限矩阵能惟妙惟肖地模仿这组变量（微状态熵 χ）；二是"量敏感度"——沿添加噪声的轨道积分一种反应力（非微状态熵 χ*）。单变量时两者相等；人们长期追问：两者都取有限值时是否必相等？本文构造反例：即便都是有限数，χ 仍可以比 χ* 小至少 1/2。
+
+**关键词卡片**
+
+- 自由熵（free entropy）：给不交换的"随机变量"（算子组）定义的不确定度
+- 微状态（microstates）：能模仿这组变量各阶矩的有限矩阵组，像合格的替身演员
+- 非微状态熵（nonmicrostates entropy）：不用矩阵替身、用共轭变量积分算出的熵
+- 半圆变量（semicircular variable）：自由概率中扮演"标准正态"的变量
+- 张量独立（tensor independence）：经典式的互不相干，与自由概率的"自由"是两种不同的独立
+
+**看个具体例子**
+
+反例骨架：取 p 个（可取 `@@M@@2^{64}@@`）两两自由的半圆变量 B，再让一个均匀取 p 个等距值的离散变量 Y 以"经典独立"的方式与它们同住。妙在 Y 与 B 交换而非自由：按 Y 的取值把空间切成 p 个块，每块权重约 1/p，B 超过四分之三的能量被锁在块内。
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280"><text x="280" y="38" font-size="15" text-anchor="middle">按 Y 的取值切块（示意 p=5）</text><rect x="60" y="80" width="440" height="90" fill="none" stroke="#333" stroke-width="2"/><line x1="148" y1="80" x2="148" y2="170" stroke="#333" stroke-width="1.5"/><line x1="236" y1="80" x2="236" y2="170" stroke="#333" stroke-width="1.5"/><line x1="324" y1="80" x2="324" y2="170" stroke="#333" stroke-width="1.5"/><line x1="412" y1="80" x2="412" y2="170" stroke="#333" stroke-width="1.5"/><path d="M84 125 q10 -12 20 0 t20 0" fill="none" stroke="#369" stroke-width="2"/><path d="M172 125 q10 -12 20 0 t20 0" fill="none" stroke="#369" stroke-width="2"/><path d="M260 125 q10 -12 20 0 t20 0" fill="none" stroke="#369" stroke-width="2"/><path d="M348 125 q10 -12 20 0 t20 0" fill="none" stroke="#369" stroke-width="2"/><path d="M436 125 q10 -12 20 0 t20 0" fill="none" stroke="#369" stroke-width="2"/><text x="104" y="195" font-size="13" text-anchor="middle">-1</text><text x="192" y="195" font-size="13" text-anchor="middle">-1/2</text><text x="280" y="195" font-size="13" text-anchor="middle">0</text><text x="368" y="195" font-size="13" text-anchor="middle">1/2</text><text x="456" y="195" font-size="13" text-anchor="middle">1</text><text x="280" y="230" font-size="13" text-anchor="middle">蓝色波纹：B 的能量被困在块内</text><text x="280" y="256" font-size="13" text-anchor="middle">矩阵替身难以兼顾块结构 ⇒ 两种熵拉开差距</text></svg>
+
+</div>
+
+这个"块结构"就是分歧的信号：矩阵替身很难同时模仿块结构与其余统计，于是 χ 与 χ* 拉开至少 1/2 的差距——这正是对"有限熵相等问题"的否定回答。
+
+**为什么值得关心**
+
+自由熵是自由概率的核心不变量，此结果表明"熵有限"这一良好性质远不足以统一两种定义，划出了一条真实存在的鸿沟。
+
+> 暂无形式化证明（AI 结果待核验）
+
 ## 一句话结论
 
 本文构造了一个有界自伴算子组，其微状态自由熵 `@@M@@\chi@@` 与非微状态自由熵 `@@M@@\chi^*@@` 均为有限值，却满足 `@@M@@\chi\leq\chi^*-\tfrac12@@`。这否定地回答了 Voiculescu 的有限熵相等问题：即使两种自由熵都有限，它们也可以严格不相等。

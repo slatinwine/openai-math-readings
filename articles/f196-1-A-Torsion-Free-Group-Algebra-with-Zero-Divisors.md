@@ -13,6 +13,51 @@ pdfname: ""
 
 > 结果族 196：A counterexample to Kaplansky's zero-divisor conjecture　·　学科：Algebra　·　验证状态：主结果已 Lean 形式化
 
+## 入门导读 🐣
+
+整数世界有条铁律：两数相乘为零，必有一个是零。可有些代数系统不守规矩——钟表算术里 `@@M@@2\times3=0@@`（模 6）。把一个群的乘法表"线性摊开"成代数，就得到群代数：元素是群元素的"形式和"，乘法按分配律展开。Kaplansky 猜了八十多年：只要群没有有限阶元素，群代数就该像整数一样规矩。此前所有正面结果都限于特殊群类，本文造出了一般无挠群的反例。
+
+**关键词卡片**
+
+- 群代数（group algebra）：以群元素为基、按群乘法相乘的代数。
+- 零因子（zero divisor）：相乘得零的一对非零元素。
+- 无挠群（torsion-free group）：没有有限阶元素的群。
+- 有限展示（finitely presented）：有限个生成元加有限条关系就能写清的群。
+- `@@M@@\mathbb F_2@@`：只有 0 和 1 的域，`@@M@@1+1=0@@`，"奇偶相消"的舞台。
+
+**看个具体例子**
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280">
+<text x="280" y="32" text-anchor="middle" font-size="14">构造骨架：玫瑰 F + 两个锥</text>
+<path d="M150 150 C 105 95 60 95 60 150 C 60 205 105 205 150 150" fill="none" stroke="#222" stroke-width="2"/>
+<path d="M150 150 C 195 95 240 95 240 150 C 240 205 195 205 150 150" fill="none" stroke="#222" stroke-width="2"/>
+<circle cx="150" cy="150" r="5" fill="#222"/>
+<text x="150" y="243" text-anchor="middle" font-size="13">玫瑰 F：生成元所在</text>
+<line x1="245" y1="128" x2="332" y2="98" stroke="#555" stroke-width="1.5" stroke-dasharray="5 4"/>
+<line x1="245" y1="172" x2="332" y2="202" stroke="#555" stroke-width="1.5" stroke-dasharray="5 4"/>
+<text x="288" y="112" font-size="12" fill="#555">浸入</text>
+<text x="288" y="200" font-size="12" fill="#555">浸入</text>
+<ellipse cx="405" cy="85" rx="70" ry="38" fill="none" stroke="#3050a0" stroke-width="2"/>
+<text x="405" y="80" text-anchor="middle" font-size="13" fill="#3050a0">图 Γ_A 的锥</text>
+<text x="405" y="99" text-anchor="middle" font-size="13" fill="#3050a0">α = Σ g_x</text>
+<ellipse cx="405" cy="215" rx="70" ry="38" fill="none" stroke="#b03030" stroke-width="2"/>
+<text x="405" y="210" text-anchor="middle" font-size="13" fill="#b03030">图 Γ_B 的锥</text>
+<text x="405" y="229" text-anchor="middle" font-size="13" fill="#b03030">β = Σ h_y⁻¹</text>
+<text x="280" y="268" text-anchor="middle" font-size="13">奇偶设计 ⇒ 在 F₂ 上 α·β = 0，而 α、β ≠ 0，且 G 无挠</text>
+</svg>
+
+</div>
+
+对照：若元素 `@@M@@g@@` 有 3 阶，`@@M@@(1-g)(1+g+g^2)=1-g^3=0@@`，零因子唾手可得；难的正是群无挠。构造如上图：两幅图浸入同一朵"玫瑰"，各自加锥粘成二维复形并取基本群得 `@@M@@G@@`；奇偶设计让乘积在 `@@M@@\mathbb F_2@@` 中成对相消，得 `@@M@@\alpha\beta=0@@`。
+
+**为什么值得关心**
+
+八十多年的老猜想被推翻，而且证明已通过 Lean 形式化机器验证——颠覆性结果配上机器检查，可信度极高。不过构造是概率式的存在性证明：它保证合适的图匹配存在，尚未给出能直接读出具体群展示与显式零因子的匹配。
+
+> 已 Lean 形式化
+
 ## 一句话结论
 
 本文构造了一个有限展示且无挠（torsion-free）的群 `@@M@@G@@`，并给出 `@@M@@\mathbb F_2[G]@@` 中非零元素 `@@M@@\alpha,\beta@@` 使 `@@M@@\alpha\beta=0@@`，推翻了悬置八十余年的 Kaplansky 零因子猜想；`@@M@@G@@` 还拥有有限二维分类空间，无挠性一并坐实。

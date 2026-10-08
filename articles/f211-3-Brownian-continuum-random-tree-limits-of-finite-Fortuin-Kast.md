@@ -13,6 +13,60 @@ pdfname: ""
 
 > 结果族 211：The geometric phase diagram, diffusion, and spectra of random planar maps　·　学科：Probability and statistical mechanics　·　验证状态：暂无形式化证明，请以社区核验为准
 
+## 入门导读 🐣
+
+想象一位制图师不停掷骰子，在球面上画出越来越大的随机"地图"。这篇论文证明了一件反直觉的事：只要"簇权"参数 q>4 并调到临界状态，这些地图虽然边数 n 越来越多，形状却越来越不像曲面，而越来越像一棵随机分叉的树——就像把纸团越揉越大，最后发现它的骨架其实是一根树枝。
+
+**关键词卡片**
+
+- 随机平面图（planar map）：嵌入球面的随机连通图，相当于一张随机"地图"，允许环与重边。
+- Fortuin–Kasteleyn 模型（random-cluster model）：在地图上随机开关边、按连通块个数计权的模型，q 就是这个权重。
+- 布朗连续随机树（Brownian continuum random tree）：由布朗运动轨道编码的经典随机树，是许多随机结构共同的极限。
+- Gromov–Hausdorff–Prokhorov 拓扑：比较两个"带测度的抽象度量空间"像不像的严格方式。
+
+**看个具体例子**
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280">
+  <circle cx="140" cy="145" r="75" fill="none" stroke="#333" stroke-width="2"/>
+  <circle cx="140" cy="145" r="38" fill="none" stroke="#333" stroke-width="1.5"/>
+  <line x1="178" y1="145" x2="215" y2="145" stroke="#777" stroke-width="1.5"/>
+  <line x1="159" y1="178" x2="177.5" y2="210" stroke="#777" stroke-width="1.5"/>
+  <line x1="121" y1="178" x2="102.5" y2="210" stroke="#777" stroke-width="1.5"/>
+  <line x1="102" y1="145" x2="65" y2="145" stroke="#777" stroke-width="1.5"/>
+  <line x1="121" y1="112" x2="102.5" y2="80" stroke="#777" stroke-width="1.5"/>
+  <line x1="159" y1="112" x2="177.5" y2="80" stroke="#777" stroke-width="1.5"/>
+  <line x1="140" y1="107" x2="140" y2="70" stroke="#777" stroke-width="1.5"/>
+  <line x1="140" y1="183" x2="140" y2="220" stroke="#777" stroke-width="1.5"/>
+  <circle cx="140" cy="145" r="4" fill="#333"/>
+  <text x="140" y="252" font-size="14" text-anchor="middle" fill="#222">n 条边的随机平面图</text>
+  <path d="M 245 145 L 320 145" stroke="#c0392b" stroke-width="3" fill="none"/>
+  <path d="M 320 145 L 308 138 M 320 145 L 308 152" stroke="#c0392b" stroke-width="3" fill="none"/>
+  <text x="282" y="105" font-size="13" text-anchor="middle" fill="#c0392b">图距离 × c(q)/√n</text>
+  <line x1="445" y1="215" x2="445" y2="160" stroke="#333" stroke-width="2.5"/>
+  <line x1="445" y1="160" x2="410" y2="115" stroke="#333" stroke-width="2.5"/>
+  <line x1="445" y1="160" x2="480" y2="115" stroke="#333" stroke-width="2.5"/>
+  <line x1="410" y1="115" x2="385" y2="80" stroke="#333" stroke-width="2"/>
+  <line x1="410" y1="115" x2="428" y2="75" stroke="#333" stroke-width="2"/>
+  <line x1="480" y1="115" x2="462" y2="75" stroke="#333" stroke-width="2"/>
+  <line x1="480" y1="115" x2="505" y2="80" stroke="#333" stroke-width="2"/>
+  <line x1="385" y1="80" x2="368" y2="52" stroke="#333" stroke-width="2"/>
+  <line x1="505" y1="80" x2="520" y2="52" stroke="#333" stroke-width="2"/>
+  <circle cx="445" cy="215" r="4" fill="#333"/>
+  <text x="445" y="252" font-size="14" text-anchor="middle" fill="#222">布朗连续随机树</text>
+</svg>
+
+</div>
+
+具体代入：一张 n=10000 条边的临界 FK 地图，随机取两个顶点，典型图距离约为 c(q)×100 的量级，因为定理的缩小因子正是 `@@M@@c(q)n^{-1/2}=c(q)/100@@`。"距离与 `@@M@@\sqrt n@@` 同阶"是树的指纹：大小为 n 的随机树，从根到叶的距离恰好也是 `@@M@@\sqrt n@@` 量级；曲面该有的"面积感"完全消失了。
+
+**为什么值得关心**
+
+它补上随机曲面相图缺失的"树侧"：q<4 的临界地图像二维曲面、q>4 像树，至此不同 q 的几何行为凑齐，是二维量子引力数学的基础拼图。
+
+> 暂无形式化证明（AI 结果待核验）
+
 ## 一句话结论
 
 对每个簇权 `@@M@@q>4@@`，临界 Fortuin–Kasteleyn 平面图的图距离乘以 `@@M@@c(q)n^{-1/2}@@` 后，连同度测度一起收敛到布朗连续随机树：有限体积下"随机曲面退化成树"的猜想被证明，且对所有正整数规模一致成立。

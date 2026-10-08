@@ -13,6 +13,34 @@ pdfname: ""
 
 > 结果族 033：Iitaka subadditivity, variation, and logarithmic additivity　·　学科：Algebraic and complex geometry　·　验证状态：暂无形式化证明，请以社区核验为准
 
+## 入门导读 🐣
+
+想象一本"变形图鉴"：每翻一页，图形就变一点。数学家研究这样一族变形对象时，总账能拆成两笔：一笔记录"哪些页面上图形变坏了"，另一笔记录"形状变化的幅度"。这篇论文证明：后一笔账——模部分——在换一个更干净的账本后，可以被放大若干倍"打印"成一张真正可用的地图（由整体截面生成），而且是在没有全局坐标系的凯勒世界里完成的。
+
+**关键词卡片**
+
+- 纤维化（fibration）：一族几何对象随底参数空间连续变化而形成的总空间。
+- 典范丛公式（canonical bundle formula）：把总空间的"弯曲量"拆成判别式与模部分的记账公式。
+- 判别式（discriminant）：记录退化、奇异纤维贡献的那部分。
+- 模部分（moduli part）：记录纤维形状随参数如何变化的那部分。
+- b-半丰富（b-semiample）：在某个修正模型上，某个正倍数能被整体截面生成，从而定义一个映射。
+
+**看个具体例子**
+
+以椭圆纤维化 `@@M@@f:Y\to X@@` 为例：坏纤维记入判别式，纤维形状（`@@M@@j@@`-不变量）的变化记入模部分 `@@M@@M_X@@`。定理说：存在光滑修改 `@@M@@S\to X@@`，使得对一切更高的修改 `@@M@@\nu:S_1\to S@@` 都有 `@@M@@M_{S_1}=\nu^*M_S@@`，且某个倍数 `@@M@@mM_S@@` 的整体截面给出真正的全纯映射——"变形的幅度"变成了实实在在的地图。
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280"><line x1="70" y1="225" x2="480" y2="225" stroke="#333" stroke-width="2"/><text x="400" y="252" font-size="14" fill="#333">底空间 X</text><path d="M85 205 C 95 155 125 155 135 205" fill="none" stroke="#666" stroke-width="1.6"/><path d="M185 205 C 195 90 225 90 235 205" fill="none" stroke="#666" stroke-width="1.6"/><path d="M285 205 C 295 20 325 20 335 205" fill="none" stroke="#666" stroke-width="1.6"/><path d="M385 205 C 395 155 425 155 435 205" fill="none" stroke="#666" stroke-width="1.6"/><line x1="110" y1="205" x2="110" y2="225" stroke="#aaa" stroke-dasharray="3 3"/><line x1="210" y1="205" x2="210" y2="225" stroke="#aaa" stroke-dasharray="3 3"/><line x1="310" y1="205" x2="310" y2="225" stroke="#aaa" stroke-dasharray="3 3"/><line x1="410" y1="205" x2="410" y2="225" stroke="#aaa" stroke-dasharray="3 3"/><text x="120" y="42" font-size="14" fill="#666">纤维形状随参数变化</text><ellipse cx="500" cy="105" rx="34" ry="20" fill="none" stroke="#555" stroke-width="1.6"/><text x="478" y="110" font-size="13" fill="#555">参数空间</text><line x1="450" y1="200" x2="488" y2="130" stroke="#555" stroke-width="1.6"/><polygon points="490,127 487,141 480,136" fill="#555"/><text x="440" y="75" font-size="13" fill="#555">截面给出映射</text></svg>
+
+</div>
+
+**为什么值得关心**
+
+模部分的半丰富性是极小模型纲领中把"正性"兑换成"映射"的关键齿轮；本文把此前只在代数（射影）范畴成立的结果推进到解析范畴，还啃下了边界系数为 1 的最难情形。
+
+> 暂无形式化证明（AI 结果待核验）
+
 ## 一句话结论
 
 论文证明了 b-半丰富性猜想（b-semiampleness conjecture）的紧 Kähler、log 光滑情形：即使底与全空间均非射影、边界含系数 1 的分量，moduli 有理 b-线丛仍可在某个修改模型上被整体全纯截面生成，补上了代数范畴已知结论与解析范畴之间明确遗留的缺口。

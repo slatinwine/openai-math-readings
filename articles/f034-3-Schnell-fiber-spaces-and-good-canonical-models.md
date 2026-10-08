@@ -13,6 +13,28 @@ pdfname: ""
 
 > 结果族 034：Log abundance for compact Kähler spaces under logarithmic Iitaka subadditivity　·　学科：Algebraic and complex geometry　·　验证状态：暂无形式化证明，请以社区核验为准
 
+## 入门导读 🐣
+
+把一个复杂空间压成"底 × 纤维"的图像后，全空间的截面丰富程度是否等于各部分之和？这篇论文证明一个精确的加法公式：在一条数值正性假设（写成式子是 `@@M@@m_0K_X-f^*H@@` 伪有效）下，全空间的 Kodaira 维数恰好等于纤维的维数加底的维数——"总量守恒"；顺带还证明了比较不等式 `@@M@@\kappa(X)\ge\kappa(D)@@`，取 `@@M@@D=0@@` 时正是"伪有效典范除子应有非零截面"的非消失问题。
+
+**关键词卡片**
+
+- Kodaira 维数 `@@M@@\kappa@@`（Kodaira dimension）：用多重典范截面的增长速度量出的"复杂度等级"。
+- 纤维空间（fiber space）：`@@M@@f\colon X\to Y@@` 型的满射，把空间看成一族随底移动的纤维。
+- 伪有效（pseudo-effective）：正性的最弱数值形式，定理的输入。
+- 丰富除子（ample divisor）：正性的最强形式，用来"锚定"底空间。
+- 好典范模型（good canonical model）：双有理等价中最简且截面生成的代表，证明的发动机。
+
+**看个具体例子**
+
+数字版定理：取 `@@M@@X=E\times S@@`，`@@M@@E@@` 椭圆曲线（`@@M@@\kappa(E)=0@@`），`@@M@@S@@` 为 `@@M@@K@@` 丰富的曲面，`@@M@@f=\operatorname{pr}_S@@`；选 `@@M@@m_0@@` 足够大使 `@@M@@m_0K_S-H@@` 有效，则 `@@M@@m_0K_X-f^*H=\operatorname{pr}_S^*(m_0K_S-H)@@` 伪有效，定理给出 `@@M@@\kappa(X)=\kappa(F)+\dim Y=0+2=2@@`——截面总量恰好是"底维数"那部分。反过来，若把底换成 `@@M@@\mathbb{P}^1@@`（`@@M@@K@@` 不丰富），同样的类在动曲线上度数为负、不再伪有效，结论也随之失效——丰富性这个锚点去不得。
+
+**为什么值得关心**
+
+它把"数值正性假设 ⟹ 截面结论"这条主线在纤维化场景焊牢；几何部分只依赖经典相交理论与好模型比较式，论证透明、便于核验。Zou 已独立证得同一定理，形成族外交叉印证。
+
+> 暂无形式化证明（AI 结果待核验）
+
 ## 一句话结论
 
 证明了 Schnell 的零 Kodaira 纤维空间定理：当 `@@M@@m_0K_X-f^*H@@` 伪有效且几何一般纤维 `@@M@@\kappa(F)=0@@` 时 `@@M@@\kappa(X)=\dim Y@@`；并由 Schnell 的既有归约导出 Campana–Peternell 不等式 `@@M@@\kappa(X)\geq\kappa(D)@@` 与一般纤维空间等式 `@@M@@\kappa(X)=\kappa(F)+\dim Y@@`。

@@ -13,6 +13,28 @@ pdfname: ""
 
 > 结果族 232：Gaussian fields and interfaces for triangular-lattice Lipschitz heights　·　学科：Probability and statistical mechanics　·　验证状态：暂无形式化证明，请以社区核验为准
 
+## 入门导读 🐣
+
+把随机地形的高度从整数"台阶"放宽成任意实数"斜坡"：每个格点的高度是实数，唯一约束仍是相邻差不超过 1，再按约束区域内的体积均匀随机取。结论双响：这片随机曲面收敛到高斯自由场的倍数，而曲面上的"零海拔等高线"收敛到著名的随机曲线 SLE`@@M@@_4@@`——Schramm 问题 2.3 就此解决。
+
+**关键词卡片**
+
+- 实值 Lipschitz 曲面（real Lipschitz surface）：高度为实数、只约束 `@@M@@|h(x)-h(y)|\le 1@@`、按体积均匀分布的随机曲面。
+- 零高度界面（zero-height interface）：高度在三角形上仿射延拓后，高度为 0 的线段连成的一条连接两标记点的弦曲线。
+- SLE`@@M@@_4@@`（chordal SLE`@@M@@_4@@`）：`@@M@@\kappa=4@@` 的 SLE 曲线；高斯自由场等高线的普适极限。
+- 调和测度（harmonic measure）：从区域内一点出发的布朗运动首次击中边界某段弧的概率。
+- 切向通量系数（tangent-flux coefficient）A：由元胞问题构造性定义的有效刚度参数，决定涨落大小，暂无闭式。
+
+**看个具体例子**
+
+数字版定理：三角格顶点密度 `@@M@@v=\dfrac{2}{\sqrt{3}}\approx 1.155@@`；场方差 `@@M@@\sigma^2=\dfrac{1}{vA}@@`，而让界面恰好变成 SLE`@@M@@_4@@` 的"调准"边界幅值 `@@M@@\lambda@@` 满足 `@@M@@\lambda^2=\dfrac{\pi}{8vA}@@`。两式联立消去 `@@M@@vA@@`，得到干净的关系 `@@M@@\lambda=\sigma\sqrt{\dfrac{\pi}{8}}\approx 0.6267\,\sigma@@`。读法：恰好当两弧边界抬升为涨落 `@@M@@\sigma@@` 的 0.6267 倍时，零等高线收敛到 SLE`@@M@@_4@@`；抬得更高或更低，极限界面就不再是它。
+
+**为什么值得关心**
+
+首次对"硬约束"实值随机曲面同时给出场极限与界面极限，补齐 Schramm 问题 2.3；系数 A 的数值刻画则成为天然的后续课题。
+
+> 暂无形式化证明（AI 结果待核验）
+
 ## 一句话结论
 证明了三角格点上均匀实值 Lipschitz 曲面的高度场收敛到 Dirichlet 高斯自由场的倍数，且在一个调准的两弧边界幅值处零高等界收敛到 chordal SLE`@@M@@_4@@`，解决 Schramm 问题 2.3；场方差与边界高度经一个隐式切向通量系数相联系。
 

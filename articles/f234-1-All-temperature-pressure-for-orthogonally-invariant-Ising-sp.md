@@ -13,6 +13,61 @@ pdfname: ""
 
 > 结果族 234：All-temperature pressure of orthogonally invariant Ising spin glasses　·　学科：Probability and statistical mechanics　·　验证状态：暂无形式化证明，请以社区核验为准
 
+## 入门导读 🐣
+
+想象一锅小磁针，每根只能朝上或朝下，两两之间的作用力却完全随机：这一对促一致，那一对闹对立。问：整锅磁针的"自由能"（术语叫压强）是多少？本文对"作用力矩阵方向完全均匀随机"的一大类自旋玻璃，在所有温度给出了闭式的变分答案，还附赠零温下的基态能量公式。
+
+**关键词卡片**
+
+- 自旋玻璃（spin glass）：相互作用随机的无序磁体，能量地形千沟万壑。
+- 压强（pressure）：每个自旋摊到的对数配分函数，热力学的头号核心量。
+- 正交不变（orthogonal invariance）：无序矩阵 `@@M@@J=U^{\mathsf T}\Lambda U@@`——特征值谱 Λ 形状自选，方向 U 是均匀随机旋转。
+- Parisi 变分公式（Parisi variational formula）：把压强写成对一条非降"重叠路径"取下确界的公式。
+- 基态能量（ground-state energy）：温度降到 0 时的最低能量密度。
+
+**看个具体例子**
+
+主公式：`@@M@@P_N\to\mathcal F(\mu)=\inf_{p}\bigl\{S(p)+\tfrac12\int_0^1R_\mu(D_p(r))\,dr\bigr\}@@`，其中 `@@M@@R_\mu@@` 完全由谱 `@@M@@\mu@@` 决定。特例对照：`@@M@@\mu@@` 取半圆律就是经典 SK 模型，新公式兼容并推广久经检验的 SK Parisi 公式——旧经典被整个装进新框架；`@@M@@\mu@@` 取 Marchenko–Pastur 律（Wishart/Hopfield 模型 `@@M@@J=cG^{\mathsf T}G/N@@`）则得到崭新的显式极限。取零温：`@@M@@M_N\to\lim_{\beta\to\infty}\mathcal F(\mu_\beta)/\beta@@`。
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280">
+  <text x="280" y="28" text-anchor="middle" font-size="15">无序矩阵 J = UᵀΛU：方向均匀随机，谱形自选</text>
+  <rect x="55" y="85" width="110" height="140" fill="none" stroke="#555" stroke-width="2"/>
+  <text x="110" y="165" text-anchor="middle" font-size="24">U<tspan font-size="14" dy="-10">T</tspan></text>
+  <rect x="205" y="85" width="150" height="140" fill="none" stroke="#555" stroke-width="2"/>
+  <g fill="#1565c0">
+    <rect x="216" y="180" width="8" height="25"/>
+    <rect x="227" y="155" width="8" height="50"/>
+    <rect x="238" y="130" width="8" height="75"/>
+    <rect x="249" y="110" width="8" height="95"/>
+    <rect x="260" y="97" width="8" height="108"/>
+    <rect x="271" y="90" width="8" height="115"/>
+    <rect x="282" y="88" width="8" height="117"/>
+    <rect x="293" y="90" width="8" height="115"/>
+    <rect x="304" y="97" width="8" height="108"/>
+    <rect x="315" y="110" width="8" height="95"/>
+    <rect x="326" y="130" width="8" height="75"/>
+    <rect x="337" y="155" width="8" height="50"/>
+  </g>
+  <rect x="395" y="85" width="110" height="140" fill="none" stroke="#555" stroke-width="2"/>
+  <text x="450" y="165" text-anchor="middle" font-size="24">U</text>
+  <text x="183" y="163" font-size="22">=</text>
+  <text x="373" y="163" font-size="22">=</text>
+  <text x="110" y="245" text-anchor="middle" font-size="11">Haar 旋转（均匀随机）</text>
+  <text x="280" y="245" text-anchor="middle" font-size="11">谱 Λ（紧支撑，形状自选）</text>
+  <text x="450" y="245" text-anchor="middle" font-size="11">再转回来</text>
+  <text x="280" y="268" text-anchor="middle" font-size="12">换谱不换框架：任意紧支撑谱都有 Parisi 型变分公式</text>
+</svg>
+
+</div>
+
+**为什么值得关心**
+
+Parisi 理论从此不再绑死在高斯谱上：任意紧支撑谱的正交不变自旋玻璃都有了完整答案，这是玻璃态一般理论的实质一步。
+
+> 暂无形式化证明（AI 结果待核验）
+
 ## 一句话结论
 
 对无序矩阵为确定性谱经 Haar 正交旋转（特征向量方向均匀、无离群特征值）的 Ising 自旋玻璃，本文证明任意固定温度下压强几乎必然且按期望收敛到一个显式变分公式，并由此导出零场基态能量公式，把 SK 模型的 Parisi 理论推广到一般正交不变谱。

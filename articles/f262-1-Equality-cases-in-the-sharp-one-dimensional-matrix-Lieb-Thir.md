@@ -13,6 +13,46 @@ pdfname: ""
 
 > 结果族 262：Sharp finite-matrix Lieb–Thirring inequalities and all equality cases　·　学科：Mathematical physics　·　验证状态：暂无形式化证明，请以社区核验为准
 
+## 入门导读 🐣
+
+把势能井想成捕鱼装置：投入材料（势能），收获能量（被捕获的粒子）。不等式说收获有上限；本文回答的是：效率百分之百的装置长什么样？当粒子有 m 条内部通道、井还可以随位置变形转向时，答案意外地干净：在某个固定方向下，每条通道独立挖一口标准形状的井，每口恰好捕住一条"鱼"；想让通道边走边转、或一口井捕多条鱼，统统办不到。
+
+**关键词卡片**
+
+- Lieb–Thirring 不等式（Lieb–Thirring inequality）：束缚能总和不超过"势的花费"乘最优常数。
+- 束缚态（bound state）：被井捕获的负特征值所对应的粒子态。
+- sech² 孤子（sech² soliton）：唯一能取等的井形，双曲正割平方轮廓。
+- 酉基（unitary basis）：不随位置变化的通道方向；取等势必须在此基下呈对角。
+- 直和（direct sum）：各通道的井互不混合的拼装方式。
+
+**看个具体例子**
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280">
+  <text x="40" y="32" font-size="12">固定酉基下取对角：W = U·diag(w₁,…,w_k,0,…,0)·U*</text>
+  <line x1="60" y1="110" x2="510" y2="110" stroke="#333" stroke-width="2"/>
+  <path d="M120 110 C 155 106, 168 38, 205 38 C 242 38, 255 106, 290 110" fill="none" stroke="#369" stroke-width="2.5"/>
+  <text x="66" y="100" font-size="13">通道 1</text>
+  <text x="120" y="66" font-size="13">w₁ = 3a₁²·sech²(2a₁(x−x₁))</text>
+  <text x="330" y="66" font-size="13">唯一特征值 −a₁²</text>
+  <line x1="60" y1="215" x2="510" y2="215" stroke="#333" stroke-width="2"/>
+  <path d="M345 215 C 372 212, 380 162, 398 162 C 416 162, 424 212, 452 215" fill="none" stroke="#c33" stroke-width="2.5"/>
+  <text x="66" y="205" font-size="13">通道 2（尺度、中心独立）</text>
+  <text x="320" y="150" font-size="13">w₂ = 3a₂²·sech²(2a₂(x−x₂))</text>
+  <text x="60" y="258" font-size="14">通道互不混合，每口井恰一个束缚态 ⇒ 极值势至多 m 个负特征值</text>
+</svg>
+
+</div>
+
+数字版（`@@M@@\gamma=1@@`、`@@M@@m=2@@`）：`@@M@@W=\operatorname{diag}(w_1,w_2)@@`，`@@M@@w_j=3a_j^2\operatorname{sech}^2\!\big(2a_j(x-x_j)\big)@@`，两通道特征值各为 `@@M@@-a_1^2@@`、`@@M@@-a_2^2@@`，尺度与中心完全自由。
+
+**为什么值得关心**
+
+它与端点情形"同一通道可容纳多个束缚态"的 KdV 多孤子结构形成鲜明对比，完整画出一维矩阵取等势的肖像。
+
+> 暂无形式化证明（AI 结果待核验）
+
 ## 一句话结论
 
 对 `@@M@@1/2<\gamma<3/2@@` 与任意有限矩阵维数，本文把一维矩阵 Lieb–Thirring 不等式（Lieb–Thirring inequality）的取等势完全分类：在某个不随位置变化的酉基下，取等势恰是有限个标量 `@@M@@\mathrm{sech}^2@@` 孤子的直和加零通道，各孤子尺度与中心彼此独立，每个非零通道恰含一个束缚态，故极值势至多有 `@@M@@m@@` 个负特征值。

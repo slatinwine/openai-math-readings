@@ -13,6 +13,34 @@ pdfname: ""
 
 > 结果族 130：Exact Fourier transforms below `@@M@@n\log n@@`　·　学科：Theoretical computer science　·　验证状态：主结果已 Lean 形式化
 
+## 入门导读 🐣
+
+把一台"乘法机器" `@@M@@A@@` 用到一条 `@@M@@q^b@@` 个坐标的大流水线上，教科书做法是沿 `@@M@@b@@` 个方向各扫一遍，共 `@@M@@b\cdot q^{b-1}@@` 次调用。本文证明：存在聪明的接线路径，配合"免费换线"，让调用次数严格少于这个数；并靠这一点，在完全不限制系数的电路模型里，把"算傅里叶变换必须花 `@@M@@\Omega(n\log n)@@`"的老猜想推翻了。
+
+**关键词卡片**
+
+- 线性电路（linear circuit）：只含加、减、乘预选常数三种门的电路，用来计算矩阵变换。
+- 非均匀（nonuniform）：每个规模配一个专门电路，常数随便预置、生成不计费。
+- 单项矩阵（monomial matrix）：每行每列恰有一个非零元的矩阵，相当于"换线加缩放"，在此模型里免费。
+- 张量幂（tensor power）：`@@M@@A\otimes A\otimes\cdots\otimes A@@`，同一个小变换叠 `@@M@@b@@` 层的大变换。
+- 有限张量盈余（finite tensor saving）：某个 `@@M@@A@@` 的 `@@M@@b@@` 层张量幂存在省调用的算法。
+
+**看个具体例子**
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280"><text x="280" y="26" text-anchor="middle" font-size="16" fill="#333">目标：算 A⊗A⊗⋯⊗A（b 层，共 qᵇ 个坐标）</text><text x="20" y="76" font-size="14" fill="#555">标准逐轴：</text><rect x="105" y="54" width="92" height="32" rx="6" fill="#eef" stroke="#345"/><text x="151" y="75" text-anchor="middle" font-size="13" fill="#123">A × qᵇ⁻¹</text><text x="201" y="75" font-size="14" fill="#345">→</text><rect x="215" y="54" width="92" height="32" rx="6" fill="#eef" stroke="#345"/><text x="261" y="75" text-anchor="middle" font-size="13" fill="#123">A × qᵇ⁻¹</text><text x="311" y="75" font-size="14" fill="#345">→ ⋯（共 b 段）</text><text x="280" y="112" text-anchor="middle" font-size="13" fill="#345">总计 b·qᵇ⁻¹ 次 A 调用</text><text x="20" y="156" font-size="14" fill="#555">论文的赢词：</text><rect x="105" y="134" width="70" height="32" rx="6" fill="#efe" stroke="#253"/><text x="140" y="155" text-anchor="middle" font-size="13" fill="#121">A 一次</text><text x="179" y="155" font-size="14" fill="#253">→</text><rect x="193" y="134" width="92" height="32" rx="6" fill="#fff" stroke="#253" stroke-dasharray="6,4"/><text x="239" y="155" text-anchor="middle" font-size="13" fill="#121">免费换线</text><text x="289" y="155" font-size="14" fill="#253">→</text><rect x="303" y="134" width="70" height="32" rx="6" fill="#efe" stroke="#253"/><text x="338" y="155" text-anchor="middle" font-size="13" fill="#121">A 一次</text><text x="377" y="155" font-size="14" fill="#253">→ ⋯</text><text x="280" y="192" text-anchor="middle" font-size="13" fill="#253">总计严格少于 b·qᵇ⁻¹ 次 A 调用</text><text x="30" y="228" font-size="13" fill="#666">换线 = 可逆单项映射（每行每列恰一个非零元），在这个电路模型里不收费；</text><text x="30" y="254" font-size="13" fill="#666">"有限张量盈余"定理：这样的矩阵 A 与赢词必然存在。</text></svg>
+
+</div>
+
+把盈余层层放大再"搬运"到傅里叶矩阵上：对任意常数 `@@M@@c>0@@`（比如 `@@M@@c=1/100@@`），都存在无穷增大的长度 `@@M@@n@@`（取互异素数之积），使精确傅里叶电路的规模不足 `@@M@@c\cdot n\log_2 n@@` 个门——即比值 `@@M@@L(n)/(n\log_2 n)@@` 的下极限为 0。
+
+**为什么值得关心**
+
+四十多年来 `@@M@@\Omega(n\log n)@@` 下界在带系数限制的模型里屡试不爽，本文说明在最一般的非均匀复线性电路模型里它就是错的。
+
+> 已 Lean 形式化
+
 ## 一句话结论
 本文在系数任意、非均匀的复线性电路（linear circuit）模型中，沿一列趋于无穷的长度构造出规模 `@@M@@o(n\log n)@@` 的精确傅里叶电路，推翻了该模型下的 `@@M@@\Omega(n\log n)@@` 下界猜想；核心是一个"有限张量盈余"的存在性证明。
 

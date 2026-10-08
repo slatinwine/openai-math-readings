@@ -13,6 +13,46 @@ pdfname: ""
 
 > 结果族 376：Universal computation in forced Navier–Stokes flows　·　学科：Partial differential equations　·　验证状态：暂无形式化证明，请以社区核验为准
 
+## 入门导读 🐣
+
+想象一个全自动的水下仓库：水流是搬运工，把一个个密封箱从 A 区挪到 B 区，箱子既压不扁也撞不散。这篇论文证明，只要外力设计得当，这样一股三维水流就能"跑程序"——计算机的每一步计算被翻译成箱子的搬运，程序算完的那一刻，一个预先放好的示踪粒子会被水流恰好冲进指定的"答案方块"。
+
+**关键词卡片**
+
+- 不可压流（incompressible flow）：像挤满的水池，压这里别处就鼓起来——流体块只能挪动不能压缩，体积守恒。
+- 保体积仿射映射（volume-preserving affine map）：拉伸加平移的变形，且总体积不变；一个方向放大 3 倍，就得有方向缩小 3 倍。
+- 图灵机与停机（Turing machine, halting）：理想计算机模型；"停机"即程序算完停下，而"能否预知停机"是不可判定的难题。
+- 广义移位（generalized shift）：把机器读写规则翻译成"空间位置重排"的经典框架。
+- 受迫 Navier–Stokes 方程（forced Navier–Stokes）：描述粘性流体在外力下运动的基本方程；本文所有流都是它的解，外力是一张查表即得的有限规则表。
+
+**看个具体例子**
+
+机器的三个栈被编码成三个实数（进制 `@@M@@B@@`）。比如一条规则在左栈压入一位（`@@M@@x\mapsto 3x+2@@`）、在右栈弹出一位（`@@M@@y\mapsto (y-d)/3@@`）、历史栈不动——一个方向放大 3 倍、另一方向缩小 3 倍，三个栈合起来的行列式恰为 1，正是流体搬得动的"盒子"。最终判据：粒子 `@@M@@x_*=(4,0,0)@@` 进入开立方体 `@@M@@(-1,2)^3@@` 当且仅当机器停机；不停机时它全程待在 `@@M@@x_1>2@@` 一侧。
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280">
+<rect x="40" y="115" width="130" height="105" fill="none" stroke="#3a76b8" stroke-width="2.5"/>
+<text x="105" y="103" font-size="14" text-anchor="middle" fill="#3a76b8">观测立方体 (−1,2)³ 截面示意</text>
+<line x1="235" y1="45" x2="235" y2="255" stroke="#999" stroke-width="1.5" stroke-dasharray="7,5"/>
+<text x="243" y="58" font-size="13" fill="#888">x₁ = 2</text>
+<circle cx="480" cy="150" r="6" fill="#c0392b"/>
+<text x="480" y="177" font-size="13" text-anchor="middle" fill="#c0392b">粒子出发点 x* = (4,0,0)</text>
+<path d="M474,150 C420,105 340,75 285,85 C245,92 232,125 238,158 C243,192 205,220 165,212 C135,206 115,192 105,180" fill="none" stroke="#c0392b" stroke-width="2.5"/>
+<polygon points="108,171 120,187 96,187" fill="#c0392b"/>
+<text x="340" y="40" font-size="13" text-anchor="middle" fill="#c0392b">停机：被水流送进观测区</text>
+<path d="M480,150 C440,200 390,235 340,232 C300,230 270,205 262,175" fill="none" stroke="#2e8b57" stroke-width="2.5" stroke-dasharray="8,6"/>
+<text x="385" y="262" font-size="13" text-anchor="middle" fill="#2e8b57">不停机：始终停在 x₁ &gt; 2 一侧</text>
+</svg>
+
+</div>
+
+**为什么值得关心**
+
+它把"通用计算"完整地藏进了最经典的流体方程：理论上，追踪一个粒子的行踪就能读出任意机器的停机答案，而所需外力只是查有限表格、从不真的执行那台机器。
+
+> 暂无形式化证明（AI 结果待核验）
+
 ## 一句话结论
 证明有限族"正对角、行列式为 1"的有理实体盒仿射映射——源族与像族各自不交、但两族可互相重叠——都能被有效的光滑不可压流实现为时间一映射；据此用平衡三栈记录器构造周期外力下从静止出发的三维 Navier–Stokes 流，固定粒子进入固定开立方体当且仅当图灵机停机。
 

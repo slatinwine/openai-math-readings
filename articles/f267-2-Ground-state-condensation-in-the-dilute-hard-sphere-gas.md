@@ -13,6 +13,55 @@ pdfname: ""
 
 > 结果族 267：Positive-temperature Bose–Einstein condensation and exact quantum depletion　·　学科：Mathematical physics　·　验证状态：暂无形式化证明，请以社区核验为准
 
+## 入门导读 🐣
+
+把一堆台球装进越来越大的箱子。台球绝对刚硬——任何两个都不许重叠。零温时系统躺在能量最低处，而最低态可能不止一个，写下来还允许是复数。论文证明：只要球足够稀，每一个基态里都有固定比例的球站进同一条"整齐队列"，比例有个对一切稀度通用的保底数。
+
+**关键词卡片**
+
+- 硬球气体（hard-sphere gas）：粒子是半径 a 的刚球，波函数在两球重叠处必须为零
+- 基态（ground state）：能量最低的量子态，可以简并、也可以取复值
+- 气体参数（gas parameter）：密度乘半径立方 ρa³，衡量气体稀不稀
+- 凝聚分数（condensate fraction）：处在常数轨道（最平坦波函数）里的粒子占比
+- 散射长度（scattering length）：刻画两球有效排斥距离的数，硬球时恰为半径 a
+
+**看个具体例子**
+
+取 a=1、ρ=10⁻⁶，则气体参数 ρa³=10⁻⁶，远低于阈值 ε₀。让体积与粒子数按此密度膨胀，再任挑一个（哪怕复值的）基态：定理保证它在极限中的常数轨道占比至少 c₀>0——一个与 ρa³ 无关的绝对常数。无论队列怎么扭曲变形，总有固定比例的人站得笔直。
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280">
+<circle cx="95" cy="90" r="34" fill="none" stroke="#333" stroke-width="2"/>
+<circle cx="140" cy="90" r="34" fill="none" stroke="#333" stroke-width="2"/>
+<line x1="117" y1="70" x2="137" y2="110" stroke="#c0392b" stroke-width="3"/>
+<line x1="137" y1="70" x2="117" y2="110" stroke="#c0392b" stroke-width="3"/>
+<text x="58" y="150" font-size="14" fill="#c0392b">两球不许重叠</text>
+<text x="58" y="170" font-size="13" fill="#888">(波函数在此为零)</text>
+<rect x="255" y="40" width="280" height="190" fill="none" stroke="#333" stroke-width="2"/>
+<line x1="265" y1="130" x2="525" y2="130" stroke="#c0392b" stroke-width="2" stroke-dasharray="8 6"/>
+<circle cx="290" cy="130" r="9" fill="#23527c"/>
+<circle cx="350" cy="130" r="9" fill="#23527c"/>
+<circle cx="410" cy="130" r="9" fill="#23527c"/>
+<circle cx="470" cy="130" r="9" fill="#23527c"/>
+<circle cx="310" cy="80" r="9" fill="none" stroke="#333" stroke-width="1.5"/>
+<circle cx="380" cy="70" r="9" fill="none" stroke="#333" stroke-width="1.5"/>
+<circle cx="460" cy="85" r="9" fill="none" stroke="#333" stroke-width="1.5"/>
+<circle cx="330" cy="185" r="9" fill="none" stroke="#333" stroke-width="1.5"/>
+<circle cx="420" cy="190" r="9" fill="none" stroke="#333" stroke-width="1.5"/>
+<circle cx="490" cy="170" r="9" fill="none" stroke="#333" stroke-width="1.5"/>
+<text x="262" y="156" font-size="13" fill="#23527c">常数轨道</text>
+<text x="262" y="222" font-size="13" fill="#333">排进常数轨道的粒子占比 ≥ c₀</text>
+</svg>
+
+</div>
+
+**为什么值得关心**
+
+它正面回答了 Solovej 2025 年综述列出的公开问题——固定密度硬球气的基态凝聚，让 Bogoliubov 理论"零模被宏观占据"的前提第一次在真硬核、零温、固定密度的设定下有了定理背书。
+
+> 暂无形式化证明（AI 结果待核验）
+
 ## 一句话结论
 
 对三维硬球（hard sphere）玻色气体，在固定排斥距离 `@@M@@a@@` 与固定密度 `@@M@@\rho@@`（气体参数 `@@M@@\rho a^3@@` 足够小）下取热力学极限，论文证明每一个基态——允许复值波函数、允许基态空间简并——的常数轨道凝聚分数都不低于绝对常数 `@@M@@c_0>0@@`。这回答了 Solovej 2025 年综述列为主要公开问题的固定密度基态凝聚。

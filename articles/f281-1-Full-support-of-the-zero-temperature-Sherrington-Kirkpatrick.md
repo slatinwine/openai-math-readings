@@ -13,6 +13,55 @@ pdfname: ""
 
 > 结果族 281：QAOA attains the SK optimum in the thermodynamic-first limit　·　学科：Mathematical physics　·　验证状态：暂无形式化证明，请以社区核验为准
 
+## 入门导读 🐣
+
+自旋玻璃的最优解由一个"序参量"函数 `@@M@@\gamma@@` 编码，它像一份楼梯设计图：在哪些尺度上加台阶、加多高。此前已知最优楼梯的台阶有无穷多级，却不清楚中间会不会留空档。本文证明：最优楼梯在整段 `@@M@@[0,1)@@` 上处处缓缓升高——没有任何被跳过的空档。
+
+**关键词卡片**
+
+- 序参量（order parameter）：`@@M@@[0,1)@@` 上的非降函数 `@@M@@\gamma@@`，编码自旋间的重叠层级
+- Parisi 泛函（Parisi functional）：对 `@@M@@\gamma@@` 取极小便得到基态能量
+- 支撑（support）：`@@M@@\gamma@@` 真正增长的那些尺度，像楼梯真正被踩到的台阶
+- 满支撑（full support）：支撑充满 `@@M@@[0,1)@@`，任何一段都不空
+- 零温（zero temperature）：对应求基态的纯优化问题
+
+**看个具体例子**
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280">
+  <text x="35" y="34" font-size="14" fill="#000">被排除的形状：留有间隙</text>
+  <line x1="40" y1="228" x2="350" y2="228" stroke="#000" stroke-width="1.2"/>
+  <line x1="40" y1="228" x2="40" y2="105" stroke="#000" stroke-width="1.2"/>
+  <path d="M45 218 H135 L155 160 H255 L275 118 H340" fill="none" stroke="#333" stroke-width="1.8"/>
+  <line x1="155" y1="160" x2="255" y2="160" stroke="#c00" stroke-width="3" stroke-dasharray="6,4"/>
+  <text x="163" y="148" font-size="12" fill="#c00">间隙：γ 不增长</text>
+  <line x1="135" y1="224" x2="135" y2="232" stroke="#000" stroke-width="1.2"/>
+  <line x1="255" y1="224" x2="255" y2="232" stroke="#000" stroke-width="1.2"/>
+  <text x="131" y="248" font-size="12" fill="#000">a</text>
+  <text x="251" y="248" font-size="12" fill="#000">b</text>
+  <text x="18" y="100" font-size="12" fill="#000">γ(t)</text>
+  <text x="340" y="248" font-size="12" fill="#000">t</text>
+  <text x="383" y="34" font-size="14" fill="#000">定理：满支撑（无间隙）</text>
+  <line x1="390" y1="228" x2="535" y2="228" stroke="#000" stroke-width="1.2"/>
+  <line x1="390" y1="228" x2="390" y2="105" stroke="#000" stroke-width="1.2"/>
+  <path d="M395 218 C 430 214 470 185 530 120" fill="none" stroke="#06c" stroke-width="1.8"/>
+  <text x="370" y="100" font-size="12" fill="#000">γ(t)</text>
+  <text x="506" y="248" font-size="12" fill="#000">t</text>
+  <text x="408" y="160" font-size="12" fill="#06c">处处严格递增</text>
+  <text x="78" y="266" font-size="13" fill="#000">最优 γ 的支撑充满 [0,1)：任何一段都不空，且 γ′(t) 恒正</text>
+</svg>
+
+</div>
+
+公式卡（数字版定理）：最优 `@@M@@\gamma@@` 光滑（`@@M@@C^\infty@@`）、`@@M@@\gamma(0)=0@@`，且 `@@M@@\gamma'(t)>0@@` 对一切 `@@M@@0<t<1@@` 成立——是一条处处有正坡度的坡道，而非带平台的楼梯。
+
+**为什么值得关心**
+
+"没有间隙"正是同族 QAOA 论文构造古典出发点时依赖的关键性质，也是理解自旋玻璃层级结构的基石。
+
+> 暂无形式化证明（AI 结果待核验）
+
 ## 一句话结论
 
 证明了零场纯 SK 模型零温 Parisi 泛函的每个可积极小化子 `@@M@@\gamma@@`，其 Stieltjes 测度的支撑在 `@@M@@[0,1)@@` 上是满的：低于 1 的任何重叠尺度处都没有间隙，且 `@@M@@\gamma@@` 光滑、导数严格为正——这正是族内 QAOA 论文所依赖的关键古典输入。

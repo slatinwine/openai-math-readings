@@ -13,6 +13,32 @@ pdfname: ""
 
 > 结果族 057：Fundamental groups of special complex varieties and root orbifolds　·　学科：Algebraic and complex geometry　·　验证状态：暂无形式化证明，请以社区核验为准
 
+## 入门导读 🐣
+
+把一个空间里所有"绕圈方式"编成一本带乘法的目录，乘法就是"先绕一圈再绕一圈"，这本目录叫基本群。Campana 在 2004 年猜测：只要空间属于"温和"的 special 阵营，这本目录翻过有限厚的几页后，乘法就会变得和整数加法一样交换。本文在任意维数证明了这个交换性猜想。
+
+**关键词卡片**
+
+- 基本群（fundamental group）：记录绕圈方式的代数目录，群运算 = 依次绕圈
+- special 流形（special manifold）：Campana 分类里不含"一般型成分"的温和空间
+- 虚拟交换（virtually abelian）：存在有限指标子群是交换的
+- 小平维数（Kodaira dimension）：衡量空间上函数丰富度的整数，κ=0 表示极度"贫乏"
+- 紧 Kähler 流形（compact Kähler manifold）：结论的舞台，比射影簇更广的一类复空间
+
+**看个具体例子**
+
+先用最小的例子理解"虚拟交换"：无限二面体群像"整数轴配一面镜子"——镜子把 a 翻成 a⁻¹，整体不交换；但只要站到偶数格点那层，乘法就变回普通的加法。
+
+`@@M@@DD_\infty=\langle a,b\mid b^2=1,\ bab=a^{-1}\rangle\ \text{非交换，但指标 2 子群}\ \langle a^2\rangle\simeq\mathbb{Z}\ \text{交换}@@`
+
+定理说 special 流形的基本群都长这样：差一个有限覆盖就是 `@@M@@\mathbb{Z}^{2r}@@`。具体落点：复环面 `@@M@@\mathbb{C}^n/\Lambda@@` 的基本群 `@@M@@\mathbb{Z}^{2n}@@` 本来就交换；由"κ=0 ⟹ special"，凡小平维数为零的紧 Kähler 流形（如恩里克斯曲面，其基本群是 ℤ/2）一律虚拟交换。
+
+**为什么值得关心**
+
+它解决了悬置二十多年的 Campana 交换性猜想的全部维数，为"温和几何 ⟹ 绕圈目录近交换"这一定律定案，也是同族另两篇论文的引擎。
+
+> 暂无形式化证明（AI 结果待核验）
+
 ## 一句话结论
 证明了 Campana 的交换性猜想：任意维数的 special（特殊）紧 Kähler 流形的基本群都是虚拟交换的，即含有限指标交换子群；由此，小平维数为零的紧 Kähler 流形的基本群也虚拟交换。
 

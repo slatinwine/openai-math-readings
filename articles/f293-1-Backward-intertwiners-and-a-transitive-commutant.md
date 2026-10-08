@@ -13,6 +13,47 @@ pdfname: ""
 
 > 结果族 293：Invariant projections, hyperinvariant subspaces, and transitive algebras　·　学科：Operator algebras　·　验证状态：主结果已 Lean 形式化
 
+## 入门导读 🐣
+
+想象一条流水线：每段传送带单独看，"不变的区域"只有从某处截断的尾部；工程师再装上一个反向齿轮，把截断位置强制回退一格。传送带整体匀速运转（概率守恒），于是"每走一步、标签必须严格下降"——在有限范围内迟早无路可走。本文正是用这个机关，造出了没有非平凡超不变子空间的算子。
+
+**关键词卡片**
+
+- 超不变子空间（hyperinvariant subspace）：与给定算子交换的所有算子都使之不变的子空间。
+- 交换子代数（commutant）：与该算子全部可交换的算子组成的代数。
+- 传递代数（transitive algebra）：没有非平凡公共不变子空间的代数。
+- 权移位（weighted shift）：把每个基向量搬到下一个、途中乘上权重的算子。
+- 范数拟幂零（norm-quasinilpotent）：`@@M@@\|S^n\|^{1/n}\to0@@`。
+
+**看个具体例子**
+
+构造出的算子 `@@M@@S@@` 范数只有 `@@M@@e^{-10}\approx 0.00005@@`，且 `@@M@@\|S^n\|\le\exp(-10\lfloor (n+1)^2/4\rfloor)@@`——幂次以近乎平方指数的速度被压扁。反向齿轮 `@@M@@V@@` 迫使每个公共不变子空间的"尾标签"满足 `@@M@@s(\theta x)\le s(x)-1@@`：
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280">
+<polyline points="70,50 160,50 160,90 250,90 250,130 340,130 340,170 430,170 430,210 500,210" fill="none" stroke="#222" stroke-width="2"/>
+<polyline points="488,204 500,210 488,220" fill="none" stroke="#222" stroke-width="2"/>
+<line x1="70" y1="240" x2="500" y2="240" stroke="#888" stroke-width="2"/>
+<text x="66" y="266" font-size="14" fill="#555">地板</text>
+<text x="90" y="40" font-size="15" fill="#000">s = 3</text>
+<text x="180" y="80" font-size="15" fill="#000">s = 2</text>
+<text x="270" y="120" font-size="15" fill="#000">s = 1</text>
+<text x="352" y="160" font-size="15" fill="#000">s = 0</text>
+<text x="430" y="200" font-size="15" fill="#000">s = −1</text>
+<text x="140" y="266" font-size="15" fill="#000">标签每步严格降 1：有限范围内迟早撞底，矛盾</text>
+</svg>
+
+</div>
+
+在整体匀速（保概率、遍历）的系统中，整数值标签不可能永远每步严格降 1，最终只能取 `@@M@@\pm\infty@@`，于是不变子空间非全即空。
+
+**为什么值得关心**
+
+它否定回答了著名的超不变子空间问题，并给出一个真、强闭、含幺的传递交换子代数——"传递代数必强稠密"同样被否定。姊妹工作以不同的构造独立得到同一结论，互为印证。
+
+> 已 Lean 形式化
+
 ## 一句话结论
 
 本文在每个无穷维可分复 Hilbert 空间上构造出非零、范数拟幂零、无任何非平凡闭超不变子空间的有界算子，其交换子代数是真、强闭、含幺的传递代数，否定回答超不变子空间问题。

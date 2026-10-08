@@ -13,6 +13,48 @@ pdfname: ""
 
 > 结果族 158：The Euclidean plane cannot be colored with five colors　·　学科：Combinatorics　·　验证状态：主结果已 Lean 形式化
 
+## 入门导读 🐣
+
+想象给一整张无限大的地图上色，规则只有一条：距离恰好为 1 的两点不许同色。这篇论文证明：只用 5 种颜色怎么涂都会"撞色"——平面上总有两个相距恰为 1 的点颜色相同。于是这个悬置七十余年的"最少需要几色"问题（Hadwiger–Nelson 问题），答案被压缩到只剩 6 或 7 两个候选。
+
+**关键词卡片**
+
+- 色数（chromatic number）：满足"距离 1 异色"所需的最少颜色数，记作 `@@M@@\chi(\mathbb{R}^2)@@`。
+- 正常染色（proper coloring）：任何距离恰为 1 的点对都不同色的染色方案。
+- 单位距离图（unit distance graph）：以平面上所有点为顶点、距离为 1 的点对为边的无限图。
+- 可测染色（measurable coloring）：颜色区域温和、可测的染色；此前许多结论只对这种"规则"染色成立。
+- Moser 主轴（Moser spindle）：一个仅 7 个顶点的经典小图，它本身无法用 3 色正常染色。
+
+**看个具体例子**
+
+先体会规则有多苛刻：边长为 1 的等边三角形，三个顶点两两相距 1，必须占用 3 种不同颜色。
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280">
+  <line x1="180" y1="215" x2="380" y2="215" stroke="#999999" stroke-width="2"/>
+  <line x1="180" y1="215" x2="280" y2="59" stroke="#999999" stroke-width="2"/>
+  <line x1="380" y1="215" x2="280" y2="59" stroke="#999999" stroke-width="2"/>
+  <circle cx="180" cy="215" r="16" fill="#d84a3f"/>
+  <circle cx="380" cy="215" r="16" fill="#3f7ad8"/>
+  <circle cx="280" cy="59" r="16" fill="#3fa04f"/>
+  <text x="180" y="220" font-size="13" text-anchor="middle" fill="#ffffff">红</text>
+  <text x="380" y="220" font-size="13" text-anchor="middle" fill="#ffffff">蓝</text>
+  <text x="280" y="64" font-size="13" text-anchor="middle" fill="#ffffff">绿</text>
+  <text x="118" y="140" font-size="13" fill="#777777">边长 1</text>
+  <text x="280" y="250" font-size="14" text-anchor="middle" fill="#555555">三边长都是 1：三点两两"相邻"，必须三色</text>
+</svg>
+
+</div>
+
+小三角形只需 3 色，但要同时管住全平面的所有单位距离，难度暴涨：六边形铺砖给出 7 色方案，2018 年 de Grey 的构图把下界推到 5，而本文证明 5 色必败，下界升为 6。关键突破是一座"转移定理"之桥：任意（哪怕完全不规则）的染色存在，当且仅当某种弱可测染色存在——可测世界的几何工具由此全线上场，最终由 Moser 主轴这颗小钉子钉死矛盾。
+
+**为什么值得关心**
+
+平面色数是几何图论最著名的未决问题之一，其下界七十多年来首次移动。
+
+> 已 Lean 形式化
+
 ## 一句话结论
 
 本文无条件证明：欧氏平面的任意五染色必有距离恰为 1 的同色点对，无须对颜色类做任何可测性或正则性假设；于是平面色数 `@@M@@\chi(\R^2)@@` 只能是 6 或 7，Hadwiger–Nelson 问题的下界七十多年来首次从 5 跃升至 6。

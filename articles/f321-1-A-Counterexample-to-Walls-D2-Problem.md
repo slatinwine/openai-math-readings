@@ -13,6 +13,55 @@ pdfname: ""
 
 > 结果族 321：A counterexample to Wall's finite D(2) problem　·　学科：Topology　·　验证状态：暂无形式化证明，请以社区核验为准
 
+## 入门导读 🐣
+
+用点、线、圆盘、实心球逐层粘出一个三维骨架，结果它的"同调账本"干净得完全像个二维骨架——所有三维欠账都还清了。那么能否把它真正压扁成二维而不改变同伦类型？Wall 在 1965 年提出这个问题，本文给出否定答案：账面像二维，不等于能变成二维。
+
+**关键词卡片**
+
+- CW 复形（CW complex）：以点、棱、圆盘、实心球为零件逐层粘合的标准积木空间。
+- D(2) 条件（D(2) condition）：万有覆盖二阶以上整同调为零、三阶上同调对任意系数消失——"同调上像二维"。
+- 万有覆盖（universal cover）：把所有环路展开后得到的无圈版本。
+- 加构造（plus construction）：先加二维胞腔杀死指定的完美正规子群、再加三维胞腔压平副作用的经典手术。
+
+**看个具体例子**
+
+反例从 5 个生成元、4 条关系的显式群出发，经加构造得到三维复形 X，满足全部 D(2) 条件。排除二维模型的关键一击是特征标 `@@M@@\rho@@`（把群元素映成非零复数）：群中 `@@M@@x_1@@` 是 2 阶元，`@@M@@\rho@@` 却给它记 `@@M@@-1@@`。
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280">
+<text x="120" y="35" font-size="15" text-anchor="middle" font-weight="bold">三维复形 X</text>
+<circle cx="90" cy="230" r="5" fill="black"/>
+<text x="130" y="235" font-size="13">0 维：点</text>
+<ellipse cx="90" cy="185" rx="20" ry="11" fill="none" stroke="black" stroke-width="2"/>
+<text x="130" y="190" font-size="13">1 维：棱（圈）</text>
+<ellipse cx="90" cy="140" rx="26" ry="14" fill="none" stroke="black" stroke-width="2"/>
+<text x="130" y="145" font-size="13">2 维：圆盘</text>
+<circle cx="90" cy="95" r="17" fill="none" stroke="black" stroke-width="2"/>
+<text x="130" y="100" font-size="13">3 维：实心球</text>
+<line x1="230" y1="175" x2="340" y2="175" stroke="black" stroke-width="2"/>
+<line x1="340" y1="175" x2="328" y2="169" stroke="black" stroke-width="2"/>
+<line x1="340" y1="175" x2="328" y2="181" stroke="black" stroke-width="2"/>
+<text x="285" y="160" font-size="13" text-anchor="middle">同伦压扁成二维？</text>
+<text x="440" y="100" font-size="14" text-anchor="middle">维数 ≤ 2 的</text>
+<text x="440" y="120" font-size="14" text-anchor="middle">有限复形</text>
+<rect x="350" y="135" width="180" height="80" fill="none" stroke="black" stroke-width="2"/>
+<line x1="395" y1="148" x2="485" y2="202" stroke="red" stroke-width="3"/>
+<line x1="485" y1="148" x2="395" y2="202" stroke="red" stroke-width="3"/>
+<text x="280" y="250" font-size="13" text-anchor="middle">X 满足全部 D(2) 同调条件；x₁² = e 而 ρ(x₁) = −1</text>
+</svg>
+
+</div>
+
+新障碍定理说：二维有限复形若在某个特征标下扭曲二阶同调消失，该特征标必须把所有有限阶元映到 1。X 恰好违反这条，二维模型不可能存在。
+
+**为什么值得关心**
+
+悬置 60 年的 Wall D(2) 问题就此终结：特殊有限群上成立，无限基本群一出现，直觉失效。
+
+> 暂无形式化证明（AI 结果待核验）
+
 ## 一句话结论
 
 本文给出 Wall 有限 `@@M@@D(2)@@` 问题的否定答案：构造了一个有限连通三维 CW 复形（CW complex），它满足 `@@M@@D(2)@@` 有限性条件——万有覆盖在二阶以上整同调为零、三阶上同调对任意局部系数消失——却不同伦等价于任何维数至多二的有限复形；反例的基本群是无限群。

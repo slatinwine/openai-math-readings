@@ -13,6 +13,48 @@ pdfname: ""
 
 > 结果族 016：Zilber–Pink in abelian varieties and the Siegel threefold　·　学科：Number theory　·　验证状态：暂无形式化证明，请以社区核验为准
 
+## 入门导读 🐣
+
+一般的阿贝尔曲面，内部"自映射"只有乘整数，像一条安静的数轴。极少数曲面的内部对称是四元数式的——三维旋转背后的那种代数。这些稀有品种在参数大厅 `@@M@@\mathcal A_2@@` 里排成一条条特殊曲线；本文证明：一条一般曲线只会有限次踩到它们，对曲线的边界、点的约化不做任何假设。
+
+**关键词卡片**
+
+- 四元数除代数 (quaternion division algebra)：四维数系，乘法不交换但总可做除法
+- 全自同态代数 (End⁰(A))：阿贝尔曲面全部自映射组成的代数；一般情形就是 `@@M@@\mathbb Q@@`
+- 非可能交点 (unlikely intersection)：按维数计数"不该发生"的相遇
+- 单色群 (monodromy group)：沿曲线搬动数据时产生的全体旋转；本文中它大到 `@@M@@\mathrm{SO}_5@@`
+- o-极小计数 (o-minimal counting)：把格点数清楚、从而框住代数点的一套实分析机器
+
+**看个具体例子**
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 325">
+  <text x="280" y="26" font-size="15" text-anchor="middle" fill="#333">三维大厅斜视图：一般曲线只有限次踩到特殊曲线</text>
+  <text x="60" y="55" font-size="12" fill="#26b">蓝＝四元数特殊曲线</text>
+  <text x="60" y="75" font-size="12" fill="#d33">红＝Hodge 一般曲线 C</text>
+  <text x="60" y="95" font-size="12" fill="#f0a">粉点＝非可能交点（有限个）</text>
+  <polygon points="90,215 300,110 510,175 300,285" fill="#f7f7f7" stroke="#888" stroke-width="1.5"/>
+  <line x1="195" y1="162" x2="405" y2="230" stroke="#ddd" stroke-width="1"/>
+  <line x1="195" y1="230" x2="405" y2="162" stroke="#ddd" stroke-width="1"/>
+  <path d="M120 205 Q230 145 330 195" fill="none" stroke="#26b" stroke-width="2"/>
+  <path d="M200 240 Q300 175 430 215" fill="none" stroke="#26b" stroke-width="2"/>
+  <path d="M110 235 Q240 165 340 220 Q420 255 480 190" fill="none" stroke="#d33" stroke-width="2.5"/>
+  <circle cx="250" cy="185" r="5" fill="#f0a"/>
+  <circle cx="330" cy="221" r="5" fill="#f0a"/>
+  <text x="280" y="310" font-size="13" text-anchor="middle" fill="#333">定理：Σ(C) 有限——稀有品种被一般曲线只踩中有限次</text>
+</svg>
+
+</div>
+
+判定条件代入数字：点 `@@M@@s@@` 被计入当且仅当 `@@M@@\mathrm{End}^0(A_s)@@` 恰好是 `@@M@@\mathbb Q@@` 上的不定四元数除代数——分裂的 `@@M@@M_2(\mathbb Q)@@` 不算（那是"椭圆平方"情形，归姊妹篇管）。四元数代数的判别式、自同态阶都允许随点任意变化，全部一网打尽；定理断言这类点在一般曲线上只有有限个。
+
+**为什么值得关心**
+
+四元数分量是 `@@M@@\mathcal A_2@@` 曲线情形 Zilber–Pink 的三大块之一；本文首次免去边界假设与超奇异位置记账，高度估计完全不依赖退化邻近的个数。
+
+> 暂无形式化证明（AI 结果待核验）
+
 ## 一句话结论
 
 证明了 Siegel 三重态 `@@M@@\mathcal A_2@@` 中任何 Hodge 一般代数曲线上，全几何自同态代数恰为 `@@M@@\Q@@` 上不定四元数除代数的点只有有限多个——Zilber–Pink 猜想在 `@@M@@\mathcal A_2@@` 曲线情形的四元数分量由此无条件成立，不施加任何边界或约化假设。

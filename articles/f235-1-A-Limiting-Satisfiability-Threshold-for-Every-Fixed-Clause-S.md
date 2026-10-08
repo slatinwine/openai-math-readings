@@ -13,6 +13,50 @@ pdfname: ""
 
 > 结果族 235：Limiting random SAT thresholds, sharp variance and computability　·　学科：Probability and statistical mechanics　·　验证状态：暂无形式化证明，请以社区核验为准
 
+## 入门导读 🐣
+
+往一台机器里一条条塞随机"要求"（子句），起初它总能全部满足；塞到某个密度，机器突然全面崩溃。三十多年前数学家猜测：崩溃点会收敛到一个固定密度 α_k。本文证明这个"可满足性猜想"对每个 k ≥ 3 都成立——猜想的优先权属 Carenini 的并发工作，本文给出一条技术路线独立的证明。
+
+**关键词卡片**
+
+- 随机 k-SAT（random k-SAT）：n 个布尔变量；每条子句随机挑 k 个互异变量并各自随机加正负号。
+- 阈值（threshold）α_k：子句密度低于它时渐近可满足，高于它时渐近不可满足。
+- 相变（phase transition）：可满足概率随密度从 1 骤降到 0，像水结冰。
+- 尖锐窗口（sharp threshold）：Friedgut 定理保证转移在 o(n) 条子句内完成。
+- 集中性（concentration）：证明的核心：关键随机量围绕其期望只有微小波动。
+
+**看个具体例子**
+
+k = 2 时早已知道 `@@M@@\alpha_2=1@@`。对 k ≥ 3，定理保证 `@@M@@\alpha_k@@` 存在且落在 `@@M@@[a_0,\,2^k+1]@@`：例如 k = 3 时 `@@M@@\alpha_3\in(0,9)@@`——注意定理只承诺"存在"，不告诉你具体数值。证明骨架是"先集中、再锚定、最后排除漂移"：先证截断命中时间的方差只有 `@@M@@O_k(n^{1+2/k})@@`，把转移窗口压窄；再用匹配论证把中心锚定在正区间内；最后用近似超可加性排除中心随 n 漂移的可能。论文还附赠单侧逼近速率 `@@M@@\mu_s\le\alpha_k+C_k s^{-\delta_k}@@`，其中 `@@M@@\delta_k=\dfrac{k-2}{4k}@@`（k = 3 时为 1/12）。
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280">
+  <text x="280" y="26" text-anchor="middle" font-size="15">可满足概率随子句密度的相变</text>
+  <line x1="60" y1="230" x2="520" y2="230" stroke="#555" stroke-width="1.5"/>
+  <line x1="60" y1="60" x2="60" y2="230" stroke="#555" stroke-width="1.5"/>
+  <path d="M60 90 L320 90 C350 90 355 220 385 220 L520 220" fill="none" stroke="#c62828" stroke-width="3"/>
+  <line x1="360" y1="65" x2="360" y2="230" stroke="#888" stroke-dasharray="5 4"/>
+  <text x="376" y="112" font-size="15">α_k</text>
+  <text x="150" y="80" font-size="12">概率 ≈ 1</text>
+  <text x="450" y="212" font-size="12">概率 ≈ 0</text>
+  <text x="48" y="95" font-size="12">1</text>
+  <text x="48" y="234" font-size="12">0</text>
+  <line x1="335" y1="242" x2="385" y2="242" stroke="#333" stroke-width="1.5"/>
+  <line x1="335" y1="238" x2="335" y2="246" stroke="#333" stroke-width="1.5"/>
+  <line x1="385" y1="238" x2="385" y2="246" stroke="#333" stroke-width="1.5"/>
+  <text x="418" y="246" font-size="11">窗口宽 o(n)</text>
+  <text x="280" y="268" text-anchor="middle" font-size="13">子句密度 c（每变量摊到的子句数）</text>
+</svg>
+
+</div>
+
+**为什么值得关心**
+
+可满足性猜想是随机约束满足领域的中心问题；本文的集中性估计比并发结果更锋利，直接被族内另两篇方差论文拿来使用。
+
+> 暂无形式化证明（AI 结果待核验）
+
 ## 一句话结论
 
 证明了固定 `@@M@@k\ge3@@` 的随机 `@@M@@k@@`-SAT 存在有限的极限阈值密度 `@@M@@\alpha_k@@`：子句密度低于它时公式渐近可满足，高于它时渐近不可满足。这一三十余年悬置的可满足性猜想的解决优先权属 Carenini，本文给出一条技术路线独立的完整证明。

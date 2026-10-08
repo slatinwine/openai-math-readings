@@ -13,6 +13,69 @@ pdfname: ""
 
 > 结果族 188：The sharp terminal leave in random triangle removal　·　学科：Combinatorics　·　验证状态：暂无形式化证明，请以社区核验为准
 
+## 入门导读 🐣
+
+想象一场"拆手链"游戏：n 个人两两拉手结成一张大网，每一轮随机挑出三个还彼此拉着手的幸运儿，让他们三人同时松开彼此的手；如此重复，直到再也凑不出三人互拉。散场时网上总会剩下一些零散的手——这篇论文精确算出了这些"剩手"的数量：约 `@@M@@n^{3/2}/(2\sqrt2)@@` 条，连常数都分毫不差。从 1990 年 Bollobás–Erdős 猜测残尾规模为 `@@M@@n^{3/2}@@` 起，指数早已确定，悬而未决的正是这个精确常数。
+
+**关键词卡片**
+
+- 完全图（complete graph）：任意两点之间都连一条边的图，好比"人人相识"的朋友圈。
+- 随机三角移除（random triangle removal）：每一步等可能地挑一个现存的三角形，把它的三条边一起删掉。
+- 残尾（leave）：过程终止后剩下的边——再也拼不进任何三角形的"边角料"。
+- `@@M@@L^2@@` 收敛（`@@M@@L^2@@` convergence）：结果与常数之差的平方平均趋于零，比"大概率接近"更强的说法。
+- Joos–Kühn 猜想：残尾规模应有精确渐近常数的猜测，本文敲定三角形情形的 `@@M@@1/(2\sqrt2)@@`。
+
+**看个具体例子**
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280">
+<text x="100" y="30" text-anchor="middle" font-size="15" fill="#222">开始：完全图 K_n</text>
+<line x1="100" y1="90" x2="48" y2="128" stroke="#888" stroke-width="1.5"/>
+<line x1="100" y1="90" x2="152" y2="128" stroke="#888" stroke-width="1.5"/>
+<line x1="48" y1="128" x2="152" y2="128" stroke="#888" stroke-width="1.5"/>
+<line x1="100" y1="90" x2="68" y2="188" stroke="#b03030" stroke-width="3"/>
+<line x1="100" y1="90" x2="132" y2="188" stroke="#b03030" stroke-width="3"/>
+<line x1="68" y1="188" x2="132" y2="188" stroke="#b03030" stroke-width="3"/>
+<line x1="48" y1="128" x2="68" y2="188" stroke="#888" stroke-width="1.5"/>
+<line x1="48" y1="128" x2="132" y2="188" stroke="#888" stroke-width="1.5"/>
+<line x1="152" y1="128" x2="68" y2="188" stroke="#888" stroke-width="1.5"/>
+<line x1="152" y1="128" x2="132" y2="188" stroke="#888" stroke-width="1.5"/>
+<circle cx="100" cy="90" r="4" fill="#222"/>
+<circle cx="48" cy="128" r="4" fill="#222"/>
+<circle cx="68" cy="188" r="4" fill="#222"/>
+<circle cx="132" cy="188" r="4" fill="#222"/>
+<circle cx="152" cy="128" r="4" fill="#222"/>
+<text x="100" y="225" text-anchor="middle" font-size="13" fill="#555">n(n−1)/2 条边</text>
+<line x1="205" y1="140" x2="318" y2="140" stroke="#222" stroke-width="2"/>
+<polygon points="318,134 318,146 334,140" fill="#222"/>
+<text x="270" y="118" text-anchor="middle" font-size="13">随机删一个三角形</text>
+<text x="270" y="168" text-anchor="middle" font-size="13">三条边一起消失</text>
+<line x1="440" y1="85" x2="388" y2="123" stroke="#222" stroke-width="2" stroke-dasharray="6 5"/>
+<line x1="388" y1="123" x2="408" y2="184" stroke="#222" stroke-width="2" stroke-dasharray="6 5"/>
+<line x1="408" y1="184" x2="472" y2="184" stroke="#222" stroke-width="2" stroke-dasharray="6 5"/>
+<line x1="472" y1="184" x2="492" y2="123" stroke="#222" stroke-width="2" stroke-dasharray="6 5"/>
+<line x1="492" y1="123" x2="440" y2="85" stroke="#222" stroke-width="2" stroke-dasharray="6 5"/>
+<circle cx="440" cy="85" r="4" fill="#222"/>
+<circle cx="388" cy="123" r="4" fill="#222"/>
+<circle cx="408" cy="184" r="4" fill="#222"/>
+<circle cx="472" cy="184" r="4" fill="#222"/>
+<circle cx="492" cy="123" r="4" fill="#222"/>
+<text x="440" y="30" text-anchor="middle" font-size="15" fill="#222">结束：残尾（无三角形）</text>
+<text x="440" y="225" text-anchor="middle" font-size="13" fill="#555">F_n ≈ n^(3/2)/(2√2)</text>
+<text x="280" y="262" text-anchor="middle" font-size="14">代入 n = 10⁶：残尾 ≈ 10⁹/(2√2) ≈ 3.5 亿条边</text>
+</svg>
+
+</div>
+
+代入具体数字：`@@M@@n=10^6@@` 时 `@@M@@n^{3/2}=10^9@@`，残尾约 `@@M@@10^9/(2\sqrt2)\approx 3.5@@` 亿条——不管随机运气好坏，这个数几乎总是这么多。
+
+**为什么值得关心**
+
+一个被研究了三十多年的随机过程，其"最终垃圾量"被算到了精确常数，说明看似混乱的随机过程也可以有铁律般的精确定律。
+
+> 暂无形式化证明（AI 结果待核验）
+
 ## 一句话结论
 
 证明了从完全图 `@@M@@K_n@@` 出发随机逐个删三角形的终止残留边数 `@@M@@F_n@@` 满足 `@@M@@F_n/n^{3/2}@@` 依 `@@M@@L^2@@` 收敛于 `@@M@@1/(2\sqrt2)@@`，首次敲定该过程的精确尾常数，解决 Joos–Kühn 猜想的三角形情形。

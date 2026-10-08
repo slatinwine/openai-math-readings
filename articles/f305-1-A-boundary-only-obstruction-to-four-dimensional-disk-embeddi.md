@@ -13,6 +13,34 @@ pdfname: ""
 
 > 结果族 305：Four-dimensional disk embedding and Wall's conjecture　·　学科：Topology　·　验证状态：暂无形式化证明，请以社区核验为准
 
+## 入门导读 🐣
+
+想象在一间四维房间里挂窗帘：布（圆盘）的边缘已经缝在窗框上，你希望整块布平整地铺进房间，不和屋里其他布片交叉打架。五维以上的空间里这不难——把布"抬起来"绕过去就行；四维偏偏是"抬起的动作自己会撞出新东西"的尴尬维度。这篇论文造出一间"魔鬼房间"：所有几何账目都合格，窗帘却怎么也摆不平，顺带证明最简单的自由群拿不到 Freedman 的"好群"通行证。
+
+**关键词卡片**
+
+- 圆盘嵌入（disk embedding）：把边缘已定的二维圆盘放进四维流形，要求不相交、不打结。
+- Whitney 技巧（Whitney trick）：高维里成对消去交点的标准动作；四维中用来消交的圆盘自己又会撞出新交点。
+- 好群（good group）：Freedman–Quinn 给基本群颁发的"通行证"——群足够好，代数账目对了就能换来嵌入圆盘。
+- 自由群 `@@M@@F_2@@`（free group）：两个生成元、毫无关系的最简单无限群之一；论文证明它不是好群。
+- 局部平坦（locally flat）：嵌入规矩、局部看起来像标准平放，不打结。
+
+**看个具体例子**
+
+定理的输入是四维流形 `@@M@@M@@` 中一族圆盘 `@@M@@f_i@@` 与带框球面 `@@M@@g_i@@`，账本全对：`@@M@@\lambda(f_i,g_j)=\delta_{ij}@@`、`@@M@@\lambda(g_i,g_j)=0@@`、`@@M@@\widetilde\mu(g_i)=0@@`——这正是圆盘嵌入定理要求的全部代数条件。可结论是：这些圆盘的边界圈在 `@@M@@M@@` 中找不到两两不交的局部平坦圆盘，连更换同伦类、放弃框架要求都无济于事。症结正是 Whitney 技巧在四维失灵：
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280"><rect x="12" y="14" width="256" height="226" fill="none" stroke="#aaa"/><text x="28" y="42" font-size="15" fill="#333">高维（维数 ≥ 5）：消交成功</text><path d="M40 120 C 90 200 190 200 240 120" stroke="#2a7" fill="none" stroke-width="3"/><path d="M40 200 C 90 120 190 120 240 200" stroke="#c44" fill="none" stroke-width="3"/><circle cx="102" cy="160" r="4" fill="#000"/><circle cx="178" cy="160" r="4" fill="#000"/><ellipse cx="140" cy="160" rx="46" ry="26" fill="none" stroke="#36c" stroke-dasharray="6 4"/><text x="96" y="238" font-size="13" fill="#36c">Whitney 圆盘配对消去两交点</text><rect x="292" y="14" width="256" height="226" fill="none" stroke="#aaa"/><text x="308" y="42" font-size="15" fill="#333">四维：消交圆盘撞出新交点</text><path d="M320 120 C 370 200 470 200 520 120" stroke="#2a7" fill="none" stroke-width="3"/><path d="M320 200 C 370 120 470 120 520 200" stroke="#c44" fill="none" stroke-width="3"/><circle cx="382" cy="160" r="4" fill="#888"/><circle cx="458" cy="160" r="4" fill="#888"/><ellipse cx="420" cy="160" rx="52" ry="28" fill="none" stroke="#36c" stroke-dasharray="6 4"/><path d="M468 152 l 8 16 M476 152 l -8 16" stroke="#000" stroke-width="2"/><path d="M364 152 l 8 16 M372 152 l -8 16" stroke="#000" stroke-width="2"/><text x="330" y="238" font-size="13" fill="#000">新交点（×）无法消除，嵌入无门</text></svg>
+
+</div>
+
+**为什么值得关心**
+
+圆盘嵌入定理是四维拓扑手术的发动机，"`@@M@@F_2@@` 是否好群"悬置三十余年；本文给出无群假设的反例并判定 `@@M@@F_2@@` 出局，为这台发动机划出了适用边界。
+
+> 暂无形式化证明（AI 结果待核验）
+
 ## 一句话结论
 
 论文构造了紧光滑四维流形中一族满足全部代数输入条件（等变相交抵消、带框对偶球）的圆盘，其边界圆却不存在两两不交的局部平坦填充，从而否定无基本群假设的圆盘嵌入猜想，并首次证明自由群 `@@M@@F_2@@` 不是 Freedman–Quinn 意义下的好群。

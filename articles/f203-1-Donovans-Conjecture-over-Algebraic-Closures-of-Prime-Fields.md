@@ -13,6 +13,60 @@ pdfname: ""
 
 > 结果族 203：Donovan's conjecture over fields and complete mixed-characteristic DVRs　·　学科：Algebra　·　验证状态：暂无形式化证明，请以社区核验为准
 
+## 入门导读 🐣
+
+想象一家能造无穷多种"积木套装"的工厂，每套里都有个叫"块"的核心零件。这篇论文证明：只要规定零件的"磨损程度"（数学上叫亏群的阶）不超过某个固定上限，那么无论工厂开多久、造出多少种群，本质上不同的块只有有限几种。这个 1980 年提出的猜想，第一次在完全不设额外条件（亏群可以非交换、p=2 也行）的情形下得到证明。
+
+**关键词卡片**
+
+- 块（block）：群代数 `@@M@@KG@@` 按中心切出的"基本零件"，每个块管着一部分表示。
+- 亏群（defect group）：附属于块的 `@@M@@p@@`-子群，个头越大，块离"完美可拆"越远。
+- Morita 等价（Morita equivalence）：两个块哪怕尺寸不同，只要表示内容完全一致就算同一类，像同一门课的两套等价讲义。
+- 代数闭域（algebraically closed field）：所有多项式都有根的数系，这里取特征 `@@M@@p@@` 的那一种。
+
+**看个具体例子**
+
+取 `@@M@@p=2@@`、`@@M@@M=4@@`：阶不超过 4 的 2-群只有 `@@M@@1@@`、`@@M@@C_2@@`、`@@M@@C_4@@`、`@@M@@C_2\times C_2@@` 四种。定理说，全体有限群里亏群阶不超过 4 的块，不管群本身多大、多怪，最终只落进有限多个 Morita 类；顺带还一致界住了 Cartan 矩阵元素等不变量。
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280">
+  <text x="30" y="34" font-size="16" fill="#333">所有有限群的块：无穷多</text>
+  <circle cx="50" cy="70" r="5" fill="#777"/>
+  <circle cx="90" cy="60" r="5" fill="#777"/>
+  <circle cx="130" cy="80" r="5" fill="#777"/>
+  <circle cx="70" cy="110" r="5" fill="#777"/>
+  <circle cx="115" cy="130" r="5" fill="#777"/>
+  <circle cx="55" cy="160" r="5" fill="#777"/>
+  <circle cx="95" cy="185" r="5" fill="#777"/>
+  <circle cx="140" cy="170" r="5" fill="#777"/>
+  <circle cx="75" cy="215" r="5" fill="#777"/>
+  <circle cx="125" cy="230" r="5" fill="#777"/>
+  <line x1="160" y1="145" x2="203" y2="145" stroke="#555" stroke-width="2"/>
+  <polygon points="205,145 195,140 195,150" fill="#555"/>
+  <rect x="210" y="70" width="170" height="150" rx="10" fill="#eef" stroke="#555" stroke-width="2"/>
+  <text x="295" y="103" font-size="15" fill="#222" text-anchor="middle">过滤器：</text>
+  <text x="295" y="130" font-size="15" fill="#222" text-anchor="middle">亏群阶 ≤ M</text>
+  <text x="295" y="162" font-size="13" fill="#555" text-anchor="middle">例：p=2, M=4</text>
+  <text x="295" y="184" font-size="13" fill="#555" text-anchor="middle">亏群只有 4 种</text>
+  <line x1="380" y1="145" x2="423" y2="145" stroke="#555" stroke-width="2"/>
+  <polygon points="425,145 415,140 415,150" fill="#555"/>
+  <rect x="430" y="75" width="100" height="48" rx="6" fill="#efe" stroke="#383" stroke-width="2"/>
+  <text x="480" y="104" font-size="14" fill="#242" text-anchor="middle">Morita 类 1</text>
+  <rect x="430" y="135" width="100" height="48" rx="6" fill="#efe" stroke="#383" stroke-width="2"/>
+  <text x="480" y="164" font-size="14" fill="#242" text-anchor="middle">Morita 类 2</text>
+  <rect x="430" y="195" width="100" height="48" rx="6" fill="#efe" stroke="#383" stroke-width="2"/>
+  <text x="480" y="224" font-size="14" fill="#242" text-anchor="middle">…（有限个）</text>
+</svg>
+
+</div>
+
+**为什么值得关心**
+
+它说明纯粹的局部 `@@M@@p@@`-群数据就能锁死整个表示范畴的类型总数，是模表示论四十余年悬案的收官之作。
+
+> 暂无形式化证明（AI 结果待核验）
+
 ## 一句话结论
 
 本文证明了特征 `@@M@@p>0@@` 的每个代数闭域上的 Donovan 猜想：固定域 `@@M@@K@@` 与亏群阶的上界 `@@M@@M@@` 后，所有有限群的块只代表有限多个 `@@M@@K@@`-线性 Morita 等价类。亏群不必交换，素数 `@@M@@p=2@@` 也包括在内——这是该猜想自 1980 年提出以来在完全一般性下的首次证明。

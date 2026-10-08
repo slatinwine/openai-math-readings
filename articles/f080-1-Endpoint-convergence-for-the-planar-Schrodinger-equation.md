@@ -13,6 +13,49 @@ pdfname: ""
 
 > 结果族 080：The exact Sobolev endpoint for Schrödinger convergence　·　学科：Real and complex analysis　·　验证状态：暂无形式化证明，请以社区核验为准
 
+## 入门导读 🐣
+
+量子世界里，自由粒子的波函数从初始时刻起立刻扩散变形。自然要问：初始波形要"多光滑"，才能保证时间倒回零时，演化结果在几乎每个点上回到初值？这就是 Carleson 1980 年提出的收敛问题。这篇论文把平面情形的答案精确钉死在临界正则性 `@@M@@1/3@@` 上——含等号，一分不多、一分不少。
+
+**关键词卡片**
+
+- 薛定谔演化（Schrödinger evolution）：算子 `@@M@@e^{it\Delta}f@@`，描述量子波的自由弥散
+- Sobolev 空间 `@@M@@H^s@@`：按"拥有 `@@M@@s@@` 阶导数能量"给函数分级的仓库，`@@M@@s@@` 越大越光滑
+- 几乎处处收敛（a.e. convergence）：除去一个测度为零的"坏点集"外点点收敛
+- 临界指标 1/3：平面问题的精确门槛——低于它有反例，高于它早已证明，等号悬置多年
+- 极大函数估计（maximal estimate）：用 `@@M@@\sup_{0\le t<1}@@` 同时管住所有时刻的一把尺子
+
+**看个具体例子**
+
+把正则性 `@@M@@s@@` 画成一条数轴，正反两路结果恰好在此会师：
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280">
+<line x1="60" y1="150" x2="500" y2="150" stroke="#333" stroke-width="2"/>
+<line x1="200" y1="136" x2="200" y2="164" stroke="#c33" stroke-width="4"/>
+<circle cx="200" cy="150" r="7" fill="#c33"/>
+<text x="186" y="120" font-size="15" fill="#c33" font-weight="bold">s=1/3</text>
+<text x="80" y="90" font-size="14" fill="#555">s&lt;1/3：必有坏点</text>
+<text x="80" y="110" font-size="13" fill="#777">（Bourgain 2016 反例）</text>
+<text x="250" y="90" font-size="14" fill="#555">s&gt;1/3：已证收敛</text>
+<text x="250" y="110" font-size="13" fill="#777">（Du–Guth–Li 2017）</text>
+<text x="160" y="195" font-size="14" fill="#c33" font-weight="bold">本文：等号也收敛</text>
+<text x="430" y="185" font-size="13" fill="#333">s 增大→</text>
+<text x="55" y="172" font-size="13" fill="#333">0</text>
+<text x="170" y="255" font-size="13" fill="#333">正则性轴（示意，未按比例）</text>
+</svg>
+
+</div>
+
+数字版定理：`@@M@@f\in H^{1/3}(\mathbb R^2)@@` 时，对几乎每个 `@@M@@x@@` 都有 `@@M@@\lim_{t\downarrow0}u_f(x,t)=f^*(x)@@`（先做高斯阻尼极限、再令 `@@M@@t\downarrow0@@`）。配套的极大估计是 `@@M@@\int_{B(x_0,1)}\sup_{0\le t<1}|S(t)f(x)|\,dx\le C\|f\|_{H^{1/3}}@@`。
+
+**为什么值得关心**
+
+端点等号与严格不等号有本质区别：端点定理不容许任何未被补偿的频率损失，此前所有方法都带损失、只能证 `@@M@@s>1/3@@`。本文补上等号，给平面 Carleson 问题画上句号——门槛恰好是 `@@M@@1/3@@`，被两面夹逼钉死。
+
+> 暂无形式化证明（AI 结果待核验）
+
 ## 一句话结论
 
 本文证明 Carleson 点态收敛问题的平面 Sobolev 端点：初值 `@@M@@f\in H^{1/3}(\mathbb R^2)@@` 时，Schrödinger 演化在几乎处处的点上随 `@@M@@t\downarrow0@@` 收敛回 `@@M@@f@@`，正则性恰好取到临界指标 `@@M@@1/3@@`，把 Du–Guth–Li 的 `@@M@@s>1/3@@` 推进到等号情形。

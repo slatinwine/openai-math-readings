@@ -13,6 +13,36 @@ pdfname: ""
 
 > 结果族 302：Radius of comparison equals half the mean dimension　·　学科：Operator algebras　·　验证状态：暂无形式化证明，请以社区核验为准
 
+## 入门导读 🐣
+
+这一篇是纯拓扑的"机械车间"，专门给姊妹篇供应引擎。定理一说的是"零会成批传染"：一种高灵敏度的拓扑检测试剂（复配边 MU）若在某小块上测得零，那么把空间复印很多份、只要有一半份数落进该小块，整批的检测便也是零。定理二是"收纳"问题：一列取值于高维立方体的映射，每个坐标分量叫一个"槽"；只要槽丛想装进的空间维数不够（秩亏），就能把固定正比例的槽推到立方体的边界内壁上，而原本贴墙的槽一个都不许动。
+
+**关键词卡片**
+
+- 复配边（complex cobordism, MU）：格外灵敏的拓扑上同调理论，充当检测试剂
+- 砸积（smash product）：带基点空间的标准乘法，把基点全部捏在一起
+- 槽（slot）：立方体值映射中的单个 t 维坐标分量
+- 秩（rank）：向量丛纤维的维数；秩亏即"要装的东西比可用维数多"
+- 保边界压缩（boundary-preserving compression）：把部分槽压到边界且原边界值分毫不动
+
+**看个具体例子**
+
+以 t=2（槽是小方块）示意压缩；结论的数字版：在任意大的乘幂 u 上，至少 (a/8)·un 个槽被贴到边界，条件是存在秩 K<2pn 的嵌入。
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280"><text x="280" y="32" font-size="15" text-anchor="middle">立方体槽示意（t=2）</text><rect x="170" y="45" width="220" height="180" fill="none" stroke="#333" stroke-width="2"/><circle cx="240" cy="100" r="11" fill="none" stroke="#369" stroke-width="2"/><circle cx="320" cy="150" r="11" fill="none" stroke="#369" stroke-width="2"/><circle cx="255" cy="170" r="9" fill="none" stroke="#369" stroke-width="2"/><line x1="233" y1="91" x2="222" y2="56" stroke="#888" stroke-dasharray="4 3"/><rect x="216" y="39" width="12" height="12" fill="#333"/><line x1="329" y1="143" x2="381" y2="122" stroke="#888" stroke-dasharray="4 3"/><rect x="384" y="116" width="12" height="12" fill="#333"/><line x1="258" y1="178" x2="267" y2="212" stroke="#888" stroke-dasharray="4 3"/><rect x="261" y="219" width="12" height="12" fill="#333"/><circle cx="170" cy="140" r="8" fill="#ccc" stroke="#333"/><circle cx="170" cy="190" r="8" fill="#ccc" stroke="#333"/><text x="160" y="115" font-size="13" text-anchor="end">原有边界槽</text><text x="280" y="258" font-size="13" text-anchor="middle">虚线：推向边界的新槽；灰色圆点：原边界槽原位不动</text></svg>
+
+</div>
+
+文末的反例同样锋利：当 K=2pn（恰好装得下）且取恒等映射时，这样的压缩不存在——严格秩不等式一丝一毫不能放松。
+
+**为什么值得关心**
+
+它是姊妹篇证明"比较半径=平均维数之半"时所依赖的唯一拓扑输入，展示代数拓扑如何跨领域咬合算子代数。
+
+> 暂无形式化证明（AI 结果待核验）
+
 ## 一句话结论
 
 证明了两件事：复配边（complex cobordism）`@@M@@MU@@` 意义下的零化可在砸积中"成批传播"的过滤乘积定理；以及由此得到的保边界压缩定理——在秩亏丛嵌入条件下，任意大乘幂上的立方体值映射能把固定正比例的槽压到边界并逐一保住原边界值。这是姊妹篇证明 `@@M@@\rc=\tfrac12\mdim@@` 的拓扑引擎。

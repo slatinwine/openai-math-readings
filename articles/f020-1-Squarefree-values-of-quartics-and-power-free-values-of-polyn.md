@@ -13,6 +13,43 @@ pdfname: ""
 
 > 结果族 020：Squarefree quartics and power-free polynomial values　·　学科：Number theory　·　验证状态：主结果已 Lean 形式化
 
+## 入门导读 🐣
+
+多项式像一台吐整数的机器，"干净的"整数指不含任何素数平方因子（30=2·3·5 干净，12=2²·3 不干净）。这篇论文给四次机器做了完整体检：干净输出所占的比例，恰好等于每个素数处"存活率"的连乘。Erdős 1953 年以 n⁴+2 为例提出的无平方值问题就此解决，结论还覆盖 4 至 8 次多项式的 (d−2)-幂自由值。
+
+**关键词卡片**
+
+- 无平方（squarefree）：不被任何素数平方整除；更一般地，k-幂自由即不被任何 p^k 整除。
+- 不可约多项式（irreducible polynomial）：无法拆成两个更低次多项式之积的"原子"多项式。
+- 固定素数平方因子（fixed square divisor）：机器天生总带的污点；体检只针对没有天污的多项式。
+- Euler 乘积（Euler product）：各素数处局部存活概率的连乘，理论预测的标准答案。
+
+**看个具体例子**
+
+看 n⁴+1（无固定平方因子的不可约四次式）：n=1,…,5 时输出 2, 17, 82, 257, 626，个个干净。定理说 `@@M@@\#\{n\le X:\ n^4+1\ \text{无平方}\}=c_8X+o(X)@@`，其中 `@@M@@c_8=\prod_{p\equiv1\ (\mathrm{mod}\ 8)}(1-4/p^2)>3/4@@`。原因很直观：只有 p≡1 (mod 8) 型素数能让 p² 整除 n⁴+1，且模 p² 恰有 4 个解，其余素数从不添堵。
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 240">
+  <text x="280" y="30" text-anchor="middle" font-size="16" fill="#333">n⁴+1 的"干净率"：超过四分之三</text>
+  <rect x="60" y="80" width="330" height="46" fill="#5a9" stroke="#273" stroke-width="1.5"/>
+  <rect x="390" y="80" width="110" height="46" fill="#ccc" stroke="#888" stroke-width="1.5"/>
+  <text x="225" y="108" text-anchor="middle" font-size="13" fill="#fff">无平方值 &gt; 3/4</text>
+  <text x="445" y="108" text-anchor="middle" font-size="12" fill="#444">其余</text>
+  <text x="60" y="152" font-size="12" fill="#555">c₈ = ∏(1 − 4/p²)，乘积跑遍 p ≡ 1 (mod 8)</text>
+  <text x="60" y="178" font-size="12" fill="#555">n = 1, 2, 3, 4, 5 时输出 2, 17, 82, 257, 626，全部无平方。</text>
+  <text x="60" y="204" font-size="12" fill="#555">只有 p ≡ 1 (mod 8) 的素数会往 n⁴+1 上叠平方，且恰有 4 个解。</text>
+  <text x="280" y="230" text-anchor="middle" font-size="13" fill="#333">定理：干净比例恰好收敛到 Euler 乘积预测值。</text>
+</svg>
+
+</div>
+
+**为什么值得关心**
+
+此前的方法最多只能处理 9 次以上的多项式，四次恰好卡在临界指数 d−2 的方法极限上；论文靠数域分解、自适应行列式估计与低次几何三件工具啃下了它，并与 Browning 的高次定理合并，覆盖一切次数 ≥4 的多项式。
+
+> 已 Lean 形式化
+
 ## 一句话结论
 
 每个无固定素数平方因子的不可约整系数四次多项式都按预期的正 Euler 乘积密度取无平方值——Erdős 1953 年提出的 `@@M@@n^4+2@@` 无平方性问题就此解决；同时对 4–8 次不可约多项式建立 `@@M@@(d-2)@@`-幂自由值密度，并入 Browning 定理后覆盖一切次数 `@@M@@d\ge4@@`。

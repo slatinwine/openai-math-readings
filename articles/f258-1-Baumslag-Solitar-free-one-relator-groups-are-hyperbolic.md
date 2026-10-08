@@ -13,6 +13,54 @@ pdfname: ""
 
 > 结果族 258：Gersten's conjecture and virtual compact specialness of one-relator groups　·　学科：Group theory　·　验证状态：暂无形式化证明，请以社区核验为准
 
+## 入门导读 🐣
+
+一条规则能掀起多大风浪？"单关系群"就是在完全自由的一堆生成元上只加一条规则，几何性格却千差万别：有的像负曲率山地（双曲），有的藏着"越走越歪的圆柱"。Gersten 在 1992 年猜测：那些歪圆柱是妨碍双曲的唯一元凶。这篇论文证明：对——除尽歪圆柱，剩下的全是双曲山地。
+
+**关键词卡片**
+
+- 单关系群（one-relator group）：`@@M@@\langle X\mid r\rangle@@`，自由群加唯一一条关系。
+- 字双曲（word-hyperbolic）：负曲率的群论化身，迷路可"抄近路"找回。
+- Baumslag–Solitar 群（BS(m,n)）：`@@M@@\langle a,t\mid ta^{m}t^{-1}=a^{n}\rangle@@`，内藏歪圆柱。
+- 畸变（distortion）：子群内部距离与全群距离的悬殊程度，指数级悬殊即致命。
+- Dehn 演算（Dehn algorithm）：优先改写"长路段"的寻路算法，双曲群都有。
+
+**看个具体例子**
+
+看最歪的 BS(1,2)：规则 `@@M@@tat^{-1}=a^{2}@@` 说"t 每挪一步，a 的楼翻倍"。于是只走 9 步的词 `@@M@@t^{4}at^{-4}@@` 恰等于 16 层高的 `@@M@@a^{16}@@`（下图）——这种指数级畸变，双曲群绝对禁止。主定理（Gersten 猜想）数字版：单关系群 `@@M@@G=\langle X\mid r\rangle@@` 只要不含任何 `@@M@@\mathrm{BS}(m,n)@@` 子群，就必是字双曲群——歪圆柱是唯一障碍。注意 `@@M@@\mathrm{BS}(1,1)=\mathbb{Z}^{2}@@`，所以"无歪圆柱"也顺带排除了平直的方格平原。
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280">
+  <text x="280" y="26" font-size="15" fill="#333" text-anchor="middle">BS(1,2)：t 每挪一步，a 的楼翻倍</text>
+  <line x1="60" y1="235" x2="520" y2="235" stroke="#555" stroke-width="2"/>
+  <polygon points="520,229 534,235 520,241" fill="#555"/>
+  <rect x="90" y="221" width="26" height="14" fill="#e8b" stroke="#a46"/>
+  <rect x="170" y="207" width="26" height="28" fill="#e8b" stroke="#a46"/>
+  <rect x="250" y="179" width="26" height="56" fill="#e8b" stroke="#a46"/>
+  <rect x="330" y="123" width="26" height="112" fill="#e8b" stroke="#a46"/>
+  <rect x="410" y="45" width="26" height="190" fill="#e8b" stroke="#a46"/>
+  <text x="103" y="215" font-size="12" text-anchor="middle">a</text>
+  <text x="183" y="201" font-size="12" text-anchor="middle">a²</text>
+  <text x="263" y="173" font-size="12" text-anchor="middle">a⁴</text>
+  <text x="343" y="117" font-size="12" text-anchor="middle">a⁸</text>
+  <text x="423" y="39" font-size="12" text-anchor="middle">a¹⁶</text>
+  <text x="103" y="253" font-size="12" fill="#666" text-anchor="middle">t=0</text>
+  <text x="183" y="253" font-size="12" fill="#666" text-anchor="middle">t=1</text>
+  <text x="263" y="253" font-size="12" fill="#666" text-anchor="middle">t=2</text>
+  <text x="343" y="253" font-size="12" fill="#666" text-anchor="middle">t=3</text>
+  <text x="423" y="253" font-size="12" fill="#666" text-anchor="middle">t=4</text>
+  <text x="280" y="270" font-size="12" fill="#666" text-anchor="middle">走 9 步的词 t⁴at⁻⁴ = a¹⁶：指数级畸变，双曲群绝对禁止</text>
+</svg>
+
+</div>
+
+**为什么值得关心**
+
+判断单关系群是否双曲，从此只需检查"有没有藏歪圆柱"；配套的 Magnus 子图定理还保证归纳过程中子群像拟凸嵌入。它与姊妹篇串成完整链条，最终解决 Wise 的虚拟 free-by-cyclic 猜想。
+
+> 暂无形式化证明（AI 结果待核验）
+
 ## 一句话结论
 
 证明 Gersten 猜想：有限生成的单关系群只要不含任何 Baumslag–Solitar 子群 `@@M@@\mathrm{BS}(m,n)@@`（`@@M@@m,n\ne0@@`），就必为词双曲群。单关系群双曲性的子群障碍至此被完全归结为 BS 子群；与姊妹篇结合、再经 Kielak–Linton 定理，还解决了 Wise 的虚拟 free-by-cyclic 猜想。

@@ -13,6 +13,48 @@ pdfname: ""
 
 > 结果族 312：The Grothendieck homotopy hypothesis　·　学科：Topology　·　验证状态：主结果已 Lean 形式化
 
+## 入门导读 🐣
+
+格罗滕迪克 1983 年有个梦想：不靠坐标、不靠点集，只用"路径怎么走、怎么拼"的纯代数，就能完整记住任何空间的形状。这篇论文证明这个梦想（同伦假设）在一大类代数框架下全部成立，而关键一步的工具朴素得出奇：给图形免费添一条平行通道，形状纹丝不动。
+
+**关键词卡片**
+
+- 同伦假设（homotopy hypothesis）：Grothendieck 的猜想——∞-群胚这种代数与拓扑空间讲的是同一套同伦论。
+- 弱球状 ∞-群胚（weak globular ∞-groupoid）：点、线、面、体逐层堆叠、允许高阶"差不多相等"的代数结构。
+- 余凝子（coherator）：规定高阶运算如何相容的"规则手册"；不同手册给出不同代数范畴，须逐个验证。
+- 初等扩张（elementary expansion）：沿一个胞腔自由添加平行副本与连接桥的构造；论文证明它不改变任何同伦群。
+- Quillen 等价（Quillen equivalence）：两个范畴间无损的"同伦翻译词典"，最高级别的互认。
+
+**看个具体例子**
+
+给一条线段 a 做初等扩张：添加平行线段 a′，再用"桥"连接 a 与 a′，线段变成月牙形。直觉说它照样连通、无洞；定理严格保证：连通分支 π₀ 与一切同伦群 πᵣ 都不变。这种"扩张不变性"对任意维数的胞腔、甚至复合与凝聚胞腔都成立，正是 Henry 推出猜想的内容；由此推出这套代数与空间之间的翻译是 Quillen 等价。
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280">
+<text x="280" y="36" text-anchor="middle" font-size="18" fill="#222">初等扩张：加平行路 a′ 与桥 a→a′</text>
+<line x1="110" y1="110" x2="420" y2="110" stroke="#222" stroke-width="2"/>
+<polygon points="432,104 432,116 446,110" fill="#222"/>
+<text x="180" y="94" font-size="16" fill="#222">原胞腔 a</text>
+<line x1="110" y1="210" x2="420" y2="210" stroke="#222" stroke-width="2"/>
+<polygon points="432,204 432,216 446,210" fill="#222"/>
+<text x="150" y="240" font-size="16" fill="#222">平行新胞腔 a′</text>
+<line x1="110" y1="114" x2="110" y2="206" stroke="#999" stroke-width="2"/>
+<line x1="420" y1="114" x2="420" y2="206" stroke="#999" stroke-width="2"/>
+<line x1="265" y1="120" x2="265" y2="196" stroke="#999" stroke-width="2" stroke-dasharray="7,5"/>
+<polygon points="259,194 271,194 265,206" fill="#999"/>
+<text x="276" y="164" font-size="15" fill="#444">桥 a→a′</text>
+<text x="280" y="268" text-anchor="middle" font-size="15" fill="#666">月牙形仍连通无洞：π₀ 与一切 πᵣ 都不变</text>
+</svg>
+
+</div>
+
+**为什么值得关心**
+
+补上 Henry 框架缺失的一环，把 2023 年才攻下的三维情形一口气推广到任意维数、任意余凝子，同伦假设随之全面落地。
+
+> 已 Lean 形式化
+
 ## 一句话结论
 
 论文对 Ara–Henry 约定下的每个 Grothendieck 余凝子证明了同伦假设（homotopy hypothesis）：其弱球状 ∞-群胚与拓扑空间经 Quillen 等价互相再现，纯代数对象完整刻画空间的同伦论；关键一步是肯定回答 Henry 的推出猜想——初等扩张保持一切同伦群。

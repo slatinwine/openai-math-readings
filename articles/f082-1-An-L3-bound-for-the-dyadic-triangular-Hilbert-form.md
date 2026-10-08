@@ -13,6 +13,53 @@ pdfname: ""
 
 > 结果族 082：Annular variation and dyadic absolute bounds for the triangular Hilbert transform　·　学科：Real and complex analysis　·　验证状态：暂无形式化证明，请以社区核验为准
 
+## 入门导读 🐣
+
+把函数想成乐高拼出的图案：不同大小的"二进积木"（Haar 小波）层层拼出全貌。这篇论文证的账本里，每一块积木的贡献都要取绝对值再加总——相当于允许每块积木独立地翻面（换符号），最坏情况下的总账仍然可控，而且上限是一个与积木数量无关的具体数字：40。
+
+**关键词卡片**
+
+- 二进区间与 Haar 函数（dyadic interval / Haar function）：长度为 `@@M@@2^k@@` 的区间上，左半取 `@@M@@+1@@`、右半取 `@@M@@-1@@` 的基本小波
+- 可容许三元组（admissible triple）：三个区间的位置满足按位异或（XOR）为零，首尾相接成三角环
+- 绝对值和估计：每个三元组独立选系数（模不超过 1）后总和仍有限，远强于普通有界性
+- 能量泛函 `@@M@@\operatorname{tr}(P^{3/2})@@`：矩阵的 `@@M@@3/2@@` 次幂之迹，与 `@@M@@L^3@@` 范数同源的"电量"
+- 望远镜求和（telescoping）：相邻尺度的能量差逐层相消，总账只剩两端
+
+**看个具体例子**
+
+XOR 约束的妙处：每个母三元组恰有 4 个孩子，固定一个符号后另外两个仍各自均匀。
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280">
+<rect x="200" y="40" width="160" height="44" rx="6" fill="#eef" stroke="#369"/>
+<text x="233" y="67" font-size="14" fill="#333">母代能量 e(I)</text>
+<line x1="280" y1="84" x2="120" y2="160" stroke="#888"/>
+<line x1="280" y1="84" x2="230" y2="160" stroke="#888"/>
+<line x1="280" y1="84" x2="335" y2="160" stroke="#888"/>
+<line x1="280" y1="84" x2="445" y2="160" stroke="#888"/>
+<rect x="70" y="160" width="100" height="40" rx="6" fill="#fde" stroke="#c33"/>
+<rect x="180" y="160" width="100" height="40" rx="6" fill="#fde" stroke="#c33"/>
+<rect x="290" y="160" width="100" height="40" rx="6" fill="#fde" stroke="#c33"/>
+<rect x="400" y="160" width="100" height="40" rx="6" fill="#fde" stroke="#c33"/>
+<text x="95" y="185" font-size="13" fill="#333">孩子 1</text>
+<text x="205" y="185" font-size="13" fill="#333">孩子 2</text>
+<text x="315" y="185" font-size="13" fill="#333">孩子 3</text>
+<text x="425" y="185" font-size="13" fill="#333">孩子 4</text>
+<text x="120" y="232" font-size="14" fill="#333">四个孩子的平均电量 &gt; 母代电量，</text>
+<text x="120" y="254" font-size="14" fill="#333">多出的差额恰好支付局部贡献 |L_I|</text>
+</svg>
+
+</div>
+
+数字版定理：`@@M@@\sum_{k\in S}\sum_{\mathbf I\in\mathcal A_k}|L_{\mathbf I}(F_0,F_1,F_2)|\le 40\prod_v\|F_v\|_3@@`。尺度集 `@@M@@S@@` 含 10 个还是 10000 个尺度，常数恒为 40——旧结果里随尺度数增长的 `@@M@@\sqrt m@@` 因子被彻底消除。
+
+**为什么值得关心**
+
+三角圈是 Bellman 函数框架公认处理不了的障碍，本文用"XOR 恰有四子"的条件对称性绕开它，给出 Thiele 问题 13 二进模型的一致界。注意：二进模型与连续情形是不同算子，互不直接蕴含，但同属一个方法家族。
+
+> 暂无形式化证明（AI 结果待核验）
+
 ## 一句话结论
 
 证明了二进三角 Hilbert 形式的一致 `@@M@@L^3\times L^3\times L^3@@` 估计：任意有限尺度集上所有局部贡献的绝对值之和不超过 `@@M@@40\prod_v\|F_v\|_3@@`；取绝对值之和使模不超过一的系数可随区间三元组独立变化，并彻底消除了以往结果的尺度依赖因子。

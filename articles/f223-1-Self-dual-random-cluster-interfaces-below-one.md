@@ -13,6 +13,28 @@ pdfname: ""
 
 > 结果族 223：Random-cluster interfaces: critical, disordered, thermal, and natural-time scaling　·　学科：Probability and statistical mechanics　·　验证状态：暂无形式化证明，请以社区核验为准
 
+## 入门导读 🐣
+
+还是那个方格"连边"游戏，但把团块偏好的旋钮拧到 q<1：现在团块之间互相嫌弃，越大越不受欢迎。此前关于这类游戏的全部证明都偷偷借用了"好事扎堆"的直觉（正相关），q<1 时它彻底失效。这篇论文在没有这块地基的废墟上重建整套工具，证明分界线照样收敛到那条著名的随机曲线。
+
+**关键词卡片**
+
+- 随机簇模型（random-cluster model）：方格连边模型；q<1 是团块互相排斥的"反社交"区域。
+- 自对偶点（self-dual point）：模型与自己的镜像重合的边概率 `@@M@@p=\sqrt q/(1+\sqrt q)@@`，恰为临界位置。
+- FKG 正相联（positive association）："好事扎堆出现"的性质，q≥1 才有，q<1 时失效。
+- 探索界面（Dobrushin interface）：两种边界待遇之间的分界曲线。
+- SLE（Schramm–Loewner evolution）：布朗运动驱动的随机曲线；κ∈(6,8) 时比渗流的 SLE₆ 更"暴躁"，还会自我触碰。
+
+**看个具体例子**
+
+定理的数字版：`@@M@@\kappa(q)=\dfrac{4\pi}{\arccos(-\sqrt q/2)}@@`，代入 `@@M@@q=\tfrac14@@` 得 `@@M@@\kappa\approx6.89@@`；令 `@@M@@q\to0@@` 得 `@@M@@\kappa\to8@@`，正接上生成树界面的 SLE₈（已知老结果）；令 `@@M@@q\to1^-@@` 得 `@@M@@\kappa\to6@@`，与渗流的 SLE₆ 无缝相接。加上姊妹篇的 1≤q<4，全区间 0<q<4 拼成一条完整的 κ 曲线。
+
+**为什么值得关心**
+
+它补齐了 Rohde–Schramm 猜想缺失的 q<1 半段，而且是在"正相关失效"这一无地基条件下完成的，工具箱本身即是一大突破。
+
+> 暂无形式化证明（AI 结果待核验）
+
 ## 一句话结论
 对每个 `@@M@@0<q<1@@`，论文证明方格随机簇模型在自对偶点的 Dobrushin 界面收敛到 `@@M@@\kappa\in(6,8)@@` 的 chordal `@@M@@\SLE_\kappa@@`；在 FKG 正相联失效的条件下从零重建交叉比较工具，补齐了 Rohde–Schramm 预言的 `@@M@@q<1@@` 半段。
 

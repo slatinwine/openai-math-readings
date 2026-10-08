@@ -13,6 +13,57 @@ pdfname: ""
 
 > 结果族 160：Superexponential van der Waerden numbers　·　学科：Combinatorics　·　验证状态：主结果已 Lean 形式化
 
+## 入门导读 🐣
+
+把 1、2、3、… 想成一排格子，你拿红蓝两支笔涂色，目标是：不许出现"颜色相同且间距相等"的三个格子（比如第 1、5、9 格全红）。van der Waerden 定理说格子足够长时你必输；能安全撑到的长度记作 `@@M@@W_r(k)@@`。这篇论文回答了 Erdős 1980 年的提问：这个"必输长度"随数列长度 k 的增长比任何指数都快——是超指数增长。
+
+**关键词卡片**
+
+- van der Waerden 数（van der Waerden number）：`@@M@@W_r(k)@@`，用 r 种颜色涂格子、保证出现单色 k 项等差数列的最短格子数。
+- 单色等差数列（monochromatic arithmetic progression）：同一种颜色、等间距的一串格子，如 3、10、17、24。
+- 超指数增长（superexponential）：比任何 `@@M@@C^k@@`（固定 C）都快，等价于 `@@M@@W_r(k)^{1/k}\to\infty@@`。
+- 局部引理（local lemma）：概率方法的经典工具——彼此牵连不多的坏事件，不太可能同时发生。
+
+**看个具体例子**
+
+感受"必输时刻"：下图是一种能安全涂完前 8 格的方案，但第 9 格涂什么都不行。
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280">
+  <rect x="66" y="80" width="44" height="44" fill="#d84a3f"/>
+  <rect x="114" y="80" width="44" height="44" fill="#3f7ad8"/>
+  <rect x="162" y="80" width="44" height="44" fill="#3f7ad8"/>
+  <rect x="210" y="80" width="44" height="44" fill="#d84a3f"/>
+  <rect x="258" y="80" width="44" height="44" fill="#d84a3f"/>
+  <rect x="306" y="80" width="44" height="44" fill="#3f7ad8"/>
+  <rect x="354" y="80" width="44" height="44" fill="#3f7ad8"/>
+  <rect x="402" y="80" width="44" height="44" fill="#d84a3f"/>
+  <rect x="450" y="80" width="44" height="44" fill="#ffffff" stroke="#d84a3f" stroke-width="2" stroke-dasharray="6 4"/>
+  <text x="88" y="145" font-size="14" text-anchor="middle" fill="#a83232">1</text>
+  <text x="136" y="145" font-size="14" text-anchor="middle" fill="#2f5da8">2</text>
+  <text x="184" y="145" font-size="14" text-anchor="middle" fill="#2f5da8">3</text>
+  <text x="232" y="145" font-size="14" text-anchor="middle" fill="#333333">4</text>
+  <text x="280" y="145" font-size="14" text-anchor="middle" fill="#a83232">5</text>
+  <text x="328" y="145" font-size="14" text-anchor="middle" fill="#2f5da8">6</text>
+  <text x="376" y="145" font-size="14" text-anchor="middle" fill="#333333">7</text>
+  <text x="424" y="145" font-size="14" text-anchor="middle" fill="#333333">8</text>
+  <text x="472" y="145" font-size="14" text-anchor="middle" fill="#999999">?</text>
+  <text x="280" y="182" font-size="14" text-anchor="middle" fill="#a83232">第 9 格涂红：1、5、9 连成全红等差数列</text>
+  <text x="280" y="207" font-size="14" text-anchor="middle" fill="#2f5da8">第 9 格涂蓝：3、6、9 连成全蓝等差数列</text>
+  <text x="280" y="245" font-size="15" font-weight="bold" text-anchor="middle" fill="#333333">W₂(3) = 9：涂到第 9 格，同色三项等差必然出现</text>
+</svg>
+
+</div>
+
+主定理（数字版）：存在绝对常数 `@@M@@c=10^{-5}@@`，使 `@@M@@W_r(k)>k^{c\,k\lfloor\log_2 r\rfloor}@@`。一旦 k 超过某个绝对阈值，指数 `@@M@@ck@@` 随 k 线性上涨：`@@M@@k=10^6@@` 时下界已达 `@@M@@(10^6)^{10}=10^{60}@@`，任何固定底数的指数函数终将被甩开。构造思路：先在高维环形网格上用圆环坐标给格子贴标签、随机涂色，再以极稀疏的随机"翻转"补刀，杀掉漏网的单色数列。
+
+**为什么值得关心**
+
+Erdős 悬置 46 年的超指数增长问题（含两色情形）得到定量正面解决。
+
+> 已 Lean 形式化
+
 ## 一句话结论
 
 证明对一切 `@@M@@k\ge K_0@@`、`@@M@@r\ge2@@` 有 `@@M@@W_r(k)>k^{ck\lfloor\log_2 r\rfloor}@@`（`@@M@@c@@` 绝对），故 `@@M@@W_r(k)^{1/k}\to\infty@@`，定量解决Erdős超指数增长问题，含两色。

@@ -13,6 +13,43 @@ pdfname: ""
 
 > 结果族 077：Fourier restriction for positively curved surfaces　·　学科：Real and complex analysis　·　验证状态：暂无形式化证明，请以社区核验为准
 
+## 入门导读 🐣
+
+想象把无数只微型喇叭铺满一个光滑的"碗"（处处外鼓的曲面），每只按给定的复数幅度播音，声波在三维空间里叠加。之前的定理要求所有喇叭音量统一且有界；这篇论文把条件放宽到幅度只需 `@@M@@p@@` 次方可积——能量甚至可以集中在曲面上一小块区域——结论依然成立。
+
+**关键词卡片**
+
+- 对角估计（diagonal estimate）：输入与输出都用 `@@M@@L^p@@` 范数控制，比只允许有界输入的版本更强。
+- 正曲率曲面（positively curved surface）：每点都朝外鼓的紧光滑曲面，如球面、抛物面块、椭圆碗，可带光滑边界。
+- 延拓算子（extension operator）：`@@M@@E_\Sigma f(x)=\int_\Sigma f(\xi)e^{2\pi ix\cdot\xi}\,d\sigma(\xi)@@`。
+- 局部平滑（local smoothing）：薛定谔方程的解经时间平均后额外获得的正则性，本文给出最优阈值。
+
+**看个具体例子**
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280">
+  <path d="M80,205 Q200,85 320,205" fill="none" stroke="#333" stroke-width="3"/>
+  <circle cx="200" cy="145" r="9" fill="#f2b134"/>
+  <line x1="200" y1="134" x2="200" y2="92" stroke="#b07d1e" stroke-width="1.5"/>
+  <text x="118" y="84" font-size="12" fill="#b07d1e">输入能量可集中在小亮区</text>
+  <path d="M318,196 Q430,145 318,94" fill="none" stroke="#7aa6d9" stroke-width="2"/>
+  <path d="M330,203 Q470,145 330,87" fill="none" stroke="#7aa6d9" stroke-width="2"/>
+  <path d="M342,209 Q505,145 342,80" fill="none" stroke="#7aa6d9" stroke-width="1.5"/>
+  <text x="128" y="240" font-size="13" fill="#333">Σ：处处外鼓的光滑曲面</text>
+  <text x="356" y="252" font-size="12" fill="#4a6fa5">波在空间中仍被 L^p 控制</text>
+</svg>
+
+</div>
+
+数字版：取 `@@M@@\Sigma=S^2@@`、`@@M@@p=4@@`，定理给出 `@@M@@\|E f\|_{L^4(\mathbb R^3)}\le C\|f\|_{L^4(S^2)}@@`。薛定谔推论里 `@@M@@p=4@@` 对应的 Sobolev 阈值是 `@@M@@s>2-6/4=0.5@@`，即取 `@@M@@s=0.51@@` 已足够，且该阈值不可再降。
+
+**为什么值得关心**
+
+它把对角延拓从 `@@M@@p>22/7@@` 一举推满到猜想的 `@@M@@p>3@@`，覆盖一般正曲率曲面与带边界情形，并为二维薛定谔局部平滑拿到不可改进的阈值。
+
+> 暂无形式化证明（AI 结果待核验）
+
 ## 一句话结论
 证明三维对角傅里叶延拓猜想：对每个紧光滑正曲率曲面 `@@M@@\Sigma\subset\mathbb R^3@@`（可带光滑边界），`@@M@@E_\Sigma@@` 从 `@@M@@L^p(\Sigma)@@` 有界映到 `@@M@@L^p(\mathbb R^3)@@` 对一切 `@@M@@3<p<\infty@@` 成立；并由抛物面情形导出二维薛定谔局部平滑的最优 Sobolev 阈值 `@@M@@s>2-6/p@@`。
 

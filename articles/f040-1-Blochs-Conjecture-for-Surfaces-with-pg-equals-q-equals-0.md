@@ -13,6 +13,50 @@ pdfname: ""
 
 > 结果族 040：Bloch's conjecture for complex surfaces　·　学科：Algebraic and complex geometry　·　验证状态：暂无形式化证明，请以社区核验为准
 
+## 入门导读 🐣
+
+在曲面上记账：零循环是一张"点数账单"（有限个点带整数系数）；如果两点能被一条自带直线的"轨道"接通，相关账单之间就可以互相划转。Bloch 猜想说：对 `@@M@@p_g=0@@` 的曲面，划转自由到极致——账本上只剩一个数字，即总点数。本文证明了它。
+
+**关键词卡片**
+
+- 零循环（zero-cycle）：有限个点带整系数的形式和，即点数账单。
+- 有理等价（rational equivalence）：沿"直线轨道"连续变形产生的划转关系。
+- Chow 群（Chow group）：账单模掉划转后真正剩下的账本。
+- 几何亏格 `@@M@@p_g@@`（geometric genus）：曲面上全纯 2-形式的个数，衡量"超越厚度"。
+- Albanese 映射（Albanese map）：把账本送到积分世界的最优线性近似。
+
+**看个具体例子**
+
+在 `@@M@@\mathbb P^2@@` 上，任两点连一条直线即可划转，账目早就是"只看总数"；难的是一般型曲面。定理说：只要 `@@M@@p_g=q=0@@`，就有
+
+`@@M@@D\deg:\mathrm{CH}_0(S)\xrightarrow{\ \cong\ }\mathbb Z,\qquad [P]=[Q]\quad\forall\,P,Q\in S,@@`
+
+且不附带极小性、基本群或具体构造等任何假设——此前每个证明都要蹭特定曲面的特殊构造，这是第一个统一证明。结合经典定理即得完整猜想：`@@M@@p_g=0@@` 时 Albanese 映射是同构；而在最难的一般型情形，`@@M@@p_g=0@@` 会自动迫使 `@@M@@q=0@@`，恰好落回核心定理的射程。
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280">
+  <text x="280" y="30" text-anchor="middle" font-size="15" fill="#334455">两点账单的"轨道换乘"</text>
+  <ellipse cx="280" cy="150" rx="230" ry="90" fill="#f2f7f2" stroke="#4a7a4a" stroke-width="2"/>
+  <path d="M170 165 Q 280 70 390 140" fill="none" stroke="#4a90c4" stroke-width="2.5" stroke-dasharray="7,5"/>
+  <path d="M170 165 Q 280 250 390 140" fill="none" stroke="#d08030" stroke-width="2.5" stroke-dasharray="7,5"/>
+  <circle cx="170" cy="165" r="6" fill="#c0504d"/>
+  <circle cx="390" cy="140" r="6" fill="#c0504d"/>
+  <text x="150" y="192" font-size="14" fill="#c0504d">P</text>
+  <text x="402" y="132" font-size="14" fill="#c0504d">Q</text>
+  <text x="110" y="80" font-size="13" fill="#4a90c4">有理曲线轨道 1</text>
+  <text x="350" y="248" font-size="13" fill="#d08030">有理曲线轨道 2</text>
+  <text x="280" y="272" text-anchor="middle" font-size="13" fill="#666666">坐上轨道即可划转：[P] = [Q]，账本只剩总点数</text>
+</svg>
+
+</div>
+
+**为什么值得关心**
+
+Mumford 定理说 `@@M@@p_g>0@@` 时账本"无限维"，Bloch 猜想正是硬币的另一面；两块合拢，零循环理论的核心悬念就此闭合。
+
+> 暂无形式化证明（AI 结果待核验）
+
 ## 一句话结论
 
 证明了 Bloch 猜想：`@@M@@p_g=0@@` 的光滑连通射影复曲面上，Albanese 映射 `@@M@@\mathrm{CH}_0(S)^0\to\mathrm{Alb}(S)(\mathbb C)@@` 是同构；核心新定理是 `@@M@@p_g=q=0@@` 时 `@@M@@\mathrm{CH}_0(S)\cong\mathbb Z@@`，且不附带任何曲面构造假设。

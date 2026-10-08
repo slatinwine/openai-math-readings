@@ -13,6 +13,59 @@ pdfname: ""
 
 > 结果族 367：The critical dimension for the one-phase Bernoulli problem　·　学科：Partial differential equations　·　验证状态：暂无形式化证明，请以社区核验为准
 
+## 入门导读 🐣
+
+在一片空地里圈一块"最优地盘"：圈内要分布得平缓，而占地本身要按体积付租金，围栏的位置还是待求的。论文问：这种省钱又平缓的最优地盘，围栏最晚会从第几维空间开始长出"尖角"？答案是七维——六维及以下围栏必然光滑，七维起才第一次出现不平整的最优形状。
+
+**关键词卡片**
+
+- 一相 Bernoulli 问题（one-phase Bernoulli problem）：极小化 `@@M@@\int(|\nabla v|^2+\mathbf 1_{\{v>0\}})@@` 的形状优化问题。
+- 自由边界（free boundary）：正相位与零相位的界面，位置本身未知。
+- 平坦解（flat solution）：半空间形状 `@@M@@u(x)=(x\cdot e)_+@@`，边界面是一张平面。
+- 一次齐次整体极小化子（one-homogeneous global minimizer）：从原点看完全成比例的最优形状，即"锥"。
+- 临界维度（critical dimension）：第一个非平坦锥出现的维度，本文证明恰为 7。
+
+**看个具体例子**
+
+维度阶梯：`@@M@@d\le6@@` 时所有锥都平坦，自由边界光滑；`@@M@@d=7@@` 出现非平坦锥。对 `@@M@@n@@` 维局部极小化子，奇点集满足 `@@M@@\dim_H\operatorname{Sing}\le n-7@@`：`@@M@@n=7@@` 时奇点至多有限个，`@@M@@n=10@@` 时奇点集维数至多 3；用 7 维锥与 `@@M@@\R^{n-7}@@` 作乘积可造出达到上界的例子，估计最优。
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280">
+  <text x="280" y="30" text-anchor="middle" font-size="16" fill="#333">一相 Bernoulli 问题的维度阶梯：分水岭在 7</text>
+  <line x1="45" y1="180" x2="515" y2="180" stroke="#333" stroke-width="2"/>
+  <line x1="60" y1="173" x2="60" y2="187" stroke="#333" stroke-width="2"/>
+  <line x1="125" y1="173" x2="125" y2="187" stroke="#333" stroke-width="2"/>
+  <line x1="190" y1="173" x2="190" y2="187" stroke="#333" stroke-width="2"/>
+  <line x1="255" y1="173" x2="255" y2="187" stroke="#333" stroke-width="2"/>
+  <line x1="320" y1="173" x2="320" y2="187" stroke="#333" stroke-width="2"/>
+  <line x1="385" y1="173" x2="385" y2="187" stroke="#333" stroke-width="2"/>
+  <line x1="450" y1="173" x2="450" y2="187" stroke="#333" stroke-width="2"/>
+  <line x1="500" y1="173" x2="500" y2="187" stroke="#333" stroke-width="2"/>
+  <text x="60" y="207" text-anchor="middle" font-size="13" fill="#333">d=1</text>
+  <text x="125" y="207" text-anchor="middle" font-size="13" fill="#333">2</text>
+  <text x="190" y="207" text-anchor="middle" font-size="13" fill="#333">3</text>
+  <text x="255" y="207" text-anchor="middle" font-size="13" fill="#333">4</text>
+  <text x="320" y="207" text-anchor="middle" font-size="13" fill="#333">5</text>
+  <text x="385" y="207" text-anchor="middle" font-size="13" fill="#333">6</text>
+  <text x="450" y="207" text-anchor="middle" font-size="13" fill="#333">7</text>
+  <text x="500" y="207" text-anchor="middle" font-size="13" fill="#333">8…</text>
+  <rect x="46" y="120" width="349" height="26" fill="none" stroke="#2e7d32" stroke-width="1.5"/>
+  <text x="220" y="112" text-anchor="middle" font-size="13" fill="#2e7d32">d ≤ 6：所有锥都是平坦半空间，自由边界光滑</text>
+  <circle cx="450" cy="180" r="7" fill="none" stroke="#c0392b" stroke-width="2.5"/>
+  <text x="420" y="158" text-anchor="middle" font-size="13" fill="#c0392b">d=7：非平坦锥出现</text>
+  <text x="280" y="245" text-anchor="middle" font-size="13" fill="#666">n 维局部极小化子：奇点集维数 ≤ n−7，且该上界可以取到</text>
+  <text x="280" y="267" text-anchor="middle" font-size="13" fill="#666">n=7 时奇点至多有限个；n=10 时奇点集维数至多 3</text>
+</svg>
+
+</div>
+
+**为什么值得关心**
+
+它与极小曲面里 Simons 锥的七维分界遥相呼应，补上了悬置多年的 5、6 维最后缺口。
+
+> 暂无形式化证明（AI 结果待核验）
+
 ## 一句话结论
 证明了一相 Bernoulli 问题的临界维度是 7：一至六维中所有一次齐次整体极小化子都是平坦半空间解，第七维起才存在非平坦极小化锥；因此自由边界在六维及以下光滑，更高维奇点集维数至多 `@@M@@n-7@@` 且该界可达。
 

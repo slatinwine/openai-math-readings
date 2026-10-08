@@ -13,6 +13,51 @@ pdfname: ""
 
 > 结果族 018：The Margulis–Platonov conjecture over global fields　·　学科：Number theory　·　验证状态：暂无形式化证明，请以社区核验为准
 
+## 入门导读 🐣
+
+还是那家"无穷公司"，这次注册在普通的数域（有理数的有限扩张）名下。定理同样成立：内部圈子的名单完全由几家"分部"决定。这篇论文补齐了最难的最后三块拼图（外型 A、D₄、E₆），还附赠一份大礼——一大类整数矩阵群的同余子群性质。
+
+**关键词卡片**
+
+- 数域（number field）：有理数域的有限扩张，例如 Q(√2)。
+- 单连通（simply connected）：代数群的"没有洞"版本，排除缩水的例外情形，是猜想的标准舞台。
+- 正规子群（normal subgroup）：对共轭稳定的子群；它的清单是群结构的第一张体检表。
+- 各向异性位点（anisotropic place）：使局部群变紧的（有限个）非阿基米德位置，即文中的"分部"。
+- 同余子群性质（congruence subgroup property）：正规子群都来自"模 m 同余"式粗糙分类的理想状态。
+
+**看个具体例子**
+
+取最熟悉的朋友 G = SL₂（定义在 Q 上）。它在每个素数处都是各向同性的，于是"分部"集合 A 为空，定理读作：SL₂(Q) 的正规子群要么落在中心 {±I} 里，要么就是整个群——中间没有任何别的层次。
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280">
+  <text x="280" y="30" text-anchor="middle" font-size="16" fill="#333">SL₂(Q) 的正规子群名单：中间没有别的了</text>
+  <rect x="215" y="55" width="130" height="36" rx="8" fill="#eef" stroke="#345" stroke-width="1.5"/>
+  <text x="280" y="78" text-anchor="middle" font-size="14" fill="#345">{I}（单位阵）</text>
+  <line x1="280" y1="91" x2="280" y2="120" stroke="#333" stroke-width="2"/>
+  <path d="M280 115 L274 125 L286 125 Z" fill="#333"/>
+  <text x="293" y="110" font-size="13" fill="#333">⊂</text>
+  <rect x="215" y="127" width="130" height="36" rx="8" fill="#eef" stroke="#345" stroke-width="1.5"/>
+  <text x="280" y="150" text-anchor="middle" font-size="14" fill="#345">{±I}（中心）</text>
+  <line x1="280" y1="163" x2="280" y2="192" stroke="#333" stroke-width="2"/>
+  <path d="M280 187 L274 197 L286 197 Z" fill="#333"/>
+  <text x="293" y="182" font-size="13" fill="#333">⊂</text>
+  <rect x="190" y="199" width="180" height="40" rx="8" fill="#dfd" stroke="#273" stroke-width="1.5"/>
+  <text x="280" y="224" text-anchor="middle" font-size="14" fill="#273">整个群 SL₂(Q)</text>
+  <text x="390" y="182" font-size="13" fill="#c33">其余位置：空！</text>
+  <line x1="332" y1="178" x2="384" y2="180" stroke="#c33" stroke-dasharray="3 3"/>
+  <text x="280" y="264" text-anchor="middle" font-size="13" fill="#333">定理（A 为空的特例）：正规子群要么落在中心，要么就是全群。</text>
+</svg>
+
+</div>
+
+**为什么值得关心**
+
+定理还推出：满足温和密度条件的算术点群 G(O(S)) 具有经典同余子群性质。至此 Margulis–Platonov 猜想在全部数域完成，算术群刚性理论的一根主梁落位。
+
+> 暂无形式化证明（AI 结果待核验）
+
 ## 一句话结论
 
 本文在全部数域上证明了 Margulis–Platonov 猜想：绝对几乎单、单连通代数群的每个非中心抽象正规子群恰是其各向异性非阿基米德局部群乘积的开正规子群之原像，补齐了外型 A、`@@M@@D_4@@` 与 `@@M@@E_6@@` 三块最后的拼图。

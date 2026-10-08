@@ -13,6 +13,56 @@ pdfname: ""
 
 > 结果族 044：The equivariant cohomological Hikita conjecture　·　学科：Algebraic and complex geometry　·　验证状态：暂无形式化证明，请以社区核验为准
 
+## 入门导读 🐣
+
+想象两栋楼：一栋住着"Higgs 侧"的几何空间，另一栋住着它按物理对偶规则生成的"Coulomb 侧"空间。辛对偶纲领预言：数清一栋楼的房间（上同调），恰好等于另一栋楼不动点层的门牌登记（函数环）。本文对任意箭图证明这本"户口对照表"分毫不差。
+
+**关键词卡片**
+
+- 箭图（quiver）：一些顶点加箭头，允许自环与重边，是描述对称性的最简图示语言。
+- Nakajima 簇（Nakajima variety）：按箭图配方构造的一族重要几何空间，常见于表示论与物理。
+- Coulomb 分支（Coulomb branch）：物理启发的对偶侧对象，由 BFN 卷积代数给出。
+- 等变上同调（equivariant cohomology）：把对称环面的作用记进账本的上同调版本。
+- 幂零元（nilpotent）：反复自乘会归零的元素；本次同构连它们也完整保留。
+
+**看个具体例子**
+
+最简单的箭图只有一个顶点、一条自环，相应的 Nakajima 簇是平面上 n 个点的 Hilbert 概形——正是 Hikita 2017 年提出猜想时验证的原型。定理的结论一行写完：
+
+`@@M@@H_F^*(X;\C)\ \cong\ \C[Y_{\mathfrak f}^{\nu}]@@`
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280">
+  <rect x="0" y="0" width="560" height="280" fill="#ffffff"/>
+  <text x="40" y="32" font-size="16" fill="#222222">辛对偶：两侧的"户口本"完全一致</text>
+  <rect x="30" y="60" width="210" height="150" rx="12" fill="#eef4fb" stroke="#3b6fb5" stroke-width="2.5"/>
+  <text x="55" y="90" font-size="15" fill="#1d3d63">Higgs 侧</text>
+  <text x="55" y="115" font-size="14" fill="#333333">Nakajima 簇 X</text>
+  <rect x="50" y="135" width="170" height="50" fill="#dbe8f6" stroke="#3b6fb5" stroke-width="1.5"/>
+  <text x="58" y="165" font-size="14" fill="#1d3d63">等变上同调 H*(X)</text>
+  <rect x="320" y="60" width="210" height="150" rx="12" fill="#fbf0ee" stroke="#c0392b" stroke-width="2.5"/>
+  <text x="345" y="90" font-size="15" fill="#8a2323">Coulomb 侧</text>
+  <text x="345" y="115" font-size="14" fill="#333333">不动点概形 Y^ν</text>
+  <rect x="340" y="135" width="170" height="50" fill="#f5dada" stroke="#c0392b" stroke-width="1.5"/>
+  <text x="352" y="165" font-size="14" fill="#8a2323">坐标环 C[Y^ν]</text>
+  <line x1="248" y1="138" x2="312" y2="138" stroke="#333333" stroke-width="2.5"/>
+  <line x1="248" y1="162" x2="312" y2="162" stroke="#333333" stroke-width="2.5"/>
+  <polygon points="256,138 270,131 270,145" fill="#333333"/>
+  <polygon points="304,162 290,155 290,169" fill="#333333"/>
+  <text x="120" y="242" font-size="14" fill="#555555">典范分次代数同构：幂零元与空簇情形都保留</text>
+</svg>
+
+</div>
+
+左边是几何侧的等变上同调环，右边是对偶侧不动点概形的坐标环：两个环的元素一一对应、乘法一致、分次对齐，连"平方为零"的幂零元都原样保留。
+
+**为什么值得关心**
+
+这是辛对偶纲领迄今最一般的上同调验证：任意箭图、任意框架与稳定条件，一举统一了此前只适用于特殊箭图的零散定理。
+
+> 暂无形式化证明（AI 结果待核验）
+
 ## 一句话结论
 
 对任意有限箭图（含环与重边）、任意维数与框架向量、任意交换 flavor 环面与正则稳定特征，本文证明等变上同调 Hikita 猜想：Nakajima 簇的等变上同调代数与 Coulomb 分支余特征不动点概形的坐标环典范同构，保留分次与幂零元。

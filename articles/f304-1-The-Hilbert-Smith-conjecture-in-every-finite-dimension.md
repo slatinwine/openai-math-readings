@@ -13,6 +13,36 @@ pdfname: ""
 
 > 结果族 304：The Hilbert–Smith conjecture in every dimension　·　学科：Topology　·　验证状态：暂无形式化证明，请以社区核验为准
 
+## 入门导读 🐣
+
+"连续的对称群长什么样？"李群是既成群又光滑的那类（比如旋转群）。希尔伯特第五问题的姊妹——希尔伯特–史密斯猜想——问：一个群若能忠实（没有滥竽充数的元素）且连续地作用于有限维流形，它是否必为李群？经典归约把问题缩到一颗钉子上：证明 p-进整数群无法忠实作用。本文声称在所有有限维度拔掉了这颗钉子，从而证明整个猜想。
+
+**关键词卡片**
+
+- 李群（Lie group）：同时具有群结构与光滑结构的连续对称群
+- 忠实作用（faithful action）：不同群元素做不同的事，作用核平凡
+- p-进整数群（p-adic integers `@@M@@\mathbb{Z}_p@@`）：按 p 的幂无限加细的"无限齿轮"，潜在反例必含它
+- 层（sheaf）：给每个开集配数据、可局部粘合的信息库
+- 符号差（signature）：二次型的整值指纹，本文用它当"奇偶校验码"
+
+**看个具体例子**
+
+`@@M@@\mathbb{Z}_p@@` 的画像：模 p 分一圈、模 p² 细一圈、模 p³ 再细一圈，无穷嵌套。
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280"><text x="270" y="32" font-size="15" text-anchor="middle">Z_p：按 p 的幂无限加细的齿轮</text><circle cx="270" cy="150" r="100" fill="none" stroke="#333" stroke-width="2"/><circle cx="270" cy="150" r="74" fill="none" stroke="#333" stroke-width="1.8"/><circle cx="270" cy="150" r="48" fill="none" stroke="#333" stroke-width="1.5"/><circle cx="270" cy="150" r="24" fill="none" stroke="#333" stroke-width="1.2"/><circle cx="270" cy="150" r="3" fill="#333"/><text x="270" y="138" font-size="12" text-anchor="middle">0</text><line x1="372" y1="148" x2="412" y2="112" stroke="#888"/><text x="417" y="108" font-size="13">模 p</text><line x1="346" y1="150" x2="412" y2="140" stroke="#888"/><text x="417" y="136" font-size="13">模 p^2</text><line x1="320" y1="152" x2="412" y2="172" stroke="#888"/><text x="417" y="176" font-size="13">模 p^3</text><text x="270" y="266" font-size="13" text-anchor="middle">每加一层精度乘 p：无限精细，却无法忠实驱动流形</text></svg>
+
+</div>
+
+收网的算术干净利落：轨道的特征分解迫使每个整值符号差等于 `@@M@@(4/p^k)\cdot u_d@@`，而整值类只能住在固定分母 `@@M@@L_d@@`（2 的幂）的格 `@@M@@(1/L_d)\mathbb{Z}\cdot u_d@@` 里。取 k 使 `@@M@@p^k>4L_d@@`，则 `@@M@@0<4L_d/p^k<1@@`——`@@M@@4/p^k@@` 不在格中，矛盾。
+
+**为什么值得关心**
+
+这是希尔伯特第五问题（1902）的姊妹猜想在全部有限维的所声称解决，核心新工具是层论 Witt 群上带分母控制的整值障碍。
+
+> 暂无形式化证明（AI 结果待核验）
+
 ## 一句话结论
 
 论文声称在所有有限维证明希尔伯特–史密斯猜想（Hilbert–Smith conjecture）：局部紧群若在连通有限维拓扑流形上忠实且联合连续地作用，则必为李群（Lie group）。机制是排除 `@@M@@p@@`-进整数群 `@@M@@\Zp@@` 的忠实作用，核心新工具是层（sheaf）Witt 群上带固定分母界的整值符号差（signature）障碍。

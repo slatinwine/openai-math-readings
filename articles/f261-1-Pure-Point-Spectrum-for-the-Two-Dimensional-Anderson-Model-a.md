@@ -13,6 +13,49 @@ pdfname: ""
 
 > 结果族 261：Localization and delocalization in the Anderson model　·　学科：Mathematical physics　·　验证状态：暂无形式化证明，请以社区核验为准
 
+## 入门导读 🐣
+
+把水泼在撒了细沙的桌面上：沙粒再细，水总会陷进某个小坑里摊不平。二维材料里的电子波就像这滩水——方格每个格点的高度随机抖动一点点，无论抖动多么微弱，波最终都会各自陷进坑里。本文严格证明：二维方格、任意小但为正的无序，几乎必然整条谱都是"纯点谱"——所有量子态都是钉在局部的驻波，二维没有金属相。
+
+**关键词卡片**
+
+- 纯点谱型（pure-point spectral type）：可数个正交特征向量撑满全空间的谱类型。
+- 完备特征基（complete eigenbasis）：那组撑起全空间的驻波列表。
+- 均匀单点势（uniform single-site potential）：每个格点高度独立、均匀分布的随机设定。
+- 局域化（localization）：波传不远、被钉死在局部一小片的现象。
+- 无序强度 h（disorder strength）：格点高度的起伏半径，可取任意小的正数。
+
+**看个具体例子**
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280">
+  <text x="60" y="35" font-size="14">二维方格（h = 0.01）：每个特征态都是"钉"在局部的驻波</text>
+  <g fill="#777">
+    <circle cx="90" cy="85" r="3"/><circle cx="150" cy="85" r="3"/><circle cx="210" cy="85" r="3"/><circle cx="270" cy="85" r="3"/><circle cx="330" cy="85" r="3"/><circle cx="390" cy="85" r="3"/><circle cx="450" cy="85" r="3"/><circle cx="510" cy="85" r="3"/>
+    <circle cx="390" cy="150" r="3"/><circle cx="450" cy="150" r="3"/><circle cx="510" cy="150" r="3"/>
+    <circle cx="90" cy="215" r="3"/><circle cx="150" cy="215" r="3"/><circle cx="210" cy="215" r="3"/><circle cx="270" cy="215" r="3"/><circle cx="330" cy="215" r="3"/><circle cx="390" cy="215" r="3"/><circle cx="450" cy="215" r="3"/><circle cx="510" cy="215" r="3"/>
+  </g>
+  <polygon points="75,150 90,130 105,150" fill="#fbb"/>
+  <polygon points="130,150 150,105 170,150" fill="#e99"/>
+  <polygon points="185,150 210,55 235,150" fill="#d66"/>
+  <polygon points="255,150 270,108 285,150" fill="#e99"/>
+  <polygon points="315,150 330,132 345,150" fill="#fbb"/>
+  <text x="248" y="52" font-size="13">第 j 个特征态：集中在局部</text>
+  <text x="60" y="248" font-size="14">谱恰为 [−4.01, 4.01]，特征值稠密；特征态平方可和、远处趋零</text>
+  <text x="60" y="272" font-size="14">（本文不断言衰减速率，也不断言动力学局域化）。</text>
+</svg>
+
+</div>
+
+数字版：取 `@@M@@h=0.01@@`，谱区间 `@@M@@=[-4-h,\,4+h]=[-4.01,\,4.01]@@`，特征值在其中稠密分布。
+
+**为什么值得关心**
+
+1979 年标度理论预言"二维任意无序都局域、没有金属相"；本文对均匀分布势给出完整证明（Simon 问题 2 的纯点部分），并与姊妹篇"三维弱无序有延展"合成完整的维度对比。
+
+> 暂无形式化证明（AI 结果待核验）
+
 ## 一句话结论
 
 本文证明：二维方格上带独立均匀格点势的最近邻 Anderson 算子，对每个固定正无序强度，几乎必然整条谱都是纯点谱型并具有完备正交特征基——解决了 Simon 问题 2 中二维 Anderson 局域化猜想的纯点谱部分（均匀单点分布情形）。

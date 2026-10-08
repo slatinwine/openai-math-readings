@@ -13,6 +13,46 @@ pdfname: ""
 
 > 结果族 240：Shelah's eventual categoricity and the prescribed-threshold obstruction　·　学科：Mathematical logic　·　验证状态：主结果已 Lean 形式化
 
+## 入门导读 🐣
+
+一套积木说明书规定"怎样拼算合法"，零件数可以无限增加。数学家问：零件数固定时，合法拼法是唯一还是多样？"范畴性"猜想说，只要零件足够多就该唯一，还有人写死了"足够多"的具体门槛。本文证明：在连续统假设下，这个写死的门槛会失守。
+
+**关键词卡片**
+
+- 范畴性（categoricity）：给定基数下该类只有一个模型（精确到同构）——"尺寸固定则造型唯一"
+- 抽象初等类（abstract elementary class, AEC）：比一阶理论更宽松的模型家族，只保留抽象的强子结构关系
+- 连续统假设（CH）：断言实数恰有 `@@M@@\aleph_1@@` 个；它与 ZFC 独立，可作附加公理使用
+- 指定阈值（prescribed threshold）：猜想写死的门槛 `@@M@@\beth_{(2^{\aleph_0})^+}@@`
+- 不可证性（unprovability）：若 ZFC 自身无矛盾，则该命题不能由 ZFC 推出（注意是"不可证"，不是"独立"）
+
+**看个具体例子**
+
+在 ZFC＋CH 下构造类 `@@M@@K@@`（`@@M@@\mathrm{LS}(K)=\aleph_0@@`）：在 `@@M@@H(K)=\beth_{\omega_2}@@` 处恰有**两个**不同构模型（一个的基序不可数、一个可数），却在一切 `@@M@@\mu\ge\beth_{(2^{\aleph_1})^+}@@` 处唯一。于是在更高的范畴基数上，唯一性传不回门槛处；而 CH 下 `@@M@@\beth_{\omega_2}@@` 恰是猜想的指定阈值。推论：`@@M@@\mathrm{Con}(\mathrm{ZFC})\Rightarrow\mathrm{Con}(\mathrm{ZFC}+\neg\Phi)@@`——指定阈值形式的传递命题 `@@M@@\Phi@@` 在 ZFC 中不可证。
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280">
+  <text x="280" y="26" text-anchor="middle" font-size="15">尺寸轴：小处出岔子，大处全唯一</text>
+  <line x1="60" y1="150" x2="495" y2="150" stroke="#333" stroke-width="2"/>
+  <polygon points="487,143 505,150 487,157" fill="#333"/>
+  <line x1="320" y1="150" x2="488" y2="150" stroke="#2ca02c" stroke-width="7" stroke-linecap="round"/>
+  <line x1="320" y1="95" x2="320" y2="205" stroke="#1f77b4" stroke-width="2" stroke-dasharray="5 5"/>
+  <circle cx="230" cy="150" r="7" fill="#d62728"/>
+  <text x="230" y="125" text-anchor="middle" font-size="13" fill="#d62728">beth ω₂ 处：两个模型</text>
+  <text x="320" y="88" text-anchor="middle" font-size="13" fill="#1f77b4">Λ</text>
+  <text x="405" y="128" text-anchor="middle" font-size="13" fill="#2ca02c">≥ Λ：处处唯一（范畴）</text>
+  <text x="270" y="185" text-anchor="middle" font-size="13">模型尺寸（基数）</text>
+  <text x="280" y="225" text-anchor="middle" font-size="12" fill="#555">CH 下 beth ω₂ 恰为猜想的指定门槛，却有两个模型</text>
+</svg>
+
+</div>
+
+**为什么值得关心**
+
+它没有推翻猜想的"定性版本"，而是精确定位：写死的具体常数越不过 ZFC 的能力边界；这个反例构造本身已被机器验证。
+
+> 已 Lean 形式化
+
 ## 一句话结论
 
 在连续统假设（CH）下构造出 Löwenheim–Skolem 数为 `@@M@@\aleph_0@@` 的抽象初等类：它在指定阈值 `@@M@@\beth_{\omega_2}=H(K)@@` 处有两个不同构模型，却在所有 `@@M@@\ge\beth_{(2^{\aleph_1})^+}@@` 的基数上范畴；故若 ZFC 相容，谢拉赫范畴性猜想的"指定阈值"形式在 ZFC 中不可证。

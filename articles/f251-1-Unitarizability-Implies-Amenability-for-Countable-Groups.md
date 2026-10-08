@@ -13,6 +13,47 @@ pdfname: ""
 
 > 结果族 251：Amenability, unitarizability, and strong Ulam stability　·　学科：Group theory　·　验证状态：主结果已 Lean 形式化
 
+## 入门导读 🐣
+
+把群想成一支搬动向量的施工队：酉表示是"只旋转、绝不拉伸"的模范队。有的队表面上会拉伸家具，但只要换一把卷尺（换一种度量长度的内积），所有搬法就都变成纯旋转——这叫可酉化。1950 年 Dixmier 问：是不是只有"温柔"的顺从群才享受这种待遇？本文给出肯定回答：可酉化当且仅当顺从。
+
+**关键词卡片**
+
+- 表示（representation）：群到可逆算子世界的同态，刻画群如何"搬动"一个 Hilbert 空间
+- 酉表示（unitary representation）：严格保持长度、只旋转不拉伸的搬法
+- 可酉化（unitarizable）：存在可逆算子 `@@M@@S@@` 使每个 `@@M@@S\pi(g)S^{-1}@@` 都是酉算子，等价于能换一个让全体搬法保长的内积
+- 一致有界（uniformly bounded）：所有群元素的拉伸倍数有统一上限
+- 顺从群（amenable group）：拥有不变平均、无悖论分解的温柔群
+
+**看个具体例子**
+
+平面旋转矩阵把单位圆映成单位圆，天然酉；剪切矩阵把圆拉成椭圆，看似不守规矩。定理数字版：若 `@@M@@G@@` 非顺从，则对任意 `@@M@@\varepsilon@@`（比如 0.01）存在表示 `@@M@@\pi@@` 满足所有 `@@M@@\|\pi(g)\|\le 1+\varepsilon@@`（拉伸最多百分之一），却无论怎么换卷尺都无法让全体搬法同时变成纯旋转；而顺从群上任何一致有界表示都能（Day–Dixmier 老定理）。下图是"换卷尺"的直觉：
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280">
+  <text x="20" y="28" font-size="15" fill="#333333">标准卷尺下：搬法 g 把圆拉成椭圆</text>
+  <circle cx="110" cy="130" r="46" fill="none" stroke="#1565c0" stroke-width="2"/>
+  <ellipse cx="120" cy="136" rx="76" ry="30" fill="none" stroke="#c62828" stroke-width="2" transform="rotate(-16 120 136)"/>
+  <line x1="215" y1="130" x2="285" y2="130" stroke="#37474f" stroke-width="2"/>
+  <polygon points="285,130 273,124 273,136" fill="#37474f"/>
+  <text x="218" y="118" font-size="13" fill="#37474f">换卷尺</text>
+  <text x="330" y="28" font-size="15" fill="#333333">新卷尺下：g 保持新单位球，变回"旋转"</text>
+  <ellipse cx="410" cy="130" rx="76" ry="30" fill="none" stroke="#6a1b9a" stroke-width="2" transform="rotate(-16 410 130)"/>
+  <path d="M 470 100 A 80 80 0 0 1 500 150" fill="none" stroke="#6a1b9a" stroke-width="2"/>
+  <polygon points="500,150 488,144 494,136" fill="#6a1b9a"/>
+  <text x="20" y="236" font-size="13" fill="#555555">蓝圆：原单位球；红椭圆：被 g 拉出的像；紫椭圆：换内积后的新单位球</text>
+  <text x="20" y="258" font-size="13" fill="#555555">选得合适时 g 把新单位球映回自身——这正是"可酉化"的含义</text>
+</svg>
+
+</div>
+
+**为什么值得关心**
+
+Dixmier 问题悬置七十余年，此前的反例都局限在自由子群、花环积等特殊情形；本文对所有离散群一举闭合，并与姊妹篇合成"顺从 = 可酉化 = 强 Ulam 稳定"的完整等价链。
+
+> 已 Lean 形式化
+
 ## 一句话结论
 
 证明了离散群可酉化（unitarizable）当且仅当顺从（amenable），肯定解决 1950 年 Dixmier 提出的问题：每个非顺从离散群 `@@M@@G@@` 都有一致界 `@@M@@|\pi|\le 1+\varepsilon@@`、却不能相似于任何酉表示的表示 `@@M@@\pi@@`。

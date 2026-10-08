@@ -13,6 +13,55 @@ pdfname: ""
 
 > 结果族 065：Virasoro constraints for complete intersections and projective-bundle towers　·　学科：Algebraic and complex geometry　·　验证状态：暂无形式化证明，请以社区核验为准
 
+## 入门导读 🐣
+
+代数几何学家靠"数曲线"过日子，把一笔笔计数汇成一册总账。Virasoro 约束是总账必须满足的一族对账公式。本文证明一条传递定理：只要楼下底空间的账是平的，给它的每根纤维装上"罗盘盘面"（该点所有方向组成的空间，即射影化）之后，楼上的总账自动平——而且这个盘面丛可以拧成麻花、完全不必拆解开。
+
+**关键词卡片**
+
+- Gromov–Witten 不变量（GW invariants）：各种"过若干点、指定次数的曲线有几条"的严格计数，账本里的每一笔。
+- 后代势 Z（descendant potential）：汇总全部曲线计数的母函数，一本总账。
+- Virasoro 约束（Virasoro constraints）：总账须满足的无穷族微分方程，源自弦论对称性。
+- 射影化 `@@M@@\mathbb P_B(E)@@`（projectivization）：给底空间 `@@M@@B@@` 的每点装上全部方向组成的射影空间，像每根纤维配一个罗盘。
+
+**看个具体例子**
+
+取底 `@@M@@B@@` 为椭圆曲线：它的 Virasoro 约束已知成立（Okounkov–Pandharipande 的曲线结果）。在它上面任取秩 2 向量丛 `@@M@@E@@`——可以拧成一团、不分裂——得到三维空间 `@@M@@X=\mathbb P_B(E)@@`。定理立即给出 `@@M@@X@@` 的全亏格 Virasoro 约束；再叠一层：在 `@@M@@X@@` 上再做任意射影化，约束照样成立，可以一层层往上盖"楼"。传递链条：`@@M@@\mathcal V(B)\Rightarrow\mathcal V(\mathbb P_B(E))@@`，逐亏格、逐曲线类、含本原与奇类插入。
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280">
+  <rect x="40" y="40" width="480" height="225" rx="10" fill="none" stroke="#999999" stroke-width="1.5" stroke-dasharray="6 5"/>
+  <text x="280" y="28" text-anchor="middle" font-size="15" fill="#204060">总空间 X = P_B(E)：账自动平，还能一层层往上盖</text>
+  <line x1="110" y1="201" x2="110" y2="88" stroke="#35618f" stroke-width="2"/>
+  <line x1="195" y1="183" x2="195" y2="88" stroke="#35618f" stroke-width="2"/>
+  <line x1="280" y1="171" x2="280" y2="88" stroke="#35618f" stroke-width="2"/>
+  <line x1="365" y1="183" x2="365" y2="88" stroke="#35618f" stroke-width="2"/>
+  <line x1="450" y1="201" x2="450" y2="88" stroke="#35618f" stroke-width="2"/>
+  <circle cx="110" cy="75" r="13" fill="#ffffff" stroke="#35618f" stroke-width="2"/>
+  <circle cx="195" cy="75" r="13" fill="#ffffff" stroke="#35618f" stroke-width="2"/>
+  <circle cx="280" cy="75" r="13" fill="#ffffff" stroke="#35618f" stroke-width="2"/>
+  <circle cx="365" cy="75" r="13" fill="#ffffff" stroke="#35618f" stroke-width="2"/>
+  <circle cx="450" cy="75" r="13" fill="#ffffff" stroke="#35618f" stroke-width="2"/>
+  <text x="110" y="80" text-anchor="middle" font-size="12" fill="#204060">P</text>
+  <text x="195" y="80" text-anchor="middle" font-size="12" fill="#204060">P</text>
+  <text x="280" y="80" text-anchor="middle" font-size="12" fill="#204060">P</text>
+  <text x="365" y="80" text-anchor="middle" font-size="12" fill="#204060">P</text>
+  <text x="450" y="80" text-anchor="middle" font-size="12" fill="#204060">P</text>
+  <rect x="150" y="128" width="260" height="26" fill="#ffffff" opacity="0.88"/>
+  <text x="280" y="146" text-anchor="middle" font-size="13" fill="#666666">盘面＝该点全部方向（射影空间）</text>
+  <path d="M 55 215 Q 280 175 505 215" stroke="#8a4b00" stroke-width="3" fill="none"/>
+  <text x="280" y="250" text-anchor="middle" font-size="15" fill="#6b3a00">底 B（账已平：Virasoro 约束成立）</text>
+</svg>
+
+</div>
+
+**为什么值得关心**
+
+传递定理把"对账"从个别空间扩展到整类由射影化搭出的建筑，覆盖大量最难的非半单情形，是 Virasoro 猜想版图的一次大扩张。
+
+> 暂无形式化证明（AI 结果待核验）
+
 ## 一句话结论
 
 论文证明传递定理：若光滑射影复簇 `@@M@@B@@` 满足全套普通含后代 Virasoro 约束，则任意秩 `@@M@@r\geq2@@` 代数向量丛 `@@M@@E@@` 的射影化 `@@M@@X=\mathbb P_B(E)@@` 也满足——不要求 `@@M@@E@@` 分裂或具正性，覆盖每个亏格、每条整曲线类与含本原、奇类的全部插入，并可迭代到投影丛塔。

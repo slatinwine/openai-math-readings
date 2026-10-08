@@ -13,6 +13,59 @@ pdfname: ""
 
 > 结果族 314：Cyclic length and chromatic fixed-point loss　·　学科：Topology　·　验证状态：暂无形式化证明，请以社区核验为准
 
+## 入门导读 🐣
+
+有限群在空间上"照镜子式"作用时，不动点往往比空间本身简单。经典 Smith 理论说：整个空间模 p 同调为空，不动点也为空。换成更精细的 Morava K-理论后，这个保证要打折扣——论文给折扣精确标了价：价格恰好等于"从子群 H 爬到群 G、每级台阶商群都是循环群"的那条最短梯子的长度。
+
+**关键词卡片**
+
+- 色度 Smith 理论（chromatic Smith theory）：把 Smith 理论逐高度升级，追问各档 K-理论下零调蕴含还剩多少。
+- 不动点损失（fixed-point loss）r_n(G,H)：要让"K(n+r)-零调推出 K(n)-零调"成立的最小预付高度数 r。
+- 循环长度（cyclic length）ℓ(G,H)：H 到 G 最短次正规链的长度，相邻商群必须是循环群。
+- Morava K-理论（Morava K-theory）：按高度 n 分档的上同调理论，K(0) 就是有理系数情形。
+- 几何不动点（geometric fixed points）：等变谱上性质最好的不动点函子 Φ^H，是本文的度量衡。
+
+**看个具体例子**
+
+取 p=2、G=C₄×C₂，考察两个彼此同构的子群：H₂=0×C₂ 一步直达 G，商 C₄ 是循环群，ℓ=1；H₁=2ℤ/4×0 的商是 C₂×C₂，不循环，必须经过中间群分两步，ℓ=2。定理断言损失恰好分别是 1 与 2——同构的子群，嵌入方式不同，价格就不同：
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280">
+<text x="280" y="34" text-anchor="middle" font-size="18" fill="#222">两条梯子：同构子群，不同价格</text>
+<rect x="60" y="60" width="150" height="40" fill="#fff" stroke="#222" stroke-width="2"/>
+<text x="135" y="85" text-anchor="middle" font-size="15" fill="#222">G = C₄×C₂</text>
+<line x1="135" y1="102" x2="135" y2="172" stroke="#555" stroke-width="2"/>
+<polygon points="129,170 141,170 135,180" fill="#555"/>
+<text x="150" y="142" font-size="14" fill="#444">商 ≅ C₄（循环）</text>
+<rect x="60" y="184" width="150" height="40" fill="#fff" stroke="#222" stroke-width="2"/>
+<text x="135" y="209" text-anchor="middle" font-size="15" fill="#222">H₂ ≅ C₂</text>
+<text x="135" y="250" text-anchor="middle" font-size="14" fill="#666">一步直达 → ℓ = 1</text>
+<rect x="350" y="56" width="150" height="38" fill="#fff" stroke="#222" stroke-width="2"/>
+<text x="425" y="80" text-anchor="middle" font-size="15" fill="#222">G = C₄×C₂</text>
+<line x1="425" y1="96" x2="425" y2="124" stroke="#555" stroke-width="2"/>
+<polygon points="419,122 431,122 425,132" fill="#555"/>
+<text x="438" y="116" font-size="14" fill="#444">商 C₂</text>
+<rect x="350" y="134" width="150" height="38" fill="#fff" stroke="#222" stroke-width="2"/>
+<text x="425" y="158" text-anchor="middle" font-size="14" fill="#222">中间群 K ≅ C₄</text>
+<line x1="425" y1="174" x2="425" y2="196" stroke="#555" stroke-width="2"/>
+<polygon points="419,194 431,194 425,204" fill="#555"/>
+<text x="438" y="192" font-size="14" fill="#444">商 C₂</text>
+<rect x="350" y="206" width="150" height="38" fill="#fff" stroke="#222" stroke-width="2"/>
+<text x="425" y="230" text-anchor="middle" font-size="14" fill="#222">H₁ ≅ C₂</text>
+<text x="425" y="266" text-anchor="middle" font-size="14" fill="#666">两步、商皆循环 → ℓ = 2</text>
+</svg>
+
+</div>
+
+定理还附赠两条：损失与高度 n 无关；每个中间数值都有具体的反例谱作证。
+
+**为什么值得关心**
+
+正面解决 Kuhn–Lloyd 的等式猜想，把交换情形的"最小生成元个数"答案统一成非交换群的循环链长，补上色度 Smith 理论的最后一块拼图。
+
+> 暂无形式化证明（AI 结果待核验）
+
 ## 一句话结论
 
 对任意有限 `@@M@@p@@`-群 `@@M@@G@@` 与子群 `@@M@@H@@`，本文证明"色度不动点损失"`@@M@@r_n(G,H)@@` 恰好等于从 `@@M@@H@@` 到 `@@M@@G@@`、以循环群为商的最短次正规链长度 `@@M@@\ell(G,H)@@`，对一切素数 `@@M@@p@@` 与高度 `@@M@@n\ge0@@` 成立，正面解决 Kuhn–Lloyd 提出的等式猜想。

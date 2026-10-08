@@ -13,6 +13,38 @@ pdfname: ""
 
 > 结果族 007：Ordinary two-point correlations and the corrected Elliott conjecture　·　学科：Number theory　·　验证状态：暂无形式化证明，请以社区核验为准
 
+## 入门导读 🐣
+
+给每个整数发一枚隐形硬币：数一数它的素因子个数（计重数），偶数记 `@@M@@+1@@`、奇数记 `@@M@@-1@@`，这就是刘维尔函数。一个悬了六十年的问题：相邻两数 `@@M@@n@@` 与 `@@M@@n+1@@` 的硬币，是否像两次独立投掷那样互不牵连？这篇论文给出肯定回答，而且是在最苛刻的"无对数加权"意义下，还附带了衰减速度。
+
+**关键词卡片**
+
+- 刘维尔函数（Liouville function）：`@@M@@\lambda(n)=(-1)^{\Omega(n)}@@`，素因子个数的奇偶硬币，如 `@@M@@\lambda(4)=+1@@`、`@@M@@\lambda(8)=-1@@`。
+- Chowla 猜想（Chowla conjecture）：断言 `@@M@@\lambda@@` 的相关平均趋于零，即"硬币渐近独立"；本文证其二元的普通平均情形。
+- 乘性函数（multiplicative function）：满足 `@@M@@f(mn)=f(m)f(n)@@`（`@@M@@m,n@@` 互素）的函数，`@@M@@\lambda@@` 与 Möbius 函数 `@@M@@\mu@@` 都是。
+- 非伪装（nonpretentiousness）：`@@M@@f@@` 不在任何尺度上长期模仿 `@@M@@n^{it}@@` 或 Dirichlet 特征，这是修正 Elliott 猜想的核心条件。
+- 普通平均（ordinary average）：不加对数权的 `@@M@@\sum_{n\le X}@@`，要求在每个截止点都压住终端尺度，远难于对数加权版本。
+
+**看个具体例子**
+
+定理 A 取 `@@M@@n@@` 与 `@@M@@n+1@@` 的特例：
+
+`@@M@@D\Bigl|\sum_{n\le X}\lambda(n)\lambda(n+1)\Bigr|\le C\,\frac{X}{(\log X)^{c}}\qquad(c>0\ \text{为绝对常数}).@@`
+
+动手算几项感受"消零"：`@@M@@\lambda(2)\lambda(3)=+1@@`，`@@M@@\lambda(3)\lambda(4)=-1@@`，`@@M@@\lambda(4)\lambda(5)=-1@@`，`@@M@@\lambda(5)\lambda(6)=-1@@`，`@@M@@\lambda(7)\lambda(8)=+1@@`……从 `@@M@@n=2@@` 加到 `@@M@@n=10@@` 累计只有 `@@M@@-3@@`，部分和始终在原地小幅摆动，根本长不到线性规模：
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280"><line x1="70" y1="220" x2="520" y2="220" stroke="#333" stroke-width="2"/><line x1="70" y1="220" x2="70" y2="55" stroke="#333" stroke-width="2"/><line x1="70" y1="220" x2="340" y2="62" stroke="#999" stroke-width="2"/><text x="348" y="66" font-size="15" fill="#777">y = X</text><path d="M70 220 Q 240 208 360 190 T 500 156" fill="none" stroke="#d64545" stroke-width="2.5" stroke-dasharray="7 5"/><text x="416" y="176" font-size="15" text-anchor="middle" fill="#d64545">y = C·X/(log X)^c</text><polyline points="70,206 95,193 120,203 145,188 170,199 195,190 220,201 245,191 270,202 295,193 320,203 345,194 370,202 395,195 420,204 445,196 470,203 495,197" fill="none" stroke="#2a5fd6" stroke-width="2"/><text x="430" y="242" font-size="14" text-anchor="middle" fill="#2a5fd6">部分和（示意）</text><text x="505" y="240" font-size="15" fill="#222">X</text><text x="295" y="30" font-size="16" text-anchor="middle" fill="#222">相关和被压到 X/(log X)^c 以下（示意）</text></svg>
+
+</div>
+
+**为什么值得关心**
+
+Chowla 猜想是"素数随机性"的试金石。此前的普通平均结果只能排除一个例外尺度集，本文跨过了这道门槛：首次在每个截止点都证得二元 Chowla 猜想，并把二元修正 Elliott 猜想推广到一般有界乘性函数。
+
+> 暂无形式化证明（AI 结果待核验）
+
 ## 一句话结论
 
 在无对数加权的普通平均下证明了二元 Chowla 猜想：对固定非比例仿射形式，`@@M@@\sum_{n\le X}\lambda(a_1n+b_1)\lambda(a_2n+b_2)\ll X/(\log X)^c@@`，`@@M@@c>0@@` 为绝对常数；并对一般有界乘性函数确立了二元修正 Elliott 猜想。

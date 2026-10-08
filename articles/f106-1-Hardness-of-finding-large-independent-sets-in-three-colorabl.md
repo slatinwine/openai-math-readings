@@ -13,6 +13,51 @@ pdfname: ""
 
 > 结果族 106：Hardness of coloring three-colorable graphs　·　学科：Theoretical computer science　·　验证状态：主结果已 Lean 形式化
 
+## 入门导读 🐣
+
+给你一张地图，保证三种颜色就能把相邻区域涂开；现在只许你用固定的 5 色、甚至 100 色，能重新涂好吗？论文证明这和解 3-SAT 一样难。更狠的是，这种难例图里连一个占固定比例的"互不相邻俱乐部"（独立集）都藏不下——困扰学界三十余年的常数色板近似着色猜想就此无条件解决。
+
+**关键词卡片**
+
+- 三着色图（three-colorable graph）：存在用 3 色的正常着色（相邻顶点不同色）的图
+- 独立集（independent set）：两两之间都没有边的顶点集合
+- 独立性比（independence ratio）：最大独立集占顶点总数的比例
+- 色数（chromatic number）：涂满全图所需的最少颜色数
+- NP 难（NP-hard）：找到多项式算法就意味着 P=NP
+
+**看个具体例子**
+
+100 个顶点、5 种颜色：鸽笼原理保证某个色类至少有 `@@M@@100/5=20@@` 个顶点——它们彼此不相邻，正好构成一个大小为 20 的独立集。取 `@@M@@\delta=0.19@@`：
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280">
+<line x1="150" y1="90" x2="90" y2="180" stroke="#999" stroke-width="2"/>
+<line x1="150" y1="90" x2="210" y2="180" stroke="#999" stroke-width="2"/>
+<line x1="90" y1="180" x2="210" y2="180" stroke="#999" stroke-width="2"/>
+<circle cx="150" cy="90" r="20" fill="#f9c8c8" stroke="#833" stroke-width="2"/>
+<circle cx="90" cy="180" r="20" fill="#c8f9c8" stroke="#383" stroke-width="2"/>
+<circle cx="210" cy="180" r="20" fill="#c8d8f9" stroke="#338" stroke-width="2"/>
+<text x="150" y="36" text-anchor="middle" font-size="14">YES：三色足以涂开</text>
+<text x="150" y="232" text-anchor="middle" font-size="12" fill="#567">相邻顶点颜色互不相同</text>
+<text x="410" y="66" text-anchor="middle" font-size="14">NO（数字版定理）</text>
+<text x="410" y="96" text-anchor="middle" font-size="13">n = 100，δ = 0.19</text>
+<text x="410" y="122" text-anchor="middle" font-size="13">所有独立集 &lt; 19 个顶点</text>
+<text x="410" y="148" text-anchor="middle" font-size="13">而 5-着色必有色类 ≥ 100/5 = 20</text>
+<text x="410" y="174" text-anchor="middle" font-size="13">⇒ 5-着色必败；对任何固定 c 同理</text>
+<text x="280" y="256" text-anchor="middle" font-size="12" fill="#567">多项式时间归约自 3-SAT：区分两情形 NP-难</text>
+</svg>
+
+</div>
+
+于是：可满足的 3-SAT 变换出三着色图；不可满足的变换出的图中所有独立集都不足 `@@M@@0.19\times100=19@@` 个顶点，任何 5-着色必然失败。
+
+**为什么值得关心**
+
+"三着色图能否用常数色板重涂"是逼近算法领域最老的开放题之一，本文不依赖任何猜想地关上了它。
+
+> 已 Lean 形式化
+
 ## 一句话结论
 
 论文证明：对任意固定 `@@M@@0<\delta<1/3@@`，区分三着色图与"所有独立集都少于 `@@M@@\delta n@@` 个顶点"的图是 NP 难的；从而对每个固定 `@@M@@c\ge3@@`，给三着色图找 `@@M@@c@@`-着色是 NP 难的——困扰理论计算机科学界三十余年的常数色板近似着色猜想就此无条件解决。

@@ -13,6 +13,49 @@ pdfname: ""
 
 > 结果族 052：Tangent splittings and product decompositions　·　学科：Algebraic and complex geometry　·　验证状态：暂无形式化证明，请以社区核验为准
 
+## 入门导读 🐣
+
+有的空间"地铁网"极其发达：任意两个一般点之间都有一条有理曲线（一条 `@@M@@\mathbb P^1@@`）直达，这样的空间叫有理连通。Höring 猜想：在这样的空间上，如果每点都有两种独立的全纯运动方式（切丛分裂成两半），这两种方式必然"各自成体系"——即自动可积。本文证明猜想成立，再接上 Höring 自己的乘积定理，直接得到：空间本身就是两个低维空间的乘积。
+
+**关键词卡片**
+
+- 有理连通（rationally connected）：两个一般点可落在某条有理曲线 `@@M@@\mathbb P^1@@` 的像上，地铁任意两站直达。
+- 切丛分裂（splitting of the tangent bundle）：`@@M@@T_X=E_1\oplus E_2@@`，每点切空间分成两个固定维数的子空间。
+- 可积（integrable）：子丛的截面做李括号仍留在子丛内，"混合同类运动仍得同类运动"。
+- 李括号（Lie bracket）：度量两个无穷小运动"搅在一起"会产生什么新方向的操作。
+- 乘积分解（product decomposition）：`@@M@@X\simeq X_1\times X_2@@`，空间恰是两个低维空间的乘积。
+
+**看个具体例子**
+
+设 `@@M@@X@@` 光滑、射影、有理连通，`@@M@@T_X=E_1\oplus E_2@@` 是任意正秩分裂（不限秩、不要任何正性假设）。定理断言两个和项都自动可积；推论：存在光滑射影流形 `@@M@@X_1,X_2@@` 使 `@@M@@X\simeq X_1\times X_2@@`，且 `@@M@@E_i@@` 恰是因子切丛的拉回。注意光滑与有理连通不可省：带奇点的反例、甚至某些乘积上的"歪分裂"早有不可积例子，有理连通性恰好排除它们。
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280">
+  <ellipse cx="280" cy="140" rx="200" ry="90" fill="none" stroke="#333" stroke-width="2"/>
+  <circle cx="160" cy="140" r="5" fill="#333"/>
+  <text x="160" y="165" text-anchor="middle" font-size="13" fill="#333">点 a</text>
+  <circle cx="410" cy="135" r="5" fill="#333"/>
+  <text x="410" y="160" text-anchor="middle" font-size="13" fill="#333">点 b</text>
+  <path d="M 160 140 Q 285 60 410 135" fill="none" stroke="#06c" stroke-width="2" stroke-dasharray="6 4"/>
+  <text x="285" y="75" text-anchor="middle" font-size="13" fill="#06c">有理曲线 P¹ 打通任意两点</text>
+  <line x1="255" y1="180" x2="310" y2="160" stroke="#c00" stroke-width="2"/>
+  <polygon points="318,157 305,155 309,167" fill="#c00"/>
+  <text x="305" y="200" text-anchor="middle" font-size="13" fill="#c00">方向 E₁</text>
+  <line x1="265" y1="185" x2="255" y2="125" stroke="#080" stroke-width="2"/>
+  <polygon points="253,117 247,129 259,129" fill="#080"/>
+  <text x="225" y="125" text-anchor="middle" font-size="13" fill="#080">方向 E₂</text>
+  <text x="280" y="250" text-anchor="middle" font-size="13" fill="#333">定理：E₁、E₂ 自动可积，进而 X ≃ X₁ × X₂</text>
+</svg>
+
+</div>
+
+**为什么值得关心**
+
+它与姊妹篇互补：那边假设可积、给万有覆盖的乘积分解；这边免费提供可积性。两篇合读，"切丛分裂"直接升级为"乘积分解"。
+
+> 暂无形式化证明（AI 结果待核验）
+
 ## 一句话结论
 
 证明 Höring 猜想：光滑有理连通（rationally connected）射影复流形上，切丛的任何指定双和项全纯分裂都自动可积；结合 Höring 乘积定理，立得与指定分裂兼容的乘积分解。

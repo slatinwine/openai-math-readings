@@ -13,6 +13,47 @@ pdfname: ""
 
 > 结果族 328：Nonexpansive fixed points in reflexive Banach spaces　·　学科：Functional analysis（泛函分析）　·　验证状态：主结果已 Lean 形式化
 
+## 入门导读 🐣
+
+把一张地图揉一揉再盖回原区域，规则只有一条：不许把任何两点的距离拉长。问：总有某个点原地不动吗？这就是非扩张映射的不动点问题。这篇论文给出肯定回答的最终版：在"自反"的无穷维空间里，任何闭、有界、凸的块上，这样的揉图操作必有不动点——不需要此前六十年来一直添的各种额外几何条件。
+
+**关键词卡片**
+
+- 非扩张映射（nonexpansive map）：任何两点映后距离 ≤ 原距离；"揉地图但不许拉伸"。
+- 不动点（fixed point）：满足 `@@M@@F(x)=x@@` 的点，被映射送回自己原位。
+- 自反空间（reflexive Banach space）：与自己的二次对偶自然重合的空间，如 `@@M@@\ell^p@@`、`@@M@@L^p@@`（`@@M@@1<p<\infty@@`）；其闭有界凸集有弱紧性。
+- 一致凸（uniformly convex）：球面没有平直边的强几何条件；1965 年以来的老定理都需要它，本文证明可以不要。
+- 凸集（convex set）：包含任意两点连线段的集合，"没有洞、没有凹陷"。
+
+**看个具体例子**
+
+平面圆盘绕中心转 30°：任何两点的距离都没变（非扩张），中心点原地不动。但把圆盘挖成圆环再转：每个点都挪了位置，没有不动点——差别只在"凸不凸"。再如区间 `@@M@@[0,1]@@` 上的 `@@M@@F(x)=1-x@@`（距离不变），不动点是 `@@M@@x=\frac12@@`。本文定理：在自反空间（如 `@@M@@\ell^p@@`，`@@M@@1<p<\infty@@`）的任何闭有界凸集上，非扩张自映射必定有不动点，凸性之外不再要任何条件。
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280">
+  <text x="20" y="28" font-size="15" fill="#222">同样转 30°：圆盘（凸）有不动点，圆环（非凸）没有</text>
+  <circle cx="150" cy="160" r="78" fill="#dce8fb" stroke="#2f5fd0" stroke-width="2"/>
+  <path d="M 95 120 A 70 70 0 0 1 205 120" fill="none" stroke="#333" stroke-width="2"/>
+  <polygon points="205,120 193,113 197,126" fill="#333"/>
+  <circle cx="150" cy="160" r="6" fill="#d64545"/>
+  <text x="60" y="262" font-size="14" fill="#222">圆盘：中心不动 ✓</text>
+  <circle cx="420" cy="160" r="78" fill="#dce8fb" stroke="#2f5fd0" stroke-width="2"/>
+  <circle cx="420" cy="160" r="34" fill="#f6f6f6" stroke="#2f5fd0" stroke-width="2"/>
+  <path d="M 370 130 A 58 58 0 0 1 470 130" fill="none" stroke="#333" stroke-width="2"/>
+  <polygon points="470,130 459,124 462,136" fill="#333"/>
+  <text x="398" y="166" font-size="13" fill="#888">洞</text>
+  <text x="330" y="262" font-size="14" fill="#b0348f">圆环：转起来无不动点 ✗</text>
+</svg>
+
+</div>
+
+**为什么值得关心**
+
+Kirk 1965 年开启的问题在原有范数下彻底关闭；优化算法里的不动点迭代从此有了最大适用范围。
+
+> 主结果已 Lean 形式化
+
 ## 一句话结论
 
 证明了任意实自反 Banach 空间 (reflexive Banach space) 中，非空闭有界凸子集上的每个非扩张自映射 (nonexpansive selfmap) 都有不动点——Kirk 的自反空间不动点问题在原有范数下获得肯定回答，不再需要一致凸性等任何附加几何条件。

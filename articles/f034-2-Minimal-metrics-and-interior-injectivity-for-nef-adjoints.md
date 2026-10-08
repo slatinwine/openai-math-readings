@@ -13,6 +13,28 @@ pdfname: ""
 
 > 结果族 034：Log abundance for compact Kähler spaces under logarithmic Iitaka subadditivity　·　学科：Algebraic and complex geometry　·　验证状态：暂无形式化证明，请以社区核验为准
 
+## 入门导读 🐣
+
+给线丛配度量，就像给一段山路标海拔：标得越平滑，走起来越舒服；有些标法会在某些点"塌成尖峰"（奇点）。这篇论文证明：对一大类正性（nef）的伴随丛，最坏也只会得到最平滑的那种标法——尖峰处处不出现；再用这个好度量，证明上同调的"单射定理"，一路导出四维丰度（附带一个欧拉示性数非零的假设）。
+
+**关键词卡片**
+
+- 极小度量（minimal singularities metric）：所有半正度量里奇性最少的那个（族）。
+- Lelong 数（Lelong number）：度量在一点上奇性强度的数值，`@@M@@0@@` 表示无对数尖峰。
+- 乘子理想（multiplier ideal）：由 `@@M@@e^{-t\varphi}@@` 的可积性定义的奇性记录器；Lelong 数为 `@@M@@0@@` 时它平凡。
+- 单射定理（injectivity theorem）：两个上同调群之间的自然包含是单射，用来"搬运"截面。
+- klt 配对（Kawamata log terminal）：奇性温和的一类配对，定理的适用范围。
+
+**看个具体例子**
+
+数字版：权 `@@M@@\varphi(z)=\log|z|@@` 在原点的 Lelong 数为 `@@M@@1@@`（此时 `@@M@@e^{-t\varphi}=|z|^{-t}@@` 不可积，有尖峰）；而 `@@M@@\varphi\equiv 0@@` 处处 Lelong 数为 `@@M@@0@@`。定理说：nef 伴随丛的极小半正度量必属后者——每点 `@@M@@\nu=0@@`，即 `@@M@@e^{-t\varphi}@@` 对一切 `@@M@@t>0@@` 处处可积，度量在乘子理想的意义下完全无奇性。这正面回应了 Gongyo–Matsumura 的公开问题，且不需要"大"或"非消失"等附加假设。
+
+**为什么值得关心**
+
+它把"数值正性"与"度量温和性"直接挂钩，是族内四维非消失与丰度论证的解析发动机；对一般 nef 丛此结论会失败（Koike 有反例），恰显伴随结构的特殊性。
+
+> 暂无形式化证明（AI 结果待核验）
+
 ## 一句话结论
 对射影复 klt pair 上 nef 的 `@@M@@\mathbb{Q}@@`-Cartier 伴随线丛，证明其在任意射影log消解上的极小半正度量处处 Lelong 数为零，回应了 Gongyo–Matsumura 的公开问题；并据此建立普通上同调的 `@@M@@H^1@@` 内部单射定理，直接导出四维 klt 丰性（带非零欧拉示性数假设）。
 

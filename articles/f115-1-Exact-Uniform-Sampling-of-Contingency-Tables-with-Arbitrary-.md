@@ -13,6 +13,73 @@ pdfname: ""
 
 > 结果族 115：Sampling and counting contingency tables with arbitrary margins　·　学科：Theoretical computer science　·　验证状态：暂无形式化证明，请以社区核验为准
 
+## 入门导读 🐣
+
+填一张表格，让每行合计、每列合计都等于事先给定的数——像把全年预算摊给各部门与各季度：每个部门的总额、每个季度的总额都被钉死。这样的填法往往多到天文数字，如何"完全等概率"地随机抽出一张？精确均匀采样此前只在零散特例下可行；本文给出首个对任意行和、列和都成立的算法，期望时间多项式。
+
+**关键词卡片**
+
+- 列联表（contingency table）：满足给定行和与列和的非负整数矩阵。
+- 均匀采样（uniform sampling）：每张合法表被抽中的概率严格相等。
+- 精确与近似（exact / approximate）：精确版输出分布分毫不差；近似版允许 `@@M@@2^{-k}@@` 的总变差误差。
+- 二进制边际（binary-encoded margins）：总额可写成编码长度的指数倍，因此按数值算多项式不算多项式。
+- 马尔可夫链混合（Markov chain mixing）：随机游走要走多久才忘掉起点、接近目标分布。
+
+**看个具体例子**
+
+行和 (3,2)、列和 (2,3) 的 2×2 表恰好有 2 张：表 A 第一行是 (1,2)、第二行是 (1,1)；表 B 第一行是 (2,1)、第二行是 (0,2)。均匀采样器必须以 1/2、1/2 输出两者；本文的近似版输出分布与理想分布的总变差 `@@M@@\le 2^{-k}@@`（每次运行多项式时间），精确版则分毫不差地均匀（期望多项式时间）。维数与边际再大，界都一致成立。
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280">
+  <text x="280" y="26" text-anchor="middle" font-size="15" fill="#333333">行和 (3,2)、列和 (2,3)：合法的 2×2 表恰好两张</text>
+  <rect x="60" y="70" width="60" height="60" fill="#eef4fb" stroke="#666666" stroke-width="2"/>
+  <rect x="120" y="70" width="60" height="60" fill="#eef4fb" stroke="#666666" stroke-width="2"/>
+  <rect x="60" y="130" width="60" height="60" fill="#eef4fb" stroke="#666666" stroke-width="2"/>
+  <rect x="120" y="130" width="60" height="60" fill="#eef4fb" stroke="#666666" stroke-width="2"/>
+  <text x="90" y="106" text-anchor="middle" font-size="16" fill="#333333">?</text>
+  <text x="150" y="106" text-anchor="middle" font-size="16" fill="#333333">?</text>
+  <text x="90" y="166" text-anchor="middle" font-size="16" fill="#333333">?</text>
+  <text x="150" y="166" text-anchor="middle" font-size="16" fill="#333333">?</text>
+  <text x="52" y="106" text-anchor="end" font-size="13" fill="#555555">行1</text>
+  <text x="52" y="166" text-anchor="end" font-size="13" fill="#555555">行2</text>
+  <text x="90" y="62" text-anchor="middle" font-size="13" fill="#555555">列1</text>
+  <text x="150" y="62" text-anchor="middle" font-size="13" fill="#555555">列2</text>
+  <text x="192" y="106" font-size="13" fill="#2e8b57">合计 3</text>
+  <text x="192" y="166" font-size="13" fill="#2e8b57">合计 2</text>
+  <text x="90" y="210" text-anchor="middle" font-size="13" fill="#2e8b57">合计 2</text>
+  <text x="150" y="210" text-anchor="middle" font-size="13" fill="#2e8b57">合计 3</text>
+  <text x="340" y="88" text-anchor="middle" font-size="14" fill="#333333">表 A</text>
+  <rect x="300" y="98" width="40" height="40" fill="#ffffff" stroke="#3b82c4" stroke-width="2"/>
+  <rect x="340" y="98" width="40" height="40" fill="#ffffff" stroke="#3b82c4" stroke-width="2"/>
+  <rect x="300" y="138" width="40" height="40" fill="#ffffff" stroke="#3b82c4" stroke-width="2"/>
+  <rect x="340" y="138" width="40" height="40" fill="#ffffff" stroke="#3b82c4" stroke-width="2"/>
+  <text x="320" y="124" text-anchor="middle" font-size="15" fill="#333333">1</text>
+  <text x="360" y="124" text-anchor="middle" font-size="15" fill="#333333">2</text>
+  <text x="320" y="164" text-anchor="middle" font-size="15" fill="#333333">1</text>
+  <text x="360" y="164" text-anchor="middle" font-size="15" fill="#333333">1</text>
+  <text x="340" y="196" text-anchor="middle" font-size="13" fill="#2e8b57">概率 1/2</text>
+  <text x="490" y="88" text-anchor="middle" font-size="14" fill="#333333">表 B</text>
+  <rect x="450" y="98" width="40" height="40" fill="#ffffff" stroke="#3b82c4" stroke-width="2"/>
+  <rect x="490" y="98" width="40" height="40" fill="#ffffff" stroke="#3b82c4" stroke-width="2"/>
+  <rect x="450" y="138" width="40" height="40" fill="#ffffff" stroke="#3b82c4" stroke-width="2"/>
+  <rect x="490" y="138" width="40" height="40" fill="#ffffff" stroke="#3b82c4" stroke-width="2"/>
+  <text x="470" y="124" text-anchor="middle" font-size="15" fill="#333333">2</text>
+  <text x="510" y="124" text-anchor="middle" font-size="15" fill="#333333">1</text>
+  <text x="470" y="164" text-anchor="middle" font-size="15" fill="#333333">0</text>
+  <text x="510" y="164" text-anchor="middle" font-size="15" fill="#333333">2</text>
+  <text x="490" y="196" text-anchor="middle" font-size="13" fill="#2e8b57">概率 1/2</text>
+  <text x="280" y="248" text-anchor="middle" font-size="13" fill="#555555">均匀采样＝各以 1/2 抽 A 或 B；维数与边际任意，期望时间仍多项式</text>
+</svg>
+
+</div>
+
+**为什么值得关心**
+
+它摘掉了正性、稀疏、平衡、固定维数等全部旧假设，把"均匀生成一张列联表"在最一般意义上变成多项式时间任务——这类表是统计、物理与隐私数据发布中的基本随机对象。
+
+> 暂无形式化证明（AI 结果待核验）
+
 ## 一句话结论
 对任意行和、列和的非负整数列联表，本文构造出首个精确均匀采样算法，期望比特时间在维数与边际二进制长度上多项式；并给出每次运行都有最坏情形多项式界、误差 `@@M@@2^{-k}@@` 的近似均匀采样器，取消了正性、稀疏、平衡、固定维数等全部旧假设。
 

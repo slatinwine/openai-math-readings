@@ -13,6 +13,46 @@ pdfname: ""
 
 > 结果族 099：The sharp exponential scale of edit-distance distortion　·　学科：Convex and metric geometry　·　验证状态：暂无形式化证明，请以社区核验为准
 
+## 入门导读 🐣
+
+一个朴素现象里藏着大学问：把单词 ABCD 循环挪一格变成 BCDA，只需 2 次编辑——删掉首字母、再接到尾部——可单词里每个字母的位置都变了。"词很长、挪动很便宜"这一反差，被本文组织成对 `@@M@@\ell_1@@` 嵌入的系统性障碍：词记录圆上的相位，便宜的子群平移与昂贵的"半转"必须被任何嵌入区别对待，从而逼出指数失真。
+
+**关键词卡片**
+
+- 相位（phase）：圆 `@@M@@\R/\mathbb Z@@` 上的一个点，标记子词被循环挪到了哪里。
+- 半转（half-turn）：所有叶子同时转过半圈；被证明对任何嵌入都昂贵。
+- 割度量（cut metric）：`@@M@@\ell_1@@` 距离的基本构件，任何 `@@M@@\ell_1@@` 距离都能拆成割的非负组合。
+- 直方图嵌入（histogram embedding）：上界侧把词分块、统计重叠窗口计数，实现完整嵌入构造。
+
+**看个具体例子**
+
+下界的"数字版"：两条独立构造都给出长度 `@@M@@\le d@@` 的等长二进制词，`@@M@@\ell_1@@` 失真至少 `@@M@@\exp(c\sqrt{\log d\log\log d})@@`；其中第二个构造失真至少 `@@M@@m^{m/4}@@`，而词长对数仅 `@@M@@O(m^2\log m)@@`——失真涨得远比词长快。配套的二元编码定理还能把大字母表的词逐符号换成二进制，宽度只按对数增长而不破坏指数阶。
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280">
+  <circle cx="240" cy="130" r="85" fill="none" stroke="#345" stroke-width="2"/>
+  <line x1="240" y1="130" x2="300" y2="70" stroke="#345" stroke-width="1.5"/>
+  <circle cx="300" cy="70" r="5" fill="#c00"/>
+  <path d="M 292.6 105.5 A 58 58 0 0 0 264.5 77.4" fill="none" stroke="#c00" stroke-width="2"/>
+  <path d="M 258.9 71.7 L 268 73.9 L 261 80.9 Z" fill="#c00"/>
+  <text x="18" y="58" font-size="14" fill="#123">相位＝圆上的点，</text>
+  <text x="18" y="80" font-size="14" fill="#123">标记子词挪到哪里</text>
+  <text x="355" y="60" font-size="14" fill="#123">半转（所有叶子同时</text>
+  <text x="355" y="82" font-size="14" fill="#123">挪半圈）必然昂贵，</text>
+  <text x="355" y="104" font-size="14" fill="#123">这个反差逼出指数失真</text>
+  <text x="345" y="140" font-size="14" fill="#123">exp(Ω(√(log d·loglog d)))</text>
+  <text x="60" y="236" font-size="14" fill="#c00">循环平移便宜：ABCD→BCDA＝2 次编辑</text>
+</svg>
+
+</div>
+
+**为什么值得关心**
+
+它与姊妹篇的上界构造在指数阶上互相锁定：多条彼此独立的路线到达同一个数字，是这一结果族最结实的交叉印证。
+
+> 暂无形式化证明（AI 结果待核验）
+
 ## 一句话结论
 
 本文为编辑距离嵌入 `@@M@@\ell_1@@` 的失真下界 `@@M@@\exp(\Omega(\sqrt{\log d\,\log\log d}))@@` 提供两个互相独立的"有限圆"构造（均为二进制等长词），并把 Ostrovsky–Rabani 上界方法发展成完备的直方图嵌入，上下两面在指数阶上互相锁定。

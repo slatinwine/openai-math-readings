@@ -13,6 +13,40 @@ pdfname: ""
 
 > 结果族 157：Graph coloring, clique minors, and Colin de Verdière invariants　·　学科：Combinatorics　·　验证状态：暂无形式化证明，请以社区核验为准
 
+## 入门导读 🐣
+
+给地图染色，相邻区域不同色，最少要几种颜色？这是图的色数 χ。另一把尺子：把图里若干连通块各自"捏成一点"，能捏出的最大完全图 Kₜ 的阶数 t，叫 Hadwiger 数 h。1943 年的 Hadwiger 猜想断言 χ≤h。这篇论文造出反例：颜色比"捏合能力"多得多的图真的存在。
+
+**关键词卡片**
+
+- 色数 χ（chromatic number）：正常染色所需的最少颜色数。
+- Hadwiger 数（clique minor 数）h：收缩连通块后能得到的最大完全图的阶数。
+- 独立数 α（independence number）：两两不相邻的最大点集大小；α≤2 意味着任意三点中必有边。
+- 分数色数 χ_f（fractional chromatic number）：允许按比例"混色"的染色数，不超过 χ。
+- 连通匹配（connected matching）：两两接触的不相交边组的最大规模。
+
+**看个具体例子**
+
+"捏出 K₄"长什么样：四个连通块两两有边相连，各缩成一点就得到 K₄：
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280"><text x="280" y="35" text-anchor="middle" font-size="16">收缩连通块，捏出完全图</text><line x1="150" y1="90" x2="410" y2="90" stroke="#888"/><line x1="150" y1="210" x2="410" y2="210" stroke="#888"/><line x1="150" y1="90" x2="150" y2="210" stroke="#888"/><line x1="410" y1="90" x2="410" y2="210" stroke="#888"/><line x1="150" y1="90" x2="410" y2="210" stroke="#888"/><line x1="410" y1="90" x2="150" y2="210" stroke="#888"/><ellipse cx="150" cy="90" rx="48" ry="28" fill="#d6eaf8" stroke="#333"/><ellipse cx="410" cy="90" rx="48" ry="28" fill="#d6eaf8" stroke="#333"/><ellipse cx="150" cy="210" rx="48" ry="28" fill="#d6eaf8" stroke="#333"/><ellipse cx="410" cy="210" rx="48" ry="28" fill="#d6eaf8" stroke="#333"/><text x="150" y="95" text-anchor="middle" font-size="14">块 A</text><text x="410" y="95" text-anchor="middle" font-size="14">块 B</text><text x="150" y="215" text-anchor="middle" font-size="14">块 C</text><text x="410" y="215" text-anchor="middle" font-size="14">块 D</text><text x="280" y="258" text-anchor="middle" font-size="14">每块缩成一点后：四点两两相连 = K₄</text></svg>
+
+</div>
+
+反例的数字版：图有 m 个点、独立数至多 2，于是每个色类至多 2 点，χ(G) 至少 m/2；而连通匹配不足 m/100，推出
+
+`@@M@@h(G)<\tfrac{26m}{75}+\tfrac23<\tfrac m2\le\chi_f(G)\le\chi(G)@@`
+
+取 m=15000：h(G) 小于 5201，而 χ(G) 至少 7500——颜色比最大团子式多出一大截，猜想连同分数版本被一并推翻。构造分三层：先用代数条件造"洞"保证任意三点有边，再用概率方法阻止大连通匹配，最后采样出有限图。
+
+**为什么值得关心**
+
+一个悬置 80 多年的著名猜想被否定；但姊妹篇表明"χ≤C·h"的线性松弛依然正确——失败恰好只在系数 1。
+
+> 暂无形式化证明（AI 结果待核验）
+
 ## 一句话结论
 构造出独立数至多 2、连通匹配数却不足 `@@M@@m/100@@` 的任意大图 `@@M@@G@@`，由此 `@@M@@h(G)<26m/75+2/3<m/2\le\chi_f(G)\le\chi(G)@@`：1943 年的 Hadwiger 猜想及其分数染色弱化形式被一并推翻。
 

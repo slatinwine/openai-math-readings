@@ -13,6 +13,57 @@ pdfname: ""
 
 > 结果族 377：Interior `@@M@@C^{1,\alpha}@@` regularity for infinity-harmonic functions　·　学科：Partial differential equations　·　验证状态：暂无形式化证明，请以社区核验为准
 
+## 入门导读 🐣
+
+在两根高矮不同的桩子之间铺一块"最省料"的坡面板，要求任何一段都无法被偷偷换成更平缓的——这样的极限省料坡面就是无穷调和函数。这篇论文证明：在三维及更高维空间里，拿放大镜看这种坡面的任何一点，它都越来越像一张倾斜的平面——坡度不但存在，还随位置连续变化，永不出现折角。
+
+**关键词卡片**
+
+- 无穷调和函数（infinity-harmonic function）：满足 `@@M@@\Delta_\infty u=0@@` 的函数；方程只管"沿坡面下坡方向"的弯曲，是最优 Lipschitz 延拓的极限形态。
+- 拔河博弈（tug-of-war）：两队轮流随机拉动一个点的博弈，这场游戏的公平价值函数恰好无穷调和。
+- Hölder 半范数（Hölder seminorm）：给 `@@M@@|f(x)-f(y)|@@` 与距离的 `@@M@@\alpha@@` 次方之比设上限，是"变化速度"的量化刻度。
+- 振幅（oscillation）：函数在区域上的最大值减最小值；定理中唯一出现的"大小"。
+- `@@M@@C^{1,\alpha}@@` 正则性（`@@M@@C^{1,\alpha}@@` regularity）：导数存在，且以距离的 `@@M@@\alpha@@` 次方速率连续变化——比"可微"再高一档的光滑度。
+
+**看个具体例子**
+
+Aronsson 经典例子 `@@M@@u(x_1,x_2)=|x_1|^{4/3}-|x_2|^{4/3}@@` 是无穷调和的：在原点附近挪动 `@@M@@h=0.001@@`，坡度就变化约 `@@M@@h^{1/3}\approx 0.1@@`——这个立方根关系说明指数不可能超过 `@@M@@1/3@@`。论文定理的数字版：若 `@@M@@u@@` 在单位球 `@@M@@B_1@@` 上无穷调和、振幅为 1，则对 `@@M@@x,y\in B_{1/2}@@`
+`@@M@@D|\nabla u(x)-\nabla u(y)|\le C_d\,|x-y|^{\alpha_d},\qquad \alpha_d\in(0,\tfrac13]@@`
+常数 `@@M@@C_d@@` 与指数 `@@M@@\alpha_d@@` 只依赖维数，对所有这样的 `@@M@@u@@` 一致成立。
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280">
+<line x1="35" y1="235" x2="255" y2="235" stroke="#bbb" stroke-width="1.5"/>
+<line x1="35" y1="235" x2="35" y2="45" stroke="#bbb" stroke-width="1.5"/>
+<path d="M40,210 C80,150 110,190 145,150 C180,110 205,160 250,120" fill="none" stroke="#3a76b8" stroke-width="2.5"/>
+<circle cx="145" cy="150" r="5" fill="#c0392b"/>
+<text x="153" y="143" font-size="13" fill="#c0392b">P</text>
+<rect x="128" y="135" width="34" height="30" fill="none" stroke="#e0a030" stroke-width="1.5"/>
+<text x="90" y="45" font-size="13" fill="#888">任意点 P 处逐级放大</text>
+<line x1="128" y1="135" x2="298" y2="32" stroke="#e0a030" stroke-width="1"/>
+<line x1="162" y1="165" x2="443" y2="122" stroke="#e0a030" stroke-width="1"/>
+<rect x="298" y="32" width="145" height="90" fill="none" stroke="#666" stroke-width="1.5"/>
+<text x="370" y="24" font-size="13" text-anchor="middle" fill="#888">放大：弯曲明显变缓</text>
+<path d="M303,100 C335,55 360,80 390,55 C415,35 430,60 438,48" fill="none" stroke="#3a76b8" stroke-width="2.5"/>
+<rect x="352" y="50" width="26" height="22" fill="none" stroke="#e0a030" stroke-width="1.5"/>
+<line x1="352" y1="50" x2="298" y2="150" stroke="#e0a030" stroke-width="1"/>
+<line x1="378" y1="72" x2="535" y2="250" stroke="#e0a030" stroke-width="1"/>
+<rect x="298" y="150" width="240" height="105" fill="none" stroke="#666" stroke-width="1.5"/>
+<line x1="315" y1="225" x2="520" y2="180" stroke="#3a76b8" stroke-width="2.5"/>
+<line x1="315" y1="229" x2="520" y2="184" stroke="#c0392b" stroke-width="1.2" stroke-dasharray="6,5"/>
+<text x="418" y="268" font-size="13" text-anchor="middle" fill="#555">再放大：几乎是一张倾斜平面（坡度连续变化）</text>
+<text x="145" y="258" font-size="13" text-anchor="middle" fill="#555">无穷调和函数 u 的图像</text>
+</svg>
+
+</div>
+
+**为什么值得关心**
+
+自 2011 年已知任意维数中这种函数处处可微，但导数是否连续在 `@@M@@d\ge 3@@` 一直悬而未决；本文补上了这块拼图，而且整套光滑标尺只看维数、不看具体解。
+
+> 暂无形式化证明（AI 结果待核验）
+
 ## 一句话结论
 
 论文证明：任意维数 `@@M@@d\ge3@@` 中，有界无穷调和函数（infinity-harmonic）满足只依赖维数的一致内部 `@@M@@C^{1,\alpha_d}@@` 估计（`@@M@@\alpha_d\in(0,1/3]@@`）：梯度在 `@@M@@B_{1/2}@@` 上的上确界范数与 Hölder 半范数被 `@@M@@B_1@@` 上振幅乘以维数常数控制，从而高维无穷调和函数都局部 `@@M@@C^1@@`。

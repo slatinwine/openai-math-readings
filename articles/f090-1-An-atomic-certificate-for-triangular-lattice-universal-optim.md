@@ -13,6 +13,64 @@ pdfname: ""
 
 > 结果族 090：Triangular-lattice optimality, long-range Riesz and Coulomb energies, and spherical logarithmic energy　·　学科：Convex and metric geometry　·　验证状态：暂无形式化证明，请以社区核验为准
 
+## 入门导读 🐣
+
+把一大把同样的小磁珠撒在无限大的桌面上，规定每单位面积正好一颗，磁珠彼此"嫌弃"：离得越近排斥越强。怎么排，全桌的总嫌弃度才最低？这篇论文证明：蜂窝式的三角排列是全能冠军——不管你换哪种温和的排斥规律，它都最省能量；而且证明靠的是一个可被机器复核的"证书"函数。
+
+**关键词卡片**
+
+- 三角格子（triangular lattice）：每个点有 6 个等距最近邻的蜂窝式排布，蜂巢壁的骨架就是它。
+- 完全单调（completely monotone）：随距离一路衰减、衰减速度本身也在放缓的一类排斥规律，如 `@@M@@e^{-t}@@`、`@@M@@t^{-p}@@`。
+- 普适最优性（universal optimality）：一个排布对一整族排斥规律同时最优。
+- Fourier 证书（Fourier certificate）：一个构造出来、符号条件经严格检验的辅助函数，像印章一样盖出能量下界。
+- 区间算术（interval arithmetic）：用包住精确值的区间做四则运算，从根上排除浮点误差的验证技术。
+
+**看个具体例子**
+
+密度取每单位面积 1 点。三角格最近邻有 6 个，平方距离 `@@M@@2/\sqrt3\approx1.155@@`；第二层还是 6 个，平方距离 `@@M@@2\sqrt3\approx3.46@@`。取排斥律 `@@M@@g(t)=1/t@@`，定理断言：无论点集多杂乱——可以毫无周期、可以有点贴着点——每粒子能量都不低于三角格的格点和：
+
+`@@M@@DE\ \ge\ 6\cdot\frac{\sqrt3}{2}+6\cdot\frac{\sqrt3}{6}+6\cdot\frac{3\sqrt3}{8}+\cdots\ \approx\ 5.20+1.73+1.30+\cdots@@`
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280">
+  <text x="280" y="24" font-size="15" text-anchor="middle" fill="#222">同样的密度：两种格子的最近邻对比</text>
+  <g stroke="#b0b0b0" stroke-width="1.5">
+    <line x1="140" y1="140" x2="185" y2="140"/>
+    <line x1="140" y1="140" x2="162.5" y2="101"/>
+    <line x1="140" y1="140" x2="117.5" y2="101"/>
+    <line x1="140" y1="140" x2="95" y2="140"/>
+    <line x1="140" y1="140" x2="117.5" y2="179"/>
+    <line x1="140" y1="140" x2="162.5" y2="179"/>
+    <line x1="352" y1="140" x2="396" y2="140"/>
+    <line x1="396" y1="140" x2="440" y2="140"/>
+    <line x1="396" y1="140" x2="396" y2="96"/>
+    <line x1="396" y1="140" x2="396" y2="184"/>
+  </g>
+  <g fill="#666">
+    <circle cx="50" cy="62" r="4.5"/><circle cx="95" cy="62" r="4.5"/><circle cx="140" cy="62" r="4.5"/><circle cx="185" cy="62" r="4.5"/><circle cx="230" cy="62" r="4.5"/>
+    <circle cx="72.5" cy="101" r="4.5"/><circle cx="117.5" cy="101" r="4.5"/><circle cx="162.5" cy="101" r="4.5"/><circle cx="207.5" cy="101" r="4.5"/>
+    <circle cx="50" cy="140" r="4.5"/><circle cx="95" cy="140" r="4.5"/><circle cx="185" cy="140" r="4.5"/><circle cx="230" cy="140" r="4.5"/>
+    <circle cx="72.5" cy="179" r="4.5"/><circle cx="117.5" cy="179" r="4.5"/><circle cx="162.5" cy="179" r="4.5"/><circle cx="207.5" cy="179" r="4.5"/>
+    <circle cx="50" cy="218" r="4.5"/><circle cx="95" cy="218" r="4.5"/><circle cx="140" cy="218" r="4.5"/><circle cx="185" cy="218" r="4.5"/><circle cx="230" cy="218" r="4.5"/>
+    <circle cx="308" cy="96" r="4.5"/><circle cx="352" cy="96" r="4.5"/><circle cx="396" cy="96" r="4.5"/><circle cx="440" cy="96" r="4.5"/><circle cx="484" cy="96" r="4.5"/>
+    <circle cx="308" cy="140" r="4.5"/><circle cx="352" cy="140" r="4.5"/><circle cx="440" cy="140" r="4.5"/><circle cx="484" cy="140" r="4.5"/>
+    <circle cx="308" cy="184" r="4.5"/><circle cx="352" cy="184" r="4.5"/><circle cx="396" cy="184" r="4.5"/><circle cx="440" cy="184" r="4.5"/><circle cx="484" cy="184" r="4.5"/>
+  </g>
+  <circle cx="140" cy="140" r="7" fill="#d64545"/>
+  <circle cx="396" cy="140" r="7" fill="#d64545"/>
+  <text x="140" y="250" font-size="14" text-anchor="middle" fill="#222">三角格子：6 个最近邻，间距一致</text>
+  <text x="396" y="250" font-size="14" text-anchor="middle" fill="#222">方格子：只有 4 个最近邻</text>
+</svg>
+
+</div>
+
+**为什么值得关心**
+
+它把"自然界偏爱六边形"的直觉升级成不带任何周期性、分离性假设的定理，补上平面普适最优性的最后缺口（8 维与 24 维此前已由模形式方法解决），证书还附带可复核的验证程序。
+
+> 暂无形式化证明（AI 结果待核验）
+
 ## 一句话结论
 
 本文证明：在所有中心圆盘密度为一的平面局部有限点集中，单位密度三角格子对一切"平方距离的非负完全单调函数"型势能（含发散能量）最小化每粒子能量的下极限，从而在不设任何周期性、分离性或微扰假设的前提下，确立了三角格子在平面上的普适最优性（universal optimality）。

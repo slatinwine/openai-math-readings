@@ -13,6 +13,44 @@ pdfname: ""
 
 > 结果族 053：A counterexample to Pixton completeness in Chow　·　学科：Algebraic and complex geometry　·　验证状态：暂无形式化证明，请以社区核验为准
 
+## 入门导读 🐣
+
+稳定曲线的模空间像一本极厚的账本，记录所有"带标记点的曲线家族"的相交数字；账本里只有少数标准科目（重言类），科目之间的恒等式就是记账规则。Pixton 在 2012 年给出了一整套规则，并被猜想是完备的——凡是真实账目中归零的条目，都能用这套规则解释掉。本文翻出一笔账：它确实归零，却怎么套用规则都解释不通，于是"规则手册完备"被推翻。
+
+**关键词卡片**
+
+- 模空间（moduli space）：把同形状曲线各记一格的分类大厅，`@@M@@\overline{\mathcal M}_{g,n}@@` 参数化亏格 `@@M@@g@@`、`@@M@@n@@` 个标记点的稳定曲线。
+- 重言类（tautological class）：由余切类 `@@M@@\psi@@`、`@@M@@\kappa@@` 类与边界阶层生成的"标准科目"。
+- Chow 环（Chow ring）：代数闭链按有理等价打包成的环，账本里的"真实账目"。
+- Pixton 关系（Pixton relations）：Pixton 给出的稳定图公式关系组，曾被猜想完备。
+- 稳定图（stable graph）：记录边界阶层形状的组合图，形式记账的骨架。
+
+**看个具体例子**
+
+取亏格 `@@M@@g=10^{60}@@`、标记点数 `@@M@@n=3\binom{10^{60}}{3}@@`，用 `@@M@@g@@` 种颜色按三元组构造因子相乘再反对称化，得到类 `@@M@@Y@@`。定理：`@@M@@q(Y)=0@@`（在 Chow 环中为零，有理上同调中也为零），但 `@@M@@Y\notin\mathcal P_{g,n}@@`（不在 Pixton 关系张成的子空间中）。图中 `@@M@@Y@@` 落在"真实为零"的大框内、却在"规则解释"的小框外：
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280">
+  <rect x="60" y="50" width="440" height="150" rx="14" fill="none" stroke="#333" stroke-width="2"/>
+  <text x="280" y="42" text-anchor="middle" font-size="13" fill="#333">ker q：在 Chow 环（及有理上同调）中真的为零的关系</text>
+  <rect x="100" y="80" width="210" height="90" rx="10" fill="none" stroke="#06c" stroke-width="2"/>
+  <text x="205" y="118" text-anchor="middle" font-size="13" fill="#06c">Pixton 关系张成的空间 P</text>
+  <text x="205" y="142" text-anchor="middle" font-size="12" fill="#06c">（曾被猜想就是全部）</text>
+  <circle cx="400" cy="125" r="7" fill="#c00"/>
+  <text x="400" y="105" text-anchor="middle" font-size="14" fill="#c00">Y</text>
+  <text x="400" y="158" text-anchor="middle" font-size="12" fill="#c00">账面归零，规则解释不了</text>
+  <text x="280" y="235" text-anchor="middle" font-size="13" fill="#333">参数：亏格 g = 10^60，标记点 n = 3·C(10^60, 3)</text>
+</svg>
+
+</div>
+
+**为什么值得关心**
+
+它同时推翻了 Pixton 完备性猜想的 Chow 形式与有理上同调形式，给 Mumford 相交理论划出精确边界；天文级的 `@@M@@g=10^{60}@@` 只是让组合论证够用，并非最小参数。
+
+> 暂无形式化证明（AI 结果待核验）
+
 ## 一句话结论
 
 在亏格 `@@M@@g=10^{60}@@`、标记点数 `@@M@@n=3\binom{10^{60}}{3}@@` 的稳定曲线模空间上，本文显式构造了一个重言类 (tautological class) `@@M@@Y@@`：它在有理 Chow 环 (Chow ring) 中为零，却不属于 Pixton 原有关系系张成的子空间，从而同时推翻了 Pixton 完备性猜想的 Chow 形式与有理上同调形式。

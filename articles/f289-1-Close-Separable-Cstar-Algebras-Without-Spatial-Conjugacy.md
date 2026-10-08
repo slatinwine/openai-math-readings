@@ -13,6 +13,28 @@ pdfname: ""
 
 > 结果族 289：Strong Kadison–Kastler stability and its spatial boundaries　·　学科：Operator algebras　·　验证状态：暂无形式化证明，请以社区核验为准
 
+## 入门导读 🐣
+
+两栋楼的概略图纸完全相同，外墙也贴合到任意精度，但内部承重结构不同：不存在任何刚性搬移能把一栋原样叠到另一栋上。本文据此推翻了 C*-代数层面的 Kadison–Kastler 共轭猜想。"贴合到任意精度"指两代数单位球的 Hausdorff 距离可小于任何事先给定的 `@@M@@\varepsilon@@`；"刚性搬移"指整个 Hilbert 空间的一次酉旋转。
+
+**关键词卡片**
+
+- C*-代数与 von Neumann 代数：范数闭包是精细图纸，弱闭包是概略图纸
+- 空间共轭（spatial conjugacy）：存在酉算子 `@@M@@u@@` 使 `@@M@@uAu^*=B@@`
+- 核性（nuclearity）：旧有正结果的关键假设，本文构造不带它
+- 张量范数恒等式（tensor norm identity）：本文发明的"辨楼术"，共轭必保它
+- von Neumann 闭包 `@@M@@A''=B''@@`：本文反例中两代数的弱闭包相同
+
+**看个具体例子**
+
+数字版定理：一侧 `@@M@@\bigl\|\sum_i p_iz_i\bigr\|\ge mt@@`，另一侧 `@@M@@\bigl\|\sum_i p_i\otimes z_i\bigr\|\le 2\sqrt m@@`。取 `@@M@@t=0.1,\ m=500@@`：一侧至少 `@@M@@50@@`，另一侧至多 `@@M@@2\sqrt{500}\approx 44.7@@`——恒等式破裂，两代数不可能空间共轭；而与此同时，它们的 Kadison–Kastler 距离却可以压到任意小。这件"辨楼术"检查的是：把同一串元素分别放在原空间与张量空间中求和，范数是否恒相等——共轭必保持它，一旦破裂便无共轭。
+
+**为什么值得关心**
+
+它表明"任意接近"在 C* 世界并不保证共轭，除非补上核性；与姊妹篇合看，"接近即共轭"只在 von Neumann 双边世界成立，边界由此被精确画出。旧例中 Johnson 的构造仍可共轭、Choi–Christensen 的反例依赖不可分性，本文首次在可分且无核性假设下给出致命一击。
+
+> 暂无形式化证明（AI 结果待核验）
+
 ## 一句话结论
 
 推翻可分 `@@M@@C^*@@`-代数形式的 Kadison–Kastler 空间共轭猜想：对任意 `@@M@@\varepsilon>0@@`，构造出共单位元、范数可分、`@@M@@d_{\mathrm{KK}}(A,B)<\varepsilon@@` 且 von Neumann 闭包相同的 `@@M@@C^*@@`-代数对 `@@M@@A,B@@`，但不存在任何酉算子使 `@@M@@uAu^*=B@@`。

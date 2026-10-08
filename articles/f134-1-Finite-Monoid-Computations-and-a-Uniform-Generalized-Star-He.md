@@ -13,6 +13,34 @@ pdfname: ""
 
 > 结果族 134：Generalized star height at most three　·　学科：Theoretical computer science　·　验证状态：暂无形式化证明，请以社区核验为准
 
+## 入门导读 🐣
+
+正则表达式里的星号 `@@M@@(\cdots)^*@@` 表示"重复任意遍"，而且可以套娃：`@@M@@((a)^*)^*@@`。星高就是套娃层数。如果在并、连接、星号之外还允许"取补"（否定），套娃会不会想套多深就套多深？本文给出绝对天花板：任何正则语言 13 层一定够——此前人们连"有没有天花板"都不知道。
+
+**关键词卡片**
+
+- 正则语言（regular language）：能被有限自动机识别的字符串集合。
+- 星高（star height）：表达式里星号的嵌套深度。
+- 广义星高（generalized star height）：允许对全集 `@@M@@\Sigma^*@@` 取补之后的星高。
+- 幺半群（monoid）：带结合乘法与单位元的代数结构，是自动机的"代数画像"。
+- 一致上界（uniform bound）：与字母表、语言、自动机规模都无关的常数上界。
+
+**看个具体例子**
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280"><text x="280" y="26" text-anchor="middle" font-size="15" fill="#333">星高 = 星号的套娃层数；取补不增加层数</text><rect x="100" y="55" width="360" height="140" rx="10" fill="none" stroke="#345" stroke-width="2"/><text x="112" y="77" font-size="13" fill="#345">第 1 层 ( ⋯ )*</text><rect x="145" y="85" width="270" height="90" rx="10" fill="none" stroke="#253" stroke-width="2"/><text x="157" y="107" font-size="13" fill="#253">第 2 层 ( ⋯ )*</text><rect x="190" y="115" width="180" height="44" rx="10" fill="none" stroke="#135" stroke-width="2"/><text x="202" y="142" font-size="13" fill="#135">第 3 层 ( ⋯ )*</text><rect x="255" y="122" width="105" height="30" rx="6" fill="#ffd" stroke="#a83"/><text x="307" y="142" text-anchor="middle" font-size="12" fill="#541">内部表达式</text><text x="280" y="222" text-anchor="middle" font-size="13" fill="#666">取补 ¬ 只是"黑白反转"，不新开一层星号。</text><text x="280" y="252" text-anchor="middle" font-size="13" fill="#666">定理：任何正则语言的广义星高 ≤ 13（12 次分裂构造恰好堆出 13 层）。</text></svg>
+
+</div>
+
+看补运算的威力：语言 `@@M@@a^*b^*@@` 用星号写星高为 1，但它也等于 `@@M@@\neg(\Sigma^*\,b\,\Sigma^*\,a\,\Sigma^*)@@`，其中 `@@M@@\Sigma^*=\neg\varnothing@@` 不花星号——取补有时能把星号完全消掉。定理则保证最坏情形也封顶：`@@M@@h_\Sigma(L)\le 13@@` 对一切正则语言 `@@M@@L@@` 成立，证明思路是把幺半群计算写成 `@@M@@v\mapsto vA+b@@` 的仿射更新，再经十二次分裂构造复原（层数路径 `@@M@@0\to2\to\cdots\to13@@`）。
+
+**为什么值得关心**
+
+广义星高是 1960 年代起的经典公开问题，此前人们甚至找不到一个广义星高大于 1 的具体语言；"存在绝对常数上界"是定性层面的重大进展。
+
+> 暂无形式化证明（AI 结果待核验）
+
 ## 一句话结论
 
 本文证明：任何正则语言（regular language）都可用嵌套星号至多 13 层、且允许取补运算的广义正则表达式写出，星号嵌套层数有一个与字母表和自动机规模无关的绝对上界，从而肯定回答了广义星高问题（generalized star-height problem）的一致有界性版本。

@@ -13,6 +13,53 @@ pdfname: ""
 
 > 结果族 107：Matrix multiplication with exponent at most 9/4　·　学科：Theoretical computer science　·　验证状态：主结果已 Lean 形式化
 
+## 入门导读 🐣
+
+两个 `@@M@@n\times n@@` 矩阵相乘，课本方法老老实实做 `@@M@@n^3@@` 次乘法；1969 年 Strassen 发现 2×2 的小矩阵可以偷一次懒，从此全人类开始挤这个指数，五十年只从 3 挤到 2.37 附近。这篇论文干脆换赛道，丢下统治领域三十年的旧框架，一口气把纪录砍到 2.25。
+
+**关键词卡片**
+
+- 矩阵乘法指数 ω（matrix multiplication exponent）：让 `@@M@@n\times n@@` 乘法只需 `@@M@@O(n^{\omega+\varepsilon})@@` 的最小 `@@M@@\omega@@`；已知 `@@M@@2\le\omega\le3@@`
+- 张量（tensor）：三元多项式形式的"广义矩阵"；矩阵乘法本身就是一张张量
+- 张量秩（tensor rank）：把张量拆成纯三乘积的最少份数，秩小就是乘法次数少
+- 渐近谱理论（asymptotic spectrum）：Strassen 发明的不变量工具，像体温计一样给秩下界打分
+- 退化（degeneration）：对张量三条腿做带参数的线性代换，实现"批发价"式的比较
+
+**看个具体例子**
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280">
+<text x="280" y="30" text-anchor="middle" font-size="14">矩阵乘法指数 ω 的下降阶梯（示意）</text>
+<rect x="50" y="58" width="86" height="8" fill="#345"/>
+<text x="93" y="48" text-anchor="middle" font-size="12">3.0｜课本竖式</text>
+<line x1="136" y1="62" x2="152" y2="98" stroke="#999" stroke-width="2"/>
+<rect x="152" y="96" width="86" height="8" fill="#345"/>
+<text x="195" y="134" text-anchor="middle" font-size="12">2.807｜Strassen 1969</text>
+<line x1="238" y1="100" x2="254" y2="136" stroke="#999" stroke-width="2"/>
+<rect x="254" y="134" width="86" height="8" fill="#345"/>
+<text x="297" y="120" text-anchor="middle" font-size="12">2.376｜CW 1990</text>
+<line x1="340" y1="138" x2="356" y2="174" stroke="#999" stroke-width="2"/>
+<rect x="356" y="172" width="86" height="8" fill="#345"/>
+<text x="399" y="204" text-anchor="middle" font-size="12">2.371｜2026 前纪录</text>
+<line x1="442" y1="176" x2="458" y2="212" stroke="#c33" stroke-width="3"/>
+<rect x="458" y="210" width="86" height="8" fill="#c33"/>
+<text x="501" y="198" text-anchor="middle" font-size="13" fill="#c33" font-weight="bold">2.25｜本文</text>
+<line x1="40" y1="248" x2="524" y2="248" stroke="#567" stroke-width="1.5" stroke-dasharray="6,5"/>
+<polygon points="532,248 520,242 520,254" fill="#567"/>
+<text x="280" y="268" text-anchor="middle" font-size="12" fill="#567">理论下界：ω ≥ 2（输出本身就有 n² 个数）</text>
+</svg>
+
+</div>
+
+先看节省是怎么发生的：按定义算 `@@M@@2\times2@@` 乘法要 8 次乘法，Strassen 精简到 7 次；把大矩阵层层二分、反复套用，指数便从 3 落到 `@@M@@\log_2 7\approx2.807@@`。渐近账单：`@@M@@n=2^{100}@@`（约 `@@M@@10^{30}@@` 规模）时，`@@M@@n^{2.25}@@` 与 `@@M@@n^{2.371}@@` 相差约 `@@M@@10^{12}@@` 倍。已知下界只有 `@@M@@\omega\ge2@@`，2.25 离地板尚有距离，但已是无先例的一跃。
+
+**为什么值得关心**
+
+`@@M@@\omega@@` 同时给行列式、矩阵求逆、解方程组等基本线性代数运算定价。而且这不是修修补补：旧框架三十年的精化已趋饱和，新赛道重新开出一整片可耕耘的地，单次降幅就超过 0.12。
+
+> 已 Lean 形式化
+
 ## 一句话结论
 本文证明复数域上矩阵乘法指数满足 `@@M@@\omega\le 9/4=2.25@@`：对任意 `@@M@@\varepsilon>0@@`，两个 `@@M@@n\times n@@` 复矩阵只需 `@@M@@O_\varepsilon(n^{9/4+\varepsilon})@@` 次算术运算即可相乘。这比此前 2.371177 的世界纪录下降逾 0.12，而且完全绕开了统治该领域三十余年的 Coppersmith–Winograd 框架，是路线级的突破。
 

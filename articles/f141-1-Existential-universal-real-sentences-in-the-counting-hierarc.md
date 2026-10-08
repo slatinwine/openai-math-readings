@@ -13,6 +13,36 @@ pdfname: ""
 
 > 结果族 141：Existential–universal real sentences in the counting hierarchy　·　学科：Theoretical computer science　·　验证状态：暂无形式化证明，请以社区核验为准
 
+## 入门导读 🐣
+
+"存不存在一组实数，让这些方程和不等式同时成立？"——从几何图形搭不搭得出来，到一堆连续条件满不满足，一大类问题都能翻写成这句问话。以前只知道判定它不会比"多项式空间"难；本文把它搬进一栋低得多的楼：第 26 层的"计数层级"就装得下，甚至句子里再套一层"对所有实数都成立"，也仍住在某个固定楼层。
+
+**关键词卡片**
+
+- 实数存在理论（ETR, existential theory of the reals）：判定"存在实数使多项式条件成立"的问题
+- 计数层级（counting hierarchy）：从 P 出发、每层加一次"多数投票"（PP）摞起来的复杂度大厦
+- ∃∀ 句子（existential–universal sentence）：存在 `@@M@@x@@`、对所有 `@@M@@y@@` 都成立的实数命题
+- 算术电路（arithmetic circuit）：用加减乘的门电路紧凑表示多项式的方式
+- `@@M@@\mathrm{C}_{26}@@`：第 26 层计数层级；论文证明 ETR 就住在这一层
+
+**看个具体例子**
+
+复杂度大厦长这样，ETR 的住址被精确定位：
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280"><rect x="40" y="225" width="70" height="28" fill="#f6f8fa" stroke="#333" stroke-width="2"/><text x="75" y="244" font-size="13" fill="#333" text-anchor="middle">P</text><rect x="112" y="197" width="54" height="28" fill="#f6f8fa" stroke="#333" stroke-width="2"/><text x="139" y="216" font-size="13" fill="#333" text-anchor="middle">C₁</text><rect x="168" y="169" width="54" height="28" fill="#f6f8fa" stroke="#333" stroke-width="2"/><text x="195" y="188" font-size="13" fill="#333" text-anchor="middle">C₂</text><rect x="224" y="141" width="54" height="28" fill="#f6f8fa" stroke="#333" stroke-width="2"/><text x="251" y="160" font-size="13" fill="#333" text-anchor="middle">C₃</text><rect x="280" y="113" width="34" height="28" fill="#f6f8fa" stroke="#333" stroke-width="2"/><text x="297" y="132" font-size="13" fill="#333" text-anchor="middle">⋯</text><rect x="316" y="83" width="74" height="28" fill="#c0392b"/><text x="353" y="102" font-size="13" fill="#fff" text-anchor="middle">C₂₆</text><rect x="392" y="55" width="60" height="28" fill="#f6f8fa" stroke="#333" stroke-width="2"/><text x="422" y="74" font-size="13" fill="#333" text-anchor="middle">CH</text><rect x="454" y="27" width="80" height="28" fill="#f6f8fa" stroke="#333" stroke-width="2"/><text x="494" y="46" font-size="12" fill="#333" text-anchor="middle">PSPACE</text><text x="252" y="66" font-size="13" fill="#c0392b">ETR 就住在这一层</text><line x1="340" y1="70" x2="353" y2="83" stroke="#c0392b" stroke-width="2"/><text x="265" y="272" font-size="13" fill="#333" text-anchor="middle">每高一层 = 允许多一次"多数投票"；整栋楼都在 PSPACE 之内</text></svg>
+
+</div>
+
+一个具体句子：`@@M@@\exists x\,\forall y:\ xy^2+1>0@@`——取 `@@M@@x=0@@` 即为真。主定理保证：无论多项式由多大的算术电路给出、变量多少、次数多高，判定这类 `@@M@@\exists\forall@@` 句子的真伪都落在某个固定楼层 `@@M@@\mathrm{C}_j@@`；纯存在型更精确地落在 `@@M@@\mathrm{C}_{26}\subseteq\mathrm{PSPACE}@@`，比 1988 年的 PSPACE 上界前进了一大截。
+
+**为什么值得关心**
+
+实数可行性问题（`@@M@@\exists\mathbb R@@`）是连续数学与计算复杂性的桥头堡；把它压进计数层级，意味着"实数精确推理"比原先想象的便宜得多。
+
+> 暂无形式化证明（AI 结果待核验）
+
 ## 一句话结论
 
 证明实数存在理论（ETR）位于计数层级（counting hierarchy）的固定层：`@@M@@\exists x\,\forall y@@` 型实数句子的真假可在一个与输入长度、变量个数、次数、系数大小都无关的固定计数层内判定，即使多项式由算术电路给出；对纯存在片段还给出显式界 `@@M@@\mathrm{ETR}\in\mathrm{C}_{26}@@`，大幅细化了经典的 PSPACE 上界。

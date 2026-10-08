@@ -13,6 +13,33 @@ pdfname: ""
 
 > 结果族 346：Sharp singular-set bounds for stationary integral varifolds　·　学科：Differential geometry　·　验证状态：暂无形式化证明，请以社区核验为准
 
+## 入门导读 🐣
+
+把铁丝圈浸入肥皂水再拎起，膜会张成面积尽量小的形状，大部分平整光滑，接缝处却可能皱起或交叉。数学家把这种膜推广成"varifold"，允许叠加与奇点。本文证明：任何处于平衡的膜，其"坏点"集合必定很细——膜是 m 维，坏点至多 m−1 维。
+
+**关键词卡片**
+
+- varifold（integral varifold）：把曲面看作带整数重数的测度，允许自交、叠层与奇点。
+- 平稳（stationary）：面积的一阶变分为零——膜已滑到"不想再动"的平衡位置。
+- 奇异集（singular set）：局部不是"光滑极小曲面 × 正整数倍"的坏点全体。
+- Hausdorff 维数（Hausdorff dimension）：衡量集合粗细的维度标尺，允许取分数。
+
+**看个具体例子**
+
+空间中两张斜交平面：各自都是极小曲面，并起来（各带重数 1）仍是平稳 varifold；奇异集恰是那条交线。膜 2 维、交线 1 维，正好卡在定理的界 `@@M@@m-1@@` 上——两张不同的 `@@M@@m@@` 维平面最多交出 `@@M@@m-1@@` 维，所以这个界无法再改进。若是三维膜（`@@M@@m=3@@`），定理说坏点至多铺成一张二维曲面；无论膜的层数多怪、自交多乱，都不会更粗。
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280"><rect x="120" y="66" width="320" height="118" fill="none" stroke="#2980b9" stroke-width="2" transform="rotate(10 280 125)"/><rect x="120" y="66" width="320" height="118" fill="none" stroke="#27ae60" stroke-width="2" transform="rotate(-10 280 125)"/><line x1="280" y1="30" x2="280" y2="236" stroke="#c0392b" stroke-width="3"/><text x="22" y="32" font-size="13" fill="#2980b9">平面 A（极小曲面）</text><text x="396" y="30" font-size="13" fill="#27ae60">平面 B（极小曲面）</text><text x="24" y="150" font-size="13" fill="#333">膜本身：2 维</text><text x="296" y="260" font-size="13" fill="#c0392b">交线＝奇异集（1 维＝m−1）</text></svg>
+
+</div>
+
+**为什么值得关心**
+
+这解决了 Brena–Decio–De Lellis 2025 年记录的欧氏奇异集猜想；此前所有相关结果都要附加极小性、稳定性等条件，本文一个都不需要。经典方法早已处理好不含平面切锥的坏点，真正的难关是多层平面型的奇点，本文为此建立了一整套全新的拟合与频率估计。
+
+> 暂无形式化证明（AI 结果待核验）
+
 ## 一句话结论
 
 本文证明：任意正维数与正余维数的平稳积分 `@@M@@m@@`-varifold，其奇异集 (singular set) 的 Hausdorff 维数 (Hausdorff dimension) 至多 `@@M@@m-1@@`，且该界无法改进——这解决了 Brena–Decio–De Lellis 记录的欧氏奇异集猜想。

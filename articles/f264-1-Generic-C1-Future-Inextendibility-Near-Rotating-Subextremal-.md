@@ -13,6 +13,57 @@ pdfname: ""
 
 > 结果族 264：Strong cosmic censorship near two-ended Kerr data　·　学科：Mathematical physics　·　验证状态：暂无形式化证明，请以社区核验为准
 
+## 入门导读 🐣
+
+在完全平整的地面上，让一支箭头绕着闭合路线"尽量不转地"走一圈，它会原样回到起点。足够平滑的时空也守这条礼节：绕小圈回来的箭头，只允许转过与圈的大小成正比的一点点。这篇论文证明：对旋转黑洞做一般的微小扰动，总能造出让箭头"转过头"的时空涟漪——于是那种平滑延伸，对典型情形不可能。
+
+**关键词卡片**
+
+- C¹ 延拓（C¹ extension）：度规及其一阶导数都连续的延伸——平滑到"能谈平行移动"的最低档。
+- 和乐（holonomy）：向量沿闭合回路平行移动一周后的旋转量，相当于曲率的"累积账单"。
+- 平行移动（parallel transport）：尽量不额外转动地沿曲线搬运一支箭头。
+- 稠密 Gδ 集（dense Gδ set）：可数个开稠密集的交，代表拓扑意义上的"典型情形"。
+- 强宇宙监督（strong cosmic censorship）：一般初始数据的时空未来应"到此为止"，不可延伸。
+
+**看个具体例子**
+
+可延拓时空必须付的账单：`@@M@@\|P_\ell-\mathrm{Id}\|\le B\,L(\ell)@@`——绕回路 `@@M@@\ell@@` 一周，箭头的旋转量不超过常数乘回路长度。论文构造的微扰波包却在观测区撑出超过 `@@M@@A_T=e^{-7\kappa T/8}@@` 的曲率分量，而检验机制至多解释 `@@M@@o(A_T)@@`，两边对不上账。
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280">
+  <text x="30" y="28" font-size="14">若时空能平滑（C¹）延伸</text>
+  <rect x="55" y="80" width="150" height="105" fill="none" stroke="#333" stroke-width="1.6"/>
+  <line x1="65" y1="132" x2="105" y2="132" stroke="#1a5c9e" stroke-width="2.5"/>
+  <polygon points="105,127 116,132 105,137" fill="#1a5c9e"/>
+  <g transform="rotate(10 160 132)">
+    <line x1="140" y1="132" x2="180" y2="132" stroke="#1a5c9e" stroke-width="2.5" stroke-dasharray="5 3"/>
+    <polygon points="180,127 191,132 180,137" fill="none" stroke="#1a5c9e" stroke-width="1.5"/>
+  </g>
+  <text x="42" y="215" font-size="12">出发朝右；绕行一周后只转过</text>
+  <text x="42" y="233" font-size="12">与回路长度成正比的小角度</text>
+  <text x="310" y="28" font-size="14">叠加微扰波包之后</text>
+  <path d="M 305 55 q 8 -16 16 0 q 8 16 16 0 q 8 -16 16 0 q 8 16 16 0 q 8 -16 16 0" fill="none" stroke="#b3442e" stroke-width="1.6"/>
+  <path d="M 425 55 q 8 -16 16 0 q 8 16 16 0 q 8 -16 16 0 q 8 16 16 0 q 8 -16 16 0" fill="none" stroke="#b3442e" stroke-width="1.6"/>
+  <rect x="340" y="95" width="150" height="105" fill="none" stroke="#333" stroke-width="1.6"/>
+  <line x1="350" y1="148" x2="390" y2="148" stroke="#1a5c9e" stroke-width="2.5"/>
+  <polygon points="390,143 401,148 390,153" fill="#1a5c9e"/>
+  <g transform="rotate(45 445 148)">
+    <line x1="425" y1="148" x2="465" y2="148" stroke="#b3442e" stroke-width="2.5"/>
+    <polygon points="465,143 476,148 465,153" fill="#b3442e"/>
+  </g>
+  <text x="322" y="215" font-size="12">箭头明显偏转，超出 C¹ 允许的</text>
+  <text x="322" y="233" font-size="12">线性界限 → 平滑延伸不可能</text>
+</svg>
+
+</div>
+
+**为什么值得关心**
+
+不假设任何对称性、只要求初始数据的第十阶半范数小、环境延伸甚至可以不是真空解——这一档的强宇宙监督头一次以如此一般的条件被拿下；同族姊妹篇再进一步，排除更弱的"连续度量＋平方可积联络"延拓。
+
+> 暂无形式化证明（AI 结果待核验）
+
 ## 一句话结论
 对每个固定的旋转亚极端 Kerr 黑洞（`@@M@@M>0@@`、`@@M@@0<\mathfrak a<M@@`），在其完备双端真空初值的一个加权光滑邻域中，存在稠密 `@@M@@G_\delta@@` 集，其中每个初值的极大整体双曲发展都没有未来 `@@M@@C^1@@` 延拓——环境延拓甚至可以不是真空解。
 

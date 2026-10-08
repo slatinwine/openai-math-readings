@@ -13,6 +13,54 @@ pdfname: ""
 
 > 结果族 315：The four-dimensional Singer conjecture　·　学科：Topology　·　验证状态：暂无形式化证明，请以社区核验为准
 
+## 入门导读 🐣
+
+闭流形的万有覆盖常常是一座无限大的建筑，普通同调没法直接"数房间"。L²-Betti 数的窍门是按人头摊：把同调平均分给覆盖里的每个"楼层"，看人均份额。Singer 猜想说：只要原流形自身处处没有高维洞（非球面），这些人均值就只应集中在中间一层。本文证明了四维情形。
+
+**关键词卡片**
+
+- 非球面流形（aspherical manifold）：万有覆盖可缩的流形——自身除了基本群外再无别的"洞"。
+- 万有覆盖（universal cover）：把所有绕圈路径摊开后得到的最大覆盖空间。
+- L²-Betti 数（L²-Betti numbers）：无限覆盖上的"人均同调"，用平方可和的链来定义。
+- 积分 Poincaré 复形（integral Poincaré complex）：满足庞加莱对偶的有限复形，是流形的纯同伦替身。
+- 欧拉示性数（Euler characteristic）：各维洞数的加减总和；定理顺带推出它非负。
+
+**看个具体例子**
+
+四维对象的 L²-Betti 数共五格（p=0,…,4）。定理说除中间格 p=2 外全部为零，中间格恰等于欧拉示性数且非负。算两个例子：Σ₂×Σ₂（两个亏格 2 曲面之积，非球面）有 `@@M@@\chi=(2-2\cdot2)^2=4@@`，于是人均值 `@@M@@b_2^{(2)}=4@@`、其余全空；四维环面 `@@M@@T^4@@` 的 χ=0，五格全空。任何 χ<0 的非球面四维流形蓝图被直接否决：
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280">
+<text x="280" y="34" text-anchor="middle" font-size="18" fill="#222">五格里只有中间一格可能非零</text>
+<line x1="70" y1="230" x2="545" y2="230" stroke="#222" stroke-width="2"/>
+<line x1="70" y1="230" x2="70" y2="70" stroke="#222" stroke-width="2"/>
+<rect x="110" y="224" width="56" height="6" fill="#fff" stroke="#888"/>
+<rect x="200" y="224" width="56" height="6" fill="#fff" stroke="#888"/>
+<rect x="290" y="90" width="56" height="140" fill="#cde3f5" stroke="#222" stroke-width="2"/>
+<rect x="380" y="224" width="56" height="6" fill="#fff" stroke="#888"/>
+<rect x="470" y="224" width="56" height="6" fill="#fff" stroke="#888"/>
+<text x="138" y="214" text-anchor="middle" font-size="15" fill="#444">0</text>
+<text x="228" y="214" text-anchor="middle" font-size="15" fill="#444">0</text>
+<text x="318" y="80" text-anchor="middle" font-size="15" fill="#222">b₂⁽²⁾ = χ ≥ 0</text>
+<text x="408" y="214" text-anchor="middle" font-size="15" fill="#444">0</text>
+<text x="498" y="214" text-anchor="middle" font-size="15" fill="#444">0</text>
+<text x="138" y="256" text-anchor="middle" font-size="15" fill="#222">p=0</text>
+<text x="228" y="256" text-anchor="middle" font-size="15" fill="#222">p=1</text>
+<text x="318" y="256" text-anchor="middle" font-size="15" fill="#222">p=2</text>
+<text x="408" y="256" text-anchor="middle" font-size="15" fill="#222">p=3</text>
+<text x="498" y="256" text-anchor="middle" font-size="15" fill="#222">p=4</text>
+<text x="86" y="150" font-size="14" fill="#666">数值</text>
+</svg>
+
+</div>
+
+**为什么值得关心**
+
+四维 Singer 猜想首次在完全一般性下成立：不需要光滑结构、三角剖分，甚至不需要可定向；附赠一条拓扑禁令——非球面四维流形必有 χ≥0。
+
+> 暂无形式化证明（AI 结果待核验）
+
 ## 一句话结论
 
 证明了四维 Singer 猜想：闭连通非球面（aspherical）拓扑四维流形的万有覆盖，其 `@@M@@L^2@@`-Betti 数（`@@M@@L^2@@`-Betti numbers）只在中间维数 2 可能非零；同一消没结论对形式维数四的有限积分 Poincaré 复形也成立，从而迫使欧拉示性数 `@@M@@\chi\ge0@@`。

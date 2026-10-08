@@ -13,6 +13,52 @@ pdfname: ""
 
 > 结果族 192：Boolean functions violate the square-root degree bound by arbitrary factors　·　学科：Combinatorics　·　验证状态：暂无形式化证明，请以社区核验为准
 
+## 入门导读 🐣
+
+n 位评委各投 +1 或 −1 票，规则 f 把选票汇总成"通过/否决"。每位评委的话语权可以量化成一个数（线性 Fourier 系数）。曾有人猜想：如果规则在代数上很简单（能用低次多项式写出），全体评委带方向的话语权之和至多是"次数的平方根"再乘个常数。本文构造出把任何常数倍都远远甩开的规则。若猜想成立，规则的线性可预测性就与其代数复杂度直接绑定，对电路下界与机器学习理论都有意义——如今这条锁链被证明根本不存在。
+
+**关键词卡片**
+
+- 布尔函数（Boolean function）：把 `@@M@@n@@` 个 `@@M@@\pm1@@` 输入映成 `@@M@@\pm1@@` 输出的规则。
+- Fourier 系数 `@@M@@\widehat f(\{i\})@@`：第 `@@M@@i@@` 位输入与输出的平均相关度。
+- 度 `@@M@@\deg(f)@@`：写出 `@@M@@f@@` 的多重线性多项式的次数，衡量规则的代数复杂度。
+- 放大（amplification）：复制独立样本、送入固定规则再取符号，让优势逐级扩大的技术。
+
+**看个具体例子**
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280">
+<text x="280" y="40" text-anchor="middle" font-size="14">放大流水线：复制 → 报道规则 → 取符号</text>
+<rect x="50" y="100" width="120" height="60" fill="none" stroke="#222" stroke-width="1.5"/>
+<text x="110" y="125" text-anchor="middle" font-size="13">第 1 步：比值</text>
+<text x="110" y="146" text-anchor="middle" font-size="13">v/D = 1</text>
+<rect x="225" y="100" width="120" height="60" fill="none" stroke="#222" stroke-width="1.5"/>
+<text x="285" y="125" text-anchor="middle" font-size="13">第 2 步：比值</text>
+<text x="285" y="146" text-anchor="middle" font-size="13">×(1+η/d)</text>
+<rect x="400" y="100" width="120" height="60" fill="none" stroke="#222" stroke-width="1.5"/>
+<text x="460" y="125" text-anchor="middle" font-size="13">第 k 步：比值</text>
+<text x="460" y="146" text-anchor="middle" font-size="13">&gt; 4C²</text>
+<line x1="170" y1="130" x2="216" y2="130" stroke="#222" stroke-width="2"/>
+<polygon points="216,125 216,135 228,130" fill="#222"/>
+<text x="197" y="120" text-anchor="middle" font-size="12">放大</text>
+<line x1="345" y1="130" x2="391" y2="130" stroke="#222" stroke-width="2"/>
+<polygon points="391,125 391,135 403,130" fill="#222"/>
+<text x="372" y="120" text-anchor="middle" font-size="12">放大</text>
+<text x="280" y="205" text-anchor="middle" font-size="13">有限步后，v/D 超过任意预设值</text>
+<text x="280" y="245" text-anchor="middle" font-size="13">数字版定理：取 C = 10⁶，存在 f 使 Σ f̂({i}) &gt; 10⁶·√deg(f)</text>
+</svg>
+
+</div>
+
+数字版定理：任取 `@@M@@C=10^6@@`，都存在布尔函数 `@@M@@f@@` 使 `@@M@@\sum_i\widehat f(\{i\})>10^6\sqrt{\deg(f)}@@`。构造像滚雪球：从比值 `@@M@@v/D=1@@` 出发，每步把多份独立复制送进固定报道规则再取符号，比值至少乘 `@@M@@1+\eta/d@@`，有限步后超过 `@@M@@4C^2@@`。
+
+**为什么值得关心**
+
+它推翻了 Gopalan–Servedio 的平方根度猜想，连"差个常数倍"的退让版本也不能幸存——布尔函数的线性可预测性与代数复杂度之间，不存在简单的平方根锁链。
+
+> 暂无形式化证明（AI 结果待核验）
+
 ## 一句话结论
 
 本文推翻了 Gopalan–Servedio 的平方根度猜想，且连常数倍都不留：对任意 `@@M@@C>0@@` 都存在布尔函数 `@@M@@f@@` 使 `@@M@@\sum_i\widehat f(\{i\})>C\sqrt{\deg(f)}@@`，即线性 Fourier 系数之和与多项式度之间不存在任何常数倍的平方根约束。

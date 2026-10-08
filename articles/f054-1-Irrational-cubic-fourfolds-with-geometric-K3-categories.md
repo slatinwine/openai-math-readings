@@ -13,6 +13,55 @@ pdfname: ""
 
 > 结果族 054：Irrational cubic fourfolds with Hodge-theoretic and categorical K3 associations　·　学科：Algebraic and complex geometry　·　验证状态：暂无形式化证明，请以社区核验为准
 
+## 入门导读 🐣
+
+圆和球面可以整体"打印"：用一套有理函数坐标把平面参数化地贴满曲面，这叫有理。三次四重态——五维射影空间里由一个三次多项式切出的四维图形——大多没有这种参数化，但哪些没有一直没有判据。流行的一条猜想说：只要它"体内藏着一个 K3 曲面的影子"（导出范畴意义上的分身），就该有理。本文证明：影子俱全，照样不可参数化。
+
+**关键词卡片**
+
+- 三次四重态（cubic fourfold）：`@@M@@\mathbb P^5@@` 中由三次多项式定义的四维超曲面。
+- 有理（rational）：函数域是纯超越扩张，等价于可用有理函数整体参数化。
+- K3 曲面（K3 surface）：复二维、极对称的一类曲面，导出范畴理论的"基本粒子"。
+- Kuznetsov 分量（Kuznetsov component）：三次四重态导出范畴里的特殊子范畴，表现得像 K3 的范畴。
+- 导出范畴（derived category）：把凝聚层做成的三角范畴，追踪空间的"范畴影子"。
+
+**看个具体例子**
+
+对每个充分大的可容许判别式 `@@M@@d@@`（如 `@@M@@d=2\cdot 7^j@@` 这列无穷多个），Hassett 除子中"超一般"（排除可数多个特殊子集后的一般成员）的三次四重态 `@@M@@X@@` 满足：`@@M@@\mathcal{K}u(X)\simeq D^b(\mathrm{Coh}\,S)@@`——影子是货真价实的射影 K3 曲面 `@@M@@S@@` 的普通导出范畴，同时还伴随无挠极化 K3 曲面——但 `@@M@@X@@` 非有理，参数化不存在。
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280">
+  <ellipse cx="150" cy="100" rx="105" ry="60" fill="none" stroke="#333" stroke-width="2"/>
+  <text x="150" y="95" text-anchor="middle" font-size="14" fill="#333">三次四重态 X ⊂ P⁵</text>
+  <text x="150" y="118" text-anchor="middle" font-size="12" fill="#666">判别式 d 的超一般成员</text>
+  <rect x="400" y="55" width="130" height="90" fill="none" stroke="#333" stroke-width="2"/>
+  <line x1="433" y1="55" x2="433" y2="145" stroke="#bbb" stroke-width="1"/>
+  <line x1="466" y1="55" x2="466" y2="145" stroke="#bbb" stroke-width="1"/>
+  <line x1="499" y1="55" x2="499" y2="145" stroke="#bbb" stroke-width="1"/>
+  <line x1="400" y1="85" x2="530" y2="85" stroke="#bbb" stroke-width="1"/>
+  <line x1="400" y1="115" x2="530" y2="115" stroke="#bbb" stroke-width="1"/>
+  <text x="465" y="42" text-anchor="middle" font-size="13" fill="#333">P⁴（有理坐标世界）</text>
+  <line x1="260" y1="95" x2="392" y2="95" stroke="#c00" stroke-width="2"/>
+  <polygon points="398,95 386,89 386,101" fill="#c00"/>
+  <line x1="300" y1="80" x2="345" y2="112" stroke="#c00" stroke-width="2"/>
+  <line x1="345" y1="80" x2="300" y2="112" stroke="#c00" stroke-width="2"/>
+  <text x="325" y="130" text-anchor="middle" font-size="12" fill="#c00">双有理参数化：不存在</text>
+  <ellipse cx="150" cy="215" rx="70" ry="35" fill="none" stroke="#06c" stroke-width="2"/>
+  <text x="150" y="220" text-anchor="middle" font-size="13" fill="#06c">K3 曲面 S</text>
+  <line x1="150" y1="178" x2="150" y2="163" stroke="#06c" stroke-width="1.5" stroke-dasharray="5 4"/>
+  <text x="330" y="185" text-anchor="middle" font-size="12" fill="#06c">导出范畴相同，还伴随 K3——影子俱全</text>
+  <text x="330" y="240" text-anchor="middle" font-size="13" fill="#333">结论：影子俱全，仍然非有理</text>
+</svg>
+
+</div>
+
+**为什么值得关心**
+
+一个反例同时推翻 Kuznetsov 有理性猜想和"伴随 K3 ⇒ 有理"的预言：范畴影子携带的信息不足以判定有理性，这条寻找判据的路被证明走不通。
+
+> 暂无形式化证明（AI 结果待核验）
+
 ## 一句话结论
 
 论文证明：对每个充分大的可容许 Hassett 判别式 `@@M@@d@@`，判别式为 `@@M@@d@@` 的超一般三次四重态 `@@M@@X@@` 虽同时拥有"几何 K3 范畴"`@@M@@\mathcal{K}u(X)\simeq D^b(\operatorname{Coh}S)@@` 与 Hodge 理论意义的伴随 K3 曲面，却是非有理的，从而推翻 Kuznetsov 有理性猜想及"伴随 K3 ⇒ 有理"的预言。

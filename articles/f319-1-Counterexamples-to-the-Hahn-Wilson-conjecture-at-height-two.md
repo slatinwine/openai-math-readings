@@ -13,6 +13,44 @@ pdfname: ""
 
 > 结果族 319：Counterexamples to finite generation at chromatic height two　·　学科：Topology　·　验证状态：暂无形式化证明，请以社区核验为准
 
+## 入门导读 🐣
+
+俱乐部有条入会捷径：只要通过一门"有限性考试"，就自动获得会员资格——Hahn–Wilson 猜想就是这样一条承诺。本文在"高度二"这层楼造出一个考试全过、却无论如何进不了门的考生，捷径被证明是假的。
+
+**关键词卡片**
+
+- fp-型（fp-type）：谱的有限性"考试成绩"，不超过 n 意味着同调在 Steenrod 代数上可以有限呈现。
+- 截断 Brown–Peterson 谱（truncated Brown–Peterson spectrum）：每一色层的"标准发电机"`@@M@@\mathrm{BP}\langle n\rangle@@`。
+- 厚子范畴（thick subcategory）：从发电机出发，经求和、移位、上纤维、收缩有限步能造出的一切对象。
+- 望远镜猜想（telescope conjecture）：比较两种局部化的著名难题；本文的反例反而同时满足这两种比较。
+
+**看个具体例子**
+
+对每个充分大的素数 p，构造出的谱 X 有一份"体检报告"：
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280">
+<text x="280" y="32" font-size="15" text-anchor="middle" font-weight="bold">反例 X 的体检报告（大素数 p）</text>
+<rect x="55" y="55" width="450" height="185" fill="none" stroke="black" stroke-width="2"/>
+<text x="85" y="100" font-size="15" fill="green">✓</text>
+<text x="115" y="100" font-size="14">fp-型恰为 2（考试通过，但不是 1）</text>
+<text x="85" y="145" font-size="15" fill="green">✓</text>
+<text x="115" y="145" font-size="14">两种望远镜式局部化比较都成立</text>
+<text x="85" y="190" font-size="15" fill="red">✗</text>
+<text x="115" y="190" font-size="14">不属于 Thick(BP⟨2⟩)：无法由发电机有限步造出</text>
+</svg>
+
+</div>
+
+猜想说"fp-型 ≤ 2"与"会员资格"是一回事，第三行把它击碎：考试通过了，门却进不去。
+
+**为什么值得关心**
+
+高度 0 和 1 时猜想成立，高度 2 首次崩塌；它还示范了"局部表现良好"不保证"整体可有限生成"。
+
+> 暂无形式化证明（AI 结果待核验）
+
 ## 一句话结论
 
 对每个充分大的素数 `@@M@@p@@`，本文构造出 fp-型恰为 2 的连通 `@@M@@p@@`-完备谱 `@@M@@X@@`，它不能由 `@@M@@\mathrm{BP}\langle2\rangle_p^\wedge@@` 经有限次求和、移位、上纤维与收缩得到，从而在色高度 2 否定 Hahn–Wilson 猜想；同一个 `@@M@@X@@` 却仍满足两种望远镜式局部化比较。

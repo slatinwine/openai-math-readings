@@ -13,6 +13,45 @@ pdfname: ""
 
 > 结果族 263：The ionization and generalized ionization conjectures　·　学科：Mathematical physics　·　验证状态：暂无形式化证明，请以社区核验为准
 
+## 入门导读 🐣
+
+分子像一家餐厅：核电荷 Z 是 Z 个正式座位。电子顾客再多，也顶多再塞有限几张"站票"——每家分店 C 张，C 是对一切分子通用的常数；超员的电子根本待不住，会自动散伙。更妙的是：中性原子不管核电荷多大，"最外围还剩半个电子"的半径和首次电离能都被普适常数上下夹住——大原子不会随 Z 无限发福。
+
+**关键词卡片**
+
+- 严格束缚（binds strictly）：再添一个电子能量真的下降（`@@M@@E_n\lt E_{n-1}@@`）。
+- 电离能（ionization energy）：拿走一个电子要付的能量，衡量抓电子的力气。
+- 托马斯–费米理论（Thomas–Fermi theory）：大原子的近似密度模型，本文常数与其吻合。
+- 屏蔽（screening）：内层电子挡住核吸引，外层只感到剩余的有效电荷。
+- 普适常数（universal constant）：与分子大小、形状、核位置统统无关的界。
+
+**看个具体例子**
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280">
+  <text x="88" y="32" font-size="14">核电荷差 100 倍，"半电子外半径"却同样被夹在 [c, C]：</text>
+  <circle cx="150" cy="130" r="85" fill="none" stroke="#369" stroke-width="2" stroke-dasharray="6 4"/>
+  <circle cx="150" cy="130" r="6" fill="#333"/>
+  <circle cx="120" cy="105" r="3" fill="#e66"/><circle cx="175" cy="95" r="3" fill="#e66"/><circle cx="195" cy="150" r="3" fill="#e66"/><circle cx="130" cy="170" r="3" fill="#e66"/><circle cx="160" cy="140" r="3" fill="#e66"/>
+  <text x="128" y="238" font-size="14">Z = 10</text>
+  <circle cx="415" cy="130" r="85" fill="none" stroke="#c33" stroke-width="2" stroke-dasharray="6 4"/>
+  <circle cx="415" cy="130" r="10" fill="#333"/>
+  <circle cx="380" cy="100" r="3" fill="#e66"/><circle cx="440" cy="88" r="3" fill="#e66"/><circle cx="468" cy="120" r="3" fill="#e66"/><circle cx="460" cy="165" r="3" fill="#e66"/><circle cx="395" cy="150" r="3" fill="#e66"/><circle cx="415" cy="115" r="3" fill="#e66"/><circle cx="372" cy="135" r="3" fill="#e66"/><circle cx="435" cy="145" r="3" fill="#e66"/><circle cx="450" cy="100" r="3" fill="#e66"/><circle cx="405" cy="95" r="3" fill="#e66"/>
+  <text x="388" y="238" font-size="14">Z = 1000</text>
+  <text x="55" y="264" font-size="14">分子版：E_n &lt; E_(n−1) ⇒ n ≤ Z + CM；超员 ⇒ E_n = E_(n−1)（多者不留）</text>
+</svg>
+
+</div>
+
+数字外壳：`@@M@@E_n\lt E_{n-1}\Rightarrow n\le Z+CM@@`；原子侧 `@@M@@c\le R(\Psi_Z)\le C@@`、`@@M@@c\le I_1(Z)\le C@@`——常数不分贫富、对一切分子与原子一律适用。
+
+**为什么值得关心**
+
+Simon 2000 年问题集中"最大束缚电子数与 Z 之差是否有界"及分子版电离猜想的首次完整解答，也是同族另两篇的证明地基。
+
+> 暂无形式化证明（AI 结果待核验）
+
 ## 一句话结论
 
 本文证明：`@@M@@M@@` 个固定原子核、总核电荷 `@@M@@Z@@` 的分子最多严格束缚 `@@M@@Z+CM@@` 个电子（`@@M@@C@@` 为普适常数），且中性原子的首电离能与"半电子外半径"都被正常数上下夹住。这是完整库仑模型下电离猜想的首次完整解答，也是本族另两篇的证明地基。

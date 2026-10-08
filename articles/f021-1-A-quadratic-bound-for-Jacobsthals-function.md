@@ -13,6 +13,63 @@ pdfname: ""
 
 > 结果族 021：A quadratic bound for Jacobsthal's function　·　学科：Number theory　·　验证状态：主结果已 Lean 形式化
 
+## 入门导读 🐣
+
+把 1, 2, 3, … 排成一排座位，再圈出 n 的全部素因子当"禁忌名单"：座位号被名单里任何一个素数整除，就得站起来。问：最多能连续空多少个座位？这篇论文证明：名单有 k 个素数时，空位连排不超过约 k²/(log log k)² —— Erdős 1962 年记录的 Jacobsthal 问题（是否不超过 k² 的常数倍）得到肯定回答。
+
+**关键词卡片**
+
+- Jacobsthal 函数 j(n)：使"任意连续 m 个整数中必有与 n 互素者"成立的最小 m。
+- 互素（coprime）：最大公因数为 1，即不被禁忌名单里的任何素数整除。
+- 素因子个数（number of prime divisors）：名单长度，记 ω(n)；h(k) 是长度至多 k 的所有名单下最坏的空位连排加一。
+- 筛法（sieve theory）：系统筛掉被各素数整除的位置、清点幸存者的核心技术。
+- 中国剩余定理（Chinese remainder theorem）：让各素数的"禁座安排"互不干扰、自由组合。
+
+**看个具体例子**
+
+取 n=30（名单 2, 3, 5）：座位 24–28 连续五个全被挡（24、26、28 是偶数，25 被 5 整除，27 被 3 整除），直到 29 才出现与 30 互素的幸存者。任意连续 6 个整数必含幸存者，所以 j(30)=6。
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 250">
+  <text x="280" y="28" text-anchor="middle" font-size="16" fill="#333">n = 30（素因子 2, 3, 5）：谁与 30 互素？</text>
+  <rect x="55" y="55" width="34" height="34" rx="6" fill="#f2c" stroke="#a66"/>
+  <rect x="98" y="55" width="34" height="34" rx="6" fill="#f2c" stroke="#a66"/>
+  <rect x="141" y="55" width="34" height="34" rx="6" fill="#f2c" stroke="#a66"/>
+  <rect x="184" y="55" width="34" height="34" rx="6" fill="#bfe" stroke="#273" stroke-width="2"/>
+  <rect x="227" y="55" width="34" height="34" rx="6" fill="#f2c" stroke="#a66"/>
+  <rect x="270" y="55" width="34" height="34" rx="6" fill="#f2c" stroke="#a66"/>
+  <rect x="313" y="55" width="34" height="34" rx="6" fill="#f2c" stroke="#a66"/>
+  <rect x="356" y="55" width="34" height="34" rx="6" fill="#f2c" stroke="#a66"/>
+  <rect x="399" y="55" width="34" height="34" rx="6" fill="#f2c" stroke="#a66"/>
+  <rect x="442" y="55" width="34" height="34" rx="6" fill="#bfe" stroke="#273" stroke-width="2"/>
+  <rect x="485" y="55" width="34" height="34" rx="6" fill="#f2c" stroke="#a66"/>
+  <text x="72" y="77" text-anchor="middle" font-size="13" fill="#333">20</text>
+  <text x="115" y="77" text-anchor="middle" font-size="13" fill="#333">21</text>
+  <text x="158" y="77" text-anchor="middle" font-size="13" fill="#333">22</text>
+  <text x="201" y="77" text-anchor="middle" font-size="13" fill="#273">23</text>
+  <text x="244" y="77" text-anchor="middle" font-size="13" fill="#333">24</text>
+  <text x="287" y="77" text-anchor="middle" font-size="13" fill="#333">25</text>
+  <text x="330" y="77" text-anchor="middle" font-size="13" fill="#333">26</text>
+  <text x="373" y="77" text-anchor="middle" font-size="13" fill="#333">27</text>
+  <text x="416" y="77" text-anchor="middle" font-size="13" fill="#333">28</text>
+  <text x="459" y="77" text-anchor="middle" font-size="13" fill="#273">29</text>
+  <text x="502" y="77" text-anchor="middle" font-size="13" fill="#333">30</text>
+  <path d="M227 97 L227 110 L433 110 L433 97" fill="none" stroke="#c33" stroke-width="1.5"/>
+  <text x="330" y="128" text-anchor="middle" font-size="13" fill="#c33">连续 5 个被挡：23 与 29 是仅有的幸存者</text>
+  <text x="280" y="165" text-anchor="middle" font-size="13" fill="#333">j(30) = 6：任取连续 6 个数，必含与 30 互素者。</text>
+  <text x="280" y="195" text-anchor="middle" font-size="13" fill="#333">定理（大 k 尺度）：h(k) ≤ C·k² / (log log 3k)²，</text>
+  <text x="280" y="218" text-anchor="middle" font-size="13" fill="#333">比 Iwaniec 1978 年的 k²·log²k 首次掐掉全部对数损失。</text>
+</svg>
+
+</div>
+
+**为什么值得关心**
+
+它与素数间隙、区间覆盖、筛法核心难题同源；悬置近半世纪的"去对数"一步终于完成，且主定理与关键引理均已通过 Lean 形式化，属本系列验证等级最高的成果之一。
+
+> 已 Lean 形式化
+
 ## 一句话结论
 
 对任何至多有 `@@M@@k@@` 个不同素因子的 `@@M@@n@@`，长度 `@@M@@\ll k^2/(\log\log(3k))^2@@` 的任意连续整数区间必含与 `@@M@@n@@` 互素的数。这肯定了 Jacobsthal 的二次上界问题，并在 Iwaniec 的 `@@M@@k^2\log^2 k@@` 之上首次去掉全部对数损失。

@@ -13,6 +13,58 @@ pdfname: ""
 
 > 结果族 175：Talagrand's expectation thresholds, discrete convexity, and graph decompositions　·　学科：Combinatorics　·　验证状态：暂无形式化证明，请以社区核验为准
 
+## 入门导读 🐣
+
+想象往桌上随机撒拼图碎片，要拼出一个指定的复杂图案。整体硬拼往往得付一笔"对数级加价"；这篇论文证明：可以预先把图案拆成固定数目的小包，每包单独拼，价格只比理论最低价贵一个固定倍数——加价被彻底抹掉了。关键在于拆包发生在撒点之前：分块方案只由图案本身决定；至于各包拼出来后落在桌面哪个位置、共享的顶点要不要对齐，都互不相干。
+
+**关键词卡片**
+
+- 随机图 G(n,p)（random graph）：每对顶点独立以概率 p 连边的"抽签网络"。
+- 包含阈值 p_c（containment threshold）：让 G(n,p) 以至少一半概率含有目标图 H 的最小 p。
+- 期望阈值 q（integral expectation threshold）：用小集合"便宜地"覆盖 H 一切出现方式的成本度量，总有 q ≤ p_c。
+- 图分解（graph decomposition）：在撒点之前把 H 的边预先拆成常数多块，各块独立嵌入、互不干扰。
+- 退化度（degeneracy）：衡量图局部稀疏程度的参数，越小越像森林。
+
+**看个具体例子**
+
+定理：每个图 H 的边集可拆成 k 块（k 是绝对常数），每块满足 `@@M@@p_c(H_i)\le L\,q(H)@@`。下图把一个 7 顶点图的边预先染成三色，即三块；若 `@@M@@q(H)=0.001@@`，则每块在密度 `@@M@@0.001L@@` 处就以至少 1/2 的概率出现在 `@@M@@G(n,p)@@` 里。
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280">
+<text x="280" y="32" fill="#555" font-size="14" text-anchor="middle">把图的边预先拆成常数块（示意）</text>
+<line x1="150" y1="70" x2="320" y2="60" stroke="#d62728" stroke-width="3"/>
+<line x1="320" y1="60" x2="450" y2="150" stroke="#d62728" stroke-width="3"/>
+<line x1="450" y1="150" x2="320" y2="240" stroke="#d62728" stroke-width="3"/>
+<line x1="320" y1="240" x2="150" y2="230" stroke="#1f77b4" stroke-width="3"/>
+<line x1="150" y1="230" x2="60" y2="150" stroke="#1f77b4" stroke-width="3"/>
+<line x1="60" y1="150" x2="150" y2="70" stroke="#1f77b4" stroke-width="3"/>
+<line x1="150" y1="70" x2="260" y2="150" stroke="#2ca02c" stroke-width="3"/>
+<line x1="450" y1="150" x2="260" y2="150" stroke="#2ca02c" stroke-width="3"/>
+<line x1="150" y1="230" x2="260" y2="150" stroke="#2ca02c" stroke-width="3"/>
+<circle cx="150" cy="70" r="7" fill="#fff" stroke="#333" stroke-width="2"/>
+<circle cx="320" cy="60" r="7" fill="#fff" stroke="#333" stroke-width="2"/>
+<circle cx="450" cy="150" r="7" fill="#fff" stroke="#333" stroke-width="2"/>
+<circle cx="320" cy="240" r="7" fill="#fff" stroke="#333" stroke-width="2"/>
+<circle cx="150" cy="230" r="7" fill="#fff" stroke="#333" stroke-width="2"/>
+<circle cx="60" cy="150" r="7" fill="#fff" stroke="#333" stroke-width="2"/>
+<circle cx="260" cy="150" r="7" fill="#fff" stroke="#333" stroke-width="2"/>
+<line x1="90" y1="265" x2="125" y2="265" stroke="#d62728" stroke-width="3"/>
+<text x="132" y="270" fill="#555" font-size="13">块 1</text>
+<line x1="210" y1="265" x2="245" y2="265" stroke="#1f77b4" stroke-width="3"/>
+<text x="252" y="270" fill="#555" font-size="13">块 2</text>
+<line x1="330" y1="265" x2="365" y2="265" stroke="#2ca02c" stroke-width="3"/>
+<text x="372" y="270" fill="#555" font-size="13">块 3</text>
+</svg>
+
+</div>
+
+**为什么值得关心**
+
+它是 Talagrand 阈值纲领的关键一步：分块之后，Kahn–Kalai 型比较里的对数损失消失，而完美匹配的例子又说明整体意义下的对数删不掉——分块正是绕开它的正确姿势。其核心输入（离散凸性定理）已形式化，但本篇主结果尚未。
+
+> 暂无形式化证明（AI 结果待核验）
+
 ## 一句话结论
 
 证明了 Ascoli–He–Park–Talagrand 图分解猜想：任何图的边都可预先拆成常数多块，每块的普通包含阈界不超过原图积分期望阈界的普适常数倍，从而在"分块"意义下彻底消除了 Kahn–Kalai 型阈值比较中的对数损失。

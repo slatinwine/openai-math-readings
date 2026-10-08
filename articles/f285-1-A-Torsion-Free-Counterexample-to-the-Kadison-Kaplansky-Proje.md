@@ -13,6 +13,48 @@ pdfname: ""
 
 > 结果族 285：Counterexamples to Baum–Connes and Kadison–Kaplansky　·　学科：Operator algebras　·　验证状态：暂无形式化证明，请以社区核验为准
 
+## 入门导读 🐣
+
+在无挠群的算子代数里有一杆"公平秤"（典范迹）：把任何投影（量子世界里的开关键）放上去，读数应当是整数——于是开关只许全关（0）或全开（1），这正是 Kadison–Kaplansky 猜想。本文造出一个有限生成无挠群，里面有一个读数介于 0 与 1/2 之间的开关：猜想被推翻。
+
+**关键词卡片**
+
+- 投影（projection）：满足 `@@M@@e^2=e=e^*@@` 的算子，像一档量子开关
+- 约化群 C*-代数（reduced group C*-algebra）：群正则表示的算子范数闭包
+- 典范迹（canonical trace）：代数上的平均秤，投影的读数像"接通比例"
+- Kadison–Kaplansky 猜想：无挠群情形只有 0 与 1 两个投影
+- 自由积（free product）：把两个群互不干涉地拼成一个新群
+
+**看个具体例子**
+
+数字版定理：存在投影 `@@M@@e\in C_r^*(G_{\mathrm{proj}})@@` 使 `@@M@@0<\tau(e)<\tfrac12@@`——秤的读数不是整数，开关停在"半开"的位置。
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280">
+  <text x="150" y="55" font-size="14" fill="#000">典范迹 τ 称量投影 e 的"读数"</text>
+  <line x1="50" y1="150" x2="510" y2="150" stroke="#000" stroke-width="2"/>
+  <circle cx="50" cy="150" r="6" fill="#000"/>
+  <circle cx="510" cy="150" r="6" fill="#000"/>
+  <line x1="280" y1="142" x2="280" y2="158" stroke="#000" stroke-width="1.5"/>
+  <circle cx="170" cy="150" r="6" fill="none" stroke="#c00" stroke-width="2.5"/>
+  <text x="44" y="182" font-size="13" fill="#000">0</text>
+  <text x="268" y="182" font-size="13" fill="#000">1/2</text>
+  <text x="504" y="182" font-size="13" fill="#000">1</text>
+  <text x="148" y="122" font-size="13" fill="#c00">τ(e)</text>
+  <line x1="176" y1="128" x2="184" y2="142" stroke="#c00" stroke-width="1"/>
+  <text x="58" y="92" font-size="13" fill="#000">旧猜想：读数只能是 0 或 1</text>
+  <text x="105" y="230" font-size="13" fill="#000">反例群 G_proj 中：0 &lt; τ(e) &lt; 1/2</text>
+</svg>
+
+</div>
+
+**为什么值得关心**
+
+它与同族另两篇（分别破装配映射的单射与满射）拼在一起，宣告无系数的约化 Baum–Connes 猜想对可数离散群不成立——拓扑与分析之间的桥比想象中脆弱。
+
+> 暂无形式化证明（AI 结果待核验）
+
 ## 一句话结论
 
 本文构造了一个有限生成无挠群 `@@M@@G_{\mathrm{proj}}@@`，其约化群 `@@M@@C^*@@`-代数中有投影 `@@M@@e@@` 满足 `@@M@@0<\tau(e)<\tfrac12@@`，既非零也非单位元——Kadison–Kaplansky 投影猜想由此被否定。

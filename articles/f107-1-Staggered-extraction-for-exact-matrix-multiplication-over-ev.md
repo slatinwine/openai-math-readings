@@ -13,6 +13,62 @@ pdfname: ""
 
 > 结果族 107：Matrix multiplication with exponent at most 9/4　·　学科：Theoretical computer science　·　验证状态：主结果已 Lean 形式化
 
+## 入门导读 🐣
+
+同门的旗舰结果在复数域上把矩阵乘法纪录砍到 2.25，但那套证法用到了复数独有的便利。这篇论文把同类思想重造成一台"全地形"机器：不做除法、不玩插值，逐系数算得精确，于是在任何数域——包括 `@@M@@1+1=0@@` 这类正特征世界——都成立，并微弱刷新纪录到 2.371054886…。秘诀之一像工厂错峰排班：让不同批次错时开工，三道工序互不空转。
+
+**关键词卡片**
+
+- 域（field）：能做加减乘除的数系；"特征"指多少个 1 相加会归零
+- 正特征（positive characteristic）：如模 2 算术，`@@M@@1+1=0@@`；插值、除法技巧在此常失效
+- 精确算法（exact algorithm）：不用近似与极限，每个系数一次算对
+- 联合抽取（joint extraction）：把不同阶段的分离操作并成一次，短缺与富余互补
+- 错峰调度（staggering）：批次错开启动，让各阶段容量互相补齐、损耗在指数尺度相消
+
+**看个具体例子**
+
+一批张量要连续三次对半分裂（`@@M@@8\to4\to2\to1@@`）；多批错峰启动后，稳定时段每道工序都有活干。
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280">
+<text x="270" y="30" text-anchor="middle" font-size="14">错峰调度：三批工件先后流过 A→B→C 三道工序</text>
+<rect x="60" y="48" width="88" height="34" fill="#e8eef8" stroke="#345" stroke-width="2"/>
+<text x="104" y="69" text-anchor="middle" font-size="13">A：8→4</text>
+<rect x="152" y="48" width="88" height="34" fill="#e8f8e8" stroke="#383" stroke-width="2"/>
+<text x="196" y="69" text-anchor="middle" font-size="13">B：4→2</text>
+<rect x="244" y="48" width="88" height="34" fill="#f8e8d8" stroke="#a73" stroke-width="2"/>
+<text x="288" y="69" text-anchor="middle" font-size="13">C：2→1</text>
+<rect x="152" y="102" width="88" height="34" fill="#e8eef8" stroke="#345" stroke-width="2"/>
+<text x="196" y="123" text-anchor="middle" font-size="13">A：8→4</text>
+<rect x="244" y="102" width="88" height="34" fill="#e8f8e8" stroke="#383" stroke-width="2"/>
+<text x="288" y="123" text-anchor="middle" font-size="13">B：4→2</text>
+<rect x="336" y="102" width="88" height="34" fill="#f8e8d8" stroke="#a73" stroke-width="2"/>
+<text x="380" y="123" text-anchor="middle" font-size="13">C：2→1</text>
+<rect x="244" y="156" width="88" height="34" fill="#e8eef8" stroke="#345" stroke-width="2"/>
+<text x="288" y="177" text-anchor="middle" font-size="13">A：8→4</text>
+<rect x="336" y="156" width="88" height="34" fill="#e8f8e8" stroke="#383" stroke-width="2"/>
+<text x="380" y="177" text-anchor="middle" font-size="13">B：4→2</text>
+<rect x="428" y="156" width="88" height="34" fill="#f8e8d8" stroke="#a73" stroke-width="2"/>
+<text x="472" y="177" text-anchor="middle" font-size="13">C：2→1</text>
+<text x="32" y="69" text-anchor="middle" font-size="12" fill="#567">批1</text>
+<text x="32" y="123" text-anchor="middle" font-size="12" fill="#567">批2</text>
+<text x="32" y="177" text-anchor="middle" font-size="12" fill="#567">批3</text>
+<line x1="332" y1="40" x2="332" y2="200" stroke="#c33" stroke-width="1.5" stroke-dasharray="5,4"/>
+<text x="332" y="218" text-anchor="middle" font-size="12" fill="#c33">此刻：批1 在 C、批2 在 B、批3 在 A</text>
+<text x="270" y="248" text-anchor="middle" font-size="12" fill="#567">三道工序互不空转，容量互补，指数记账时损耗相消</text>
+</svg>
+
+</div>
+
+数字版结论：对每个固定域 `@@M@@\mathbb F@@`，`@@M@@\omega_{\mathbb F}<2.371054886006746<2.371177@@`（此前的世界纪录），且算法在原域上逐系数精确。
+
+**为什么值得关心**
+
+现代纪录首次覆盖包括正特征在内的一切固定域，并附有理区间证书，可复现核验。
+
+> 已 Lean 形式化
+
 ## 一句话结论
 本文证明对每个固定域 `@@M@@\mathbb F@@`——包括所有正特征域——方阵乘法的算术指数满足 `@@M@@\omega_{\mathbb F}<2.371054886006746@@`，小幅超越 Dupont 等人 2026 年的 2.371177；算法逐系数精确、全程在原域上进行，不依赖插值或除法。
 

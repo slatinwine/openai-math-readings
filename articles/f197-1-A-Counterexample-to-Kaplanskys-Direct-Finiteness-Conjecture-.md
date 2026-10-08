@@ -13,6 +13,71 @@ pdfname: ""
 
 > 结果族 197：A torsion-free group algebra that is not directly finite　·　学科：Algebra　·　验证状态：主结果已 Lean 形式化
 
+## 入门导读 🐣
+
+想象两位翻译官：b 把明文译成密码，a 负责把密码还原。直觉上，"先 b 后 a"与"先 a 后 b"都应回到原文，两人互为完美搭档。这篇论文却锻造出一对偏心的翻译：一个方向天衣无缝，另一个方向悄悄露馅——由此推翻了 Kaplansky 悬置五十年的猜想。
+
+**关键词卡片**
+
+- 群代数（group algebra）：把群元素当"字母"，允许有限个"字母×系数"相加相乘得到的代数系统
+- 直接有限性（direct finiteness）：环里 `@@M@@ab=1@@` 必蕴含 `@@M@@ba=1@@` 的性质；Kaplansky 猜想一切群代数都满足它
+- sofic 群（sofic group）：能用有限图案任意逼真模拟的"温顺"无限群；这类群的群代数已知直接有限
+- 元胞自动机（cellular automaton）：每个格子按邻居颜色同步变色的机器，如"生命游戏"
+
+**看个具体例子**
+
+线性代数里，方阵一旦 `@@M@@ab=1@@` 就必有 `@@M@@ba=1@@`（逆矩阵两边通用），所以反例只能藏在无限群中。论文取特征二的有限域 `@@M@@K@@` 与一个精心锻造的无限群 `@@M@@G@@`，显式写出有限和 `@@M@@a,b\in K[G]@@`，使得
+
+`@@M@@Dab=1,\qquad ba\ne 1 .@@`
+
+同一组元素还充当无限格子的"变色规则"：不同图案必变出不同图案（单射），却有一种图案永远变不出来（不满射）。整个构造分三层铸造：先设计一套有限的"点线"组合数据，再据此搭建群 `@@M@@G@@`，最后在群代数中把矩阵反例压成标量元素 `@@M@@a,b@@`。
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280">
+<text x="30" y="35" font-size="16" fill="#222">先 b 后 a：完美复原</text>
+<rect x="30" y="55" width="90" height="50" fill="#f6f6f6" stroke="#888"/>
+<circle cx="55" cy="80" r="6" fill="#222"/><circle cx="75" cy="80" r="6" fill="#222"/><circle cx="95" cy="80" r="6" fill="#222"/>
+<line x1="125" y1="80" x2="163" y2="80" stroke="#555" stroke-width="2"/>
+<polygon points="165,80 155,75 155,85" fill="#555"/>
+<rect x="170" y="55" width="60" height="50" fill="#eef3ff" stroke="#35a"/>
+<text x="192" y="86" font-size="18" fill="#235">b</text>
+<line x1="235" y1="80" x2="273" y2="80" stroke="#555" stroke-width="2"/>
+<polygon points="275,80 265,75 265,85" fill="#555"/>
+<rect x="280" y="55" width="60" height="50" fill="#eef3ff" stroke="#35a"/>
+<text x="302" y="86" font-size="18" fill="#235">a</text>
+<line x1="345" y1="80" x2="383" y2="80" stroke="#555" stroke-width="2"/>
+<polygon points="385,80 375,75 375,85" fill="#555"/>
+<rect x="390" y="55" width="90" height="50" fill="#f6f6f6" stroke="#888"/>
+<circle cx="415" cy="80" r="6" fill="#222"/><circle cx="435" cy="80" r="6" fill="#222"/><circle cx="455" cy="80" r="6" fill="#222"/>
+<text x="495" y="86" font-size="15" fill="#2a2">✓</text>
+<text x="30" y="155" font-size="16" fill="#222">先 a 后 b：冒出杂质</text>
+<rect x="30" y="175" width="90" height="50" fill="#f6f6f6" stroke="#888"/>
+<circle cx="55" cy="200" r="6" fill="#222"/><circle cx="75" cy="200" r="6" fill="#222"/><circle cx="95" cy="200" r="6" fill="#222"/>
+<line x1="125" y1="200" x2="163" y2="200" stroke="#555" stroke-width="2"/>
+<polygon points="165,200 155,195 155,205" fill="#555"/>
+<rect x="170" y="175" width="60" height="50" fill="#eef3ff" stroke="#35a"/>
+<text x="192" y="206" font-size="18" fill="#235">a</text>
+<line x1="235" y1="200" x2="273" y2="200" stroke="#555" stroke-width="2"/>
+<polygon points="275,200 265,195 265,205" fill="#555"/>
+<rect x="280" y="175" width="60" height="50" fill="#eef3ff" stroke="#35a"/>
+<text x="302" y="206" font-size="18" fill="#235">b</text>
+<line x1="345" y1="200" x2="383" y2="200" stroke="#555" stroke-width="2"/>
+<polygon points="385,200 375,195 375,205" fill="#555"/>
+<rect x="390" y="175" width="90" height="50" fill="#f6f6f6" stroke="#888"/>
+<circle cx="415" cy="200" r="6" fill="#222"/><circle cx="435" cy="200" r="6" fill="#222"/><circle cx="455" cy="200" r="6" fill="#222"/>
+<circle cx="475" cy="186" r="6" fill="#d33"/>
+<text x="495" y="206" font-size="15" fill="#d33">✗</text>
+</svg>
+
+</div>
+
+**为什么值得关心**
+
+一篇论文同时否定 Kaplansky 直接有限性猜想与 Gottschalk 满射性猜想，还顺带证明所用的群 `@@M@@G@@` 不是 sofic 群——无限群的世界确实比想象中狂野。
+
+> 已 Lean 形式化
+
 ## 一句话结论
 
 在特征二有限域上构造有限展示群 `@@M@@G@@` 与 `@@M@@a,b\in K[G]@@`，使 `@@M@@ab=1@@` 而 `@@M@@ba\ne1@@`，否定 Kaplansky 直接有限性猜想；同组元素又给出单而不满的元胞自动机，连带否定 Gottschalk 满射性猜想。

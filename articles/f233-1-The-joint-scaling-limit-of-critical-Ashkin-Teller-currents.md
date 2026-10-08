@@ -13,6 +13,45 @@ pdfname: ""
 
 > 结果族 233：The joint critical Ashkin–Teller current limit　·　学科：Probability and statistical mechanics　·　验证状态：暂无形式化证明，请以社区核验为准
 
+## 入门导读 🐣
+
+1943 年提出的 Ashkin–Teller 模型像两套磁铁叠在同一张格点上。这篇论文证明：沿整条临界线（一直延伸到四态 Potts 模型端点），把模型的高度、原始电流簇、对偶电流簇三个随机对象一起放大，它们联合收敛到同一个高斯自由场和它派生的一圈圈图案——像一场早已排练好的三重奏。
+
+**关键词卡片**
+
+- Ashkin–Teller 模型（Ashkin–Teller model）：每个格点放一对自旋的四分量模型；临界线上等价于权重 (1, 1, c) 的六顶点模型。
+- 随机电流（random current）：把自旋关联编码成边的随机占位图案，其连通簇携带几何信息。
+- 二值局部集（two-valued local set）：高斯自由场首次跳出区间 {−a, a} 时击中的集合；极限簇由它递归拼出。
+- 嵌套（nesting）：簇一层套一层的结构；极限把所有嵌套深度全部保留。
+- 耦合常数 g（coupling constant）：临界线的坐标；g = 2 是 Ising 点，g = 4 是四态 Potts 端点。
+
+**看个具体例子**
+
+定理的数字代入版：在 Ising 点 `@@M@@g=2@@`，高度极限是 `@@M@@\dfrac{h}{\pi\sqrt{2}}@@`；在 Potts 端点 `@@M@@J=U=\dfrac{\log 3}{4}@@`（此时 `@@M@@c=2@@`、`@@M@@g=4@@`），高度极限是 `@@M@@\dfrac{h}{2\pi}@@`。下图中所有嵌套的簇都不是另起炉灶的新随机性，而是同一个场 `@@M@@h@@` 的可测函数——"联合收敛"四个字的分量正在于此。
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280">
+  <text x="280" y="26" text-anchor="middle" font-size="15">极限图案：同一个高斯自由场生成的嵌套簇</text>
+  <ellipse cx="280" cy="150" rx="215" ry="100" fill="none" stroke="#333" stroke-width="2"/>
+  <path d="M115 150 C115 105 165 78 235 82 C305 86 345 70 388 98 C432 128 440 172 402 202 C364 228 300 218 242 213 C172 207 115 190 115 150 Z" fill="none" stroke="#c62828" stroke-width="3"/>
+  <path d="M245 150 C245 118 275 100 305 105 C338 111 356 100 372 120 C390 143 382 172 357 182 C327 193 288 186 263 173 C246 164 245 158 245 150 Z" fill="none" stroke="#2e7d32" stroke-width="2.5"/>
+  <path d="M290 148 C290 132 302 124 312 127 C324 131 330 124 336 132 C342 141 338 154 328 158 C316 162 300 159 292 154 C290 152 290 151 290 148 Z" fill="none" stroke="#1565c0" stroke-width="2"/>
+  <text x="150" y="66" font-size="12" fill="#c62828">wired 边界簇</text>
+  <text x="430" y="70" font-size="11" fill="#333">区域边界</text>
+  <text x="205" y="112" font-size="11" fill="#2e7d32">嵌套簇 1</text>
+  <text x="305" y="147" font-size="11" fill="#1565c0">簇 2</text>
+  <text x="280" y="266" text-anchor="middle" font-size="13">簇一层套一层，所有嵌套深度在极限中都被保留</text>
+</svg>
+
+</div>
+
+**为什么值得关心**
+
+它证实了 Alcalde López–Heeney–Lis 沿整条临界线提出的猜想：此前结论只在 Ising 点已知，如今 Ising 与 Potts 两大模型被统一写进高斯自由场的语言。
+
+> 暂无形式化证明（AI 结果待核验）
+
 ## 一句话结论
 
 证明了临界 Ashkin–Teller 模型（含四态 Potts 端点）的高度场与两族完整电流簇的联合标度极限：高度收敛到预言耦合常数的高斯自由场，电流簇收敛为同一自由场的典范递归二值局部集，且保留所有嵌套深度，证实了 Alcalde López–Heeney–Lis 沿整条临界线的猜想。

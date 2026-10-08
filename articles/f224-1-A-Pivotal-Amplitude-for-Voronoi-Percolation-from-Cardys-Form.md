@@ -13,6 +13,31 @@ pdfname: ""
 
 > 结果族 224：Critical and quenched near-critical universality for Poisson–Voronoi percolation　·　学科：Probability and statistical mechanics　·　验证状态：暂无形式化证明，请以社区核验为准
 
+## 入门导读 🐣
+
+一张超高分辨率的随机黑白马赛克图里，有多少个"一票定乾坤"的像素——只翻转它一个，整张图"左连右"的判定就会跟着翻转？论文给出精确答案：分辨率越高这类像素越多，且按一条干净的纯幂律增长，连前面的常数都是确定的正数，而不是慢悠悠漂移的修正因子。
+
+**关键词卡片**
+
+- 颜色 pivotal（color-pivotal）：翻转该胞的颜色，会改变单位方块左右跨越结果的胞。
+- 振幅（amplitude）：不只确定增长的指数，连前面的常数倍也精确锁定。
+- 四臂事件（four-arm event）：从一个点向四周伸出黑、白、黑、白四条交替"触手"，其概率按距离的 `@@M@@-5/4@@` 次幂衰减。
+- 环域（annulus）：两同心圆之间的圆环区域，论文中逐环传递估计的舞台。
+
+**看个具体例子**
+
+主定理是一张公式卡：设泊松点强度为 `@@M@@\varepsilon^{-2}@@`，则
+
+`@@M@@D\mathbb E N_\varepsilon\ \sim\ c_V\,\varepsilon^{-3/4},\qquad c_V\in(0,\infty)@@`
+
+幂次的来历可读成"数字版定理"：在三角格点上，单点成为 pivotal 需要"四臂"事件，其概率按 `@@M@@\varepsilon^{5/4}@@` 衰减，于是单位面积点数 `@@M@@\varepsilon^{-2}@@` 乘上 `@@M@@\varepsilon^{5/4}@@`，恰好得到 `@@M@@\varepsilon^{-3/4}@@`；本文证明 Voronoi 模型同样拥有这条纯幂律，而且常数确定。代入具体数字：`@@M@@\varepsilon=10^{-2}@@`（每单位面积一万个点）时 `@@M@@\mathbb E N\approx 31.6\,c_V@@`；`@@M@@\varepsilon=10^{-4}@@`（一亿个点）时 `@@M@@\approx 1000\,c_V@@`。更难得的是：整个证明不需要所依赖的 Cardy 公式给出任何收敛速率。注意这是一条条件性定理——Cardy 公式由同族姊妹篇提供，本文并不证明它本身。
+
+**为什么值得关心**
+
+它把近临界理论里"用期望 pivotal 数自定义的尺子"换成了欧氏网格上的纯幂律尺子，为同族姊妹篇的归一化给出了确切的量纲。
+
+> 暂无形式化证明（AI 结果待核验）
+
 ## 一句话结论
 
 在 Cardy 公式的前提下，本文证明 Voronoi 渗流单位方块跨越的期望颜色 pivotal 数有精确渐近 `@@M@@\mathbb{E}N_\varepsilon\sim c_V\varepsilon^{-3/4}@@`（`@@M@@c_V\in(0,\infty)@@`），把近临界理论的归一化尺度确定为带正常数的纯幂律，且全程不需要 Cardy 公式的任何收敛速率。

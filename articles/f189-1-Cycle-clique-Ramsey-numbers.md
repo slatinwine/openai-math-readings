@@ -13,6 +13,62 @@ pdfname: ""
 
 > 结果族 189：Cycle–clique Ramsey numbers　·　学科：Combinatorics　·　验证状态：暂无形式化证明，请以社区核验为准
 
+## 入门导读 🐣
+
+派对上任意两人，要么是朋友（系红绳），要么是陌生人（系蓝绳）。问：至少要请多少人，才能保证出现"m 个朋友首尾相连围成一圈"或"n 个人两两互为陌生人"？所需的最少人数就是拉姆齐数。本文完全确定了"圈对团"的公式 `@@M@@(m-1)(n-1)+1@@`，了结 1978 年悬置至今的猜想。
+
+**关键词卡片**
+
+- 拉姆齐数（Ramsey number）`@@M@@R(H,J)@@`：任何红蓝染色都必现红色 `@@M@@H@@` 或蓝色 `@@M@@J@@` 的最小顶点数。
+- 圈 `@@M@@C_m@@`（cycle）：`@@M@@m@@` 个点首尾相连的环，长度必须恰好是 `@@M@@m@@`，多一步少一步都不算。
+- 团 `@@M@@K_n@@`（clique）：两两之间都有边的 `@@M@@n@@` 个点，这里指"两两陌生"的蓝团。
+- 红蓝染色：给每条边二选一上色，"朋友或陌生"的数学说法。
+- 极小反例（minimal counterexample）：假设公式失败，取"最小"的失败例子逼出结构再导出矛盾。
+
+**看个具体例子**
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280">
+<text x="280" y="30" text-anchor="middle" font-size="15">下界构造：6 人 = (m−1)(n−1)，取 m=4、n=3</text>
+<line x1="150" y1="70" x2="90" y2="170" stroke="#b03030" stroke-width="2.5"/>
+<line x1="90" y1="170" x2="210" y2="170" stroke="#b03030" stroke-width="2.5"/>
+<line x1="210" y1="170" x2="150" y2="70" stroke="#b03030" stroke-width="2.5"/>
+<line x1="410" y1="70" x2="350" y2="170" stroke="#b03030" stroke-width="2.5"/>
+<line x1="350" y1="170" x2="470" y2="170" stroke="#b03030" stroke-width="2.5"/>
+<line x1="470" y1="170" x2="410" y2="70" stroke="#b03030" stroke-width="2.5"/>
+<line x1="150" y1="70" x2="410" y2="70" stroke="#3050a0" stroke-width="1.5" stroke-dasharray="5 4"/>
+<line x1="150" y1="70" x2="350" y2="170" stroke="#3050a0" stroke-width="1.5" stroke-dasharray="5 4"/>
+<line x1="150" y1="70" x2="470" y2="170" stroke="#3050a0" stroke-width="1.5" stroke-dasharray="5 4"/>
+<line x1="90" y1="170" x2="410" y2="70" stroke="#3050a0" stroke-width="1.5" stroke-dasharray="5 4"/>
+<line x1="90" y1="170" x2="350" y2="170" stroke="#3050a0" stroke-width="1.5" stroke-dasharray="5 4"/>
+<line x1="90" y1="170" x2="470" y2="170" stroke="#3050a0" stroke-width="1.5" stroke-dasharray="5 4"/>
+<line x1="210" y1="170" x2="410" y2="70" stroke="#3050a0" stroke-width="1.5" stroke-dasharray="5 4"/>
+<line x1="210" y1="170" x2="350" y2="170" stroke="#3050a0" stroke-width="1.5" stroke-dasharray="5 4"/>
+<line x1="210" y1="170" x2="470" y2="170" stroke="#3050a0" stroke-width="1.5" stroke-dasharray="5 4"/>
+<circle cx="150" cy="70" r="4.5" fill="#222"/>
+<circle cx="90" cy="170" r="4.5" fill="#222"/>
+<circle cx="210" cy="170" r="4.5" fill="#222"/>
+<circle cx="410" cy="70" r="4.5" fill="#222"/>
+<circle cx="350" cy="170" r="4.5" fill="#222"/>
+<circle cx="470" cy="170" r="4.5" fill="#222"/>
+<text x="150" y="200" text-anchor="middle" font-size="14" fill="#b03030">红 K₃</text>
+<text x="410" y="200" text-anchor="middle" font-size="14" fill="#b03030">红 K₃</text>
+<text x="280" y="122" text-anchor="middle" font-size="13" fill="#3050a0">跨组全蓝</text>
+<text x="280" y="238" text-anchor="middle" font-size="13">无红 C₄、无蓝 K₃ ⇒ 6 人不够</text>
+<text x="280" y="262" text-anchor="middle" font-size="13">定理：7 人怎么染都必现其一 ⇒ R(C₄,K₃) = 7</text>
+</svg>
+
+</div>
+
+对照公式：`@@M@@R(C_4,K_3)=(4-1)(3-1)+1=7@@`。下图把 6 人分成两个红三角、组间全蓝，既无红四圈也无蓝三角，说明人数不能再少；这种"分成同色小块、块间换色"的分组构造，正是拉姆齐下界的经典手法。定理则保证第 7 个人一来，怎么染色都逃不掉。
+
+**为什么值得关心**
+
+一个悬置近五十年的精确组合公式被关闭；证明是"结构推理 + 程序核查 3099 个有限情形"的混合打法，展示了人机协作攻克精确组合问题的新范式。
+
+> 暂无形式化证明（AI 结果待核验）
+
 ## 一句话结论
 
 证明了 Erdős–Faudree–Rousseau–Schelp 1978 年提出的循环–团拉姆齐数（cycle–clique Ramsey number）猜想：`@@M@@m\ge n\ge3@@` 且 `@@M@@(m,n)\ne(3,3)@@` 时 `@@M@@R(C_m,K_n)=(m-1)(n-1)+1@@`，给出了完全图红蓝染色中迫出红 `@@M@@m@@` 圈或蓝 `@@M@@n@@` 团的精确阈值，悬置近半世纪的猜想就此完结。

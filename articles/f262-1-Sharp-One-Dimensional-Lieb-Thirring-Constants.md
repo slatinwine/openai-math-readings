@@ -13,6 +13,49 @@ pdfname: ""
 
 > 结果族 262：Sharp finite-matrix Lieb–Thirring inequalities and all equality cases　·　学科：Mathematical physics　·　验证状态：主结果已 Lean 形式化
 
+## 入门导读 🐣
+
+一场打了五十年的擂台赛：给定同样的材料预算（势能积分），挖井策略有两种——集中挖一口深井，或铺开许多浅井；哪种捕到的束缚能更多？Lieb 与 Thirring 在 1975 年押注：一维、指数取中间值时深井赢。本文终结了比赛：深井确是冠军，最优常数就是"单束缚态常数"，由一口显式的 sech² 井取得；而且这条定理已被计算机（Lean）逐行验证过。
+
+**关键词卡片**
+
+- Lieb–Thirring 不等式（Lieb–Thirring inequality）：束缚能总和 ≤ 常数 × 势的花费。
+- 最优常数（sharp constant）`@@M@@L_{\gamma,1}@@`：不等式右端可用的最小系数。
+- 半经典常数（semiclassical constant）`@@M@@L^{\mathrm{cl}}@@`：许多浅井策略的效率，来自经典相空间计数。
+- 单束缚态常数 `@@M@@L^{(1)}@@`：一口深井的效率，由 sech² 井取到，本文证明它才是冠军。
+- 负特征值（negative eigenvalue）：井捕住的能级，全部计入不等式左边。
+
+**看个具体例子**
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280">
+  <text x="55" y="32" font-size="14">擂台：同样的材料预算 ∫W^(γ+1/2)，哪种挖井法捕的束缚能多？</text>
+  <line x1="60" y1="170" x2="255" y2="170" stroke="#333" stroke-width="2"/>
+  <path d="M95 170 C 128 166, 138 55, 168 55 C 198 55, 208 166, 241 170" fill="none" stroke="#369" stroke-width="3"/>
+  <text x="92" y="196" font-size="13">一口深井（单束缚态）</text>
+  <text x="98" y="216" font-size="13">W=(r+1)sech²(rx)</text>
+  <line x1="300" y1="170" x2="535" y2="170" stroke="#333" stroke-width="2"/>
+  <path d="M310 170 C 320 168, 324 135, 331 135 C 338 135, 342 168, 352 170" fill="none" stroke="#c33" stroke-width="2"/>
+  <path d="M354 170 C 364 168, 368 135, 375 135 C 382 135, 386 168, 396 170" fill="none" stroke="#c33" stroke-width="2"/>
+  <path d="M398 170 C 408 168, 412 135, 419 135 C 426 135, 430 168, 440 170" fill="none" stroke="#c33" stroke-width="2"/>
+  <path d="M442 170 C 452 168, 456 135, 463 135 C 470 135, 474 168, 484 170" fill="none" stroke="#c33" stroke-width="2"/>
+  <path d="M486 170 C 496 168, 500 135, 507 135 C 514 135, 518 168, 528 170" fill="none" stroke="#c33" stroke-width="2"/>
+  <text x="336" y="196" font-size="13">许多浅井（半经典策略）</text>
+  <text x="55" y="244" font-size="14">1/2 &lt; γ &lt; 3/2：深井胜（本文定理）；γ ≥ 3/2：半经典常数才是最优。</text>
+  <text x="55" y="268" font-size="14">γ=1 时冠军常数 = 4/(3√3π) ≈ 0.245，由 W = 3sech²(2x) 这口井取到。</text>
+</svg>
+
+</div>
+
+取等验证（`@@M@@\gamma=1@@`）：井 `@@M@@W=3\operatorname{sech}^2(2x)@@` 的唯一负特征值为 `@@M@@-1@@`，且 `@@M@@1=\frac{4}{3\sqrt{3}\,\pi}\int_{\mathbb R}W^{3/2}\,dx@@`，分毫不差。
+
+**为什么值得关心**
+
+一维 Lieb–Thirring 猜想至此完全解决；这类常数是费米子动能估计与物质稳定性理论的基石。
+
+> 已 Lean 形式化
+
 ## 一句话结论
 
 一维标量 Lieb–Thirring 猜想在剩余区间 `@@M@@1/2<\gamma<3/2@@` 全部证实：最优常数是单束缚态常数 `@@M@@L^{(1)}_{\gamma,1}@@` 而非半经典常数，由显式 `@@M@@\mathrm{sech}^2@@` 孤子取到。至此该猜想的一维情形完全解决，且主结果已有 Lean 形式化证明。

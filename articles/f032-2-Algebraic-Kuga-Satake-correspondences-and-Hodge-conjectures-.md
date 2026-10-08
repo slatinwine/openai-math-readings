@@ -13,6 +13,50 @@ pdfname: ""
 
 > 结果族 032：Hodge and Kuga–Satake results for all projective K3 surfaces　·　学科：Algebraic and complex geometry　·　验证状态：暂无形式化证明，请以社区核验为准
 
+## 入门导读 🐣
+
+K3 曲面像一张极光滑的"四次曲面皮肤"。上世纪六七十年代，Kuga 和 Satake 造了一台翻译机：用 Clifford 代数把这张皮肤的信息编码进一个高维甜甜圈里。悬了半个世纪的问题是：这台翻译机有没有一根"真正的几何连线"？本文对一大批 K3 曲面造出了这根连线，还顺手证下这些曲面一切乘积上的 Hodge 猜想。
+
+**关键词卡片**
+
+- K3 曲面（K3 surface）：三维射影空间里的光滑四次曲面，如 `@@M@@x^4+y^4+z^4+w^4=0@@`。
+- 超越上同调（transcendental cohomology）：连曲线都解释不了的那部分"剩余影子"，难点所在。
+- Kuga–Satake 构造（Kuga–Satake construction）：把 K3 的影子装进某个阿贝尔簇影子的翻译机。
+- 代数对应（algebraic correspondence）：两个空间乘积里的代数闭链，充当货真价实的几何连线。
+- 自幂（self-power）：`@@M@@S\times S\times\cdots\times S@@`，猜想必须在所有这些乘积上同时成立。
+
+**看个具体例子**
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280">
+<ellipse cx="130" cy="105" rx="88" ry="56" fill="none" stroke="#333" stroke-width="1.8"/>
+<path d="M 60 105 q 35 -26 70 -2 t 70 -4" fill="none" stroke="#777"/>
+<path d="M 62 128 q 34 -20 68 -2 t 66 -3" fill="none" stroke="#777"/>
+<path d="M 66 148 q 32 -16 64 -2 t 62 -2" fill="none" stroke="#777"/>
+<text x="130" y="192" font-size="15" text-anchor="middle">K3 曲面 S（光滑四次曲面）</text>
+<circle cx="432" cy="105" r="60" fill="none" stroke="#333" stroke-width="1.8"/>
+<ellipse cx="432" cy="105" rx="18" ry="9" fill="none" stroke="#333" stroke-width="1.5"/>
+<text x="432" y="192" font-size="15" text-anchor="middle">阿贝尔簇 A（高维甜甜圈）</text>
+<line x1="232" y1="105" x2="352" y2="105" stroke="#111" stroke-width="2"/>
+<polygon points="364,105 350,99 350,111" fill="#111"/>
+<text x="296" y="84" font-size="14" text-anchor="middle">Kuga–Satake 构造</text>
+<text x="296" y="130" font-size="13" text-anchor="middle" fill="#555">（Clifford 代数编码）</text>
+<rect x="70" y="222" width="420" height="46" rx="10" fill="none" stroke="#333" stroke-width="1.5"/>
+<text x="280" y="240" font-size="14" text-anchor="middle">S×A×A 中的代数闭链 Γ_S：一根真正的几何连线</text>
+<text x="280" y="260" font-size="13" text-anchor="middle" fill="#555">有它 ⇒ S 的每个自幂 S^m 上 Hodge 猜想成立</text>
+</svg>
+
+</div>
+
+主定理代入具体情形：只要 `@@M@@S@@` 的超越部分连同其杯积二次型能嵌入 8 维标准空间 `@@M@@\mathbb U^{\oplus2}\perp\langle-1\rangle^4@@`（这覆盖 `@@M@@P=\mathbb U\oplus D_8\oplus D_4@@` 偏极化族的所有曲面、含所有 Picard 跳跃），上述连线 `@@M@@\Gamma_S@@` 就确实存在；于是 `@@M@@S@@` 的每个自幂、每个余维数上，有理 Hodge 猜想与广义 Hodge 猜想都成立。论文还把结论推广到点的 Hilbert 概形等模空间的自幂。
+
+**为什么值得关心**
+
+"翻译机是否几何"自 Deligne 以来悬而未决，此前只有零星特殊族的构造；本文在一大片 K3 领土上第一次系统落地，是通往"所有射影 K3"的关键跳板。
+
+> 暂无形式化证明（AI 结果待核验）
+
 ## 一句话结论
 对超越二次空间可各有理等距嵌入 `@@M@@V_P=\mathbb U_{\mathbb Q}^{\oplus2}\perp\langle-1\rangle^4@@` 的射影复 K3 曲面——包括全部 `@@M@@P=\mathbb U\oplus D_8(-1)\oplus D_4(-1)@@` 偏极化曲面与所有 Picard 跳跃——论文构造出诱导指定 Kuga–Satake 张量的代数对应，进而证明其每个自幂、每个余维数上的有理 Hodge 猜想与广义 Hodge 猜想。
 

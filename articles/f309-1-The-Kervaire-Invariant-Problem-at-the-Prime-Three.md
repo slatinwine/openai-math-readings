@@ -13,6 +13,34 @@ pdfname: ""
 
 > 结果族 309：The Kervaire invariant problem at the prime three　·　学科：Topology　·　验证状态：暂无形式化证明，请以社区核验为准
 
+## 入门导读 🐣
+
+高维球面上有哪些"天生的形状记号"？Kervaire 不变量就是给某类记号贴的标签——一个要么 0 要么 1 的奇偶检验。素数 2 的版本十年前已被解决，奇素数端后来只剩下素数 3 这块空白。这篇论文把它填上：3 进制记号恰好存活在三个位置，其余全部阵亡。
+
+**关键词卡片**
+
+- Kervaire 不变量（Kervaire invariant）：标架流形上取值 0/1 的奇偶标签。
+- Adams 谱序列（Adams spectral sequence）：从代数数据逼近球面同伦群的梯子，每翻一页都有"微分"剪刀剪掉一批候选者。
+- Kervaire 类 `@@M@@b_j@@`（Kervaire classes）：梯子上一族候选记号，各自"存活或阵亡"的命运是核心问题。
+- 稳定同伦群（stable homotopy groups of spheres）：球面映射的终极账本，幸存记号的安身之处。
+- Morava E-理论（Morava E-theory）：高效率的探测仪，用来检验候选记号是否真实存在。
+
+**看个具体例子**
+
+数字版主定理：素数 3 处的存活指标集 `@@M@@K_3=\{0,2,3\}@@`——`@@M@@b_0,b_2,b_3@@` 分别对应稳定维 `@@M@@10,106,322@@` 的球面同伦类，每个都恰有加法阶 `@@M@@3@@`（"阶"的信息还控制着球面纤维空间的分解等不稳定现象）；`@@M@@b_1@@` 与一切 `@@M@@j\ge 4@@` 全部被微分杀死。维数 322 的类是全新发现：
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280"><text x="20" y="34" font-size="15" fill="#333">素数 3 处 Kervaire 类 b_j 的命运一览</text><line x1="40" y1="150" x2="520" y2="150" stroke="#999" stroke-width="2"/><path d="M520 150 l -10 -6 M520 150 l -10 6" stroke="#999" stroke-width="2" fill="none"/><text x="524" y="155" font-size="13" fill="#666">j</text><circle cx="70" cy="150" r="9" fill="#2a7"/><text x="55" y="120" font-size="13" fill="#2a7">j=0 维10 ✓</text><path d="M142 143 l 16 14 M158 143 l -16 14" stroke="#c44" stroke-width="3"/><text x="118" y="188" font-size="13" fill="#c44">j=1 阵亡 ×</text><circle cx="210" cy="150" r="9" fill="#2a7"/><text x="188" y="120" font-size="13" fill="#2a7">j=2 维106 ✓</text><circle cx="280" cy="150" r="9" fill="#2a7"/><text x="258" y="120" font-size="13" fill="#2a7">j=3 维322 ✓</text><path d="M352 143 l 16 14 M368 143 l -16 14" stroke="#c44" stroke-width="3"/><text x="328" y="188" font-size="13" fill="#c44">j=4 阵亡 ×</text><path d="M422 143 l 16 14 M438 143 l -16 14" stroke="#c44" stroke-width="3"/><text x="408" y="188" font-size="13" fill="#c44">j≥5 全灭 ×</text><text x="20" y="240" font-size="13" fill="#666">绿 ✓ = 存活且恰有 3 阶代表元的球面同伦类；红 × = 被微分杀死</text></svg>
+
+</div>
+
+**为什么值得关心**
+
+素数 3 是奇素数端的最后空白（`@@M@@p\ge 5@@` 早已全灭）；答案补全了 Kervaire 问题的全景图，还顺带证伪了此前 Belmont–Ray 猜想的一条断言。
+
+> 暂无形式化证明（AI 结果待核验）
+
 ## 一句话结论
 
 论文完全解决素数 3 的 Kervaire 不变量问题：模 3 Adams 谱序列中的标准 Kervaire 类 `@@M@@b_j@@` 恰在 `@@M@@j=0,2,3@@` 存活（稳定维 10、106、322），每个存活类的检测陪集都含加法阶恰为 3 的元素，其中第 322 维是全新发现。

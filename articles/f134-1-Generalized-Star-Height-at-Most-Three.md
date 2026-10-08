@@ -13,6 +13,34 @@ pdfname: ""
 
 > 结果族 134：Generalized star height at most three　·　学科：Theoretical computer science　·　验证状态：暂无形式化证明，请以社区核验为准
 
+## 入门导读 🐣
+
+还是"星号套娃几层够用"的问题，这次的答案更狠：3 层。诀窍像切香肠：把一个长词切成首尾相接的小段，并规定任何一段都不许是另一段的开头，于是无论词多长，切法都唯一。靠着这本"唯一切分账"，论文把所有正则语言的星号嵌套深度压到 3 层封顶。
+
+**关键词卡片**
+
+- 广义星高（generalized star height）：允许取补的正则表达式里，星号最深嵌套的层数。
+- 前缀码（prefix code）：任何片段都不是另一片段开头的编码方式，保证切分唯一。
+- 片段（episode）：切出的短词段，各自携带一小笔"状态账目更新"。
+- 有限幺半群（finite monoid）：自动机记忆的代数化身，元素只有有限个。
+- 移位表（shift table）：让切口在周期段中滑动而乘积保持不变的对照表。
+
+**看个具体例子**
+
+把 `@@M@@ababbaab\cdots@@` 切成 `@@M@@ab\,|\,abba\,|\,ab\cdots@@`：只要每段都不是别的段的开头，整词就只会切出这一种片段序列；每段查一次账、更新一次状态，词的归属便定了。定理：任何正则语言 `@@M@@L@@` 都满足 `@@M@@h_\Sigma(L)\le 3@@`，补在同一个 `@@M@@\Sigma^*@@` 中取。
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280"><text x="280" y="28" text-anchor="middle" font-size="15" fill="#333">长词切成片段：切法唯一，每段记一笔账</text><text x="40" y="86" font-size="14" fill="#555">词 w =</text><rect x="95" y="58" width="90" height="44" rx="6" fill="#eef7ee" stroke="#383" stroke-width="2"/><text x="140" y="86" text-anchor="middle" font-size="15" fill="#263">a b</text><rect x="215" y="58" width="150" height="44" rx="6" fill="#fff7e8" stroke="#a73" stroke-width="2"/><text x="290" y="86" text-anchor="middle" font-size="15" fill="#642">a b b a</text><rect x="395" y="58" width="120" height="44" rx="6" fill="#fdeeee" stroke="#933" stroke-width="2"/><text x="455" y="86" text-anchor="middle" font-size="15" fill="#622">a b …</text><line x1="200" y1="50" x2="200" y2="110" stroke="#999" stroke-width="2" stroke-dasharray="5,4"/><line x1="380" y1="50" x2="380" y2="110" stroke="#999" stroke-width="2" stroke-dasharray="5,4"/><text x="140" y="132" text-anchor="middle" font-size="13" fill="#383">片段 1</text><text x="290" y="132" text-anchor="middle" font-size="13" fill="#a73">片段 2</text><text x="455" y="132" text-anchor="middle" font-size="13" fill="#933">片段 3</text><text x="40" y="176" font-size="14" fill="#333">每段自带一次"账目更新"（状态如何变化），</text><text x="40" y="204" font-size="14" fill="#333">且任何片段都不是另一片段的开头，</text><text x="40" y="232" font-size="14" fill="#333">所以无论词多长，切分方式都唯一。</text><text x="40" y="262" font-size="14" fill="#345">靠这一点，任何正则语言的星号嵌套 ≤ 3 层。</text></svg>
+
+</div>
+
+**为什么值得关心**
+
+在此系列之前，人们甚至找不到一个广义星高大于 1 的具体语言，更没有绝对上界；本系列三个独立证明（界 13、4、3）互相印证，本篇的 3 是当前最强纪录。
+
+> 暂无形式化证明（AI 结果待核验）
+
 ## 一句话结论
 
 本文证明：任何正则语言都可用嵌套星号至多 3 层、允许取补的广义正则表达式在原字母表上写出。这是广义星高问题一致有界性当前已知的最强上界，用"词片段前缀码 + 任意函数移位表 + 全模板解码器"仅两次分裂即达成。

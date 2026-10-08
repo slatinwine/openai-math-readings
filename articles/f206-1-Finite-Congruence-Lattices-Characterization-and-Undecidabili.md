@@ -13,6 +13,57 @@ pdfname: ""
 
 > 结果族 206：Finite lattice representation and undecidability　·　学科：Algebra　·　验证状态：暂无形式化证明，请以社区核验为准
 
+## 入门导读 🐣
+
+把一个代数系统"强行粘贴"的各种方式按粗细排成一张层次图，就得到同余格。自然的问题：随手画一张有限层次图，能不能找到某个有限代数恰好粘出它？本文的回答是双重的"不"：有些图注定找不到，而且"判断找不找得到"这件事本身没有算法——不是难算，是原理上不可判定。
+
+**关键词卡片**
+
+- 格（lattice）：带"交""并"两种运算的层次结构，像一张组织架构图。
+- 同余格（congruence lattice）：一个代数的全部粘贴方式按粗细排成的格。
+- 染色图判据（colored-graph criterion）：给完全图的每条边涂上格的元素，用三条有限可查的条件判定可表示性。
+- 不可判定（undecidable）：不存在任何总能停机并给出正确答案的算法。
+
+**看个具体例子**
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280">
+  <text x="40" y="40" font-size="15" fill="#333">格 L（示例：三元链）</text>
+  <circle cx="110" cy="80" r="16" fill="#fff" stroke="#555" stroke-width="2"/>
+  <text x="110" y="86" font-size="14" fill="#333" text-anchor="middle">1</text>
+  <circle cx="110" cy="150" r="16" fill="#fff" stroke="#555" stroke-width="2"/>
+  <text x="110" y="156" font-size="14" fill="#333" text-anchor="middle">a</text>
+  <circle cx="110" cy="220" r="16" fill="#fff" stroke="#555" stroke-width="2"/>
+  <text x="110" y="226" font-size="14" fill="#333" text-anchor="middle">0</text>
+  <line x1="110" y1="96" x2="110" y2="134" stroke="#555" stroke-width="2"/>
+  <line x1="110" y1="166" x2="110" y2="204" stroke="#555" stroke-width="2"/>
+  <text x="250" y="40" font-size="15" fill="#333">L-染色的完全图（判据的证据图）</text>
+  <circle cx="330" cy="90" r="5" fill="#333"/>
+  <circle cx="480" cy="90" r="5" fill="#333"/>
+  <circle cx="405" cy="220" r="5" fill="#333"/>
+  <line x1="335" y1="90" x2="475" y2="90" stroke="#555" stroke-width="2"/>
+  <line x1="333" y1="95" x2="402" y2="215" stroke="#555" stroke-width="2"/>
+  <line x1="477" y1="95" x2="408" y2="215" stroke="#555" stroke-width="2"/>
+  <text x="330" y="76" font-size="14" fill="#333">p</text>
+  <text x="487" y="76" font-size="14" fill="#333">q</text>
+  <text x="405" y="243" font-size="14" fill="#333" text-anchor="middle">u</text>
+  <text x="405" y="80" font-size="13" fill="#a33" text-anchor="middle">d(p,q)=a</text>
+  <text x="330" y="165" font-size="13" fill="#a33" text-anchor="middle">d(p,u)=a</text>
+  <text x="482" y="165" font-size="13" fill="#a33" text-anchor="middle">d(u,q)=1</text>
+  <text x="30" y="266" font-size="13" fill="#555">三角不等式：d(p,q) ≤ d(p,u) ∨ d(u,q)，此处 a ≤ a ∨ 1 成立</text>
+</svg>
+
+</div>
+
+判据里最直观的一条就是三角不等式：绕路的开销不得小于直连。三条条件本身有限可查，但"存在满足条件的染色图"却没有算法可判；论文还顺带证明识别有限群的全子群区间同样不可判定。
+
+**为什么值得关心**
+
+Pálfy–Pudlák 1980 年公开问题得到否定解，且连判定算法都不存在——这是比"存在反例"更强的负面信息。
+
+> 暂无形式化证明（AI 结果待核验）
+
 ## 一句话结论
 本文给出有限格可作为有限代数全同余格（congruence lattice）的显式染色图判据，并证明这一表示性质算法不可判定；由此彻底否定有限格表示问题，且识别有限群的全子群区间同样不可判定。
 

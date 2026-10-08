@@ -13,6 +13,50 @@ pdfname: ""
 
 > 结果族 018：The Margulis–Platonov conjecture over global fields　·　学科：Number theory　·　验证状态：暂无形式化证明，请以社区核验为准
 
+## 入门导读 🐣
+
+把一个无穷大的群想成一家巨型公司，"正规子群"是内部自发结成、且无论全员怎样互相调岗都保持稳定的"小圈子"。这篇论文证明：在函数域的世界里，这家无穷公司里能有哪些圈子，完全由几家有限的"分部"（局部紧群）说了算——总部自己藏不住任何秘密组织，连最刁钻的特征 2 情形也不例外。
+
+**关键词卡片**
+
+- 代数群（algebraic group）：由多项式方程定义的矩阵式连续群，例如行列式为 1 的矩阵全体。
+- 有理点（rational points）：这些方程在指定数系里的解，组成一个抽象群，就是文中的"总部"。
+- 正规子群（normal subgroup）：对全群共轭都稳定的子群，衡量一个群能被怎样"拆分"。
+- 各向异性（anisotropic）：在某个位点群收缩成紧群；这样的位点只有有限个，正是文中的"分部"。
+- 全局函数域（global function field）：有限域上有理函数域 F_q(t) 的有限扩张，"特征 p 世界"里数域的对应物。
+
+**看个具体例子**
+
+定理的白话版：总部里每个非中心圈子 N，恰好是某个分部开圈子 W 的"对角原像" N = δ_A⁻¹(W)。最干净的特例：若一个各向异性分部都没有，则 G(k) 除中心外不存在任何真正的正规子群——无穷群竟"严丝合缝"。
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280">
+  <text x="280" y="30" text-anchor="middle" font-size="16" fill="#333">总部与分部：正规子群由分部完全决定</text>
+  <ellipse cx="155" cy="130" rx="125" ry="75" fill="#eef" stroke="#345" stroke-width="2"/>
+  <text x="155" y="80" text-anchor="middle" font-size="14" fill="#345">G(k)：有理点群（无穷多）</text>
+  <ellipse cx="155" cy="140" rx="55" ry="30" fill="#fdd" stroke="#c33" stroke-width="1.5"/>
+  <text x="155" y="146" text-anchor="middle" font-size="14" fill="#c33">正规子群 N</text>
+  <line x1="283" y1="130" x2="393" y2="130" stroke="#333" stroke-width="2"/>
+  <path d="M395 130 L383 124 L383 136 Z" fill="#333"/>
+  <text x="340" y="118" text-anchor="middle" font-size="13" fill="#333">对角映射 δ_A</text>
+  <rect x="400" y="85" width="130" height="90" rx="10" fill="#efe" stroke="#273" stroke-width="1.5"/>
+  <text x="465" y="106" text-anchor="middle" font-size="13" fill="#273">H_A：有限个</text>
+  <text x="465" y="124" text-anchor="middle" font-size="13" fill="#273">局部紧群之积</text>
+  <rect x="418" y="135" width="94" height="28" rx="6" fill="#ada" stroke="#273"/>
+  <text x="465" y="154" text-anchor="middle" font-size="12" fill="#132">开正规子群 W</text>
+  <text x="280" y="230" text-anchor="middle" font-size="13" fill="#333">定理：N 恰是 W 的原像（N = δ_A⁻¹(W)），一一对应，没有第三种来源。</text>
+  <text x="280" y="256" text-anchor="middle" font-size="13" fill="#333">特例：分部一个也没有时，G(k) 除中心外没有任何真正规子群。</text>
+</svg>
+
+</div>
+
+**为什么值得关心**
+
+这是 Margulis 1979 年猜想在全部函数域（包括缺失多年的特征 2）的落地；与数域姊妹篇合璧后覆盖所有"全局域"，也是同余子群问题的必要输入。
+
+> 暂无形式化证明（AI 结果待核验）
+
 ## 一句话结论
 
 本文在所有全局函数域上证明了 Margulis–Platonov 猜想，补上了此前缺失的特征 2 情形：单连通、绝对几乎单代数群的有理点群 `@@M@@G(k)@@` 的每个非中心抽象正规子群，恰为各向异性局部群乘积中开正规子群的对角原像——抽象群结构被有限个紧局部群完全决定。

@@ -13,6 +13,54 @@ pdfname: ""
 
 > 结果族 071：Koebe's circle-domain conjecture　·　学科：Real and complex analysis　·　验证状态：暂无形式化证明，请以社区核验为准
 
+## 入门导读 🐣
+
+任何形状的平面区域——哪怕洞千奇百怪、多到不可数——都能被一张"无撕裂、保角度"的弹性膜重新摊平；摊平之后，所有的洞都变成完美的圆，或者缩成一个点。这是 Koebe 在 1908 年提出的圆域规范化问题（Kreisnormierungsproblem），等了一百多年，本文在零几何条件下给出肯定回答。
+
+**关键词卡片**
+
+- 共形映射（conformal map）：保持角度与微小形状的复函数，理想的弹性形变。
+- 圆域（circle domain）：所有洞都是圆或点的区域，平面区域的标准模型。
+- 补分支（complementary components）：区域之外的连通块，即一个个"洞"。
+- 穷竭（exhaustion）：从内部用越来越大的有限连通区域逼近原区域。
+- 屏障（barrier）：在洞周围竖起的低能量"围墙函数"，用来压塌多余的自由度。
+
+**看个具体例子**
+
+主定理：每个非空连通开集 `@@M@@G\subset\widehat{\mathbb C}@@` 都共形等价于某个圆域。画成图：
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280">
+  <path d="M 35 140 C 35 80, 90 45, 150 50 C 205 55, 245 85, 240 140 C 236 190, 195 230, 140 228 C 85 226, 35 200, 35 140 Z" fill="#e8f1fa" stroke="#4a7dbd" stroke-width="2"/>
+  <path d="M 85 105 C 95 90, 120 88, 130 100 C 138 112, 132 130, 116 133 C 100 136, 80 122, 85 105 Z" fill="#fff" stroke="#555" stroke-width="2"/>
+  <rect x="150" y="150" width="42" height="34" fill="#fff" stroke="#555" stroke-width="2" transform="rotate(12 171 167)"/>
+  <circle cx="180" cy="105" r="2.5" fill="#333"/>
+  <circle cx="195" cy="120" r="2.5" fill="#333"/>
+  <circle cx="170" cy="125" r="2.5" fill="#333"/>
+  <text x="46" y="262" font-size="14" fill="#333">任意区域：洞千奇百怪</text>
+  <line x1="268" y1="140" x2="322" y2="140" stroke="#333" stroke-width="2"/>
+  <polygon points="322,134 322,146 334,140" fill="#333"/>
+  <text x="264" y="122" font-size="15" fill="#333">共形映射</text>
+  <circle cx="420" cy="140" r="95" fill="#f5edf7" stroke="#7a5ba8" stroke-width="2"/>
+  <circle cx="395" cy="110" r="24" fill="#fff" stroke="#333" stroke-width="2"/>
+  <circle cx="452" cy="168" r="17" fill="#fff" stroke="#333" stroke-width="2"/>
+  <circle cx="440" cy="120" r="2.5" fill="#333"/>
+  <circle cx="455" cy="140" r="2.5" fill="#333"/>
+  <circle cx="425" cy="150" r="2.5" fill="#333"/>
+  <text x="350" y="262" font-size="14" fill="#333">圆域：每个洞是圆或点</text>
+</svg>
+
+</div>
+
+最刁钻的情形：补集是不可数个点（像康托尘埃）的区域，也要把每粒尘埃安排成圆洞或点洞。有限连通逼近的极限分量可能"溢出"所跟踪的圆盘，本文用保留测试逐个驯服。附赠推论：每个亏格零的完备双曲曲面都可由一个双曲凸包的边界内在实现。
+
+**为什么值得关心**
+
+Kreisnormierungsproblem 是平面共形几何最古老的公开问题之一，本文零条件收官，并为姊妹篇刚性定理提供定量输入。
+
+> 验证状态：暂无形式化证明（AI 结果待核验）
+
 ## 一句话结论
 
 肯定地解决了 1908 年 Koebe 圆域猜想（Kreisnormierungsproblem）：黎曼球面上任何区域都共形等价于补分支全为圆盘或点的圆域，对补分支数目（可为不可数）与几何形态不作任何限制，堪称平面共形均匀化的百年收官。

@@ -13,6 +13,32 @@ pdfname: ""
 
 > 结果族 010：Unrestricted pro-modularity at the prime two　·　学科：Number theory　·　验证状态：暂无形式化证明，请以社区核验为准
 
+## 入门导读 🐣
+
+数论里有两座城市：一座住着伽罗瓦表示——描述有理数域对称性的"密码机"，在每个素数处能读出两个数；另一座住着模形式——极规整的周期函数。几十年的大计划是证明：够好的密码机都能在模形式城查到户籍。这篇论文在最难的素数 2 处把门槛降到最低：密码机只要连续、奇、绝对不可约、只在有限多处"卡顿"，就一定出现在某本"完整 Hecke 大名录"里。
+
+**关键词卡片**
+
+- 伽罗瓦表示（Galois representation）：连续同态 `@@M@@r:G_{\mathbb Q}\to\mathrm{GL}_2@@`，在素数 `@@M@@\ell@@` 处给出 `@@M@@\operatorname{tr}r(\mathrm{Frob}_\ell)@@` 与 `@@M@@\det r(\mathrm{Frob}_\ell)@@`。
+- 奇（odd）：复共轭的行列式为 `@@M@@-1@@`；来自几何的表示天然满足这个符号条件。
+- 完整 Hecke 代数（completed Hecke algebra）：把一切权的模形式特征值体系粘在一起的大代数，"模形式户籍总册"。
+- pro-模性（pro-modularity）：`@@M@@r@@` 的特征值体系出现在总册的谱中；注意这不断言经典模性。
+- 剩余表示（residual representation）：`@@M@@r@@` 模 2 后的粗糙版本；本文对它零要求，标量与可约情形照单全收。
+
+**看个具体例子**
+
+定理的数字版是一张"对账单"：存在奇数 `@@M@@N@@` 与同态 `@@M@@\lambda:\mathbb T_2(N)\to\mathcal O_E@@`，使得对一切 `@@M@@\ell\nmid 2N@@`，
+
+`@@M@@D\lambda(T_3)=\operatorname{tr}r(\mathrm{Frob}_3),\qquad \lambda(T_5)=\operatorname{tr}r(\mathrm{Frob}_5),\qquad \lambda(\ell S_\ell)=\det r(\mathrm{Frob}_\ell),\ \ldots@@`
+
+即总册里有一页，逐素数与密码机的读数完全吻合。
+
+**为什么值得关心**
+
+此前的定理都要求 `@@M@@p>2@@` 或剩余表示不可约，素数 2 上一直没有无条件结果。本文把 `@@M@@p=2@@` 处的模性从"带一串附加条件"推进到"无限制"，是同族姊妹篇（`@@M@@p=2@@` 的 Fontaine–Mazur 定理，即真正的经典模性）的发动机。
+
+> 暂无形式化证明（AI 结果待核验）
+
 ## 一句话结论
 
 论文证明：任何连续、奇（odd）、绝对不可约的二维 `@@M@@2@@`-adic 伽罗瓦表示 `@@M@@r:G_{\mathbb Q}\to\GL_2(E)@@`，只要在有限多个素数外不分歧，就必定出现在某个奇数水平的完整 `@@M@@2@@`-adic Hecke 代数中。这在 `@@M@@p=2@@` 处彻底取消了剩余表示与 de Rham 条件的全部限制。

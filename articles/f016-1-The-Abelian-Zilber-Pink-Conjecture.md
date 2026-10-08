@@ -13,6 +13,48 @@ pdfname: ""
 
 > 结果族 016：Zilber–Pink in abelian varieties and the Siegel threefold　·　学科：Number theory　·　验证状态：暂无形式化证明，请以社区核验为准
 
+## 入门导读 🐣
+
+阿贝尔簇（椭圆曲线的高维亲戚）内部铺着一张"地铁网"：特殊子簇是固定线路，挠点是车站。按维数常识，一条一般的小路不该频繁恰好压在换乘枢纽上。Zilber–Pink 猜想说：这类"不可能的相遇"即便发生，极大的坏例子也只有有限个。本文在任意维阿贝尔簇上完整证明了这个猜想，不设任何附加条件。
+
+**关键词卡片**
+
+- 阿贝尔簇 (abelian variety)：椭圆曲线的高维推广，点与点可以相加
+- 特殊子簇 (special subvariety)：阿贝尔子簇平移一个挠点得到的部分
+- 挠点 (torsion point)：自己加自己有限次就回到零的点
+- 非典型子簇 (atypical subvariety)：交出的维数超过维数计数预期的"坏交集"
+- 高度 (height)：代数点"大小"的尺子，整个证明的核心工具
+
+**看个具体例子**
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 285">
+  <text x="280" y="24" font-size="15" text-anchor="middle" fill="#333">小路压中地铁枢纽：极大的坏例子只有有限个</text>
+  <line x1="40" y1="80" x2="520" y2="80" stroke="#bbb" stroke-width="1.5"/>
+  <line x1="40" y1="140" x2="520" y2="140" stroke="#bbb" stroke-width="1.5"/>
+  <line x1="40" y1="200" x2="520" y2="200" stroke="#bbb" stroke-width="1.5"/>
+  <line x1="140" y1="55" x2="140" y2="225" stroke="#bbb" stroke-width="1.5"/>
+  <line x1="340" y1="55" x2="340" y2="225" stroke="#bbb" stroke-width="1.5"/>
+  <line x1="440" y1="55" x2="440" y2="225" stroke="#bbb" stroke-width="1.5"/>
+  <path d="M40 200 Q190 60 340 160 Q430 210 520 100" fill="none" stroke="#d33" stroke-width="2.5"/>
+  <circle cx="118" cy="140" r="5" fill="#f0a"/>
+  <circle cx="304" cy="140" r="5" fill="#f0a"/>
+  <circle cx="480" cy="140" r="5" fill="#f0a"/>
+  <text x="60" y="242" font-size="12" fill="#777">灰网＝特殊子簇；红曲线＝一般子簇 X；粉点＝非可能交点</text>
+  <text x="280" y="268" font-size="13" text-anchor="middle" fill="#333">定理：有限多个真子簇即可吸纳全部坏交集</text>
+</svg>
+
+</div>
+
+维数判据代入数字：在二维环面 `@@M@@S=E\times E@@` 中取一条曲线 `@@M@@X@@`（`@@M@@\dim X=1@@`），与一条特殊曲线 `@@M@@T@@`（`@@M@@\dim T=1@@`）的预期交维数是 `@@M@@1+1-2=0@@`——只该碰出孤立的点；一旦交出整段曲线（维数 `@@M@@1>0@@`），就是非典型坏例子。定理说：这种坏例子按包含取极大后只有有限个。
+
+**为什么值得关心**
+
+Zilber–Pink 是"不可能交点"纲领的总纲，著名的 Manin–Mumford 定理只是它的特款；此前高维仅有带附加条件的部分结果，这是首次无条件完整证明。
+
+> 暂无形式化证明（AI 结果待核验）
+
 ## 一句话结论
 
 论文在 `@@M@@\overline{\mathbb Q}@@` 上证明了完整的阿贝尔簇（abelian variety）版 Zilber–Pink 猜想：任意子簇 `@@M@@X@@` 相对其最小包含的特殊子簇只有有限多个极大非典型子簇，即"不大可能交点"不会太多。这是该猜想首次在任意维阿贝尔簇、不设任何附加几何或高度假设下获证。

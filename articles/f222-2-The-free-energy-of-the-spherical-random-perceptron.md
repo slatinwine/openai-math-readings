@@ -13,6 +13,28 @@ pdfname: ""
 
 > 结果族 222：Perceptron free energies and microscopic jamming exponents　·　学科：Probability and statistical mechanics　·　验证状态：暂无形式化证明，请以社区核验为准
 
+## 入门导读 🐣
+
+那个"旋钮裁判"又来了：这次旋钮可以连续调节、指向任何方向，只是总长度固定（像一根只能转的指针）；考卷仍是纯随机噪点图。考卷越来越多、温度任意时，指针还剩多少自由度？这篇论文给出精确答案：自由能等于"考卷项＋球面熵"的最优折中，且对任意有界连续的奖惩规则都成立。
+
+**关键词卡片**
+
+- 球面感知机（spherical perceptron）：权重连续、总长度固定的最简神经网络。
+- 逆温度 β（inverse temperature）：越低温规则越硬，β→∞ 就退化成硬约束。
+- 序参数 m(t)（order parameter）：一条非降路径，描述不同尺度下交叠如何逐级排列。
+- 球面熵（Crisanti–Sommers entropy）：指针在球面上还能自由转多少的量度。
+- 随机控制（stochastic control）：模式项 `@@M@@V(m)@@` 的算法化身——像驾驶布朗运动，选好"方向盘"使期望奖励最大。
+
+**看个具体例子**
+
+定理：`@@M@@\mathcal P(\alpha,\beta,\phi)=\inf_m\{\alpha V_{\beta\phi}(m)+S(m)\}@@`，`@@M@@m@@` 取遍一切非降路径。做个数字体检：取常值势 `@@M@@\phi\equiv c@@`，则 `@@M@@\mathcal P=\alpha\beta c@@`。比如 `@@M@@\alpha=0.5,\ \beta=2,\ c=1@@` 时公式给出 `@@M@@\mathcal P=1@@`——与初等上下界 `@@M@@\alpha\mathbb E f(G)\le\mathcal P\le\alpha\log\mathbb E e^{f(G)}@@` 的公共值完全吻合，公式在最简单的情形给出正确的数。
+
+**为什么值得关心**
+
+它把 Györgyi–Reimann 二十多年前的 replica 预测变成定理，且不需要任何凸性、对称性假设，是球面感知机的完整答案。
+
+> 暂无形式化证明（AI 结果待核验）
+
 ## 一句话结论
 
 本文对球面随机感知机（spherical random perceptron）证明了极限压强的精确变分公式：任意正密度与逆温度下，压强收敛于"α×单模式控制值＋球面熵"的下确界，且对任意有界连续势不加凸性或对称性假设。

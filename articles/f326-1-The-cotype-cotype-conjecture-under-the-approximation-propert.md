@@ -13,6 +13,62 @@ pdfname: ""
 
 > 结果族 326：The cotype–cotype conjecture under the approximation property　·　学科：Functional analysis　·　验证状态：主结果已 Lean 形式化
 
+## 入门导读 🐣
+
+想知道一块地形平不平整，可以扔弹珠听回声。研究无穷维空间也一样：把一组向量按抛硬币的正负随机加起来，听"随机和"的回声。这篇论文解决了一个 1981 年遗留的猜想：只要空间和它的对偶在抛硬币测试下都不"塌缩"（有余型），且空间可被有限维逼近，那么空间一定是"圆润"的（K-凸）——两枚硬币的正反面信息合在一起，恰好补齐了缺失的那一半。
+
+**关键词卡片**
+
+- 余型（cotype）：随机求和洗不掉向量的性质：随机和的平均长度不小于逐个长度的 `@@M@@\ell^q@@` 范数（差常数倍）。
+- 型（type）：对偶概念：随机性能帮忙"消化"向量组，随机和的长度不超过 `@@M@@\ell^p@@` 范数。
+- K-凸（K-convexity）：空间几何足够圆润、有不平凡型的等价说法；反面例子是越来越尖的"八面体"。
+- 逼近性质（approximation property, AP）：恒等映射可以被有限维算子逐点逼近，空间"看得清自己"。
+- 对偶空间（dual space）：原空间上全体连续线性函数组成的新空间，像原空间的"影子"。
+
+**看个具体例子**
+
+在平面 `@@M@@\mathbb{R}^2@@` 里取正交单位向量 `@@M@@y_1,y_2@@`，抛两枚硬币得到四个随机和 `@@M@@\pm y_1\pm y_2@@`，长度全是 `@@M@@\sqrt2@@`。余型 2 不等式在此取具体数字：
+
+`@@M@@D(\|y_1\|^2+\|y_2\|^2)^{1/2}=\sqrt2=\big(\mathbb{E}\|\varepsilon_1y_1+\varepsilon_2y_2\|^2\big)^{1/2}@@`
+
+两边严格相等——最圆润的空间（Hilbert 空间）里随机和不塌缩。定理说：只要 `@@M@@X@@` 与影子 `@@M@@X^*@@` 都通过这类测试（指数还可以一个用 2、一个用 3），`@@M@@X@@` 就必然 K-凸。
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280">
+  <text x="20" y="28" font-size="15" fill="#222">抛两枚硬币：四个随机和 ±y₁±y₂ 落在同一半径的圆上</text>
+  <line x1="40" y1="165" x2="400" y2="165" stroke="#999" stroke-width="1"/>
+  <line x1="220" y1="50" x2="220" y2="268" stroke="#999" stroke-width="1"/>
+  <circle cx="220" cy="165" r="95" fill="none" stroke="#bbb" stroke-width="1.5" stroke-dasharray="5 5"/>
+  <line x1="220" y1="165" x2="287" y2="98" stroke="#2f8f4e" stroke-width="2.5"/>
+  <line x1="220" y1="165" x2="153" y2="98" stroke="#2f8f4e" stroke-width="2.5"/>
+  <line x1="220" y1="165" x2="153" y2="232" stroke="#2f8f4e" stroke-width="2.5"/>
+  <line x1="220" y1="165" x2="287" y2="232" stroke="#2f8f4e" stroke-width="2.5"/>
+  <circle cx="287" cy="98" r="4" fill="#2f8f4e"/>
+  <circle cx="153" cy="98" r="4" fill="#2f8f4e"/>
+  <circle cx="153" cy="232" r="4" fill="#2f8f4e"/>
+  <circle cx="287" cy="232" r="4" fill="#2f8f4e"/>
+  <text x="295" y="92" font-size="13" fill="#2f8f4e">y₁+y₂</text>
+  <text x="90" y="92" font-size="13" fill="#2f8f4e">−y₁+y₂</text>
+  <text x="90" y="250" font-size="13" fill="#2f8f4e">−y₁−y₂</text>
+  <text x="295" y="250" font-size="13" fill="#2f8f4e">y₁−y₂</text>
+  <text x="228" y="60" font-size="13" fill="#888">半径 √2 的圆</text>
+  <text x="412" y="110" font-size="14" fill="#222">四个和长度</text>
+  <text x="412" y="132" font-size="14" fill="#222">全是 √2</text>
+  <text x="412" y="168" font-size="14" fill="#b0348f" font-weight="bold">不塌缩！</text>
+  <text x="412" y="204" font-size="13" fill="#666">定理：X 与影子 X*</text>
+  <text x="412" y="224" font-size="13" fill="#666">都这样不塌缩，</text>
+  <text x="412" y="244" font-size="13" fill="#666">则 X 必是 K-凸</text>
+</svg>
+
+</div>
+
+**为什么值得关心**
+
+它以比已知更弱的条件（AP 弱于 BAP）关闭了 Pisier 的公开问题，还顺带给出一大类凸体的无维数依赖熵对偶。
+
+> 主结果已 Lean 形式化
+
 ## 一句话结论
 
 在仅假设普通逼近性质（AP）的条件下证明了 cotype–cotype 猜想：非零实 Banach 空间是 `@@M@@K@@`-凸的，当且仅当它及其对偶都具有有限 Rademacher 余型，且两个指数可以不同。这解决了 Pisier 1981 年公开遗留的问题，条件还比已知的有界逼近性质（BAP）更弱。

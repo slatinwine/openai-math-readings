@@ -13,6 +13,36 @@ pdfname: ""
 
 > 结果族 260：Spacetime Penrose inequalities: enclosing area, charge, rotation, and anti-de Sitter extensions　·　学科：Mathematical physics　·　验证状态：暂无形式化证明，请以社区核验为准
 
+## 入门导读 🐣
+
+还是那个负曲率的喇叭宇宙，这篇聚焦"最大"切片——空间平均膨胀恰好为零的瞬间快照——证明同样的质量–面积不等式对不连通边界、任意黑洞拓扑都成立：哪怕黑洞是一串珠子、一个甜甜圈，定理照样生效。
+
+**关键词卡片**
+
+- 渐近双曲（asymptotically hyperbolic）：无穷远处看起来像双曲空间的空间，AdS 的几何底色。
+- 最大初始数据（maximal initial data）：`@@M@@\operatorname{tr}K=0@@`，即这一瞬间空间的平均膨胀为零。
+- 不变质量（invariant mass）：质量余向量的洛伦兹范数 `@@M@@m_{AH}=\sqrt{p_0^2-|\vec p|^2}@@`，像四维动量的"固有长度"。
+- 共形无穷远（conformal infinity）：喇叭口的抽象边缘，质量的测量处。
+- 最小围住面积（minimum enclosing area）：一切能把黑洞与远端一起包住曲面的面积下确界。
+
+**看个具体例子**
+
+喇叭宇宙里，质量在喇叭口（共形无穷远）测得，黑洞蹲在漏斗颈处：
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280"><text x="40" y="28" font-size="14" font-weight="bold" fill="#333">负曲率喇叭宇宙（AdS）里的黑洞</text><ellipse cx="280" cy="52" rx="130" ry="11" fill="none" stroke="#888" stroke-width="1.4" stroke-dasharray="7 5"/><text x="420" y="50" font-size="12.5" fill="#555">共形无穷远</text><path d="M152,55 C 216,125 254,180 266,212" fill="none" stroke="#333" stroke-width="2"/><path d="M408,55 C 344,125 306,180 294,212" fill="none" stroke="#333" stroke-width="2"/><ellipse cx="280" cy="215" rx="16" ry="6" fill="#2b2b2b"/><text x="226" y="243" font-size="12.5">黑洞视界（面积 A）</text><text x="280" y="150" font-size="12.5" fill="#777" text-anchor="middle">渐近双曲</text><text x="280" y="168" font-size="12.5" fill="#777" text-anchor="middle">（负曲率）</text><line x1="280" y1="66" x2="280" y2="198" stroke="#b0522d" stroke-width="1.2" stroke-dasharray="4 4"/><polygon points="280,206 274,194 286,194" fill="#b0522d"/><text x="286" y="190" font-size="12" fill="#b0522d">r_A</text><text x="430" y="80" font-size="13" font-weight="bold">定理</text><text x="400" y="102" font-size="13">m_H ≥ ½(r_A + r_A³)</text><text x="400" y="124" font-size="12.5" fill="#555">例：r_A=1 ⇒ m_H ≥ 1</text><text x="400" y="144" font-size="12.5" fill="#555">　　r_A=2 ⇒ m_H ≥ 5</text><text x="40" y="266" font-size="12.5" fill="#555">面积取最小围住面积 A_min，边界可不连通</text></svg>
+
+</div>
+
+数字版：`@@M@@r_A=\sqrt{A_{\min}/4\pi}=2@@` 时下界为 `@@M@@\frac{2+8}{2}=5@@`；`@@M@@r_A=1@@` 时为 `@@M@@1@@`。等号由 Schwarzschild–AdS 外部达成，系数无法再改进。证明里最难的一步是极小化包围面可能触碰原边界，作者设计了一套连续的内通量选择规则，让障碍面在一切接触点处严格平均凸，从而把面积安全转移过去。
+
+**为什么值得关心**
+
+它绕开了 Neves 在 2010 年发现的流方法障碍，首次对一般最大渐近双曲数据证明最佳系数的不等式，且不需要时空演化或额外可解性假设。
+
+> 暂无形式化证明（AI 结果待核验）
+
 ## 一句话结论
 在三维、宇宙常数为 `@@M@@-3@@` 的最大（maximal）渐近双曲初值数据上证明了最佳常数的 Penrose 不等式：不变质量 `@@M@@\ge\frac12(r_A+r_A^3)@@`，`@@M@@r_A@@` 由最小围住面积给出；边界可不连通、紧致部分拓扑任意，等号在 Schwarzschild–反德西特外部取到。
 

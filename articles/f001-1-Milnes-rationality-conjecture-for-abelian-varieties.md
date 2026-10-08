@@ -13,6 +13,58 @@ pdfname: ""
 
 > 结果族 001：Milne's rationality conjecture and algebraic specialization　·　学科：Number theory　·　验证状态：暂无形式化证明，请以社区核验为准
 
+## 入门导读 🐣
+
+想象质检车间里用激光、超声波、卡尺三台原理完全不同的仪器去量同一个零件，好的零件应让三台仪器读数一致。这篇论文处理的是数学版的"测量一致性"：对象是高维甜甜圈形状——阿贝尔簇；先把它"压缩"进特征 p 的世界（模素数 p 约化），再用几种互不相通的上同调"测量仪"去读同一组几何配对。定理说：所有仪器显示的都是同一个分数 q，一台不差——连最刁钻的 p=2 情形也拿下了。
+
+**关键词卡片**
+
+- 阿贝尔簇（abelian variety）：椭圆曲线的高维版，曲面上的点能像数字一样"相加"。
+- 好约化（good reduction）：把簇模一个素数 p 后形状不破损，得到特征 p 里的孪生兄弟 A₀。
+- Hodge 类（Hodge class）：用微积分算出的一件"测量仪"，猜想它其实来自真实的子图形。
+- 除子（divisor）：簇上一道低一维的"切口"，用来与测量仪配对、数交点。
+- 晶体上同调（crystalline cohomology）：特征 p 世界里专用的那台测量仪。
+
+**看个具体例子**
+
+配对可以想成"数交点"的高维推广。玩具版：椭圆曲线 `@@M@@E: y^2=x^3-x@@` 在 `@@M@@p=5@@` 处有好约化，取 Hodge 类 `@@M@@\gamma@@` 为除子 `@@M@@[(0,0)]@@`（一个点）的类，"配对"就是数它的次数，于是每台仪器都读出 `@@M@@1@@`。论文真正的难关在于：楼下（约化后的 `@@M@@A_0@@`）可能冒出楼上根本没有的"新增除子"，而 `@@M@@\gamma@@` 也未必来自任何代数对象——定理保证这种最坏情形下读数仍是同一个有理数 `@@M@@q@@`；论文还结合 CM 阿贝尔簇的 Hodge 定理，证明 `@@M@@\gamma_0@@` 可由一条有理代数闭链在所有仪器里同时表示。
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280">
+  <text x="150" y="34" text-anchor="middle" font-size="15" fill="#222">楼上：特征 0 的阿贝尔簇 A</text>
+  <ellipse cx="150" cy="90" rx="105" ry="40" fill="#f6f6f6" stroke="#222" stroke-width="2"/>
+  <rect x="112" y="76" width="10" height="10" fill="#1a75ff"/>
+  <text x="128" y="86" font-size="12" fill="#1a75ff">Hodge 类 γ</text>
+  <line x1="150" y1="132" x2="150" y2="172" stroke="#222" stroke-width="2"/>
+  <polygon points="150,184 143,170 157,170" fill="#222"/>
+  <text x="164" y="162" font-size="13" fill="#222">模 p 好约化</text>
+  <ellipse cx="150" cy="228" rx="105" ry="40" fill="#f6f6f6" stroke="#222" stroke-width="2"/>
+  <text x="150" y="207" text-anchor="middle" font-size="14" fill="#222">楼下：特征 p 的 A₀</text>
+  <rect x="100" y="220" width="10" height="10" fill="#1a75ff"/>
+  <text x="114" y="230" font-size="12" fill="#1a75ff">γ 的特化 γ₀</text>
+  <polygon points="196,224 203,233 196,242 189,233" fill="#e07b00"/>
+  <text x="207" y="238" font-size="12" fill="#e07b00">新增除子 D</text>
+  <text x="425" y="34" text-anchor="middle" font-size="15" fill="#222">所有"显微镜"读数一致</text>
+  <rect x="310" y="52" width="230" height="44" rx="8" fill="none" stroke="#555" stroke-width="1.5"/>
+  <text x="322" y="79" font-size="13" fill="#222">ℓ-adic 上同调（ℓ≠p）</text>
+  <text x="526" y="80" text-anchor="end" font-size="16" font-weight="bold" fill="#0a7d32">q</text>
+  <rect x="310" y="112" width="230" height="44" rx="8" fill="none" stroke="#555" stroke-width="1.5"/>
+  <text x="322" y="139" font-size="13" fill="#222">晶体上同调（专管 p）</text>
+  <text x="526" y="140" text-anchor="end" font-size="16" font-weight="bold" fill="#0a7d32">q</text>
+  <line x1="310" y1="180" x2="540" y2="180" stroke="#0a7d32" stroke-width="1.5" stroke-dasharray="6 4"/>
+  <text x="425" y="205" text-anchor="middle" font-size="13" fill="#0a7d32">读数全是同一个有理数 q ∈ ℚ</text>
+  <text x="425" y="228" text-anchor="middle" font-size="12" fill="#666">连最麻烦的 p = 2 也一样</text>
+</svg>
+
+</div>
+
+**为什么值得关心**
+
+这个有理性障碍在 Shimura 簇的约化理论（Langlands–Rapoport 纲领）里卡了二十多年，本文把它彻底清掉，是算术几何地基上的一块关键补强。
+
+> 暂无形式化证明（AI 结果待核验）
+
 ## 一句话结论
 
 证明了 Milne 有理性猜想对 `@@M@@\overline{\mathbb Q}@@` 上具好约化的阿贝尔簇成立（含剩余特征 2）：任一有理 Hodge 类特化到约化簇后，与互补除子乘积的配对在所有 `@@M@@\ell\ne p@@` 的 `@@M@@\ell@@`-adic 实现与晶体上同调中等于同一个有理数，且可由单个有理代数闭链表示。

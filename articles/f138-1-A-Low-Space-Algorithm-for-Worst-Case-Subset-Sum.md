@@ -13,6 +13,34 @@ pdfname: ""
 
 > 结果族 138：Subset Sum in `@@M@@O(2^{0.49n})@@` time　·　学科：Theoretical computer science　·　验证状态：暂无形式化证明，请以社区核验为准
 
+## 入门导读 🐣
+
+还是子集和，但换了个比法：时间维持五十年标杆 `@@M@@2^{n/2}@@` 不动，专门比谁"内存抠"。旧方法相当于把半本电话簿整个背下来，新算法像按需翻页检索，把工作内存压到 `@@M@@2^{n/5}@@` 个字。
+
+**关键词卡片**
+
+- 时空权衡（time–space tradeoff）：跑得快与记得多之间的讨价还价。
+- 四列表法：Schroeppel–Shamir 1981 年按序生成大列表，内存降到 `@@M@@2^{n/4}@@`。
+- 表示法（representation method）：把一个解拆成多组"双亲—孩子"表示，天然容错省内存。
+- 单侧错误（one-sided error）：无解时绝不误报"有解"；有解时以 `@@M@@\ge 2/3@@` 概率接受。
+- 亏格（deficiency）：子和塌缩的程度，高亏格与低亏格走不同分支。
+
+**看个具体例子**
+
+空间指数的四级台阶：1974 年 `@@M@@0.5@@` → 1981 年 `@@M@@0.25@@` → 2024 年 `@@M@@0.246@@` → 本文 `@@M@@0.199@@`（即 `@@M@@O(2^{n/5})@@` 个字）。代入 `@@M@@n=100@@`：内存从折半搜索的 `@@M@@2^{50}@@` 字降到约 `@@M@@2^{20}@@` 字，差约十亿倍。同时时间稳稳保持在 `@@M@@\operatorname{poly}(n)\cdot 2^{n/2}@@`，时间与空间界对每次执行（包括失败的那次）同时成立；算法是单一程序，任意多项式比特长度的输入通用，错误单侧——绝不把无解误报成有解。
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280"><text x="280" y="26" text-anchor="middle" font-size="15" fill="#333">子集和内存指数的四级台阶（2^(指数·n) 个字）</text><line x1="50" y1="240" x2="530" y2="240" stroke="#666" stroke-width="2"/><line x1="50" y1="240" x2="50" y2="50" stroke="#666" stroke-width="2"/><text x="56" y="62" font-size="13" fill="#666">空间指数 ↑</text><rect x="80" y="140" width="70" height="100" fill="#8aa"/><text x="115" y="130" text-anchor="middle" font-size="14" fill="#333">0.5</text><text x="115" y="262" text-anchor="middle" font-size="13" fill="#333">1974 折半</text><rect x="200" y="190" width="70" height="50" fill="#9ab"/><text x="235" y="180" text-anchor="middle" font-size="14" fill="#333">0.25</text><text x="235" y="262" text-anchor="middle" font-size="13" fill="#333">1981 四列表</text><rect x="320" y="191" width="70" height="49" fill="#aab"/><text x="355" y="181" text-anchor="middle" font-size="14" fill="#333">0.246</text><text x="355" y="262" text-anchor="middle" font-size="13" fill="#333">2024</text><rect x="440" y="200" width="70" height="40" fill="#c66"/><text x="475" y="190" text-anchor="middle" font-size="14" fill="#933">0.199</text><text x="475" y="262" text-anchor="middle" font-size="13" fill="#933">本文</text></svg>
+
+</div>
+
+**为什么值得关心**
+
+"生成信息与存储信息之别"是时空权衡四十余年的主线，本文立下普通意义（不藏多项式因子、每次执行都算数）的新空间纪录，并与姊妹篇的破指数算法共享亏格分析、互相印证。
+
+> 暂无形式化证明（AI 结果待核验）
+
 ## 一句话结论
 
 论文给出最坏情形子集和（Subset Sum）的一致随机判定算法：在 `@@M@@\operatorname{poly}(n)2^{n/2}@@` 时间下把工作空间压到普通意义 `@@M@@O(2^{n/5})@@` 个字（此前最好为 `@@M@@O^*(2^{0.246n})@@`），时间与空间界对每次执行同时成立，错误单侧，且适用于任意多项式比特长度的输入。

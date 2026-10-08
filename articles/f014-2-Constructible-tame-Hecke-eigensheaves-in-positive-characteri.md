@@ -13,6 +13,51 @@ pdfname: ""
 
 > 结果族 014：Restricted geometric Langlands, global Arthur enhancements, and generic Ramanujan　·　学科：Number theory　·　验证状态：暂无形式化证明，请以社区核验为准
 
+## 入门导读 🐣
+
+想象一间摆满乐器的仓库，每件乐器上都装着一排统一的"调音旋钮"。这篇论文要找的是一种"纯音"乐器：无论怎么拧旋钮，音色永远只是原来的声音乘上一个固定倍数。更麻烦的是，仓库建在"正特征"这块奇怪的地基上，而且旋钮上还打了结——此前几乎没人能在这里造出纯音。
+
+**关键词卡片**
+
+- 几何朗兰兹纲领 (geometric Langlands program)：把曲线上"带记忆的线性代数"翻译成模空间上"层"的宏大词典计划
+- Hecke 本征层 (Hecke eigensheaf)：被所有修正算子作用后只差一个固定因子的层，好比单频纯音
+- 局部系统 (local system)：沿曲线平行移动向量时的矩阵系统，绕圈一圈向量被乘一个矩阵
+- 温和单值 (tame monodromy)：标记点附近绕圈的矩阵形如 `@@M@@\exp(tN)@@`，`@@M@@N@@` 正则幂零——"结打得最紧"的那类
+- 正特征 (positive characteristic)：数字按模 `@@M@@p@@` 运算的世界，许多特征零的直觉在这里失灵
+
+**看个具体例子**
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280">
+  <text x="280" y="26" font-size="15" text-anchor="middle" fill="#333">一条打了结的曲线，和它的"纯音"</text>
+  <path d="M30 165 C 90 60, 210 60, 275 155" fill="none" stroke="#2a7" stroke-width="3"/>
+  <circle cx="151" cy="86" r="6" fill="#d33"/>
+  <circle cx="151" cy="86" r="27" fill="none" stroke="#d33" stroke-dasharray="5 4" stroke-width="1.5"/>
+  <text x="151" y="48" font-size="13" text-anchor="middle" fill="#d33">标记点 x</text>
+  <text x="150" y="190" font-size="12" text-anchor="middle" fill="#333">绕一圈：向量被乘 exp(t·N)</text>
+  <rect x="330" y="75" width="205" height="140" fill="none" stroke="#999" stroke-width="1.5"/>
+  <text x="432" y="63" font-size="13" text-anchor="middle" fill="#555">丛的模空间</text>
+  <circle cx="385" cy="145" r="5" fill="#26b"/>
+  <text x="385" y="168" font-size="13" text-anchor="middle" fill="#26b">M</text>
+  <path d="M402 138 Q 432 108 462 136" fill="none" stroke="#333" stroke-width="1.5"/>
+  <polygon points="464,138 453,133 455,144" fill="#333"/>
+  <circle cx="472" cy="142" r="5" fill="#26b"/>
+  <text x="472" y="165" font-size="13" text-anchor="middle" fill="#26b">M⊗V</text>
+  <text x="430" y="100" font-size="12" text-anchor="middle" fill="#333">Hecke 修正</text>
+  <text x="280" y="262" font-size="13" text-anchor="middle" fill="#333">拧一圈旋钮，M 只乘固定因子——像只有一个频率的纯音</text>
+</svg>
+
+</div>
+
+如图，在标记点 `@@M@@x@@` 处绕一圈，向量被乘 `@@M@@\rho(\gamma)=\exp(t\cdot N)@@`；定理保证：即使地基是正特征，模空间上仍存在非零的"纯音"层 `@@M@@M@@`，满足 `@@M@@\mathrm{Hecke}(M)\cong M\otimes V_\rho@@`——旋钮拧过之后只乘参数决定的因子，而且几条旋钮腿合并（融合）时依然自洽。
+
+**为什么值得关心**
+
+几何朗兰兹的存在性构造此前集中在特征零或不打结的情形；本文补上"正特征＋打结"这块关键缺口，让纲领在最常用的有限域世界也站得住。
+
+> 暂无形式化证明（AI 结果待核验）
+
 ## 一句话结论
 
 在正特征代数闭域上，论文对单连通单群 `@@M@@G@@` 构造了带 Borel 水平结构的非零 perverse Hecke 本征层，其特征值是标点处温和正则单幂、整体 Zariski 稠密的 `@@M@@\ell@@`-adic 局部系统，且奇异支集含于抛物型幂零锥——补上了几何朗兰兹纲领中带分歧存在性问题在正特征的关键一环。

@@ -13,6 +13,36 @@ pdfname: ""
 
 > 结果族 131：Rapid mixing of graph switches for every degree sequence　·　学科：Theoretical computer science　·　验证状态：暂无形式化证明，请以社区核验为准
 
+## 入门导读 🐣
+
+想象洗一副牌，但规定每种牌的数量固定，只许"两两对调"。图的版本是：所有顶点的朋友数（度数）不许变，每步随机挑 4 个顶点、把两条边重新配对——这样乱洗下去，多久才能洗"匀"？本文证明：最多 `@@M@@2n^8@@` 步一定洗匀，而且对**任何**度序列都成立，解决了 1999 年提出的 Kannan–Tetali–Vempala 猜想。
+
+**关键词卡片**
+
+- 度序列（degree sequence）：每个顶点连了几条边的清单，比如 `@@M@@(3,2,2,1)@@`。
+- 交换链（switch chain）：随机过程，每步删两条边、在同样 4 个端点上换成另一种配对，度数全程不变。
+- 混合时间（mixing time）：走多少步后，分布与均匀分布的总变差距离不超过 `@@M@@1/4@@`。
+- 总变差距离（total variation distance）：衡量两个概率分布差多少的标尺。
+- 可图化（graphical）：一个度序列能被某个简单图实现。
+
+**看个具体例子**
+
+一步"交换"长这样：
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280"><text x="185" y="36" text-anchor="middle" font-size="15" fill="#333">交换前</text><text x="455" y="36" text-anchor="middle" font-size="15" fill="#333">交换后</text><line x1="130" y1="90" x2="240" y2="90" stroke="#345" stroke-width="3"/><line x1="130" y1="200" x2="240" y2="200" stroke="#345" stroke-width="3"/><circle cx="130" cy="90" r="14" fill="#fff" stroke="#345" stroke-width="2"/><text x="130" y="96" text-anchor="middle" font-size="14" fill="#123">甲</text><circle cx="240" cy="90" r="14" fill="#fff" stroke="#345" stroke-width="2"/><text x="240" y="96" text-anchor="middle" font-size="14" fill="#123">乙</text><circle cx="130" cy="200" r="14" fill="#fff" stroke="#345" stroke-width="2"/><text x="130" y="206" text-anchor="middle" font-size="14" fill="#123">丙</text><circle cx="240" cy="200" r="14" fill="#fff" stroke="#345" stroke-width="2"/><text x="240" y="206" text-anchor="middle" font-size="14" fill="#123">丁</text><line x1="268" y1="145" x2="322" y2="145" stroke="#666" stroke-width="2"/><polygon points="322,145 310,139 310,151" fill="#666"/><line x1="400" y1="90" x2="400" y2="200" stroke="#d62728" stroke-width="3" stroke-dasharray="7,5"/><line x1="510" y1="90" x2="510" y2="200" stroke="#d62728" stroke-width="3" stroke-dasharray="7,5"/><circle cx="400" cy="90" r="14" fill="#fff" stroke="#345" stroke-width="2"/><text x="400" y="96" text-anchor="middle" font-size="14" fill="#123">甲</text><circle cx="510" cy="90" r="14" fill="#fff" stroke="#345" stroke-width="2"/><text x="510" y="96" text-anchor="middle" font-size="14" fill="#123">乙</text><circle cx="400" cy="200" r="14" fill="#fff" stroke="#345" stroke-width="2"/><text x="400" y="206" text-anchor="middle" font-size="14" fill="#123">丙</text><circle cx="510" cy="200" r="14" fill="#fff" stroke="#345" stroke-width="2"/><text x="510" y="206" text-anchor="middle" font-size="14" fill="#123">丁</text><text x="280" y="250" text-anchor="middle" font-size="13" fill="#666">删去甲—乙、丙—丁两条边，改放甲—丙、乙—丁（虚线）：</text><text x="280" y="272" text-anchor="middle" font-size="13" fill="#666">每个顶点的度数（朋友数）一个都没变。</text></svg>
+
+</div>
+
+具体数字：`@@M@@n=50@@` 个顶点时，上界 `@@M@@2n^8\approx 7.8\times10^{13}@@` 步——巨大，但关键是它只是 `@@M@@n@@` 的多项式。此前快速混合只在正则图、P-稳定族等特殊情形成立，对单个度序列毫无附加假设的简单无向情形悬置二十余年；本文补上 `@@M@@t_{\mathrm{mix}}\le 2n^8@@`，并附赠一个期望多项式比特时间的精确均匀采样算法。
+
+**为什么值得关心**
+
+在"度数固定"的随机图上均匀采样是网络科学的标准零模型；交换链快速混合意味着"简单乱洗"本身就是理论上可靠的均匀采样器。
+
+> 暂无形式化证明（AI 结果待核验）
+
 ## 一句话结论
 
 本文证明了简单无向图情形的 Kannan–Tetali–Vempala 猜想：对每个可图化度序列，惰性交换链的总变差混合时间不超过 `@@M@@2n^8@@`；同时给出期望多项式比特时间的精确均匀采样算法。

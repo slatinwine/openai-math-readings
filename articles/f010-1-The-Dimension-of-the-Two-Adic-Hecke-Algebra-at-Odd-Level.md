@@ -13,6 +13,38 @@ pdfname: ""
 
 > 结果族 010：Unrestricted pro-modularity at the prime two　·　学科：Number theory　·　验证状态：暂无形式化证明，请以社区核验为准
 
+## 入门导读 🐣
+
+把所有权的模形式的 Hecke 特征值铺在一张大地图上，会得到一块块连成片的"大陆"（谱的不可约分支）。每块大陆是几维的？Emerton 猜测：每块都恰好四维，像恰好四条互相独立的方向。奇素数处已有部分答案，素数 2 却因"不能除以 2"这类技术障碍久攻不下。本文证明：`@@M@@p=2@@` 时，每块大陆也精确是四维。
+
+**关键词卡片**
+
+- 模形式（modular form）：高度对称的特殊函数，按"权"分层，不同权之间藏满同余。
+- Hecke 代数（Hecke algebra）：由 Hecke 算子 `@@M@@T_\ell@@` 生成的代数，把所有特征值体系编织成一体。
+- Krull 维数（Krull dimension）：代数中"自由参数的个数"，即一个分支上有几条独立方向。
+- 不可约分支（irreducible component）：谱上连成一片的最小闭块，一块"大陆"。
+- 行列式律（determinant law）：Chenevier 的工具，顶替在 2 处失灵的伪表示技巧，用迹与行列式拼出伽罗瓦表示。
+
+**看个具体例子**
+
+证明是两端夹逼：Emerton 的无穷蕨给下界 `@@M@@\dim\ge4@@`；上界在每个分支的"好尖点"处压缩切空间——`@@M@@\dim A_{\mathfrak x}\le\dim H^1(G,\ad r)@@`，而 Newton–Thorne 的 Selmer 消没定理加局部计算给出 `@@M@@H^1\le3@@`，经典商再占去 1 维。合起来就是数字版定理：
+
+`@@M@@D4\ \le\ \dim(\text{每个不可约分支})\ \le\ 3+1=4 .@@`
+
+顺带一提：Eisenstein 轨迹的维数至多 2，填不满四维大陆，所以每块大陆上必有货真价实的尖点。
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280"><rect x="200" y="110" width="160" height="60" fill="none" stroke="#333" stroke-width="3"/><text x="280" y="135" font-size="15" text-anchor="middle" fill="#222">每个不可约分支</text><text x="280" y="160" font-size="17" text-anchor="middle" fill="#222">维数 = 4</text><line x1="60" y1="140" x2="188" y2="140" stroke="#2a9d4f" stroke-width="4"/><polygon points="188,131 204,140 188,149" fill="#2a9d4f"/><text x="120" y="115" font-size="16" text-anchor="middle" fill="#2a9d4f">下界 ≥ 4</text><text x="120" y="170" font-size="13" text-anchor="middle" fill="#555">Emerton：无穷蕨</text><line x1="500" y1="140" x2="372" y2="140" stroke="#d64545" stroke-width="4"/><polygon points="372,131 356,140 372,149" fill="#d64545"/><text x="440" y="115" font-size="16" text-anchor="middle" fill="#d64545">上界 ≤ 4</text><text x="440" y="170" font-size="13" text-anchor="middle" fill="#555">切空间估计 H¹ ≤ 3</text><text x="280" y="230" font-size="14" text-anchor="middle" fill="#555">Newton–Thorne 的 Selmer 消没是上界的关键输入</text><text x="280" y="30" font-size="16" text-anchor="middle" fill="#222">Emerton 维数猜想在 p = 2：夹逼（示意）</text></svg>
+
+</div>
+
+**为什么值得关心**
+
+它补齐了 Emerton 维数猜想在 `@@M@@p=2@@` 的情形，摸清"模形式地图"的全局形状，也是姊妹篇模性定理的关键零件。
+
+> 暂无形式化证明（AI 结果待核验）
+
 ## 一句话结论
 
 本文证明：对每个奇数 `@@M@@N@@`，水平 `@@M@@\Gamma_1(N)@@` 的完整 2-adic Hecke 代数（Hecke algebra）的谱的每个不可约分支（irreducible component）的 Krull 维数（Krull dimension）都恰好是 4。这证明了 Emerton 维数猜想在 `@@M@@p=2@@` 的情形，且不设剩余表示不可约等任何附加条件。

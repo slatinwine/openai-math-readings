@@ -13,6 +13,38 @@ pdfname: ""
 
 > 结果族 009：Function-field reconstruction from Milnor K-theory and Galois data　·　学科：Number theory　·　验证状态：暂无形式化证明，请以社区核验为准
 
+## 入门导读 🐣
+
+从域的"模 `@@M@@\ell@@` 快照"重建域，在 `@@M@@\ell@@` 不等于特征时只能认出完美闭包——好比照片只够认出双胞胎。可当模数恰好取域自己的特征 `@@M@@p@@` 时，照片突然变清晰：本文证明，只凭一阶 Milnor K 群模 `@@M@@p@@` 加上二阶 Steinberg 关系，就能直接认出本人——原原本本的域，连同常数域，一个不缺。
+
+**关键词卡片**
+
+- 特征 `@@M@@p@@`（characteristic `@@M@@p@@`）：域中 `@@M@@p@@` 个 1 相加等于 0 的算术环境，例如有限域上的函数域。
+- Milnor K 群模 `@@M@@p@@`（`@@M@@K^{\mathrm M}_1/p@@`）：`@@M@@V_F=F^\times/(F^\times)^p@@`；因 `@@M@@(F^\times)^p=(F^p)^\times@@`，元素的等价类恰是射影空间的点。
+- Steinberg 关系（Steinberg relations）：`@@M@@[f]\otimes[1-f]=0@@`，本文只需要二阶的这一层关系。
+- 射影几何基本定理（fundamental theorem of projective geometry）：保直线的双射必来自唯一的半线性提升——从几何走回代数的桥。
+- 导子（derivation）：像微分那样的求导算子，用来检测"谁在谁的 `@@M@@p@@` 次幂扩张里"。
+
+**看个具体例子**
+
+零符号判据：若 `@@M@@s\notin F^p@@` 且 `@@M@@\{s,t\}=0@@`，则 `@@M@@t\in F^p(s)@@`。取 `@@M@@F=k(x,y)@@`、`@@M@@s=x@@`：与 `@@M@@x@@` 配为零的 `@@M@@t@@` 恰好是只含 `@@M@@x@@` 的有理函数——一条"射影直线"被认了出来。再算规模：`@@M@@[F:F^p]=p^{\operatorname{trdeg}}@@`，超越次数 2 时为 `@@M@@p^2\ge4@@`，刚好够射影几何施展拳脚。定理断言
+
+`@@M@@D\operatorname{Isom}(K,k;L,l)\ \longrightarrow\ \operatorname{Isom}_{\mathrm M}(V_K,V_L)/\mathbb F_p^{\times}\quad\text{是双射}，@@`
+
+且 Frobenius 在 `@@M@@V_F@@` 上诱导零映射，连 Frobenius 歧义都不存在。
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280"><line x1="60" y1="140" x2="230" y2="50" stroke="#2a5fd6" stroke-width="2"/><line x1="90" y1="185" x2="250" y2="185" stroke="#2a9d4f" stroke-width="2"/><circle cx="80" cy="129" r="5" fill="#2a5fd6"/><circle cx="140" cy="98" r="5" fill="#2a5fd6"/><circle cx="200" cy="66" r="5" fill="#2a5fd6"/><circle cx="110" cy="185" r="5" fill="#2a9d4f"/><circle cx="170" cy="185" r="5" fill="#2a9d4f"/><circle cx="230" cy="185" r="5" fill="#2a9d4f"/><line x1="330" y1="140" x2="500" y2="50" stroke="#2a5fd6" stroke-width="2"/><line x1="360" y1="185" x2="520" y2="185" stroke="#2a9d4f" stroke-width="2"/><circle cx="350" cy="129" r="5" fill="none" stroke="#2a5fd6" stroke-width="2"/><circle cx="410" cy="98" r="5" fill="none" stroke="#2a5fd6" stroke-width="2"/><circle cx="470" cy="66" r="5" fill="none" stroke="#2a5fd6" stroke-width="2"/><circle cx="380" cy="185" r="5" fill="none" stroke="#2a9d4f" stroke-width="2"/><circle cx="440" cy="185" r="5" fill="none" stroke="#2a9d4f" stroke-width="2"/><circle cx="500" cy="185" r="5" fill="none" stroke="#2a9d4f" stroke-width="2"/><line x1="86" y1="129" x2="336" y2="129" stroke="#999" stroke-width="1.5" stroke-dasharray="4 4"/><polygon points="336,124 348,129 336,134" fill="#999"/><line x1="146" y1="98" x2="396" y2="98" stroke="#999" stroke-width="1.5" stroke-dasharray="4 4"/><polygon points="396,93 408,98 396,103" fill="#999"/><line x1="206" y1="66" x2="456" y2="66" stroke="#999" stroke-width="1.5" stroke-dasharray="4 4"/><polygon points="456,61 468,66 456,71" fill="#999"/><text x="66" y="148" font-size="13" fill="#333">a</text><text x="126" y="117" font-size="13" fill="#333">b</text><text x="186" y="85" font-size="13" fill="#333">c</text><text x="104" y="174" font-size="13" fill="#333">d</text><text x="164" y="174" font-size="13" fill="#333">e</text><text x="224" y="174" font-size="13" fill="#333">f</text><text x="155" y="222" font-size="14" text-anchor="middle" fill="#222">K 的射影点</text><text x="435" y="222" font-size="14" text-anchor="middle" fill="#222">L 的射影点</text><text x="280" y="252" font-size="15" text-anchor="middle" fill="#222">Θ 修正后保直线 ⇒ 射影几何基本定理 ⇒ 域同构（示意）</text><text x="280" y="30" font-size="16" text-anchor="middle" fill="#222">直线映成直线（示意）</text></svg>
+
+</div>
+
+**为什么值得关心**
+
+它补上了 Milnor K 重建纲领在"模特征"一侧的缺口，而且证明只靠导子计算与射影几何，出奇地初等；与族内另两篇姊妹工作（模 `@@M@@\ell@@` 情形与 Galois 数据情形）互相印证。
+
+> 暂无形式化证明（AI 结果待核验）
+
 ## 一句话结论
 
 在特征 `@@M@@p@@` 的函数域上，一阶 Milnor K 群模 `@@M@@p@@` 连同二阶 Steinberg 关系（Steinberg relations）足以重构域本身及其代数闭常数域：每个相容同构都是唯一域同构所诱导，只差一个 `@@M@@\mathbb F_p^\times@@` 标量。不同于模 `@@M@@\ell\ne p@@` 情形只能找回完备闭包，这里直接找回原来的域。

@@ -13,6 +13,52 @@ pdfname: ""
 
 > 结果族 278：Failure of Kohn–Sham ensemble representation　·　学科：Mathematical physics　·　验证状态：暂无形式化证明，请以社区核验为准
 
+## 入门导读 🐣
+
+化学家想预测分子里电子的行为，但电子互相推挤，直接求解算不动。密度泛函理论有个聪明办法：只盯"电子密度"——哪里电子多、哪里少——再安排一群互不打扰的"替身电子"，排出一模一样的密度。这篇论文严格造出一个三电子分子，证明无论给替身们挑哪种合格的单一体局域势场，都排不出真实电子的密度：替身方案在这个分子上必然失灵。
+
+**关键词卡片**
+
+- 电子密度（density）：单位体积里电子的平均个数，像一张人口密度地图
+- Kohn–Sham 替身系统：让互不影响的电子在同一个局域势里模仿真实体系
+- 系综（ensemble）：基态解不唯一时，把几个并列解按概率混合着用
+- v-可表示性（v-representability）：给定密度能否由某个局域势的基态产生
+- 节点面机制（nodal plane）：波函数在两核之间的中面上被对称性"钉"出零点，密度却仍漏出衰减较慢的尾巴
+
+**看个具体例子**
+
+论文的分子很简单：两个核电荷都是 `@@M@@Z@@` 的核，放得相距极远（距离参数 `@@M@@D=10^{200}@@`），配三个电子。关键发生在两核正中间的"中面" `@@M@@z=0@@` 上：真实波函数在那里近乎被钉死，但另一条物理通道会漏出一条按 `@@M@@p^{-4}@@` 只缓缓变薄的密度尾巴；而任何来自合格局域势的替身轨道，在中面上都必须衰减得比这更快。两条渐近规律正面相撞，得出矛盾。
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280">
+  <ellipse cx="90" cy="140" rx="62" ry="46" fill="none" stroke="#333" stroke-width="1.5"/>
+  <ellipse cx="470" cy="140" rx="62" ry="46" fill="none" stroke="#333" stroke-width="1.5"/>
+  <circle cx="90" cy="140" r="12" fill="none" stroke="#000" stroke-width="2"/>
+  <circle cx="470" cy="140" r="12" fill="none" stroke="#000" stroke-width="2"/>
+  <text x="68" y="205" font-size="14" fill="#000">核 +Z</text>
+  <text x="448" y="205" font-size="14" fill="#000">核 +Z</text>
+  <line x1="280" y1="30" x2="280" y2="250" stroke="#666" stroke-width="1.5" stroke-dasharray="6,5"/>
+  <text x="228" y="46" font-size="14" fill="#666">中面 z=0</text>
+  <circle cx="280" cy="95" r="4.5" fill="none" stroke="#c00" stroke-width="1.5"/>
+  <circle cx="280" cy="125" r="3.5" fill="none" stroke="#c00" stroke-width="1.5"/>
+  <circle cx="280" cy="152" r="2.5" fill="none" stroke="#c00" stroke-width="1.5"/>
+  <circle cx="280" cy="176" r="2" fill="none" stroke="#c00" stroke-width="1.5"/>
+  <text x="292" y="100" font-size="13" fill="#c00">非零密度尾</text>
+  <text x="292" y="118" font-size="12" fill="#c00">（衰减慢）</text>
+  <text x="55" y="62" font-size="13" fill="#000">电子云</text>
+  <text x="430" y="62" font-size="13" fill="#000">电子云</text>
+  <text x="90" y="243" font-size="12" fill="#000">两核相距极远</text>
+</svg>
+
+</div>
+
+**为什么值得关心**
+
+这是第一个从真实三维库仑分子基态严格推出的解析反例，给教科书级的 Kohn–Sham 方法划出了一条理论上不可逾越的边界。
+
+> 暂无形式化证明（AI 结果待核验）
+
 ## 一句话结论
 
 论文严格构造了一个有限的三电子库仑分子（两个核电荷为相等的正整数 `@@M@@Z@@`），并证明其绝对基态密度无法由任何单个实、自旋无关的 `@@M@@L^{3/2}(\mathbb R^3)+L^\infty(\mathbb R^3)@@` 局域势下无相互作用电子的基态系综重现，从而在该势类中否定了 Kohn–Sham 系综可表示性。

@@ -13,6 +13,34 @@ pdfname: ""
 
 > 结果族 034：Log abundance for compact Kähler spaces under logarithmic Iitaka subadditivity　·　学科：Algebraic and complex geometry　·　验证状态：暂无形式化证明，请以社区核验为准
 
+## 入门导读 🐣
+
+一个蓄水系统，只要"水位对每条水渠都不欠账"（nef），而且历史上真的存进过一滴水（某个倍数有非零截面），就能开闸灌溉整片田——截面处处生成，给出真正的映射（半丰富）。论文在四维的解析世界（紧 Kähler，可以不是射影的）里证明这台水泵一定开得动；水位档位为零时结论更强：整条水渠干脆是平的，线丛本身平凡。
+
+**关键词卡片**
+
+- 紧 Kähler 空间（compact Kähler）：比射影簇更广的解析形状，可能没有足够的整体多项式函数
+- nef（analytically nef）：与每条曲线相交都不负的温和正性，这里是解析版本
+- 半丰富（semiample）：某个正倍数的截面处处生成，从而定义到射影空间的映射
+- Iitaka 维数（Iitaka dimension）：截面数随次数增长的速度档位
+- klt（Kawamata log terminal）：奇点温和度等级
+
+**看个具体例子**
+
+难点和新点都在 `@@M@@\kappa=0@@`：手里只有一个非零截面 `@@M@@s_0@@`，直觉上它可能在某些点"归零"。定理证明这不可能——`@@M@@s_0@@` 必处处非零，于是它直接把线丛平凡化。数字版结论：`@@M@@\kappa(X,K_X+\Delta)=0@@` 时 `@@M@@\mathcal O_X(m(K_X+\Delta))\simeq\mathcal O_X@@`。
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280"><ellipse cx="150" cy="110" rx="90" ry="52" fill="none" stroke="#4a6fa5" stroke-width="2.5"/><g stroke="#c0504d" stroke-width="2.5"><line x1="118" y1="98" x2="130" y2="110"/><line x1="130" y1="98" x2="118" y2="110"/><line x1="178" y1="140" x2="190" y2="152"/><line x1="190" y1="140" x2="178" y2="152"/></g><ellipse cx="410" cy="110" rx="90" ry="52" fill="none" stroke="#4a6fa5" stroke-width="2.5"/><text x="70" y="210" font-size="15" fill="#c0504d">截面有零点（×）：κ=0 时被定理排除</text><text x="340" y="210" font-size="15" fill="#4a6fa5">截面处处非零 → 线丛平凡</text><text x="160" y="252" font-size="15" fill="#333">同一个非零截面 s₀ 的两种命运</text></svg>
+
+</div>
+
+**为什么值得关心**
+
+丰度猜想是极小模型纲领的后半程；Kähler 世界没有丰富除子可当扶手，这一步把"非消失后丰度"从射影推广到了解析四维，是族内姊妹篇的解析支柱。
+
+> 暂无形式化证明（AI 结果待核验）
+
 ## 一句话结论
 在紧 Kähler 四维组上证明了"非消失后的丰度"（abundance after nonvanishing）：klt 组 `@@M@@(X,\Delta)@@` 的实际 `@@M@@\Q@@`-Cartier 伴随 `@@M@@K_X+\Delta@@` 只要解析 nef，且某个正 Cartier 倍数有非零截面，就必半丰富；Iitaka 维数为零时该线丛实为平凡全纯线丛。证明不需要射影性与 `@@M@@\Q@@`-因子性假设。
 

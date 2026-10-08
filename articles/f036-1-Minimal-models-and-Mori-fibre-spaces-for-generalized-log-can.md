@@ -13,6 +13,34 @@ pdfname: ""
 
 > 结果族 036：Numerical semiampleness and generalized minimal models　·　学科：Algebraic and complex geometry　·　验证状态：暂无形式化证明，请以社区核验为准
 
+## 入门导读 🐣
+
+整理房间只有两种好结局：要么把所有东西摆到互不冲突的稳定状态，要么发现房间本质上是一排锥形抽屉柜，每格抽屉都是简单形状。论文证明：连"带隐形行李"的广义 log canonical 形状——数据里额外揣着一件高阶模型上的 nef 部分 `@@M@@M@@`——也一定抵达其中一种结局，而且行李全程不丢。
+
+**关键词卡片**
+
+- 极小模型（minimal model）：伴随除子 `@@M@@K_X+B+M@@` 变 nef 的终点模型
+- Mori 纤维空间（Mori fibre space）：整体呈一束简单纤维、负伴随除子在纤维上丰富的结构
+- 伪有效（pseudo-effective）："总量不为负"，是走哪条岔路的判据
+- 广义对（generalized pair）：额外携带 nef 数据 `@@M@@M@@` 的形状记账方式，`@@M@@M@@` 来自纤维化的模项
+- log 差异（log discrepancy）：给奇点温和度打分的量，程序运行中只升不降
+
+**看个具体例子**
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280"><rect x="185" y="20" width="190" height="46" rx="10" fill="#e8eef7" stroke="#4a6fa5" stroke-width="2"/><text x="205" y="49" font-size="15" fill="#333">广义 lc 对 (X, B+M)</text><path d="M280 66 C280 100 150 95 150 130" fill="none" stroke="#333333" stroke-width="2"/><path d="M280 66 C280 100 410 95 410 130" fill="none" stroke="#333333" stroke-width="2"/><polygon points="144,128 156,128 150,142" fill="#333333"/><polygon points="404,128 416,128 410,142" fill="#333333"/><rect x="40" y="146" width="220" height="66" rx="10" fill="#e9f5ec" stroke="#3d8b57" stroke-width="2"/><text x="58" y="172" font-size="15" fill="#3d8b57">K+B+M 伪有效：</text><text x="62" y="196" font-size="15" fill="#3d8b57">极小模型（nef 终点）</text><rect x="310" y="146" width="220" height="66" rx="10" fill="#fdf1e3" stroke="#d98c3f" stroke-width="2"/><text x="345" y="172" font-size="15" fill="#d98c3f">非伪有效：</text><text x="322" y="196" font-size="15" fill="#d98c3f">Mori 纤维空间（锥束）</text><text x="120" y="248" font-size="15" fill="#666666">两种结局必居其一，nef 行李 M 全程固定</text></svg>
+
+</div>
+
+岔路的判据是纯数值的：`@@M@@K_X+B+M@@` 伪有效就走上路，得 nef 终点；否则走下路，得 Picard 数为 1 的收缩，负伴随除子在底上丰富。取 `@@M@@M=0@@` 即回到普通 log canonical 对的经典结论。
+
+**为什么值得关心**
+
+广义 log canonical 对上极小模型猜想的存在性形式由此解决（特征零），是整个纲领的地基；注意结论只保证"某个"程序终止，且 nef 终点尚不含半丰富——那要靠姊妹篇的丰度定理补齐。
+
+> 暂无形式化证明（AI 结果待核验）
+
 ## 一句话结论
 论文解决了广义 log canonical 对上极小模型猜想的存在性形式：伴随除子 `@@M@@K_X+B+M@@` 伪有效时存在极小模型（nef 终点），否则得 Mori 纤维空间，且全程固定 nef b-除子数据。取 `@@M@@M=0@@` 即恢复普通 log canonical 对的相应定理。
 

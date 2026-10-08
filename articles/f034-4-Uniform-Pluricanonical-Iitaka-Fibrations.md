@@ -13,6 +13,34 @@ pdfname: ""
 
 > 结果族 034：Log abundance for compact Kähler spaces under logarithmic Iitaka subadditivity　·　学科：Algebraic and complex geometry　·　验证状态：暂无形式化证明，请以社区核验为准
 
+## 入门导读 🐣
+
+机场安检扫描行李，靠的是同一套固定规程，不挑箱子。这篇论文做的是几何版的这件事：每个高维形状都自带一把"固有曲率标尺"，作者证明存在只依赖维数的固定档位 `@@M@@m(d)@@`——扫描到这个档位，任何形状的复杂度结构都能一次成像。这就是自 1971 年奠基以来悬置的"有效饭高纤维化"问题，如今在特征零被彻底解决。
+
+**关键词卡片**
+
+- 多重典范系（pluricanonical system）：标尺 `@@M@@mK@@` 上全体整体截面的集合，相当于第 `@@M@@m@@` 档扫描
+- 小平维数（Kodaira dimension）：截面数随档位增长的速度，给形状复杂度定档，从 `@@M@@-\infty@@` 到维数 `@@M@@d@@`
+- 饭高纤维化（Iitaka fibration）：用高档位截面把形状投影成"同款纤维"排成的族，暴露复杂度方向
+- 一致次数 m(d)：只看维数、对一切形状通用的扫描档位
+- log Calabi–Yau 对（log Calabi–Yau pair）：带扣除项 `@@M@@B@@` 后"曲率总账为零"的形状 `@@M@@(X,B)@@`
+
+**看个具体例子**
+
+拿一个小平维数为 1 的曲面：它的饭高纤维化把它压成一族椭圆曲线，全部截面信息浓缩到底下那条基曲线上。定理保证存在统一的 `@@M@@m(2)@@`，使任何这类曲面在 `@@M@@|m(2)K|@@` 档位拍到的截面之比，足以恢复基曲线上的全部有理函数。
+
+<div>
+
+<svg xmlns="http://www.w3.org//2000/svg" viewBox="0 0 560 280"><g stroke="#4a6fa5" stroke-width="2" fill="none"><ellipse cx="110" cy="112" rx="46" ry="14"/><ellipse cx="190" cy="94" rx="46" ry="14"/><ellipse cx="270" cy="88" rx="46" ry="14"/><ellipse cx="350" cy="94" rx="46" ry="14"/><ellipse cx="430" cy="112" rx="46" ry="14"/></g><g stroke="#c0504d" stroke-width="1.5" fill="none" stroke-dasharray="5,4"><line x1="110" y1="130" x2="98" y2="222"/><line x1="270" y1="106" x2="268" y2="206"/><line x1="430" y1="130" x2="442" y2="222"/></g><path d="M55 235 Q270 205 505 235" stroke="#333" stroke-width="2.5" fill="none"/><circle cx="98" cy="224" r="3" fill="#333"/><circle cx="268" cy="208" r="3" fill="#333"/><circle cx="442" cy="224" r="3" fill="#333"/><text x="40" y="45" font-size="16" fill="#4a6fa5">曲面 X（小平维数 1）</text><text x="310" y="168" font-size="15" fill="#4a6fa5">纤维是椭圆曲线</text><text x="215" y="266" font-size="16" fill="#333">基曲线 Z</text><text x="370" y="55" font-size="15" fill="#c0504d">虚线箭头：饭高纤维化 X→Z</text></svg>
+
+</div>
+
+**为什么值得关心**
+
+分类高维形状是代数几何的主线，而"有效"意味着分类程序真正可执行；定理还顺带给出 log Calabi–Yau 对的一致指数界，与姊妹篇合并成 Birkar–Zhang 有效饭高纤维化猜想的完整解答。
+
+> 暂无形式化证明（AI 结果待核验）
+
 ## 一句话结论
 证明了特征零域上的有效饭高纤维化猜想：存在只依赖维数 `@@M@@d@@` 的多重典范次数 `@@M@@m(d)@@`，使 `@@M@@|m(d)K_X|@@` 的截面比生成整个饭高函数域，一致定义所有 `@@M@@\kappa\ge0@@` 的光滑射影 `@@M@@d@@` 维簇的饭高纤维化；同时得到 log Calabi–Yau 对的一致指数界。
 

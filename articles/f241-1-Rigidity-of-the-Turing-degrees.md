@@ -13,6 +13,33 @@ pdfname: ""
 
 > 结果族 241：Rigidity of the Turing degrees　·　学科：Mathematical logic　·　验证状态：主结果已 Lean 形式化
 
+## 入门导读 🐣
+
+把世上所有计算问题连成一张关系网：若"拿 B 当参考答案就能算出 A"，就在两者之间连一条线。现在把每个问题自己的名字全部涂掉，只留下这张纯粹的"谁难谁易"网。本文证明：光看网的结构就能认出每个难度是谁——任何保持上下级关系的"重新贴标签"，都只能是原样不动。
+
+**关键词卡片**
+
+- 图灵归约（Turing reducibility）：`@@M@@A\le_T B@@`，即把 B 当"谕示"（随取随用的参考答案），图灵机就能算出 A。
+- 图灵度（Turing degree）：互相能算的问题归入同一档难度，全体难度构成一张偏序网。
+- 自同构（automorphism）：把各难度整体重新编号、却保持全部"不高于"关系的双射。
+- 刚性（rigidity）：唯一合法的自同构是恒等——网中每个位置都无法被冒名顶替。
+
+**看个具体例子**
+
+难度网的最底层是 `@@M@@\mathbf 0@@`（可计算问题），往上是 `@@M@@\mathbf 0'@@`（停机问题的难度）、`@@M@@\mathbf 0''@@`……定理说：任何保序双射 `@@M@@\pi@@` 都把每一个度送到它自己。下图虚线代表 `@@M@@\pi@@` 想做的"搬运"，结果全部原地踏步。
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280"><text x="280" y="34" font-size="15" fill="#333" text-anchor="middle">给难度重新贴标签（π）——结果只能原样不动</text><circle cx="170" cy="230" r="10" fill="#2c7fb8"/><circle cx="170" cy="150" r="10" fill="#2c7fb8"/><circle cx="170" cy="70" r="10" fill="#2c7fb8"/><line x1="170" y1="218" x2="170" y2="164" stroke="#333" stroke-width="2"/><line x1="170" y1="138" x2="170" y2="84" stroke="#333" stroke-width="2"/><polygon points="170,162 165,173 175,173" fill="#333"/><polygon points="170,82 165,93 175,93" fill="#333"/><text x="152" y="235" font-size="14" fill="#333" text-anchor="end">0（可计算）</text><text x="152" y="155" font-size="14" fill="#333" text-anchor="end">0′（停机问题）</text><text x="152" y="75" font-size="14" fill="#333" text-anchor="end">0″ …</text><text x="188" y="200" font-size="13" fill="#666">≤_T</text><text x="188" y="120" font-size="13" fill="#666">≤_T</text><circle cx="410" cy="230" r="10" fill="none" stroke="#c0392b" stroke-width="2" stroke-dasharray="4 3"/><circle cx="410" cy="150" r="10" fill="none" stroke="#c0392b" stroke-width="2" stroke-dasharray="4 3"/><circle cx="410" cy="70" r="10" fill="none" stroke="#c0392b" stroke-width="2" stroke-dasharray="4 3"/><line x1="182" y1="230" x2="396" y2="230" stroke="#c0392b" stroke-width="2" stroke-dasharray="6 4"/><line x1="182" y1="150" x2="396" y2="150" stroke="#c0392b" stroke-width="2" stroke-dasharray="6 4"/><line x1="182" y1="70" x2="396" y2="70" stroke="#c0392b" stroke-width="2" stroke-dasharray="6 4"/><text x="290" y="222" font-size="13" fill="#c0392b" text-anchor="middle">π(0)=0</text><text x="290" y="142" font-size="13" fill="#c0392b" text-anchor="middle">π(0′)=0′</text><text x="290" y="62" font-size="13" fill="#c0392b" text-anchor="middle">π(0″)=0″</text><text x="410" y="262" font-size="14" fill="#c0392b" text-anchor="middle">任何保序双射都是恒等</text></svg>
+
+</div>
+
+**为什么值得关心**
+
+这正面解决了 Slaman–Woodin 刚性猜想，并连带证实图灵度序与二阶算术可无参数互相解释——一张涂掉名字的抽象关系网，竟装得下整个二阶算术的信息。
+
+> 已 Lean 形式化
+
 ## 一句话结论
 
 本文证明图灵度（Turing degrees）偏序 `@@M@@(\mathcal{D}_T,\le_T)@@` 完全刚性：任何保序自同构必为恒等，正面解决刚性猜想，并连带证实 Slaman–Woodin 双解释猜想——"谁计算谁"的序关系足以唯一标记每个度。

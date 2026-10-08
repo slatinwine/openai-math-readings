@@ -13,6 +13,47 @@ pdfname: ""
 
 > 结果族 253：An infinite finitely presented simple amenable group　·　学科：Group theory　·　验证状态：主结果已 Lean 形式化
 
+## 入门导读 🐣
+
+这是数学版的"集齐四颗龙珠"：无限、有限呈现（说明书只有一页）、单（内部没有隔间）、顺从（温柔，不搞"一份拆两份"的悖论把戏）。2013 年人们集齐过三颗——造出无限、单、顺从的群，但说明书无限长；而且老路被证明原则上造不出一页说明书的版本。本文换了一块地基——由黄金比撑起的平面，终于把四颗龙珠收进同一个群。
+
+**关键词卡片**
+
+- 顺从群（amenable group）：拥有不变平均、不可能出现"一变二"悖论分解的温柔群
+- 单群（simple group）：没有非平凡正规子群的群
+- 有限呈现（finitely presented）：有限生成元加有限关系即可完整描述，相当于一页说明书
+- 拓扑全群（topological full group）：2013 年突破的来源，但被证明永远无法有限呈现
+- 黄金比环 ℤ[τ]：形如 `@@M@@a+b\tau@@`（`@@M@@\tau@@` 为黄金比 `@@M@@(1+\sqrt5)/2@@`）的数组成的环，新构造的地基
+
+**看个具体例子**
+
+具体构造：在黄金比环 `@@M@@\mathbb{Z}[\tau]@@` 上取 `@@M@@\lambda=\tau^a@@` 这种"实数视角下巨大、共轭视角下极小"的伸缩，得到一个二维多边形交换群；其中由不相交槽位间偶置换生成的交错子群 `@@M@@A_m@@`（`@@M@@m@@` 足够大）是主角。数字版成绩单：`@@M@@A_m@@` 无限 ✓、有限呈现 ✓、单 ✓、顺从 ✓，四项同时成立。此前的最好纪录是 Juschenko–Monod 群：无限 ✓、单 ✓、顺从 ✓、有限呈现 ✗。
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280">
+  <circle cx="200" cy="130" r="60" fill="#e3f2fd" stroke="#1565c0" fill-opacity="0.75"/>
+  <circle cx="280" cy="130" r="60" fill="#e8f5e9" stroke="#2e7d32" fill-opacity="0.75"/>
+  <circle cx="240" cy="90" r="60" fill="#fff3e0" stroke="#ef6c00" fill-opacity="0.75"/>
+  <circle cx="240" cy="170" r="60" fill="#fce4ec" stroke="#c2185b" fill-opacity="0.75"/>
+  <text x="118" y="134" font-size="14" fill="#0d47a1">无限</text>
+  <text x="352" y="134" font-size="14" fill="#1b5e20">有限呈现</text>
+  <text x="222" y="36" font-size="14" fill="#e65100">单群</text>
+  <text x="214" y="250" font-size="14" fill="#c2185b">顺从</text>
+  <text x="210" y="126" font-size="14" fill="#212121">本文的 A_m</text>
+  <text x="222" y="146" font-size="12" fill="#212121">四性兼备</text>
+  <text x="412" y="220" font-size="13" fill="#555555">此前纪录：无限＋单＋顺从，</text>
+  <text x="412" y="240" font-size="13" fill="#555555">但说明书无限长</text>
+</svg>
+
+</div>
+
+**为什么值得关心**
+
+老框架里这是一道死局：有限呈现加"可局部逼近有限群"会推出剩余有限，而无限单群绝不剩余有限；本文首次绕开死局，为 Day 时代的老问题画上句号。
+
+> 已 Lean 形式化
+
 ## 一句话结论
 
 论文构造出首个同时满足无限、有限表现、单群、顺从四条性质的群，正面回答了 Juschenko–Monod 2013 年遗留的有限表现存在性问题；作者跳出经典 Cantor 全群框架，在黄金比环上的二维多边形交换群中绕开了 LEF 障碍。

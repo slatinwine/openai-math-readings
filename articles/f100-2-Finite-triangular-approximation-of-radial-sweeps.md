@@ -13,6 +13,34 @@ pdfname: ""
 
 > 结果族 100：Cylinder coverings below the half-area bound　·　学科：Convex and metric geometry　·　验证状态：暂无形式化证明，请以社区核验为准
 
+## 入门导读 🐣
+
+想象收起一把纸扇：扇骨一边平移一边缓缓转向，扫出一片扇面。这篇论文研究如何用一块块小三角形纸片盖住这类"扫出面"，证明只要切得够细，纸片总面积必然收敛到一个能精确算出的加权面积；作者还顺手造出反例，打破了"盖住四面体至少要花影子面积一半"的老猜想。
+
+**关键词卡片**
+
+- 圆柱覆盖（cylinder covering）：用无限长柱筒罩住立体，费用是所有底面面积之和。
+- 径向扫掠（radial sweep）：一条线段沿某方向滑动、同时绕起点徐徐转向，扫出的那片立体。
+- 对齐条件（alignment condition）：限定方向的摆动只能顺着既有射线发生，使误差只是小区间的二阶小量。
+- 带标签分割（tagged partition）：把参数区间切成小段，每段选一个代表点，用它"冻结"该段圆柱的方向。
+- 网格（mesh）：分割中最小区间的长度，越小说明切得越细。
+
+**看个具体例子**
+
+正四面体的 `@@M@@A_{\min}=4\sqrt2@@`，两圆柱的经典方案花 `@@M@@2\sqrt2@@`，恰好一半。本文让方向随位置倾斜 `@@M@@\varepsilon@@`，总费用比例 `@@M@@I(\varepsilon)=1-\varepsilon^2/30+10\varepsilon^3+O(\varepsilon^4)@@`：投影节省 `@@M@@-\varepsilon^2/30@@` 是二阶的，补缝填充 `@@M@@10\varepsilon^3@@` 是三阶的，`@@M@@\varepsilon@@` 取小时前者稳赢，故 `@@M@@I(\varepsilon)<1@@`。先固定 `@@M@@\varepsilon@@`、再把区间细分到足够细，就得到严格低于一半的有限覆盖。
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 300"><text x="280" y="24" text-anchor="middle" font-size="15" fill="#222">径向扫掠：切成 N 段，每段冻结一个方向 → 一个三角底圆柱</text><polygon points="120,160 470,40 470,85" fill="#e8f0fe" stroke="#778" stroke-width="1.5"/><polygon points="120,160 470,85 470,130" fill="#fdeeee" stroke="#778" stroke-width="1.5"/><polygon points="120,160 470,130 470,175" fill="#e8f0fe" stroke="#778" stroke-width="1.5"/><polygon points="120,160 470,175 470,220" fill="#fdeeee" stroke="#778" stroke-width="1.5"/><line x1="470" y1="40" x2="470" y2="220" stroke="#999" stroke-width="1.5" stroke-dasharray="6,5"/><circle cx="120" cy="160" r="6" fill="#333"/><text x="88" y="164" font-size="12" fill="#333">起点</text><text x="478" y="132" font-size="12" fill="#555">各段冻结方向</text><text x="280" y="272" text-anchor="middle" font-size="14" fill="#333">网格 δ → 0：三角底总面积收敛到加权面积 A（一个可精确计算的积分）</text></svg>
+
+</div>
+
+**为什么值得关心**
+
+一个定理（径向扫掠的有限三角逼近）加一个反例（四面体半面积被打破），把 Bang 的半面积问题与方向归一化猜想一并解决，且构造初等、可逐步复算。
+
+> 暂无形式化证明（AI 结果待核验）
+
 ## 一句话结论
 本文证明满足对齐条件的径向扫掠集可用"每区间一个三角形底圆柱"的有限覆盖逼近，总底面积收敛于加权面积；据此构造出总底面积严格小于 `@@M@@A_{\min}(K)/2@@` 的正四面体有限覆盖，同时否定 Bang 的半面积界与方向归一化的一维余维圆柱覆盖猜想。
 

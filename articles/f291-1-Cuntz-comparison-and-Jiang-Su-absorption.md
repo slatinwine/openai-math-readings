@@ -13,6 +13,54 @@ pdfname: ""
 
 > 结果族 291：Cuntz comparison, nuclear dimension, and equivariant Jiang–Su stability　·　学科：Operator algebras　·　验证状态：暂无形式化证明，请以社区核验为准
 
+## 入门导读 🐣
+
+搬家时判断一个箱子能否塞进另一个箱子：拿几把不同的尺子去量，如果每把尺子都量出小箱更"瘦"，那它就真能装进去。这篇论文证明：一个代数只要具备这种"尺寸说了算"的性质，就自动可以兑入一种"无味的填充物"（Jiang–Su 代数）——两个看似不相干的要求，其实是同一枚硬币的两面。
+
+**关键词卡片**
+
+- Cuntz 比较（Cuntz comparison）：正元素之间"能否装下"的关系，记作 `@@M@@a\precsim b@@`。
+- 严格比较（strict comparison）：若一切"尺子"（泛函）都读出 `@@M@@a@@` 不超过 `@@M@@b@@`，则真的 `@@M@@a\precsim b@@`。
+- 几乎无穿孔（almost unperforation）：序关系重复多次也不会凭空出现裂缝。
+- 完全几乎可除（full almost divisibility）：正元可按同一单位整份拆分，夹成三明治 `@@M@@Nu\le x\le(N+1)u@@`。
+- Jiang–Su 吸收（Z-absorption）：`@@M@@A\cong A\otimes\mathcal Z@@`，兑入无味填充后仍与原代数等价。
+
+**看个具体例子**
+
+设正元 `@@M@@x@@` 在所有尺子下的读数是 3.2：定理保证它能按同一单位 `@@M@@u@@` 整份拆分——`@@M@@3u\le x\le 4u@@`，像量出 3.2 米的木料恰好夹在 3 根与 4 根标准杆之间。这种三明治一旦成立，填充物 `@@M@@\mathcal Z@@` 就能被逐段装进代数。
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280">
+<text x="60" y="38" font-size="15" fill="#555">每把尺子（泛函 φ）都读出：a 比 b 小</text>
+<rect x="60" y="58" width="281" height="32" fill="none" stroke="#555" stroke-width="2" stroke-dasharray="7 5"/>
+<text x="150" y="80" font-size="16" fill="#555">a：读数 2.7</text>
+<rect x="60" y="130" width="322" height="32" fill="none" stroke="#222" stroke-width="2"/>
+<text x="150" y="152" font-size="16" fill="#000">b：读数 3.1</text>
+<line x1="210" y1="96" x2="210" y2="122" stroke="#777" stroke-width="2"/>
+<polyline points="204,116 210,126 216,116" fill="none" stroke="#777" stroke-width="2"/>
+<line x1="60" y1="210" x2="500" y2="210" stroke="#222" stroke-width="2"/>
+<line x1="60" y1="203" x2="60" y2="217" stroke="#222" stroke-width="2"/>
+<line x1="164" y1="203" x2="164" y2="217" stroke="#222" stroke-width="2"/>
+<line x1="268" y1="203" x2="268" y2="217" stroke="#222" stroke-width="2"/>
+<line x1="372" y1="203" x2="372" y2="217" stroke="#222" stroke-width="2"/>
+<text x="54" y="236" font-size="14" fill="#555">0</text>
+<text x="158" y="236" font-size="14" fill="#555">1</text>
+<text x="262" y="236" font-size="14" fill="#555">2</text>
+<text x="366" y="236" font-size="14" fill="#555">3</text>
+<text x="60" y="262" font-size="15" fill="#000">严格比较：所有量法一致，则 a 真能装进 b</text>
+</svg>
+
+</div>
+
+更一般的结论：只要 Cuntz 半群几乎无穿孔且完全几乎可除，可分核代数就吸收 `@@M@@\mathcal Z@@`——非单、非酉、带无界迹的情形一并解决。
+
+**为什么值得关心**
+
+它补上了 Toms–Winter 正则性问题中"严格比较推出 `@@M@@\mathcal Z@@`-稳定"这条最缺的蕴含，是代数分类纲领的一块承重梁。
+
+> 暂无形式化证明（AI 结果待核验）
+
 ## 一句话结论
 
 证明 Toms–Winter 正则性问题"严格比较推出 Jiang–Su 吸收"方向：可分单核非初等 C*-代数只要在扩展泛函意义下严格比较就 `@@M@@\mathcal Z@@`-稳定；更一般地，Cuntz 半群几乎无穿孔且完全几乎可除的可分核代数吸收 `@@M@@\mathcal Z@@`，非单、非酉、无界迹一并解决。

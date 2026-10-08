@@ -13,6 +13,50 @@ pdfname: ""
 
 > 结果族 095：Hyperbolicity cones without semidefinite lifts　·　学科：Convex and metric geometry　·　验证状态：暂无形式化证明，请以社区核验为准
 
+## 入门导读 🐣
+
+半定规划是优化世界的"万能插座"，很多难题只要能插进去就能高效求解。一族叫"双曲锥"的好性质锥形（半正定锥是其中最出名的成员）长期被猜想都能插上这只插座；这篇论文造出一个反例锥：无论加多少辅助变量、用什么系数，都插不进去——万能插座并不万能。
+
+**关键词卡片**
+
+- 双曲多项式（hyperbolic polynomial）：沿某方向"切开"时根全为实数的齐次多项式。
+- 双曲锥（hyperbolicity cone）：由双曲性自然长出的凸锥，自带优良的"障碍函数"。
+- 谱面（spectrahedron）：矩阵不等式 `@@M@@L(x)\succeq 0@@` 的解集，半定规划的可行域。
+- 半定提升（semidefinite lift）：引入辅助变量，把集合表示成谱面的投影。
+- 谱面影子（spectrahedral shadow）：允许辅助变量的谱面投影，"万能插座"的插口。
+
+**看个具体例子**
+
+下面的嵌套图是锥世界的地图：半正定锥 ⊂ 谱面 ⊂ 谱面影子。论文在 330 维输入空间中构造出双曲锥 `@@M@@K_Q@@`（矩阵块规模 `@@M@@20N-1@@`），并证明它落在影子区域之外——不是"还没找到插法"，而是数学上不存在任何有限插法（精确等式、任意实系数、任意多辅助变量都被排除），从而同时否定 Projected Lax 猜想与广义 Lax 猜想。
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280">
+  <text x="280" y="24" font-size="15" text-anchor="middle" fill="#222">锥世界地图：反例锥在影子区域之外</text>
+  <ellipse cx="290" cy="150" rx="250" ry="108" fill="#f2f2f2" stroke="#999"/>
+  <text x="90" y="60" font-size="13" fill="#666">凸锥世界</text>
+  <ellipse cx="170" cy="155" rx="115" ry="70" fill="#e2ecf7" stroke="#5a86b8"/>
+  <text x="170" y="103" font-size="13" fill="#22507e" text-anchor="middle">谱面影子（+辅助变量）</text>
+  <ellipse cx="170" cy="165" rx="68" ry="40" fill="#cfe0f2" stroke="#3a6aa0"/>
+  <text x="170" y="150" font-size="13" fill="#22507e" text-anchor="middle">谱面</text>
+  <ellipse cx="170" cy="185" rx="30" ry="15" fill="#b3cde8" stroke="#3a6aa0"/>
+  <text x="208" y="190" font-size="12" fill="#22507e">半正定锥</text>
+  <ellipse cx="420" cy="160" rx="85" ry="55" fill="#f7dede" stroke="#b05050"/>
+  <text x="420" y="156" font-size="13" fill="#8a3030" text-anchor="middle">双曲锥 K_Q</text>
+  <text x="420" y="174" font-size="12" fill="#8a3030" text-anchor="middle">（本文反例）</text>
+  <line x1="333" y1="160" x2="290" y2="158" stroke="#b03030" stroke-width="2" stroke-dasharray="6,4"/>
+  <text x="312" y="150" font-size="20" fill="#b03030" text-anchor="middle">✗</text>
+  <text x="312" y="186" font-size="12" fill="#b03030" text-anchor="middle">塞不进去</text>
+</svg>
+
+</div>
+
+**为什么值得关心**
+
+它划清了半定规划的能力边界：确实存在自然产生的凸优化问题永远无法化成半定规划，逼使人们另寻求解路线。
+
+> 暂无形式化证明（AI 结果待核验）
+
 ## 一句话结论
 
 证明了存在没有任何有限半定提升的双曲锥（hyperbolicity cone）：无论引入多少辅助变量、使用什么实系数，它都不是谱面影子（spectrahedral shadow），从而同时否定 Projected Lax 猜想与广义 Lax 猜想。

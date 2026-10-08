@@ -13,6 +13,45 @@ pdfname: ""
 
 > 结果族 351：Scalar curvature and finite-time Ricci-flow singularities　·　学科：Differential geometry　·　验证状态：暂无形式化证明，请以社区核验为准
 
+## 入门导读 🐣
+
+Ricci 流像不停地给面团抹匀：哪里凹凸就往哪里使劲。长期的悬念是：只要"平均粗糙度"（标量曲率）一直正常，面团是否就永远抹得下去？这篇论文造出一个高维反例——平均粗糙度全程温和，某处的细节粗糙度却在有限时刻冲上天际。
+
+**关键词卡片**
+
+- Ricci 流（Ricci flow）：让度量按曲率随时间自动"抹匀"的方程，几何化纲领的核心引擎。
+- 标量曲率（scalar curvature）：各方向弯曲的平均值，一份压缩版体检表。
+- 全曲率张量（curvature tensor）：记录每个方向弯曲细节的完整体检报告。
+- 奇点（singularity）：流动在有限时刻失控、无法光滑继续的瞬间。
+
+**看个具体例子**
+
+主定理：在闭流形 `@@M@@S^2\times S^{q+1}@@`（q≥10，维数至少 13）上，存在 Ricci 流使 `@@M@@\sup|R|<\infty@@` 而 `@@M@@\max|\mathrm{Rm}|\to\infty@@`；并且爆炸速率是幂律 `@@M@@\max|\mathrm{Rm}|\sim(T-t)^{-2k/d_q}@@`，指数随参数 k 可任意大。曲率得以"隐身"的原理：它躲进近似 Ricci 平坦的锥形区域，让平均值失明；而标量曲率满足 `@@M@@\partial_t R=\Delta R+2|\mathrm{Ric}|^2@@`，热源恰可被上解吸收，所以再热也烧不坏体检表。下图就是这场"体检正常、人却病危"的时间线。
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280">
+<text x="280" y="28" font-size="16" text-anchor="middle" fill="#333">高维反例：平均曲率有界，细节曲率爆炸</text>
+<line x1="80" y1="230" x2="510" y2="230" stroke="#333" stroke-width="2"/>
+<line x1="80" y1="230" x2="80" y2="50" stroke="#333" stroke-width="2"/>
+<line x1="100" y1="175" x2="450" y2="170" stroke="#4a86c8" stroke-width="2.5"/>
+<path d="M100,205 C230,202 330,195 390,160 C420,135 435,100 450,55" fill="none" stroke="#c84a4a" stroke-width="2.5"/>
+<line x1="450" y1="230" x2="450" y2="55" stroke="#999" stroke-width="1.5" stroke-dasharray="5,4"/>
+<text x="462" y="248" font-size="13" fill="#333">时刻 T</text>
+<text x="110" y="160" font-size="13" fill="#4a86c8">标量曲率 R ≤ C（全程温和）</text>
+<text x="240" y="90" font-size="13" fill="#c84a4a">全曲率 |Rm| → ∞</text>
+<text x="505" y="255" font-size="13" text-anchor="end" fill="#333">时间 t</text>
+<text x="88" y="45" font-size="13" fill="#333">曲率大小</text>
+</svg>
+
+</div>
+
+**为什么值得关心**
+
+它推翻了"任何维数下标量曲率都能探测有限时间奇点"的无限制延拓猜想；姊妹篇证明四维绝不会上演这出戏——此类反例只能存在于足够高的维数。
+
+> 暂无形式化证明（AI 结果待核验）
+
 ## 一句话结论
 
 作者在足够高维的闭流形 `@@M@@\Sp^2\times\Sp^{q+1}@@` 上构造出一条光滑 Ricci flow：其标量曲率（scalar curvature）直到有限极大时刻始终一致有界，全曲率张量却同时发散。这推翻了"任何维数下标量曲率都能探测有限时间奇点"的无限制延拓猜想。

@@ -13,6 +13,34 @@ pdfname: ""
 
 > 结果族 226：The double-dimer loop ensemble converges to CLE`@@M@@_4@@`　·　学科：Probability and statistical mechanics　·　验证状态：暂无形式化证明，请以社区核验为准
 
+## 入门导读 🐣
+
+用多米诺骨牌把棋盘完美铺满，铺法千千万；现在独立铺两次，把两套骨牌叠在一起看：彼此重叠的骨牌成双成对，剩下没重叠的边自动拼成一圈圈闭合的"花环"。论文证明：在上半平面的方格上，网格无限加细时，这满屏花环的整体形状收敛到一个著名的随机回路家族——嵌套 CLE`@@M@@_4@@`。
+
+**关键词卡片**
+
+- 二聚体覆盖（dimer covering / perfect matching）：每格恰好被一枚多米诺占住的铺法，图论里叫完美匹配。
+- 双二聚体回路（double-dimer loop）：两套独立铺法叠加后，非重叠边组成的互不相交或嵌套的闭合回路族。
+- Temperleyan 方格（Temperleyan lattice）：挖去一个根点的方格，可借助 Temperley 对应与随机生成树相互转化。
+- CLE`@@M@@_4@@`（conformal loop ensemble）：由 SLE`@@M@@_4@@` 型回路组成的嵌套随机回路系。
+- 无参数曲线（unparametrized curve）：只看轨迹形状、不管沿它走得多快的曲线。
+
+**看个具体例子**
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280"><g fill="#999"><circle cx="60" cy="45" r="2.5"/><circle cx="115" cy="45" r="2.5"/><circle cx="170" cy="45" r="2.5"/><circle cx="225" cy="45" r="2.5"/><circle cx="280" cy="45" r="2.5"/><circle cx="335" cy="45" r="2.5"/><circle cx="60" cy="95" r="2.5"/><circle cx="115" cy="95" r="2.5"/><circle cx="170" cy="95" r="2.5"/><circle cx="225" cy="95" r="2.5"/><circle cx="280" cy="95" r="2.5"/><circle cx="335" cy="95" r="2.5"/><circle cx="60" cy="145" r="2.5"/><circle cx="115" cy="145" r="2.5"/><circle cx="170" cy="145" r="2.5"/><circle cx="225" cy="145" r="2.5"/><circle cx="280" cy="145" r="2.5"/><circle cx="335" cy="145" r="2.5"/><circle cx="60" cy="195" r="2.5"/><circle cx="115" cy="195" r="2.5"/><circle cx="170" cy="195" r="2.5"/><circle cx="225" cy="195" r="2.5"/><circle cx="280" cy="195" r="2.5"/><circle cx="335" cy="195" r="2.5"/><circle cx="60" cy="245" r="2.5"/><circle cx="115" cy="245" r="2.5"/><circle cx="170" cy="245" r="2.5"/><circle cx="225" cy="245" r="2.5"/><circle cx="280" cy="245" r="2.5"/><circle cx="335" cy="245" r="2.5"/></g><line x1="115" y1="245" x2="115" y2="95" stroke="#c0392b" stroke-width="4"/><line x1="115" y1="95" x2="170" y2="95" stroke="#2a6fdb" stroke-width="4"/><line x1="170" y1="95" x2="170" y2="145" stroke="#c0392b" stroke-width="4"/><line x1="170" y1="145" x2="335" y2="145" stroke="#2a6fdb" stroke-width="4"/><line x1="335" y1="145" x2="335" y2="245" stroke="#c0392b" stroke-width="4"/><line x1="335" y1="245" x2="115" y2="245" stroke="#2a6fdb" stroke-width="4"/><line x1="225" y1="45" x2="280" y2="45" stroke="#c0392b" stroke-width="4"/><line x1="225" y1="53" x2="280" y2="53" stroke="#2a6fdb" stroke-width="4"/><text x="60" y="28" font-size="13">红蓝重叠＝共同骨牌</text><text x="380" y="90" font-size="13">红边：第一套铺法</text><text x="380" y="115" font-size="13">蓝边：第二套铺法</text><text x="380" y="140" font-size="13">交替相接成回路</text><text x="380" y="180" font-size="13">δ→0：整族回路</text><text x="380" y="200" font-size="13">收敛到嵌套</text><text x="380" y="220" font-size="13">CLE₄</text></svg>
+
+</div>
+
+一套铺法涂红、一套涂蓝：红蓝边交替相接就闭合成一条回路——回路正是"两套铺法意见不合"的地方；红蓝完全重叠的边则是双方共同选中的骨牌。定理保证：每条宏观可见的回路，都能在极限 CLE`@@M@@_4@@` 中找到一条按曲线距离逐点匹配的对应回路。
+
+**为什么值得关心**
+
+它把双二聚体 CLE`@@M@@_4@@` 猜想从"拓扑记录收敛"升级为"逐条回路的曲线收敛"，解决了该猜想的半平面形式。
+
+> 暂无形式化证明（AI 结果待核验）
+
 ## 一句话结论
 
 证明了上半平面 Temperleyan 方格上两组独立二聚体匹配叠加生成的全部回路（双二聚体回路系），在网格趋零时作为无参数曲线收敛到嵌套 CLE`@@M@@_4@@`，解决了双二聚体 CLE`@@M@@_4@@` 标度极限猜想的半平面形式。

@@ -13,6 +13,34 @@ pdfname: ""
 
 > 结果族 363：Nonuniqueness with local conservation for the hard-sphere Boltzmann equation　·　学科：Partial differential equations　·　验证状态：暂无形式化证明，请以社区核验为准
 
+## 入门导读 🐣
+
+给同一杯稀薄气体拍下"出厂快照"，然后放开时间，直觉说未来只有一种剧本。这篇论文却构造出一杯特殊的气体：它有两个都合规的未来——演化各不相同，但每一处、每一刻的质量、动量、能量账本都分毫不差，连通常弱解里允许的"误差项"都没有。决定论的方程，交出了两份不同的答卷。
+
+**关键词卡片**
+
+- 硬球玻尔兹曼方程（hard-sphere Boltzmann equation）：稀薄气体分子自由飞行加两两弹性碰撞的基本方程。
+- 熵解（entropy solution）：只要求质量、能量、熵有限的整体弱解；DiPerna–Lions 1989 年证明其存在。
+- 局部守恒（local conservation）：守恒律对每个空间点逐点精确成立，不带缺陷项。
+- 缺陷测度（defect measure）：弱解中可能"丢失"的那部分守恒量，以往理论无法排除它非零。
+- 冷射流（cold jets）：初值中沿相反方向排列、尺度不断变细的极窄高速粒子束，非唯一性的发动机。
+
+**看个具体例子**
+
+定理代入：初值 `@@M@@F_0@@` 由几何递减尺度 `@@M@@s_j=s_0e^{-j\eta}@@` 的环状冷射流组成，沿 `@@M@@+z@@` 与 `@@M@@-z@@` 方向交替排布。它长出两个解 `@@M@@F@@` 与 `@@M@@G@@`：在正测度集上不同，但对五个碰撞不变量中的任何一个 `@@M@@\psi@@`（例如 `@@M@@\psi=1@@`，即质量）都精确满足 `@@M@@\int F\,\psi\,(\partial_t+v\cdot\nabla_x)\phi+\int F_0\,\psi\,\phi(0)=0@@`，没有任何缺陷项；能量与熵不等式同样成立。
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280"><rect x="140" y="50" width="280" height="180" fill="none" stroke="#333" stroke-width="2"/><text x="200" y="255" font-size="15" fill="#333">三维周期盒子</text><line x1="280" y1="60" x2="280" y2="225" stroke="#999" stroke-width="1.5" stroke-dasharray="6 5"/><polygon points="280,50 275,60 285,60" fill="#333"/><text x="295" y="68" font-size="15" fill="#333">+e₃</text><polygon points="280,230 275,220 285,220" fill="#333"/><text x="295" y="222" font-size="15" fill="#333">−e₃</text><ellipse cx="280" cy="95" rx="60" ry="14" fill="none" stroke="#333" stroke-width="2"/><ellipse cx="280" cy="130" rx="38" ry="10" fill="none" stroke="#333" stroke-width="2"/><ellipse cx="280" cy="160" rx="22" ry="7" fill="none" stroke="#333" stroke-width="2"/><ellipse cx="280" cy="185" rx="12" ry="5" fill="none" stroke="#333" stroke-width="2"/><text x="350" y="92" font-size="15" fill="#555">尺度递减的冷射流环</text></svg>
+
+</div>
+
+**为什么值得关心**
+
+它说明即使加上最严格的逐点守恒，DiPerna–Lions 解类仍不唯一——唯一性需要真正的正则性门槛，这个反例划出了边界。
+
+> 暂无形式化证明（AI 结果待核验）
+
 ## 一句话结论
 
 证明了三维周期硬球玻尔兹曼方程（hard-sphere Boltzmann equation）存在一个初值，能同时派生出两个不同的整体熵解，且二者都逐点精确满足质量、动量、动能的局部守恒——非唯一性在最严格的守恒框架下依然成立。

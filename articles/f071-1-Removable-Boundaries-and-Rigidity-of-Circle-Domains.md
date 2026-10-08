@@ -13,6 +13,55 @@ pdfname: ""
 
 > 结果族 071：Koebe's circle-domain conjecture　·　学科：Real and complex analysis　·　验证状态：暂无形式化证明，请以社区核验为准
 
+## 入门导读 🐣
+
+一块边缘碎成粉尘的拼图：粉尘细到撕掉也不改变整块拼图的弹性（"可去"），定理说这样的拼图反而极"硬"——任何把圆洞仍然变成圆洞的形变，都只能是球面的刚体运动，不许拉伸、不许扭转。这就是 He–Schramm 猜想剩下的、确实成立的那一半：可去推出刚性。
+
+**关键词卡片**
+
+- 圆域（circle domain）：补集每个分支都是闭圆盘或单点的区域，平面区域的"标准件"。
+- 共形映射（conformal map）：保持角度的复函数，无撕裂、无挤压的理想形变。
+- 可去边界（removable boundary）：边界粉尘小到有界共形函数能直接无视它延拓过去。
+- 刚性（rigid）：到其他圆域的共形等价必是 Möbius 变换的限制。
+- Möbius 变换（Möbius transformation）：球面到自身的"刚体式"共形变换，只有 6 个实参数，由三点的像完全决定。
+
+**看个具体例子**
+
+设 `@@M@@\Omega,\Omega'@@` 都是圆域、`@@M@@\partial\Omega@@` 可去、`@@M@@f:\Omega\to\Omega'@@` 共形：
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280">
+  <circle cx="115" cy="135" r="78" fill="#e8f1fa" stroke="#4a7dbd" stroke-width="2" stroke-dasharray="5,5"/>
+  <circle cx="95" cy="110" r="20" fill="#fff" stroke="#333" stroke-width="2"/>
+  <circle cx="140" cy="165" r="13" fill="#fff" stroke="#333" stroke-width="2"/>
+  <circle cx="120" cy="140" r="2.5" fill="#333"/>
+  <circle cx="135" cy="120" r="2.5" fill="#333"/>
+  <circle cx="105" cy="160" r="2.5" fill="#333"/>
+  <text x="48" y="245" font-size="14" fill="#333">圆域 Ω：边界是可去粉尘</text>
+  <line x1="235" y1="135" x2="325" y2="135" stroke="#333" stroke-width="2"/>
+  <polygon points="325,129 325,141 337,135" fill="#333"/>
+  <text x="248" y="118" font-size="15" fill="#333">共形等价 f</text>
+  <circle cx="445" cy="135" r="78" fill="#f5edf7" stroke="#7a5ba8" stroke-width="2"/>
+  <circle cx="425" cy="110" r="20" fill="#fff" stroke="#333" stroke-width="2"/>
+  <circle cx="470" cy="165" r="13" fill="#fff" stroke="#333" stroke-width="2"/>
+  <circle cx="450" cy="140" r="2.5" fill="#333"/>
+  <circle cx="465" cy="120" r="2.5" fill="#333"/>
+  <circle cx="435" cy="160" r="2.5" fill="#333"/>
+  <text x="378" y="245" font-size="14" fill="#333">圆域 Ω′（洞：圆盘或点）</text>
+  <text x="128" y="272" font-size="15" fill="#a33">结论：f 必是 Möbius 变换的限制</text>
+</svg>
+
+</div>
+
+自由度盘点：共形等价先验上可以极其任意，结论却把它钉死在只有 6 个实参数、由三点像决定的 Möbius 群里——可去性把无穷压到 6。补分支数目不限（可为不可数）；此前所有部分结果都附加边界几何条件，这里全部撤掉。
+
+**为什么值得关心**
+
+与姊妹篇（Koebe 圆域猜想）合读，存在性与刚性互相成就，是平面共形几何百年故事的收尾两章。
+
+> 验证状态：暂无形式化证明（AI 结果待核验）
+
 ## 一句话结论
 
 证明了边界共形可去（conformally removable）的圆域必共形刚性（rigid）：它与任何圆域之间的共形等价都是 Möbius 变换的限制，且对补分支数目（可为不可数）毫无限制。这确立了 He–Schramm 猜想中"可去⟹刚性"的方向。

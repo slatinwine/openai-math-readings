@@ -13,6 +13,54 @@ pdfname: ""
 
 > 结果族 003：The quasi-Riemann hypothesis　·　学科：Number theory　·　验证状态：主结果已 Lean 形式化
 
+## 入门导读 🐣
+
+数论学家头顶悬了近百年的"幽灵"：某些 L 函数可能在紧贴 `@@M@@s=1@@` 的地方藏一个实零点，一旦出现，素数在算术级数里的分布就会被搅乱，连二次域的类数都会被压低。这就是 Landau–Siegel 零点，谁也排不掉。这篇论文证明：无论这类函数多复杂，幽灵零点离 `@@M@@s=1@@` 至少隔着一段固定距离——剑，终于摘下来了。
+
+**关键词卡片**
+
+- Dirichlet L-函数（Dirichlet L-function）：按符号规则给正整数"打分"再求和的函数，研究算术级数中素数的核心工具。
+- 实特征（real character）：打分只取 `@@M@@\pm 1@@` 的符号规则。
+- Landau–Siegel 零点（Landau–Siegel zero）：实特征 L 函数可能出现的、紧贴 `@@M@@s=1@@` 的例外实零点。
+- 导子（conductor）：刻画特征（从而 L 函数）规模的参数 `@@M@@q@@`。
+- 类数公式（class number formula）：把 `@@M@@L(1,\chi)@@` 与二次域类数连起来的桥梁，幽灵零点会经由它作祟。
+
+**看个具体例子**
+
+定理写成距离不等式就是 `@@M@@(1-\beta)\log q\ge c@@`：把每个实零点 `@@M@@\beta@@` 画到数轴上，它身前永远横着一段宽度约 `@@M@@c/\log q@@` 的禁区，不得越过。
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280">
+  <text x="280" y="26" font-size="17" text-anchor="middle" fill="#222">定理：实零点 β 到 1 的距离 ≥ c / log q（禁区永远非空）</text>
+  <rect x="330" y="88" width="160" height="34" fill="#dddddd" stroke="none"/>
+  <line x1="70" y1="105" x2="490" y2="105" stroke="#333" stroke-width="2"/>
+  <text x="410" y="80" font-size="13" text-anchor="middle" fill="#555">禁区（q 小，较宽）</text>
+  <text x="70" y="75" font-size="14" text-anchor="middle" fill="#222">0</text>
+  <text x="490" y="75" font-size="14" text-anchor="middle" fill="#222">1</text>
+  <circle cx="280" cy="105" r="5" fill="#333"/>
+  <text x="280" y="137" font-size="13" text-anchor="middle" fill="#222">β</text>
+  <rect x="440" y="188" width="50" height="34" fill="#dddddd" stroke="none"/>
+  <line x1="70" y1="205" x2="490" y2="205" stroke="#333" stroke-width="2"/>
+  <text x="465" y="180" font-size="13" text-anchor="middle" fill="#555">禁区</text>
+  <text x="140" y="168" font-size="13" fill="#555">导子 q 大，禁区窄但仍非空</text>
+  <circle cx="390" cy="205" r="5" fill="#333"/>
+  <text x="390" y="237" font-size="13" text-anchor="middle" fill="#222">β</text>
+  <text x="70" y="237" font-size="14" text-anchor="middle" fill="#222">0</text>
+  <text x="490" y="237" font-size="14" text-anchor="middle" fill="#222">1</text>
+  <text x="280" y="266" font-size="14" text-anchor="middle" fill="#555">无论 q 多大，实零点一律被挡在禁区之外：永不紧贴 s = 1</text>
+</svg>
+
+</div>
+
+上排是导子小的情形（禁区宽），下排是导子大的情形（禁区窄，但始终非空）。常数 `@@M@@c@@` 对所有特征、所有 `@@M@@q\ge 3@@` 一致有效。
+
+**为什么值得关心**
+
+Siegel 在 1935 年只证出"无效常数"（写不出具体数值）的结果，本文给出一致有效下界，与同族 7/8 无零点半平面互相独立地封死了这条百年幽灵。
+
+> 已 Lean 形式化
+
 ## 一句话结论
 
 论文证明存在绝对常数 `@@M@@c>0@@`，使得任何导子 (conductor) `@@M@@q\ge 3@@` 的本原非主实 Dirichlet `@@M@@L@@`-函数的实零点 `@@M@@\beta\in(0,1)@@` 都满足 `@@M@@(1-\beta)\log q\ge c@@`，从而一致地排除了悬置近百年的 Landau–Siegel 零点。

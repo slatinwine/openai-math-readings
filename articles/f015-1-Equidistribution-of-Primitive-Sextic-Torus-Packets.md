@@ -13,6 +13,66 @@ pdfname: ""
 
 > 结果族 015：Torus-packet equidistribution in prime, quartic, and sextic degrees　·　学科：Number theory　·　验证状态：暂无形式化证明，请以社区核验为准
 
+## 入门导读 🐣
+
+素数次的轨道束想变均匀，几乎是水到渠成；复合次数（比如六次）却暗藏陷阱：轨道可能"偷懒"，缩进大厅的某个角落原地打转，拒绝铺满全厅。这篇论文证明：对本原六次全实域的极大序理想类束，所有偷懒模式都不可能存活——墨水终究染遍全局。
+
+**关键词卡片**
+
+- 本原六次域 (primitive sextic field)：没有中间域的六次全实域
+- 测度刚性 (measure rigidity)：EKL 分类定理——带正熵的遍历测度必是某类整齐的"齐性"测度
+- 分块退化 (blocking)：六个坐标缩进 3+3 或 2+2+2 小块的两种危险极限
+- 熵 (entropy)：测度"混合快慢"的度量；正熵意味着足够活跃
+- 调节子 (regulator)：单位群"大小"的指标；论文精确算出每条轨道体积为 `@@M@@(s/2)R_K@@`
+
+**看个具体例子**
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 300">
+  <text x="280" y="24" font-size="15" text-anchor="middle" fill="#333">危险的偷懒：六个坐标缩进小方块</text>
+  <rect x="40" y="50" width="90" height="90" fill="#fbe0e0"/>
+  <rect x="130" y="140" width="90" height="90" fill="#fbe0e0"/>
+  <rect x="40" y="50" width="180" height="180" fill="none" stroke="#666" stroke-width="1.5"/>
+  <line x1="70" y1="50" x2="70" y2="230" stroke="#aaa" stroke-width="1"/>
+  <line x1="100" y1="50" x2="100" y2="230" stroke="#aaa" stroke-width="1"/>
+  <line x1="130" y1="50" x2="130" y2="230" stroke="#aaa" stroke-width="1"/>
+  <line x1="160" y1="50" x2="160" y2="230" stroke="#aaa" stroke-width="1"/>
+  <line x1="190" y1="50" x2="190" y2="230" stroke="#aaa" stroke-width="1"/>
+  <line x1="40" y1="80" x2="220" y2="80" stroke="#aaa" stroke-width="1"/>
+  <line x1="40" y1="110" x2="220" y2="110" stroke="#aaa" stroke-width="1"/>
+  <line x1="40" y1="140" x2="220" y2="140" stroke="#aaa" stroke-width="1"/>
+  <line x1="40" y1="170" x2="220" y2="170" stroke="#aaa" stroke-width="1"/>
+  <line x1="40" y1="200" x2="220" y2="200" stroke="#aaa" stroke-width="1"/>
+  <text x="130" y="252" font-size="13" text-anchor="middle" fill="#333">3+3 分块</text>
+  <rect x="340" y="50" width="60" height="60" fill="#dde8f7"/>
+  <rect x="400" y="110" width="60" height="60" fill="#dde8f7"/>
+  <rect x="460" y="170" width="60" height="60" fill="#dde8f7"/>
+  <rect x="340" y="50" width="180" height="180" fill="none" stroke="#666" stroke-width="1.5"/>
+  <line x1="370" y1="50" x2="370" y2="230" stroke="#aaa" stroke-width="1"/>
+  <line x1="400" y1="50" x2="400" y2="230" stroke="#aaa" stroke-width="1"/>
+  <line x1="430" y1="50" x2="430" y2="230" stroke="#aaa" stroke-width="1"/>
+  <line x1="460" y1="50" x2="460" y2="230" stroke="#aaa" stroke-width="1"/>
+  <line x1="490" y1="50" x2="490" y2="230" stroke="#aaa" stroke-width="1"/>
+  <line x1="340" y1="80" x2="520" y2="80" stroke="#aaa" stroke-width="1"/>
+  <line x1="340" y1="110" x2="520" y2="110" stroke="#aaa" stroke-width="1"/>
+  <line x1="340" y1="140" x2="520" y2="140" stroke="#aaa" stroke-width="1"/>
+  <line x1="340" y1="170" x2="520" y2="170" stroke="#aaa" stroke-width="1"/>
+  <line x1="340" y1="200" x2="520" y2="200" stroke="#aaa" stroke-width="1"/>
+  <text x="430" y="252" font-size="13" text-anchor="middle" fill="#333">2+2+2 分块</text>
+  <text x="280" y="280" font-size="13" text-anchor="middle" fill="#333">本文证明：偷懒分量不可能存活，极限只能是均匀</text>
+</svg>
+
+</div>
+
+六次时对角群的维数是 5。若某个极限测度偷懒，分类定理迫使它住在非平凡对角元的不动点集里——恰好只剩图示两种分块。论文的"全活性"论证显示：任何分块都会让某些方向彻底休眠，而算术给出的管道估计强制高混合速度，两者矛盾；于是唯一幸存的极限是 Haar 均匀测度，且尖端无质量流失。
+
+**为什么值得关心**
+
+六次是首个不带任何附加条件（无需伽罗瓦群或分裂假设）被攻克的复合次数；"算术分离驱动熵下界"的路线在此经受住最严苛的测试。
+
+> 暂无形式化证明（AI 结果待核验）
+
 ## 一句话结论
 
 证明了全实本原六次数域（无真中间域）极大序的完整理想类 torus packet，按对角轨道体积加权后，随域判别式 `@@M@@|\Disc(K)|\to\infty@@` 在幺模格空间中均衡分布于 Haar 概率测度且无质量逃逸，把 Duke 型定理推进到不带任何辅助条件的复合次数六。

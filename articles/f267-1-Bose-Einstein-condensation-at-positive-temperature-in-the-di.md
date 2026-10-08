@@ -13,6 +13,45 @@ pdfname: ""
 
 > 结果族 267：Positive-temperature Bose–Einstein condensation and exact quantum depletion　·　学科：Mathematical physics　·　验证状态：暂无形式化证明，请以社区核验为准
 
+## 入门导读 🐣
+
+低温下的齐舞：温度够低时，气体里的粒子不再各自即兴，而是一大部分同步踏进同一个"标准舞步"。这就是玻色–爱因斯坦凝聚。这篇论文首次严格证明：对固定的硬球气体和足够稀薄的密度，存在一个与容器大小无关的正温度，让这种齐舞在精确的统计平衡态中必然发生。
+
+**关键词卡片**
+
+- 玻色–爱因斯坦凝聚（Bose–Einstein condensation）：宏观比例的粒子占据同一个单粒子量子态。
+- 硬球势（hard-sphere potential）：粒子是刚体小球，两两中心距离不得小于 a。
+- 正则 Gibbs 态（canonical Gibbs state）：温度 T 下的量子统计平衡态 `@@M@@e^{-H/T}/\mathrm{Tr}\,e^{-H/T}@@`。
+- 热力学极限（thermodynamic limit）：粒子数与容器体积同时趋于无穷，密度 ρ 固定。
+- 一阶密度矩阵（one-particle density matrix）：描述"平均每个粒子处在什么态"的算符。
+
+**看个具体例子**
+
+定理的数字版：`@@M@@\liminf \frac{\langle u_0,\gamma^{(1)}u_0\rangle}{N}>0@@`，其中 `@@M@@u_0=L^{-3/2}@@` 是常值波。取 `@@M@@N=10^6@@` 个粒子：无论盒子多大，至少有某个与体积无关的固定比例——至少几万、几十万个粒子——挤在同一个波上；在动量图上，这表现为 `@@M@@k=0@@` 处的巨型尖峰。
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280">
+  <text x="40" y="30" font-size="14">动量空间占据数 n(k)：k=0 处的巨型尖峰 = 凝聚体</text>
+  <line x1="90" y1="230" x2="510" y2="230" stroke="#333" stroke-width="1.5"/>
+  <line x1="90" y1="230" x2="90" y2="55" stroke="#333" stroke-width="1.5"/>
+  <path d="M 110 208 Q 300 186 490 208" fill="none" stroke="#4a7ebb" stroke-width="2"/>
+  <polygon points="288,207 300,80 312,207" fill="#f2d5cf" stroke="#b3442e" stroke-width="2"/>
+  <text x="316" y="95" font-size="13" fill="#b3442e">凝聚体：宏观比例的粒子</text>
+  <text x="316" y="180" font-size="13" fill="#4a7ebb">热激发粒子（少量）</text>
+  <text x="280" y="252" font-size="13">k = 0</text>
+  <text x="440" y="252" font-size="13">动量 k →</text>
+  <text x="48" y="70" font-size="13">n(k)</text>
+</svg>
+
+</div>
+
+**为什么值得关心**
+
+以往的严格正温凝聚定理都要借助某种"耦合极限"（比如让相互作用随容器一起缩小）；本文把排除距离、密度、温度三者固定，只让体积增大——教科书式的设定第一次被拿下。
+
+> 暂无形式化证明（AI 结果待核验）
+
 ## 一句话结论
 
 证明三维稀薄硬球玻色气体在严格正温度下发生玻色–爱因斯坦凝聚：固定排除距离并取足够小的密度，存在与体积无关的正温度，使精确正则 Gibbs 态在热力学极限下凝聚体占比为正，且凝聚在常值轨道上。

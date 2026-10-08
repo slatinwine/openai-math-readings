@@ -13,6 +13,34 @@ pdfname: ""
 
 > 结果族 136：A quasilinear PCP theorem for PPAD　·　学科：Theoretical computer science　·　验证状态：暂无形式化证明，请以社区核验为准
 
+## 入门导读 🐣
+
+黑暗迷宫里有一条从已知入口出发的单向小路，任务是找到它的另一头。论文把"找路"翻译成一张由加、减、比较门组成的巨型算术约束网络，翻译费几乎是"原样转写"；更妙的是，哪怕固定比例的门被恶意做坏，从一份大体合格的答卷仍能反查出迷宫出口。
+
+**关键词卡片**
+
+- End-of-Line（线端问题）：给"前驱/后继"电路，找路的另一端；解必存在却难寻。
+- PPAD："必有解但难寻解"的问题类，纳什均衡是它的招牌成员。
+- 广义电路（generalized circuit）：每条线取 `@@M@@[0,1]@@` 间的值，由加减、比较等门互相约束。
+- 拟线性（quasilinear）：`@@M@@N(\log N)^{O(1)}@@`，只比原文多乘对数的高次幂。
+- 容错解码：固定 `@@M@@\delta@@` 比例的门失效也能恢复答案。
+
+**看个具体例子**
+
+归约把长 `@@M@@N@@` 的实例变成总编码长 `@@M@@M\le A\,N\lceil\log_2(N+2)\rceil^b@@` 的电路（`@@M@@A,b@@` 为固定常数）。取 `@@M@@N=10^6@@`、`@@M@@\log_2N\approx 20@@`：电路只是"常数倍 × `@@M@@N\times20^b@@`"——近乎线性；而任何满足"除 `@@M@@\delta@@` 比例外全部通过"的赋值，都能在多项式时间内解码出原实例的解。
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280"><text x="280" y="26" text-anchor="middle" font-size="15" fill="#333">翻译几乎不膨胀，还能容忍部分门被做坏</text><rect x="30" y="110" width="170" height="80" rx="10" fill="#eef3ff" stroke="#345" stroke-width="2"/><text x="115" y="142" text-anchor="middle" font-size="14" fill="#345">End-of-Line 实例</text><text x="115" y="166" text-anchor="middle" font-size="13" fill="#345">（长度 N）</text><rect x="360" y="90" width="170" height="120" rx="10" fill="#fff7e8" stroke="#a73" stroke-width="2"/><text x="445" y="116" text-anchor="middle" font-size="14" fill="#642">广义电路</text><text x="445" y="136" text-anchor="middle" font-size="13" fill="#642">N·(log N)^O(1) 个门</text><circle cx="405" cy="162" r="11" fill="#fff" stroke="#642" stroke-width="2"/><text x="405" y="167" text-anchor="middle" font-size="13" fill="#642">+</text><circle cx="445" cy="162" r="11" fill="#fff" stroke="#642" stroke-width="2"/><text x="445" y="167" text-anchor="middle" font-size="13" fill="#933">✗</text><circle cx="485" cy="162" r="11" fill="#fff" stroke="#642" stroke-width="2"/><text x="485" y="167" text-anchor="middle" font-size="13" fill="#642">−</text><text x="445" y="196" text-anchor="middle" font-size="12" fill="#933">✗ = 被破坏的门</text><path d="M 205 118 Q 280 58 355 108" fill="none" stroke="#567" stroke-width="2"/><text x="280" y="72" text-anchor="middle" font-size="13" fill="#567">归约：多项式时间</text><path d="M 355 192 Q 280 252 205 182" fill="none" stroke="#567" stroke-width="2"/><text x="280" y="256" text-anchor="middle" font-size="13" fill="#567">解码：从近似赋值反查出原实例的解</text></svg>
+
+</div>
+
+**为什么值得关心**
+
+它证明了 Babichenko–Papadimitriou–Rubinstein 2016 年的猜想，打通了纳什均衡等不动点问题硬度传播中卡住多年的两处瓶颈：拟线性尺寸与固定比例容错。
+
+> 暂无形式化证明（AI 结果待核验）
+
 ## 一句话结论
 
 本文正面证明了 Babichenko–Papadimitriou–Rubinstein 的拟线性 PCP-for-PPAD 猜想：长度 `@@M@@N@@` 的 End-of-Line 实例可确定性地多项式时间归约为总编码长 `@@M@@N(\log N)^{O(1)}@@` 的广义电路，且即使固定比例的门被任意破坏，仍能从近似满足的赋值中解码出原实例的解。

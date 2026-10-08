@@ -13,6 +13,54 @@ pdfname: ""
 
 > 结果族 062：Projective contact classification and the LeBrun–Salamon conjecture　·　学科：Algebraic and complex geometry　·　验证状态：暂无形式化证明，请以社区核验为准
 
+## 入门导读 🐣
+
+滑冰时冰刀只能沿刀刃方向滑，不能横着蹭。几何里也有这种"每个点只许朝指定方向走"的空间——接触流形。本文给"带正曲率的完美滑冰场"（接触 Fano 流形）做了一次彻底点名：名单短得惊人，全是李代数生产的标准件；顺带解决了微分几何里悬置三十余年的 LeBrun–Salamon 猜想。
+
+**关键词卡片**
+
+- 接触结构（contact structure）：空间每点指定一层"允许方向"，像冰刀约束：既不打滑，也不锁死。
+- 接触 Fano 流形（contact Fano manifold）：自带接触结构、且"曲率为正"的光滑射影空间。
+- 伴随簇（adjoint variety）：由单李代数最小幂零轨道造出的标准接触流形；定理说名单上只有它们。
+- 四元数 Kähler 流形（quaternionic-Kähler manifold）：每点带一套四元数对称性的爱因斯坦型空间。
+- 扭空间（twistor space）：在四元数世界与接触世界之间传译的桥梁。
+
+**看个具体例子**
+
+复射影空间 `@@M@@\mathbb{CP}^5@@` 每点自带一个"允许方向"超平面，是接触 Fano 流形，恰为 `@@M@@C_3@@` 型李代数 `@@M@@\mathfrak{sp}_3@@` 的伴随簇；经扭空间传译，它对应四元数射影空间 `@@M@@\mathbb{HP}^2@@`（实八维）。定理给出两张锁死的名单：复维 `@@M@@\ge 3@@` 的接触 Fano 流形只能是各型伴随簇；实维 `@@M@@\ge 8@@` 的闭正四元数 Kähler 流形只能是 `@@M@@\mathbb{HP}^m@@` 这类 Wolf 对称空间。
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280">
+  <rect x="20" y="60" width="230" height="150" rx="14" fill="#eaf2fb" stroke="#35618f" stroke-width="2"/>
+  <text x="135" y="46" text-anchor="middle" font-size="16" fill="#204060">接触 Fano 流形（复维 ≥3）</text>
+  <ellipse cx="135" cy="148" rx="80" ry="44" fill="#ffffff" stroke="#35618f" stroke-width="1.5"/>
+  <line x1="70" y1="160" x2="130" y2="136" stroke="#c07015" stroke-width="3"/>
+  <line x1="110" y1="176" x2="175" y2="152" stroke="#c07015" stroke-width="3"/>
+  <line x1="95" y1="122" x2="162" y2="102" stroke="#c07015" stroke-width="3"/>
+  <text x="135" y="230" text-anchor="middle" font-size="13" fill="#666666">每点的"冰刀方向层"（如 CP⁵）</text>
+  <rect x="310" y="60" width="230" height="150" rx="14" fill="#f3ece2" stroke="#8a4b00" stroke-width="2"/>
+  <text x="425" y="46" text-anchor="middle" font-size="16" fill="#6b3a00">四元数 Kähler 流形（实维 ≥8）</text>
+  <ellipse cx="425" cy="148" rx="80" ry="44" fill="#ffffff" stroke="#8a4b00" stroke-width="1.5"/>
+  <text x="425" y="155" text-anchor="middle" font-size="16" fill="#6b3a00">i，j，k</text>
+  <text x="425" y="230" text-anchor="middle" font-size="13" fill="#666666">每点一套四元数对称（如 HP²）</text>
+  <line x1="258" y1="128" x2="302" y2="128" stroke="#333333" stroke-width="2"/>
+  <polygon points="302,128 292,123 292,133" fill="#333333"/>
+  <line x1="302" y1="168" x2="258" y2="168" stroke="#333333" stroke-width="2"/>
+  <polygon points="258,168 268,163 268,173" fill="#333333"/>
+  <text x="280" y="114" text-anchor="middle" font-size="13" fill="#333333">扭空间</text>
+  <text x="280" y="190" text-anchor="middle" font-size="13" fill="#333333">对应</text>
+  <text x="280" y="264" text-anchor="middle" font-size="15" fill="#204060">定理：两边都只剩对称"标准件"（伴随簇 ↔ Wolf 空间）</text>
+</svg>
+
+</div>
+
+**为什么值得关心**
+
+一个代数几何分类定理，顺手解决了黎曼几何中"正四元数曲率空间必对称"的刚性猜想——两块大陆之间的桥被修通了。
+
+> 暂无形式化证明（AI 结果待核验）
+
 ## 一句话结论
 
 论文正面解决接触–Fano 齐性猜想与 LeBrun–Salamon 猜想：复维数至少为三的光滑射影接触 Fano 流形连同其接触分布，必接触同构于某单复李代数的伴随簇，从而实维数 `@@M@@4m\geq 8@@` 的闭正四元数 Kähler 流形必与紧对称 Wolf 空间位似。

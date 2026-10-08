@@ -13,6 +13,33 @@ pdfname: ""
 
 > 结果族 247：An infinite finitely presented residually finite 2-group and a finitely presented nil algebra　·　学科：Group theory　·　验证状态：暂无形式化证明，请以社区核验为准
 
+## 入门导读 🐣
+
+想鉴定一台无限大机器里的某个零件是不是"零号件"？把它塞进各种有限的小检测机里照 X 光：只要任何非单位元素总能在某一台机器上现形，这台机器就叫"剩余有限"。本文造出一个无限群：说明书只有有限页、经得起所有有限检测机的透视，而且每个元素转 2 的幂次圈就回到原点。
+
+**关键词卡片**
+
+- 周期群（periodic group）：每个元素的阶都有限的群。
+- 有限呈现（finitely presented）：用有限个生成元加有限条关系式就能完整说明的群。
+- 剩余有限（residually finite）：任何非单位元素都能在某个有限商群里与单位元区分开。
+- 2-群（2-group）：每个元素的阶都是 2 的幂（群本身可以无限）。
+
+**看个具体例子**
+
+主角是 Steinberg 群 `@@M@@\mathrm{St}_{12}(R)@@` 的有限指标子群 `@@M@@G@@`。检测机就是"截断商"：把代数 `@@M@@R@@` 砍掉足够高的度数得到有限环，相应的 Steinberg 群是有限的 2-群；论文证明这些有限商合起来能现形一切非单位元（下图红点）。由 Zel'manov 定理，这类群的元素阶必然无界——2、4、8、16……一路涨上去。
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280"><ellipse cx="165" cy="105" rx="115" ry="62" fill="none" stroke="#2c7fb8" stroke-width="2" stroke-dasharray="7 5"/><text x="165" y="30" font-size="14" fill="#2c7fb8" text-anchor="middle">Γ：无限、有限呈现</text><circle cx="110" cy="95" r="7" fill="#2c7fb8"/><circle cx="160" cy="115" r="7" fill="#c0392b"/><circle cx="215" cy="95" r="7" fill="#2c7fb8"/><circle cx="190" cy="130" r="7" fill="#2c7fb8"/><text x="248" y="140" font-size="14" fill="#2c7fb8">…</text><text x="160" y="160" font-size="13" fill="#c0392b" text-anchor="middle">元素 g≠1</text><circle cx="130" cy="226" r="30" fill="none" stroke="#666" stroke-width="2"/><text x="130" y="231" font-size="12" fill="#666" text-anchor="middle">有限商 1</text><circle cx="420" cy="226" r="30" fill="none" stroke="#c0392b" stroke-width="2"/><circle cx="433" cy="218" r="5" fill="#c0392b"/><text x="420" y="272" font-size="12" fill="#c0392b" text-anchor="middle">有限商 2：g 的像 ≠ 1，现形！</text><line x1="122" y1="150" x2="130" y2="194" stroke="#666" stroke-width="1.8"/><line x1="168" y1="121" x2="399" y2="204" stroke="#c0392b" stroke-width="2" stroke-dasharray="6 4"/></svg>
+
+</div>
+
+**为什么值得关心**
+
+它与姊妹篇合起来，对"有限呈现的无限周期群是否存在"给出同时满足剩余有限的完整否定回答——此前 Grigorchuk 群剩余有限却无法有限呈现。
+
+> 暂无形式化证明（AI 结果待核验）
+
 ## 一句话结论
 
 本文证明姊妹篇构造的无限、有限呈现的周期群 `@@M@@\Gamma=\mathop{\mathrm{St}}\nolimits_{12}(R)@@` 是剩余有限的：其有限指标子群 `@@M@@G@@` 中每个元素的阶都是 `@@M@@2@@` 的幂，得到首个兼具"普通有限呈现＋剩余有限＋纯 `@@M@@2@@`-挠"的无限群，把有限呈现 Burnside 问题的否定回答又推进一层。

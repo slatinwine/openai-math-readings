@@ -13,6 +13,73 @@ pdfname: ""
 
 > 结果族 098：Compact counterexamples to bi-Lipschitz dimension reduction　·　学科：Convex and metric geometry　·　验证状态：主结果已 Lean 形式化
 
+## 入门导读 🐣
+
+有限维空间里的点集有个好性质叫"加倍"：放大任何局部，细节都装得进固定数量的小格——每个球都能被至多 `@@M@@\lambda@@` 个半径减半的球盖住。Lang 与 Plaut 猜想：无穷维 Hilbert 空间里的加倍点集，是否也总能忠实地压平进某个有限维？这篇论文造出一个加倍点集，证明它永远压不平——猜想得到否定回答。
+
+**关键词卡片**
+
+- 加倍空间（doubling metric space）：任何球都能被至多 `@@M@@\lambda@@` 个半径减半的球覆盖；`@@M@@\lambda@@` 叫加倍常数。
+- 双 Lipschitz 嵌入（bi-Lipschitz embedding）：距离的拉伸与压缩都被控制在固定倍数内的放入方式。
+- 失真（distortion）：嵌入后最大拉伸与最小压缩之比。
+- 雪花化（snowflaking）：把距离换成 `@@M@@d^\alpha@@` 后必可嵌入有限维（Assouad 定理），但本文处理的是原始距离。
+
+**看个具体例子**
+
+反例的"数字版"：点集 `@@M@@S@@` 住在 `@@M@@\ell_2@@` 里，加倍常数 `@@M@@\le76800@@`（来自 `@@M@@300\times16^2@@` 的分层计数），但对任何维数 `@@M@@k@@`、任何有限失真 `@@M@@D@@`，都不存在双 Lipschitz 嵌入 `@@M@@S\to\R^k@@`。构造按尺度分层：第 `@@M@@j@@` 层条纹宽 `@@M@@r_j=1000^{-j}@@`，水平与垂直地周期染色，点在其基点所在颜色条带内取一个位移方向。
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280">
+  <rect x="10" y="60" width="130" height="120" fill="none" stroke="#345" stroke-width="1.5"/>
+  <line x1="10" y1="90" x2="140" y2="90" stroke="#345"/>
+  <line x1="10" y1="120" x2="140" y2="120" stroke="#345"/>
+  <line x1="10" y1="150" x2="140" y2="150" stroke="#345"/>
+  <line x1="42" y1="60" x2="42" y2="180" stroke="#678" stroke-dasharray="3 3"/>
+  <line x1="75" y1="60" x2="75" y2="180" stroke="#678" stroke-dasharray="3 3"/>
+  <line x1="107" y1="60" x2="107" y2="180" stroke="#678" stroke-dasharray="3 3"/>
+  <rect x="230" y="60" width="130" height="120" fill="none" stroke="#345" stroke-width="1.5"/>
+  <line x1="230" y1="75" x2="360" y2="75" stroke="#345"/>
+  <line x1="230" y1="90" x2="360" y2="90" stroke="#345"/>
+  <line x1="230" y1="105" x2="360" y2="105" stroke="#345"/>
+  <line x1="230" y1="120" x2="360" y2="120" stroke="#345"/>
+  <line x1="230" y1="135" x2="360" y2="135" stroke="#345"/>
+  <line x1="230" y1="150" x2="360" y2="150" stroke="#345"/>
+  <line x1="230" y1="165" x2="360" y2="165" stroke="#345"/>
+  <rect x="440" y="60" width="110" height="120" fill="none" stroke="#345" stroke-width="1.5"/>
+  <line x1="440" y1="69" x2="550" y2="69" stroke="#345"/>
+  <line x1="440" y1="78" x2="550" y2="78" stroke="#345"/>
+  <line x1="440" y1="87" x2="550" y2="87" stroke="#345"/>
+  <line x1="440" y1="96" x2="550" y2="96" stroke="#345"/>
+  <line x1="440" y1="105" x2="550" y2="105" stroke="#345"/>
+  <line x1="440" y1="114" x2="550" y2="114" stroke="#345"/>
+  <line x1="440" y1="123" x2="550" y2="123" stroke="#345"/>
+  <line x1="440" y1="132" x2="550" y2="132" stroke="#345"/>
+  <line x1="440" y1="141" x2="550" y2="141" stroke="#345"/>
+  <line x1="440" y1="150" x2="550" y2="150" stroke="#345"/>
+  <line x1="440" y1="159" x2="550" y2="159" stroke="#345"/>
+  <line x1="440" y1="168" x2="550" y2="168" stroke="#345"/>
+  <line x1="440" y1="177" x2="550" y2="177" stroke="#345"/>
+  <line x1="145" y1="120" x2="222" y2="120" stroke="#c00" stroke-width="2"/>
+  <path d="M 225 120 L 214 114 L 214 126 Z" fill="#c00"/>
+  <text x="148" y="104" font-size="12" fill="#c00">放大1000倍</text>
+  <line x1="365" y1="120" x2="432" y2="120" stroke="#c00" stroke-width="2"/>
+  <path d="M 435 120 L 424 114 L 424 126 Z" fill="#c00"/>
+  <text x="364" y="104" font-size="12" fill="#c00">放大1000倍</text>
+  <text x="10" y="40" font-size="14" fill="#123">第 j 层：条纹宽 r_j=1000^(-j)，水平＋垂直地染 N_j 色</text>
+  <text x="10" y="205" font-size="14" fill="#123">点只在基点所在颜色条带内取一个位移方向；</text>
+  <text x="10" y="227" font-size="14" fill="#123">相邻层尺度比 1000，逐层接力；总加倍常数 ≤76800，</text>
+  <text x="10" y="249" font-size="14" fill="#123">却不能忠实压平进任何有限维空间</text>
+</svg>
+
+</div>
+
+**为什么值得关心**
+
+它否定地回答了 Lang–Plaut 问题（哪怕集合是紧的），并推出每个无穷维 Banach 空间都有这类紧反例：局部简单，远不足以保证全局可降维。
+
+> 已 Lean 形式化
+
 ## 一句话结论
 
 论文构造实 `@@M@@\ell_2@@` 中固定的加倍（doubling）子集 `@@M@@S@@`，其加倍常数不超过 `@@M@@76800@@`，却不能以任何有限失真（distortion）双 Lipschitz 嵌入任何有限维欧氏空间，对 Lang–Plaut 问题给出否定回答；并推出每个无穷维 Banach 空间都有此类紧反例。

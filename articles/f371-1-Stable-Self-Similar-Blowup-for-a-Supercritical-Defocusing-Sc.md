@@ -13,6 +13,48 @@ pdfname: ""
 
 > 结果族 371：Stable blowup for the defocusing Schrödinger equation　·　学科：Partial differential equations　·　验证状态：暂无形式化证明，请以社区核验为准
 
+## 入门导读 🐣
+
+想象一片"越挤越倔"的波：方程里的散焦项像内建阻尼，直觉上只会让波越传越温和。论文却在十二维环面上证明：只要非线性足够强，就存在一整片（开集）光滑初值，它们的波都在有限时刻聚成越来越窄、越来越高的尖峰并"爆破"——把初值随便扰动一下，照样爆。
+
+**关键词卡片**
+
+- 散焦薛定谔方程（defocusing nonlinear Schrödinger equation）：`@@M@@i\partial_tu+\Delta u=|u|^{p-1}u@@`，散焦意味着非线性反抗聚集。
+- 能量超临界（energy-supercritical）：维数与幂次高到守恒能量不再能控制解的正则性。
+- 有限时间爆破（finite-time blowup）：振幅在有限时刻 `@@M@@T@@` 趋于无穷。
+- 自相似（self-similar）：临近爆破，形状不变、按固定比例缩放重演。
+- 开集稳定（open set of data）：爆破初值不只是一条特殊曲线，而是一整片。
+
+**看个具体例子**
+
+爆破有精确的"标度律"：空间宽度 `@@M@@\sim(T-t)^{1/2}@@`，振幅 `@@M@@\sim(T-t)^{-1/(p-1)}@@`，且 `@@M@@(T-t)^{1/(p-1)}|u(t,x_*)|\to c_0\gt0@@`——峰高与峰宽的乘积始终保持在同一个常数附近。也就是说越接近爆破时刻，波形就是自身的缩小升高版，如同图中三条曲线。
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280">
+  <text x="280" y="30" text-anchor="middle" font-size="15" fill="#333">自相似爆破：越接近时刻 T，峰越窄越高</text>
+  <line x1="70" y1="225" x2="510" y2="225" stroke="#333" stroke-width="2"/>
+  <line x1="70" y1="225" x2="70" y2="45" stroke="#333" stroke-width="2"/>
+  <text x="530" y="230" font-size="13" fill="#333">空间</text>
+  <text x="62" y="40" text-anchor="end" font-size="13" fill="#333">振幅</text>
+  <path d="M150 222 Q280 205 410 222" fill="none" stroke="#2e7d32" stroke-width="2"/>
+  <text x="150" y="205" text-anchor="middle" font-size="13" fill="#2e7d32">t₁</text>
+  <path d="M205 222 Q280 150 355 222" fill="none" stroke="#e67e22" stroke-width="2"/>
+  <text x="205" y="160" text-anchor="middle" font-size="13" fill="#e67e22">t₂</text>
+  <path d="M245 222 Q280 60 315 222" fill="none" stroke="#c0392b" stroke-width="2"/>
+  <text x="330" y="80" text-anchor="middle" font-size="13" fill="#c0392b">接近 T</text>
+  <text x="280" y="252" text-anchor="middle" font-size="13" fill="#666">宽度 ∼ (T−t)^{1/2}，振幅 ∼ (T−t)^{−1/(p−1)}</text>
+  <text x="280" y="272" text-anchor="middle" font-size="13" fill="#666">形状自相似：每条曲线都是同一条曲线按比例缩放</text>
+</svg>
+
+</div>
+
+**为什么值得关心**
+
+这是散焦方程首个"开集"（而非有限余维）的稳定爆破，并推出高斯随机初值以正概率爆破，回应了概率性整体存在性问题。
+
+> 暂无形式化证明（AI 结果待核验）
+
 ## 一句话结论
 
 论文证明：十二维环面 `@@M@@\mathbb T^{12}@@` 上，非线性次数 `@@M@@p@@` 充分大的奇数幂散焦薛定谔方程，在高 Sobolev 空间 `@@M@@H^k@@`（`@@M@@k>8@@`）中存在非空开集，其中每个初值的解都在有限时间以自相似速率爆破，首次给出全维开集（而非有限余维）的散焦稳定爆破。

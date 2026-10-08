@@ -13,6 +13,33 @@ pdfname: ""
 
 > 结果族 102：The Unique Games Conjecture and optimal approximation thresholds　·　学科：Theoretical computer science　·　验证状态：暂无形式化证明，请以社区核验为准
 
+## 入门导读 🐣
+
+一片单行道路网里藏着能绕圈的路线；想打断所有绕圈，最少要关闭几个路口？这就是有向反馈顶点集问题。已知算法只能保证对数级别的近似；这篇论文证明：任何固定常数倍的近似（哪怕 100 倍）都是 NP-难的，而且这次不再需要借助任何未证猜想。
+
+**关键词卡片**
+
+- 有向反馈顶点集（directed feedback vertex set，DFVS）：删去后余图不含任何有向圈的最小顶点集合。
+- 有向圈（directed cycle）：沿箭头方向一路走、能绕回起点的路线。
+- 拓扑序（topological order)：无圈有向图才能把顶点排成一行、所有箭头指向同一侧，因此"删完是否无圈"可多项式验证。
+- 2-to-1 博弈（2-to-1 games）：本文硬度出发点的约束满足难题，相关定理已被证明。
+
+**看个具体例子**
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 300"><text x="280" y="26" text-anchor="middle" font-size="15" fill="#222">单行三角环：沿箭头能绕一圈回到起点</text><line x1="190" y1="90" x2="410" y2="110" stroke="#556" stroke-width="2"/><line x1="410" y1="110" x2="290" y2="230" stroke="#556" stroke-width="2"/><line x1="290" y1="230" x2="190" y2="90" stroke="#556" stroke-width="2"/><polygon points="322,103 309,107 310,96" fill="#556"/><polygon points="344,176 356,171 349,164" fill="#556"/><polygon points="240,160 251,167 243,173" fill="#556"/><circle cx="190" cy="90" r="16" fill="#fbb" stroke="#933"/><circle cx="410" cy="110" r="16" fill="#bcd" stroke="#369"/><circle cx="290" cy="230" r="16" fill="#fbb" stroke="#933"/><text x="190" y="95" text-anchor="middle" font-size="12">甲</text><text x="410" y="115" text-anchor="middle" font-size="12">乙</text><text x="290" y="235" text-anchor="middle" font-size="12">丙</text><line x1="278" y1="218" x2="302" y2="242" stroke="#c22" stroke-width="3"/><line x1="302" y1="218" x2="278" y2="242" stroke="#c22" stroke-width="3"/><text x="392" y="264" font-size="13" fill="#c22">关闭丙：圈全断</text><text x="280" y="290" text-anchor="middle" font-size="13" fill="#333">删最少的顶点打断所有有向圈 = 最小反馈顶点集；三角环的答案是 1</text></svg>
+
+</div>
+
+小例子：三个路口组成的单行三角环，关闭任意一个，圈就全断，答案为 1。主定理：对任意固定 `@@M@@A\ge1@@`（如 `@@M@@A=100@@`），区分"删 `@@M@@\le k@@` 个就够"与"删 `@@M@@>Ak@@` 个才够"是 NP-难的；因此常数因子近似算法存在当且仅当 P=NP。同样的难度对"删边版"（最小反馈弧集）也成立。
+
+**为什么值得关心**
+
+"任意常数因子都难"此前只在唯一博弈猜想下成立，本文把它变成无条件的普通 NP-难，追平了猜想所许诺的全部结论。
+
+> 暂无形式化证明（AI 结果待核验）
+
 ## 一句话结论
 
 对任意固定常数 `@@M@@A\ge1@@`，在无权有向图上把最小反馈顶点集近似到 `@@M@@A@@` 因子是 NP-hard 的。此前这一结论依赖唯一游戏猜想，本文把它变成不附带复杂性假设的普通 NP-hardness。

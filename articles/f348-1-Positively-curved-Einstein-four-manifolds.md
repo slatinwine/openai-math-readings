@@ -13,6 +13,49 @@ pdfname: ""
 
 > 结果族 348：Nonnegative-curvature Einstein classification and an L² topological gap　·　学科：微分几何（Differential geometry）　·　验证状态：暂无形式化证明，请以社区核验为准
 
+## 入门导读 🐣
+
+把气球吹到"处处受力均匀"，就得到数学家口中的 Einstein 流形——广义相对论描述宇宙时用的标准形状。这篇论文给四维、封闭、且任何方向看都往外鼓的 Einstein 流形做了一次彻底的人口普查，结果干净得出奇：全世界只有三种，连"这形状是否可定向"都不必过问。
+
+**关键词卡片**
+
+- Einstein 流形（Einstein manifold）：每一点上各方向的平均弯曲都相等的形状。
+- 截面曲率（sectional curvature）：站在一点沿某个二维切片看去的弯曲程度；"严格为正"指任何切片都像球面一样外鼓。
+- 半共形平坦（half-conformally flat）：弯曲中可自由变化的部分有一半恒为零，是证明的核心中转站。
+- 等距（isometry）：保持一切距离的变换；差一个放大缩小加等距，就视为同一个形状。
+- Fubini–Study 度量（Fubini–Study metric）：复射影平面 CP² 上最标准、最对称的度量。
+
+**看个具体例子**
+
+定理说：满足条件的流形经放大缩小后，只能等距于下面三种之一——圆球 S⁴、带 Fubini–Study 度量的 CP²，以及把球面对径点粘合的 RP⁴。证明的关键中转站是"半共形平坦"：两个自由曲率块中至少一个恒为零，随后逐个对号入座。
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 270">
+<text x="280" y="28" font-size="16" text-anchor="middle" fill="#333">放大缩放之后，正曲率 Einstein 四维流形只有这三种</text>
+<circle cx="95" cy="140" r="60" fill="none" stroke="#333" stroke-width="2"/>
+<ellipse cx="95" cy="140" rx="60" ry="18" fill="none" stroke="#999" stroke-width="1.5"/>
+<ellipse cx="95" cy="140" rx="34" ry="52" fill="none" stroke="#999" stroke-width="1.5"/>
+<text x="95" y="245" font-size="15" text-anchor="middle" fill="#333">圆球 S⁴</text>
+<circle cx="280" cy="140" r="60" fill="none" stroke="#333" stroke-width="2"/>
+<ellipse cx="280" cy="140" rx="60" ry="18" fill="none" stroke="#999" stroke-width="1.5"/>
+<ellipse cx="280" cy="140" rx="18" ry="60" fill="none" stroke="#999" stroke-width="1.5"/>
+<text x="280" y="245" font-size="15" text-anchor="middle" fill="#333">CP²（Fubini–Study 度量）</text>
+<circle cx="465" cy="140" r="60" fill="none" stroke="#333" stroke-width="2"/>
+<line x1="465" y1="80" x2="465" y2="200" stroke="#999" stroke-width="1.5" stroke-dasharray="5,4"/>
+<circle cx="465" cy="80" r="4" fill="#333"/>
+<circle cx="465" cy="200" r="4" fill="#333"/>
+<text x="465" y="245" font-size="15" text-anchor="middle" fill="#333">RP⁴（对径点粘合）</text>
+</svg>
+
+</div>
+
+**为什么值得关心**
+
+这是 Yang 在 2000 年明确列出的分类猜想：此前所有推进都附带额外条件（曲率钳制、定量曲率上界、对拓扑不变量的限制等），本文首次在无附加假设下收官。它也是整个结果族证明链的源头：族内后两篇把结论推广到非负曲率的情形，都以此为基础。
+
+> 暂无形式化证明（AI 结果待核验）
+
 ## 一句话结论
 证明 Yang 于 2000 年明确列出的分类猜想：闭、连通、截面曲率严格为正的 Einstein 四维流形，在相差正伸缩与等距后必为圆 `@@M@@S^4@@`、Fubini–Study `@@M@@\mathbb{CP}^2@@` 或圆 `@@M@@\mathbb{RP}^4@@`，无需任何定向假设——这是本结果族整条证明链的源头。
 

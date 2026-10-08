@@ -13,6 +13,55 @@ pdfname: ""
 
 > 结果族 056：Termination of projective and Kähler fourfold minimal model programs　·　学科：Algebraic and complex geometry　·　验证状态：暂无形式化证明，请以社区核验为准
 
+## 入门导读 🐣
+
+想象一台"化简机器"：把一个四维的几何形状不停送进去，每一步切除或翻修最碍手的一块，直到形状"没法再化简"为止。这台机器叫极小模型纲领。大家最担心的是它会不会无限空转；本文证明：在四维、允许温和奇点的最一般设定下，无论你每步怎么选切割路线，机器都保证有限步停机。
+
+**关键词卡片**
+
+- 极小模型纲领（minimal model program, MMP）：反复收缩"最负方向"来化简高维空间的流水线
+- 终止性（termination）：化简过程有限步内结束，不会永远走下去
+- 翻转（flip）：切除坏块后立刻补上一块新空间的外科手术，让化简得以继续
+- log canonical 配对（log canonical pair）：允许相当温和奇点与边界的空间组合
+- 四重折叠（fourfold）：复维数为四的几何对象，终止性此前恰好卡在这一维
+
+**看个具体例子**
+
+证明的关键是造一块"难度计分板"：每做一步手术，分数只减不增；每过若干步还必严格掉一整格。分数是自然数，掉有限次就归零——机器停机。示意如下，任何一条你自选的手术路线，分数最终都会走到底。
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280">
+  <defs>
+    <marker id="ar" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+      <path d="M0,0 L7,3 L0,6 z" fill="#34506e"/>
+    </marker>
+  </defs>
+  <rect x="30" y="36" width="130" height="50" rx="8" fill="#eef3fb" stroke="#34506e" stroke-width="2"/>
+  <text x="95" y="57" text-anchor="middle" font-size="14" fill="#1a2433">起点 (X,B)</text>
+  <text x="95" y="75" text-anchor="middle" font-size="12" fill="#445368">四维 lc 配对</text>
+  <rect x="215" y="98" width="130" height="50" rx="8" fill="#eef3fb" stroke="#34506e" stroke-width="2"/>
+  <text x="280" y="119" text-anchor="middle" font-size="14" fill="#1a2433">收缩 / 翻转</text>
+  <text x="280" y="137" text-anchor="middle" font-size="12" fill="#445368">负射线任选</text>
+  <rect x="400" y="160" width="130" height="50" rx="8" fill="#fdeeef" stroke="#993344" stroke-width="2"/>
+  <text x="465" y="181" text-anchor="middle" font-size="14" fill="#5a1a26">终点</text>
+  <text x="465" y="199" text-anchor="middle" font-size="12" fill="#833540">极小模型 / 纤维化</text>
+  <line x1="160" y1="61" x2="212" y2="105" stroke="#34506e" stroke-width="2" marker-end="url(#ar)"/>
+  <line x1="345" y1="123" x2="397" y2="167" stroke="#34506e" stroke-width="2" marker-end="url(#ar)"/>
+  <text x="280" y="240" text-anchor="middle" font-size="13" fill="#1a2433">难度计分板：13 → 9 → 5 → 0（示意）</text>
+  <text x="280" y="262" text-anchor="middle" font-size="13" fill="#445368">每步不增、隔步必降，有限步归零停机</text>
+</svg>
+
+</div>
+
+定理还不挑条件：以往四维定理要求的伪有效性、初始 ℚ-因子化统统不需要，也允许"先收缩再做小修正"的混合步骤——这是以前所有证明都容不下的自由度。
+
+**为什么值得关心**
+
+"化简机器会不会空转"是高维双有理几何最核心的悬念之一，本文把它在四维推进到最一般的对数典范情形，也是同族 Kähler 姊妹篇的代数母体。
+
+> 暂无形式化证明（AI 结果待核验）
+
 ## 一句话结论
 证明了特征零代数闭域上带有效有理边界的射影 log canonical 四重折叠的任意"许可"极小模型纲领必终止：允许任意负极端射线选择与混合双有理步骤，不假设 `@@M@@\Q@@`-因子化或伪有效性，且每条负射线都有所需的收缩与正模型。
 

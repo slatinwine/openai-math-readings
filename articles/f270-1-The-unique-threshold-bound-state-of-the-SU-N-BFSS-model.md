@@ -13,6 +13,49 @@ pdfname: ""
 
 > 结果族 270：Threshold and positive-energy bound states of the BFSS matrix model　·　学科：Mathematical physics　·　验证状态：暂无形式化证明，请以社区核验为准
 
+## 入门导读 🐣
+
+一颗弹珠在山谷里滚动，而这个山谷很怪：谷底伸出几条笔直通到无穷远的平底沟槽，弹珠沿沟槽滑向远方不需要爬一点坡。既然随时可以"逃逸"，能稳稳停住的束缚态看似不该存在。论文证明：恰好有一个这样的态——去掉整体平动的质心后，零能的可归一化态一个不多、一个不少。
+
+**关键词卡片**
+
+- BFSS 矩阵模型（BFSS matrix model）：把高维理论压缩到只剩一个时间维度的矩阵量子力学
+- 平坦方向（flat directions）：位势为零、可以一路滑向无穷远的不紧方向
+- 阈值束缚态（threshold bound state）：恰好落在连续谱起点上的可归一化态
+- 可归一化（normalizable）：波函数平方可积，代表真实束缚的粒子
+- 超荷（supercharge）：超对称理论里的特殊算子，哈密顿量由它"平方"而来
+
+**看个具体例子**
+
+数字版定理非常干脆：对每个 N≥2，`@@M@@\dim\ker H_N=1@@`。N=2 也好、N=1000 也好，去掉质心后都恰好剩一个零能态——它是旋转不变的"单态"，宇称为偶。
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280">
+<line x1="60" y1="240" x2="530" y2="240" stroke="#333" stroke-width="2"/>
+<line x1="80" y1="240" x2="80" y2="40" stroke="#333" stroke-width="2"/>
+<text x="486" y="262" font-size="14" fill="#333">位置</text>
+<text x="38" y="35" font-size="14" fill="#333">能量</text>
+<text x="100" y="45" font-size="14" fill="#333">位势 V</text>
+<path d="M 90 55 C 120 190 160 205 230 205 L 530 205" fill="none" stroke="#333" stroke-width="2.5"/>
+<line x1="90" y1="205" x2="530" y2="205" stroke="#c0392b" stroke-width="1.5" stroke-dasharray="7 6"/>
+<path d="M 300 205 Q 340 145 380 205 Z" fill="#e8f0fa" stroke="#23527c" stroke-width="2"/>
+<text x="248" y="160" font-size="14" fill="#23527c">唯一的零能束缚态</text>
+<text x="330" y="132" font-size="13" fill="#888">(波函数可归一化)</text>
+<line x1="410" y1="185" x2="498" y2="185" stroke="#e67e22" stroke-width="2.5"/>
+<polygon points="490,180 490,190 501,185" fill="#e67e22"/>
+<text x="398" y="172" font-size="13" fill="#e67e22">滑向无穷不用爬坡</text>
+<text x="86" y="224" font-size="13" fill="#c0392b">E = 0：谷底平到无穷远（连续谱阈值）</text>
+</svg>
+
+</div>
+
+**为什么值得关心**
+
+"恰一个束缚态"正是 Witten 提出的 D0 膜束缚态预言，是矩阵理论用矩阵描述引力的基石；从带符号的指标计数走到整个核的维数，本文补上了最后一步。
+
+> 暂无形式化证明（AI 结果待核验）
+
 ## 一句话结论
 
 证明了去掉质心后，无质量形变的 `@@M@@\mathrm{SU}(N)@@` BFSS 矩阵量子力学对每个 `@@M@@N\ge2@@` 恰有一个可归一化（normalizable）的零能态，即 `@@M@@\dim\ker H_N=1@@`，解决了 Witten 提出、矩阵理论所依赖的阈值束缚态（threshold bound state）猜想。

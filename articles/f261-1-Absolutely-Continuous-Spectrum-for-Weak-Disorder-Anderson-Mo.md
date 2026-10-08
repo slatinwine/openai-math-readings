@@ -13,6 +13,53 @@ pdfname: ""
 
 > 结果族 261：Localization and delocalization in the Anderson model　·　学科：Mathematical physics　·　验证状态：暂无形式化证明，请以社区核验为准
 
+## 入门导读 🐣
+
+电子在晶格里传播，像声音在大厅里回荡。大厅里乱扔许多吸音枕头（杂质多、无序强），声音很快就闷掉，这叫"局域化"；把枕头几乎搬空（无序很弱），三维大厅里总该有些音调还能传遍全场，这叫"延展"。物理学家六十多年前就画好了这张相图，数学证明却迟迟不来。本文补上关键一格：维数不低于三、无序足够弱时，谱里确实存在一段波能传遍全空间的能量窗口，而且窗口位置固定、不随无序减弱而消失。
+
+**关键词卡片**
+
+- Anderson 模型（Anderson model）：格点上随机起伏的"地面"加相邻跳跃构成的量子行走。
+- 无序强度（disorder strength）λ：随机起伏的大小，好比枕头的多寡。
+- 绝对连续谱（absolutely continuous spectrum）：波能传遍全系统的谱类型，对应延展态。
+- 纯点谱（pure-point spectrum）：由钉死在局部的驻波组成的谱类型，对应局域态。
+- 迁移率边（mobility edge）：同一个系统里局域区与延展区的能量分界线。
+
+**看个具体例子**
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280">
+  <text x="70" y="38" font-size="14">d=3 时的能量轴（λ 充分小且固定）：</text>
+  <line x1="70" y1="115" x2="516" y2="115" stroke="#333" stroke-width="2"/>
+  <polygon points="526,115 514,109 514,121" fill="#333"/>
+  <rect x="95" y="103" width="90" height="24" fill="#9ab"/>
+  <rect x="185" y="103" width="80" height="24" fill="#e66"/>
+  <rect x="265" y="103" width="235" height="24" fill="none" stroke="#999" stroke-dasharray="5 4"/>
+  <line x1="95" y1="95" x2="95" y2="133" stroke="#333"/>
+  <line x1="185" y1="95" x2="185" y2="133" stroke="#333"/>
+  <line x1="265" y1="95" x2="265" y2="133" stroke="#333"/>
+  <text x="78" y="152" font-size="13">−6</text>
+  <text x="146" y="172" font-size="13">−6+e₂/2</text>
+  <text x="236" y="172" font-size="13">−6+e₂</text>
+  <text x="492" y="152" font-size="13">6+λ</text>
+  <text x="96" y="90" font-size="13">局域（已知）</text>
+  <text x="180" y="64" font-size="13">延展（本文新证）</text>
+  <text x="316" y="90" font-size="13">其余谱型不断言</text>
+  <text x="70" y="215" font-size="14">窗口宽度 e₂/2 &lt; 1/200（图中放大示意），且不依赖 λ；</text>
+  <text x="70" y="242" font-size="14">配上谱边局域化：同一算子内局域与延展并存，正是迁移率边。</text>
+</svg>
+
+</div>
+
+数字版：`@@M@@d=3@@` 时窗口为 `@@M@@(-6+e_2/2,\,-6+e_2)@@`，其中 `@@M@@e_2\lt 1/100@@`——一段贴着谱底的窄带。
+
+**为什么值得关心**
+
+三维弱无序延展态（Simon 问题 1 的纯绝对连续能段）是数学物理最著名的公开难题之一，本文首次在欧氏格点上给出正面回答。
+
+> 暂无形式化证明（AI 结果待核验）
+
 ## 一句话结论
 
 对格点 Anderson 模型，本文证明：在每个固定维数 `@@M@@d\ge3@@`、无序强度 `@@M@@\lambda@@` 充分小且固定时，几乎必然存在一个不依赖 `@@M@@\lambda@@` 的开能量区间，谱在其上纯绝对连续且质量非零——正面解决了 Simon 问题 1 的纯绝对连续能段部分。

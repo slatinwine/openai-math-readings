@@ -13,6 +13,50 @@ pdfname: ""
 
 > 结果族 019：The local <i>p</i>-adic section conjecture and global consequences　·　学科：Number theory　·　验证状态：暂无形式化证明，请以社区核验为准
 
+## 入门导读 🐣
+
+想象在 p 进世界里给一条曲线造立体车库：出口大道（指定圆盘之外的整个区域）必须原样复制一份、一分不差；但通往指定车库（圆盘）的每条坡道，都必须绕 p 的倍数圈才到。这篇论文证明这样的车库真的造得出来：一个覆盖同时满足"外面纹丝不动、里面必定绕圈"这两个相反的要求。
+
+**关键词卡片**
+
+- étale 覆盖（étale cover）：不分枝的覆盖映射，像螺旋楼梯层层平整贴合、没有折角。
+- 双曲曲线（hyperbolic curve）：亏格至少 2 的曲线，"洞多到产生负曲率"的那一类。
+- p 进数域（p-adic field）：Q_p 的有限扩张，用 p 进绝对值度量距离的世界。
+- 开圆盘（open disk）：p 进解析空间里的基本圆形地盘，定理允许你预先指定有限多个。
+- 度（degree）：覆盖一层的"铺盖层数"；度被 p 整除即层数是 p 的倍数。
+
+**看个具体例子**
+
+取 p=2、一个圆盘 V：覆盖在 V 之外有一份度恰为 1 的完整拷贝（同构），而 V 上方每个连通分量的度都被 2 整除。示意图中画成两个度 2 的分层。
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280">
+  <text x="280" y="28" text-anchor="middle" font-size="16" fill="#333">一座"外部分裂、内部绕圈"的车库（p=2）</text>
+  <path d="M45 75 Q115 52 185 75 T325 75" fill="none" stroke="#345" stroke-width="2.5"/>
+  <ellipse cx="365" cy="75" rx="48" ry="18" fill="#ffd" stroke="#b80" stroke-width="1.5"/>
+  <text x="365" y="46" text-anchor="middle" font-size="13" fill="#b80">圆盘 V</text>
+  <text x="150" y="46" text-anchor="middle" font-size="13" fill="#345">曲线 X 与外部 U</text>
+  <line x1="130" y1="95" x2="130" y2="148" stroke="#888" stroke-width="1.5" stroke-dasharray="4 3"/>
+  <line x1="365" y1="96" x2="365" y2="128" stroke="#888" stroke-width="1.5" stroke-dasharray="4 3"/>
+  <path d="M45 160 Q115 137 185 160 T325 160" fill="none" stroke="#273" stroke-width="2.5"/>
+  <text x="150" y="192" text-anchor="middle" font-size="13" fill="#273">外部拷贝：度 1，与 U 完全相同</text>
+  <path d="M318 145 Q365 128 412 145" fill="none" stroke="#c33" stroke-width="2"/>
+  <text x="424" y="143" font-size="12" fill="#c33">度 2</text>
+  <path d="M318 172 Q365 155 412 172" fill="none" stroke="#c33" stroke-width="2"/>
+  <text x="424" y="170" font-size="12" fill="#c33">度 2</text>
+  <text x="280" y="225" text-anchor="middle" font-size="13" fill="#333">圆盘 V 上方每个连通分量的度都被 2 整除（示意画成两个度 2 分层）；</text>
+  <text x="280" y="248" text-anchor="middle" font-size="13" fill="#333">两件相反的事，装进同一个有限 étale 覆盖。</text>
+</svg>
+
+</div>
+
+**为什么值得关心**
+
+这种"外部完全分裂、圆盘上方 p 非平凡"的同步覆盖，正是姊妹篇证明局部 p 进截面猜想所需的核心构件，也展示了双曲曲线覆盖惊人的可控性。
+
+> 暂无形式化证明（AI 结果待核验）
+
 ## 一句话结论
 
 本文证明：在亏格至少 `@@M@@2@@` 的 `@@M@@p@@` 进曲线上任取有限多个互不相交的开圆盘，可以造出**一个**连通有限 étale 覆盖，使它在诸圆盘之外的整个外部区域上有一叶同构拷贝，而每个圆盘上方每个连通分量的度数都被 `@@M@@p@@` 整除。这种"外部分裂、内部 `@@M@@p@@` 非平凡"的同步覆盖，是局部 `@@M@@p@@` 进截面猜想证明的核心构件。

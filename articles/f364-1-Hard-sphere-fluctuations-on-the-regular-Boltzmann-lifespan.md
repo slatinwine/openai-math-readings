@@ -13,6 +13,28 @@ pdfname: ""
 
 > 结果族 364：Kinetic limits and fluctuations over the Boltzmann lifespan　·　学科：Partial differential equations　·　验证状态：暂无形式化证明，请以社区核验为准
 
+## 入门导读 🐣
+
+抛一万次硬币，正面比例的随机起伏呈钟形曲线——这是中心极限定理。这篇论文证明了一件更神奇的事：一团完全按牛顿定律确定碰撞的硬球气体，哪怕远离平衡，其密度场的"统计噪声"在极限下也是干净的钟形；噪声如何随时间演化、强度多大，都由一个线性方程精确规定。确定性系统里"涌现"出了普适的随机性。
+
+**关键词卡片**
+
+- 中心极限定理（central limit theorem）：大量微小随机因素叠加后趋于高斯（钟形）分布。
+- 经验测度（empirical measure）：给每个粒子滴一滴墨水所得到的密度快照。
+- 涨落玻尔兹曼方程（fluctuating Boltzmann equation）：支配噪声漂移与协方差的线性随机方程。
+- 累积子（cumulant）：刻画高阶关联的统计量；全部高阶累积子消失恰好等价于高斯性。
+- 精确中心化（exact centering）：必须减去精确的微观期望而非宏观密度，否则初始排斥会带来系统性偏移。
+
+**看个具体例子**
+
+代入数字：任取时刻 `@@M@@t=T/2@@`、任取观测函数 `@@M@@\varphi@@`，微观涨落 `@@M@@\zeta_t^\varepsilon(\varphi)=\sqrt{\mu}\,[\pi_t^\varepsilon(\varphi)-\mathbb E\,\pi_t^\varepsilon(\varphi)]@@` 依分布收敛到 `@@M@@N(0,\,C_t(\varphi,\varphi))@@`，噪声强度 `@@M@@C_t(\varphi,\psi)=\tfrac12\int B\,f_t f_{t,*}\,\Delta\varphi\,\Delta\psi@@` 由当时的玻尔兹曼解 `@@M@@f_t@@` 决定。一个微妙处：若改用 `@@M@@f_0@@` 做中心，`@@M@@t=0@@` 时会凭空多出 `@@M@@-\tfrac{4\pi}{3}\int f_0\varphi\,\varrho_0@@` 的确定性偏移——精确中心化不是装饰。
+
+**为什么值得关心**
+
+非平衡态、宏观时间尺度上的高斯涨落是统计物理悬了四十多年的命题；本文在解正则存在的整个区间上把它变成定理，而非物理直觉。
+
+> 暂无形式化证明（AI 结果待核验）
+
 ## 一句话结论
 
 在玻尔兹曼方程解正则存在的整个时间区间上，本文证明三维确定性硬球气体远离平衡态的有限维中心极限定理：以精确微观期望为中心的经验涨落场收敛到线性涨落玻尔兹曼方程（linear fluctuating Boltzmann equation）支配的高斯场。

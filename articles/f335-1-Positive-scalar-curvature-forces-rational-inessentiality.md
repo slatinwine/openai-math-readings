@@ -13,6 +13,44 @@ pdfname: ""
 
 > 结果族 335：Gromov's integral scalar-curvature bound for simplicial volume　·　学科：Differential geometry　·　验证状态：暂无形式化证明，请以社区核验为准
 
+## 入门导读 🐣
+
+想象给封闭空间"充气"：正标量曲率相当于每个点都往外鼓，像球面那样。四十多年前 Gromov 与 Lawson 猜想：有一类"摊开后没有洞"的空间（比如高维环面），无论怎么设计量长规则都充不起来。本文证明了这个猜想——不需要 spin、基本群或维数上限等任何附加假设，并进一步说：这类空间就算只要求"不瘪"（曲率非负），也只剩完全平坦一条路。
+
+**关键词卡片**
+
+- 标量曲率（scalar curvature）：每一点的平均弯曲度；球面为正，马鞍面为负
+- 正标量曲率度量（positive scalar curvature metric）：处处严格外鼓的量长规则
+- 非对称流形（aspherical manifold）：万有覆盖可缩的封闭空间，如环面——"摊平后没有洞"
+- 分类映射（classifying map）：把流形送到其基本群的分类空间的标准映射
+- 有理非本质（rationally inessential）：分类映射把有理基本类打到零——空间不"本质地"缠绕自己的基本群
+
+**看个具体例子**
+
+主定理的数字版：若 `@@M@@\mathrm{Scal}\ge\kappa\gt0@@`，则 `@@M@@(c_M)_*[M]=0\in H_n(B\pi_1(M);\mathbb Q)@@`。代入 `@@M@@M=T^n@@`（`@@M@@n@@` 维环面，万有覆盖是可缩的 `@@M@@\mathbb R^n@@`）：它不容许处处正曲率的度量；更强地，`@@M@@T^n@@` 上任何 `@@M@@\mathrm{Scal}\ge0@@` 的度量都必平坦——这正是刚性推论。
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280">
+<text x="20" y="35" font-size="16" fill="#333">充得起 vs 充不起</text>
+<ellipse cx="140" cy="140" rx="80" ry="50" fill="none" stroke="#333" stroke-width="2"/>
+<ellipse cx="140" cy="148" rx="32" ry="16" fill="none" stroke="#333" stroke-width="2"/>
+<text x="55" y="225" font-size="14" fill="#333">环面 Tⁿ（覆盖可缩）</text>
+<text x="85" y="250" font-size="14" fill="#c33">正曲率：无解</text>
+<circle cx="400" cy="140" r="60" fill="none" stroke="#333" stroke-width="2"/>
+<ellipse cx="400" cy="140" rx="60" ry="18" fill="none" stroke="#999" stroke-dasharray="5 4"/>
+<text x="345" y="225" font-size="14" fill="#333">球面（覆盖不可缩）</text>
+<text x="365" y="250" font-size="14" fill="#343">正曲率：可行</text>
+</svg>
+
+</div>
+
+**为什么值得关心**
+
+它一举解决了 Gromov–Lawson 非对称猜想，扫清了此前各路线的 spin、维数与基本群限制；其"非负曲率⇒单纯体积为零"的推论，正是姊妹篇定量积分不等式的关键输入。
+
+> 暂无形式化证明（AI 结果待核验）
+
 ## 一句话结论
 
 证明了有理本质 (rationally essential) 闭流形不容许正标量曲率度量，从而解决 Gromov–Lawson 非对称猜想：闭非对称流形上非负标量曲率度量必平坦、实单纯体积为零——全程无需 spin、基本群或维数限制。

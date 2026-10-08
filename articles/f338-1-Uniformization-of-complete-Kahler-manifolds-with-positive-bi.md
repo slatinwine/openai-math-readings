@@ -13,6 +13,45 @@ pdfname: ""
 
 > 结果族 338：Yau's uniformization conjecture　·　学科：Differential geometry　·　验证状态：暂无形式化证明，请以社区核验为准
 
+## 入门导读 🐣
+
+一张处处同侧鼓起的完备曲面，摊平后就是一张平面——这是百年前的经典事实。丘成桐 1982 年猜想高维复几何也该如此：处处"正弯"的完备复空间必然就是复欧氏空间本身。这篇论文在所有复维数上证明了这个猜想，而且不要任何附加条件。
+
+**关键词卡片**
+
+- Kähler 流形（Kähler manifold）：复结构与度量相容的空间，复几何的"光滑舞台"。
+- 全纯双截曲率（holomorphic bisectional curvature）：两个复方向之间张开程度的度量，逐点严格为正即处处鼓起。
+- 完备非紧（complete noncompact）：没有边界，且任何方向都能无限走远。
+- 双全纯同构（biholomorphic）：复世界中最强的等价，保持全部复结构的双向一一映射。
+
+**看个具体例子**
+
+复维数 n = 1 时定理退化为经典结果：高斯曲率处处为正的完备曲面必共形等价于复平面 `@@M@@\mathbb{C}@@`。主定理把它推广到一切复维数：双截曲率逐点严格为正的完备非紧 Kähler 流形 `@@M@@M@@` 双全纯同构于 `@@M@@\mathbb{C}^n@@`——不需要曲率上下界、体积增长或拓扑假设。注意结论只识别流形本身，不断言原来的度量是平的。
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280">
+<path d="M40 180 Q120 40 210 170" stroke="#345" stroke-width="4" fill="none"/>
+<path d="M55 200 Q125 90 195 195" stroke="#89a" stroke-width="3" fill="none"/>
+<text x="45" y="235" font-size="15" fill="#345">处处正弯的完备空间 M</text>
+<line x1="245" y1="150" x2="330" y2="150" stroke="#345" stroke-width="3"/>
+<polygon points="345,142 365,150 345,158" fill="#345"/>
+<text x="248" y="130" font-size="14" fill="#345">双全纯同构</text>
+<polygon points="395,80 505,55 540,110 430,150" fill="#eef" stroke="#345" stroke-width="3"/>
+<line x1="395" y1="80" x2="540" y2="110" stroke="#89a" stroke-width="1.5"/>
+<line x1="430" y1="150" x2="505" y2="55" stroke="#89a" stroke-width="1.5"/>
+<text x="415" y="185" font-size="15" fill="#345">复欧氏空间 C^n</text>
+<text x="425" y="210" font-size="13" fill="#678">（完全摊平）</text>
+</svg>
+
+</div>
+
+**为什么值得关心**
+
+悬置 44 年的 Yau 单值化猜想得到无条件正面解答，结论同时说明这类空间都可缩、都是 Stein 流形；此前所有进展都要附加有界曲率、极大体积增长等条件，本文首次全部去掉。
+
+> 暂无形式化证明（AI 结果待核验）
+
 ## 一句话结论
 
 证明了丘成桐 1982 年提出的单值化（uniformization）猜想：全纯双截曲率逐点严格为正的完备非紧 Kähler 流形必双全纯同构于复欧氏空间 `@@M@@\C^n@@`；证明不要求任何曲率上下界、体积增长或拓扑假设，对所有复维数成立。

@@ -13,6 +13,50 @@ pdfname: ""
 
 > 结果族 249：A finitely generated Eilenberg–Ganea counterexample　·　学科：Group theory　·　验证状态：暂无形式化证明，请以社区核验为准
 
+## 入门导读 🐣
+
+给同一件家具量"占几维空间"有两把尺子：一把纯代数的，一把纯几何的。1957 年以来人们知道，3 维及以上两把尺子读数必然相同，1 维也相同，于是自然猜想 2 维也该相同——这就是 Eilenberg–Ganea 猜想。这篇论文造出一件"怪家具"：一个群，代数尺量出 2，几何尺量出 3，悬置近七十年的猜想被推翻。
+
+**关键词卡片**
+
+- 上同调维数 cd_Z（integral cohomological dimension）：纯代数的尺子，量"用代数消解的办法处理这个群最少要几步"
+- 几何维数 gd（geometric dimension）：几何的尺子，量"给这个群搭一栋可缩骨架建筑最少要几维"
+- 分类空间（classifying space）：万有覆盖可缩、基本群恰为该群的胞腔"骨架建筑" `@@M@@K(G,1)@@`
+- Bestvina–Brady 群（Bestvina–Brady group）：右角 Artin 群在"高度"同态下的核，反例取自这一家族
+- 剩余有限（residually finite）：每个非单位元都能在某个有限商里"现形"的良好性质
+
+**看个具体例子**
+
+反例群 `@@M@@G@@` 来自一个只有两条关系的展示：`@@M@@x^2=y^5@@` 与 `@@M@@x^2=(xy^{-1})^3@@`。先取这个展示复形的无环 flag 三角剖分 `@@M@@L@@`，再取右角 Artin 群 `@@M@@A_L@@` 里"把每个生成元都映到 1"的高度同态的核。论文证明：`@@M@@G@@` 有限生成、剩余有限，且数字版定理为 `@@M@@\cd_{\mathbb Z}G=2@@` 而 `@@M@@\mathrm{gd}\,G=3@@`——哪怕允许使用无穷多个胞腔，`@@M@@G@@` 也搭不出二维的分类空间。
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280">
+  <text x="30" y="30" font-size="15" fill="#333333">纵轴：几何维数 gd；横轴：代数维数 cd</text>
+  <line x1="50" y1="240" x2="520" y2="240" stroke="#888888" stroke-width="2"/>
+  <text x="70" y="264" font-size="14" fill="#333333">cd = 1</text>
+  <text x="230" y="264" font-size="14" fill="#c62828">cd = 2</text>
+  <text x="400" y="264" font-size="14" fill="#333333">cd 至少 3</text>
+  <rect x="80" y="190" width="50" height="50" fill="#c8e6c9" stroke="#2e7d32"/>
+  <text x="70" y="168" font-size="13" fill="#2e7d32">gd = 1，相等</text>
+  <text x="58" y="184" font-size="12" fill="#666666">Stallings–Swan</text>
+  <rect x="240" y="190" width="50" height="50" fill="none" stroke="#999999" stroke-dasharray="5 4"/>
+  <text x="226" y="174" font-size="12" fill="#888888">猜想的期望</text>
+  <rect x="240" y="140" width="50" height="100" fill="#ffcdd2" stroke="#c62828" stroke-width="2"/>
+  <text x="216" y="118" font-size="13" fill="#c62828">本文反例 gd = 3</text>
+  <rect x="420" y="140" width="50" height="100" fill="#c8e6c9" stroke="#2e7d32"/>
+  <text x="404" y="118" font-size="13" fill="#2e7d32">gd = cd，相等</text>
+  <text x="386" y="134" font-size="12" fill="#666666">Eilenberg–Ganea 定理</text>
+</svg>
+
+</div>
+
+**为什么值得关心**
+
+它宣告"代数维数与几何维数总相等"的美梦在 2 维破灭，而且反例群相当"规矩"（有限生成、剩余有限），连"补加条件拯救猜想"的退路也被堵死。
+
+> 暂无形式化证明（AI 结果待核验）
+
 ## 一句话结论
 
 本文构造了一个有限生成、剩余有限（residually finite）的群 `@@M@@G@@`，其整上同调维数为 `@@M@@2@@` 而几何维数为 `@@M@@3@@`，从而否定 Eilenberg–Ganea 猜想：`@@M@@G@@` 不存在任何二维分类空间，即便允许无穷多个胞腔。这一悬置近七十年的维数问题以否定方式告终。

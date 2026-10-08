@@ -13,6 +13,32 @@ pdfname: ""
 
 > 结果族 087：The Mahler conjectures, functional inequalities and polar-product symplectic width　·　学科：Convex and metric geometry　·　验证状态：主结果已 Lean 形式化
 
+## 入门导读 🐣
+
+往箱子里塞球谁都懂，但物理里的"箱子"是相空间——位置坐标乘上动量坐标——而"塞"必须遵守一套保护面积的特殊规则（辛几何）。这篇论文证明：把对称凸体 `@@M@@K@@` 当位置范围、其对偶 `@@M@@K^\circ@@` 当动量范围，拼成的相空间恰好能塞进大小为 4 的标准辛球，再多一点都不行。妙处在于：数字 4 与 `@@M@@K@@` 的形状完全无关。
+
+**关键词卡片**
+
+- 辛形式（symplectic form）：相空间上衡量"位置–动量面积"的结构 `@@M@@\omega_0=\sum dq_j\wedge dp_j@@`，哈密顿力学的几何语言。
+- Gromov 宽度（Gromov width）：能按辛规则光滑地塞进一个域的最大标准球的大小。
+- 非挤压定理（nonsqueezing）：Gromov 1985 年的名定理——辛变换不能把粗管压细，是体积之外的"守恒"。
+- 极积（polar product）：`@@M@@U_K=\operatorname{int}K\times\operatorname{int}K^\circ@@`，位置块与对偶动量块相乘而成的相空间。
+- 容量（capacity）：辛几何给域标定的"装载量"，与体积不同的另一种尺度。
+
+**看个具体例子**
+
+容量 `@@M@@c@@` 的 `@@M@@2n@@` 维标准球体积为 `@@M@@c^n/n!@@`。取 `@@M@@n=2@@`、`@@M@@K=[-1,1]^2@@`（面积 4），`@@M@@K^\circ@@` 是菱形（面积 2），相空间体积 `@@M@@4\times2=8@@`；容量 4 的球体积恰为 `@@M@@\tfrac{4^2}{2!}=8@@`。数字版定理：
+
+`@@M@@c_G(\operatorname{int}K\times\operatorname{int}K^\circ)=4\quad\Longrightarrow\quad \operatorname{vol}(K)\operatorname{vol}(K^\circ)\ \ge\ \frac{4^n}{n!}@@`
+
+塞到 4 就顶格：对正方体这个例子，容量 4 的球体积已与整个相空间一样大，再大一点体积本身就装不下。而且构造对任何对称凸体 `@@M@@K@@` 都成立：每个容量 `@@M@@c<4@@` 的标准球都能光滑地塞进去。
+
+**为什么值得关心**
+
+它把悬置八十余年的对称 Mahler 猜想变成"一行体积计算"：塞得进容量 4 的球，体积就至少有 `@@M@@4^n/n!@@`；这是与姊妹篇相互独立的另一条证明路线。
+
+> 已 Lean 形式化
+
 ## 一句话结论
 论文证明：对每个 `@@M@@n\ge2@@` 与每个原点对称凸体 `@@M@@K@@`，相空间极积 `@@M@@\operatorname{int}K\times\operatorname{int}K^\circ@@` 的 Gromov 宽度恰为 4——每个容量 `@@M@@c<4@@` 的标准球都能光滑辛地嵌入其中且 4 不可超越；由辛嵌入保体积立刻重新推出对称 Mahler 猜想。
 

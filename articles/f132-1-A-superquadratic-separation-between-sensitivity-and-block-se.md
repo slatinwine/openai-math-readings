@@ -13,6 +13,33 @@ pdfname: ""
 
 > 结果族 132：A superquadratic separation of sensitivity and block sensitivity　·　学科：Theoretical computer science　·　验证状态：主结果已 Lean 形式化
 
+## 入门导读 🐣
+
+把布尔函数想成一排开关控制的一盏灯。敏感度问：在最不利的位置，有多少个开关"单独一拨就能让灯变"？块敏感度放宽为：把互不相交的几组开关整组一起拨，最多有几组能各自让灯变？人们猜组数顶多是单拨数的平方；本文造出反例：组数能超过平方任意多倍。
+
+**关键词卡片**
+
+- 敏感度（sensitivity, `@@M@@s(f)@@`）：固定一个输入，单独翻转某一位就改变函数值，这样的位数的最大值。
+- 块敏感度（block sensitivity, `@@M@@\mathrm{bs}(f)@@`）：同上，但允许互不相交的位组整组翻转。
+- 全布尔函数（total Boolean function）：在每个输入上都有定义的函数，不许"部分输入不算数"的取巧。
+- 复合（composition）：`@@M@@f\circ g@@` 把 `@@M@@g@@` 的输出当作 `@@M@@f@@` 的输入，用来把一次分离反复放大。
+
+**看个具体例子**
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280"><text x="280" y="24" text-anchor="middle" font-size="15" fill="#333">一排开关控制一盏灯：单拨 vs 整组拨</text><text x="30" y="74" font-size="14" fill="#555">单拨：</text><rect x="90" y="56" width="42" height="28" fill="#fff" stroke="#345"/><text x="111" y="75" text-anchor="middle" font-size="13" fill="#123">1</text><rect x="134" y="56" width="42" height="28" fill="#fff" stroke="#345"/><text x="155" y="75" text-anchor="middle" font-size="13" fill="#123">0</text><rect x="178" y="56" width="42" height="28" fill="#fff" stroke="#345"/><text x="199" y="75" text-anchor="middle" font-size="13" fill="#123">1</text><rect x="222" y="56" width="42" height="28" fill="#fff" stroke="#345"/><text x="243" y="75" text-anchor="middle" font-size="13" fill="#123">1</text><rect x="266" y="56" width="42" height="28" fill="#fff" stroke="#345"/><text x="287" y="75" text-anchor="middle" font-size="13" fill="#123">0</text><rect x="310" y="56" width="42" height="28" fill="#fff" stroke="#345"/><text x="331" y="75" text-anchor="middle" font-size="13" fill="#123">0</text><rect x="354" y="56" width="42" height="28" fill="#fff" stroke="#d62728" stroke-width="3"/><text x="375" y="75" text-anchor="middle" font-size="13" fill="#123">1</text><rect x="398" y="56" width="42" height="28" fill="#fff" stroke="#345"/><text x="419" y="75" text-anchor="middle" font-size="13" fill="#123">0</text><rect x="442" y="56" width="42" height="28" fill="#fff" stroke="#345"/><text x="463" y="75" text-anchor="middle" font-size="13" fill="#123">1</text><rect x="486" y="56" width="42" height="28" fill="#fff" stroke="#345"/><text x="507" y="75" text-anchor="middle" font-size="13" fill="#123">1</text><text x="375" y="46" text-anchor="middle" font-size="12" fill="#d62728">翻转此位 ⇒ 灯变</text><text x="30" y="190" font-size="14" fill="#555">整组拨：</text><rect x="86" y="166" width="94" height="42" fill="none" stroke="#2a7" stroke-width="2" stroke-dasharray="5,4"/><rect x="174" y="166" width="94" height="42" fill="none" stroke="#99a"/><rect x="262" y="166" width="94" height="42" fill="none" stroke="#2a7" stroke-width="2" stroke-dasharray="5,4"/><rect x="350" y="166" width="94" height="42" fill="none" stroke="#99a"/><rect x="438" y="166" width="94" height="42" fill="none" stroke="#2a7" stroke-width="2" stroke-dasharray="5,4"/><rect x="90" y="172" width="42" height="28" fill="#fff" stroke="#345"/><text x="111" y="191" text-anchor="middle" font-size="13" fill="#123">1</text><rect x="134" y="172" width="42" height="28" fill="#fff" stroke="#345"/><text x="155" y="191" text-anchor="middle" font-size="13" fill="#123">0</text><rect x="178" y="172" width="42" height="28" fill="#fff" stroke="#345"/><text x="199" y="191" text-anchor="middle" font-size="13" fill="#123">1</text><rect x="222" y="172" width="42" height="28" fill="#fff" stroke="#345"/><text x="243" y="191" text-anchor="middle" font-size="13" fill="#123">1</text><rect x="266" y="172" width="42" height="28" fill="#fff" stroke="#345"/><text x="287" y="191" text-anchor="middle" font-size="13" fill="#123">0</text><rect x="310" y="172" width="42" height="28" fill="#fff" stroke="#345"/><text x="331" y="191" text-anchor="middle" font-size="13" fill="#123">0</text><rect x="354" y="172" width="42" height="28" fill="#fff" stroke="#345"/><text x="375" y="191" text-anchor="middle" font-size="13" fill="#123">1</text><rect x="398" y="172" width="42" height="28" fill="#fff" stroke="#345"/><text x="419" y="191" text-anchor="middle" font-size="13" fill="#123">0</text><rect x="442" y="172" width="42" height="28" fill="#fff" stroke="#345"/><text x="463" y="191" text-anchor="middle" font-size="13" fill="#123">1</text><rect x="486" y="172" width="42" height="28" fill="#fff" stroke="#345"/><text x="507" y="191" text-anchor="middle" font-size="13" fill="#123">1</text><text x="280" y="234" text-anchor="middle" font-size="12" fill="#2a7">绿框三组：各自整组一起翻转都能让灯变 ⇒ 此处块敏感度 ≥ 3</text><text x="280" y="262" text-anchor="middle" font-size="13" fill="#666">s(f) 取最坏输入下的单拨位数；bs(f) 取同一输入下互不相交组的组数。</text></svg>
+
+</div>
+
+定量地说，构造给出 `@@M@@\mathrm{bs}(f)/s(f)^2\ge 2^d/\big(4(d+2)^2\big)@@`：取 `@@M@@d=20@@`，右端 `@@M@@\approx 541@@`，即存在函数满足 `@@M@@\mathrm{bs}(f)\ge 541\,s(f)^2@@`。再用 `@@M@@d=9@@` 的构造当种子反复复合（复合使敏感度相乘、块敏感度也相乘），得到固定 `@@M@@\alpha>2@@` 使 `@@M@@\mathrm{bs}(F)\ge s(F)^\alpha@@` 且两者都趋于无穷。
+
+**为什么值得关心**
+
+Nisan 与 Szegedy 1994 年提出的"`@@M@@\mathrm{bs}\le s^2@@`"是敏感度猜想（2019 年黄皓证得四次方版本）留下的最自然残部，本文以反例将其终结。
+
+> 已 Lean 形式化
+
 ## 一句话结论
 
 本文构造出全布尔函数（total Boolean function）族，使块敏感度（block sensitivity）与敏感度（sensitivity）平方之比任意大，且存在固定 `@@M@@\alpha>2@@` 使 `@@M@@\mathrm{bs}(F)\ge s(F)^\alpha@@`——这推翻了敏感度猜想的二次强化版本，也说明已知四次方上界远非紧致。

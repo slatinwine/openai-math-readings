@@ -13,6 +13,65 @@ pdfname: ""
 
 > 结果族 211：The geometric phase diagram, diffusion, and spectra of random planar maps　·　学科：Probability and statistical mechanics　·　验证状态：暂无形式化证明，请以社区核验为准
 
+## 入门导读 🐣
+
+换一种随机世界：地图不再按 Ising 规则加权，而是按"能长出多少棵生成树"计票——树越多的地图越常见。在这样抽出的地图上让醉汉走路，问老问题：录像要快进几倍才收敛？答案依旧干脆：恰好 `@@M@@n@@` 倍，极限是 `@@M@@\sqrt2@@`-量子球上的刘维尔布朗运动。两种材质不同的随机世界，调到同一个"`@@M@@\times n@@`"频道都很清晰。
+
+**关键词卡片**
+
+- 生成树（spanning tree）：连通全部顶点、不含环的一组边，地图的最小骨架。
+- Mullin–Bernardi 模型：均匀抽取（地图，生成树）对，等价于地图按生成树数目加权。
+- 淬火收敛（quenched convergence）：先固定随机环境、只看路径的收敛；本文连环境信息一并保留。
+- 极值长度（extremal length）：共形不变的"电阻"式几何度量，用来排除电网退化。
+- 速度测度（speed measure）：扩散在各点的局部时间流速，本文用格林函数估计加以控制。
+
+**看个具体例子**
+
+时钟由一条精确恒等式直接读出（数字版定理）：
+
+`@@M@@D-\langle f,\,nL_nf\rangle_{L^2(\mu_n)}=\tfrac12\,\mathcal E_n(f)\quad\Longrightarrow\quad\text{时间加速常数}=1.@@`
+
+即 `@@M@@n@@` 条边就加速恰 `@@M@@n@@` 倍。证明中最"手艺活"的是格林估计：把中心化逆拉普拉斯算子拆成树割之和，等值线双射把割的大小化成对偶树距离，再用 Dyck 游走估计控制——纯组合的有限图论证。
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280">
+  <text x="120" y="45" font-size="14" text-anchor="middle" fill="#333">按生成树数加权的随机地图</text>
+  <polygon points="195,150 166,104 120,72 63,93 50,150 68,202 120,216 171,201" fill="#f6f6f6" stroke="#999" stroke-width="1.5"/>
+  <line x1="120" y1="150" x2="195" y2="150" stroke="#c0392b" stroke-width="2.5"/>
+  <line x1="120" y1="150" x2="166" y2="104" stroke="#c0392b" stroke-width="2.5"/>
+  <line x1="120" y1="150" x2="120" y2="72" stroke="#c0392b" stroke-width="2.5"/>
+  <line x1="120" y1="150" x2="63" y2="93" stroke="#c0392b" stroke-width="2.5"/>
+  <line x1="120" y1="150" x2="50" y2="150" stroke="#c0392b" stroke-width="2.5"/>
+  <line x1="120" y1="150" x2="68" y2="202" stroke="#c0392b" stroke-width="2.5"/>
+  <line x1="120" y1="150" x2="120" y2="216" stroke="#c0392b" stroke-width="2.5"/>
+  <line x1="120" y1="150" x2="171" y2="201" stroke="#c0392b" stroke-width="2.5"/>
+  <circle cx="120" cy="150" r="4" fill="#333"/>
+  <circle cx="166" cy="104" r="3" fill="#333"/><circle cx="63" cy="93" r="3" fill="#333"/><circle cx="50" cy="150" r="3" fill="#333"/><circle cx="195" cy="150" r="3" fill="#333"/>
+  <text x="120" y="248" font-size="13" text-anchor="middle" fill="#c0392b">红色星形＝一棵生成树</text>
+  <line x1="212" y1="150" x2="240" y2="150" stroke="#333" stroke-width="2"/>
+  <polygon points="240,145 250,150 240,155" fill="#333"/>
+  <circle cx="285" cy="150" r="30" fill="none" stroke="#333" stroke-width="2.5"/>
+  <line x1="285" y1="150" x2="285" y2="132" stroke="#333" stroke-width="3"/>
+  <line x1="285" y1="150" x2="300" y2="158" stroke="#333" stroke-width="3"/>
+  <circle cx="285" cy="150" r="3" fill="#333"/>
+  <text x="285" y="205" font-size="13" text-anchor="middle" fill="#333">时钟恰为 × n</text>
+  <line x1="322" y1="150" x2="350" y2="150" stroke="#333" stroke-width="2"/>
+  <polygon points="350,145 360,150 350,155" fill="#333"/>
+  <path d="M 507,150 Q 526,116 489,106 Q 479,69 445,88 Q 411,69 401,106 Q 364,116 383,150 Q 364,184 401,194 Q 411,231 445,212 Q 479,231 489,194 Q 526,184 507,150 Z" fill="#f6f6f6" stroke="#333" stroke-width="1.5"/>
+  <path d="M 415,150 C 435,120 470,130 480,160 C 485,180 455,190 430,175" fill="none" stroke="#2e6bd6" stroke-width="2.5"/>
+  <text x="445" y="45" font-size="14" text-anchor="middle" fill="#333">√2-量子球</text>
+  <text x="445" y="258" font-size="13" text-anchor="middle" fill="#2e6bd6">刘维尔布朗运动</text>
+</svg>
+
+</div>
+
+**为什么值得关心**
+
+验证了族内方法可跨模型迁移；其中的格林估计可独立于能量识别单独复用，是可带走的技术输出。
+
+> 暂无形式化证明（AI 结果待核验）
+
 ## 一句话结论
 证明了按生成树数目加权的平面地图上的平稳随机游走，在时间加速恰好 `@@M@@n@@`（边数）倍后，其条件路径律连同度量-测度空间收敛到 `@@M@@\sqrt2@@`-量子球上的刘维尔布朗运动，时钟乘子精确为 1。
 

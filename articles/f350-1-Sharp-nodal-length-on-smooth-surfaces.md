@@ -13,6 +13,44 @@ pdfname: ""
 
 > 结果族 350：Yau's nodal bounds: surfaces and higher dimensions　·　学科：Differential geometry　·　验证状态：暂无形式化证明，请以社区核验为准
 
+## 入门导读 🐣
+
+敲鼓时撒一把沙，沙粒会聚成安静的曲线——那是鼓面恰好不动的"节点线"。这篇论文回答一个看似家常的问题：音调越来越高时，这些安静线总共最长能有多长？答案：不超过频率平方根的常数倍，即 C√λ，一丝不会更多。
+
+**关键词卡片**
+
+- 特征函数（eigenfunction）：鼓面按某个固定音调振动的标准模式。
+- 节点集（nodal set）：振动中静止不动的点组成的曲线，沙子聚积之处。
+- 拉普拉斯算子（Laplacian）：把形状翻译成振动方程的机器，特征值 λ 度量音调高低。
+- Yau 节点集猜想（Yau's nodal set conjecture）：节点线长度应被 √λ 从上下两侧同时夹住。
+
+**看个具体例子**
+
+取最熟悉的平坦环面 [0,2π]² 与特征函数 u=sin(2x)：节点线是 4 条竖直圆环，总长 4×2π=8π，而 λ=4，恰好 8π=4π·√λ——正落在猜想的刻度上。主定理证明：换成任何光滑封闭曲面、任何高频振动，总长都被 C√λ 压住；配上已知下界，Yau 猜想在曲面上双侧成立。难处在于光滑鼓面没有解析情形那种"局部唯一延拓"结构，个别小方格上的增长可以失控，证明只能转而控制增长的平均值——此前的纪录停在 Cλ^{3/4}，如今终于补齐了幂次鸿沟。
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280">
+<text x="280" y="28" font-size="16" text-anchor="middle" fill="#333">环面鼓面上的 u = sin(2x)：安静线共 4 条</text>
+<rect x="150" y="60" width="280" height="150" fill="none" stroke="#333" stroke-width="2"/>
+<line x1="150" y1="60" x2="150" y2="210" stroke="#c84a4a" stroke-width="2" stroke-dasharray="6,4"/>
+<line x1="220" y1="60" x2="220" y2="210" stroke="#c84a4a" stroke-width="2" stroke-dasharray="6,4"/>
+<line x1="290" y1="60" x2="290" y2="210" stroke="#c84a4a" stroke-width="2" stroke-dasharray="6,4"/>
+<line x1="360" y1="60" x2="360" y2="210" stroke="#c84a4a" stroke-width="2" stroke-dasharray="6,4"/>
+<text x="445" y="125" font-size="14" fill="#c84a4a">节点线</text>
+<text x="445" y="145" font-size="14" fill="#c84a4a">（沙子聚积处）</text>
+<text x="280" y="242" font-size="14" text-anchor="middle" fill="#333">边长 2π 的鼓面：4 条线总长 8π = 4π·√λ</text>
+<text x="280" y="266" font-size="14" text-anchor="middle" fill="#333">定理：任何光滑闭曲面上总长 ≤ C√λ</text>
+</svg>
+
+</div>
+
+**为什么值得关心**
+
+它把 Yau 1982 年猜想在光滑曲面上一举证完；而族内另两篇表明三维以上上界会失效——二维是这条猜想最后且唯一的完整领地。
+
+> 暂无形式化证明（AI 结果待核验）
+
 ## 一句话结论
 论文证明：任意固定的光滑闭黎曼曲面上，拉普拉斯特征函数的节点集长度满足 `@@M@@\mathcal H^1(Z_u)\le C\sqrt\lambda@@`；与已知下界合并，丘成桐节点集猜想（Yau's nodal set conjecture）在光滑曲面情形完全告捷。
 

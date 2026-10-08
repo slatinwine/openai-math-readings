@@ -13,6 +13,48 @@ pdfname: ""
 
 > 结果族 215：Canonical `@@M@@`O(3)`@@` continuum limit and exact `@@M@@`O(4)`@@` mass asymptotics　·　学科：Probability and statistical mechanics　·　验证状态：暂无形式化证明，请以社区核验为准
 
+## 入门导读 🐣
+
+知道质量"指数级地小"，和知道它"被上下两条栏杆夹住、只差常数倍"，是难度悬殊的两个命题。本文给二维 O(4) 模型的完整质量装上了双侧栏杆：低温下它被 `@@M@@\sqrt\beta\,e^{-\pi\beta}@@` 的正常数倍上下夹逼；而且对任何有限 `@@M@@\beta>0@@`（任何温度），间隙都严格为正。
+
+**关键词卡片**
+
+- 完整转移间隙：不只看单个自旋，而是包括键能在内、一切局部观测量扇区的谱隙。
+- 尖锐阶（sharp order）：上下界只差常数倍，指数与幂次全对。
+- 质量生成（mass generation）：任意正温度下关联都指数衰减。
+- 块重整化（block renormalization）：把格子逐层粗化、精确积掉细节自旋的流程。
+
+**看个具体例子**
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280">
+  <text x="285" y="38" font-size="14" text-anchor="middle" fill="#222">质量的双侧夹逼（β 很大时）</text>
+  <line x1="70" y1="220" x2="505" y2="220" stroke="#333" stroke-width="2"/>
+  <line x1="70" y1="220" x2="70" y2="50" stroke="#333" stroke-width="2"/>
+  <path d="M 95 85 C 170 92 215 135 275 168 C 335 192 415 208 490 214 L 490 218 C 415 212 335 202 275 190 C 215 172 170 140 95 128 Z" fill="#e4ecf3"/>
+  <path d="M 95 85 C 170 92 215 135 275 168 C 335 192 415 208 490 214" fill="none" stroke="#2c5fa8" stroke-width="2.5"/>
+  <path d="M 95 128 C 170 140 215 172 275 190 C 335 202 415 212 490 218" fill="none" stroke="#c0392b" stroke-width="2.5"/>
+  <path d="M 95 106 C 170 116 215 154 275 179 C 335 197 415 210 490 216" fill="none" stroke="#333" stroke-width="1.5" stroke-dasharray="6 5"/>
+  <text x="150" y="74" font-size="12" text-anchor="middle" fill="#2c5fa8">上界 C·√β·e^(−πβ)</text>
+  <text x="150" y="185" font-size="12" text-anchor="middle" fill="#c0392b">下界 c·√β·e^(−πβ)</text>
+  <text x="400" y="118" font-size="12" text-anchor="middle" font-style="italic" fill="#333">m(β)</text>
+  <line x1="400" y1="126" x2="378" y2="196" stroke="#333" stroke-width="1"/>
+  <text x="515" y="225" font-size="13" font-style="italic" fill="#333">β</text>
+  <text x="55" y="55" font-size="13" font-style="italic" fill="#333">m</text>
+  <text x="285" y="252" font-size="12.5" text-anchor="middle" fill="#222">真实质量被夹在两条曲线之间，只差常数倍</text>
+</svg>
+
+</div>
+
+定理即图中关系：存在常数 `@@M@@0<c<C@@`，对一切充分大的 `@@M@@\beta@@` 有 `@@M@@c\sqrt{\beta}\,e^{-\pi\beta}\le m_{\mathrm{lat}}(\beta)\le C\sqrt{\beta}\,e^{-\pi\beta}@@`。论文还证明每个有限 `@@M@@\beta>0@@` 都有正间隙，下界形如 `@@M@@c\exp\{-\pi\beta-C\sqrt{(1+\beta)\log(2+\beta)}\}@@`——"全温度质量生成"对该模型的周期态成立。顺带一提 `@@M@@\sqrt\beta@@` 因子的来历：块重整化的耦合漂移求和给出 `@@M@@N\log L=\pi\beta-\tfrac12\log\beta+O(1)@@`，正是那项 `@@M@@-\tfrac12\log\beta@@` 贡献了 `@@M@@\sqrt\beta@@`。
+
+**为什么值得关心**
+
+它把 Polyakov 的质量生成预言在 O(4) 格点模型上严格落地，覆盖了高温方法与大分量方法都够不着的中间温度带；并且是姊妹篇"精确常数"计算的构造起点与脚手架。论文也如实声明：把格点结论解读为连续统谱，还需另行假设收敛性，此处并未证明。
+
+> 暂无形式化证明（AI 结果待核验）
+
 ## 一句话结论
 对二维最近邻 `@@M@@O(4)@@` 自旋模型证明：低温区完整转移间隙被 `@@M@@\sqrt\beta e^{-\pi\beta}@@` 的正常数倍上下夹逼，且任意正温度下周期态间隙恒正——全温度格点质量生成猜想对该周期态获正面解决，物理单位下的质量也被压进双侧有界区间。
 

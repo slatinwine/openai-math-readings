@@ -13,6 +13,32 @@ pdfname: ""
 
 > 结果族 207：The ℓ¹-Bass conjecture for all discrete groups　·　学科：Algebra　·　验证状态：主结果已 Lean 形式化
 
+## 入门导读 🐣
+
+群环像"群的记账本"，幂等元 `@@M@@e^2=e@@` 是只会全开或全关的开关。Kaplansky 猜想知道：无挠群（除单位元外没人转有限圈回家）的账本里，这种开关是否只有 0 和 1。本文先证更精细的 Bass 迹猜想——迹只在有限阶元素的共轭类上记账——再把这个开关问题一口气回答掉。
+
+**关键词卡片**
+
+- 群环（group ring）：系数与群元素的形式和构成的代数，如 `@@M@@\mathbb CG@@`。
+- Hattori–Stallings 迹（Hattori–Stallings trace）：秩的逐共轭类加细，比一个数字详细得多的流水单。
+- 无挠群（torsion-free group）：除单位元外没有有限阶元素的群。
+- 幂等元（idempotent）：`@@M@@e^2=e@@`；猜想说不存在"半心半意"的中间状态。
+- Kaplansky 幂等猜想（Kaplansky idempotent conjecture）：无挠群的群环中幂等元只有 `@@M@@0@@` 与 `@@M@@1@@`。
+
+**看个具体例子**
+
+公式卡——取无挠群 `@@M@@G=\mathbb Z@@`（整数加群）、`@@M@@R=\mathbb C@@`，群环就是 Laurent 多项式环：
+
+`@@M@@D\mathbb C[\mathbb Z]\cong\mathbb C[t^{\pm1}],\qquad e(t)^2=e(t)\ \Rightarrow\ e(t)\equiv 0\ \text{或}\ 1.@@`
+
+这个特例看首末项系数就能明白；定理的威力在于对一切无挠群、一切特征零整环都成立——绝大多数群根本没有这么好的交换结构可用。证明一半是代数：把迹系数编成高维循环上的权重；另一半是几何：证明高维不变量必为零。两半合拢，无限阶元素上的账目全部清零，开关只剩全开与全关。
+
+**为什么值得关心**
+
+1976 年前后的 Bass 迹猜想与特征零 Kaplansky 幂等猜想同时解决，不设任何顺从、装配或维数假设，还附带流形上同伦幂等映射的不动点结论。
+
+> 已 Lean 形式化
+
 ## 一句话结论
 
 论文对任意离散群证明了复群环上的 Bass 迹猜想：`@@M@@K_0(\mathbb CG)@@` 的 Hattori–Stallings 迹只在有限阶共轭类上非零；并由此推出无挠群（torsion-free group）在任意特征零交换幺整环上的 Kaplansky 幂等猜想：群环 `@@M@@RG@@` 中幂等元只有 `@@M@@0@@` 与 `@@M@@1@@`。

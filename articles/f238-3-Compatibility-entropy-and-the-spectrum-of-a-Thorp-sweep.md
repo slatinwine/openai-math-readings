@@ -13,6 +13,58 @@ pdfname: ""
 
 > 结果族 238：Optimal logarithmic mixing of the Thorp shuffle　·　学科：Probability and statistical mechanics　·　验证状态：主结果已 Lean 形式化
 
+## 入门导读 🐣
+
+让两批人换座位：先每排内部换一轮，再每列内部换一轮。什么时候"先排后列"和"先列后排"结果一样？这个排座位式的小问题，恰好卡住了 Thorp 洗牌的速度上限；论文用"相容性＋熵"把这本账算清，还顺带给一次扫掠开出了完整的"体检单"。
+
+**关键词卡片**
+
+- 相容（compatible）：行置换与列置换满足"先行后列＝先列后行"，等价于每个原列送出的牌两两不同
+- 熵亏（entropy deficit）：一组随机量的混乱度离完全均匀还差多少（信息论里以奈特计）
+- 奇异值（singular value）：算子拉伸能力的排行榜；榜单衰减越快，说明洗牌收缩越狠
+- 正则表示（regular representation）：全部置换打包的大空间，每种成分按维数复制出现
+- 混合时间（mixing time）：洗到与均匀分布无法区分的步数，本文证明为 `@@M@@\Theta(\log n)@@`
+
+**看个具体例子**
+
+把 `@@M@@n=2^d@@` 个位置对半分成近 `@@M@@\sqrt n\times\sqrt n@@` 的棋盘后，一次扫掠＝行扫乘列扫。核心不等式说：限制在相容事件上的任何联合律，相对熵至少有 `@@M@@n-O(n^{0.54})@@`——几乎"满熵"，行列两半因此近乎独立。数字版结论：存在绝对常数 `@@M@@p_*@@`，使 `@@M@@M\ge p_*@@` 次独立扫掠后最坏起点的全变差 `@@M@@\le 1/8@@`；而且正则奇异值谱满足 `@@M@@s_j\le j^{-1/(2p_*)}@@`，幂律衰减（下图）。
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280">
+  <text x="280" y="24" text-anchor="middle" font-size="15">一次扫掠的"体检单"：奇异值谱</text>
+  <line x1="75" y1="45" x2="75" y2="235" stroke="#333" stroke-width="1.5"/>
+  <line x1="75" y1="235" x2="515" y2="235" stroke="#333" stroke-width="1.5"/>
+  <rect x="95" y="65" width="30" height="170" fill="#cfe3ff" stroke="#333"/>
+  <rect x="139" y="115" width="30" height="120" fill="#cfe3ff" stroke="#333"/>
+  <rect x="183" y="137" width="30" height="98" fill="#cfe3ff" stroke="#333"/>
+  <rect x="227" y="150" width="30" height="85" fill="#cfe3ff" stroke="#333"/>
+  <rect x="271" y="159" width="30" height="76" fill="#cfe3ff" stroke="#333"/>
+  <rect x="315" y="166" width="30" height="69" fill="#cfe3ff" stroke="#333"/>
+  <rect x="359" y="171" width="30" height="64" fill="#cfe3ff" stroke="#333"/>
+  <rect x="403" y="175" width="30" height="60" fill="#cfe3ff" stroke="#333"/>
+  <polyline points="110,65 154,115 198,137 242,150 286,159 330,166 374,171 418,175" fill="none" stroke="#d62728" stroke-width="2" stroke-dasharray="7 5"/>
+  <text x="95" y="38" font-size="13">奇异值大小</text>
+  <text x="330" y="105" text-anchor="middle" font-size="14" fill="#d62728">幂律衰减：s_j ≤ j^(−1/(2p_*))</text>
+  <text x="110" y="254" text-anchor="middle" font-size="12">s₁</text>
+  <text x="154" y="254" text-anchor="middle" font-size="12">s₂</text>
+  <text x="198" y="254" text-anchor="middle" font-size="12">s₃</text>
+  <text x="242" y="254" text-anchor="middle" font-size="12">s₄</text>
+  <text x="286" y="254" text-anchor="middle" font-size="12">s₅</text>
+  <text x="330" y="254" text-anchor="middle" font-size="12">s₆</text>
+  <text x="374" y="254" text-anchor="middle" font-size="12">s₇</text>
+  <text x="418" y="254" text-anchor="middle" font-size="12">s₈</text>
+  <text x="295" y="273" text-anchor="middle" font-size="13">第 j 个奇异值（按从大到小排序）</text>
+</svg>
+
+</div>
+
+**为什么值得关心**
+
+它不只算出最优混合时间，还完整刻画了一次扫掠的奇异值谱——相当于给洗牌算子做了全谱"体检"，且主结果已被机器验证。
+
+> 已 Lean 形式化
+
 ## 一句话结论
 
 本文证明：`@@M@@n=2^d@@` 张牌的 Thorp 洗牌（Thorp shuffle）在 `@@M@@\Theta(d)@@`（即 `@@M@@\Theta(\log n)@@`）次物理洗牌内完成整副排列的全变差（total variation）混合，匹配支集计数下界 `@@M@@2d-O(1)@@`；更强地，它完全刻画了一次扫掠的奇异值谱：正则表示中第 `@@M@@j@@` 个奇异值不超过 `@@M@@j^{-1/(2p_*)}@@`。

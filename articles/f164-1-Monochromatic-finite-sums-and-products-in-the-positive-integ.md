@@ -13,6 +13,60 @@ pdfname: ""
 
 > 结果族 164：Hindman's finite sums and products conjecture　·　学科：Combinatorics　·　验证状态：暂无形式化证明，请以社区核验为准
 
+## 入门导读 🐣
+
+给所有正整数涂色，红蓝随意。Ramsey 理论的老把戏是：规则再松，也总有"同色的巧合结构"跑不掉。这篇论文证明了 Hindman 在 1979 年提出的猜想：无论怎么涂，总能找到任意大的一小撮数 `@@M@@a_1,\dots,a_k@@`，使得从中随便挑几个加起来、随便挑几个乘起来，得到的数全是同一种颜色。加法与乘法这两种结构被一举同时锁进同一色桶。
+
+**关键词卡片**
+
+- 有限染色（finite coloring）：只用有限种颜色，给每个正整数各分配一色。
+- 子集和 `@@M@@\mathrm{FS}(A)@@`（finite sums）：从 A 的所有非空子集求和得到的数集。
+- 子集积 `@@M@@\mathrm{FP}(A)@@`（finite products）：同理，对非空子集求积。
+- 单色（monochromatic）：所有元素同属一种颜色。
+- nilsequence（幂零序列）：高等分析里"温和振动"的函数，证明中用来给颜色建立预测模型。
+
+**看个具体例子**
+
+取最小的非平凡情形 `@@M@@A=\{2,3\}@@`：非空子集和是 `@@M@@2,3,2+3=5@@`；非空子集积是 `@@M@@2,3,2\times 3=6@@`。定理要求这四个数全部同色。
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280">
+  <line x1="45" y1="140" x2="527" y2="140" stroke="#bbbbbb" stroke-width="2"/>
+  <circle cx="70" cy="140" r="13" fill="#c9c9c9"/>
+  <circle cx="118" cy="140" r="13" fill="#d84a3f"/>
+  <circle cx="166" cy="140" r="13" fill="#d84a3f"/>
+  <circle cx="214" cy="140" r="13" fill="#c9c9c9"/>
+  <circle cx="262" cy="140" r="13" fill="#d84a3f"/>
+  <circle cx="310" cy="140" r="13" fill="#d84a3f"/>
+  <circle cx="358" cy="140" r="13" fill="#c9c9c9"/>
+  <circle cx="406" cy="140" r="13" fill="#c9c9c9"/>
+  <circle cx="454" cy="140" r="13" fill="#c9c9c9"/>
+  <circle cx="502" cy="140" r="13" fill="#c9c9c9"/>
+  <text x="70" y="145" font-size="13" text-anchor="middle" fill="#555555">1</text>
+  <text x="118" y="145" font-size="13" text-anchor="middle" fill="#ffffff">2</text>
+  <text x="166" y="145" font-size="13" text-anchor="middle" fill="#ffffff">3</text>
+  <text x="214" y="145" font-size="13" text-anchor="middle" fill="#555555">4</text>
+  <text x="262" y="145" font-size="13" text-anchor="middle" fill="#ffffff">5</text>
+  <text x="310" y="145" font-size="13" text-anchor="middle" fill="#ffffff">6</text>
+  <text x="358" y="145" font-size="13" text-anchor="middle" fill="#555555">7</text>
+  <text x="406" y="145" font-size="13" text-anchor="middle" fill="#555555">8</text>
+  <text x="454" y="145" font-size="13" text-anchor="middle" fill="#555555">9</text>
+  <text x="502" y="145" font-size="13" text-anchor="middle" fill="#555555">10</text>
+  <text x="280" y="195" font-size="14" text-anchor="middle" fill="#555555">A={2,3}：非空子集和 {2,3,5} 与非空子集积 {2,3,6} 全部同红</text>
+  <text x="280" y="222" font-size="14" text-anchor="middle" fill="#333333">定理：任何有限染色里，这样的同色家族可以任意大</text>
+</svg>
+
+</div>
+
+上图是某个"走运"的染色片段：2、3、5、6 恰好全红。定理讲的是普遍性：任何有限染色下，同色家族可以任意大（k 任意），且每个新成员都大过此前所有元素之和与积的任意指定幂。有趣的是，无穷版本反而不成立——Hindman 本人构造过反例染色——有限与无穷的分界正是此题迷人之处。
+
+**为什么值得关心**
+
+加性与乘性的 Ramsey 结构 47 年来首次被同时实现，是 Schur、Folkman、Hindman 这条经典谱系的收官之作。
+
+> 暂无形式化证明（AI 结果待核验）
+
 ## 一句话结论
 
 证明了 Hindman 有限和积猜想：对正整数的任意有限染色与任意 `@@M@@k@@`，都存在 `@@M@@k@@` 元集合，使其全部非空子集和与非空子集积落在同一颜色中。加性与乘性 Ramsey 性质的同时实现这一 1979 年提出的问题首次得到肯定回答。

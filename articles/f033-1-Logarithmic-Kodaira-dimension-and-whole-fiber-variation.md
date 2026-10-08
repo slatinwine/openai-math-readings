@@ -13,6 +13,59 @@ pdfname: ""
 
 > 结果族 033：Iitaka subadditivity, variation, and logarithmic additivity　·　学科：Algebraic and complex geometry　·　验证状态：暂无形式化证明，请以社区核验为准
 
+## 入门导读 🐣
+
+纤维族的影子总量从哪来？一股来自每根纤维自身的复杂度，另一股来自纤维随参数变形的幅度。本文证明 Popa 的对数不等式：总量 `@@M@@\ge@@` 纤维的复杂度 `@@M@@+\max\{@@`基的复杂度, 变形幅度`@@M@@\}@@`——两股来源都要如实入账，且不设任何"丰度"附加假设。
+
+**关键词卡片**
+
+- 对数 Kodaira 维数 `@@M@@\bar\kappa@@`（logarithmic Kodaira dimension）：允许沿边界发散的复杂度，是"开"空间的正确量尺。
+- 几何一般纤维（geometric generic fiber）：族中一般位置的那根纤维。
+- 变异性 Var(f)（variation）：纤维真正依赖的参数个数——定义整根纤维（不只它的典范环）所需的最小超越次数。
+- 双有理（birationally）：允许在小范围内"模糊等同"的等价关系。
+- 丰度（abundance）：老结果常要的附加假设（典范系足够大），本文一个都不需要。
+
+**看个具体例子**
+
+曲线族 `@@M@@y^2=x(x-1)(x-2)(x-3)(x-t)@@`：参数 `@@M@@t@@` 在挖去 4 个坏点的直线 `@@M@@V@@` 上取值，`@@M@@U@@` 是去掉坏纤维后的全空间。
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280">
+<line x1="50" y1="182" x2="510" y2="182" stroke="#333" stroke-width="1.8"/>
+<polygon points="520,182 506,176 506,188" fill="#333"/>
+<circle cx="120" cy="182" r="6" fill="#fff" stroke="#333" stroke-width="1.8"/>
+<circle cx="175" cy="182" r="6" fill="#fff" stroke="#333" stroke-width="1.8"/>
+<circle cx="230" cy="182" r="6" fill="#fff" stroke="#333" stroke-width="1.8"/>
+<circle cx="285" cy="182" r="6" fill="#fff" stroke="#333" stroke-width="1.8"/>
+<text x="280" y="208" font-size="14" text-anchor="middle">参数轴 t；挖去 4 个坏点得基 V，κ̄(V) = 1</text>
+<ellipse cx="368" cy="112" rx="30" ry="27" fill="none" stroke="#333" stroke-width="1.8"/>
+<circle cx="360" cy="106" r="6.5" fill="none" stroke="#333" stroke-width="1.4"/>
+<circle cx="377" cy="118" r="6.5" fill="none" stroke="#333" stroke-width="1.4"/>
+<ellipse cx="432" cy="98" rx="34" ry="25" fill="none" stroke="#333" stroke-width="1.8"/>
+<circle cx="424" cy="92" r="6.5" fill="none" stroke="#333" stroke-width="1.4"/>
+<circle cx="441" cy="103" r="6.5" fill="none" stroke="#333" stroke-width="1.4"/>
+<ellipse cx="492" cy="118" rx="26" ry="32" fill="none" stroke="#333" stroke-width="1.8"/>
+<circle cx="485" cy="110" r="6" fill="none" stroke="#333" stroke-width="1.4"/>
+<circle cx="498" cy="126" r="6" fill="none" stroke="#333" stroke-width="1.4"/>
+<line x1="368" y1="140" x2="368" y2="180" stroke="#aaa" stroke-width="1.2"/>
+<line x1="432" y1="124" x2="432" y2="180" stroke="#aaa" stroke-width="1.2"/>
+<line x1="492" y1="150" x2="492" y2="180" stroke="#aaa" stroke-width="1.2"/>
+<text x="400" y="46" font-size="14" text-anchor="middle">纤维形状真的在变：Var(f) = 1</text>
+<text x="280" y="236" font-size="13.5" text-anchor="middle">曲线族 y² = x(x−1)(x−2)(x−3)(x−t)：亏格 2，κ(F) = 1</text>
+<text x="280" y="258" font-size="13.5" text-anchor="middle">定理：κ̄(U) ≥ 1 + max{1, 1} = 2（总空间的复杂度被打满）</text>
+</svg>
+
+</div>
+
+代入数字：纤维是亏格 2 曲线，`@@M@@\kappa(F)=1@@`；标记点组 `@@M@@\{0,1,2,3,t\}@@` 随 `@@M@@t@@` 真的改变，`@@M@@\operatorname{Var}(f)=1@@`；挖掉 4 个点后 `@@M@@\bar\kappa(V)=1@@`。定理保证 `@@M@@\bar\kappa(U)\ge 1+\max\{1,1\}=2@@`。`@@M@@U@@` 恰好是二维的，复杂度至多为 2，于是被"打满"到顶。注意：普通次可加性只认基这一股贡献，本定理强制把"变形幅度"这一股也计入下界。
+
+**为什么值得关心**
+
+它正面解决 Popa 2023 年的变异性猜想，并顺带推出射影范畴的 Iitaka–Viehweg `@@M@@C^+@@` 猜想与一串刚性推论。
+
+> 暂无形式化证明（AI 结果待核验）
+
 ## 一句话结论
 
 论文证明了 Popa 的对数 Iitaka–Viehweg 不等式：当基的开簇满足 `@@M@@\bar\kappa(V)\ge0@@` 时 `@@M@@\bar\kappa(U)\ge\kappa(F)+\max\{\bar\kappa(V),\operatorname{Var}(f)\}@@`，其中变异性按整个几何一般纤维的双有理定义域度量，且不设任何丰度或好极小模型假设。

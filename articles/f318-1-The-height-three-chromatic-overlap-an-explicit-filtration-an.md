@@ -13,6 +13,49 @@ pdfname: ""
 
 > 结果族 318：Chromatic splitting: filtrations and counterexamples　·　学科：Topology　·　验证状态：暂无形式化证明，请以社区核验为准
 
+## 入门导读 🐣
+
+拆一件复杂的拼装家具，光知道"能按顺序逐层拆"还不够，最好说明书还写明每层之间的连接件是什么。同族前一篇证明了高度三的重叠能按八层顺序揭开；这一篇更进一步，把每两层之间的"胶水"配方全部写出来——并发现其中一颗连接件真的拧死了（黏合映射非零），这件家具确实拆不成互不相干的零件盒。
+
+**关键词卡片**
+
+- 高度三重叠（height-three overlap）：球面谱在第 3 层与更低层之间的搭接对象 `@@M@@L_2L_{K(3)}S@@`。
+- 黏合映射（attachment / connecting map）：滤过相邻两层之间的连接映射；本文全部显式识别。
+- 断裂公式（fracture formula）：把不同高度的局部化拼接起来的拉回方块；本文给出带符号版本。
+- 典范映射（canonical map）：自然变换 `@@M@@L_0X\to L_0L_{K(2)}X@@`；其非零性由姊妹篇证明，是本文的输入。
+- E(2)-局部（E(2)-local）：保留前两层色度信息的范畴，整个八层滤过生活在这里。
+
+**看个具体例子**
+
+八层归成三大块：W=L₂S∨Σ⁻¹L₂S（高度二）、U=Σ⁻³L₁S∨Σ⁻⁴L₁S（高度一）、V=四个有理位移之并。附件识别定理逐条报账：W 内部两条黏合 ∂₁=∂₂=0（确实松开）；跨向 U 的第一条高度一黏合是 `@@M@@d_3:\Sigma^{-3}L_1S\to\Sigma(L_2S\vee\Sigma^{-1}L_2S)@@`，作为底层谱的映射非零——正是这颗拧死的螺丝宣判了楔和分解的死刑：
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280">
+<text x="280" y="32" text-anchor="middle" font-size="18" fill="#222">三大块与它们的胶水</text>
+<rect x="150" y="48" width="260" height="52" fill="#c8dcc8" stroke="#222" stroke-width="2"/>
+<text x="280" y="70" text-anchor="middle" font-size="14" fill="#222">W：L₂S、Σ⁻¹L₂S（高度 2）</text>
+<text x="280" y="90" text-anchor="middle" font-size="13" fill="#666">内部黏合 ∂₁=∂₂=0（松开）</text>
+<line x1="280" y1="100" x2="280" y2="122" stroke="#222" stroke-width="3"/>
+<text x="296" y="116" font-size="14" fill="#a00">d₃ ≠ 0（拧紧）</text>
+<rect x="150" y="126" width="260" height="52" fill="#d5d5e8" stroke="#222" stroke-width="2"/>
+<text x="280" y="148" text-anchor="middle" font-size="14" fill="#222">U：Σ⁻³L₁S、Σ⁻⁴L₁S（高度 1）</text>
+<text x="280" y="168" text-anchor="middle" font-size="13" fill="#666">黏合由带符号公式 d = ∂_w h 控制</text>
+<line x1="280" y1="178" x2="280" y2="202" stroke="#555" stroke-width="2"/>
+<polygon points="274,200 286,200 280,210" fill="#555"/>
+<text x="296" y="198" font-size="14" fill="#444">g = ∂_a t</text>
+<rect x="150" y="212" width="260" height="44" fill="#e8e8e8" stroke="#222" stroke-width="2"/>
+<text x="280" y="238" text-anchor="middle" font-size="14" fill="#222">V：四个有理位移之并</text>
+</svg>
+
+</div>
+
+**为什么值得关心**
+
+这是首个把高高度重叠的全部黏合映射写出来的工作：不仅知道"能分层"，还知道"每层怎么连"，非零的 d₃ 与姊妹篇的反例互为印证。
+
+> 暂无形式化证明（AI 结果待核验）
+
 ## 一句话结论
 
 对每个素数 `@@M@@p\geq5@@`，论文把高度三重叠 `@@M@@L_2L_{K(3)}\mathbb S_p^\wedge@@` 显式滤过为八个阶段，逐层余纤维正是强分裂猜想的八块局部球面层；两条带符号的断裂公式识别全部黏合映射，且第一条高度一黏合映射非零——碎片清单正确，楔和分裂确已失效。

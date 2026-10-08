@@ -13,6 +13,44 @@ pdfname: ""
 
 > 结果族 083：Hilbert transforms along Lipschitz directions　·　学科：Real and complex analysis　·　验证状态：暂无形式化证明，请以社区核验为准
 
+## 入门导读 🐣
+
+想象一片麦田，每根麦秆都顺着风弯向自己的方向，"风向场"随位置平缓变化（这就是 Lipschitz 条件：转弯不急）。巡田员站在每一点，沿该点的风向望出去一小段距离取样平均。这篇论文证明：不管风向场怎么布置，只要看得足够近（距离与场的平整程度成反比），这种"顺方向短程取样"的算子在能量（`@@M@@L^2@@`）意义下有统一的安全界——Stein 悬置多年的问题得到肯定回答。
+
+**关键词卡片**
+
+- 方向 Hilbert 变换（directional Hilbert transform）：`@@M@@H^\varepsilon_{v,a}f(x)=\int_{\varepsilon<|t|<a}f(x-tv(x))\frac{dt}{t}@@`，沿方向场取样再以 `@@M@@1/t@@` 加权
+- Lipschitz 向量场（Lipschitz vector field）：方向随位置的变化速率有上界的场，转弯不能太急
+- 一致界（uniform bound）：常数是绝对的，不依赖具体场，也不依赖内截断 `@@M@@\varepsilon@@`
+- 内截断（inner truncation）：挖掉 `@@M@@|t|\le\varepsilon@@` 的奇点邻域；对一切 `@@M@@\varepsilon@@` 取上确界仍不失控
+- Stein 弱 (2,2) 猜想：Stein 提出的这个一致有界性问题的正式名字
+
+**看个具体例子**
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280">
+<path d="M60,220 C160,180 200,120 300,110 C400,100 460,60 500,50" stroke="#9ab" stroke-width="2" fill="none"/>
+<path d="M60,250 C170,220 230,170 330,150 C420,132 470,100 505,85" stroke="#9ab" stroke-width="2" fill="none"/>
+<path d="M90,180 C180,150 240,100 340,85 C420,73 465,45 495,35" stroke="#9ab" stroke-width="2" fill="none"/>
+<line x1="240" y1="130" x2="360" y2="118" stroke="#c33" stroke-width="4"/>
+<circle cx="300" cy="124" r="40" fill="none" stroke="#369" stroke-width="1.6" stroke-dasharray="5 4"/>
+<text x="210" y="70" font-size="14" fill="#c33">方向缓变</text>
+<text x="90" y="45" font-size="14" fill="#369">放大镜内：短距离上近似直线，</text>
+<text x="110" y="66" font-size="14" fill="#369">一维经典理论就够用</text>
+<text x="120" y="262" font-size="14" fill="#333">积分长度 ≤ a*/Lip(v)：转弯来不及发生</text>
+</svg>
+
+</div>
+
+数字版定理：存在绝对常数 `@@M@@a_*<1/2@@` 与 `@@M@@C_*@@`，凡单位场 `@@M@@v@@` 满足 `@@M@@\mathrm{Lip}(v)\le1@@`，就有 `@@M@@\sup_{0<\epsilon<a_*}\|H^{\epsilon}_{v,a_*}f\|_{L^2}\le C_*\|f\|_{L^2}@@`。若 `@@M@@\mathrm{Lip}(v)=L@@`，可积长度换成 `@@M@@a_*/L@@`，常数不变；场退化为常向量时，正好回到经典的一维 Hilbert 变换。
+
+**为什么值得关心**
+
+此前所有结果都带实质限制：或只管依赖单坐标的方向场，或要求 lacunary（二进格点化）方向，或只在 `@@M@@p>2@@` 成立。这是首个在完全一般的双坐标 Lipschitz 场上的一致强 `@@M@@L^2@@` 界，源头是 Zygmund 关于变方向平均可微性的古老猜想。
+
+> 暂无形式化证明（AI 结果待核验）
+
 ## 一句话结论
 
 本文证明了：平面上沿任意 Lipschitz 单位向量场的 Hilbert 变换（Hilbert transform），当积分长度不超过该场 Lipschitz 半范数倒数的某个绝对常数倍时，有一致的内截断一致的强 `@@M@@L^2@@` 界，从而在短尺度上肯定地回答了 Stein 的弱 `@@M@@(2,2)@@` 猜想。

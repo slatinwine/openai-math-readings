@@ -13,6 +13,79 @@ pdfname: ""
 
 > 结果族 024：An asymptotic formula for the number of totients　·　学科：Number theory　·　验证状态：暂无形式化证明，请以社区核验为准
 
+## 入门导读 🐣
+
+欧拉函数 φ 是台"打折机"：整数 n 投进去，出来一个不超过 n 的数。不同的 n 可能打出同一个数，所以"机器到 x 为止总共能吐出多少种不同的值"比数整数难得多。这篇论文给出这个数目 V(x) 的精确渐近公式，还证明一条漂亮的"批发规律"：V(cx)/V(x)→c，回答了 Erdős 与 Hall 在 1976 年提出的问题。
+
+**关键词卡片**
+
+- 欧拉函数（Euler's totient）：φ(n) 数出 1 到 n 中与 n 互素的整数个数。
+- 取值计数 V(x)：φ 在 [1,x] 内取到的不同值的个数。
+- 渐近公式（asymptotic formula）：x→∞ 时"主项 + 可忽略误差"的精确刻划。
+- 相位（phase）：log log 尺度上的小数部分，像一支让系数缓慢摆动的表针。
+- Erdős–Hall 问题：V(cx)/V(x) 是否趋于 c；悬置半世纪，本文给出肯定答案。
+
+**看个具体例子**
+
+小数据最容易看清"漏斗"：φ(1), …, φ(10) 依次为 1, 1, 2, 2, 4, 2, 6, 4, 6, 4——十个输入只吐出 {1, 2, 4, 6} 四种值，例如 4 和 6 都打出 2。机器越转越久，输出种类涨得比整数慢得多：Pillai 1929 年就知道取值密度为零，但精确数清它极难。
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280">
+  <text x="280" y="26" text-anchor="middle" font-size="16" fill="#333">φ 是台漏斗式"打折机"：10 个输入，4 种输出</text>
+  <text x="110" y="42" text-anchor="middle" font-size="13" fill="#345">输入 n</text>
+  <text x="440" y="42" text-anchor="middle" font-size="13" fill="#345">φ(n) 的取值</text>
+  <line x1="110" y1="50" x2="440" y2="65" stroke="#aaa" stroke-width="1"/>
+  <line x1="110" y1="72" x2="440" y2="65" stroke="#aaa" stroke-width="1"/>
+  <line x1="110" y1="94" x2="440" y2="115" stroke="#aaa" stroke-width="1"/>
+  <line x1="110" y1="116" x2="440" y2="115" stroke="#aaa" stroke-width="1"/>
+  <line x1="110" y1="138" x2="440" y2="165" stroke="#aaa" stroke-width="1"/>
+  <line x1="110" y1="160" x2="440" y2="115" stroke="#aaa" stroke-width="1"/>
+  <line x1="110" y1="182" x2="440" y2="215" stroke="#aaa" stroke-width="1"/>
+  <line x1="110" y1="204" x2="440" y2="165" stroke="#aaa" stroke-width="1"/>
+  <line x1="110" y1="226" x2="440" y2="215" stroke="#aaa" stroke-width="1"/>
+  <line x1="110" y1="248" x2="440" y2="165" stroke="#aaa" stroke-width="1"/>
+  <circle cx="110" cy="50" r="11" fill="#eef" stroke="#345"/>
+  <circle cx="110" cy="72" r="11" fill="#eef" stroke="#345"/>
+  <circle cx="110" cy="94" r="11" fill="#eef" stroke="#345"/>
+  <circle cx="110" cy="116" r="11" fill="#eef" stroke="#345"/>
+  <circle cx="110" cy="138" r="11" fill="#eef" stroke="#345"/>
+  <circle cx="110" cy="160" r="11" fill="#eef" stroke="#345"/>
+  <circle cx="110" cy="182" r="11" fill="#eef" stroke="#345"/>
+  <circle cx="110" cy="204" r="11" fill="#eef" stroke="#345"/>
+  <circle cx="110" cy="226" r="11" fill="#eef" stroke="#345"/>
+  <circle cx="110" cy="248" r="11" fill="#eef" stroke="#345"/>
+  <text x="110" y="55" text-anchor="middle" font-size="11" fill="#345">1</text>
+  <text x="110" y="77" text-anchor="middle" font-size="11" fill="#345">2</text>
+  <text x="110" y="99" text-anchor="middle" font-size="11" fill="#345">3</text>
+  <text x="110" y="121" text-anchor="middle" font-size="11" fill="#345">4</text>
+  <text x="110" y="143" text-anchor="middle" font-size="11" fill="#345">5</text>
+  <text x="110" y="165" text-anchor="middle" font-size="11" fill="#345">6</text>
+  <text x="110" y="187" text-anchor="middle" font-size="11" fill="#345">7</text>
+  <text x="110" y="209" text-anchor="middle" font-size="11" fill="#345">8</text>
+  <text x="110" y="231" text-anchor="middle" font-size="11" fill="#345">9</text>
+  <text x="110" y="253" text-anchor="middle" font-size="11" fill="#345">10</text>
+  <circle cx="440" cy="65" r="13" fill="#dfd" stroke="#273" stroke-width="1.5"/>
+  <circle cx="440" cy="115" r="13" fill="#dfd" stroke="#273" stroke-width="1.5"/>
+  <circle cx="440" cy="165" r="13" fill="#dfd" stroke="#273" stroke-width="1.5"/>
+  <circle cx="440" cy="215" r="13" fill="#dfd" stroke="#273" stroke-width="1.5"/>
+  <text x="440" y="70" text-anchor="middle" font-size="12" fill="#273">1</text>
+  <text x="440" y="120" text-anchor="middle" font-size="12" fill="#273">2</text>
+  <text x="440" y="170" text-anchor="middle" font-size="12" fill="#273">4</text>
+  <text x="440" y="220" text-anchor="middle" font-size="12" fill="#273">6</text>
+  <text x="280" y="272" text-anchor="middle" font-size="13" fill="#333">φ(1..10) = 1,1,2,2,4,2,6,4,6,4，不同值只有 {1, 2, 4, 6}。</text>
+</svg>
+
+</div>
+
+大尺度上，定理说 `@@M@@V(x)\sim\frac{x}{\log x}G_m A(1;\theta)@@`（系数由相位 θ 与有限算术数据决定），特别地 `@@M@@V(2x)/V(x)\to 2@@`：取值种数近似随端点线性伸缩。
+
+**为什么值得关心**
+
+"数函数值"比"数整数"深一层，是解析数论的代表性难题：Ford 1998 年的最好结果只能把 V(x) 夹在相差一个有界因子的两条渐近线之间，因为这个因子可能随相位永远振荡、上下界夹逼失效。本文精确保留离散尾部，让相位依赖的系数显式浮现，把估计推进成完整的渐近等价。
+
+> 暂无形式化证明（AI 结果待核验）
+
 ## 一句话结论
 
 论文给出欧拉函数不同取值个数 `@@M@@V(x)@@` 的显式渐近等价 `@@M@@V(x)\sim\frac{x}{\log x}G_mA(1;\theta)@@`，系数是有限算术数据的一致极限；并证明 `@@M@@V(cx)/V(x)\to c@@`，正面回答了 Erdős 与 Hall 1976 年提出的固定伸缩问题。

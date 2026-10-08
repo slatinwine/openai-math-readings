@@ -13,6 +13,34 @@ pdfname: ""
 
 > 结果族 290：Relative bicentralizers and modular spectral recovery　·　学科：Operator algebras　·　验证状态：暂无形式化证明，请以社区核验为准
 
+## 入门导读 🐣
+
+大楼 `@@M@@M@@` 里住着住户 `@@M@@N@@`。定理说：`@@M@@N@@` 内部总能找到一间"极简公寓" `@@M@@P@@`（性质温顺的可均代数），但从旁边附楼的窗户看出去，`@@M@@P@@` 的视野和整栋 `@@M@@N@@` 一模一样——小而全。为什么偏爱"极简"？可均（内射）代数结构温顺、好计算；若它的视野能顶替整栋楼，许多难题就能搬进小房间解决。
+
+**关键词卡片**
+
+- 包含 `@@M@@N\subset M@@`（inclusion）：算子世界的嵌套结构
+- 条件期望（conditional expectation）：从 `@@M@@M@@` 到 `@@M@@N@@` 的加权平均式投影
+- 可均/内射（amenable/injective）：温顺、无骨刺的子代数
+- 连续核（continuous core）`@@M@@c(M)@@`：给 `@@M@@M@@` 接上模演化"时间轴"后的大空间
+- 交换子（commutant）：与给定集合全部交换的算子全体
+
+**看个具体例子**
+
+结论写成公式是 `@@M@@P'\cap c(M)=N'\cap c(M)@@`：公寓虽小，在附楼里的交换视野与整栋楼完全相同（"交换视野"指与它交换的算子全体）。作为特例与中间产物，还得到 Connes 双中心子定理：可分 III`@@M@@_1@@` 因子上任何忠实正规态的双中心子只剩标量，`@@M@@\mathrm B(N,\varphi)=\mathbb C\cdot 1@@`——这是最难的 III`@@M@@_1@@` 型分类的基石之一。
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280"><rect x="30" y="50" width="220" height="170" fill="none" stroke="#333" stroke-width="2"/><text x="140" y="72" text-anchor="middle" font-size="14">M（大楼）</text><rect x="60" y="90" width="160" height="115" fill="none" stroke="#369" stroke-width="2"/><text x="140" y="112" text-anchor="middle" font-size="13">N（住户）</text><rect x="95" y="130" width="90" height="55" fill="#efe" stroke="#396" stroke-width="2"/><text x="140" y="162" text-anchor="middle" font-size="11">P（极简公寓）</text><rect x="350" y="50" width="180" height="170" fill="#ffc" stroke="#963" stroke-width="2"/><text x="440" y="76" text-anchor="middle" font-size="14">c(M)（连续核）</text><text x="440" y="98" text-anchor="middle" font-size="12">带时间轴的附楼</text><line x1="350" y1="140" x2="222" y2="140" stroke="#c33" stroke-width="2" stroke-dasharray="6,4"/><line x1="350" y1="205" x2="188" y2="170" stroke="#c33" stroke-width="2" stroke-dasharray="6,4"/><text x="286" y="128" text-anchor="middle" font-size="12" fill="#c33">视野相同</text><text x="280" y="252" text-anchor="middle" font-size="13">从附楼看：P′∩c(M)=N′∩c(M)</text></svg>
+
+</div>
+
+**为什么值得关心**
+
+它解决了 Marrakchi 的相对双中心子猜想，为最棘手的 III`@@M@@_1@@` 因子分类夯实地基；带期望 MASA 的推论还回应了 Kadison 的老问题；定理对任意中心与类型一律成立，不设任何特殊化假设，姊妹篇用另一条路线得到同一绝对定理，多方互为印证。
+
+> 暂无形式化证明（AI 结果待核验）
+
 ## 一句话结论
 
 证明了 Marrakchi 的相对双中心子猜想：对任何预对偶可分、带忠实正规条件期望的包含 `@@M@@N\subset M@@`，都存在含于 `@@M@@N@@` 的可均子代数 `@@M@@P@@`，使 `@@M@@P@@` 与 `@@M@@N@@` 在连续核 `@@M@@c(M)@@` 中的交换子完全相同；并给出 Connes 双中心子猜想的又一证明。

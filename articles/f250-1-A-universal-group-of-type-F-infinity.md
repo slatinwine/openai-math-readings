@@ -13,6 +13,45 @@ pdfname: ""
 
 > 结果族 250：Boone–Higman embeddings with higher finiteness　·　学科：Group theory　·　验证状态：主结果已 Lean 形式化
 
+## 入门导读 🐣
+
+能不能盖一座"万能公寓"：只要一个群拿得出一份一页纸的说明书（有限呈现），就保证能住进去，而且公寓本身的建筑规范还是最高档的（每一维只用有限块砖）？这篇论文给出肯定答案——造出了单个类型 `@@M@@F_\infty@@` 的群 `@@M@@H@@`，里面装得下所有有限呈现群。
+
+**关键词卡片**
+
+- 万有群（universal group）：包含每一个有限呈现群的群
+- 有限呈现群（finitely presented group）：有限生成元加有限关系即可完整描述的群
+- 递归呈现（recursively presented）：关系能被计算机逐条枚举的呈现，比"可判定"弱一档
+- 类型 F∞（type F∞）：拥有每维只含有限多胞腔的分类空间
+- 上升 HNN 扩张（ascending HNN extension）：给群 `@@M@@U@@` 加一台"时间机器" `@@M@@t@@`，令 `@@M@@t^{-1}ut=f(u)@@`；`@@M@@H@@` 正是这样造出来的
+
+**看个具体例子**
+
+`@@M@@\mathbb{Z}^2@@`、各种有限群、任何有限呈现的双曲群——它们全都住进同一个 `@@M@@H@@`。数字版定理：`@@M@@H@@` 是 `@@M@@F_\infty@@` 型，每个有限呈现群都单射嵌入 `@@M@@H@@`；并且同构意义下，`@@M@@H@@` 的有限生成子群恰好是全部有限生成递归呈现群。注意定理对输入群完全不要求字问题可判定，"入住门槛"只有有限呈现这一条。结构上，`@@M@@H@@` 只是对一个万有有限呈现群 `@@M@@U@@` 做了一次"加装时间机器"式的上升 HNN 扩张，整栋公寓的建造完全不依赖最后谁来入住。
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280">
+  <rect x="40" y="40" width="480" height="190" rx="12" fill="#f1f8e9" stroke="#33691e" stroke-width="2"/>
+  <text x="205" y="70" font-size="15" fill="#33691e">万有群 H（类型 F∞）</text>
+  <circle cx="130" cy="130" r="30" fill="#ffe0b2" stroke="#e65100"/>
+  <text x="113" y="135" font-size="13" fill="#e65100">Z²</text>
+  <circle cx="230" cy="130" r="30" fill="#ffe0b2" stroke="#e65100"/>
+  <text x="213" y="135" font-size="13" fill="#e65100">S₃</text>
+  <circle cx="330" cy="130" r="30" fill="#ffe0b2" stroke="#e65100"/>
+  <text x="306" y="135" font-size="13" fill="#e65100">双曲群</text>
+  <text x="380" y="137" font-size="16" fill="#e65100">……</text>
+  <text x="60" y="212" font-size="13" fill="#558b2f">所有有限呈现群都住得下；H 的有限生成子群恰为全部递归呈现群</text>
+</svg>
+
+</div>
+
+**为什么值得关心**
+
+"装得下一切"与"每一维都有限"两个目标互相拉扯，此前最好的构造在第三维就失灵；本文的 `@@M@@H@@` 是首个同时达标者，回答了高维 Higman 嵌入问题的 `@@M@@F_\infty@@` 形式。
+
+> 已 Lean 形式化
+
 ## 一句话结论
 构造出单个 `@@M@@F_\infty@@` 型群 `@@M@@H@@`，它同时包含每一个有限呈现群；其有限生成子群（在同构意义下）恰为全部有限生成递归呈现群。这回答了高维 Higman 嵌入问题的 `@@M@@F_\infty@@` 形式，且对输入群完全不作字问题（word problem）可判定的假设。
 

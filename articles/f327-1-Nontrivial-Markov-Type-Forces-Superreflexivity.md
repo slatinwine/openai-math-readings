@@ -13,6 +13,51 @@ pdfname: ""
 
 > 结果族 327：Markov type characterizes superreflexivity　·　学科：Functional analysis　·　验证状态：主结果已 Lean 形式化
 
+## 入门导读 🐣
+
+让一只跳蚤做"只看脚下"的随机游走（每步随机地跳），我们用一把尺子量它 `@@M@@t@@` 步后跑出的距离。如果不管跳蚤怎么跳、在哪条链上跳，平均位移都至多按步数的 `@@M@@1/p@@` 次方增长，就说这把尺子（一个空间）有 Markov 型。这篇论文证明：通过这种测试的尺子必然"超自反"——刻度可以整体换成一套处处一样圆的度量。看似纯概率的走跳蚤测试，竟然逼出了线性空间最核心的几何性质之一。
+
+**关键词卡片**
+
+- Markov 型（Markov type）：对一切可逆随机游走，跳 `@@M@@t@@` 步的平均位移 `@@M@@\le K\cdot t^{1/p}@@` 倍的跳 1 步位移。
+- 超自反（superreflexive）：空间可换一套等价范数，变得一致地"圆"——无穷维几何里最整齐的一族。
+- 一致凸（uniformly convex）：球面上任取两个离得远的点，其中点显著陷入球内；球面没有平直的边。
+- 随机游走（Markov chain）：每一步只依赖当前位置的随机过程，即"只看脚下"的跳蚤。
+- Ribe 纲领（Ribe program）：用纯度量（不依赖坐标与运算）刻画无穷维空间线性几何的研究纲领。
+
+**看个具体例子**
+
+数轴上的对称随机游走：每步等可能地 `@@M@@\pm1@@`。走 `@@M@@t@@` 步的方差恰为 `@@M@@t@@`，取 `@@M@@t=16@@`：
+
+`@@M@@D\mathbb{E}|Z_{16}-Z_0|^2=16\cdot\mathbb{E}|Z_1-Z_0|^2@@`
+
+不等式精确取等，典型散开只有 `@@M@@\sqrt{16}=4@@` 步。定理的"数字版"：若某空间对所有可逆链、所有映射都满足 `@@M@@\mathbb{E}\|f(Z_t)-f(Z_0)\|^p\le K^p t\,\mathbb{E}\|f(Z_1)-f(Z_0)\|^p@@`（某个 `@@M@@p>1@@`），则它必可重赋等价的一致凸范数；反过来超自反空间也都通过测试。
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280">
+  <text x="20" y="28" font-size="15" fill="#222">随机游走 16 步：典型只散开约 √16 = 4 步</text>
+  <line x1="80" y1="140" x2="540" y2="140" stroke="#999" stroke-width="1"/>
+  <line x1="80" y1="40" x2="80" y2="240" stroke="#999" stroke-width="1"/>
+  <line x1="80" y1="140" x2="528" y2="44" stroke="#c0a050" stroke-width="1.5" stroke-dasharray="6 4"/>
+  <line x1="80" y1="140" x2="528" y2="236" stroke="#c0a050" stroke-width="1.5" stroke-dasharray="6 4"/>
+  <polyline points="80,140 108,116 136,140 164,116 192,92 220,116 248,92 276,68 304,92 332,68 360,92 388,116 416,92 444,68 472,44 500,68 528,44" fill="none" stroke="#2f8f4e" stroke-width="2.5"/>
+  <circle cx="528" cy="44" r="4" fill="#2f8f4e"/>
+  <text x="430" y="70" font-size="13" fill="#c0a050">±√t 包络</text>
+  <text x="440" y="220" font-size="13" fill="#c0a050">（对称向下）</text>
+  <text x="500" y="160" font-size="13" fill="#666">步数 t</text>
+  <text x="88" y="52" font-size="13" fill="#666">位移</text>
+  <text x="20" y="262" font-size="13" fill="#666">Markov 型：位移按 t 的 1/p 次方散开，则空间必超自反</text>
+</svg>
+
+</div>
+
+**为什么值得关心**
+
+超自反性这个纯线性概念，被"跳蚤走路"这种纯度量测试完整刻画，是 Ribe 纲程的收官之作之一。
+
+> 主结果已 Lean 形式化
+
 ## 一句话结论
 
 证明了实 Banach 空间只要对某个 `@@M@@p>1@@` 具有 Markov 型（Markov type）`@@M@@p@@`，就必然超自反；结合已知反方向，超自反性被"具有非平凡 Markov 型"完整刻画，并对 Naor 的重赋范问题给出否定回答。

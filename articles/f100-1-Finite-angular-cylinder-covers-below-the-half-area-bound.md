@@ -13,6 +13,50 @@ pdfname: ""
 
 > 结果族 100：Cylinder coverings below the half-area bound　·　学科：Convex and metric geometry　·　验证状态：暂无形式化证明，请以社区核验为准
 
+## 入门导读 🐣
+
+用木板盖住一件家具，木板总宽度至少得是家具的"最小宽度"——这是 Tarski 木板问题。三维换成无限长的圆柱管盖凸体，对应的猜想是：管子横截面的总面积至少是物体最薄影子面积的一半；正四面体上的两管方案恰好取等，看起来天衣无缝。本文说：不对——把管子掰得微微倾斜、再细分成一大把窄管，总面积能严格小于一半。
+
+**关键词卡片**
+
+- 圆柱覆盖（cylinder covering）：形如 `@@M@@B+\R u@@` 的无限长管子，底面 `@@M@@B@@` 位于与轴垂直的平面内。
+- 最小正交投影面积（minimal orthogonal projection area）：凸体在所有方向的影子中最小的一块。
+- 角度扇区（angular sector）：把三角底面细分的窄扇形，每个配自己的微倾轴线。
+- 仿射不变性（affine invariance）：方向化成本比在线性变换下不变，反例自动推广到一切四面体。
+
+**看个具体例子**
+
+棱长 2 的正四面体：`@@M@@A_{\min}=\sqrt2\approx1.414@@`，半面积猜想要求总面积 `@@M@@\ge0.707@@`。本文构造 `@@M@@m=2\lceil2/\varepsilon^2\rceil@@` 个三角形底圆柱，总面积满足 `@@M@@\frac{1}{\sqrt2}\sum_i|B_i|=\frac12-\frac{13}{6000}\varepsilon^2+O(\varepsilon^4)@@`。取 `@@M@@\varepsilon=0.1@@`：约 400 根圆柱，节省约五万分之二——极小，但严格为正。
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280">
+  <path d="M 280 50 L 110 220 L 450 220 Z" fill="#f3f0e8" stroke="#345" stroke-width="2"/>
+  <circle cx="280" cy="160" r="4" fill="#222"/>
+  <line x1="280" y1="160" x2="172" y2="220" stroke="#89a" stroke-width="1"/>
+  <line x1="280" y1="160" x2="226" y2="220" stroke="#89a" stroke-width="1"/>
+  <line x1="280" y1="160" x2="280" y2="220" stroke="#89a" stroke-width="1"/>
+  <line x1="280" y1="160" x2="334" y2="220" stroke="#89a" stroke-width="1"/>
+  <line x1="280" y1="160" x2="388" y2="220" stroke="#89a" stroke-width="1"/>
+  <line x1="222" y1="130" x2="262" y2="118" stroke="#c00" stroke-width="2"/>
+  <line x1="262" y1="140" x2="300" y2="140" stroke="#c00" stroke-width="2"/>
+  <line x1="308" y1="152" x2="344" y2="162" stroke="#c00" stroke-width="2"/>
+  <line x1="238" y1="172" x2="268" y2="186" stroke="#c00" stroke-width="2"/>
+  <line x1="300" y1="178" x2="322" y2="196" stroke="#c00" stroke-width="2"/>
+  <text x="18" y="48" font-size="14" fill="#123">圆柱的三角形底面切成窄扇区</text>
+  <text x="18" y="70" font-size="14" fill="#123">每个扇区配一根微倾的轴（红线）</text>
+  <text x="18" y="248" font-size="14" fill="#123">相邻扇区在公共边界共面＝防缝</text>
+  <text x="18" y="270" font-size="14" fill="#123">交界处用二阶小量外扩兜底</text>
+</svg>
+
+</div>
+
+**为什么值得关心**
+
+只需"严格小于"就足以推翻归于 Bang 的半面积猜想与更强的方向归一化版本；这也是该问题第一个完全显式的反例。
+
+> 暂无形式化证明（AI 结果待核验）
+
 ## 一句话结论
 
 本文为正四面体构造出有限个圆柱组成的覆盖，其垂直底面（均为紧三角形）的总面积严格小于该四面体最小正交投影面积（minimal orthogonal projection area）的一半，从而推翻归于 Bang 的半面积圆柱覆盖猜想，并经仿射不变性否定更强的方向归一化半界猜想。

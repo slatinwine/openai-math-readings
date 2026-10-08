@@ -13,6 +13,34 @@ pdfname: ""
 
 > 结果族 273：The entropy photon-number inequality　·　学科：Mathematical physics　·　验证状态：暂无形式化证明，请以社区核验为准
 
+## 入门导读 🐣
+
+把一杯热水和一杯冷水兑在一起，直觉告诉你：混出来的"混乱程度"不会比按比例掺出来的更低。这篇论文证明量子光学版的同款常识：两束独立的光在分束器中混合，输出的"熵光子数"不小于两个输入的加权平均——即使每个输入内部允许任意纠缠。Guha–Erkmen–Shapiro 2007 年提出、悬置近二十年的猜想至此收官。
+
+**关键词卡片**
+
+- 熵光子数（entropy photon number）：与该光场总熵相同的热光态所对应的平均光子数，衡量"光噪声"的大小。
+- 分束器（beam splitter）：半透半反的镜子，把两束光按透射率 η 混成一路。
+- 热态（thermal state）：光的"白噪音"，性质由平均光子数完全决定。
+- 玻色态（bosonic state）：光子系统的量子态，光子数目不固定。
+- 量子纠缠（entanglement）：同一输入内部各光学模式间超越经典的关联。
+
+**看个具体例子**
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280"><rect x="250" y="70" width="60" height="130" fill="none" stroke="#333" stroke-width="2"/><line x1="256" y1="196" x2="304" y2="84" stroke="#333" stroke-width="3"/><text x="236" y="58" font-size="14" fill="#333">分束器（透射率 η）</text><line x1="110" y1="150" x2="248" y2="150" stroke="#c0392b" stroke-width="2.5"/><polygon points="248,150 236,144 236,156" fill="#c0392b"/><text x="112" y="138" font-size="14" fill="#c0392b">输入 A：熵光子数 N_A</text><line x1="280" y1="252" x2="280" y2="204" stroke="#2980b9" stroke-width="2.5"/><polygon points="280,204 274,216 286,216" fill="#2980b9"/><text x="298" y="244" font-size="14" fill="#2980b9">输入 B：N_B</text><line x1="312" y1="110" x2="440" y2="110" stroke="#8e44ad" stroke-width="2.5"/><polygon points="440,110 428,104 428,116" fill="#8e44ad"/><text x="450" y="102" font-size="14" fill="#8e44ad">输出 C</text><text x="60" y="30" font-size="15" fill="#333">定理：输出 C 的熵光子数 ≥ η·N_A + (1−η)·N_B</text></svg>
+
+</div>
+
+代入数字：η=1/2、N_A=2、N_B=0 时，输出至少含 1 个"熵光子"。写成一行即 `@@M@@g^{-1}\big(S(\rho_C)/n\big)\ge\eta\,g^{-1}\big(S(\rho_A)/n\big)+(1-\eta)\,g^{-1}\big(S(\rho_B)/n\big)@@`，等号在两端口均为热态时取得，且两端口熵值可以不同。证明走反证路线：假设存在严格反例，经极小化、二阶估计与热态极限层层逼近，最后逼出极限必为热态，与反例设定自相矛盾。
+
+**为什么值得关心**
+
+由它直接读出热衰减信道的精确最小输出熵与纯损耗广播信道的容量域——光纤通信的极限速率从此有了数学上确凿的封顶。
+
+> 暂无形式化证明（AI 结果待核验）
+
 ## 一句话结论
 
 本文证明 Guha–Erkmen–Shapiro 2007 年提出的熵光子数不等式：分束器混合两个独立有限能量输入后，输出的熵光子数不小于两输入按透射率加权的平均，允许输入内部任意多模纠缠；并据此确定热衰减信道的精确最小输出熵与纯损耗广播信道的容量域。

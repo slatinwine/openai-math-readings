@@ -13,6 +13,54 @@ pdfname: ""
 
 > 结果族 046：Shafarevich counterexamples in dimension two and with large fundamental group　·　学科：Algebraic and complex geometry　·　验证状态：暂无形式化证明，请以社区核验为准
 
+## 入门导读 🐣
+
+把一个代数曲面解开成万有覆盖后，里面挂着一串无穷长的"珍珠项链"：每颗珍珠都是一个球面，首尾相接延伸到无穷远。全纯函数在每颗珍珠上只能取一个常数，于是这条项链把"用函数区分位置"的可能性彻底锁死。本文第一次在具体曲面里造出了这串项链。
+
+**关键词卡片**
+
+- 全纯凸（holomorphically convex）：全纯函数能给每块有限区域画出有限"势力范围"的性质。
+- Shafarevich 猜想（Shafarevich conjecture）：完备代数簇的万有覆盖是否总是全纯凸。
+- 有理曲线（rational curve）：同构于球面 P¹ 的最简曲线，自身单连通。
+- Nori 弦（Nori string）：覆盖中无穷延伸的有理曲线链，全纯函数的天敌。
+- 节点曲线（nodal curve）：多条曲线在交点处焊接成的一体。
+
+**看个具体例子**
+
+反例 X 是光滑射影复曲面，含一条全由有理曲线焊接成的节点曲线 Z₀，且它在 π₁(X) 中的像无限。于是 Z₀ 的提升 W 成为闭、非紧、局部有限的项链：
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280">
+  <rect x="0" y="0" width="560" height="280" fill="#ffffff"/>
+  <text x="30" y="32" font-size="16" fill="#222222">无穷 Nori 弦：一串首尾相接的球面</text>
+  <text x="42" y="108" font-size="18" fill="#888888">…</text>
+  <circle cx="92" cy="100" r="34" fill="#eef4fb" stroke="#3b6fb5" stroke-width="2.5"/>
+  <circle cx="160" cy="100" r="34" fill="#eef4fb" stroke="#3b6fb5" stroke-width="2.5"/>
+  <circle cx="228" cy="100" r="34" fill="#eef4fb" stroke="#3b6fb5" stroke-width="2.5"/>
+  <circle cx="296" cy="100" r="34" fill="#eef4fb" stroke="#3b6fb5" stroke-width="2.5"/>
+  <circle cx="364" cy="100" r="34" fill="#eef4fb" stroke="#3b6fb5" stroke-width="2.5"/>
+  <text x="428" y="108" font-size="16" fill="#888888">…（无限延伸）</text>
+  <text x="82" y="106" font-size="13" fill="#1d3d63">P¹</text>
+  <text x="150" y="106" font-size="13" fill="#1d3d63">P¹</text>
+  <text x="218" y="106" font-size="13" fill="#1d3d63">P¹</text>
+  <text x="286" y="106" font-size="13" fill="#1d3d63">P¹</text>
+  <text x="354" y="106" font-size="13" fill="#1d3d63">P¹</text>
+  <text x="60" y="175" font-size="14" fill="#333333">每颗珠子 ≅ 球面，单连通，整颗提升到万有覆盖</text>
+  <text x="60" y="203" font-size="14" fill="#333333">全纯函数在每颗珠子上由极大原理取常数，并沿焊点传递</text>
+  <text x="60" y="235" font-size="14" fill="#c0392b">⇒ 整条链上恒为常数 ⇒ 无法全纯凸</text>
+</svg>
+
+</div>
+
+推论同样锋利：由"线性 Shafarevich"定理，π₁(X) 没有任何忠实的有限维复表示，X 也不是 Campana 意义下的特殊簇。
+
+**为什么值得关心**
+
+无穷 Nori 弦作为障碍被讨论了近三十年，却从未落实为射影曲面；本文首次实现，从低维一侧否定了 Shafarevich 猜想。
+
+> 暂无形式化证明（AI 结果待核验）
+
 ## 一句话结论
 
 论文构造了一个光滑连通射影复曲面 `@@M@@X@@`，其中一条全由有理曲线组成的连通节点曲线 `@@M@@Z_0@@` 的基本群在 `@@M@@\pi_1(X)@@` 中的像无限；其万有覆盖因此不是全纯凸的——Shafarevich 全纯凸性猜想在复维数二被否定。

@@ -13,6 +13,46 @@ pdfname: ""
 
 > 结果族 263：The ionization and generalized ionization conjectures　·　学科：Mathematical physics　·　验证状态：暂无形式化证明，请以社区核验为准
 
+## 入门导读 🐣
+
+中性原子的电子云像一杯啤酒：泡沫总浮在最上层。定义"外半径 R_m"为外部恰好只剩 m 个电子的最小球半径——相当于问：要从杯口往下量多深，才只裹住 m 滴泡沫？定理给出精确答案：先让核电荷 Z 趋于无穷、再让 m 趋于无穷，这个半径渐近于一个常数乘 m 的负三分之一次方——尾部越薄，需要的半径越大，且比例系数与 Z 完全无关。
+
+**关键词卡片**
+
+- 外半径 `@@M@@R_m@@`（outer radius）：外部电子质量恰为 m 的半径，衡量电子云尾巴拖多长。
+- 托马斯–费米极限（Thomas–Fermi limit）：大原子密度的主阶近似理论，常数的出处。
+- 屏蔽场（screened field）：核吸引减去电子云排斥后的有效电场。
+- 迭代极限（iterated limit）：先 `@@M@@Z\to\infty@@` 再 `@@M@@m\to\infty@@` 的取极限顺序。
+
+**看个具体例子**
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280">
+  <text x="75" y="32" font-size="14">中性原子的电子密度尾部 ρ(r)：外面剩 m 个电子的半径</text>
+  <line x1="70" y1="230" x2="530" y2="230" stroke="#333" stroke-width="2"/>
+  <polygon points="538,230 526,224 526,236" fill="#333"/>
+  <line x1="70" y1="230" x2="70" y2="50" stroke="#333" stroke-width="2"/>
+  <path d="M75 55 C 130 70, 190 150, 300 185 C 390 210, 470 216, 525 220" fill="none" stroke="#369" stroke-width="2.5"/>
+  <line x1="215" y1="196" x2="215" y2="230" stroke="#c33" stroke-width="1.5" stroke-dasharray="5 4"/>
+  <line x1="415" y1="218" x2="415" y2="230" stroke="#c33" stroke-width="1.5" stroke-dasharray="5 4"/>
+  <text x="180" y="250" font-size="13">R(m=64) ≈ 1.8</text>
+  <text x="388" y="250" font-size="13">R(m=8) ≈ 3.7</text>
+  <text x="85" y="62" font-size="13">ρ(r)</text>
+  <text x="505" y="248" font-size="13">r</text>
+  <text x="55" y="272" font-size="14">尾部规律：外部质量 ≈ b³·r^(−3) ⇒ R_m ≈ 7.37·m^(−1/3)（与 Z 无关）</text>
+</svg>
+
+</div>
+
+数字版：`@@M@@b_{\rm TF}=(81\pi^2/2)^{1/3}\approx 7.37@@`，故 `@@M@@R_m\approx 7.37\,m^{-1/3}@@`——m=8 时约 3.7，m=64 时约 1.8；尾部外部质量满足 `@@M@@\int_{|x|>r}\rho\approx b_{\rm TF}^3\,r^{-3}@@`。
+
+**为什么值得关心**
+
+广义电离猜想的半径部分在完整薛定谔模型（任意关联基态）中获证；常数与 Solovej 的 Hartree–Fock 定理完全一致，构成交叉验证。
+
+> 暂无形式化证明（AI 结果待核验）
+
 ## 一句话结论
 
 本文证明广义电离猜想的半径部分：中性库仑原子任意基态选择下，期望外部电子质量为 `@@M@@m@@` 的半径先对 `@@M@@Z@@` 取上、下极限再让 `@@M@@m\to\infty@@`，均渐近于 `@@M@@(81\pi^2/2)^{1/3}m^{-1/3}@@`，与 Solovej 在 Hartree–Fock 理论中所得常数一致。

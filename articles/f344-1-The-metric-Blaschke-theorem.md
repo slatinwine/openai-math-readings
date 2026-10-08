@@ -13,6 +13,51 @@ pdfname: ""
 
 > 结果族 344：The metric Blaschke conjecture　·　学科：Differential geometry　·　验证状态：暂无形式化证明，请以社区核验为准
 
+## 入门导读 🐣
+
+篮球面上从北极沿大圆走到南极，每条路都是最短路，而且"能一路保持最短"的距离恰好等于直径。哪些空间有这种完美性质？猜想的答案是五人名单：球面，实、复、四元数射影空间，以及 Cayley 平面。本文证明：名单之外没有漏网之鱼。这件事乍看只是距离的常识，却把空间逼到对称性的极致。
+
+**关键词卡片**
+
+- 单射半径（injectivity radius）：从任意点出发的直路能保持"唯一最短"的里程下限。
+- 直径（diameter）：空间中相距最远两点的距离。
+- Blaschke 流形（Blaschke manifold）：单射半径恰好等于直径的闭流形。
+- 割迹（cut locus）：从每点出发、最短路性质开始失效的点集。
+- 秩一对称空间（rank-one symmetric space）：最对称的紧空间家族，即上述五人名单。
+
+**看个具体例子**
+
+数字版定理：`@@M@@\operatorname{inj}(M,g)=\operatorname{diam}(M,g)@@` `@@M@@\Longrightarrow@@` 缩放后 `@@M@@(M,g)@@` 等距于名单五者之一；同直径的模型空间由经典的割迹与整上同调型指定，且体积比较 `@@M@@\operatorname{Vol}(M)\ge\operatorname{Vol}(M_0)@@`，等号当且仅当等距。
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280">
+<circle cx="190" cy="145" r="95" fill="#f5f8ff" stroke="#345" stroke-width="3"/>
+<ellipse cx="190" cy="145" rx="95" ry="30" stroke="#89a" stroke-width="1.5" fill="none"/>
+<ellipse cx="190" cy="145" rx="30" ry="95" stroke="#89a" stroke-width="1.5" fill="none"/>
+<circle cx="190" cy="50" r="5" fill="#345"/>
+<text x="178" y="38" font-size="14" fill="#345">北极 N</text>
+<circle cx="190" cy="240" r="5" fill="#345"/>
+<text x="178" y="264" font-size="14" fill="#345">南极 S</text>
+<path d="M190 50 Q262 100 190 240" stroke="#c33" stroke-width="3" fill="none"/>
+<path d="M190 50 Q118 100 190 240" stroke="#c33" stroke-width="3" fill="none"/>
+<path d="M190 50 Q212 145 190 240" stroke="#c33" stroke-width="3" fill="none"/>
+<text x="330" y="70" font-size="14" fill="#345">每条大圆弧从 N 到 S</text>
+<text x="330" y="95" font-size="14" fill="#345">都一路最短：</text>
+<text x="330" y="120" font-size="14" fill="#c33">最短里程 = 直径</text>
+<text x="330" y="155" font-size="14" fill="#345">定理：凡闭流形满足</text>
+<text x="330" y="180" font-size="14" fill="#345">inj = diam，必等距于</text>
+<text x="330" y="205" font-size="14" fill="#345">球面 / 射影空间 / Cayley 平面</text>
+</svg>
+
+</div>
+
+**为什么值得关心**
+
+1921 年 Blaschke 提出的古老猜想至此彻底关闭，其中四元数射影型分支是长期无人攻克的硬核难点；证明下半是解析的体积比较，上半是四元数型的拓扑障碍计算，两条战线合围。
+
+> 暂无形式化证明（AI 结果待核验）
+
 ## 一句话结论
 
 完整证明度量 Blaschke 猜想：连通闭黎曼流形若整体单射半径等于直径，则相差一个常数缩放后必等距于标准紧秩一对称空间——球面、实/复/四元数射影空间或 Cayley 平面之一。

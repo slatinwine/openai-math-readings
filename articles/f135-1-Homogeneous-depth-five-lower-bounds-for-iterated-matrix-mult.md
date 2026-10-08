@@ -13,6 +13,34 @@ pdfname: ""
 
 > 结果族 135：Homogeneous depth-five lower bounds for iterated matrix multiplication　·　学科：Theoretical computer science　·　验证状态：暂无形式化证明，请以社区核验为准
 
+## 入门导读 🐣
+
+算一个多项式可以画成工厂流水线：零件只有"加法门"和"乘法门"，信号逐层向上汇合。如果硬性规定流水线只有 5 层、每层只许统一做加法或乘法，那么计算"`@@M@@n@@` 个矩阵连乘后左上角那个元素"最少要多少零件？论文给出准确定价：`@@M@@n^{\Theta(\sqrt n)}@@` 个门。
+
+**关键词卡片**
+
+- 算术电路（arithmetic circuit）：由加法门与乘法门组成、用来计算多项式的线路图。
+- 齐次（homogeneous）：每个门只处理同一次数的项，不许 `@@M@@x^2@@` 与 `@@M@@x^5@@` 直接相加。
+- 深度五 ΣΠΣΠΣ（depth five）：自上而下"加-乘-加-乘-加"共五层。
+- 迭代矩阵乘法（IMM）：`@@M@@n@@` 个 `@@M@@n\times n@@` 变量矩阵连乘的 `@@M@@(1,1)@@` 元，展开后是所有路径权重之和。
+- 下界（lower bound）：证明任何电路都无法省掉的零件数。
+
+**看个具体例子**
+
+上下界夹逼：在特征零的域上，任何齐次深度五电路算 `@@M@@\mathrm{IMM}_{n,n}@@` 至少要 `@@M@@n^{\sqrt n/400}@@` 个门；同时又存在只需 `@@M@@n^{\sqrt n+4}@@` 个门的此类电路——做法是把 `@@M@@n@@` 层切成约 `@@M@@\sqrt n@@` 个短块，逐块展开再用顶层乘积拼回。代入 `@@M@@n=10^6@@`（此时 `@@M@@\sqrt n=1000@@`）：下界达到 `@@M@@n^{2.5}=10^{15}@@` 个门，远超任何多项式 `@@M@@n^C@@`——两头一起把门复杂度钉死在 `@@M@@n^{\Theta(\sqrt n)}@@`。值得注意的是电路模型相当强：底层线性形式可用全部变量，门还可共享，下界照样成立。
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280"><text x="280" y="22" text-anchor="middle" font-size="15" fill="#333">ΣΠΣΠΣ：加、乘交替的五层电路</text><text x="24" y="70" font-size="14" fill="#345">加 Σ</text><rect x="90" y="48" width="430" height="32" rx="8" fill="#eef3ff" stroke="#345" stroke-width="2"/><text x="305" y="70" text-anchor="middle" font-size="14" fill="#345">+ + + + + +</text><text x="24" y="118" font-size="14" fill="#742">乘 Π</text><rect x="90" y="96" width="430" height="32" rx="8" fill="#fdeeee" stroke="#742" stroke-width="2"/><text x="305" y="118" text-anchor="middle" font-size="14" fill="#742">× × × × × × ×</text><text x="24" y="166" font-size="14" fill="#345">加 Σ</text><rect x="90" y="144" width="430" height="32" rx="8" fill="#eef3ff" stroke="#345" stroke-width="2"/><text x="305" y="166" text-anchor="middle" font-size="14" fill="#345">+ + + + + +</text><text x="24" y="214" font-size="14" fill="#742">乘 Π</text><rect x="90" y="192" width="430" height="32" rx="8" fill="#fdeeee" stroke="#742" stroke-width="2"/><text x="305" y="214" text-anchor="middle" font-size="14" fill="#742">× × × × × × ×</text><text x="24" y="262" font-size="14" fill="#345">加 Σ</text><rect x="90" y="240" width="430" height="32" rx="8" fill="#eef3ff" stroke="#345" stroke-width="2"/><text x="305" y="262" text-anchor="middle" font-size="14" fill="#345">+ + + + + +</text></svg>
+
+</div>
+
+**为什么值得关心**
+
+"给显式多项式证浅电路超多项式下界"自 Nisan–Wigderson 1995 年起就是中心公开难题；深度归约定理又说明 `@@M@@n^{\sqrt n}@@` 正是临界尺度，本文在标准试验田 IMM 上把深度五的这一缺口钉死。
+
+> 暂无形式化证明（AI 结果待核验）
+
 ## 一句话结论
 
 在任意特征为零的域上，计算 `@@M@@n@@` 个 `@@M@@n\times n@@` 变量矩阵连乘的 `@@M@@(1,1)@@` 项 `@@M@@\IMM_{n,n}@@`，任何齐次深度五 `@@M@@\Sigma\Pi\Sigma\Pi\Sigma@@` 电路至少需 `@@M@@n^{\sqrt n/400}@@` 个门；配合 `@@M@@n^{\sqrt n+4}@@` 的构造性上界，门复杂度被确定为 `@@M@@n^{\Theta(\sqrt n)}@@`。

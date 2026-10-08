@@ -13,6 +13,54 @@ pdfname: ""
 
 > 结果族 232：Gaussian fields and interfaces for triangular-lattice Lipschitz heights　·　学科：Probability and statistical mechanics　·　验证状态：暂无形式化证明，请以社区核验为准
 
+## 入门导读 🐣
+
+在一张三角格网上给每个小格子填整数高度，规矩只有一条：相邻格子的高度至多差 1。按一定权重随机地填满整张网，这片"随机地形"放大后会是什么模样？答案：高斯自由场——二维世界最普适的随机涨落模板，地位好比一维世界里的布朗运动。
+
+**关键词卡片**
+
+- Lipschitz 高度函数（integer Lipschitz height function）：相邻面高度差至多 1 的整值随机曲面，最简单的"硬约束"地形。
+- 权重 x（weight）：每条高度发生跳变的边乘上因子 x；x = 1 是均匀模型，x = 1/√2 是理论预言的临界端点。
+- 高斯自由场（Gaussian free field, GFF）：可以想象成"铺满整个平面的布朗运动"，随机场世界的万能模板。
+- 随机分布收敛（convergence as random distribution）：场在单点上的值发散，但与检验函数加权平均后，一切联合矩都收敛。
+- 零 Dirichlet 边界（zero boundary）：区域边界上的高度被钉死为 0。
+
+**看个具体例子**
+
+下图是地形的一条剖面：台阶高度依次为 0, 1, 2, 2, 1, 0, −1, −1, 0，相邻差不超过 1，每个"台阶边"带权重 x。定理说：对每个固定 `@@M@@x\in[1/\sqrt2,\,1]@@`（含临界端点 `@@M@@x=1/\sqrt2\approx 0.707@@` 与均匀模型 `@@M@@x=1@@`），存在与区域无关的正常数 `@@M@@\sigma(x)@@`，使得 `@@M@@\dfrac{h_\delta}{\sigma(x)}@@` 收敛到零边值 GFF。注意不需要再除以任何对数——涨落天然有限，这与许多别的随机曲面很不一样。
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280">
+  <text x="280" y="26" text-anchor="middle" font-size="15">随机地形的一条剖面：整数台阶，相邻差 ≤ 1</text>
+  <text x="280" y="52" text-anchor="middle" font-size="13" fill="#c62828">每个台阶边乘权重 x；格子加密后 ⇒ GFF / σ(x)</text>
+  <line x1="60" y1="230" x2="525" y2="230" stroke="#555" stroke-width="1.5"/>
+  <line x1="60" y1="80" x2="60" y2="230" stroke="#555" stroke-width="1.5"/>
+  <line x1="60" y1="170" x2="511" y2="170" stroke="#ddd" stroke-dasharray="4 4"/>
+  <line x1="60" y1="200" x2="511" y2="200" stroke="#ddd" stroke-dasharray="4 4"/>
+  <line x1="60" y1="260" x2="511" y2="260" stroke="#ddd" stroke-dasharray="4 4"/>
+  <path d="M70 230 L119 230 L119 200 L168 200 L168 170 L266 170 L266 200 L315 200 L315 230 L364 230 L364 260 L462 260 L462 230 L511 230" fill="none" stroke="#1565c0" stroke-width="3"/>
+  <g font-size="12" fill="#333">
+    <text x="94" y="224">0</text>
+    <text x="143" y="194">1</text>
+    <text x="215" y="164">2</text>
+    <text x="290" y="194">1</text>
+    <text x="339" y="224">0</text>
+    <text x="410" y="256">−1</text>
+    <text x="486" y="224">0</text>
+  </g>
+  <text x="30" y="150" font-size="12">高度</text>
+  <text x="200" y="250" font-size="12">格点位置</text>
+</svg>
+
+</div>
+
+**为什么值得关心**
+
+此前学界只掌握"方差按对数增长"这类一阶证据，GFF 极限长期停留在猜想；本文把它变成定理，同时覆盖均匀模型与临界端点，是随机曲面普适性纲领的关键一步。
+
+> 暂无形式化证明（AI 结果待核验）
+
 ## 一句话结论
 证明了三角格点上零边界、按"高度改变的边数"加权的整数 Lipschitz 高度场，对每个固定权重 `@@M@@x\in[1/\sqrt2,1]@@`，除以正常数 `@@M@@\sigma(x)@@` 后收敛到零 Dirichlet 高斯自由场，覆盖均匀模型与预测临界端点，把长期停留于对数方差层面的粗化证据推进为完整的极限定理。
 

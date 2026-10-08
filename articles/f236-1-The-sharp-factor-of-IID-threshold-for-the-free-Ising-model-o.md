@@ -13,6 +13,34 @@ pdfname: ""
 
 > 结果族 236：The exact factor-of-IID threshold for free Ising spins on trees　·　学科：Probability and statistical mechanics　·　验证状态：主结果已 Lean 形式化
 
+## 入门导读 🐣
+
+在一棵无穷大的"家谱树"上玩传话游戏：老祖宗掷一枚硬币，每个孩子以某个概率照抄爸爸的答案，否则随机改口。这篇论文问：不指定谁是祖宗、只给每个顶点发一个独立的随机数，再套一条对所有节点一视同仁的规则，能否把整棵树的传话结果原样造出来？答案是一条精确到含等号的分界线。
+
+**关键词卡片**
+
+- Ising 自旋（Ising spin）：顶点上放的 ±1 小磁针；铁磁（ferromagnetic）指相邻磁针倾向同向。
+- d-正则树（d-regular tree）：每个节点恰好有 d 个邻居的无穷网络，没有边界也没有天然的"中心"。
+- 广播模型（broadcast model）：根掷公平硬币，每个子节点以 `@@M@@(1+\theta)/2@@` 的概率照抄父节点，`@@M@@\theta=\tanh\beta@@` 度量"传话多忠实"。
+- factor of IID：给每个顶点一个独立随机标签，用一条与图对称性兼容的统一规则把标签整场变成自旋——不靠任何根。
+- 重建阈值（reconstruction threshold）：`@@M@@b\theta^2=1@@`（其中 `@@M@@b=d-1@@`）——越过它，根的信息能传到无穷远处残留不散。
+
+**看个具体例子**
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280"><circle cx="280" cy="45" r="16" fill="#e8f0fe" stroke="#336" stroke-width="2"/><text x="275" y="51" font-size="15" fill="#336" font-weight="bold">+</text><circle cx="180" cy="115" r="14" fill="#e8f0fe" stroke="#336" stroke-width="2"/><text x="176" y="121" font-size="14" fill="#336">+</text><circle cx="280" cy="115" r="14" fill="#e8f0fe" stroke="#336" stroke-width="2"/><text x="276" y="121" font-size="14" fill="#336">+</text><circle cx="380" cy="115" r="14" fill="#fdeaea" stroke="#933" stroke-width="2"/><text x="376" y="121" font-size="14" fill="#933">−</text><line x1="270" y1="59" x2="188" y2="103" stroke="#888" stroke-width="1.5"/><line x1="280" y1="61" x2="280" y2="101" stroke="#888" stroke-width="1.5"/><line x1="290" y1="59" x2="372" y2="103" stroke="#888" stroke-width="1.5"/><line x1="172" y1="128" x2="140" y2="168" stroke="#bbb" stroke-width="1.2"/><line x1="180" y1="129" x2="180" y2="168" stroke="#bbb" stroke-width="1.2"/><line x1="188" y1="128" x2="220" y2="168" stroke="#bbb" stroke-width="1.2"/><line x1="272" y1="128" x2="252" y2="168" stroke="#bbb" stroke-width="1.2"/><line x1="280" y1="129" x2="280" y2="168" stroke="#bbb" stroke-width="1.2"/><line x1="288" y1="128" x2="308" y2="168" stroke="#bbb" stroke-width="1.2"/><line x1="372" y1="128" x2="344" y2="168" stroke="#bbb" stroke-width="1.2"/><line x1="380" y1="129" x2="380" y2="168" stroke="#bbb" stroke-width="1.2"/><line x1="388" y1="128" x2="416" y2="168" stroke="#bbb" stroke-width="1.2"/><text x="404" y="70" font-size="13" fill="#444">子照抄父的概率 (1+θ)/2</text><text x="80" y="215" font-size="13" fill="#1a7a4a">θ 小：答案几步就忘光</text><text x="300" y="215" font-size="13" fill="#c0392b">θ 大：祖先痕迹残留</text><text x="90" y="250" font-size="14" fill="#333" font-weight="bold">分界线：tanh β ≤ (d−1)^(−1/2)（含等号）</text><text x="110" y="272" font-size="12" fill="#666">d=3 时即 θ ≤ 1/√2 ≈ 0.707，恰好落在分界线上仍可无根生成</text></svg>
+
+</div>
+
+代入 `@@M@@d=3@@`：分界线是 `@@M@@\theta^2\le 1/2@@`。`@@M@@\theta@@` 很小时信息传两三代就遗忘干净，可以无根生成；越过阈值时根部信息长存，已被证明不可能；最难的临界点 `@@M@@\theta=1/\sqrt2@@` 本文证明仍然可行——这正是 Nam–Sly–Zhang 猜想的最后一块拼图。
+
+**为什么值得关心**
+
+它把"局部独立随机性能否重现全局平衡态"在树上彻底画上句号，连最刁钻的等号情形也一并解决，且构造的规则与树的全部对称性严格兼容。
+
+> 已 Lean 形式化
+
 ## 一句话结论
 
 本文完全确定了无穷 `@@M@@d@@`-正则树上自由零场铁磁 Ising 态作为"独立同分布标签的因子"（factor of IID）的精确门槛：当且仅当 `@@M@@\tanh\beta\le(d-1)^{-1/2}@@`，含临界等号情形。这证明了 Nam–Sly–Zhang 猜想，且构造的因子与每个树自同构在每个输入上交换。

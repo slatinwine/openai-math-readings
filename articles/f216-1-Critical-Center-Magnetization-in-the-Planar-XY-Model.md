@@ -13,6 +13,62 @@ pdfname: ""
 
 > 结果族 216：Critical and near-critical XY scaling and BKT universality　·　学科：Probability and statistical mechanics　·　验证状态：暂无形式化证明，请以社区核验为准
 
+## 入门导读 🐣
+
+一间方形大厅，四面墙上的指南针全被固定朝同一个方向；大厅正中央那枚自由的指南针会被带动多少？这篇论文算的就是这个数：在恰好"临界"的温度下，中心箭头的平均偏转正比于 `@@M@@n^{-1/8}@@`，再乘一个慢吞吞的因子 `@@M@@(\log n)^{1/16}@@`——大厅边长翻倍，偏转只缩小不到一成，慢得出奇。
+
+**关键词卡片**
+
+- 中心磁化（center magnetization）：边界全部对齐时，中心箭头平均朝边界方向偏转的幅度
+- 边界条件（boundary condition）：预先规定边界自旋方向的"外部指令"
+- 临界逆温度（critical inverse temperature）：温度参数的分界值 `@@M@@b_c@@`，此处关联恰不指数衰减
+- 对偶高度模型（dual height model）：经 Fourier 展开把箭头模型翻译成的整值"台阶"模型
+- 条件定理（conditional theorem）：显式引用三篇姊妹篇输入之后成立的定理
+
+**看个具体例子**
+
+设大厅边长为 `@@M@@n@@` 个格距，定理给出 `@@M@@a_n=A_{\rm XY}\,n^{-1/8}(\log n)^{1/16}@@`。数字版（`@@M@@A_{\rm XY}=1@@`、自然对数、`@@M@@n=10^6@@`）：`@@M@@n^{-1/8}=10^{-0.75}\approx 0.18@@`，`@@M@@(\log n)^{1/16}\approx 1.17@@`，合计 `@@M@@a_n\approx 0.21@@`。
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280">
+<rect x="180" y="30" width="220" height="220" fill="none" stroke="#444444" stroke-width="2"/>
+<line x1="205" y1="44" x2="230" y2="44" stroke="#1a6faa" stroke-width="3"/>
+<polygon points="230,39 240,44 230,49" fill="#1a6faa"/>
+<line x1="265" y1="44" x2="290" y2="44" stroke="#1a6faa" stroke-width="3"/>
+<polygon points="290,39 300,44 290,49" fill="#1a6faa"/>
+<line x1="325" y1="44" x2="350" y2="44" stroke="#1a6faa" stroke-width="3"/>
+<polygon points="350,39 360,44 350,49" fill="#1a6faa"/>
+<line x1="205" y1="236" x2="230" y2="236" stroke="#1a6faa" stroke-width="3"/>
+<polygon points="230,231 240,236 230,241" fill="#1a6faa"/>
+<line x1="265" y1="236" x2="290" y2="236" stroke="#1a6faa" stroke-width="3"/>
+<polygon points="290,231 300,236 290,241" fill="#1a6faa"/>
+<line x1="325" y1="236" x2="350" y2="236" stroke="#1a6faa" stroke-width="3"/>
+<polygon points="350,231 360,236 350,241" fill="#1a6faa"/>
+<line x1="192" y1="100" x2="217" y2="100" stroke="#1a6faa" stroke-width="3"/>
+<polygon points="217,95 227,100 217,105" fill="#1a6faa"/>
+<line x1="192" y1="180" x2="217" y2="180" stroke="#1a6faa" stroke-width="3"/>
+<polygon points="217,175 227,180 217,185" fill="#1a6faa"/>
+<line x1="353" y1="100" x2="378" y2="100" stroke="#1a6faa" stroke-width="3"/>
+<polygon points="378,95 388,100 378,105" fill="#1a6faa"/>
+<line x1="353" y1="180" x2="378" y2="180" stroke="#1a6faa" stroke-width="3"/>
+<polygon points="378,175 388,180 378,185" fill="#1a6faa"/>
+<line x1="262" y1="140" x2="282" y2="140" stroke="#c0392b" stroke-width="3" stroke-dasharray="5,4"/>
+<polygon points="282,136 292,140 282,144" fill="#c0392b"/>
+<text x="408" y="48" font-size="14" fill="#1a6faa">边界箭头全对齐</text>
+<text x="302" y="168" font-size="14" fill="#c0392b">中心：微弱偏转</text>
+<text x="140" y="270" font-size="14" fill="#333333">aₙ ≈ A·n^(−1/8)·(log n)^(1/16)</text>
+<text x="60" y="22" font-size="15" fill="#333333">边长 n 的大厅，中心偏转有多小？</text>
+</svg>
+
+</div>
+
+**为什么值得关心**
+
+这个 `@@M@@(\log n)^{1/16}@@` 正是姊妹篇"临界两点关联带 `@@M@@(\log r)^{1/8}@@`"的平方来源：中心磁化先带上 `@@M@@1/16@@` 次对数，平方后恰好变成 `@@M@@1/8@@`，三篇论文在同一个常数上互相咬合成完整证据链。证明要跨两道坎：高度模型的观测密度不能先验地假设很小，作者在相互重叠的有限尺度区间上引入截断观测来处理；带环量缺陷进入递归会产生难以估计的归一化因子，办法是让两个尺寸的方盒共用同一历史，使所有标量因子在比值中精确相消。
+
+> 暂无形式化证明（AI 结果待核验）
+
 ## 一句话结论
 
 本文证明：边界自旋全部对齐的方盒中，临界 XY 模型的中心磁化（center magnetization）满足 `@@M@@a_n=A_{\rm XY}n^{-1/8}(\log n)^{1/16}(1+o(1))@@`。在三篇姊妹篇的输入之上，它定出了此前未知的对数修正因子，为临界两点关联的 `@@M@@(\log r)^{1/8}@@` 提供了"平方"来源。

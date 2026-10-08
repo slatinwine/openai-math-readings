@@ -13,6 +13,70 @@ pdfname: ""
 
 > 结果族 073：The Falconer distance conjecture　·　学科：Real and complex analysis　·　验证状态：主结果已 Lean 形式化
 
+## 入门导读 🐣
+
+在纸上撒一撮无限细的"灰尘"（一个紧集），问一个朴素的问题：灰尘里任意两点之间的距离，一共能凑出多少个不同的数？这篇论文证明：只要灰尘够"厚"——厚度（维数）超过所在空间维数的一半——这些距离就不只是零星几个数，而是实打实占满一段连续区间。
+
+**关键词卡片**
+
+- Hausdorff 维数（Hausdorff dimension）：给集合"厚薄"打分：有限点集是 0，曲线是 1，平面块是 2，灰尘可以拿 1.26 这样的分数。
+- 距离集（distance set）：`@@M@@\Delta(E)=\{|x-y|:x,y\in E\}@@`，把所有点对的距离收集成一个数集。
+- 正勒贝格测度（positive Lebesgue measure）：不只是无穷多个数，而是占据一段有长度的连续区间。
+- Falconer 距离猜想：1985 年提出——维数大于 `@@M@@d/2@@` 就应保证距离集有正长度；悬置四十年，本文在一切维度证明。
+
+**看个具体例子**
+
+左图是一撮"厚灰尘"：任取一对点就得到一个距离；右图是定理的结论——所有距离铺满一段区间。
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280">
+  <text x="155" y="52" text-anchor="middle" font-size="14" fill="#333">紧集 E（维数 &gt; d/2）</text>
+  <g fill="#7a7a7a">
+    <circle cx="110" cy="105" r="4"/>
+    <circle cx="135" cy="92" r="4"/>
+    <circle cx="160" cy="108" r="4"/>
+    <circle cx="185" cy="96" r="4"/>
+    <circle cx="205" cy="118" r="4"/>
+    <circle cx="100" cy="135" r="4"/>
+    <circle cx="126" cy="142" r="4"/>
+    <circle cx="152" cy="138" r="4"/>
+    <circle cx="178" cy="150" r="4"/>
+    <circle cx="204" cy="146" r="4"/>
+    <circle cx="108" cy="168" r="4"/>
+    <circle cx="134" cy="178" r="4"/>
+    <circle cx="160" cy="172" r="4"/>
+    <circle cx="186" cy="186" r="4"/>
+    <circle cx="206" cy="170" r="4"/>
+    <circle cx="122" cy="205" r="4"/>
+    <circle cx="148" cy="212" r="4"/>
+    <circle cx="174" cy="208" r="4"/>
+    <circle cx="96" cy="152" r="4"/>
+    <circle cx="212" cy="200" r="4"/>
+    <circle cx="143" cy="122" r="4"/>
+    <circle cx="167" cy="128" r="4"/>
+  </g>
+  <line x1="110" y1="105" x2="198" y2="222" stroke="#c0392b" stroke-width="2" stroke-dasharray="5 4"/>
+  <circle cx="110" cy="105" r="6" fill="#c0392b"/>
+  <circle cx="198" cy="222" r="6" fill="#c0392b"/>
+  <text x="216" y="96" font-size="13" fill="#c0392b">两点定出一个距离 t</text>
+  <line x1="330" y1="222" x2="530" y2="222" stroke="#333" stroke-width="2"/>
+  <rect x="368" y="215" width="114" height="14" fill="#d9f2dd" stroke="#1a7f37" stroke-width="1.5"/>
+  <text x="326" y="246" font-size="12" fill="#333">0</text>
+  <text x="504" y="246" font-size="12" fill="#333">直径</text>
+  <text x="430" y="196" text-anchor="middle" font-size="13" fill="#1a7f37">距离集 Δ(E) 占满一段区间</text>
+</svg>
+
+</div>
+
+数字版：在平面（`@@M@@d=2@@`）上阈值是 `@@M@@1@@`。Koch 雪花曲线的维数是 `@@M@@\log 4/\log 3\approx 1.26>1@@`，于是定理保证它的距离集必有一段正长度。注意"严格大于"不可省略：恰在阈值处的格点型反例可以失败。
+
+**为什么值得关心**
+
+这是几何测度论的中心猜想之一、Erdős 不同距离问题的"连续版"，如今在每个维度、不带任何正则性假设地彻底解决。
+
+> 已 Lean 形式化
+
 ## 一句话结论
 
 本文在一切维度 `@@M@@d\ge2@@` 证明了 Falconer 距离猜想：紧集 `@@M@@E\subset\mathbb{R}^d@@` 的 Hausdorff 维数只要严格超过 `@@M@@d/2@@`，其欧氏距离集就必有正勒贝格测度。这一悬置四十年的临界指标问题被彻底解决，且不附加任何正则性假设。

@@ -13,6 +13,59 @@ pdfname: ""
 
 > 结果族 239：Sharp singularity rates for symmetric random sign matrices　·　学科：Probability and statistical mechanics　·　验证状态：暂无形式化证明，请以社区核验为准
 
+## 入门导读 🐣
+
+用掷硬币填满一面"镜子"方阵：第 `@@M@@i@@` 行 `@@M@@j@@` 列与第 `@@M@@j@@` 行 `@@M@@i@@` 列永远相同。这面随机镜子有多大机会不可逆？论文给出精确答案：概率是 `@@M@@(1/2)^n@@` 量级，而且几乎全部"罪责"来自最笨的一种情形——两行长得一模一样。
+
+**关键词卡片**
+
+- 对称随机矩阵（symmetric random matrix）：满足 `@@M@@a_{ij}=a_{ji}@@` 的随机方阵，像沿对角线立了一面镜子
+- 奇异（singular）：行列式为 0，线性方程组失去唯一解
+- 两行相等（two equal rows）：最朴素的奇异原因，概率恰为 `@@M@@2^{-n}@@`；本文证明其他机制合起来也不超过它
+- 判别群（discriminant group）：由矩阵派生的有限交换群，论文用它给"退化风险"记一本算术账
+- 主子式（principal minor）：删去同号行列后剩下的子矩阵，证明沿它逐级推进
+
+**看个具体例子**
+
+定理：`@@M@@\Pr(\det A_n=0)=\left(\tfrac12+o(1)\right)^n@@`。下界：指定两行相等的概率恰为 `@@M@@2^{-n}@@`（两行交点之外的位置独立配合）；上界：整数核向量、近似核向量等其余机制合计不超过同一指数。`@@M@@n=100@@` 时约 `@@M@@2^{-100}\approx8\times10^{-31}@@`。下图是一个 `@@M@@n=3@@` 的退化样本：前两行完全相同，行列式必为 0；这个小样本里"前两行相同"的概率是 `@@M@@2^{-3}=1/8@@`，正是定理公式的缩影。
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280">
+  <text x="280" y="28" text-anchor="middle" font-size="15">镜子矩阵退化的头号原因：两行一模一样</text>
+  <rect x="121" y="56" width="208" height="138" fill="#ffe8d9"/>
+  <line x1="120" y1="55" x2="120" y2="265" stroke="#333" stroke-width="1.5"/>
+  <line x1="190" y1="55" x2="190" y2="265" stroke="#333" stroke-width="1.5"/>
+  <line x1="260" y1="55" x2="260" y2="265" stroke="#333" stroke-width="1.5"/>
+  <line x1="330" y1="55" x2="330" y2="265" stroke="#333" stroke-width="1.5"/>
+  <line x1="120" y1="55" x2="330" y2="55" stroke="#333" stroke-width="1.5"/>
+  <line x1="120" y1="125" x2="330" y2="125" stroke="#333" stroke-width="1.5"/>
+  <line x1="120" y1="195" x2="330" y2="195" stroke="#333" stroke-width="1.5"/>
+  <line x1="120" y1="265" x2="330" y2="265" stroke="#333" stroke-width="1.5"/>
+  <text x="155" y="97" text-anchor="middle" font-size="20">1</text>
+  <text x="225" y="97" text-anchor="middle" font-size="20">1</text>
+  <text x="295" y="97" text-anchor="middle" font-size="20">−1</text>
+  <text x="155" y="167" text-anchor="middle" font-size="20">1</text>
+  <text x="225" y="167" text-anchor="middle" font-size="20">1</text>
+  <text x="295" y="167" text-anchor="middle" font-size="20">−1</text>
+  <text x="155" y="237" text-anchor="middle" font-size="20">−1</text>
+  <text x="225" y="237" text-anchor="middle" font-size="20">−1</text>
+  <text x="295" y="237" text-anchor="middle" font-size="20">−1</text>
+  <text x="350" y="90" font-size="14">第 1 行</text>
+  <text x="350" y="160" font-size="14">第 2 行＝第 1 行</text>
+  <text x="350" y="125" font-size="15" fill="#d62728">⇒ det A = 0</text>
+  <text x="350" y="205" font-size="13" fill="#555">P(指定两行相同)=2^(−n)</text>
+  <text x="350" y="230" font-size="13" fill="#555">n=100 时约 8×10^(−31)</text>
+</svg>
+
+</div>
+
+**为什么值得关心**
+
+对称随机矩阵是自旋玻璃等物理模型的基本对象，奇异性率是它的"体质指标"；非对称情形早有精确答案，本文补上了对称这块拼图。
+
+> 暂无形式化证明（AI 结果待核验）
+
 ## 一句话结论
 
 证明了对角线及以上元素独立、均匀取 `@@M@@\pm1@@` 的对称随机矩阵满足 `@@M@@\Pr(\det A_n=0)=(1/2+o(1))^n@@`：最朴素的"两行相等"机制就是奇异的全部指数级来源，对称模型悬置的精确奇异率由此确定。

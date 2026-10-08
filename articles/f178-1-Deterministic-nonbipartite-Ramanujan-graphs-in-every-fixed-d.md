@@ -13,6 +13,69 @@ pdfname: ""
 
 > 结果族 178：Deterministic nonbipartite Ramanujan graphs in every fixed degree　·　学科：Combinatorics　·　验证状态：暂无形式化证明，请以社区核验为准
 
+## 入门导读 🐣
+
+每张网络都有自己的"振动频率"（特征值）：非平凡频率越小，网络越均匀、信息扩散越快。Ramanujan 图是频率恰好压在理论天花板上的完美网络，此前人们只能在特定度数或"带误差"的条件下确定性地造它。这篇论文造出了全自动机床：你指定顶点数和度数，它直接打印一张精确达标的网。
+
+**关键词卡片**
+
+- d-正则图（d-regular graph）：每个顶点恰好连 d 条边，人人平等。
+- 特征值（eigenvalue）：邻接矩阵的固有频率；非平凡频率小意味着扩张性好。
+- Ramanujan 图（Ramanujan graph）：所有非平凡特征值都落在 `@@M@@\pm2\sqrt{d-1}@@` 内的 d-正则图。
+- Alon–Boppana 界（Alon–Boppana bound）：顶点数变大时该区间无法再收紧，说明此界是最优天花板。
+- 非二部（nonbipartite）：顶点不能分成"边全跨界"的两堆，双侧谱界因此更难控制。
+
+**看个具体例子**
+
+定理：对每个 d≥3 与充分大的偶数 n，算法在多项式时间内输出简单非二部 d-正则图，其一切非平凡特征值满足 `@@M@@-2\sqrt{d-1}<\lambda<2\sqrt{d-1}@@`。代入 d=3：全部非平凡频率严格落在 ±2.83 之间（下图蓝点），而平凡频率 3 独居界外。随机正则图本身早已以高概率近似达标——难的从来不是存在，而是把"扔骰子碰运气"换成一步步确定的工序，还要精确压线、不带一丝误差。
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280">
+<line x1="124" y1="85" x2="124" y2="150" stroke="#2ca02c" stroke-width="2" stroke-dasharray="6,4"/>
+<line x1="436" y1="85" x2="436" y2="150" stroke="#2ca02c" stroke-width="2" stroke-dasharray="6,4"/>
+<line x1="60" y1="150" x2="500" y2="150" stroke="#555" stroke-width="2"/>
+<line x1="60" y1="143" x2="60" y2="157" stroke="#555" stroke-width="2"/>
+<line x1="115" y1="143" x2="115" y2="157" stroke="#555" stroke-width="2"/>
+<line x1="170" y1="143" x2="170" y2="157" stroke="#555" stroke-width="2"/>
+<line x1="225" y1="143" x2="225" y2="157" stroke="#555" stroke-width="2"/>
+<line x1="280" y1="143" x2="280" y2="157" stroke="#555" stroke-width="2"/>
+<line x1="335" y1="143" x2="335" y2="157" stroke="#555" stroke-width="2"/>
+<line x1="390" y1="143" x2="390" y2="157" stroke="#555" stroke-width="2"/>
+<line x1="445" y1="143" x2="445" y2="157" stroke="#555" stroke-width="2"/>
+<line x1="500" y1="143" x2="500" y2="157" stroke="#555" stroke-width="2"/>
+<circle cx="137" cy="150" r="6" fill="#1f77b4"/>
+<circle cx="176" cy="150" r="6" fill="#1f77b4"/>
+<circle cx="209" cy="150" r="6" fill="#1f77b4"/>
+<circle cx="247" cy="150" r="6" fill="#1f77b4"/>
+<circle cx="302" cy="150" r="6" fill="#1f77b4"/>
+<circle cx="346" cy="150" r="6" fill="#1f77b4"/>
+<circle cx="390" cy="150" r="6" fill="#1f77b4"/>
+<circle cx="423" cy="150" r="6" fill="#1f77b4"/>
+<circle cx="445" cy="150" r="7" fill="#333"/>
+<text x="60" y="178" fill="#555" font-size="12" text-anchor="middle">-4</text>
+<text x="115" y="178" fill="#555" font-size="12" text-anchor="middle">-3</text>
+<text x="170" y="178" fill="#555" font-size="12" text-anchor="middle">-2</text>
+<text x="225" y="178" fill="#555" font-size="12" text-anchor="middle">-1</text>
+<text x="280" y="178" fill="#555" font-size="12" text-anchor="middle">0</text>
+<text x="335" y="178" fill="#555" font-size="12" text-anchor="middle">1</text>
+<text x="390" y="178" fill="#555" font-size="12" text-anchor="middle">2</text>
+<text x="445" y="178" fill="#555" font-size="12" text-anchor="middle">3</text>
+<text x="500" y="178" fill="#555" font-size="12" text-anchor="middle">4</text>
+<text x="124" y="72" fill="#2ca02c" font-size="13" text-anchor="middle">-2√2 ≈ -2.83</text>
+<text x="436" y="72" fill="#2ca02c" font-size="13" text-anchor="middle">+2√2 ≈ +2.83</text>
+<text x="455" y="122" fill="#333" font-size="13">平凡值 d=3</text>
+<text x="280" y="222" fill="#555" font-size="13" text-anchor="middle">d = 3 的 Ramanujan 图：非平凡特征值（蓝点）严格落在 ±2√2 内</text>
+</svg>
+
+</div>
+
+**为什么值得关心**
+
+这是首个同时做到精确谱界、指定偶数阶、非二部与确定性多项式时间的构造，扩张图的"按需生产"成为可能。
+
+> 暂无形式化证明（AI 结果待核验）
+
 ## 一句话结论
 
 对每个固定度 `@@M@@d\ge 3@@`，本文在每个充分大的偶数阶 `@@M@@n@@` 上确定性构造简单、非二部（nonbipartite）的 `@@M@@d@@`-正则 Ramanujan 图：全部非平凡特征值严格落在 `@@M@@(-2\sqrt{d-1},\,2\sqrt{d-1})@@` 内，并以多项式位操作输出完整邻接表——首次把精确谱界、指定阶数与确定性同时实现。

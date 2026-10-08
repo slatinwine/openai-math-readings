@@ -13,6 +13,34 @@ pdfname: ""
 
 > 结果族 227：Critical SK autocorrelation processes and dynamics across the temperature transition　·　学科：Probability and statistical mechanics　·　验证状态：暂无形式化证明，请以社区核验为准
 
+## 入门导读 🐣
+
+一杯热水突然扔进冰水（"淬火"），它多久、以什么方式恢复平静？论文给"玻璃态磁铁"做了同样的体检：让上百万个随机取向的小磁针从完全混乱的状态出发开始演化，测量它们对初始状态的记忆如何衰减。结论：记忆按精确标度衰减，且极限与内部耦合的微观细节完全无关。
+
+**关键词卡片**
+
+- SK 自旋玻璃（Sherrington–Kirkpatrick model）：`@@M@@n@@` 个 `@@M@@\pm1@@` 自旋两两耦合、耦合系数随机带正负的全连接模型。
+- 淬火（quench）：从简单的非平衡初态（这里是独立公平自旋）出发，在固定温度下演化。
+- 自相关（autocorrelation）：系统此刻与稍早构型的平均相似度，是"记忆"的度量。
+- 临界慢化（critical slowing down）：临界温度 `@@M@@\beta=1@@` 处记忆时间随 `@@M@@n@@` 发散，正确的观测窗口是 `@@M@@n^{2/3}@@`。
+- 普适性（universality）：高斯与 `@@M@@\pm1@@`（Rademacher）两类耦合给出完全相同的极限定律。
+
+**看个具体例子**
+
+标度关系是公式卡：时间以 `@@M@@T_n=n^{2/3}@@` 为单位、幅度乘 `@@M@@n^{1/3}@@`，即淬火自相关 `@@M@@B_{n,J}(s,t)=n^{-2/3}\sum_i\mathbb E[\sigma_i(sT_n)\sigma_i((s{+}t)T_n)]@@`。代入 `@@M@@n=10^6@@`：一步"宏观时间"对应 `@@M@@10^4@@` 次自旋更新，相关幅度要放大 100 倍才能看清极限曲线。两个极限函数的关系如下图：等待时间 `@@M@@s\to\infty@@` 时，淬火极限 `@@M@@B_g(s,\cdot)@@` 弛豫回平稳极限 `@@M@@A_g@@`。
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280"><line x1="70" y1="225" x2="500" y2="225" stroke="#333" stroke-width="2"/><path d="M512,225 l-12,-6 l0,12 z" fill="#333"/><line x1="70" y1="225" x2="70" y2="50" stroke="#333" stroke-width="2"/><path d="M70,38 l-6,12 l12,0 z" fill="#333"/><path d="M70,55 C160,85 240,135 500,200" fill="none" stroke="#333" stroke-width="3" stroke-dasharray="8 6"/><path d="M70,95 C160,125 240,165 500,218" fill="none" stroke="#c0392b" stroke-width="3"/><line x1="310" y1="190" x2="310" y2="162" stroke="#666" stroke-width="2"/><path d="M310,154 l-5,10 l10,0 z" fill="#666"/><text x="320" y="205" font-size="13">等待 s→∞</text><text x="352" y="138" font-size="13">A：平稳极限(虚线)</text><text x="412" y="245" font-size="13">B：淬火(实线)</text><text x="200" y="255" font-size="13">滞后 t（宏观时间）</text><text x="12" y="115" font-size="13">相关强度</text></svg>
+
+</div>
+
+**为什么值得关心**
+
+它首次严格刻画了临界点处非平衡起点的动力学极限：极限由初态选定，并随等待时间弛豫回平稳极限，与数值物理的长期猜想相印证。
+
+> 暂无形式化证明（AI 结果待核验）
+
 ## 一句话结论
 
 证明了 SK 自旋玻璃在临界温度 `@@M@@\beta=1@@` 处，从独立均匀自旋"淬火"（quench）出发的两点自相关函数与平稳自相关函数联合收敛到同一个随机泛函极限，且该极限对高斯与拉德马赫（Rademacher）两类耦合普适；淬火极限随等待时间增长弛豫回平稳极限。

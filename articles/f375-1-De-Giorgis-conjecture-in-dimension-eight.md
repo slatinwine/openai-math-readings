@@ -13,6 +13,48 @@ pdfname: ""
 
 > 结果族 375：De Giorgi's conjecture in dimension eight　·　学科：Partial differential equations　·　验证状态：暂无形式化证明，请以社区核验为准
 
+## 入门导读 🐣
+
+油和水倒进杯子会自动分层，中间出现一条界面。现在把整个空间想象成装满"两种状态"的介质，让界面可以任意弯曲盘绕——方程确实允许很复杂的形状。1979 年 De Giorgi 猜：只要解沿某个方向始终单调（永远"一边高一边低"），界面就只能是一张平面。这篇论文在最困难的第八维证明了这个猜想。
+
+**关键词卡片**
+
+- Allen–Cahn 方程（Allen–Cahn equation）：描述相变的基本方程 Δu=u³−u，解在 −1 与 +1 两"相"之间过渡。
+- De Giorgi 猜想（De Giorgi's conjecture）：单调的有界整体解必为"平面波"——界面是一族平行平面。
+- tanh 平面波（planar wave）：一维标准解 u=tanh((e·x−c)/√2)，水平集是一族平行平面。
+- 稳定解（stable solution）：对任何小扰动都不"亏能量"的解，比单调解更宽泛；论文顺带完整分类了七维稳定解。
+- 临界维数（critical dimension）：八维以下刚性成立、九维出现弯曲反例的分界，与极小曲面里 Simons 锥出现的维数同源。
+
+**看个具体例子**
+
+标准答案长这样：u(x)=tanh(x₁/√2)。当 x₁→−∞ 时 u≈−1（一相），x₁→+∞ 时 u≈+1（另一相），过渡层宽度固定，取值 0 的水平集恰好是平面 x₁=0。定理断言：八维空间里任何单调解最终都是这种形状，只允许换方向、挪位置，不许弯、不许卷。
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280">
+<line x1="50" y1="150" x2="520" y2="150" stroke="#333" stroke-width="1.5"/>
+<line x1="90" y1="30" x2="90" y2="255" stroke="#333" stroke-width="1.5"/>
+<line x1="50" y1="60" x2="520" y2="60" stroke="#999" stroke-dasharray="6,4"/>
+<line x1="50" y1="240" x2="520" y2="240" stroke="#999" stroke-dasharray="6,4"/>
+<path d="M 50 238 C 200 238, 250 62, 520 62" fill="none" stroke="#c0392b" stroke-width="3"/>
+<circle cx="287" cy="150" r="5" fill="#333"/>
+<line x1="287" y1="150" x2="287" y2="66" stroke="#333" stroke-dasharray="4,3"/>
+<text x="430" y="50" font-size="13">u=1（一相）</text>
+<text x="430" y="262" font-size="13">u=−1（另一相）</text>
+<text x="150" y="130" font-size="13">曲线：u = tanh(x₁/√2)</text>
+<text x="300" y="100" font-size="13">交界是平面 x₁=0</text>
+<text x="70" y="42" font-size="13">u</text>
+<text x="498" y="170" font-size="13">x₁</text>
+</svg>
+
+</div>
+
+**为什么值得关心**
+
+这是 1979 年提出的著名猜想的最后一块缺口：此前八维的结果都要附加"方向极限"假设。八维正是"平面刚性"与反例的分界维数，与极小曲面的 Bernstein 问题遥相呼应——猜想为什么恰好停在八维，这里给出了终极答案。
+
+> 暂无形式化证明（AI 结果待核验）
+
 ## 一句话结论
 
 论文在临界维数八上肯定地解决 De Giorgi 猜想：`@@M@@\mathbb R^8@@` 上沿一个方向严格单调的有界整体解 `@@M@@\Delta u=u^3-u@@` 必为一维 `@@M@@\tanh@@` 平面波，且不需要 Savin 的方向极限假设；更强地，`@@M@@\mathbb R^7@@` 上稳定解只有常数阱与平面波两类。

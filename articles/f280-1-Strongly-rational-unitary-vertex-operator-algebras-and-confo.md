@@ -13,6 +13,51 @@ pdfname: ""
 
 > 结果族 280：Unitary vertex operator algebras and conformal nets　·　学科：Mathematical physics　·　验证状态：暂无形式化证明，请以社区核验为准
 
+## 入门导读 🐣
+
+同一种二维"共形场论"有两种记账语言：一种像乐谱，逐个记下场怎么振动（顶点算子代数）；一种像行政区划图，把可观测量划给圆周的每段区间（共形网）。两本账理应记的是同一本经，但此前只在零星特例上核对过。本文证明：对最核心的一类好理论，两本账完全等价，还配了一部逐条对照的双语词典。
+
+**关键词卡片**
+
+- 顶点算子代数（vertex operator algebra）：像乐谱，用场的振动模式与代数恒等式记录理论
+- 共形网（conformal net）：像地图，把可观测量的算子代数贴到圆周的区间上
+- 强有理（strongly rational）：表示只有有限多个等良好性质，"讲道理"的理论
+- 酉（unitary）：带有与量子力学概率解释相容的内积
+- 张量范畴等价（tensor equivalence）：两边的"表示世界"连同拼接与交换规则一一对应
+
+**看个具体例子**
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280">
+  <rect x="20" y="40" width="220" height="150" fill="none" stroke="#333" stroke-width="1.5"/>
+  <text x="38" y="66" font-size="14" fill="#000">顶点算子代数（像乐谱）</text>
+  <path d="M45 110 q10 -16 20 0 q10 16 20 0 q10 -16 20 0" fill="none" stroke="#06c" stroke-width="1.5"/>
+  <path d="M45 148 q12 10 24 0 q12 -10 24 0 q12 10 24 0" fill="none" stroke="#06c" stroke-width="1.5"/>
+  <text x="140" y="122" font-size="12" fill="#06c">场的振动模式</text>
+  <text x="38" y="175" font-size="12" fill="#000">每个场 = 一串模式与恒等式</text>
+  <circle cx="425" cy="115" r="66" fill="none" stroke="#333" stroke-width="1.5"/>
+  <line x1="373" y1="85" x2="477" y2="85" stroke="#c00" stroke-width="4"/>
+  <text x="385" y="72" font-size="12" fill="#c00">一段区间</text>
+  <text x="360" y="34" font-size="14" fill="#000">共形网（像地图）</text>
+  <text x="348" y="212" font-size="12" fill="#000">区间 ↦ 可观测量的代数</text>
+  <line x1="248" y1="115" x2="348" y2="115" stroke="#000" stroke-width="2"/>
+  <path d="M348 115 l-11 -6 v12 z" fill="#000"/>
+  <text x="272" y="102" font-size="13" fill="#000">词典</text>
+  <text x="55" y="240" font-size="13" fill="#000">单模 ↔ 扇区；融合 ↔ Connes 融合；</text>
+  <text x="55" y="262" font-size="13" fill="#000">两边的"表示世界"一一对应且规则相容</text>
+</svg>
+
+</div>
+
+账本核对（数字版）：VOA 的每一个单模，恰好对应网的一个有限指标扇区；VOA 侧融合维数的平方和 `@@M@@\sum_i d(M_i)^2@@`，恰等于网的双区间指标 `@@M@@\mu(A_V)@@`——两边算出的总数分毫不差。
+
+**为什么值得关心**
+
+"乐谱派"与"地图派"几十年各说各话，本文在最常用的一大类对象上把两套语言严格焊接成一体，此后两边的结果可以互相搬运。
+
+> 暂无形式化证明（AI 结果待核验）
+
 ## 一句话结论
 
 证明任一单酉强有理顶点算子代数都自动满足能量界与强局部性，从而生成完全有理共形网；全部单模可酉化，且模范畴与网的有限指标扇区构成辫子酉张量等价——两种手征场论语言在最核心一类对象上被证等同。

@@ -13,6 +13,34 @@ pdfname: ""
 
 > 结果族 290：Relative bicentralizers and modular spectral recovery　·　学科：Operator algebras　·　验证状态：主结果已 Lean 形式化
 
+## 入门导读 🐣
+
+一段音乐滑向某个极高的音，观察窗口收缩到一点，规格有限的普通耳机似乎注定听不清。这篇论文证明：总能造出一副"规格封顶"的耳机，把那点微弱信号照样稳定地放大出来——这就是"有界恢复"。观察窗口叫"谱带"，是模演化频率轴上的一段区间；"规格"就是算子的范数上限。
+
+**关键词卡片**
+
+- 模自同构群（modular automorphism group）`@@M@@\sigma^\phi@@`：态随时间的演化流动
+- 中心化子（centralizer）：演化下的不动点集合
+- 谱带（spectral band）：频率或能量的观察窗口
+- 一致有界（uniformly bounded）：规格统一封顶 `@@M@@\|v\|\le C_*@@`
+- 双中心子（bicentralizer）：Connes 猜想的主角，衡量态的"余威"
+
+**看个具体例子**
+
+数字版定理：若收缩谱带上的平均信号 `@@M@@\limsup m_t\|TU_th_n\|^2>0@@`（`@@M@@T@@` 是任意有界算子，`@@M@@m@@` 是一种平移不变的平均），则存在代数元素 `@@M@@v@@` 使 `@@M@@\|v\|\le C_*@@` 且 `@@M@@\|Tv\xi\|\ge\eta>0@@`（`@@M@@\xi=\varphi^{1/2}@@` 是标准向量）——音量 `@@M@@\eta@@` 与规格 `@@M@@C_*@@` 都不随窗口变窄而恶化。原论证只能用无界的"理想耳朵"（谱向量）捕获信号，本定理把桥铺到了有界世界。
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280"><line x1="40" y1="210" x2="520" y2="210" stroke="#333" stroke-width="2"/><text x="515" y="232" text-anchor="end" font-size="12">频率轴（模谱）</text><rect x="170" y="140" width="220" height="70" fill="#eef" stroke="#369" stroke-width="1"/><rect x="230" y="140" width="100" height="70" fill="#dde" stroke="#369" stroke-width="1"/><rect x="262" y="140" width="36" height="70" fill="#ccd" stroke="#369" stroke-width="1"/><line x1="280" y1="122" x2="280" y2="210" stroke="#999" stroke-width="1" stroke-dasharray="4,4"/><text x="280" y="132" text-anchor="middle" font-size="12">收缩到点 s</text><rect x="180" y="30" width="200" height="44" rx="8" fill="#efe" stroke="#396" stroke-width="2"/><text x="280" y="57" text-anchor="middle" font-size="12">耳机 v∈M，‖v‖≤C*</text><line x1="280" y1="136" x2="280" y2="82" stroke="#396" stroke-width="2"/><polygon points="280,76 274,90 286,90" fill="#396"/><text x="440" y="110" text-anchor="middle" font-size="13">仍测得 ‖Tvξ‖≥η</text><text x="280" y="262" text-anchor="middle" font-size="13">窗口再窄，规格封顶的耳机也测得到信号</text></svg>
+
+</div>
+
+**为什么值得关心**
+
+靠这座"有界桥"，论文给出 Connes 双中心子猜想的独立证明（可分预对偶 III`@@M@@_1@@` 因子情形），并推得每个此类因子都含带忠实期望的 MASA——III`@@M@@_1@@` 分类的关键拼图；本族中它的验证状态也最好：主结果已用 Lean 形式化验证，是姊妹篇里最让人放心的一篇。
+
+> 已 Lean 形式化
+
 ## 一句话结论
 
 建立"有界恢复"定理：在标量中心化子假设下，收缩模谱带上的正性检测可由一致有界的代数元素实现；据此给出 Connes 双中心子猜想的独立证明——可分预对偶 III`@@M@@_1@@` 因子上任何忠实正规态的双中心子都是标量。

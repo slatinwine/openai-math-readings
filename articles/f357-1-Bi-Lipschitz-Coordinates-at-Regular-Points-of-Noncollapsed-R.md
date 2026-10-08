@@ -13,6 +13,54 @@ pdfname: ""
 
 > 结果族 357：Bi-Lipschitz coordinates at every regular RCD point　·　学科：Differential geometry　·　验证状态：暂无形式化证明，请以社区核验为准
 
+## 入门导读 🐣
+
+给一块皱巴巴、但放大看会越来越平整的地形画平面地图，能否保证这张图既不把距离拉得太夸张、也不压得太离谱？论文证明：只要某点在任意倍数放大后都趋于平坦的欧氏空间（正则点），它周围就一定能装上一张"比例尺误差不超过固定倍数"的坐标地图。
+
+**关键词卡片**
+
+- 非坍缩 RCD 空间（noncollapsed RCD(K,n)）：参考测度恰为 `@@M@@n@@` 维 Hausdorff 测度的 RCD 空间——"维数不打折"。
+- 正则点（regular point）：所有切空间都同构于 `@@M@@\mathbb R^n@@` 的点。
+- 双 Lipschitz（bi-Lipschitz）：映射及其逆都至多把距离放大固定倍数。
+- 图卡（chart）：把邻域一一对应到 `@@M@@\mathbb R^n@@` 开集的"地图"。
+- 切空间（tangent space）：在某点无限放大看到的极限形状。
+
+**看个具体例子**
+
+定理：每个正则点 `@@M@@p@@` 都有邻域 `@@M@@U@@` 与同胚 `@@M@@F:U\to V\subset\mathbb R^n@@`，满足 `@@M@@\tfrac{1}{L_n}\,d(x,z)\le|F(x)-F(z)|\le L_n\,d(x,z)@@`；畸变常数 `@@M@@L_n@@` 只依赖维数 `@@M@@n@@`，与曲率、空间、点位统统无关，而且对每个指定正则点成立（不只是"几乎所有点"）。示意：
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280">
+<path d="M30 70 C 90 45, 170 95, 275 60" fill="none" stroke="#1a6" stroke-width="2"/>
+<path d="M30 145 C 100 170, 180 120, 275 150" fill="none" stroke="#1a6" stroke-width="2"/>
+<path d="M30 220 C 90 195, 180 245, 275 210" fill="none" stroke="#1a6" stroke-width="2"/>
+<path d="M95 35 C 110 110, 80 180, 105 250" fill="none" stroke="#1a6" stroke-width="2"/>
+<path d="M180 35 C 200 110, 160 180, 190 250" fill="none" stroke="#1a6" stroke-width="2"/>
+<path d="M255 35 C 270 110, 240 180, 265 250" fill="none" stroke="#1a6" stroke-width="2"/>
+<line x1="287" y1="140" x2="322" y2="140" stroke="#555" stroke-width="2"/>
+<polygon points="332,140 318,134 318,146" fill="#555"/>
+<text x="292" y="126" font-size="14">F</text>
+<line x1="355" y1="70" x2="535" y2="70" stroke="#26d" stroke-width="2"/>
+<line x1="355" y1="140" x2="535" y2="140" stroke="#26d" stroke-width="2"/>
+<line x1="355" y1="210" x2="535" y2="210" stroke="#26d" stroke-width="2"/>
+<line x1="390" y1="35" x2="390" y2="245" stroke="#26d" stroke-width="2"/>
+<line x1="445" y1="35" x2="445" y2="245" stroke="#26d" stroke-width="2"/>
+<line x1="500" y1="35" x2="500" y2="245" stroke="#26d" stroke-width="2"/>
+<text x="42" y="268" font-size="14">正则点邻域（歪网格）</text>
+<text x="382" y="268" font-size="14">ℝⁿ 的直角坐标网格</text>
+</svg>
+
+</div>
+
+歪格与直格的换算恒差不过 `@@M@@L_n@@` 倍。此前三十年只能做出更弱的"双 Hölder 地图"（距离只能按幂律比较），本文把它升级成了真正的线性坐标。
+
+**为什么值得关心**
+
+这正是 Cheeger–Colding 留下、Honda–Zhang 2026 年明确重述的正则点双 Lipschitz 坐标猜想，如今在非坍缩 RCD 框架下彻底解决。
+
+> 暂无形式化证明（AI 结果待核验）
+
 ## 一句话结论
 
 在参考测度恰为 `@@M@@\mathcal H^n@@` 的非坍缩 `@@M@@\mathrm{RCD}(K,n)@@` 空间中，每个正则点（所有切空间均为欧氏空间）都有开邻域双 Lipschitz（bi-Lipschitz）同胚于 `@@M@@\mathbb R^n@@` 的开集，畸变常数只依赖维数 `@@M@@n@@`——解决了 Honda–Zhang 明确重述的正则点双 Lipschitz 坐标猜想。

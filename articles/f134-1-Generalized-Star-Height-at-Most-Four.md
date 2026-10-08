@@ -13,6 +13,34 @@ pdfname: ""
 
 > 结果族 134：Generalized star height at most three　·　学科：Theoretical computer science　·　验证状态：暂无形式化证明，请以社区核验为准
 
+## 入门导读 🐣
+
+计算机靠"模板"认句子：小片段可以拼接、可以重复任意遍，还可以整体"取非"。模板里表示"重复任意遍"的记号是星号，而星号可以一层套一层，像俄罗斯套娃。这篇论文回答一个纯粹的难题：允许取非之后，描述有限自动机认识的所有句子，套娃最多需要几层？答案：4 层永远够。
+
+**关键词卡片**
+
+- 正则语言（regular language）：只有有限记忆的自动机能识别的全部字符串，如"含偶数个 a 的串"。
+- 克莱尼星（Kleene star）：把一段模式重复任意遍，`@@M@@a^*@@` = 空、a、aa、aaa……
+- 取补（complement）：逻辑里的"非"，把不属于该语言的字符串全体拿来当材料。
+- 广义星高（generalized star height）：允许取补后，表达式中星号最深嵌套的层数。
+- 星自由（star-free）：一个星号都不用就能写出的语言，相当于"第 0 层"。
+
+**看个具体例子**
+
+`@@M@@(ab)^*a@@` 里星号套了 1 层，`@@M@@((\cdot)^*)^*@@` 就套了 2 层。定理说的是：无论多复杂的正则语言，都能用原字母表上的字母写成星号嵌套至多 4 层的表达式（外加并、连接、取补）——层数与语言本身、字母表大小统统无关。
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280"><text x="280" y="26" text-anchor="middle" font-size="15" fill="#333">星号嵌套像套娃：论文证明 4 层封顶</text><rect x="30" y="42" width="500" height="222" rx="12" fill="none" stroke="#444" stroke-width="2.5"/><text x="44" y="64" font-size="13" fill="#444">第 4 层星号（最外）</text><rect x="70" y="74" width="420" height="176" rx="10" fill="none" stroke="#666" stroke-width="2.5"/><text x="84" y="96" font-size="13" fill="#666">第 3 层</text><rect x="110" y="106" width="340" height="130" rx="10" fill="none" stroke="#888" stroke-width="2.5"/><text x="124" y="128" font-size="13" fill="#888">第 2 层</text><rect x="150" y="138" width="260" height="84" rx="10" fill="none" stroke="#aaa" stroke-width="2.5"/><text x="164" y="160" font-size="13" fill="#aaa">第 1 层</text><rect x="190" y="170" width="180" height="38" rx="8" fill="#eef3ff" stroke="#345" stroke-width="2"/><text x="280" y="194" text-anchor="middle" font-size="14" fill="#345">基本模块：并、连接、取补</text></svg>
+
+</div>
+
+**为什么值得关心**
+
+"广义星高是否一致有界"困扰了学界几十年，此前人们连一个绝对上界都没能写出；本文给出第二强的界 4，姊妹篇进一步压到 3。
+
+> 暂无形式化证明（AI 结果待核验）
+
 ## 一句话结论
 
 本文证明：任何正则语言都可用嵌套星号至多 4 层的广义正则表达式（允许取补）在原字母表上写出，给出了广义星高问题一致有界性当前第二强的上界，且与姊妹篇（界 13 与界 3）方法相互独立、各自完整。

@@ -13,6 +13,36 @@ pdfname: ""
 
 > 结果族 126：Exponential semidefinite complexity of perfect matching　·　学科：Theoretical computer science　·　验证状态：暂无形式化证明，请以社区核验为准
 
+## 入门导读 🐣
+
+皮影戏的秘密:在幕布后摆一个简单的物件,调整角度,让影子恰好是复杂图案。数学里也有这招——用高维空间里一个"好说话"的几何体,投影出低维的复杂形状。论文问:描述"完美匹配"的那个复杂多面体,能不能由一个小物件投影出来?答案:不能,物件必须指数级大。
+
+**关键词卡片**
+
+- 完美匹配(perfect matching):把图上全部顶点两两配对的方案。
+- 匹配多面体(matching polytope):所有匹配方案的加权混合填成的几何体,边面极多。
+- 半定提升(semidefinite lift):把多面体表示成高维半正定锥切片的投影,是比线性表述更灵活的"皮影戏"。
+- PSD 秩(PSD rank):这种表示所需的最小维度,越小越省料。
+- 松弛矩阵(slack matrix):多面体的"体检表",其 PSD 秩恰好等于最小提升规模。
+
+**看个具体例子**
+
+论文的矩阵:行是奇割(奇数个顶点的集合 `@@M@@U@@`),列是完美匹配 `@@M@@M@@`,元素为 `@@M@@|M\cap\delta(U)|-1+\rho@@`。取 `@@M@@K_6@@`、`@@M@@U=\{1,2,3\}@@` 看两个匹配:
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280"><text x="280" y="24" text-anchor="middle" font-size="16" fill="#333">K₆ 上的奇割 U={1,2,3} 与两种完美匹配</text><text x="280" y="48" text-anchor="middle" font-size="13" fill="#c0392b">红边 = 穿过割 δ(U)、连接 U 内外的边;虚线框标出 U 与其补</text><rect x="48" y="80" width="56" height="168" rx="28" fill="none" stroke="#888" stroke-dasharray="6,5"/><rect x="196" y="80" width="56" height="168" rx="28" fill="none" stroke="#888" stroke-dasharray="6,5"/><text x="76" y="72" text-anchor="middle" font-size="13" fill="#888">U</text><text x="224" y="72" text-anchor="middle" font-size="13" fill="#888">U 补</text><line x1="76" y1="104" x2="76" y2="164" stroke="#666" stroke-width="2.5"/><line x1="76" y1="224" x2="224" y2="104" stroke="#c0392b" stroke-width="3"/><line x1="224" y1="164" x2="224" y2="224" stroke="#666" stroke-width="2.5"/><circle cx="76" cy="104" r="16" fill="#fff" stroke="#333" stroke-width="2"/><circle cx="76" cy="164" r="16" fill="#fff" stroke="#333" stroke-width="2"/><circle cx="76" cy="224" r="16" fill="#fff" stroke="#333" stroke-width="2"/><circle cx="224" cy="104" r="16" fill="#fff" stroke="#333" stroke-width="2"/><circle cx="224" cy="164" r="16" fill="#fff" stroke="#333" stroke-width="2"/><circle cx="224" cy="224" r="16" fill="#fff" stroke="#333" stroke-width="2"/><text x="76" y="109" text-anchor="middle" font-size="13">1</text><text x="76" y="169" text-anchor="middle" font-size="13">2</text><text x="76" y="229" text-anchor="middle" font-size="13">3</text><text x="224" y="109" text-anchor="middle" font-size="13">4</text><text x="224" y="169" text-anchor="middle" font-size="13">5</text><text x="224" y="229" text-anchor="middle" font-size="13">6</text><rect x="308" y="80" width="56" height="168" rx="28" fill="none" stroke="#888" stroke-dasharray="6,5"/><rect x="456" y="80" width="56" height="168" rx="28" fill="none" stroke="#888" stroke-dasharray="6,5"/><text x="336" y="72" text-anchor="middle" font-size="13" fill="#888">U</text><text x="484" y="72" text-anchor="middle" font-size="13" fill="#888">U 补</text><line x1="336" y1="104" x2="484" y2="104" stroke="#c0392b" stroke-width="3"/><line x1="336" y1="164" x2="484" y2="164" stroke="#c0392b" stroke-width="3"/><line x1="336" y1="224" x2="484" y2="224" stroke="#c0392b" stroke-width="3"/><circle cx="336" cy="104" r="16" fill="#fff" stroke="#333" stroke-width="2"/><circle cx="336" cy="164" r="16" fill="#fff" stroke="#333" stroke-width="2"/><circle cx="336" cy="224" r="16" fill="#fff" stroke="#333" stroke-width="2"/><circle cx="484" cy="104" r="16" fill="#fff" stroke="#333" stroke-width="2"/><circle cx="484" cy="164" r="16" fill="#fff" stroke="#333" stroke-width="2"/><circle cx="484" cy="224" r="16" fill="#fff" stroke="#333" stroke-width="2"/><text x="336" y="109" text-anchor="middle" font-size="13">1</text><text x="336" y="169" text-anchor="middle" font-size="13">2</text><text x="336" y="229" text-anchor="middle" font-size="13">3</text><text x="484" y="109" text-anchor="middle" font-size="13">4</text><text x="484" y="169" text-anchor="middle" font-size="13">5</text><text x="484" y="229" text-anchor="middle" font-size="13">6</text><text x="150" y="272" text-anchor="middle" font-size="14" fill="#333">匹配 A={12,34,56}:穿割 1 条 → 表项 ρ</text><text x="410" y="272" text-anchor="middle" font-size="14" fill="#333">匹配 B={14,25,36}:穿割 3 条 → 表项 2+ρ</text></svg>
+
+</div>
+
+匹配穿过奇割的次数必为奇数(1、3、5……),所以矩阵元素都非负。主定理:这张表的 PSD 秩至少 `@@M@@2^{cn}@@`,于是完美匹配多面体的任何精确半定提升,规模都至少 `@@M@@2^{c_0 n}@@`。
+
+**为什么值得关心**
+
+线性表述的指数下界早已知晓,但"半定投影会不会更省"是 Rothvoss 提出的悬案;本文给出否定答案,为"用扩展模型高效求解匹配问题"的设想划出了理论边界。
+
+> 暂无形式化证明(AI 结果待核验)
+
 ## 一句话结论
 
 对任意固定的 `@@M@@0<\rho<1@@`，奇割—完美匹配矩阵 `@@M@@|M\cap\delta(U)|-1+\rho@@` 的实半定秩（PSD rank）至少为 `@@M@@2^{cn}@@`；因此完全图完美匹配多面体的任何精确半定提升（semidefinite lift）规模必为指数级，负面回答了 Rothvoss 的"多项式规模半定提升"问题。

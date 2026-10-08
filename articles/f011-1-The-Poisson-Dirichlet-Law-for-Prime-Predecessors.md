@@ -13,6 +13,50 @@ pdfname: ""
 
 > 结果族 011：Prime-factor statistics of `@@M@@`p-1`@@`　·　学科：Number theory　·　验证状态：暂无形式化证明，请以社区核验为准
 
+## 入门导读 🐣
+
+把一根一米长的棍子随机折断，断出的各段长度有一条著名的统计规律。这篇论文证明数论世界也有同样的"折棍定律"：随机取一个大素数 `@@M@@p@@`，把 `@@M@@p-1@@` 分解成素因子，每个因子的对数占 `@@M@@\log(p-1)@@` 的比例——这些比例按大小排好后，恰恰服从那条折棍分布。它证明了 Ford–Konyagin–Luca 在 2010 年提出的猜想。
+
+**关键词卡片**
+
+- 前驱（predecessor）：素数 `@@M@@p@@` 的前一项 `@@M@@p-1@@`。
+- 泊松–狄利克雷分布（Poisson–Dirichlet law `@@M@@\mathrm{PD}(1)@@`）：随机折棍所得、按长短降序排列的片段长度的极限分布。
+- 最大素因子（largest prime factor `@@M@@P^+@@`）：分解中最大的素数，对应最长的一截棍子。
+- Dickman 函数（Dickman function `@@M@@\rho@@`）：度量"一个数的素因子都不超过某界"概率的经典函数。
+- 联合收敛（joint convergence）：一切有限维统计量同时收敛，比只看单个量强得多。
+
+**看个具体例子**
+
+取 `@@M@@p=211@@`，则 `@@M@@p-1=210=2\times3\times5\times7@@`。四个因子的对数占比约为 `@@M@@36\%、30\%、21\%、13\%@@`，正好把"对数棍子"切成四段。主定理断言：让 `@@M@@p@@` 在不超过 `@@M@@x@@` 的素数里均匀抽取并让 `@@M@@x\to\infty@@`，这类比例向量的统计规律收敛到 `@@M@@\mathrm{PD}(1)@@`；由最大一段还能读出 Granville 的移位 Dickman 猜想。
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280">
+  <text x="280" y="38" font-size="15" text-anchor="middle">把 log(p−1) 看作一根棍子（例：p=211，p−1=210=2×3×5×7）</text>
+  <text x="126" y="96" font-size="14" text-anchor="middle">7（36%）</text>
+  <text x="285" y="96" font-size="14" text-anchor="middle">5（30%）</text>
+  <text x="407" y="96" font-size="14" text-anchor="middle">3（21%）</text>
+  <text x="489" y="96" font-size="14" text-anchor="middle">2（13%）</text>
+  <rect x="40" y="108" width="173" height="46" fill="#dce9f7" stroke="#345"/>
+  <rect x="213" y="108" width="144" height="46" fill="#f7e8d3" stroke="#345"/>
+  <rect x="357" y="108" width="101" height="46" fill="#e3f2d9" stroke="#345"/>
+  <rect x="458" y="108" width="62" height="46" fill="#f2e3ea" stroke="#345"/>
+  <line x1="40" y1="154" x2="40" y2="168" stroke="#345"/>
+  <line x1="520" y1="154" x2="520" y2="168" stroke="#345"/>
+  <text x="40" y="184" font-size="13" text-anchor="middle">0</text>
+  <text x="520" y="184" font-size="13" text-anchor="middle">1</text>
+  <text x="280" y="184" font-size="12" text-anchor="middle">每段长度 = log(素因子) / log(210)</text>
+  <text x="280" y="240" font-size="14" text-anchor="middle">主定理：随机大素数的这类切分比例收敛到折棍分布 PD(1)</text>
+</svg>
+
+</div>
+
+**为什么值得关心**
+
+普通整数的折棍规律半个多世纪前已经清楚，换成"素数的前一项"却难得多——本文在不附加任何猜想的前提下完成了完整刻画。
+
+> 暂无形式化证明（AI 结果待核验）
+
 ## 一句话结论
 
 证明了素数前驱的因子定律：均匀取素数 `@@M@@p\le x@@`，把 `@@M@@p-1@@` 的素因子（计重数）降序排列，其对数除以 `@@M@@\log(p-1)@@` 后依一切有限联合分布收敛到参数为一的 Poisson–Dirichlet 律 `@@M@@\mathrm{PD}(1)@@`，解决了 Ford–Konyagin–Luca 猜想与 Granville 的移位 Dickman 猜想。

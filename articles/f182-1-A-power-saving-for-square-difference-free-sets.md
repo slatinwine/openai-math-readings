@@ -13,6 +13,52 @@ pdfname: ""
 
 > 结果族 182：Power savings for intersective polynomial differences and prime arguments　·　学科：Combinatorics　·　验证状态：暂无形式化证明，请以社区核验为准
 
+## 入门导读 🐣
+
+从 1 到 N 里挑数，规则只有一条：任何两个挑中的数相减，差不能是非零完全平方——连差 1 都不行，所以相邻两数不能都要。这种集合叫"平方差自由集"，它能有多大？论文给出第一个固定幂上界 |A| ≤ C·N^(1−c)，正面回答了 Green–Sawhney 的公开问题。
+
+**关键词卡片**
+
+- 平方差自由集（square-difference-free set）：两两之差都不是非零平方数的集合，本文的主角
+- 幂节省（power saving）：上界从"占比趋于零"强化为 |A| ≤ C·N^(1−c)，c 为绝对常数
+- 下界构造（lower bound construction）：Ruzsa 等人造出约 N^0.733 的合法集合（最新达 0.7528）；它与上界之间的巨大缺口正是难度所在
+- 色数（chromatic number）：给 1..N 染色使同色两数差非平方，所需颜色数至少 N^c——定理的直接推论
+
+**看个具体例子**
+
+数轴上 {1,4,7} 是合法的：两两之差只有 3、3、6，都不是平方。
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280">
+<text x="280" y="42" font-size="16" fill="#555" text-anchor="middle">一个平方差自由集：{1, 4, 7}</text>
+<line x1="40" y1="150" x2="520" y2="150" stroke="#333" stroke-width="2"/>
+<circle cx="80" cy="150" r="9" fill="#1a6feb"/>
+<circle cx="200" cy="150" r="9" fill="#1a6feb"/>
+<circle cx="320" cy="150" r="9" fill="#1a6feb"/>
+<text x="80" y="118" font-size="16" fill="#1a6feb" text-anchor="middle">1</text>
+<text x="200" y="118" font-size="16" fill="#1a6feb" text-anchor="middle">4</text>
+<text x="320" y="118" font-size="16" fill="#1a6feb" text-anchor="middle">7</text>
+<path d="M 80 168 L 80 176 L 200 176 L 200 168" fill="none" stroke="#2da44e" stroke-width="2"/>
+<path d="M 200 168 L 200 176 L 320 176 L 320 168" fill="none" stroke="#2da44e" stroke-width="2"/>
+<text x="140" y="198" font-size="14" fill="#2da44e" text-anchor="middle">差 3</text>
+<text x="260" y="198" font-size="14" fill="#2da44e" text-anchor="middle">差 3</text>
+<path d="M 80 208 L 80 216 L 320 216 L 320 208" fill="none" stroke="#2da44e" stroke-width="2"/>
+<text x="200" y="238" font-size="14" fill="#2da44e" text-anchor="middle">差 6</text>
+<rect x="170" y="250" width="14" height="14" fill="#b03030"/>
+<text x="195" y="262" font-size="14" fill="#b03030">禁差：1, 4, 9, 16, 25, …（非零平方）</text>
+</svg>
+
+</div>
+
+而定理说：N 变大时任何合法集都撑不过 C·N^(1−c)，如 N=10^6 时上界为 C·10^(6(1−c))（指数 c 为正但极小，论文不给数值）。推论：把 1..N 染色使同色两数之差避开平方，至少需要 N^c 种颜色。
+
+**为什么值得关心**
+
+这是 Sárközy–Furstenberg 平方差定理 1978 年以来定量方向的标志性一步，也是同族"多项式差"方法链（平方 → 一般多项式 → 素数）的源头。
+
+> 暂无形式化证明（AI 结果待核验）
+
 ## 一句话结论
 
 证明了存在绝对常数 `@@M@@c>0@@` 与 `@@M@@C<\infty@@`：不含非零平方差的集合 `@@M@@A\subseteq\{1,\ldots,N\}@@` 必满足 `@@M@@|A|\le CN^{1-c}@@`。这正面回答了 Green–Sawhney 提出的固定幂问题，把 Sárköży 平方差定理以来的定量上界首次提升为固定幂。

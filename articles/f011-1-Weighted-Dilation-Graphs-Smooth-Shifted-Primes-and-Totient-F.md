@@ -13,6 +13,58 @@ pdfname: ""
 
 > 结果族 011：Prime-factor statistics of `@@M@@`p-1`@@`　·　学科：Number theory　·　验证状态：暂无形式化证明，请以社区核验为准
 
+## 入门导读 🐣
+
+把欧拉函数 `@@M@@\varphi(m)@@` 想成一台"缩水机"：输入整数 `@@M@@m@@`，输出 1 到 `@@M@@m@@` 中与 `@@M@@m@@` 互素的个数。这台机器远非"一机一码"——很多不同的输入会被压成同一个输出。Erdős 在 1956 年问：同一个输出的"重名名单"最长能有多长？这篇论文彻底回答：几乎能和输出值本身一样长。
+
+**关键词卡片**
+
+- 欧拉函数（Euler's totient function `@@M@@\varphi@@`）：数出不超过 `@@M@@m@@` 且与 `@@M@@m@@` 互素的正整数个数，如 `@@M@@\varphi(6)=2@@`。
+- 纤维（fiber）：被压成同一个输出 `@@M@@n@@` 的全部输入，其个数 `@@M@@g(n)@@` 就是名单的长度。
+- 平滑移位素数（smooth shifted prime）：素数 `@@M@@p@@` 的前一项 `@@M@@p-1@@`，它的所有素因子都很小。
+- 最大素因子（largest prime factor `@@M@@P^+@@`）：一个数的分解中最大的那个素数。
+- 筛法（sieve）：用同余条件像筛沙子一样层层剔除合数、留下素数的方法。
+
+**看个具体例子**
+
+以 `@@M@@n=24@@` 为例：`@@M@@\varphi(35)=\varphi(39)=\varphi(45)=\varphi(52)=\varphi(56)=\varphi(70)=\varphi(72)=\varphi(78)=\varphi(84)=\varphi(90)=24@@`，一共 10 个输入挤在同一个输出上。主定理说：对任意 `@@M@@\varepsilon>0@@`，有无穷多个 `@@M@@n@@` 的名单长到 `@@M@@g(n)>n^{1-\varepsilon}@@`，逼近理论上限。机器的关键燃料是定理二：大量素数 `@@M@@p@@` 的前身 `@@M@@p-1@@` 没有超过 `@@M@@x^\delta@@` 的素因子。
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280">
+  <rect x="24" y="20" width="64" height="30" rx="8" fill="#e8eef8" stroke="#345"/>
+  <text x="56" y="40" font-size="15" text-anchor="middle">35</text>
+  <rect x="24" y="64" width="64" height="30" rx="8" fill="#e8eef8" stroke="#345"/>
+  <text x="56" y="84" font-size="15" text-anchor="middle">39</text>
+  <rect x="24" y="108" width="64" height="30" rx="8" fill="#e8eef8" stroke="#345"/>
+  <text x="56" y="128" font-size="15" text-anchor="middle">45</text>
+  <rect x="24" y="152" width="64" height="30" rx="8" fill="#e8eef8" stroke="#345"/>
+  <text x="56" y="172" font-size="15" text-anchor="middle">52</text>
+  <rect x="24" y="196" width="64" height="30" rx="8" fill="#e8eef8" stroke="#345"/>
+  <text x="56" y="216" font-size="15" text-anchor="middle">…</text>
+  <line x1="88" y1="35" x2="238" y2="128" stroke="#99a"/>
+  <line x1="88" y1="79" x2="238" y2="134" stroke="#99a"/>
+  <line x1="88" y1="123" x2="238" y2="140" stroke="#99a"/>
+  <line x1="88" y1="167" x2="238" y2="146" stroke="#99a"/>
+  <line x1="88" y1="211" x2="238" y2="152" stroke="#99a"/>
+  <rect x="238" y="112" width="124" height="56" rx="10" fill="#ffffff" stroke="#345" stroke-width="2"/>
+  <text x="300" y="145" font-size="16" text-anchor="middle">φ 缩水机</text>
+  <line x1="362" y1="140" x2="422" y2="140" stroke="#345" stroke-width="2"/>
+  <polygon points="432,140 420,134 420,146" fill="#345"/>
+  <rect x="436" y="110" width="90" height="60" rx="10" fill="#fdf6e3" stroke="#345" stroke-width="2"/>
+  <text x="481" y="138" font-size="22" font-weight="bold" text-anchor="middle">24</text>
+  <text x="481" y="158" font-size="12" text-anchor="middle">纤维 g(24)=10</text>
+  <text x="280" y="262" font-size="14" text-anchor="middle">10 个不同输入被压成同一个输出：φ(m)=24 共有 10 个解，定理保证无穷多次更拥挤</text>
+</svg>
+
+</div>
+
+**为什么值得关心**
+
+它解决了悬置近七十年的 Erdős 猜想；其中的关键原料——大量"前身很平滑"的素数——也是构造 Carmichael 数等经典难题的发动机。同族两篇姊妹论文共用本文新造的筛法机器，分别证明了素数前驱的折棍极限律与因子个数的奇偶定理。
+
+> 暂无形式化证明（AI 结果待核验）
+
 ## 一句话结论
 
 证明了 Erdős 关于欧拉函数（Euler's totient function）最大纤维的猜想：对任意 `@@M@@\varepsilon>0@@`，有无穷多个 `@@M@@n@@` 使 `@@M@@g(n)=\#\{m:\varphi(m)=n\}>n^{1-\varepsilon}@@`；核心输入是对每个固定 `@@M@@\delta>0@@`，存在 `@@M@@x^{1-o(1)}@@` 个素数 `@@M@@p@@` 使 `@@M@@p-1@@` 没有超过 `@@M@@x^\delta@@` 的素因子。

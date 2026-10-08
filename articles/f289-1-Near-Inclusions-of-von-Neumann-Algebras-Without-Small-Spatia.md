@@ -13,6 +13,34 @@ pdfname: ""
 
 > 结果族 289：Strong Kadison–Kastler stability and its spatial boundaries　·　学科：Operator algebras　·　验证状态：暂无形式化证明，请以社区核验为准
 
+## 入门导读 🐣
+
+一本书确实塞得进某个书架（嵌入存在），但无论怎么塞都得"大动干戈"。本篇证明这种"能放、但必须大动"的现象真实存在：一列代数对越靠越近，实现嵌入的旋转却始终离原位有固定距离——一致小嵌入的期望被否定。注意嵌入本身一直存在，症结不在"放不放得进"，而在"能不能轻轻放"。
+
+**关键词卡片**
+
+- 近包含（near inclusion）：`@@M@@\gamma(M,N)@@` 度量 `@@M@@M@@` 的每个元素能被 `@@M@@N@@` 逼近到多近
+- 实现酉元（implementing unitary）：使 `@@M@@uMu^*\subseteq N@@` 成立的旋转 `@@M@@u@@`
+- 钟–移矩阵（clock and shift matrices）：一对几乎交换、骨子里却不交换的矩阵
+- 绕数（winding number）：拓扑整数不变量，防止"几乎"偷偷变成"真正"
+- 单侧与双侧：只有单向逼近时，小旋转没有保证
+
+**看个具体例子**
+
+种子障碍来自钟–移矩阵：`@@M@@U_n@@` 给基向量配相位（钟），`@@M@@V_n@@` 轮转基向量（移），`@@M@@\|U_nV_n-V_nU_n\|\to 0@@`，但绕数 `@@M@@\kappa(U_n,V_n)=1@@`，而真正交换的对子 `@@M@@\kappa=0@@`。绕数是整数，不可能连续滑变。论文把这块有限维基石移植进近包含世界：得到 `@@M@@\gamma(M_n,N_n)\to 0@@`，但一切实现酉元都满足 `@@M@@\|u-I\|\ge\varepsilon_0>0@@`。
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280"><ellipse cx="140" cy="120" rx="80" ry="62" fill="none" stroke="#c33" stroke-width="2"/><circle cx="140" cy="120" r="6" fill="#333"/><text x="140" y="40" text-anchor="middle" font-size="14">κ=1：钟–移对（绕一圈）</text><ellipse cx="430" cy="120" rx="80" ry="62" fill="none" stroke="#396" stroke-width="2"/><circle cx="312" cy="120" r="6" fill="#333"/><text x="430" y="40" text-anchor="middle" font-size="14">κ=0：交换对（不绕）</text><line x1="228" y1="120" x2="292" y2="120" stroke="#333" stroke-width="2"/><polygon points="300,120 288,113 288,127" fill="#333"/><text x="262" y="102" text-anchor="middle" font-size="13">整数不同</text><text x="280" y="215" text-anchor="middle" font-size="13">‖U_nV_n−V_nU_n‖→0，但 κ 是整数、不会跳变</text><text x="280" y="250" text-anchor="middle" font-size="14">移植之后：嵌入存在，小旋转不存在</text></svg>
+
+</div>
+
+**为什么值得关心**
+
+它划清了正定理的边界：双边接近保证小旋转，单侧逼近则可能彻底失败——"几乎在里面"不等于"轻轻放得进去"；而源代数可均时的老结果说明，加点温顺条件，小旋转又会回来。
+
+> 暂无形式化证明（AI 结果待核验）
+
 ## 一句话结论
 
 对 Cameron–Christensen–Sinclair–Smith–White–Wiggins 提出的无限制单侧近包含问题给出否定回答：构造了一列可分 Hilbert 空间上的 von Neumann 代数对，单侧间隙 `@@M@@\gamma(M_n,N_n)\to 0@@`，但任何实现 `@@M@@uM_nu^*\subseteq N_n@@` 的酉算子都满足 `@@M@@\|u-I\|\ge\varepsilon_0>0@@`。

@@ -13,6 +13,48 @@ pdfname: ""
 
 > 结果族 036：Numerical semiampleness and generalized minimal models　·　学科：Algebraic and complex geometry　·　验证状态：暂无形式化证明，请以社区核验为准
 
+## 入门导读 🐣
+
+想象收到一团揉皱的宣纸：双有理几何专家的日常，就是把它抚平成一个"最简形状"，全程只许抹平褶皱、不许撕破纸。这篇论文证明：对一类"褶皱程度中等"的高维空间——维数至少 3、固有曲率整体不亏、截面数恰好按一次方速度增长——这样的最简形状必定存在。它补上了极小模型猜想拼图中拖延多年的一块。
+
+**关键词卡片**
+
+- 极小模型（minimal model）：与原空间双有理等价、处处曲率非负的"最简替身"。
+- 典范除子 `@@M@@K_X@@`（canonical divisor）：记录空间固有曲率的账本，正负主导几何命运。
+- 伪有效（pseudo-effective）：账本整体不亏本，即落在有效除子的闭包里。
+- 数值维数 `@@M@@\kappa_\sigma@@`（numerical dimension）：截面数随倍数增长的速度；本文专攻"一次方增长"。
+- 翻转（flip）：一种"换褶皱不换本质"的外科手术，扔掉坏形状、换上好形状。
+
+**看个具体例子**
+
+取亏格 `@@M@@\ge 2@@` 的曲线 `@@M@@C@@` 与阿贝尔簇（高维环面）`@@M@@A@@`，令 `@@M@@X=C\times A@@`，且 `@@M@@\dim A\ge 2@@`。它维数 `@@M@@\ge 3@@`；`@@M@@K_X@@` 恰是 ample 的 `@@M@@K_C@@` 的拉回，整体不亏；截面数 `@@M@@h^0(mK_X)@@` 随 `@@M@@m@@` 线性增长，正是 `@@M@@\kappa_\sigma=1@@` 的教科书样本。这个例子自己就是极小模型；定理的分量在于：任何满足这两条假设的 `@@M@@X@@`，都注定能经有限步手术抵达同样干净的结局。
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280">
+  <rect x="80" y="28" width="400" height="120" rx="10" fill="#f5f8fb" stroke="#667788" stroke-width="2"/>
+  <text x="280" y="50" text-anchor="middle" font-size="15" fill="#334455">X = C × A（维数 ≥ 3，K_X 伪有效）</text>
+  <line x1="160" y1="62" x2="160" y2="138" stroke="#4a90c4" stroke-width="2"/>
+  <line x1="240" y1="62" x2="240" y2="138" stroke="#4a90c4" stroke-width="2"/>
+  <line x1="320" y1="62" x2="320" y2="138" stroke="#4a90c4" stroke-width="2"/>
+  <line x1="400" y1="62" x2="400" y2="138" stroke="#4a90c4" stroke-width="2"/>
+  <text x="445" y="104" font-size="13" fill="#4a90c4">纤维 A</text>
+  <line x1="280" y1="148" x2="280" y2="184" stroke="#8899aa" stroke-width="2"/>
+  <polygon points="280,192 275,180 285,180" fill="#8899aa"/>
+  <text x="300" y="173" font-size="13" fill="#8899aa">投影</text>
+  <path d="M80 225 Q 165 190 250 225 T 420 225" fill="none" stroke="#c0504d" stroke-width="3"/>
+  <text x="280" y="252" text-anchor="middle" font-size="14" fill="#c0504d">基曲线 C（亏格 ≥ 2）</text>
+  <text x="280" y="272" text-anchor="middle" font-size="12" fill="#666666">截面数随倍数线性增长，κσ = 1</text>
+</svg>
+
+</div>
+
+**为什么值得关心**
+
+极小模型纲领是高维几何的总路线图，而"伪有效却不大"的中间地带是最难啃的骨头之一；本文不设任何附加条件，把其中"一次方增长"的一整块解决。
+
+> 暂无形式化证明（AI 结果待核验）
+
 ## 一句话结论
 
 对维数 `@@M@@n\geq 3@@`、典范除子 `@@M@@K_X@@` 伪有效且数值维数 `@@M@@\kappa_\sigma(X,K_X)=1@@` 的光滑复射影簇，本文证明极小模型猜想在该情形成立：`@@M@@X@@` 有 `@@M@@\mathbb Q@@`-因子终型（terminal）极小模型；结合同项目的对数丰度定理，它还是好极小模型。

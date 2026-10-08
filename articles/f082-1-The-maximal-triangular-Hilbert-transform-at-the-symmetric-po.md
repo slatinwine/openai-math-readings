@@ -13,6 +13,42 @@ pdfname: ""
 
 > 结果族 082：Annular variation and dyadic absolute bounds for the triangular Hilbert transform　·　学科：Real and complex analysis　·　验证状态：主结果已 Lean 形式化
 
+## 入门导读 🐣
+
+体检量血压，不管护士几点来量、袖带松紧如何，读数都不该爆表。数学里的"极大算子"就是这样的极限压力测试：它要求同一个控制函数，在每个点上同时压住所有可能截断选择下的读数。这篇论文证明三角 Hilbert 变换通过了这项测试，而且主结果已被计算机（Lean）逐行验证。
+
+**关键词卡片**
+
+- 三角 Hilbert 变换（triangular Hilbert transform）：`@@M@@\int_{\varepsilon<|t|<R}F(x{+}t,y)G(x,y{+}t)\frac{dt}{t}@@`，两个输入沿两个坐标方向平移后纠缠
+- 极大算子（maximal operator）：`@@M@@B_*=\sup_{0<\varepsilon<R}|B_{\varepsilon,R}|@@`，所有截断读数的上包络
+- 硬截断（hard truncation）：两端 `@@M@@\varepsilon@@`、`@@M@@R@@` 都是生硬边界，上确界同时遍历两者且可逐点选取
+- 对称点（symmetric point）：指标恰取 `@@M@@L^3\times L^3\to L^{3/2}@@` 的最平衡位置，正是 Thiele 问题 13 所问
+- Lean 形式化（formalization）：用定理证明器机器核验的证明，可信度最高的一档
+
+**看个具体例子**
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280">
+<path d="M60,160 C140,80 240,190 320,130 C400,80 460,150 500,120" stroke="#9ab" stroke-width="1.8" fill="none" stroke-dasharray="7 4"/>
+<path d="M60,175 C140,120 240,205 320,150 C400,110 460,160 500,132" stroke="#9ab" stroke-width="1.8" fill="none" stroke-dasharray="7 4"/>
+<path d="M60,168 C140,98 240,198 320,138 C400,92 460,154 500,126" stroke="#c33" stroke-width="3" fill="none"/>
+<text x="70" y="50" font-size="14" fill="#333">不同截断 (ε,R) 下的读数曲线</text>
+<text x="70" y="72" font-size="13" fill="#777">虚线：各种截断；粗红线：极限主值</text>
+<text x="70" y="240" font-size="14" fill="#333">上包络 B_* 在 L^{3/2} 中被一致控制，</text>
+<text x="70" y="262" font-size="14" fill="#333">曲线随 ε→0、R→∞ 安稳收敛到主值</text>
+</svg>
+
+</div>
+
+数字版定理：`@@M@@\|B_*(F,G)\|_{L^{3/2}(\mathbb R^2)}\le C\|F\|_3\|G\|_3@@`，对一切复 `@@M@@L^3@@` 输入成立。它远强于"每个固定截断各自有界"；由此立刻得到联合主值 `@@M@@B=\lim_{\varepsilon\downarrow0,R\uparrow\infty}B_{\varepsilon,R}@@` 几乎处处且在 `@@M@@L^{3/2}@@` 中存在，并解决 Thiele 问题 13 的对称点情形。
+
+**为什么值得关心**
+
+三角 Hilbert 变换是"平坦平移"情形下最缺内禀抵消机制的样本，此前三十年只算得出随尺度增长的界；本文把它压成一致常数。主定理（含截断积分与极大输出的可测性）已由 Lean 形式化，是同族三篇中率先通过机器验证者。
+
+> 已 Lean 形式化
+
 ## 一句话结论
 
 证明了三角 Hilbert 变换的逐点极大算子满足 `@@M@@\|B_*(F,G)\|_{L^{3/2}}\le C\|F\|_3\|G\|_3@@`，上确界取遍两个硬截断端点且可逐点选取；由此得到联合几乎处处与 `@@M@@L^{3/2}@@` 主值收敛，并肯定地解决 Thiele 问题 13 的对称点情形。主结果已 Lean 形式化。

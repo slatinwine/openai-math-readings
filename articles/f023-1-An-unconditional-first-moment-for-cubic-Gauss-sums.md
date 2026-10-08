@@ -13,6 +13,58 @@ pdfname: ""
 
 > 结果族 023：Patterson's first moment for cubic Gauss sums　·　学科：Number theory　·　验证状态：暂无形式化证明，请以社区核验为准
 
+## 入门导读 🐣
+
+对每个合适的素数，数学家会算出一个落在单位圆上的复数——像掷在圆桌上的骰子。Kummer 1846 年手算发现这些骰子似乎"偏正"，此后近两百年没人能严格证明偏差真的存在。这篇论文做到了：单个看毫无规律，但把账本加总，确实有一笔大小精确、方向为正的系统性盈余。
+
+**关键词卡片**
+
+- Gauss 和（Gauss sum）：把"三次剩余符号"配上振荡因子求和得到的复数，落在单位圆上。
+- 三次剩余符号（cubic residue symbol）：判断"谁是某数的立方"的三次世界版勒让德符号。
+- Eisenstein 整环（Eisenstein integers）：Z[ω]（ω 为 1 的三次本原根），三次世界里的整数。
+- 矩（moment）：数列的加总账本；第一矩回答"平均贡献到底有多大"。
+- 等分布（equidistribution）：值在单位圆上均匀散布、无肉眼偏好——本文证明偏差藏在更小的尺度里。
+
+**看个具体例子**
+
+把不超过 X 的本原 Eisenstein 素数上的 G(π) 全部加总，定理给出 `@@M@@\sum G(\pi)=\frac65 c_*\frac{X^{5/6}}{\log X}+o(\cdot)@@`，其中 `@@M@@c_*=(2\pi)^{2/3}/(3\Gamma(2/3))\approx 0.838@@`，系数 (6/5)c*≈1.01：盈余约为一倍的 X^{5/6}/log X，不算大，但恒正且精确。
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280">
+  <text x="280" y="28" text-anchor="middle" font-size="16" fill="#333">单位圆上的"骰子"：均匀，却有小偏置</text>
+  <circle cx="180" cy="150" r="92" fill="none" stroke="#345" stroke-width="2"/>
+  <line x1="180" y1="45" x2="180" y2="255" stroke="#dde" stroke-width="1"/>
+  <line x1="70" y1="150" x2="290" y2="150" stroke="#dde" stroke-width="1"/>
+  <circle cx="266" cy="118" r="4" fill="#345"/>
+  <circle cx="233" cy="75" r="4" fill="#345"/>
+  <circle cx="172" cy="58" r="4" fill="#345"/>
+  <circle cx="121" cy="80" r="4" fill="#345"/>
+  <circle cx="94" cy="119" r="4" fill="#345"/>
+  <circle cx="93" cy="181" r="4" fill="#345"/>
+  <circle cx="127" cy="225" r="4" fill="#345"/>
+  <circle cx="196" cy="241" r="4" fill="#345"/>
+  <circle cx="250" cy="191" r="4" fill="#345"/>
+  <circle cx="271" cy="134" r="4" fill="#345"/>
+  <line x1="180" y1="150" x2="264" y2="150" stroke="#c33" stroke-width="4"/>
+  <path d="M268 150 L256 143 L256 157 Z" fill="#c33"/>
+  <text x="222" y="141" text-anchor="middle" font-size="12" fill="#c33">净偏差</text>
+  <text x="352" y="90" font-size="13" fill="#333">单个 G(π)：在圆上等分布，</text>
+  <text x="352" y="112" font-size="13" fill="#333">肉眼看不出偏好</text>
+  <text x="352" y="150" font-size="13" fill="#c33">总和却恒有一笔正盈余：</text>
+  <text x="352" y="172" font-size="13" fill="#c33">(6/5)c* · X^(5/6)/log X</text>
+  <text x="352" y="196" font-size="12" fill="#555">c* ≈ 0.838，系数 ≈ 1.01</text>
+  <text x="180" y="272" text-anchor="middle" font-size="13" fill="#333">红色箭头：Kummer 1846 年闻到、本文严格证明的系统性偏差</text>
+</svg>
+
+</div>
+
+**为什么值得关心**
+
+Patterson 1978 年猜想的这颗钉子终于落地：把 Dunn–Radziwiłł 2024 年依赖广义黎曼假设的条件结果升级为无条件定理，三次互反世界的"偏差之争"就此定案。
+
+> 暂无形式化证明（AI 结果待核验）
+
 ## 一句话结论
 
 在不依赖 GRH 等任何未证假设的前提下，本文证明了 Patterson 第一矩猜想：全体本原 Eisenstein 素数上规范化三次 Gauss 和之和有显式主项 `@@M@@\frac65c_*X^{5/6}/\log X@@`，且每个固定非零角 Fourier 模式在此尺度相消，将 Dunn–Radziwiłł 的 GRH 条件结果无条件化。

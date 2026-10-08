@@ -13,6 +13,33 @@ pdfname: ""
 
 > 结果族 227：Critical SK autocorrelation processes and dynamics across the temperature transition　·　学科：Probability and statistical mechanics　·　验证状态：暂无形式化证明，请以社区核验为准
 
+## 入门导读 🐣
+
+往一杯搅匀的糖水里滴一滴浓缩糖浆，要多久才尝不出差别？"混匀"这件事在 SK 模型里发生得像拨开关：某个精确时刻之前，系统离平衡还几乎是最远距离；刚一过线，就几乎分毫不差。这种骤变叫 cutoff，论文证明它在整个高温区间都存在，并给出精确的切换时刻。
+
+**关键词卡片**
+
+- 混合时间（mixing time）：从最坏起点出发，分布离平衡的总变差距离降到接近 0 所需的时间。
+- 总变差距离（total variation distance）：两个分布差异的标准度量，取值 `@@M@@[0,1]@@`。
+- cutoff 现象（cutoff phenomenon）：距离曲线在混合时刻附近从 `@@M@@\approx1@@` 骤降到 `@@M@@\approx0@@` 的锐利转折，转换窗口相对混合时间可忽略。
+- 热浴动力学（heat-bath dynamics）：每个自旋以速率 1、按条件分布重新抽样的更新规则。
+
+**看个具体例子**
+
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280"><line x1="70" y1="215" x2="505" y2="215" stroke="#333" stroke-width="2"/><path d="M517,215 l-12,-6 l0,12 z" fill="#333"/><line x1="70" y1="215" x2="70" y2="50" stroke="#333" stroke-width="2"/><path d="M70,38 l-6,12 l12,0 z" fill="#333"/><line x1="330" y1="50" x2="330" y2="215" stroke="#888" stroke-width="2" stroke-dasharray="6 5"/><path d="M70,55 L290,62 C318,66 324,95 330,135 C336,180 348,200 380,207 L505,209" fill="none" stroke="#c0392b" stroke-width="3"/><text x="80" y="40" font-size="13">总变差距离 d</text><text x="95" y="85" font-size="13" fill="#666">混合前：仍记得初态</text><text x="385" y="235" font-size="13" fill="#666">混合后：接近平衡</text><text x="250" y="250" font-size="13">t_n = ln n / (2λ(β))</text><text x="322" y="56" font-size="13">t_n</text></svg>
+
+</div>
+
+公式卡：`@@M@@t_n=\log n/(2\lambda(\beta))@@`，且 `@@M@@d_n((1-\epsilon)t_n)\to1@@`、`@@M@@d_n((1+\epsilon)t_n)\to0@@`，收敛是在无序耦合上依概率成立。数字版定理：独立自旋情形 `@@M@@\beta=0@@`，`@@M@@\lambda(0)=1@@`，取 `@@M@@n=10^6@@`，`@@M@@\log n\approx13.8@@`，则 `@@M@@t_n\approx6.9@@`——连续时间约 6.9 个单位之前系统几乎全然"记得"初态，之后几乎完全遗忘；每次均匀挑一格更新的离散版，时刻恰为连续版的 `@@M@@n@@` 倍。速率 `@@M@@\lambda(\beta)@@` 由平衡态谱构造确定，满足 `@@M@@\lambda(\beta)\le(1-\beta)^2@@`；论文不处理随 `@@M@@n@@` 趋于 1 的温度与窗口宽度。
+
+**为什么值得关心**
+
+它首次在整个高温相定位了 SK 动力学混合的精确时刻，与处理临界点、低温端的同族工作一起拼出完整温度轴的混合图像。
+
+> 暂无形式化证明（AI 结果待核验）
+
 ## 一句话结论
 论文证明：零场高斯 SK 自旋玻璃的热浴动力学在整个高温区间 `@@M@@0\le\beta<1@@` 都存在最坏起点的总变差 cutoff（锐利切断），位置为 `@@M@@\log n/(2\lambda(\beta))@@`，速率 `@@M@@\lambda(\beta)>0@@` 由平衡态谱构造确定。这在零场高斯设定下回答了 SK 动力学高温相的 cutoff 问题。
 
