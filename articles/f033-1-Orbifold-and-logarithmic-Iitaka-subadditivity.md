@@ -53,6 +53,24 @@ pdfname: ""
 
 > 暂无形式化证明（AI 结果待核验）
 
+# 由浅入深：从类比走向定理
+
+> 论文：Orbifold and logarithmic Iitaka subadditivity · 结果族 033
+
+## 由浅入深：从类比走向定理
+
+**第一级台阶**
+
+导读用"树能朝几个独立方向生长"类比复杂度方向数。翻译过来：给一个复几何空间数它的多重典范形式随倍数增长撑出的维数，这是它的复杂度方向数；纤维化是把整个空间压到一个底空间、每点上方长一根纤维的地图。老问题问：全空间的方向数是否至少是"纤维的方向数加底空间的方向数"。轨道体记账的比喻则对应：一根要转 `@@M@@m@@` 圈才回到原点的纤维，按 `@@M@@1-1/m@@` 的折扣记入底空间。
+
+**第二级台阶**
+
+上述方向数即 Kodaira 维数 `@@M@@\kappa@@`，带边界版本看 `@@M@@H^0(X,q(K_X+\Delta))@@` 的增长，其中 `@@M@@\Delta=\sum\delta_i\Delta_i@@` 是系数取值 `@@M@@[0,1]\cap\mathbb{Q}@@` 的单连通交叠边界。对压到素除子 `@@M@@D@@` 上的纤维赋重数 `@@M@@m(f,\Delta;D)@@`（取源上拉回阶与边界修正的最小值），得轨道体基 `@@M@@B(f,\Delta)=\sum(1-1/m)D@@`；`@@M@@\kappa(f\mid\Delta)@@` 定义为对一切初等模型变换取下确界后的底空间方向数。
+
+**第三级台阶**
+
+主定理断言：对 Fujiki 类 `@@M@@\mathcal C@@`（双有理等价于紧 Kähler）中的光滑紧流形 `@@M@@X@@` 与连通纤维的满全纯映射 `@@M@@f:X\to Y@@`，有 `@@M@@\kappa(X,K_X+\Delta)\ge\kappa(F,K_F+\Delta_F)+\kappa(f\mid\Delta)@@`。两个"无假设"值得注意：不要求纤维一般型、不要求好极小模型，边界系数允许取一——系数一的情形会引入混合 Hodge 结构，是此前方法处理不了的麻烦。普通次可加性、对数次可加性与准射影版本都作为推论落下。
+
 ## 一句话结论
 
 论文证明了 Campana 的轨道体（orbifold）Iitaka 次可加性猜想：对 Fujiki 类 `@@M@@\mathcal C@@` 紧复流形上系数取自 `@@M@@[0,1]\cap\mathbf Q@@` 的 SNC 边界（含系数一），`@@M@@\kappa(X,K_X+\Delta)\ge\kappa(F,K_F+\Delta_F)+\kappa(f\mid\Delta)@@`，普通与对数次可加性均为其推论。
@@ -76,5 +94,41 @@ Kodaira 维数（Kodaira dimension）用多重典范形式（pluricanonical form
 ## 可信度与备注
 
 本篇主结果暂无 Lean 形式化证明。它是结果族 033 的地基：其约化 SNC 对数次可加性与全周期伴随比较接口，直接支撑姊妹篇《Logarithmic Kodaira dimension and whole-fiber variation》证明变异性不等式；《The reverse logarithmic Kodaira inequality and additivity》则只用其下界来拼接可加性等式。按论文自己的说明，两篇姊妹篇的结论均不反过来用于本篇定理的证明。依照 OpenAI 官方声明，未经形式化的结果可能存在问题，最终请以社区核验为准。
+
+---
+
+# 深入探讨：像审稿人一样追问 🔍
+
+> 论文：Orbifold and logarithmic Iitaka subadditivity · 结果族 033
+
+## 深入探讨：像审稿人一样追问 🔍
+
+**问 1：三步证明里哪一步最脆弱？**
+
+（答：第二步"秩一比较"。相对生成元经 `@@M@@m@@` 次根循环覆盖与函子式消解后，要把根特征线（一维性由 `@@M@@\kappa=0@@` 强迫）经局部构造、相容极化与张量不变量下降放进纯 Hodge 变分的最高 Hodge 步，核心是阶数计算之差 `@@M@@T_D=\alpha_D-\beta_D@@`。系数一的边界在此引入混合 Hodge 结构，靠纯权数分次与抛物扩张处理——这是全文技术上最没有先例可循的一段。）
+
+**问 2：边界系数取一为什么此前没人做、本文怎么过的关？**
+
+（答：系数一时 `@@M@@m_\Delta(E)=1/(1-\Delta_E)@@` 发散，根覆盖的常规机制失效，且 Hodge 理论自动降格为混合结构。论文用纯权数分次把混合结构拆回纯的部分、再以抛物扩张控制分母阶，使 Hodge 线 `@@M@@M@@` 与边界 `@@M@@T@@` 仍满足 `@@M@@B(g,\Delta)\le T\le1@@` 的比较。摘要明确把"including coefficient one"列为卖点。）
+
+**问 3：与 Kawamata、Viehweg、Kollár、Birkar、Cao–Păun、Hacon–Popa–Schnell 一线相比，真正新意是什么？**
+
+（答：前人各从不同部位汲取正性：曲线基加好极小模型（Kawamata）、一般型基的弱正性（Viehweg）、一般型纤维（Kollár）、低维（Birkar）、阿贝尔/最大 Albanese 维数基（Cao–Păun、HPS）。本文是第一个无条件解决 Campana 轨道体版的：不挑纤维、不挑基、不要极小模型，且把多重纤维的零钱如实记入下界。）
+
+**问 4：伴随正性那个输入为什么敢于信赖？**
+
+（答：不敢全信，它是综合件：Griffiths–Schmid–Cattani–Kaplan–Schmid 的曲率与边界理论、周期商射影化（Villadsen 紧化、Bakker–Brunebarbe–Tsimerman 方法）、Brunebarbe–Cadorel 的大性、André 单值正规性与 Bakker–Tsimerman 的 Ax–Schanuel。五件深工具的接口处只要一件被用过头（例如把大性用在它不成立的边界配置上），正性输入即空。这是审稿最该逐条核对的地方。）
+
+**问 5：这类 AI 生成证明最可能的出错模式？**
+
+（答：本文是"深引用堆栈"型：外部定理极多，AI 的典型失误是引用强度与所需强度之间有缝——比如周期映射纤维的正合性只在某权数成立却被当通用；此外第三步凸组合 `@@M@@\theta=(1-c)/(a-c)@@` 的截面算术（幂乘嵌入不改变截影比值）差一个符号就会让扰动项消不干净。全文未形式化。）
+
+**问 6：谁会用到它？**
+
+（答：它是结果族 033 的地基：姊妹篇"whole-fiber variation"直接用它的对数次可加性与伴随比较接口推 Iitaka–Viehweg 不等式，"reverse inequality"篇只用其下界拼接可加性等式；对外，Campana 核心等式、"`@@M@@\kappa=0@@` 蕴含特殊"与核心塔分解给特殊簇纲领与 Campana 几何提供新工具。论文声明姊妹篇结论不反哺本篇，无循环。）
+
+**总评**
+
+这是把双有理几何地基级猜想推到最强表述（轨道体、系数一、Fujiki 类、零附加条件）的一篇，若成立分量很重；最大风险在于 Hodge 论与周期映射一侧的深引用堆栈——每一件单看都对，拼起来的缝隙才是 AI 证明最可能塌陷的地方。
 
 {% endraw %}

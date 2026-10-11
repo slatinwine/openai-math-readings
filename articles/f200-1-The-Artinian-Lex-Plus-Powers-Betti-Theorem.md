@@ -66,6 +66,22 @@ Eisenbud–Green–Harris 与 lex-plus-powers 是交换代数著名的"约束下
 
 > 暂无形式化证明（AI 结果待核验）
 
+# 过渡 | The Artinian Lex-Plus-Powers Betti Theorem
+
+## 由浅入深：从类比走向定理
+
+**第一级台阶**
+
+入门导读把 Hilbert 函数比作"各层房间数表"，把 Betti 数比作"关系网复杂度"。翻译成半数学语言：对象是多项式环里的一族齐次理想，约束有两条——房间数表（各次数层的维数）固定，且理想须包含一组"健康骨架"（正则序列）；操作是比较把理想分解成自由模时每一步所需生成元的数目。没有骨架约束时，"字典序最贪婪"的理想关系网最复杂；带上骨架后，对应的极端候选是"纯幂＋字典段"。
+
+**第二级台阶**
+
+用本科术语说：在分次多项式环 S=k[x₁,…,xₙ] 中，齐次理想 I 的 Hilbert 函数是各次数层的维数序列；graded Betti 数 β_{p,j}=dim Tor_p^S(S/I,k)_j 记录极小自由分解第 p 步、内次数 j 处的生成元个数。正则序列指每个 f_i 在前面元素生成的理想之外不是零因子；纯幂理想 P=(x₁^{a₁},…,xₙ^{aₙ})，lex-plus-powers 理想是 P 加上每层的字典序最大单项式段。
+
+**第三级台阶**
+
+无约束情形早有 Bigatti–Hulett–Pardue 定理；EGH 猜想预测含正则序列的理想可换成纯幂而不动 Hilbert 函数，lex-plus-powers 猜想进一步断言 Betti 数的逐项上界。主定理在 C 上陈述：设 2≤a₁≤…≤aₙ、I 含相应次数的满长度正则序列（此时商环 Artinian），则按维数处方出的 J_d=L_d+P_d 存在且拼成理想，同一个 J 使 Hilbert 函数精确相等、β_{p,j}(S/I)≤β_{p,j}(S/J) 处处成立。假设分工：正则序列的次数撑起纯幂、满长度保证 Artinian（再经 Caviglia–Maclagan/Kummini 归约与域下降推广到一切特征零域）；对 I 其余生成元的个数与次数毫无限制，正是结论的强度所在。
+
 ## 一句话结论
 
 在任意特征为零的域上证明了 Eisenbud–Green–Harris 与 lex-plus-powers 猜想：包含正则序列（任意长度、次数 `@@M@@\ge 2@@`）的齐次理想，其 Hilbert 函数被对应的 lex-plus-powers 理想精确匹配，全部 graded Betti 数被同一理想逐项压制。
@@ -87,5 +103,39 @@ Hilbert 函数（Hilbert function）记录分次商环每一层的维数；grade
 ## 可信度与备注
 
 两篇姊妹篇均未提供 Lean 形式化证明，OpenAI 官方声明"未经形式化的结果可能有问题"，请以社区核验为准。本文的除代数构造完全引自《Commuting Division-Coefficient Forms and the Artinian Eisenbud–Green–Harris Conjecture》的 Theorem 1.1，而本文新增的分辨转移把 Hilbert 函数结论强化为完整 Betti 不等式；末段的单项式比较作者自陈结论并非全新（沿 Mermin–Murai 定理思路重写以求自足）。家族两篇合起来给出特征零上 EGH 与 lex-plus-powers 猜想的整体解决。
+
+---
+
+# 深挖 | The Artinian Lex-Plus-Powers Betti Theorem
+
+## 深入探讨：像审稿人一样追问 🔍
+
+**问 1：证明中最关键、最脆弱的一步是什么？**
+
+答：把整个极小分辨搬进除代数系数环。取姊妹篇给出的域扩张 k/C、中心除代数 Δ 与交换线性型 t_i，令 N=Δ[x₁,…,xₙ]：N 既是左 S-自由模又是秩 m 的右 T=k[y₁,…,yₙ]-自由模，于是 S/I 的极小分辨转移为 N/IN 的极小 T-分辨，所有 Betti 数同乘 m 再约去；IN 的首项系数空间是 Δ 的左理想、只能为 0 或全 Δ，其非零位置定义单项式理想 M⊇P。匹配 Hilbert 函数本身给不出 Betti 结论，这一"分辨层整体转移"才是姊妹篇 Hilbert 结果之外的实质新机器，也最怕系数环自由性论证有暗伤。
+
+**问 2：为什么必须特征零？假设能松吗？**
+
+答：除代数构造（companion 的 Theorem 1.1）在 C 上完成，特征零是它的生存土壤；Artinian 与满长度正则序列的限制则可通过 Caviglia–Maclagan、Caviglia–Kummini 的既定归约和系数域下降撤掉，得到任意特征零域、长度 c≤n 的版本。特征 p 情形论文未处理，机制也确实用不上。
+
+**问 3：与已有工作相比真正的新意是什么？**
+
+答：此前一般性结果都带枷锁：Caviglia–Maclagan、Caviglia–De Stefani 要次数快速增长，Caviglia–Sammartano 的 Betti 版要 a_i≥1+Σ(a_j−1)，Mermin–Peeva–Stillman/Murai/Mermin–Murai 只做单项式正则序列，Abedelfatah 要求线性因子分解。本文对任意次数的一般正则序列给出完整解决。作者诚实注明：末段单项式比较沿 Mermin–Murai 思路重写、结论非新，新的是除代数系数的归约。
+
+**问 4：本文对姊妹篇的依赖是单点的吗？**
+
+答：是。三角幂恒等式 t_i^{a_i}=c_i f_i+ΣB f_ℓ+ΣC t_ℓ 与有序单项式基 {t^α} 全部引自 companion 的 Theorem 1.1；companion 若有误，本文的第一步传递即告失效。好在两文互引关系明确、可分别核验。
+
+**问 5：AI 生成证明最可能出错的模式？**
+
+答：四步链 I→M→H→G 每步都要同时保 Hilbert 函数、不减小 Betti 数，任何一步"保一漏一"整链报废；filtered Koszul 的相关分次论证（取 associated graded 只降微分秩、放大同调）与 Koszul 秩亏 D_{p,j} 对子模商的单调性，方向极易弄反。本文与姊妹篇均无 Lean 形式化，按 OpenAI 官方声明属"待社区核验"之列，是这篇的最大软肋。
+
+**问 6：谁会用到它？**
+
+答：交换代数与组合交换代数社区：EGH 与 lex-plus-powers 是"约束下极值"纲领的核心，三十年的条件性结果（增长条件、单项式情形）从此被统一收编；特征 p 的对应问题成为天然续集，Clements–Lindström 压缩、generic initial ideal 等工具的相关研究都会重新校准位置。
+
+## 总评
+
+在不加任何增长条件下整体解决三十余年悬案，且把 Hilbert 结论强化为逐项 Betti 上界，是漂亮的收官之作。但两篇姊妹篇均未形式化、核心归约又单点依赖除代数构造，可信度完全悬于人工核验。
 
 {% endraw %}
