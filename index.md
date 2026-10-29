@@ -1,6 +1,6 @@
 ---
 layout: default
-title: OpenAI 数学证明合集 · 722 篇中文解读
+title: OpenAI 数学证明合集 · 中文解读
 ---
 
 {% raw %}

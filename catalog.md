@@ -1,12 +1,12 @@
 ---
 layout: default
-title: 722 篇解读总目录
+title: 725 篇解读总目录
 ---
 
 {% raw %}
-# 722 篇解读总目录
+# 725 篇解读总目录
 
-按 17 个学科 → 372 个结果族组织。每行：文章标题 ｜ 验证状态 ｜ 一句话结论。先看[首页总览](index.html)。
+按 17 个学科 → 374 个结果族组织。每行：文章标题 ｜ 验证状态 ｜ 一句话结论。先看[首页总览](index.html)。
 
 ## Number theory
 
@@ -550,11 +550,12 @@ Resolves the three-dimensional Bochner–Riesz conjecture in its strict range: t
 
 - [Bochner–Riesz multipliers in three dimensions](articles/f078-1-Bochner-Riesz-Multipliers-in-Three-Dimensions.html) ｜ ⏳ 未形式化 ｜ 证明了三维 Bochner–Riesz 猜想的严格阶版本：对每个 `@@M@@\delta>0@@`，球磨光乘子 `@@M@@(1-|\xi|^2)_+^\delta@@` 在 `@@M@@L^3(\mathbb R^3)@@` 上有界，经插值与对偶推出全部临界范围 $\delta
 
-### 079 · Local smoothing in three dimensions
+### 079 · Local smoothing for the wave equation
 
-Resolves Sogge's local smoothing conjecture for the Euclidean wave equation in three spatial dimensi…
+Establishes Sogge's local smoothing conjecture for the Euclidean wave equation. The September 24, 20…
 
 - [Critical local smoothing for the three-dimensional wave equation](articles/f079-1-Critical-local-smoothing-for-the-three-dimensional-wave-equa.html) ｜ ⏳ 未形式化 ｜ 本文证明了三维欧氏空间中波动方程的临界 `@@M@@L^3@@` 局部光滑（local smoothing）估计：对任意 `@@M@@\varepsilon>0@@` 均有 $\|Uf\|_{L^3(\mathbb{R}^3\times[1,2])}\le C_\va
+- [Local smoothing for the Euclidean wave equation(欧氏波方程的局部光滑)](articles/f079-1-Local-smoothing-for-the-Euclidean-wave-equation.html) ｜ ✅ 已形式化 ｜ 对一切 `@@M@@n\ge2@@`、`@@M@@2\le p<\infty@@`，Sogge 局部光滑猜想以最优 Sobolev 阶 `@@M@@s_+(p)+\varepsilon@@` 成立；由此推出所有维数的 Kakeya 极大猜想、"每个 Kakeya 集都有满 Haus
 
 ### 080 · The exact Sobolev endpoint for Schrödinger convergence
 
@@ -983,6 +984,12 @@ Proves that the existential theory of the reals lies in the counting hierarchy. 
 Gives a uniform deterministic algorithm that completely factors every nonzero dense degree-<i>n</i> …
 
 - [Deterministic Polynomial Factorization over Prime Fields](articles/f142-1-Deterministic-Polynomial-Factorization-over-Prime-Fields.html) ｜ ⏳ 未形式化 ｜ 论文给出一致确定性算法，在 `@@M@@(n+1)\log p@@` 的多项式位复杂度内完全分解素域 `@@M@@\mathbf F_p@@` 上任一 `@@M@@n@@` 次多项式（含重数）；不使用随机数、整数分解或原根预言机，也不依赖 GRH，唯一的解析输入是姊妹篇的一致 He
+
+### 378 · The Exponential Time Hypothesis is False
+
+Gives a deterministic polynomial-space algorithm that exactly counts the satisfying assignments of a…
+
+- [The Exponential Time Hypothesis is False(指数时间假说为假)](articles/f378-1-The-Exponential-Time-Hypothesis-is-False.html) ｜ ✅ 已形式化 ｜ 对每个固定 `@@M@@k\ge2@@`，存在确定性多项式空间算法，在 `@@M@@2^{O_k(n(\log\log n)^2/\sqrt{\log n})}@@` 时间内（固定密度下 `@@M@@2^{O(n/\sqrt{\log n})}@@`）精确计数 `@@M@@k@@`-CNF 的满
 
 ## Dynamical systems and ergodic theory
 
@@ -1994,6 +2001,12 @@ Solves the constant-error Aaronson–Kuperberg unitary synthesis problem: a unif
 Shows that the universal bound R(f)=O((1+Q(f))^4) for total Boolean functions is sharp in its ex…
 
 - [A Nearly Quartic Separation Between Randomized and Quantum Query Complexity](articles/f284-1-A-Nearly-Quartic-Separation-Between-Randomized-and-Quantum-Q.html) ｜ ⏳ 未形式化 ｜ 构造出一族全布尔函数 `@@M@@F_{k,m}@@`：量子算法只需 `@@M@@\sqrt m\,(\log m)^{O_k(1)}@@` 次查询，而任何随机算法都需约 `@@M@@m^{2-1/k}/(\log m)^2@@` 次，两者之比可任意逼近四次幂。这证明已知的四次普适
+
+### 999 · Existence of quantum Yang-Mills theory (KITP shepherding statement)
+
+OpenAI announced a proof of the existence of quantum Yang-Mills theory with fermions in four dimensi…
+
+- [Proof by OpenAI of the Existence of Quantum Yang–Mills theory(杨-米尔斯存在性:KITP 守护委员会声明)](articles/ym-1-Yang-Mills-existence-KITP-statement.html) ｜ ⏳ 未形式化 ｜ OpenAI 内部模型给出含费米子耦合的四维量子杨-米尔斯理论存在性的自然语言证明（1147 页,2026-09-09 成稿）及 Lean 形式化;证明全文由 David Gross（主席）、Douglas、Jaffe、Klebanov、N
 
 ## Operator algebras
 
